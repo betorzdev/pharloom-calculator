@@ -263,21 +263,21 @@
       </section>`;
   }
 
-  /* The pane «Tareas»: the main objectives, then the wishes by type, each with the game's name and
-     the picture the pane draws by it (design/75, 4 A; tools/extract-wish-icons.py): a main
+  /* The pane «Tareas» as the game's three Wishwalls (design/104-tasks-variants.html, all A, and its
+     look, design/104b-tasks-look-variants.html, all A): the main objective you're on and a thread of
+     all 21, then the walls of Bone Bottom, Bellhart and the Songclave side by side, each headed by
+     its figure in its town and lit by its area, then whoever asks for a wish in person, each standing
+     over their name. Who posts a wish (js/quests.js FROM, the game's) is where it's taken, so the tab
+     reads as where to go. In each, what's left as lines (promised first, what it asks counted with
+     the pane's own bar or dots), what comes in a later Act and what's done as rows of pictures. Each
+     task with the picture the pane draws by it (design/75, 4 A; tools/extract-wish-icons.py): a main
      objective's own (tasks/main-<its quest>), a wish's its type's (tasks/<type>). The objectives the
      save checks by a flag or the Journal take their quest's; the Soul Snare's two are Wayfarer
-     wishes in the game (their QuestType), though the pane's groups put them elsewhere. Each type's
-     group has its large emblem by its name (7 B), the Wishwalls' (assets/icons/wishes). The main
-     objectives have none, as in the game (MainQuest typeLargeIcon is empty in every one): no slot,
-     and the pane's own filigree between them and the wishes (design/80, E: its Current Heading). */
-  const TYPE_NAME = { 'main-objectives': () => t('pgTasksMain'), collect: () => t('pgTasksCollect') };
+     wishes in the game (their QuestType). */
   const TASK_QUEST = { HasMelodyConductor: 'Citadel Ascent Melody Conductor', HasMelodyArchitect: 'Citadel Ascent Melody Architect',
     HasMelodyLibrarian: 'Citadel Ascent Melody Librarian', CollectedHeartCoral: 'Black Thread Pt5 Heart Coral',
     CollectedHeartFlower: 'Black Thread Pt5 Heart Flower', CollectedHeartHunter: 'Black Thread Pt5 Heart Ant', 'Lost Lace': 'Black Thread Pt6 Flower' };
   const TASK_TYPE = { 'Soul Snare': 'wayfarer', 'Soul Snare Pre': 'wayfarer' };
-  // The group «collect» is the Soul Snare's wish, a Wayfarer one in the game: it has no emblem of its own.
-  const GROUP_EMBLEM = { collect: TASK_TYPE['Soul Snare'] };
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   function taskIcon(w) {
     const q = wishQuest(w) || TASK_QUEST[w[2][1]];
@@ -305,33 +305,113 @@
     if (s.done) return s.ready ? `<span class="pg-how pg-wish">${esc(s.ready)}</span>` : '';
     return s.asks.length ? `<span class="pg-how pg-wish">${s.asks.map((a) => `<span class="pg-wish-n${a.have >= a.n ? ' is-full' : ''}"><span${NT}>${esc(a.name)}</span> <b>${num(Math.min(a.have, a.n))}</b><i>/${num(a.n)}</i></span>`).join('')}</span>` : '';
   }
-  // The groups, and how many tasks are done of how many (the tab's card).
-  function tasks(g, skip = new Set()) {
+  /* Where a wish is posted: its Wishwall (the first stage of it a board lists: the Lost Fleas' is on
+     Bone Bottom's, though Mooshka offers it too), else who offers it in person, as js/spots.js GIVER
+     keys them (a room, or 'room:who'). */
+  const WALLS = [['Bonetown', 'bonebottom', 'BONEBOTTOM'], ['Belltown', 'bellhart', 'BELLHART'], ['Song_Enclave', 'songclave', 'ENCLAVE']];
+  function wishSource(q) {
+    let npc = null;
+    for (let x = q; x; x = QU.CHAIN[x] && QU.CHAIN[x].prev) {
+      const f = QU.FROM[x] || {};
+      if (f.board) return { wall: f.board };
+      if (f.npc && !npc) npc = f.npc[0];
+    }
+    return npc ? { npc, giver: ((SS.spots || {}).QUEST_GIVER || {})[q] || npc } : {};
+  }
+  /* Who asks in person, by name and figure (assets/map/people, named as the game's NPC key);
+     Greyroot has no figure. Fleatopia's wish has nobody in its room (GIVER null): it's Mister
+     Mushroom's, offered at his tablet (tools/gen-spots.js), so he stands for it (js/people.js). */
+  const NO_FIGURE = new Set(['SHELLWOOD_WITCH']);
+  const NOBODY = { Aqueduct_05: 'mr-mushroom' };
+  function giverOf(src) {
+    const G = (SS.spots || {}).GIVER || {}, gv = G[src.giver] || G[src.npc];
+    const area = R.areaOf(src.npc);
+    const who = !gv && NOBODY[src.npc] && SS.people ? SS.people.PEOPLE.find((x) => x.id === NOBODY[src.npc]) : null;
+    if (who) return { id: who.id, name: pick(who.name), area: areaName(area), art: `assets/map/${who.art}.webp` };
+    if (!gv) return { id: src.giver, name: areaName(area), area: null, art: null };
+    return { id: gv[0], name: pick(gv[1]), area: areaName(area), art: NO_FIGURE.has(gv[0]) ? null : `assets/map/people/${gv[0].toLowerCase().replace(/_/g, '-')}.webp` };
+  }
+  // What a promised wish asks, counted as the pane counts it: a dot each up to twelve, else its bar.
+  const METER_DOTS = 12;
+  function wishMeter(s) {
+    if (s.done) return s.ready ? `<span class="pg-how pg-wish">${esc(s.ready)}</span>` : '';
+    return s.asks.length ? `<span class="pg-meters">${s.asks.map((a) => { const h = Math.min(a.have, a.n);
+      // One thing asked has its count alone: a single dot says nothing more.
+      const meter = a.n === 1 ? '' : a.n <= METER_DOTS ? `<span class="pg-dots">${Array.from({ length: a.n }, (_, k) => `<i class="${k < h ? 'is-on' : ''}"></i>`).join('')}</span>`
+        : `<span class="pg-bar">${h ? `<i style="width:${(100 * h / a.n).toFixed(1)}%"></i>` : ''}</span>`;
+      return `<span class="pg-meter"><span${NT}>${esc(a.name)}</span><span class="pg-meter-n"><b>${num(h)}</b>/${num(a.n)}</span>${meter}</span>`; }).join('')}</span>` : '';
+  }
+  // A task left: its mark (a promised one the game's diamond), its picture, its name, who asks or what's carried, its pin.
+  function taskRow(x) {
+    return `<li class="pg-item pg-task${x.promise ? ' is-promised' : ''}"><span class="pg-mark" aria-hidden="true">${x.promise ? `<span class="pg-promise${x.promise.done ? ' is-ready' : ''}"></span>` : ''}</span>
+        <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
+        <span class="pg-main"><span class="pg-name"${NT}>${esc(x.name)}</span>${x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishMeter(x.promise)}` : x.loc ? `<span class="pg-how">${esc(x.loc)}</span>` : ''}</span>
+        ${x.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(x.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+      </li>`;
+  }
+  const pictures = (list, label) => `<p class="pg-tasks-l">${esc(label)}</p><ul class="pg-pics">${list.map((x) => `<li${x.got ? ' class="is-done"' : ''} title="${esc(x.name)}"><img src="${x.icon}" alt="${esc(x.name)}" loading="lazy"></li>`).join('')}</ul>`;
+  // A wall's or a person's wishes: what's left as lines (promised first), what comes later and what's done as pictures.
+  function taskList(list) {
+    const left = list.filter((x) => !x.got && !x.later).sort((a, b) => !!b.promise - !!a.promise || a.act - b.act);
+    const later = list.filter((x) => !x.got && x.later), done = list.filter((x) => x.got);
+    return `${left.length ? `<ul class="pg-list pg-tasks">${left.map(taskRow).join('')}</ul>` : later.length ? '' : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`}
+      ${later.length ? pictures(later, t('pgTasksLater')) : ''}${done.length ? pictures(done, t('pgTasksDone')) : ''}`;
+  }
+  const tally = (list, g) => (g ? `<span class="pg-count"><b>${num(list.filter((x) => x.got).length)}</b><i class="u">/${num(list.length)}</i></span>`
+    : `<span class="pg-count"><i class="u">${num(list.length)}</i></span>`);
+  // A section's head as the pane's: a centred title over its filigree (design/80, E), and its count.
+  const tasksHead = (title, list, g) => `<div class="pg-tasks-head"><h3>${esc(title)}</h3><img src="assets/icons/tasks/spacer.webp" alt="" loading="lazy">${tally(list, g)}</div>`;
+  /* The main objectives: the one you're on (those of your Act not done, two at most; in Free mode
+     the first not marked), large with the pane's words, and all 21 on a line by Act, the done lit. */
+  function mainHtml(list, g) {
+    const open = list.filter((x) => !x.got);
+    const now = (g ? open.filter((x) => !x.later) : open).slice(0, 2);
+    const cur = now.length ? now : open.slice(0, 1);
+    const track = [1, 2, 3].map((a) => `<li class="pg-track-act"><span class="pg-track-n">${esc(t('saveAct', { n: num(a) }))}</span><ul class="pg-track-row">${list.filter((x) => x.act === a)
+      .map((x) => `<li class="${x.got ? 'is-done' : ''}${cur.includes(x) ? ' is-now' : ''}" title="${esc(x.name)}"><img src="${x.icon}" alt="${esc(x.name)}" loading="lazy">${x.got ? `<span class="sr-only">${esc(t('pgGot'))}</span>` : ''}</li>`).join('')}</ul></li>`).join('');
+    return `<section class="pg-tasks-sec">${tasksHead(t('pgTasksMain'), list, g)}
+        <div class="pg-nows">${cur.map((x) => `<div class="pg-now"><img src="${x.icon}" alt="" loading="lazy"><div><p class="pg-now-act">${esc(t('saveAct', { n: num(x.act) }))}</p>
+          <p class="pg-now-name"${NT}>${esc(x.name)}</p>${x.desc ? `<p class="pg-now-says">${esc(x.desc)}</p>` : ''}</div>
+          ${x.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(x.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span></span>'}</div>`).join('')}</div>
+        <ol class="pg-track">${track}</ol></section>`;
+  }
+  // The rows, and how many tasks are done of how many (the tab's card).
+  function tasks(g) {
     /* A wish only one mode has (the Steel Soul's, a Classic one) shows in a save of that mode. Free
        mode has none: it shows both, as the Journal and the Map do. */
     const m = App.gameMeta();
     const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
-    const done = new Set(g ? g.quests : []);
-    const sum = { got: 0, max: 0 };
     const pin = taskPin(g), taken = new Set(g ? g.taken || [] : []);
-    const [main, ...rest] = CO.WISH_TYPES.map((ty) => {
-      const list = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w, i }) => w[0] === ty.id && !skip.has(i) && (!mode || !w[5] || w[5] === mode))
-        .map(({ w, i }) => { const scene = wishScene(wishQuest(w), done);
-          // With no area in the pane's list, the area it's taken in, as the road's rows (wishRow).
-          return { name: pick(w[4]), got: !!g && g.wishes.includes(i), act: w[1], area: w[3] || (scene && R.areaOf(scene)) || null, scene, icon: taskIcon(w),
-            focus: !!g && g.wishes.includes(i) ? null : pin(w, i), promise: !g || g.wishes.includes(i) || ty.id === 'main-objectives' ? null : wishState(w, taken, g) }; }).sort(byAct);
-      const title = ty.name ? pick(ty.name) : TYPE_NAME[ty.id]();
-      const got = list.filter((x) => x.got).length;
-      sum.got += got;
-      sum.max += list.length;
-      const emb = GROUP_EMBLEM[ty.id] || ty.id;
-      return list.length ? group('wish-' + ty.id, title, list, g, got, list.length,
-        { pips: true, emblem: ty.id === 'main-objectives' ? undefined : WISH_ICON.has(emb) ? `assets/icons/wishes/${emb}.webp` : null }) : '';
+    const all = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w }) => !mode || !w[5] || w[5] === mode).map(({ w, i }) => {
+      const main = w[0] === 'main-objectives', q = wishQuest(w) || TASK_QUEST[w[2][1]], e = (q && QU.CHAIN[q]) || {};
+      const got = !!g && g.wishes.includes(i);
+      return { name: pick(w[4]), got, act: w[1], icon: taskIcon(w), main, src: main || !q ? {} : wishSource(q), loc: q ? wishLoc(q) : '',
+        desc: e.desc ? pick(e.desc).split('\n')[0] : '', later: !!g && !got && w[1] > g.act,
+        focus: got ? null : pin(w, i), promise: !g || got || main ? null : wishState(w, taken, g) };
     });
-    // The filigree only between the two: with either side missing it has nothing to part.
-    const wishes = rest.join('');
-    const html = main && wishes ? `${main}<div class="pg-spacer" aria-hidden="true"><img src="assets/icons/tasks/spacer.webp" alt="" loading="lazy"></div>${wishes}` : main + wishes;
-    return { html, ...sum };
+    // A promised wish is under way whatever its Act.
+    for (const x of all) if (x.promise) x.later = false;
+    const mains = all.filter((x) => x.main);
+    const walls = WALLS.map(([scene, id, area]) => {
+      const list = all.filter((x) => x.src.wall === scene);
+      return list.length ? `<section class="pg-wall" data-wall="${id}" style="--area-line:var(--area-${area.toLowerCase()}-line, var(--spotlight));--area-fill:var(--area-${area.toLowerCase()}-fill, var(--scene-glow))">
+          <div class="pg-wall-fig"><img src="assets/icons/wishes/wall-${id}.webp" alt="" loading="lazy"><h4${NT}>${esc(areaName(area))}</h4><img class="pg-wall-fil" src="assets/icons/tasks/spacer.webp" alt="" loading="lazy">${tally(list, g)}</div>
+          ${taskList(list)}</section>` : '';
+    }).join('');
+    // Who asks in person, in the order you meet them (their first wish's Act), each with their wishes.
+    const people = new Map();
+    for (const x of all.filter((y) => y.src.npc)) {
+      const p = people.get(x.src.giver) || { ...giverOf(x.src), act: x.act, list: [] };
+      p.list.push(x); p.act = Math.min(p.act, x.act); people.set(x.src.giver, p);
+    }
+    const folk = [...people.values()].sort((a, b) => a.act - b.act || a.name.localeCompare(b.name));
+    const asked = folk.flatMap((p) => p.list);
+    const html = `<div class="pg-tasks-view">${mains.length ? mainHtml(mains, g) : ''}
+        ${walls ? `<section class="pg-tasks-sec">${tasksHead(t('pgTasksWalls'), all.filter((x) => x.src.wall), g)}<div class="pg-walls">${walls}</div></section>` : ''}
+        ${folk.length ? `<section class="pg-tasks-sec">${tasksHead(t('mapLayer_givers'), asked, g)}<div class="pg-people">${folk.map((p) => `<section class="pg-person">
+          <div class="pg-person-who">${p.art ? `<img src="${p.art}" alt="" loading="lazy">` : '<span class="pg-person-none" aria-hidden="true"><i></i></span>'}<h4${NT}>${esc(p.name)}</h4>${p.area ? `<p>${esc(p.area)}</p>` : ''}${tally(p.list, g)}</div>
+          ${taskList(p.list)}</section>`).join('')}</div></section>` : ''}</div>`;
+    return { html, got: all.filter((x) => x.got).length, max: all.length };
   }
   /* Each task's pin to the Map (design/78-task-pins-variants.html, all A): the lists' round pin, to
      where the task stands now. Before it's taken, who gives it (its Wishwall or who asks, wishFrom);
@@ -348,6 +428,9 @@
     for (let x = QU.CHAIN[q] && QU.CHAIN[q].prev; x && QU.CHAIN[x] && !ownQuests.has(x); x = QU.CHAIN[x].prev) out.unshift(x);
     return out;
   }
+  /* What a wish asks for that the Map marks on another layer (js/spots.js ASKS: Pale Oil, the
+     Mossberries, a Tool, the Fleas, the Void Masses), by stage: { stage: [{ save, n, keys, held }] }. */
+  const asksOf = (s) => ((SS.spots && SS.spots.ASKS) || {})[s] || [];
   // What a task asks for on the Map, by stage, in order: [[keys], ...].
   function taskTargets(w) {
     const piece = w[2][0] === 'flag' ? CO.PIECES.findIndex((p) => p[2][0] === 'flag' && p[2][1] === w[2][1]) : -1;
@@ -356,7 +439,8 @@
     if (!q) return [];
     // A wish's place that is a boss's fight is that boss's mark (App.mapKeyOf).
     const markOf = (k) => (App.mapKeyOf ? App.mapKeyOf(k) : k);
-    const by = taskStages(q).map((s) => [...new Set(T.flatMap((k, i) => (k[1] === s ? [markOf('task:' + i)] : [])))]).filter((a) => a.length);
+    const by = taskStages(q).map((s) => [...new Set([...T.flatMap((k, i) => (k[1] === s ? [markOf('task:' + i)] : [])), ...asksOf(s).flatMap((a) => a.keys)])])
+      .filter((a) => a.length);
     if (by.length || w[0] !== 'main-objectives') return by;
     // An objective with no pin of its own (After the Fall): the game's pin whose check is the nearest to it.
     const has = (k) => k[0] === 'goal' && JSON.stringify(k[2]).includes(JSON.stringify(['quest', q]));
@@ -370,7 +454,11 @@
     return (w, i) => {
       const q = wishQuest(w), from = q ? wishFrom(q, done).mark : null;
       const giver = from && marks.has(from) ? [from] : [];
-      const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got))).find((s) => s.length) || [];
+      /* What it asks for on another layer, once the save has enough of it, is no more to find (Pale
+         Oil held, three Mossberries, five fleas saved, twelve Void Masses): its marks drop out. */
+      const met = new Set(own && q ? taskStages(q).flatMap(asksOf).filter((a) => (a.held ? ((own.carried || {})[a.save] || 0)
+        : a.keys.filter((k) => marks.has(k) && marks.get(k).got).length) >= a.n).flatMap((a) => a.keys) : []);
+      const left = taskTargets(w).map((s) => s.filter((k) => marks.has(k) && !(g && marks.get(k).got) && !met.has(k))).find((s) => s.length) || [];
       const isTaken = !!q && taskStages(q).some((s) => taken.has(s));
       /* A hunt taken and still short of what it asks (design/103, 1 A): the Journal's rooms of the
          enemies that give its thing (js/spots.js HUNTS, App.mapHuntKeys), nearest first as the rest. */
@@ -1061,9 +1149,6 @@
     })();
     // How to show the lists goes just over them.
     const controls = g ? `<div class="pg-controls">${seg}</div>` : '';
-    // The wishes the road to Act 3 requires are in the Act tab (round 1, 5): not again in Tasks.
-    const roadWishes = next && next.act === 3 ? new Set(QU.GROUPS['Soul Snare'].quests.filter((q) => q.required)
-      .map((q) => A.missing(q.quest, new Set(own.quests)).wish).filter((i) => i >= 0)) : new Set();
     /* The three tabs (design/27b-progress-variants.html, 1 D; Tasks since design/75, 3 A): cards,
        each with its picture of how far you are; the one used last opens (prefs.pgTab), the Act's
        the first time. As the ARIA tabs pattern: only the selected one is in the Tab order, and the
@@ -1081,7 +1166,9 @@
       : own ? { art: QUEST('act3_finale'), label: t('roadGame'),
         sub: x(esc((({ seen, shut, of }) => t(shut.length ? 'roadEndingsReach' : 'roadEndings', { n: num(seen.size), of: num(of) }))(endsOf(own)))) }
         : { art: QUEST('grand_gate_final'), label: t('roadBoth'), sub: '' };
-    const taskList = tasks(g, roadWishes);
+    /* Every wish on its wall, those the road to Act 3 requires too (Albert, 21 October 2026: the
+       walls as the game's, their counts its own), though the road's tab lists them as well. */
+    const taskList = tasks(g);
     const card = (id, art, label, sub) => `<button type="button" class="pg-tab" role="tab" id="pg-tab-${id}" aria-controls="pg-panel" aria-selected="${tab === id}" tabindex="${tab === id ? 0 : -1}" data-act="pgTab" data-value="${id}">
         <span class="pg-tab-art" aria-hidden="true">${art}</span><span class="pg-tab-l">${esc(label)}</span>${sub ? `<span class="pg-tab-s">${sub}</span>` : ''}</button>`;
     const tabs = `<div class="pg-tabs" role="tablist" aria-label="${esc(t('navProgress'))}">
@@ -1105,7 +1192,7 @@
         <div class="pg-groups is-wide">${hundred}</div>
         <h3 class="pg-part is-crowned">${esc(t('pgBeyond'))}${App.crown('pg-crown')}</h3>
         <div class="pg-groups is-wide">${beyond}</div>`
-        : `${controls}<div class="pg-groups is-wide">${taskList.html}</div>`;
+        : taskList.html;
     sec.innerHTML = `<div class="pg">${brackets}${screenHead(esc(t('navProgress')))}
         ${actsTop(own, next, c, sum)}
         ${tabs}

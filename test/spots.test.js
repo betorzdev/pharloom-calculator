@@ -258,7 +258,8 @@ test('each thing with a point of its own sits in (or at the edge of) its room\'s
 test('the wishes and the main objectives (TASKS) sit on the map, each with its picture and a check the save reads', () => {
   const fs = require('fs');
   const path = require('path');
-  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal']);   // journal: Last Dive's, as its wish (save checks, 7 A)
+  // journal: Last Dive's, as its wish (save checks, 7 A); min: a Flea Game's highscore past its champion's (the wishes' audit).
+  const checks = new Set(['bool', 'flag', 'quest', 'held', 'steel', 'any', 'journal', 'min']);
   const walk = (c) => { assert.ok(checks.has(c[0]), c[0]); if (c[0] === 'any') c.slice(1).forEach(walk); };
   const n = { qitem: 0, wspot: 0, goal: 0 };
   for (const [kind, quest, check, scene, art] of SP.TASKS) {
@@ -663,4 +664,33 @@ test('the Sacred Cylinder is a mark of its own, named and drawn as the game does
   // The melody Cardinius plays once he has it: another mark, in another room.
   const m = CO.PIECES[x[5].melody];
   assert.ok(m && m[0] === 'melody' && m[2][1] === 'HasMelodyLibrarian');
+});
+
+/* Tasks as the three Wishwalls (js/app-progress.js wishSource, giverOf; design/104): every wish is
+   posted on Bone Bottom's, Bellhart's or the Songclave's wall, or offered in person by someone the
+   tab can name and draw. A patch that moves a wish elsewhere shows here. */
+test('every wish is on one of the three Wishwalls or asked in person by someone with a name and a figure', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const WALLS = new Set(['Bonetown', 'Belltown', 'Song_Enclave']);
+  const NO_FIGURE = new Set(['SHELLWOOD_WITCH']);   // Greyroot
+  const NOBODY = { Aqueduct_05: 'mr-mushroom' };   // the tablet in Fleatopia
+  const quest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
+  for (const w of CO.WISHES.filter((x) => x[0] !== 'main-objectives')) {
+    const q = quest(w);
+    assert.ok(q, `${w[4].en} has no quest`);
+    let wall = null, npc = null;
+    for (let x = q; x && !wall; x = Q.CHAIN[x] && Q.CHAIN[x].prev) {
+      const f = Q.FROM[x] || {};
+      if (f.board) wall = f.board;
+      else if (f.npc && !npc) npc = f.npc[0];
+    }
+    if (wall) { assert.ok(WALLS.has(wall), `${w[4].en} is on a fourth wall, ${wall}`); continue; }
+    assert.ok(npc, `${w[4].en} is neither on a wall nor offered by anyone`);
+    const gv = SP.GIVER[(SP.QUEST_GIVER || {})[q] || npc] || SP.GIVER[npc];
+    if (!gv) { assert.ok(NOBODY[npc], `nobody stands for ${w[4].en} (${npc})`); continue; }
+    if (NO_FIGURE.has(gv[0])) continue;
+    const art = path.join(__dirname, '..', 'assets', 'map', 'people', gv[0].toLowerCase().replace(/_/g, '-') + '.webp');
+    assert.ok(fs.existsSync(art), `${gv[1].en} (${w[4].en}) has no figure: ${art}`);
+  }
 });

@@ -2249,7 +2249,14 @@ the author's folder:
   saves, beaten in 19.
 - **Gourmand** (D33): a pickup's own removedBy flag joins its wish item's check (Dust_Chef's «Return
   Pickup» goes with gotPickledRoachEgg, which the first egg sets: two Steel Soul saves had it before
-  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too.
+  the wish was done); the Rasher's delivery pin is done by GourmandGivenMeat too. All five dishes
+  are marked (21-Oct-2026): the Mossberry Stew where the Druid hands it over (mosstown_02c's «Moss
+  Creep NPC», CollectableItemCollect; it was left out as if made from the berries) and the Courier's
+  Rasher where Tipp & Pill hand it over in Bellhart (a DeliveryQuestItemStandalone their «Couriers
+  Quest Giver» compares, ObjectCompare). Each dish is done by its own GourmandGiven<x> flag too
+  (the servant's Get Collected sets one per dish; tools/gen-spots.js GIVEN): a dish handed over is
+  no longer held, and the Vintage Nectar's pickup bool is set in no save. Over the 88 saves: the
+  five flags set in all 27 with the wish done, none in the 8 with it taken and not done.
 - **Pins and rooms** (D34): a map pin falls in the smallest room box within 3 px of it. Last Dive's
   pin is Abyss_05's now (1 px below its box, it was Abyss_09_top's); the same margin files the
   Snail Shamans' three pins under Tut_04, the chapel they stand in (1.6 px from its point), and the
@@ -2307,3 +2314,70 @@ not done, their FSM (the tracking_object template) only sets disablePause. Left 
 covered: Fastest in Pharloom (the three races are all in Sprintmaster_Cave, its giver's room), Ecstasy
 of the End (Flea Games, ended at the festival, where Mooshka offers it), After the Fall (begun by
 the Act 3 intro cutscene in Song_Tower_Destroyed, ended by nothing in a room, no pin in the game).
+
+**Every wish's targets, audited from the game** (21 October 2026, Albert: «¿y no habría que revisar
+todos los wishes?», after Great Taste of Pharloom showed 3 of its 5 dishes, #166). Each of the 53
+wishes (and the 21 objectives' targets) read from the quest assets first (questsystem quests,
+mainquests and proxies bundles, UnityPy: each target's Counter, Count and AltTest), then where each
+target is had (every reference to it in every scene and prefab bundle), then what the Map marks and
+what Progress's pin opens, each check set against the quest's own state in all 88 saves of the
+author's folder. What was missing, and is fixed (`tools/extract-wishes.py`, `tools/gen-spots.js`
+ASKS, `js/app-progress.js` taskPin, `js/app-map.js` giverMark):
+- **Targets the Map marks on another layer, never on the wish's pin** (js/spots.js ASKS, from
+  wishes.json targets and counts): Pinmaster's Oil's Pale Oil (any of the three pieces), Berry
+  Picking's three Mossberries, The Lost Fleas' five fleas (its FleasCollected Target counts every
+  SavedFlea_ bool, Kratt's, Vog's and the giant flea's), Dark Hearts' twelve Black Thread Cores
+  (each a saved bool of its own, as many set as the entry's Journal kills in all 33 Act 3 saves:
+  the Void Mass layer, whose every core `extract-wishes.py` kills checks), Silk and Soul's Snare
+  Setter, the Alchemist's Needle Phial. The pin opens them once the wish is taken, until the save
+  has enough (the thing held, or n of the marks had).
+- **Ecstasy of the End's three Flea Games** had no marks: targets with no Counter, met by AltTest
+  FleaGamesIs<Game>Champion, which PlayerData doesn't keep but computes (Assembly-CSharp getters,
+  read with dnfile: highscore > 30, 65, 42). Three qitems at the games' hosts in the festival, with
+  the pane's own pictures (AltSprite) and names (FESTIVAL_BOARD_TITLE_*), done by ['min',
+  'fleaGames_<game>_highscore', n]. No save is caught mid-festival; the 16 done have all three past.
+- **The Lost Fleas was «done» at its Wishwall step** (the completionist's any of Save the Fleas and
+  its Pre): three saves have the wish on in the game with 1 and 5 fleas. tools/completionist.js
+  WISH_FIX: Save the Fleas only; now it agrees with the game in all 88.
+- **Six givers drawn on another mark** (js/spots.js GIVER's third: Plinney, the Couriers, Creige,
+  Mooshka at the festival, the Moss Druid, the Pinstress): their wishes' pins and the qitems' «To
+  who asks» looked for a giver: mark that isn't drawn, so Pinmaster's Oil had no pin before it was
+  taken and the deliveries went to their destination. App.giverMark gives the mark that is them.
+- **Dustpens' Void Mass** (Dust_11's two cores, silkFarmAbyssCoresCleared) is normal games only: its
+  arena is under «Steel Soul States/Regular» (the 19 Steel Soul saves that entered Dust_11 have none
+  of its bools, the 26 others all); it showed in Steel Soul. EXTRAS more.mode 'normal'.
+
+| Wish | What the game asks | Marks before | After | Left unmarked, why |
+|---|---|---|---|---|
+| The Lost Fleas | 5 fleas (bools) | giver; done at the Pre | the 30 fleas on its pin; done with the quest | |
+| My Missing Courier, My Missing Brother, The Wandering Merchant, The Lost Merchant, Balm for the Wounded, Trail's End | a rescue or a meeting (no target) | where the game ends it | same | |
+| Pinmaster's Oil | 1 Pale Oil | no pin before, nothing once taken | Plinney, then the 3 Pale Oils | |
+| Rite of Rebirth | Twisted Bud | Shadow_20 | same | |
+| Infestation Operation | Steel Spines | the Dust Traders (Act 3: lying in the same shack) | same | |
+| Final Audience, Fatal Resolve, Hero's Call, Pain, Anguish and Misery | a fight | the boss's card | same | |
+| Ecstasy of the End | 3 games, champion | none | 3 qitems at the hosts | |
+| Berry Picking | 3 Mossberries | giver | the 7 Mossberries on its pin | |
+| Rite of the Pollip | 6 Pollip Hearts | 6 flowers | same | |
+| Silver Bells | 8, dropped at random | 14 drop spots | same | the save keeps the count only |
+| Alchemist's Assistant | 3 Plasmium, Needle Phial | 3 buds | + the Phial (lent on taking) | |
+| Great Taste of Pharloom | 5 dishes | 5 qitems, Rasher's delivery (#166) | same | |
+| Advanced Alchemy, Garb of the Pilgrims, Crawbug Clearing, Roach Guts, Fine Pins, Cloaks of the Choir, Flexile Spines | enemy drops | «Where to hunt» | same | enemies keep nothing per room; lists complete against every prefab that drops them |
+| Volatile Flintbeetles | 3 Flintgems | 4 qitems (5 places) | same | |
+| Broodfeast | organs from Tool kills | none | none | any enemy |
+| 7 donations | rosaries, shards | Wishwall | same | nothing to place |
+| The Terrible Tyrant, Savage Beastfly, The Wailing Mother, The Hidden Hunter | a trophy | where it drops | same | the Tyrant's return to Bone Bottom drops none |
+| Dark Hearts | 12 Black Thread Core kills | Wishwall (Void Masses apart) | the 46 Void Masses (45 Steel Soul) on its pin | |
+| 7 deliveries | the courier's load | destination pins | + the Couriers before taking | |
+| Bugs of Pharloom | 100 entries seen | Nuu | same | the Journal is its own layer |
+| Silk and Soul / Soul Snare | 3 souls, Snare Setter | 3 qitems | + the Snare Setter | no save caught with it taken |
+| Fastest in Pharloom | 3 races | the cave | same | all run in Sprintmaster_Cave |
+| Passing of the Age | 7 spots | the next spot | same | |
+| A Vassal Lost | 3 of 6 spots, Coral_37 | the save's spots | same | |
+
+Not fixed, for Albert: five pilgrim corpses placed in rooms give a Pilgrim Shawl while Garb of the
+Pilgrims is on (three hanging sacks in Shadow_08, a glass stand in Arborium_07, rubble in
+Bone_East_10); «Where to hunt» goes by Journal entry, so their rooms aren't in it, and a sack's bool
+is set whether or not the wish was on. The two Spine Cores in Bone_East_14b's wall stay as noted
+above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all
+match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
+and after each fixed wish and in Free mode, no console errors.

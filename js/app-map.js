@@ -64,7 +64,11 @@
   // Who offers a wish in a room, as js/spots.js GIVER keys it: the room, or 'room:who' when someone
   // else than the room's giver offers it (QUEST_GIVER: Nuu in Creige's Halfway House).
   const giverOf = (quest, scene) => (SP.QUEST_GIVER && SP.QUEST_GIVER[quest]) || scene;
-  App.giverMark = (quest, scene) => 'giver:' + lower(giverOf(quest, scene));
+  /* Their mark: the one that is them in that room already when there is one (js/spots.js GIVER's
+     third: Plinney, the Couriers, Creige, Mooshka at the festival, the Moss Druid, the Pinstress,
+     whose wishes go on it; the wishes' audit, 21-Oct-2026: their wishes' pins and «To who asks»
+     looked for a giver: mark that isn't drawn), else their own. */
+  App.giverMark = (quest, scene) => { const gid = giverOf(quest, scene); return ((SP.GIVER || {})[gid] || [])[2] || 'giver:' + lower(gid); };
 
   /* ── The layers ──
      Each: its group, its name, and its mark in the legend. The pieces' kinds keep their colour
@@ -906,7 +910,7 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
   // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
   const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
   // What the game took away (design/86, 1 A): the tick's disc in --muted, a cross where the tick goes.
@@ -930,8 +934,9 @@
       if (first) { c.seen.add(id); c.all++; }
       // What's had: counted, and on the map only with "Show Completed" (prefs.mapHad), dimmed and ticked.
       // What the game took away goes with it, crossed (design/03-redesign.md, step 6, the save checks, 3 A).
-      const had = !!(g && m.got), lost = !had && closed(m, g);
-      if (had) { if (first) c.had++; if (!prefs.mapHad) continue; } else if (lost) { if (!prefs.mapHad) continue; } else if (first) c.shown++;
+      // In a focus, its marks whatever the filter, had and lost ones dimmed as always (the sibling's).
+      const had = !!(g && m.got), lost = !had && closed(m, g), hide = !prefs.mapHad && !inFocus;
+      if (had) { if (first) c.had++; if (hide) continue; } else if (lost) { if (hide) continue; } else if (first) c.shown++;
       const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y, lift: m.rests ? REST : 0 });
@@ -1212,7 +1217,7 @@
           <svg class="mp-svg" viewBox="${vb ? `${vb.x} ${vb.y} ${vb.w} ${vb.h}` : `0 0 ${M.W} ${M.H}`}" role="img" aria-label="${esc(t('mapAlt'))}">
             <defs><radialGradient id="mp-plate"><stop offset="0"/><stop offset="0.6"/><stop offset="1"/></radialGradient></defs>
             <g class="mp-names">${namesSvg}</g><g class="mp-marks">${clusters}${marks}</g>
-          </svg>${hornet}<i class="mp-ping" hidden></i>
+          </svg>${hornet}
         </div>
         ${search}${tools}
       </div>
@@ -1225,45 +1230,84 @@
     // The view as it was, once the screen shows; or the thing another screen asked for.
     requestAnimationFrame(() => {
       applyView();
-      if (focusSet && focusSet.fit) { focusSet.fit = false; fitTo(focusSet.keys); }
+      if (focusSet && focusSet.fit) { focusSet.fit = false; fitTo(focusSet.keys); ringOn(focusSet.keys); }
       if (pending) { const k = pending; pending = ''; focusOn(k); }
     });
   };
-  // A mark centred close up, its card open and a ring pulsing where it is.
+  // A mark centred close up, its card open and a ring pulsing on it.
   function focusOn(key) {
     const p = placed.get(key) || (key.startsWith('area:') ? AREA_NAMES().find((a) => 'area:' + a.id === key) : null);
     if (!p) return;
     // A mark of a layer drawn only close up (FINE) needs the view past that, or its card has no mark to sit on.
     const mk = all().list.find((x) => x.key === key);
     centreOn(p.x, p.y, mk && FINE.has(mk.layer) ? 4 : 3);
-    const sec = App.screenOf('map'), ping = sec && sec.querySelector('.mp-ping');
-    if (ping) { ping.dataset.x = p.x; ping.dataset.y = p.y; ping.dataset.lift = p.lift || 0; placeOver(ping); ping.hidden = false; ping.classList.remove('is-on'); void ping.offsetWidth; ping.classList.add('is-on'); }
+    // The mark isn't drawn on its point: its grid (arrange()), a bench's lift (REST) and, close up,
+    // spread() move it a little. Centred again on its disc as drawn, at the same zoom (so the
+    // spread stays as it is).
+    const { m } = nodes(), el = m && m.querySelector(`.mp-mk[data-mk="${CSS.escape(key)}"]`);
+    const r = el && el.querySelector('circle').getBoundingClientRect();
+    if (r && r.width && vb) {
+      const [x, y] = toMap(r.left + r.width / 2, r.top + r.height / 2);
+      vb = { ...vb, x: vb.x + x - (vb.x + vb.w / 2), y: vb.y + y - (vb.y + vb.h / 2) };
+      applyView();
+    }
+    ringOn([key]);
     pick1(key);
   }
-  /* Another screen's "on the map" (Progress, the Journal): the Map opens on that thing,
-     its layer switched on. */
+  /* The marks you came to see (another screen's pin, a search's result, a focus's step) ring
+     out three times (css .mp-arrive), a ring in each mark's own <g>, so it stays on the mark
+     wherever its grid or the zoom put it; while ARRIVE_MS lasts a render carries the rings on
+     where they were (the sibling's arrive, hallownest-calculator js/app-map.js). An area's
+     name (not a mark) has its ring at its point, in the names' layer. */
+  let arrive = null;   // { keys: Set, at }
+  const ARRIVE_MS = 3600;   // the ring's three pulses (css .mp-arrive)
+  const RING = '<circle class="mp-arrive" r="1.1" aria-hidden="true"';
+  function ringOf(key) {
+    const since = arrive ? performance.now() - arrive.at : 0;
+    if (arrive && since > ARRIVE_MS) arrive = null;
+    return arrive && arrive.keys.has(key) ? `${RING} style="animation-delay:${-Math.round(since)}ms"/>` : '';
+  }
+  function ringOn(keys) {
+    arrive = { keys: new Set(keys), at: performance.now() };
+    const { m } = nodes();
+    if (!m) return;
+    for (const x of m.querySelectorAll('.mp-arrive, .mp-arrive-at')) x.remove();
+    for (const el of m.querySelectorAll('.mp-mk[data-mk]')) if (arrive.keys.has(el.dataset.mk)) el.insertAdjacentHTML('beforeend', `${RING}/>`);
+    const names = m.querySelector('.mp-names');
+    for (const k of keys) {
+      const a = k.startsWith('area:') && names && AREA_NAMES().find((x) => 'area:' + x.id === k);
+      if (a) names.insertAdjacentHTML('beforeend', `<g class="mp-arrive-at" style="transform:translate(${n2(a.x)}px,${n2(a.y)}px) scale(var(--k,1))">${RING}/></g>`);
+    }
+  }
+  /* Another screen's "on the map" (Progress, the Journal) and the search's result: the Map shows
+     only that thing, as a search would (a focus of one: its name in the search's place and its ×
+     back to the whole map), its layer switched on for when you go back, centred on it, its card
+     open and its ring. */
   App.mapShow = (key) => {
     const m = all().list.find((x) => x.key === key);
     if (!m) return;
-    focusSet = null;
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
     savePrefs();
-    pending = key;
-    if (prefs.view === 'map') render(); else App.go('map');
+    focusMarks([key], [m.name, areaName(R.areaOf(m.scene) || m.area)].filter(Boolean).join(' · '));
   };
+  // The Map on these marks alone, whatever its layers and filters: one centred with its card, several fitted.
+  function focusMarks(keys, name) {
+    focusSet = { keys, name, i: keys.length > 1 ? -1 : 0, fit: keys.length > 1 };
+    pick1('');
+    pending = keys.length > 1 ? '' : keys[0];
+    if (prefs.view === 'map') render(); else App.go('map');
+  }
   /* Several marks at once (Progress's «Ver los n en el mapa», design/28, 3 A; the sibling's focus,
      hallownest-calculator js/app-map.js showOnMap): the Map shows only them, whatever its layers
      and filters, fitted to them, and a line in the search's place says what they are, with ‹ i of
      n › to go through them in the order given (the nearest to the bench first: the caller's) and
-     its × back to the whole map. One mark is App.mapShow's. */
+     its × back to the whole map; each of them rings. One mark is App.mapShow's. */
   let focusSet = null;   // { keys, name, i (-1: none picked yet), fit } while it lasts
   App.mapFocus = (keys, name) => {
     const list = all().list, ok = [...new Set(keys)].filter((k) => list.some((m) => m.key === k));
     if (ok.length < 2) { if (ok.length) App.mapShow(ok[0]); return; }
-    focusSet = { keys: ok, name, i: -1, fit: true };
-    pick1('');
-    if (prefs.view === 'map') render(); else App.go('map');
+    focusMarks(ok, name);
   };
   /* A Journal entry's rooms (the 'beast' marks), the most first, from its pin in the Journal
      (design/84, A); one room is a focus of one. */
@@ -1285,22 +1329,19 @@
   App.mapHunt = (quest) => {
     const keys = App.mapHuntKeys(quest);
     if (!keys.length || !QU.CHAIN[quest]) return;
-    focusSet = { keys, name: t('mapHuntFocus', { wish: pick(QU.CHAIN[quest].name) }), i: keys.length > 1 ? -1 : 0, fit: true };
-    pick1(keys.length > 1 ? '' : keys[0]);
-    if (prefs.view === 'map') render(); else App.go('map');
+    focusMarks(keys, t('mapHuntFocus', { wish: pick(QU.CHAIN[quest].name) }));
   };
   App.mapBeast = (id) => {
     const keys = App.mapBeastKeys(id), e = BOOK.get(id);
     if (!keys.length || !e) return;
-    focusSet = { keys, name: pick(e.name), i: keys.length > 1 ? -1 : 0, fit: true };
-    pick1(keys.length > 1 ? '' : keys[0]);
-    if (prefs.view === 'map') render(); else App.go('map');
+    focusMarks(keys, pick(e.name));
   };
   function focusBar() {
     const f = focusSet, n = f.keys.length;
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
-    return `<div class="mp-find mp-focus" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
-        ${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}
+    // One thing (App.mapShow) has nothing to go through: its name and its ×.
+    return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
+        ${n < 2 ? '' : `${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}`}
         <button type="button" class="mp-focus-x" data-act="mapFocusOff" aria-label="${esc(t('mapFocusOff'))}" title="${esc(t('mapFocusOff'))}">${App.cross}</button></div>`;
   }
   // The view around the focus's marks, a little room round them, never closer than a quarter of the map.
@@ -1439,7 +1480,7 @@
     // loaded the first time the screen has more pixels than the map, and kept.
     if (r.width * (window.devicePixelRatio || 1) / vb.w > 1) wantFine = true;
     composeMap(r);
-    for (const el of v.querySelectorAll('.mp-hornet, .mp-ping')) placeOver(el, r);
+    for (const el of v.querySelectorAll('.mp-hornet')) placeOver(el, r);
     paintCard();
   }
   /* The area names, from afar (design/64, 2 A): one that would overlap another waits for the zoom,
@@ -1495,7 +1536,7 @@
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && full && !e.defaultPrevented) setFull(false); });
   App.mapFullOff = fullOff;
 
-  /* What sits over the map in the page (Hornet, the search's ring): at its map point (data-x, -y),
+  /* What sits over the map in the page (Hornet): at its map point (data-x, -y),
      raised by data-lift pins where the mark rests on it (a bench on its floor: layout's REST). */
   function placeOver(el, r) {
     const { m } = nodes();
@@ -1948,12 +1989,12 @@
       pending = focusSet.keys[focusSet.i];
       render();
     },
-    mapFocusOff() { focusSet = null; pick1(''); render(); },
+    mapFocusOff() { focusSet = null; arrive = null; pick1(''); render(); },
   });
   // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
   for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame', 'mapHad']) {
     const f = actions[k];
-    actions[k] = (node) => { focusSet = null; f(node); };
+    actions[k] = (node) => { focusSet = null; arrive = null; f(node); };
   }
 
   // For the admin mode (js/app-map-admin.js): what it reads of the Map, and the list worked out
