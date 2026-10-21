@@ -85,7 +85,8 @@ test('a piece only Act 3 has says Act 3; one Act 3 moves keeps its Act, and its 
   // Every way a thing Act 3 moves takes there is Act 3's.
   for (const [k, [s, check, w]] of Object.entries(SP.ALSO)) {
     if (!w || w.kind !== 'moved') continue;
-    assert.equal(w.act, 3, k);
+    // Moorwing, met at the Greymoor Bellway once Bellhart is entered unbeaten, waits there from Act 2.
+    assert.equal(w.act, w.skipped ? 2 : 3, k);
     for (const c of savedOf(check)) if (low(c[1]) === low(s)) assert.equal((GATE.get(low(c[1] + '|' + c[2])) || {}).world, 'act3', `${k} ${c[2]}`);
   }
 });

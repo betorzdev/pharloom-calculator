@@ -384,20 +384,27 @@
   };
   // What Act 3 moves (js/spots.js ALSO's way { kind: 'moved' }), on its card in its Act 3 room: why it's there.
   const movedNote = (way) => (way.foe ? t('mapMovedFoe', { foe: pick(way.foe) })
-    : way.wish && QU.CHAIN[way.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[way.wish].name) }) : '');
+    : way.wish && QU.CHAIN[way.wish] ? t('mapMovedWish', { wish: pick(QU.CHAIN[way.wish].name) })
+      // Who leaves for there (Plinney, rescued in Shellgrave), or a boss met there when its first arena was passed by (Moorwing).
+      : way.npc ? t('mapMovedNpc', { npc: pick(HW.NPCS[way.npc]), area: areaName(way.from) })
+        : way.skipped ? t('mapMovedSkipped', { area: areaName(way.skipped), n: num(way.act) }) : '');
   /* A thing with another room (js/spots.js ALSO). A Tool sold that lies there once its seller is
      gone: a save says which room it's in (savefile foundNow), and the mark is there alone. What a
      vendor sells only in Act 3 and was had elsewhere before (way { kind: 'shop' }: Grindle's, Pebb's,
      Mort's and Lumble's wares, whose rooms the game empties in Act 3): with a save, at the vendor
      while the game is in Act 3 and hasn't it, where it was before otherwise. What Act 3 moves to
      another room (way { kind: 'moved' }: Mossberry no. 3, the Memory Locket of «Volatile
-     Flintbeetles»): with a save, there in Act 3 while not had, or once the save says it was had
-     there (foundNow), in its first room otherwise. With none (Free mode too, or a slot kept before
+     Flintbeetles»; Plinney and his Needle upgrades in Shellgrave, Moorwing at the Greymoor Bellway):
+     with a save, there while the save says so (foundNow: not had yet, or had there), in its first
+     room otherwise. With none (Free mode too, or a slot kept before
      it said), both, one thing (chk), the other's card saying when it's there. */
   function withAlso(add, mark, own) {
     // One of several places, a variant each (VARIANTS, below).
     const vars = (SP.VARIANTS || {})[mark.key];
     if (vars) { variantMarks(add, mark, vars, own); return; }
+    // At the place a value of the save names (js/spots.js PLACES: the Flea Brew at the caravan's stop, the Bell Eater at its Bellway).
+    const places = (SP.PLACES || {})[mark.key];
+    if (places) { placeMarks(add, mark, places, own); return; }
     const also = (SP.ALSO || {})[mark.key];
     if (!also) { add(mark); return; }
     const [scene, , way] = also, shop = !!way && way.kind === 'shop', moved = !!way && way.kind === 'moved';
@@ -407,9 +414,23 @@
     const there = { scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: from.act || mark.act,
       note: moved ? movedNote(way) : alsoNote(mark.key, shop ? way : null, !!own) };
     if (own && shop) { add(own.act >= way.act && !mark.got ? { ...mark, ...there } : mark); return; }
-    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) || (moved && own.act >= way.act && !mark.got) ? { ...mark, ...there } : mark); return; }
+    if (own && own.foundRead) { add(own.foundNow.includes(mark.key) ? { ...mark, ...there } : mark); return; }
     add(mark);
     add({ ...mark, ...there, key, chk: mark.chk || mark.key });
+  }
+  /* A thing at the place a value of the save names (js/spots.js PLACES): with a save that says
+     (savefile placesNow), there alone while not had, its own room otherwise; with none, its own
+     room, and the other places too when they're a guide's (guide: the Flea Brew's three stops, not
+     the Bell Eater's twelve Bellways). One thing (chk), each place's card saying the game has it there. */
+  function placeMarks(add, mark, places, own) {
+    const now = own && own.placesRead && !mark.got ? places.at.findIndex((x, i) => own.placesNow.includes(mark.key + '@' + i)) : -1;
+    // Its card: how it's had (a Tool's way), then why it's here; the place's own Act when it has one (the caravan's later stops).
+    const at = ([scene, , act]) => { const key = mark.key + ':' + lower(scene), xy = SP.XY[key];
+      return { ...mark, key, chk: mark.key, scene, at: xy && { x: xy[0], y: xy[1] }, area: R.areaOf(scene) || mark.area, act: act || mark.act,
+        noteAfter: t((own ? 'mapPlaceNow_' : 'mapPlaceIf_') + places.why) }; };
+    if (now >= 0) { add(at(places.at[now])); return; }
+    add(mark);
+    if (!(own && own.placesRead) && places.guide) places.at.forEach((p) => add(at(p)));
   }
   /* A Tool had at one of several places, a variant each (js/spots.js VARIANTS: the Silkshot's three
      repairs of the Ruined Tool, design/99, all A). With a save that has repaired it, only the place
@@ -512,8 +533,8 @@
     for (const [foe, scene, , act] of SP.BOSSES) {
       const f = FOE.get(foe), e = bookOfFoe(foe);
       if (e && e.steel && !steelGame) continue;
-      add({ key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id, gauntlets: fightsOf.get(foe),
-        draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) });
+      withAlso(add, { key: 'boss:' + foe, layer: 'boss', scene, act, got: !!g && g.bosses.includes(foe), name: f ? pick(f.name) : foe, foe, entry: e && e.id, gauntlets: fightsOf.get(foe),
+        draw: (s, ti, k, c) => badge('boss', portrait(e && e.id) || GLYPH.boss, s, ti, k, c) }, own);
     }
     for (const [field, scene, own] of SP.BELLS) {
       const b = own ? { name: own } : QU.BELLSHRINES.find((x) => x.field === field);
@@ -572,8 +593,8 @@
     for (const [id, scene] of Object.entries(SP.PEOPLE)) {
       if ((SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) continue;
       if (id === 'scrounge') { add({ key: 'person:' + id, layer: 'shop', scene, got: false, npc: id, name: t('mapScrounge'), draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }); continue; }
-      add({ key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
-        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) });
+      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
+        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) }, own);
     }
     /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
        (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
@@ -640,7 +661,7 @@
       }
       withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
-        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.vendor ? t('howShop', { vendor: pick(HW.NPCS[more.vendor]), price: num(more.price) }) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
             : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, own);
@@ -1474,10 +1495,11 @@
       if (App.VIEWS.includes('fight')) acts = btn('mapFight', x.id, t('mapFight'));
     } else if (kind === 'boss') {
       if (g) acts = state(t(m.got ? 'mapBeaten' : 'mapNotBeaten'));
+      note = m.note || m.noteAfter || '';   // where it waits now (js/spots.js ALSO, PLACES)
       // Its gauntlets, if its fight is one (or several): their waves, their reward, each on Fight.
       const xs = m.gauntlets || [], n = xs.reduce((k, x) => k + x.waves.length, 0), reward = xs.map((x) => x.reward).find(Boolean);
       if (xs.length) where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', t(n === 1 ? 'ftWaves1' : 'ftWaves', { n: num(n) })]);
-      if (reward) note = t('ftReward') + ': ' + pick(reward);
+      if (reward) note = [note, t('ftReward') + ': ' + pick(reward)].filter(Boolean).join(' · ');
       const fight = !App.VIEWS.includes('fight') ? '' : xs.length ? xs.map((x) => btn('mapFight', x.id, xs.length > 1 ? App.gauntletName(x.id) : t('mapFight'))).join('')
         : btn('mapFoe', m.foe, t('mapFight'));
       acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
@@ -1505,6 +1527,8 @@
         const things = givenBy(id).map((k) => list.find((x) => x.key === k)).filter((x) => x && (!g || !x.got));
         note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
       }
+      // Where they are now (js/spots.js ALSO: Plinney, gone from Bellhart in Act 3).
+      if (m.note) note = note ? m.note + '. ' + note : m.note;
       if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
     } else if (kind === 'board' || kind === 'giver') {
       note = wishesNote(m.quests);
