@@ -261,7 +261,10 @@ closes it): the whole drawing, from the game's files, on a soft light and at the
 draws it (a Mossgrub small, the Bell Beast filling it), so you know the bug when you meet it; one
 not seen yet is in shadow. Beside it the name, the kills, its areas and the nearest from your
 bench (with the pin the lists carry, which opens the Map on every room its enemies are in, how
-many in each, with ‹ › to go through them, with a save or without, complete or not), the description, and under the Hunter's symbol the Hunter's note once complete, or the
+many in each, with ‹ › to go through them, with a save or without, complete or not; a room
+your game's Act doesn't have them in, or where only a gauntlet's waves brought them and it's won,
+is dimmed, and each room's card says when it has them: Act 3 only, gone when Act 3 begins, or
+only in a gauntlet's waves), the description, and under the Hunter's symbol the Hunter's note once complete, or the
 game's «Defeat 11 more to complete the hunter's notes.» (the Void Tendrils has no kills: it says «Completed by inspecting its rune-scroll.» instead). An entry is complete when the save lists it
 with its kills done: the game writes them even for the entries it completes another way, and on
 the saves where Nuu has given the Memento the site counts all 230. In Free mode, the whole
@@ -473,9 +476,16 @@ leaves those off.
   Effigies, Choral Commandments, Rune Harps, Psalm Cylinders, the Arcane Egg) whose round caret
   opens them one by one, Mementos (the seven found somewhere: the Heart Memento is whichever Old
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
-  bought at Frey, with their price, and the Materium, Farsight and Crawbell built there once found,
-  at the Bellhome's door: their Key items marks are where each lies). The Vaultkeeper's Melody is
-  with Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults. Two things move in Act 3 if you don't have them yet, and have a second
+  bought at Frey, and the Materium, Farsight and Crawbell built there once found, at the
+  Bellhome's door: their Key items marks are where each lies). Their cards say how each is had: who
+  sells it and for how much, and what the shop waits for (Jubilana's Choral Commandment after The
+  Lost Merchant, Grindle's Psalm Cylinder, Frey's furnishings: the Bellhome entered, a relic sold
+  to Scrounge, the Vaultkeeper's collection, the Desk), the fight that drops it (the Grey, Hero's
+  and Craw Mementos), who gives it (Nuu, the Hunter's), the challenge that awards it (Seth's,
+  Sprintmaster Swift's, the Far Fields Rune Harp's speed challenge), and the Shellwood Weaver
+  Effigy, through the Chapel of the Witch after Rite of Rebirth. The Vaultkeeper's Melody is with
+  Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults. Two
+  things move in Act 3 if you don't have them yet, and have a second
   mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
   Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.
   With a save the mark is where your game has it (the Act 3 room in Act 3 while not had, or once
@@ -537,7 +547,11 @@ leaves those off.
   you enter Bellhart without beating it, waits by the Greymoor Bellway from Act 2: with a save that
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
-  your save names.
+  your save names. A fight the game only puts there once something holds says so on its card, and
+  with a save whether yours has it: the wish that brings it (the Broodmother, the Far Fields Savage
+  Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel), the wish granted first
+  (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
+  freed (the Whispering Vaults' second gauntlet).
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
@@ -561,7 +575,9 @@ while the wish is on, as the game shows him one at a time; the rescues and
   room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
   Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
-  objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
+  objectives, where the game's map pins them (an objective's steps the game pins on one spot are
+  one mark, with the Act of its first step, its card listing the steps in order, with a save which
+  are complete and the one you're on; the Bellshrines, Old Hearts and Melodies are already
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
   shows it; with a save where that wish is taken and not yet granted, only the station the Bell
@@ -587,9 +603,15 @@ while the wish is on, as the game shows him one at a time; the rescues and
   many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
   And the **Silk cocoons**, the small ones beside the Silkeaters, which give a little silk when struck.
 - **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
-  marks it (on at first), and the Journal's entries still missing, where the enemy is in the room
-  where each is found (a boss's entry is its boss's mark already, and the Void Mass's its own
-  switch's, not drawn again), counted as the Journal counts them: every entry.
+  marks it (on at first; one in an arena the map has no room for, the Bell Eater's or Lost Lace's,
+  goes to the room that leads there), its card saying how many rosaries it holds, and the Journal's
+  entries still missing, where the enemy is in the room where each is found in your game's Act:
+  where it roams then first, else a gauntlet not yet won whose waves bring it, else the first room
+  it's in (the game keeps some enemies to the world before Act 3 and others to Act 3's; a gauntlet's
+  waves come once). An entry no room has before Act 3 says Act 3. A boss's entry is its boss's mark
+  already, and the Void Mass's its own switch's, not drawn again; they're counted as the Journal
+  counts them: every entry. The Wingmoulds, in the Red Memory the map has no room for, are at the
+  room that takes you there.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little

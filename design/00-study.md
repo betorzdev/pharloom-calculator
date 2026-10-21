@@ -840,7 +840,8 @@ whose enemy carries it, in every component's raw data, and its RUNTIME table say
 Every water names the Muckmaggots' record, and only the MaggotRegions that are on count
 (overrideActive, or the scene's MapZone in the region's mask), which leaves the wiki's four areas
 exactly. Lost Lace's cocoon and the Bell Eater's arena aren't on the map, so they count as the scenes
-that load them (Abyss_05's dive, every Bellway station), and the nearest from the bench covers all
+that load them (Abyss_05's dive, every Bellway station; since 21 October also the Wingmoulds' Red
+Memory, by Tut_04, which first stayed off the map), and the nearest from the bench covers all
 237. The Void Mass looked like a disagreement (45 scenes against 34), but it isn't one: see the
 next paragraph.
 
@@ -2029,7 +2030,8 @@ with no Act of their own that only Act 3 has now say Act 3: under their room's B
 (the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town, the Abyss,
 Verdania). test/mark-acts.test.js. Left as they are, the wiki silent and the completionist
 consistent with the area: upper Bilewater's flea and Quick Sling (Faydown Cloak). The main
-objectives' pins still carry no Act (their stages don't line up with the completionist's).
+objectives' pins still carry no Act (their stages don't line up with the completionist's; the steps
+pinned on one point have theirs since 21 October, below).
 
 **Grindle's Act 3 stock on the Map** (18 October 2026, Albert: «marcar también en el Acto 3 lo
 que vende Grindle»). Progress already said Grindle's in Act 3 (the Act picks the way); the Map kept
@@ -2151,3 +2153,53 @@ dnfile and dncil) and over the 89 files of the author's saves:
 Checked: npm test, the text audit, check-pack on the 88 saves (all match), the Map in headless Chrome
 at 1440 and 390, es and en, in Free mode and five saves (early, mid, Act 3 Steel Soul, 100%), no
 console errors; each moved mark and its card looked at.
+
+**The Journal by Act, fights that wait for something, how an extra is had** (21 October 2026, the Map
+appearance audit, Albert's D25, D27, D28, D29, D16 and D32; design notes in the audit's reports). Read
+in the game's scenes with UnityPy and its code with dnfile/dncil (TestGameObjectActivator.Evaluate
+sets activateGameObject active when its test passes and deactivateGameObject when it fails):
+- **The Journal by Act.** The Journal's mark sat in its entry's first room, the one with the most of
+  it, whatever the Act: for 37 of the 192 that was a gauntlet's waves (Beastfly at Deep Docks 2, the
+  three Skarr at Hunter's March 2, the Cogworkers at Cogwork Core 1), a room Act 3 has them in only
+  (Snitchfly at Bone Bottom) or one Act 3 empties (Gromling and Grom in the Wormways, turned
+  Plasmified). `tools/extract-journal-rooms.py` now reads, per entry and room, each enemy's world by
+  the nearest switch above it (a TestGameObjectActivator testing blackThreadWorld alone, a
+  DeactivateIfPlayerdata on it), its scene's loaders (Hang_04_boss, the Forum's arena, loads only
+  before Act 3) or a memory (Act 3), and the BattleScene whose waves alone bring it
+  (`SS.journalWhen`); `tools/gen-spots.js` adds the rooms only Act 3 has and the ones
+  act3MapUpdated takes away (`js/spots.js JOURNAL`, `JOURNAL_ACT3`, and an XY point per room the Map
+  may give). With a save the mark goes where the entry roams in its Act, else to a gauntlet not yet
+  won whose waves bring it, else its first room there; an entry no room has before Act 3 says Act 3
+  (40, the Coral Tower's, Lost Verdania's, the Abyss's, the Plasmified grubs'). The focus of an
+  entry's rooms dims a room the game's Act lacks it in or only a won gauntlet brought it to, and each
+  room's card says when it's there.
+- **Off the map.** A scene `js/rooms.js roomOf` can't place is given by the rooms that load it or name
+  it (a loader, a door), through the ones in between: the Wingmoulds (entry 222, in the Red Memory)
+  now have Tut_04, and `SS.sceneHosts` lists every such scene, so Hornet's cocoon in the Bell Eater's
+  or Lost Lace's arena goes to the room that leads there (or a door's room for a graph-only interior),
+  and its card says the rosaries it holds (HeroCorpseMoneyPool: 463 in the one save of the 89 that
+  has a cocoon). No arenas beyond the wiki's 49 gauntlets (D30).
+- **What opens a fight** (`js/spots.js OPENS`, savefile `opens`): a boss or gauntlet the game puts
+  there only once something holds says so on its card, and with a save whether yours has it: the
+  wish taken (the Broodmother, the Far Fields Beastfly whose loader tests it, Gurr, Lost Garmond,
+  Tormented Trobbio, the Second Sentinel), Trail's End granted (Greymoor_08's Mapper Sparring Scene
+  Loader), the Drifter's Cloak (the Fourth Chorus's loader, hasBrolly), scholarAcolytesReleased (the
+  Acolytes' arena in Library_02, which TimePassesElsewhere fills once they're freed; StartAct3 frees
+  them). Over the 89 saves no fight is beaten without its opening held.
+- **How an extra is had** (`EXTRAS more`): an extra a vendor sells takes its shop entry (js/shop.js:
+  Jubilana's Choral Commandment, 180, after The Lost Merchant; Grindle's Psalm Cylinder, 240; Frey's
+  five furnishings, with what his shop waits for: the Bellhome entered, a relic sold to Scrounge,
+  the Vaultkeeper's collection, the Desk; the Spa's own flag isn't one the site can name, so it's left
+  out), and a small table the rest (the Grey, Hero's and Craw Mementos by their fights, the Hunter's
+  by Nuu, the Guardian's and Sprintmaster's by their challenges, the Far Fields Rune Harp the speed
+  challenge's prize, Shellwood's Weaver Effigy through the Chapel of the Witch after Rite of Rebirth).
+  The cards say it in the words Progress already uses (howShop, howBoss, howGift, howChallenge).
+- **Objective steps on one point** (`js/spots.js STEPS`, `GOAL_ACT`): the game draws one pin of an
+  objective at a time, and the site drew its steps stacked (Tut_03 49, 52, 53; Dock_12 68, 70;
+  Cog_Dancers 55, 57; the Abyss 50, 54, 2 px apart). They're one mark now, the first step's key, named
+  by the step a save is on, its card listing them in order (complete, current), with an Act from the
+  objective's chain: 3 past After the Fall, 2 past The Great Citadel (none done in a save of an
+  earlier Act, over the 89).
+test/journal-acts.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all match), and the Map in
+headless Chrome over file:// at 1440 and 390, es and en, Free mode and saves of Acts 1, 2 and 3, the
+cocoon's and Steel Soul's among them.

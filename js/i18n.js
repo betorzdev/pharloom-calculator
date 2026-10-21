@@ -455,6 +455,29 @@
     mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
     mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
+    // Where an entry's enemies only come in a gauntlet's waves (js/spots.js JOURNAL; the site's words).
+    mapBeastWaves:  { es: 'Solo en las oleadas de {fight}', en: 'Only in the waves of {fight}' },
+    mapBeastWavesAny: { es: 'Solo en las oleadas de un combate', en: 'Only in a fight\'s waves' },
+    // Hornet's cocoon: the rosaries it holds (HeroCorpseMoneyPool; the game's word: INV_NAME_COIN).
+    mapCocoonRosaries: { es: 'Guarda {n} rosarios.', en: 'Holds {n} rosaries.' },
+    // What the game waits for before it puts a fight there (js/spots.js OPENS), and whether this game has it.
+    mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
+    mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
+    mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
+    mapOpenYes:     { es: 'ya está', en: 'done' },
+    mapOpenNo:      { es: 'aún no', en: 'not yet' },
+    // What Frey's furnishings wait for (js/shop.js needs), and the names in them.
+    mapNeedVisited: { es: 'haber entrado en el {place}', en: 'having been in the {place}' },
+    mapNeedRelic:   { es: 'una reliquia vendida a {npc}', en: 'a relic sold to {npc}' },
+    mapNeedCollection: { es: 'la colección de {npc} completa', en: '{npc}\'s collection complete' },
+    mapBellhome:    { es: 'Hogar campana', en: 'Bellhome' },   // BELLHOME
+    mapCardinius:   { es: 'Guardián de las Bóvedas Cardinius', en: 'Vaultkeeper Cardinius' },   // LIBRARIAN_RELIC_SUPER+LIBRARIAN_RELIC_MAIN
+    // How an extra is had when no one sells it (js/spots.js EXTRAS more.how).
+    mapSpeedPrize:  { es: 'Premio de un reto de velocidad', en: 'A speed challenge\'s prize' },
+    mapThroughChapel: { es: 'Por la {place}, tras «{wish}»', en: 'Through the {place}, after "{wish}"' },
+    // An objective's steps the game pins on one point (js/spots.js STEPS).
+    mapSteps:       { es: 'Pasos: {list}', en: 'Steps: {list}' },
+    mapStepNow:     { es: 'en curso', en: 'current' },
     mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     // One enemy, two places (js/spots.js TASKS alt, by the shortcut): the Flintbeetle's.
     mapAltShortcutShut: { es: 'Este {foe} cambia de sitio: está aquí hasta que se abre el atajo de la trampilla, y luego en otra sala.', en: 'This {foe} moves: it\'s here until the trapdoor shortcut is opened, then in another room.' },
