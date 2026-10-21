@@ -544,9 +544,11 @@ leaves those off.
   offers a wish in someone else's room has a mark of their own: Nuu in Creige's Halfway House); where a wish is granted (the
   deliveries and the Steel Sentinel's spots where the game's own map pins them, of the Sentinel's
   six only the three your game chose, and only in Steel Soul; the Herald's seven; the rescues and
-  fights, in the room where the game ends the wish); what a wish asks for (the 22 things lying in a
+  fights, in the room where the game ends the wish); what a wish asks for (the 25 things lying in a
   room or given there: the Pollip Hearts, the Flintgems, the Grand Hunts' trophies, the
-  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines; and the fourteen
+  Gourmand's delicacies, the three souls, the Twisted Bud, the Steel Spines, the three Plasmium
+  buds of Alchemist's Assistant in the lower Wormways, each done once the Needle Phial has drawn
+  its Plasmium, as the save keeps it; and the fourteen
   spots above and below Bellhart where a Silver Bell may drop, gone once their wish is granted); and the main
   objectives, where the game's map pins them (the Bellshrines, Old Hearts and Melodies are already
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's

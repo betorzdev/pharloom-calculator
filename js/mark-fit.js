@@ -426,6 +426,7 @@
     "assets/map/icons/i_slab_key_brass.webp": [87, 121, 43.5, 60.5, 121, 64.6],
     "assets/map/icons/i_slab_key_gold.webp": [87, 121, 43.5, 60.5, 121, 64.6],
     "assets/map/icons/i_token_of_faith.webp": [124, 126, 62.0, 62.5, 125, 79.7],
+    "assets/map/icons/icon_inv_blue_health_jar_0001_3.webp": [115, 119, 57.0, 59.5, 119, 72.5],
     "assets/map/icons/m_crest.webp": [104, 114, 52.5, 57.0, 114, 68.6],
     "assets/map/icons/m_tusk.webp": [106, 102, 52.5, 51.0, 105, 69.8],
     "assets/map/icons/mandrake_icon0000.webp": [104, 128, 52.0, 63.5, 125, 66.0],

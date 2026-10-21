@@ -1502,7 +1502,8 @@ console.log(`${Object.keys(XY).length} things with their own point in their room
 /* ── The wishes and the main objectives (TASKS), from kb/data/game/wishes.json ──
    (tools/extract-wishes.py, the game's own files; design/03-redesign.md, step 6, Albert's choice)
      qitem  what a wish asks for, where it lies (a pickup, the flower that gives it, the Flintbeetle
-            that drops it, the spots the Silver Bells drop at) or who gives it: done once its
+            that drops it, the Plasmium bud the Needle Phial draws it from, the spots the Silver
+            Bells drop at) or who gives it: done once its
             sceneData flag is set, it's held (when it lies in one spot only), or its wish is done
             (a drop spot: its wish only)
      wspot  where a wish is done: the map's own pins for the deliveries and the Steel Sentinel's

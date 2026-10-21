@@ -21,6 +21,11 @@ What it reads (read on 11-Oct-2026, patch 1.0.30000):
         either death sets rockRollerDefeated_bone06), and the playerData bools it or a parent needs
         to be there (DeactivateIfPlayerdataTrue / False: Bone_04's only while
         bone03_openedTrapdoorForRockRoller is false, Bone_06's once it's true), field → value;
+      - each of BUDS' components, a thing that gives a wish's target with no reference to it (the
+        Plasmium buds, LifebloodPustule, read on 21-Oct-2026): [scene, component, object, bool, x, y],
+        bool its persistentBroken's (set once the Needle Phial's charged stab extracts it), the
+        object the bud itself; only the ones there before GROWN is set, the ones the wish is done
+        with (three, one each in crawl_03, crawl_07 and crawl_09, as many as it asks for);
       - each of DROPPERS' FSMs, a spot where a wish's target drops by chance while the wish is
         active (its CheckQuestStateV2 names the wish): the Silver Bells' seven spots above
         Bellhart and seven below (component QuestDropper, no flag);
@@ -78,6 +83,13 @@ EMBLEMS = {'Courier', 'Steel Sentinel', 'Herald', 'Wayfarer'}
 # Bells' (Quest Bell Dropper, Quest Bell Dropper (1)…, in belltown_04 and belltown_basement_03).
 DROPPERS = ('Quest Bell Dropper',)
 CHECK = 'CheckQuestStateV2'
+# What gives a wish's target from the game's code, by component → the target: Hornet's Needle Phial
+# takes Plasmium from a bud (LifebloodPustule). The buds the wish is done with stand under a
+# TestGameObjectActivator that takes them away once GROWN is set (Alchemist's Assistant granted);
+# the ones it brings (crawl_07's "After State", Act 3's large ones, each with a
+# DeactivateIfPlayerdataFalse of it) are only for the Plasmium masks: left out.
+BUDS = {'LifebloodPustule': 'Plasmium'}
+GROWN = 'BlueScientistSceneryPustulesGrown'
 CLS = None
 
 
@@ -121,6 +133,8 @@ def scene(args):
 
     bools, found = {}, []   # GameObject → its PersistentBoolItem's ID; (kind, gid, …)
     spawn = {}   # GameObject → its SPAWN components, read only for an enemy that drops a target
+    bool_go = {}   # a PersistentBoolItem → its GameObject
+    switch = []   # the TestGameObjectActivators, read only for a bud
     for o in env.objects:
         if o.type.name != 'MonoBehaviour':
             continue
@@ -128,10 +142,16 @@ def scene(args):
         if cls in SPAWN:
             spawn.setdefault(struct.unpack_from('<q', o.get_raw_data(), 4)[0], []).append((cls, o))
             continue
-        if cls not in ('CollectableItemPickup', 'PersistentEnemyItemDrop', 'PersistentBoolItem', 'PlayMakerFSM'):
+        if cls == 'TestGameObjectActivator':
+            switch.append(o)
+            continue
+        if cls not in ('CollectableItemPickup', 'PersistentEnemyItemDrop', 'PersistentBoolItem', 'PlayMakerFSM', *BUDS):
             continue
         raw = o.get_raw_data()
         gid = struct.unpack_from('<q', raw, 4)[0]
+        if cls in BUDS:
+            found.append((cls, gid, o.read_typetree()['persistentBroken']['m_PathID']))
+            continue
         if cls == 'PlayMakerFSM':
             hit = FIELD.findall(raw)
             ext = {e.path.split('/')[-1].lower() for e in o.assets_file.externals}
@@ -165,6 +185,7 @@ def scene(args):
         elif cls == 'PersistentBoolItem':
             tt = o.read_typetree()
             bools[gid] = (tt.get('itemData') or {}).get('ID') or ''
+            bool_go[o.path_id] = gid
         else:
             tt = o.read_typetree()
             ref = at(o.assets_file, tt.get('item'))
@@ -188,6 +209,36 @@ def scene(args):
             g = T[f].m_GameObject.m_PathID if f in T else 0
         return {'dead': dead, 'needs': dict(sorted(needs.items()))}
 
+    def grown(gid):
+        """A bud: what GROWN must be for it to be there (True, False, or None when it doesn't
+        matter), from the DeactivateIfPlayerdata<True|False>s of GROWN (on their objectToDeactivate,
+        else their own object) and the TestGameObjectActivators of one test of GROWN (the object it
+        activates is there when the test holds, the one it deactivates when it doesn't), on the bud
+        or a parent."""
+        tests = {}   # an object → the GROWN it's there with
+        for host, cs in spawn.items():
+            for cls, o in cs:
+                tt = o.read_typetree()
+                if cls != 'EnemyDeathEffectsRegular' and tt.get('boolName') == GROWN:
+                    tests[(tt.get('objectToDeactivate') or {}).get('m_PathID') or host] = cls == 'DeactivateIfPlayerdataFalse'
+        for o in switch:
+            tt = o.read_typetree()
+            groups = (tt.get('playerDataTest') or {}).get('TestGroups') or []
+            if len(groups) == 1 and len(groups[0]['Tests']) == 1 and groups[0]['Tests'][0]['FieldName'] == GROWN:
+                v = bool(groups[0]['Tests'][0]['BoolValue'])
+                tests[tt['activateGameObject']['m_PathID']] = v
+                tests[tt['deactivateGameObject']['m_PathID']] = not v
+        need, g = set(), gid
+        while g:
+            if g in tests:
+                need.add(tests[g])
+            t = of_go.get(g)
+            f = t.m_Father.m_PathID if t is not None else 0
+            g = T[f].m_GameObject.m_PathID if f in T else 0
+        if len(need) > 1:
+            fail(f'{name}: a bud there both before and after {GROWN}')
+        return need.pop() if need else None
+
     out = {'items': [], 'ends': [], 'fields': [], 'offers': []}
     for f in found:
         gid = f[1]
@@ -198,7 +249,13 @@ def scene(args):
         xy = world(gid)
         own = bools.get(gid)
         flag = (own or go) if own is not None else None
-        if f[0] == 'CollectableItemPickup':
+        if f[0] in BUDS:
+            b = bool_go.get(f[2])
+            if b is None:
+                fail(f'{name}: a {f[0]} with no persistentBroken of its own')
+            if grown(gid) is not True:
+                out['items'].append([BUDS[f[0]], name, f[0], go, bools[b] or of_go[b].m_GameObject.read().m_Name, *xy])
+        elif f[0] == 'CollectableItemPickup':
             if f[2][1] not in ('Quest', 'MainQuest'):   # one that only waits on a quest isn't the thing
                 out['items'].append([f[2][0], name, f[0], go, flag, *xy])
         elif f[0] == 'PersistentEnemyItemDrop':
@@ -384,6 +441,8 @@ def main(game):
                 fields.setdefault(x[0], []).append(x[1:])
             for x in r['offers']:
                 offers.setdefault(x[0], []).append(x[1:])
+    if not items.get('Plasmium'):
+        fail('no Plasmium bud found in the scenes: LifebloodPustule changed')
     qpins, benches = pins(game)
     if len(qpins) < 50 or len(benches) < 40:
         fail(f'{len(qpins)} quest pins, {len(benches)} bench pins on the map: Game_Map_Hornet changed')
