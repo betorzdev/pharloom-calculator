@@ -580,7 +580,7 @@
   function stepCard(r, s, g, cls = '') {
     const say = s.alt ? ALT_SAYS[s.id] : STEP_SAYS[s.id];
     const x = say ? say(s) : null, map = mapLink(r, s, stepMarks(r, s, g));
-    return x || map ? `<div class="pg-says${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
+    return x || map ? `<div class="pg-says${x && x.text ? '' : ' is-line'}${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
   }
   // A row's own words (4 A), folded under «Lo que dice el juego».
   function saysRow(x) {
@@ -779,9 +779,12 @@
      its title as a list. It ends at the Act it opens, named as the Acts on top name it. A step's
      open or shut is kept while the page is (routeOpen), the one you're on open at first. */
   const routeOpen = new Map();
-  /* The step you're on, when it has several parts (design/84, 2 A): what it asks said once, then its
-     parts in one line, each its picture, its name and its count, ticked when met. */
-  function routeParts(r, s, g, ps) {
+  /* A part's count: what it asks in the guide, ticked when met. */
+  const partCount = (p, g) => (!g ? `<span class="pg-count"><i class="u">${num(p.of)}</i></span>` : p.got >= p.of
+    ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of));
+  /* What the step you're on asks, said once (design/84, 2 A); its parts head its list (todoHtml,
+     design/103, 2 A). */
+  function routeParts(r, s, g) {
     const say = s.id === 'unlock' ? t('roadAllThree', { caretaker: t('roadCaretaker'), wish: wishOf(r) })
       : s.id === 'offer' ? offerNote(s, g) : s.id === 'silk' ? t('roadSilkNote', { twisted: t('ending_D') }) : '';
     /* The Cursed Crest worn blocks the road to Act 3 (js/acts.js cursed): Pavo's FSM keeps the key,
@@ -790,10 +793,7 @@
        wish Infestation Operation (Doctor Curse Cure). */
     const warn = r.cursed ? `<p class="pg-note is-warn">${esc(t('roadCursed', { cure: wishName('Doctor Curse Cure'), pavo: personName('bellhart-greeter'),
       couriers: personName('couriers'), silk: foeName('grand-mother-silk'), twisted: t('ending_D') }))}</p>` : '';
-    const lead = warn + (say ? `<p class="pg-lead">${esc(say)}</p>` : '');
-    if (ps.length < 2) return lead;
-    return lead + `<ul class="pg-rt-parts">${ps.map((p) => `<li class="${g && p.got >= p.of ? 'is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${!g ? `<span class="pg-count"><i class="u">${num(p.of)}</i></span>` : p.got >= p.of
-      ? `<span class="pg-count"><span class="pg-mark">${App.tick}</span> <b>${pts(p.of)}</b><i class="u">/${num(p.of)}</i></span>` : count(p.got, p.of)}</li>`).join('')}</ul>`;
+    return warn + (say ? `<p class="pg-lead">${esc(say)}</p>` : '');
   }
   /* The other way in beside the road (design/90c, 1 A): the Phantom's station, framed, before the
      step it leads back to, on a second thread that parts from the road before its first step and
@@ -837,7 +837,7 @@
         const one = ps.length === 1 && !ps[0].rows.length;
         // A step done or skipped keeps the game's words, without the way onto the Map (as a step peeked at did).
         const x = (done || skipped) && STEP_SAYS[s.id] ? STEP_SAYS[s.id](s) : null;
-        body = `<div class="pg-rt-body">${done || skipped ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur || guide ? routeParts(r, s, g, ps) : ''}${ps.length && !one ? todoHtml(r, s, ps, !guide) : ''}</div>`;
+        body = `<div class="pg-rt-body">${done || skipped ? (x ? `<div class="pg-says">${saysHtml(x)}</div>` : '') : stepCard(r, s, g)}${cur && stale ? `<p class="pg-note is-warn">${esc(t('roadStale'))}</p>` : ''}${cur || guide ? routeParts(r, s, g) : ''}${ps.length && !one ? todoHtml(r, s, ps, g) : ''}</div>`;
       }
       const li = `<li class="pg-rt-st${done ? ' is-done' : skipped ? ' is-skipped' : cur ? ' is-cur' : guide ? '' : ' is-later'}${beside.has(s.id) ? ' is-beside' : ''}"${cur ? ' aria-current="step"' : ''}><span class="pg-rt-dia" aria-hidden="true"></span>
           <h3 class="pg-rt-h"><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
@@ -862,43 +862,55 @@
      (with the nearest wishes that would give them, the rest unfolding), each condition, Bellshrine or
      piece of the snare; a step of one thing, its title. Each with its picture, its place and the
      Map's pin. With «Everything» (prefs.pgAll, the 100% tab's own toggle), what's done too, ticked in
-     its place, and the wishes that gave points among the options. */
+     its place, and the wishes that gave points among the options. A step of several parts lists each
+     under its part's head (design/103, 2 A), its rows named bare: the head says what they are. */
   const byNear = (rows) => rows.map((x, i) => ({ x, i, d: dist(x) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.i - b.i).map((e) => e.x);
   function todo(r, s, ps, all) {
-    const out = [];
+    const out = [], heads = ps.length > 1;
     for (const p of ps) {
       const left = p.rows.filter((x) => !x.got);
       if (p.id === 'points') {
-        if (p.got >= p.of) { if (all) out.push({ name: p.label, icon: p.icon, done: true }); continue; }
+        // Met, its head says so; with no heads, a done row in its place.
+        if (p.got >= p.of) { if (all && !heads) out.push({ part: p.id, name: p.label, icon: p.icon, done: true }); continue; }
         const known = left.some((x) => dist(x) != null);
-        out.push({ name: t('pgTodoPoints', { n: pts(p.of - p.got) }), icon: p.icon, how: t(known ? 'pgTodoAnyNear' : 'pgTodoAny', { n: num(left.length) }),
+        out.push({ part: p.id, name: t('pgTodoPoints', { n: pts(p.of - p.got) }), icon: p.icon, how: t(known ? 'pgTodoAnyNear' : 'pgTodoAny', { n: num(left.length) }),
           opts: byNear(left), had: all ? p.rows.filter((x) => x.got) : [] });
         continue;
       }
-      if (!p.rows.length) { if (p.got < p.of) out.push({ name: stepTitle(r, s), icon: p.icon }); continue; }
+      if (!p.rows.length) { if (p.got < p.of) out.push({ part: p.id, name: stepTitle(r, s), icon: p.icon }); continue; }
       for (const x of all ? p.rows : left) {
         const ready = !x.got && x.test === 'bellhomeKey' && x.ready;
-        const name = p.id === 'required' ? t('pgTodoWish', { wish: x.name })
+        const name = ready ? t('pgTodoPavo', { key: x.name }) : heads ? x.name
           : p.id === 'shrines' ? t('pgTodoShrine', { area: x.name })
-          : ready ? t('pgTodoPavo', { key: x.name })
-          : x.test === 'doubleJump' || x.test === 'bellhomeKey' || p.id === 'snare' ? t('pgTodoGet', { name: x.name }) : x.name;
-        out.push({ ...x, name, done: x.got, ...(ready ? { how: '' } : {}), area: p.id === 'shrines' ? null : x.area });
+          : p.id === 'snare' ? t('pgTodoGet', { name: x.name }) : x.name;
+        out.push({ ...x, part: p.id, name, done: x.got, ...(ready ? { how: '' } : {}), area: p.id === 'shrines' ? null : x.area });
       }
     }
     return out;
   }
+  /* A row's how (design/103, 1 A): its lead on one line, «More» at its end unfolding what it waits
+     for and what the game says of it (pgFold). */
+  function foldHtml(how, more = [], says = null) {
+    const q = says && says.text ? says : null;
+    if (!more.length && !q) return how ? `<span class="pg-how">${esc(how)}</span>` : '';
+    const id = 'pg-fold-' + (++howN);
+    return `<span class="pg-how">${how ? esc(how) + ' · ' : ''}<button type="button" class="text-btn pg-fold-btn" data-act="pgFold" aria-expanded="false" aria-controls="${id}">${esc(t('pgFold'))}${App.chevron(false)}</button></span>
+        <span class="pg-fold" id="${id}" hidden>${more.map((m) => `<span>${esc(m)}</span>`).join('')}${q
+          ? `<span class="pg-says-q"><span class="pg-says-tag">${esc(TAG[q.tag]())}</span> <span${NT}>${esc(sayText(q.text))}</span></span>` : ''}</span>`;
+  }
   const OPTS = 4;   // the nearest wishes for points shown before «and n more»
   let todoN = 0;    // each list's own ids (the guide has one per road's step opened)
-  function todoHtml(r, s, ps, toggle = true) {
+  function todoHtml(r, s, ps, g) {
+    const toggle = !!g, heads = ps.length > 1;
     const items = todo(r, s, ps, !!prefs.pgAll);
-    if (!items.length) return '';
+    if (!items.length && !heads) return '';
     const opt = (o, i) => `<li${i >= OPTS ? ' class="is-extra"' : ''}><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`;
     const had = (o) => `<li class="is-got">${App.tick}<img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span></li>`;
     let n = 0;
-    // In the guide (toggle off), the whole list under its station, with no title and no «What's
-    // missing · Everything»: nothing's next or done there.
+    // In the guide (toggle off), the whole list under its station, with no «What's missing ·
+    // Everything»: nothing's next or done there.
     const hid = 'pg-todo-' + (++todoN);
-    return `<section class="pg-todo"${toggle ? ` aria-labelledby="${hid}"><h3 class="pg-part" id="${hid}">${esc(t('pgTodo'))}</h3>` : '>'}
+    return `<section class="pg-todo"${toggle ? ` aria-label="${esc(t('pgTodo'))}"` : ''}>
       ${toggle ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
         <button type="button" data-act="pgShow" data-value="all" aria-pressed="${!!prefs.pgAll}">${esc(t('pgAll'))}</button>
@@ -915,13 +927,18 @@
       const more = x.opts ? x.opts.length - OPTS : 0;
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${howHtml(x.how, x.more)}${saysRow(x.says)}
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says)}
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </li>`;
     };
-      return `<ol class="pg-list">${items.map(li).join('')}</ol>`; })()}</section>`;
+      if (!heads) return `<ol class="pg-list">${items.map(li).join('')}</ol>`;
+      // Each part's head: its picture, its name and its count, ticked when met; its rows under it.
+      return ps.map((p) => `<h4 class="pg-todo-h${g && p.got >= p.of ? ' is-done' : ''}"><img src="${p.icon}" alt="" loading="lazy"><span class="pg-rt-pk">${esc(p.label)}</span>${partCount(p, g)}</h4>${(() => {
+        const mine = items.filter((x) => x.part === p.id);
+        return mine.length ? `<ol class="pg-list">${mine.map(li).join('')}</ol>` : '';
+      })()}`).join(''); })()}</section>`;
   }
   /* «Tu partida», in Act 3 (round 1, 4 A): the endings, then two rings: the endings seen, and the
      things of the 100% only Act 3 holds. */
@@ -1149,6 +1166,14 @@
         else if (kind === 'everbloom') m.everbloom = !m.everbloom;
         else m[kind] = flip(m[kind], id);
       });
+    },
+    // A row's «More» on the road (design/103, 1 A): what it waits for and the game's words.
+    pgFold(node) {
+      const f = document.getElementById(node.getAttribute('aria-controls'));
+      if (!f) return;
+      f.hidden = !f.hidden;
+      node.setAttribute('aria-expanded', String(!f.hidden));
+      node.innerHTML = esc(t(f.hidden ? 'pgFold' : 'pgSaysHide')) + App.chevron(!f.hidden);
     },
     pgMore(node) {
       const how = document.getElementById(node.getAttribute('aria-controls'));
