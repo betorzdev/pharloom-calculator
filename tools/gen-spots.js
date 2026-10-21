@@ -582,7 +582,21 @@ function lyingPurse(c) {
   }
   return null;
 }
-for (const sec of C.sections('relics.ts')) for (const it of sec.items) extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it);
+/* The Sacred Cylinder (Librarian Melody Cylinder) is a relic of its own, not one of the five Psalm
+   Cylinders: it lies in library_10 and Cardinius takes it to play the Vaultkeeper's Melody (js/how.js,
+   the melody's way). Its name and icon are the game's (INV_NAME_R_PSALM_CYL_MELODY; collectableitems.bundle,
+   «R Librarian Melody Cylinder» typeIcon), and more.melody is the melody it leads to (CO.PIECES), so
+   each card points at the other. */
+const SACRED = 'Librarian Melody Cylinder';
+for (const sec of C.sections('relics.ts')) for (const it of sec.items) {
+  extra(RELIC_KIND[sec.name] || fail(`relic kind ${sec.name}`), it, it.parsingInfo.internalId === SACRED ? N.text('INV_NAME_R_PSALM_CYL_MELODY') : undefined);
+}
+{
+  const x = EXTRAS.find((y) => y[2][0] === 'relic' && y[2][1] === SACRED) || fail(`no relic ${SACRED} in relics.ts`);
+  const melody = CO.PIECES.findIndex((p) => p[0] === 'melody' && p[2][1] === 'HasMelodyLibrarian');
+  if (melody < 0) fail('no melody checked by HasMelodyLibrarian');
+  x[5] = { ...(x[5] || {}), icon: 'hornet_icon_0000_r_psalm_cylinder_white', melody };
+}
 for (const it of C.load('mossberries.ts')) extra('mossberry', it);
 for (const it of C.load('silkeaters.ts')) extra('silkeater', it);
 /* The Heart Memento isn't found anywhere: it's whichever of the four Old Hearts The Old Hearts
@@ -2251,7 +2265,8 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
               map machine sells, { found } for one found, { item } for a rosary or shard item
               ({ item, fight } for one an arena drops: that gauntlet's id), { vendor, price } for
-              one a vendor sells (Frey's furnishings), { gone: 'act3' }
+              one a vendor sells (Frey's furnishings), { icon, melody } for the Sacred Cylinder
+              (its picture in assets/map/icons/, the CO.PIECES melody it leads to), { gone: 'act3' }
               for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had

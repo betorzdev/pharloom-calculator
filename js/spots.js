@@ -43,7 +43,8 @@
               its own; more { shop, price } for a map Shakra sells, { machine, price } for one a
               map machine sells, { found } for one found, { item } for a rosary or shard item
               ({ item, fight } for one an arena drops: that gauntlet's id), { vendor, price } for
-              one a vendor sells (Frey's furnishings), { gone: 'act3' }
+              one a vendor sells (Frey's furnishings), { icon, melody } for the Sacred Cylinder
+              (its picture in assets/map/icons/, the CO.PIECES melody it leads to), { gone: 'act3' }
               for what the game takes away when Act 3 begins, { lost: check, person } for what the game takes away with someone once that check holds
               (Grindle's cell door), { mode: 'steel' or 'normal' } for what only that mode has,
               { was } the check it had before the save checks and { wasKind } the kind it had
@@ -689,7 +690,14 @@
     ['psalm-cylinder', 2, ['relic', 'Psalm Cylinder Library Roof'], 'library_09', undefined],
     ['psalm-cylinder', 2, ['relic', 'Psalm Cylinder Hang'], 'hang_10', undefined],
     ['psalm-cylinder', 2, ['relic', 'Psalm Cylinder Ward'], 'under_08', undefined],
-    ['psalm-cylinder', 2, ['relic', 'Librarian Melody Cylinder'], 'library_10', undefined],
+    [
+      'psalm-cylinder',
+      2,
+      ['relic', 'Librarian Melody Cylinder'],
+      'library_10',
+      { es: 'Cilindro sagrado', en: 'Sacred Cylinder', key: 'INV_NAME_R_PSALM_CYL_MELODY' },
+      { icon: 'hornet_icon_0000_r_psalm_cylinder_white', melody: 119 },
+    ],
     ['arcane-egg', 3, ['relic', 'Ancient Egg Abyss Middle'], 'abyss_04', undefined],
     ['mossberry', 1, ['bool', 'Tut_02', 'moss_berry_fruit'], 'Tut_02', undefined],
     ['mossberry', 1, ['bool', 'Tut_01b', 'moss_berry_fruit'], 'Tut_01b', undefined],

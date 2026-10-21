@@ -710,7 +710,7 @@
         return;
       }
       withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
-        name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null,
+        name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null, melody: more.melody,
         note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop && kind === 'map' ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.shop ? soldNote(more) : more.vendor ? t('howShop', { vendor: pick(HW.NPCS[more.vendor]), price: num(more.price) }) : more.how ? howExtra(more.how) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
@@ -1636,6 +1636,9 @@
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
         : LADDER_KINDS.includes(m.layer) ? `${state(t('pgLadderNote'))}<a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a>`
           : `<button type="button" class="text-btn" data-act="mapMark" data-value="${i}" aria-pressed="${m.got}">${esc(t(m.got ? 'mapUnmark' : 'mapMark'))}</button>`;
+      // What it's learned with, a mark of its own (the Vaultkeeper's: the Sacred Cylinder Cardinius takes).
+      const cyl = list.find((x) => x.melody === i);
+      if (cyl) acts += btn('mapShow', cyl.key, t('mapToCylinder'));
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
       note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
@@ -1722,6 +1725,11 @@
       if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
         + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      // The Sacred Cylinder: who takes it and the melody it teaches, that melody's mark.
+      if (m.melody != null) {
+        note = then(note, t('mapCylinderFor', { npc: pick(HW.NPCS.cardinius), melody: pick(CO.PIECES[m.melody][4]) }));
+        acts += btn('mapShow', 'piece:' + m.melody, t('mapToMelody'));
+      }
       // What a Tool's variants are made from: the places it's repaired in, as a focus.
       const ks = m.ruinedOf ? list.filter((x) => x.chk === m.ruinedOf && x.key !== key).map((x) => x.key) : [];
       if (ks.length > 1) acts += btn('mapShotSee', ks.join(','), t('mapShotSee'));
