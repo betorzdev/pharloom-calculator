@@ -191,10 +191,17 @@
   /* A material beside what it feeds (design/43, 1 A; drawn as a row, design/49): the Memory
      Lockets under the Crests and the Craftmetal under the Kit and the Pouch, as their rows: the
      picture, which opens its text, the name, and under it the count, or − N + in Free mode. */
+  /* A shelf's or a loose piece's pin (design/106-group-pins-variants.html, 2 A): the Map on what's
+     missing of it, by the Map's layers (js/app-map.js App.groupPin); none once it's all had. */
+  const LAYERS_OF = { skills: ['skills'], arts: ['arts'], crests: ['crests'], tools: ['tools-red', 'tools-blue', 'tools-yellow'],
+    items: ['everbloom', 'old-heart', 'melody', 'flea'], relics: RELICS, mementos: ['memento'] };
+  const mapPin = (id, layers, name) => (App.groupPin ? App.groupPin('inv:' + id, App.mapLayerKeys(layers), name, 'inv-pin') : '');
+  // A piece is its own layer on the Map (the Silkeater's, a consumable, has no pin).
+  const piecePin = (x) => (x.shelf === 'eaters' ? '' : mapPin(x.id, [x.id], pick(x.name)));
   function mat(x, rule = false) {
     return `<div class="inv-mat${x.got ? '' : ' is-missing'}${rule ? ' is-rule' : ''}"><button type="button" class="inv-mat-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + x.count)}"${NT}>
       <img src="${icon(x.list, x.art || x.id)}" alt=""></button><span class="inv-fname"${NT}>${esc(pick(x.name))}</span>
-      ${marking ? stepper(x, true) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}</div>`;
+      <span class="inv-mat-v">${marking ? stepper(x, true) : `<span class="inv-mat-n">${num(x.n[0])}<i>/${num(x.n[1])}</i></span>`}${piecePin(x)}</span></div>`;
   }
   /* The loose Mask Shards or Spool Fragments under their row, as the sibling draws its shards: the
      game's piece lit up to what you hold, how many make a whole one, and − N + in Free mode. The
@@ -203,7 +210,7 @@
     const v = Math.max(0, x.n[0]);
     const pcs = Array.from({ length: x.n[1] }, (_, i) => `<img class="${i < v ? '' : 'is-off'}" src="${icon(x.list, x.art || x.id)}" alt="">`).join('');
     return `<div class="inv-loose${cls}"><button type="button" class="inv-loose-art" data-act="invPick" data-key="${esc(keyOf(x))}" aria-expanded="${picked === keyOf(x)}" aria-label="${esc(pick(x.name) + ' ' + num(v) + '/' + num(of))}">
-      <span class="inv-loose-name"${NT}>${esc(pick(x.name))}</span><span class="inv-loose-pcs" aria-hidden="true">${pcs}</span><b>${num(v)}<i>/${num(of)}</i></b></button>
+      <span class="inv-loose-name"${NT}>${esc(pick(x.name))}</span><span class="inv-loose-pcs" aria-hidden="true">${pcs}</span><b>${num(v)}<i>/${num(of)}</i></b></button>${piecePin(x)}
       ${note ? `<span class="inv-loose-note">${esc(note)}</span>` : ''}${marking ? stepper(x) : ''}</div>`;
   }
   // What's open under a shelf: the picture, the name and the game's text.
@@ -222,7 +229,7 @@
     const f = c && c.max ? Math.min(1, c.got / c.max) : 0;
     return `<h3 class="ct-h inv-h${c ? ' is-gauge' : ''}${c && f >= 1 ? ' is-full' : ''}"${c ? ` style="--f: ${(f * 100).toFixed(1)}%"` : ''}>${esc(title)}${count(c)}${marking && list ? `<span class="inv-all">
       <button type="button" class="text-btn" data-act="invAll" data-list="${list}" data-value="1">${esc(t('invAll'))}</button><span aria-hidden="true">·</span>
-      <button type="button" class="text-btn" data-act="invAll" data-list="${list}" data-value="0">${esc(t('invNone'))}</button></span>` : ''}</h3>`;
+      <button type="button" class="text-btn" data-act="invAll" data-list="${list}" data-value="0">${esc(t('invNone'))}</button></span>` : ''}${LAYERS_OF[list] ? mapPin(list, LAYERS_OF[list], title) : ''}</h3>`;
   };
 
   /* ── What Hornet is, the sibling's way (hallownest-calculator's Inventory, design/03-redesign.md

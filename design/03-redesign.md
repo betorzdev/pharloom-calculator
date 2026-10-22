@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1252,6 +1252,28 @@ under the title).
 `css/app.css` `.pg-strip.is-many`): every row whose things all have a picture draws them, `is-many`
 past twelve; the gauntlets draw their champion (`face`, as the Map: the last wave's enemy's Journal
 portrait), in the strip only. Pips stay for a list with a thing that has no picture.
+
+### A pin per group (22 October 2026)
+
+Albert: a pin for a whole group, all the Tools say, to see them on the Map; and where else on the
+site. The Map's focus already shows a set of marks alone with ‹ i of n › (App.mapFocus, the road's
+steps and the Tasks); the sibling has «See all n on the map» per category and pins on its
+Inventory's heads. Drawn over the real screens (Save 4) in `106-group-pins-variants.html`: 1
+Progress (**A** the lists' round pin at the end of each row's head, in the rows' pins' column; B
+«See the n on the map» atop an open list; C both); 2 the Inventory (**A** on each shelf's head and
+by each loose piece; B the shelves only; C none); 3 the Journal (**A** on each area's head; B none).
+Asked apart, what it opens: **what's missing**, the nearest to the bench first (not the whole group,
+nor following «What's missing · Everything»).
+
+**Decision: A in all three, and what's missing** (22 October 2026). Built: `js/app-map.js`
+`App.groupPin` (the pin, kept by an id for the click, none when nothing of the group is left on the
+Map; titled «See on the map», as a count of marks isn't the group's: an entry is met in several
+rooms), `App.mapLayerKeys`, the action `mapFocusGroup` (sorts by rooms from the bench, then
+`App.mapFocus`); `js/app-progress.js` `group()` (the rows' marks, a variant's focus keys, the
+gauntlets' `gaunt:` marks); `js/app-game.js` `LAYERS_OF`, `mapPin`, `piecePin` (by the Map's
+layers; the Silkeater has none); `js/app-journal.js` `areaPin` (the 'beast' marks of the area's
+entries not complete in that area's rooms, else all theirs). Not on Your game (calm), the Crest
+screen, nor Tasks (each wish has its own pin and a wall's wishes are posted where it stands).
 
 ## Step 6 · Map
 
