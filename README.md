@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/site/icon-192.png" alt="" width="72">
+<img src="assets/site/icon-hornet-192.png" alt="" width="72">
 
 # Pharloom Calculator
 
