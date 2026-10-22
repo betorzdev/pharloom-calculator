@@ -1,9 +1,10 @@
 """tools/site-icons.py, the site's icons: Hornet's head (assets/hornet/resting.png, the game's own
 sprite, cut above the cloak with a sliver of its red collar) on the main menu's ground, the
 page's background (--bg in css/tokens.css) with its red light rising from the bottom
-(--ember-glow, the same gradient). It writes icon-48 and icon-192 (the <link rel="icon">s),
-apple-touch-icon (180) and favicon.ico at the root (16, 32 and 48, for whatever asks for
-/favicon.ico without reading the page). The head fills four fifths of the square's height: a
+(--ember-glow, the same gradient). It writes icon-hornet-48 and icon-hornet-192 (the
+<link rel="icon">s; named after the head so a search engine that cached the old mask fetches
+them anew), apple-touch-icon (180) and favicon.ico at the root (16, 32 and 48, for whatever asks
+for /favicon.ico without reading the page). The head fills four fifths of the square's height: a
 phone's home screen and a search result's circle show it small, so it can't be a dot in the
 middle. Chosen over the HUD's mask, the Hunter's Crest and the Straight Pin (design/03-redesign.md,
 the site icon). Needs Pillow.
@@ -78,13 +79,13 @@ def main():
     art = hornet()
     bg, glow = tokens()
     site = os.path.join(ROOT, "assets", "site")
-    for name, size in (("icon-48", 48), ("icon-192", 192), ("apple-touch-icon", 180)):
+    for name, size in (("icon-hornet-48", 48), ("icon-hornet-192", 192), ("apple-touch-icon", 180)):
         icon(art, size, bg, glow).save(os.path.join(site, name + ".png"), optimize=True)
     # Each size drawn on its own, not the 48 shrunk: the ICO keeps every frame it's given.
     sizes = (16, 32, 48)
     icon(art, 48, bg, glow).save(os.path.join(ROOT, "favicon.ico"), sizes=[(s, s) for s in sizes],
                                  append_images=[icon(art, s, bg, glow) for s in sizes[:-1]])
-    print("icon-48, icon-192, apple-touch-icon and favicon.ico written")
+    print("icon-hornet-48, icon-hornet-192, apple-touch-icon and favicon.ico written")
 
 
 if __name__ == "__main__":
