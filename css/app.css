@@ -1483,6 +1483,8 @@ kbd {
 .pg-strip { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-half); min-width: 0; }
 .pg-strip img { width: var(--sp-6); height: var(--sp-6); object-fit: contain; }
 .pg-strip img.is-missing { filter: var(--missing-soft); opacity: var(--missing-soft-opacity); }
+/* Past twelve things (design/105, 1 A): three quarters of the size, wrapping; two lines at most on a desktop. */
+.pg-strip.is-many img { width: calc(var(--sp-6) * 0.75); height: calc(var(--sp-6) * 0.75); }
 .pg-pips { gap: 3px; }
 .pg-pips i { width: var(--diamond); height: var(--diamond); transform: rotate(45deg); border: 1px solid var(--accent-line); }
 .pg-pips i.is-on { background: var(--accent); border-color: var(--accent); }

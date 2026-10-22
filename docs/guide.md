@@ -833,8 +833,8 @@ a thin filigree frame with a diamond at each end, a stretch per category as wide
 as far as you have it, a hairline notch where each category ends and a taller one, with its
 diamonds, where the Tools' half ends; and its legend with what each category is worth. Then each
 category is a row, under a «Got / worth (%)» head: its name, its things as the game's pictures
-(what you lack dimmed) or as pips, its count and a ring that opens its list; the rows you open stay
-open. «What's missing · Everything» and «By Act · Nearest first» sit just above the rows.
+(what you lack dimmed; past twelve, smaller and over two lines; a gauntlet as its champion), its
+count and a ring that opens its list; the rows you open stay open. «What's missing · Everything» and «By Act · Nearest first» sit just above the rows.
 
 Opened, a category goes straight to its things, with no line over them, by Act and across the
 whole width: each with its picture, its name (a Tool with its slot's colour; in a Steel Soul save,
