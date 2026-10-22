@@ -1336,6 +1336,34 @@
     if (!keys.length || !e) return;
     focusMarks(keys, pick(e.name));
   };
+  /* A whole group's pin (design/106-group-pins-variants.html, all A): Progress's rows, the
+     Inventory's shelves and loose pieces, the Journal's areas. The pin opens the focus on what's
+     missing of the group that the Map has, the nearest to your bench first (js/rooms.js; with no
+     bench, in the order given); with nothing of it left on the Map, no pin. Each screen names its
+     marks, by key or by layer (App.mapLayerKeys), and the group by an id kept for the click. */
+  const groupFocus = new Map();
+  const left = (m) => m && !m.got && !m.lost && !m.hidden;
+  App.mapLayerKeys = (layers) => all().list.filter((m) => layers.includes(m.layer) && left(m)).map((m) => m.key);
+  App.groupPin = (id, keys, name, cls = '') => {
+    const by = new Map(all().list.map((m) => [m.key, m]));
+    const ok = [...new Set(keys)].filter((k) => left(by.get(k)));
+    if (!ok.length) return '';
+    groupFocus.set(id, { keys: ok, name });
+    // Plain «See on the map»: a count of marks isn't the group's (an entry met in several rooms).
+    const label = t('mapOnMap');
+    return `<button type="button" class="map-group${cls ? ' ' + cls : ''}" data-act="mapFocusGroup" data-value="${esc(id)}" aria-label="${esc(name + ': ' + label)}" title="${esc(label)}">${App.pin}</button>`;
+  };
+  function focusGroup(id) {
+    const f = groupFocus.get(id), own = App.game();
+    if (!f) return;
+    let keys = f.keys;
+    if (own && own.bench) {
+      const w = R.walk(own.bench, own.lit), by = new Map(all().list.map((m) => [m.key, m]));
+      const d = (k) => { const m = by.get(k); return m && m.scene ? R.steps(own.bench, m.scene, own.lit, w) : null; };
+      keys = keys.map((k, n) => ({ k, n, d: d(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k);
+    }
+    App.mapFocus(keys, f.name);
+  }
   function focusBar() {
     const f = focusSet, n = f.keys.length;
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
@@ -1977,6 +2005,7 @@
     },
     // Another screen's "on the map" button.
     mapShow(node) { App.mapShow(node.dataset.value); },
+    mapFocusGroup(node) { focusGroup(node.dataset.value); },
     // The Ruined Tool's card: the places it's repaired in, as a focus (js/spots.js VARIANTS).
     mapShotSee(node) { const ks = node.dataset.value.split(','), m = all().list.find((x) => x.key === ks[0]); App.mapFocus(ks, m ? m.name : ''); },
     mapBeast(node) { App.mapBeast(node.dataset.value); },

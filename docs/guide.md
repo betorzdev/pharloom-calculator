@@ -120,7 +120,11 @@ another (not with reduced motion).
 
 ### Inventory
 
-A sheet in two columns, each thing beside what it feeds, and a band under both. On the left, what
+A sheet in two columns, each thing beside what it feeds, and a band under both. Each shelf with
+things on the Map (Crests, Tools, Silk Skills, abilities, items, Relics, Mementos) ends its head's
+rule in a small round pin, and so do the loose pieces (Mask Shards, Spool Fragments, Memory
+Lockets, Craftmetal, Pale Oil) after their count: the Map with only what's missing of it, nearest
+to your bench first. On the left, what
 Hornet is: **the Needle**, the five upright with their damage, the one she carries taller and lit,
 and the Pale Oil under it (the game's flask three times, lit up to how many you've found, spent or not); then **Hornet**: the masks (5 to 10) as the game's masks, in a
 row as the HUD draws them, with the loose Mask Shards under them (four make a mask), the silk (9 to
@@ -249,8 +253,9 @@ The Hunter's Journal. On top, the count for Nuu's Hunter's Memento as a ring (23
 in Steel Soul; the bright arc is what's complete, the dim one what you've seen), and beside it the
 four entries you're missing closest to your bench, with how many kills to
 go. Under it, the 236 portraits (237 in Steel Soul) **by area**, the areas with the most missing
-first and each with its count (6/20), or **in the Journal's order**; entries with no place go last,
-under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
+first and each with its count (6/20) and a small round pin, which opens the Map on the rooms of
+that area where its entries not yet complete are met, or **in the Journal's order**; entries with no
+place go last, under "Elsewhere". Beside the search, two choices in words under their labels: **Show** "What's
 missing / Everything" (with a save; Free mode shows everything) and **Order** "By area / Journal
 order". The search finds entries by name (in either language) or by area (in the page's), with or without accents; while
 it has text it looks through the whole Journal, what's complete included. Each portrait
@@ -834,7 +839,10 @@ as far as you have it, a hairline notch where each category ends and a taller on
 diamonds, where the Tools' half ends; and its legend with what each category is worth. Then each
 category is a row, under a «Got / worth (%)» head: its name, its things as the game's pictures
 (what you lack dimmed; past twelve, smaller and over two lines; a gauntlet as its champion), its
-count and a ring that opens its list; the rows you open stay open. «What's missing · Everything» and «By Act · Nearest first» sit just above the rows.
+count, a ring that opens its list and, while anything of it is left, the lists' round pin: the Map
+with only what's missing of it (all the Tools you lack, say), ‹ 1 of n › to go through them, the
+nearest to your bench first. The rows you open stay open. «What's missing · Everything» and «By Act
+· Nearest first» sit just above the rows.
 
 Opened, a category goes straight to its things, with no line over them, by Act and across the
 whole width: each with its picture, its name (a Tool with its slot's colour; in a Steel Soul save,
