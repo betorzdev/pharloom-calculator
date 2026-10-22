@@ -248,7 +248,10 @@
     ? `<p class="pg-note">${esc(t('pgLadderNote'))} <a class="text-btn" href="${App.here(App.hashFor('game'))}" data-act="view" data-value="game">${esc(t('navGame'))}</a></p>` : '');
   /* o: all, every row, the done ones ticked, whatever the toggle says; emblem, a picture by the
      title (null keeps its place, so the titles line up); pips, pips in the strip even when every
-     row has a picture. */
+     row has a picture; keys, the group's marks when its rows have none (the gauntlets). */
+  /* The group's pin (design/106-group-pins-variants.html, 1 A): the Map on what's missing of it, at
+     the end of its head, in the rows' pins' column; a group with nothing left there keeps the place. */
+  const groupKeys = (list) => list.filter((x) => !x.got).flatMap((x) => (x.focus && FOCUS.has(x.focus) ? FOCUS.get(x.focus).keys : x.mark ? [x.mark] : []));
   function group(id, title, list, g, got, max, o = {}) {
     const all = o.all || prefs.pgAll || !g;
     const open = isOpen(id);
@@ -260,7 +263,7 @@
         <h3 class="pg-head" id="pg-${id}"><button type="button" class="pg-open" data-act="pgOpen" data-value="${id}" aria-expanded="${open}">
           <span class="pg-title">${o.emblem !== undefined ? `<span class="pg-emb" aria-hidden="true">${o.emblem ? `<img src="${o.emblem}" alt="" loading="lazy">` : ''}</span>` : ''}${esc(title)}</span>${strip(list, g, got, max, o.pips)}
           ${g ? `<span class="pg-count"><b>${pts(got)}</b><i class="u">/${num(max)}</i></span>` : `<span class="pg-count"><i class="u">${num(max)}</i></span>`}
-          <span class="disc-ring">${App.chevron(open)}</span></button></h3>
+          <span class="disc-ring">${App.chevron(open)}</span></button>${(App.groupPin && App.groupPin('pg:' + id, o.keys || groupKeys(list), title, 'pg-onmap')) || '<span class="pg-onmap is-none" aria-hidden="true"></span>'}</h3>
         ${open ? `${ladderNote(id, g)}${body}` : ''}
       </section>`;
   }
@@ -1149,7 +1152,8 @@
          each its champion, as the Map draws it (js/app-map.js champion: its last wave's enemy). */
       const champion = (x) => { const w = x.waves[x.waves.length - 1]; return w && w[0] ? `assets/icons/journal/${w[0][0]}.webp` : null; };
       const list = SS.gauntlets.GAUNTLETS.map((x) => ({ name: App.gauntletName(x.id), got: !!g && g.gauntlets.includes(x.id), act: 0, area: x.area, face: champion(x) }));
-      return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length);
+      return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length,
+        { keys: SS.gauntlets.GAUNTLETS.filter((x) => !(g && g.gauntlets.includes(x.id))).map((x) => 'gaunt:' + x.id) });
     })();
     // How to show the lists goes just over them.
     const controls = g ? `<div class="pg-controls">${seg}</div>` : '';

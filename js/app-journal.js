@@ -148,7 +148,8 @@
     }
     const left = (xs) => xs.filter((x) => x.state !== 'done').length;
     return [...areas].sort(([a, xs], [b, ys]) => (!a) - (!b) || left(ys) - left(xs))
-      .map(([a, xs]) => ({ name: a || t('hjElsewhere'), done: xs.filter((x) => x.state === 'done').length, all: xs.length, xs: xs.filter(keep) }))
+      .map(([a, xs]) => ({ name: a || t('hjElsewhere'), done: xs.filter((x) => x.state === 'done').length, all: xs.length, xs: xs.filter(keep),
+        open: xs.filter((x) => x.state !== 'done') }))
       .filter((a) => a.xs.length);
   }
 
@@ -158,6 +159,16 @@
   const fold = (x) => String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   const HAY = new Map(J.BOOK.map((e) => [e.id, fold(e.name.es + ' ' + e.name.en)]));
   const matches = (x, q) => HAY.get(x.e.id).includes(q) || whereOf(x.e).some((a) => fold(a).includes(q));
+  /* An area's pin (design/106-group-pins-variants.html, 3 A): the Map on the rooms of that area
+     where its entries not yet complete are met (the 'beast' marks); an entry met only elsewhere
+     (the Bellways') brings all its rooms. */
+  function areaPin(a) {
+    if (!App.groupPin || !App.mapApi || !a.open.length) return '';
+    const ids = new Set(a.open.map((x) => x.e.id));
+    const marks = App.mapApi.list().filter((m) => m.layer === 'beast' && ids.has(m.entry));
+    const here = marks.filter((m) => placeOf(m.scene) === a.name);
+    return App.groupPin('hj:' + a.name, (here.length ? here : marks).map((m) => m.key), a.name, 'hj-pin');
+  }
   // The portraits, by area or in the Journal's order, with what the two choose-ones and the search keep.
   function shelf(list, g) {
     const q = fold(query.trim());
@@ -165,7 +176,7 @@
     const keep = (x) => (!missing || x.state !== 'done') && (!q || matches(x, q));
     const groups = prefs.hjBy !== 'book' ? byArea(list, keep) : [{ name: '', xs: list.filter(keep) }];
     const grid = groups.map((a) => (a.name ? `<section class="hj-area-group"><h3 class="ct-h"><span${NT}>${esc(a.name)}</span>
-        <span class="hj-area-n">${num(a.done)}/${num(a.all)}</span></h3>` : '')
+        <span class="hj-area-n">${num(a.done)}/${num(a.all)}</span>${areaPin(a)}</h3>` : '')
       + `<ul class="hj-grid">${a.xs.map(cell).join('')}</ul>${a.name ? '</section>' : ''}`).join('');
     const empty = q ? `<p class="pg-note">${esc(t('hjNone'))}</p>` : `<p class="pg-done">${App.tick}${esc(t('pgDone'))}</p>`;
     return `<div class="hj-shelf">${groups.some((a) => a.xs.length) ? grid : empty}</div>`;
