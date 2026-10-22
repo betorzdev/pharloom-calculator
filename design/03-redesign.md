@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -766,7 +766,7 @@ Albert chose **road 1 · the journey**. Built (`js/app-progress.js`, `css/app.cs
   `roadBellshrine`, `roadCitadelName`, `roadSnare`, the wish's and the foes' names; the current
   step's full title with «n of m»), «The whole road» toggling today's full road (`prefs.pgRoad`).
 - Every category, the other collectibles and the Tasks as ledger rows (`group()`): the strip of
-  the game's pictures (twelve or fewer) or pips, the count, the disclosure; open rows kept in
+  the game's pictures (past twelve, smaller and wrapping) or, a thing with none, pips, the count, the disclosure; open rows kept in
   `prefs.pgOpen`. The show and order choices sit just above the rows.
 - Free mode with the Inventory's marks counts from them (`App.freeGame`), its ladders (masks,
   silk, Silk Hearts, Needle, Kit, Pouch) from the free build so lists and counts agree
@@ -1237,6 +1237,21 @@ unmeasured on the spotlight's bone) and the people (`giverOf()`, `NO_FIGURE`, `N
 the type groups and their pips, the «What's missing · Everything» and «By Act · Nearest first»
 toggles (the 100% tab keeps them), `.pg-spacer`, `pgTasksCollect`. test/spots.test.js checks every
 wish is on one of the three walls or asked by someone named with a figure.
+
+### Every closed row's pictures (22 October 2026)
+
+Albert: a closed row of the 100% tab with more than twelve things (Tools 51, Silk Spools, Masks,
+Memory Lockets, the Lost Fleas, the gauntlets) drew diamond pips; the game's pictures would look much
+better. Drawn over Save 4's real rows in `105-progress-strip-variants.html`: 1 past twelve (**A**
+three quarters of the size, wrapping, two lines at most on a desktop; B full size, as many lines as
+it takes; C one line, overlapping); 2 Masks and Silk Spools (**A** a picture per piece, as their
+lists; B a picture per point, the HUD's masks); 3 a phone (**A** no strip, as before; B the strip
+under the title).
+
+**Decision: A in all three** (22 October 2026). Built (`js/app-progress.js` `strip()`,
+`css/app.css` `.pg-strip.is-many`): every row whose things all have a picture draws them, `is-many`
+past twelve; the gauntlets draw their champion (`face`, as the Map: the last wave's enemy's Journal
+portrait), in the strip only. Pips stay for a list with a thing that has no picture.
 
 ## Step 6 · Map
 

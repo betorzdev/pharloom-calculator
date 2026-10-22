@@ -225,13 +225,15 @@
   const OTHER_ARTS = ['drifters-cloak', 'faydown-cloak', 'beastling-call', 'elegy-of-the-deep'];
 
   /* A category as a row of the ledger (the sibling's Progress, design/03-redesign.md step 5):
-     its name, its things as the game's pictures (up to twelve, what you lack dimmed) or as pips,
-     its count and the disclosure's ring; open, its list. Which rows are open is kept (prefs.pgOpen). */
+     its name, its things as the game's pictures (what you lack dimmed; past twelve, smaller and
+     wrapping, design/105-progress-strip-variants.html, all A) or, a thing with none, as pips, its
+     count and the disclosure's ring; open, its list. Which rows are open is kept (prefs.pgOpen).
+     A thing's picture in the strip is its row's, or its face (a gauntlet's champion). */
   const MAX_PIPS = 60;
   const isOpen = (id) => (prefs.pgOpen || []).includes(id);
   function strip(list, g, got, max, pips = false) {
-    if (!pips && list.length <= 12 && list.every((x) => x.icon)) {
-      return `<span class="pg-strip" aria-hidden="true">${list.map((x) => `<img class="${!g || x.got ? '' : 'is-missing'}" src="${x.icon}" alt="" loading="lazy">`).join('')}</span>`;
+    if (!pips && list.every((x) => x.icon || x.face)) {
+      return `<span class="pg-strip${list.length > 12 ? ' is-many' : ''}" aria-hidden="true">${list.map((x) => `<img class="${!g || x.got ? '' : 'is-missing'}" src="${x.icon || x.face}" alt="" loading="lazy">`).join('')}</span>`;
     }
     if (max > MAX_PIPS) return '<span class="pg-strip" aria-hidden="true"></span>';
     // A wish promised lights its pip halfway, after the done ones (design/81, 3 A).
@@ -1143,8 +1145,10 @@
           area: w[1] || (scene && R.areaOf(scene)) || null, icon: `assets/icons/arts/${id}.webp`, mark: 'arts:' + id }; });
       return group('other-arts', t('pgOtherArts'), list, g, list.filter((x) => x.got).length, list.length);
     })() + (() => {
-      // The enemy gauntlets, in the wiki's order (by area), named as Combat names them.
-      const list = SS.gauntlets.GAUNTLETS.map((x) => ({ name: App.gauntletName(x.id), got: !!g && g.gauntlets.includes(x.id), act: 0, area: x.area }));
+      /* The enemy gauntlets, in the wiki's order (by area), named as Combat names them; in the strip
+         each its champion, as the Map draws it (js/app-map.js champion: its last wave's enemy). */
+      const champion = (x) => { const w = x.waves[x.waves.length - 1]; return w && w[0] ? `assets/icons/journal/${w[0][0]}.webp` : null; };
+      const list = SS.gauntlets.GAUNTLETS.map((x) => ({ name: App.gauntletName(x.id), got: !!g && g.gauntlets.includes(x.id), act: 0, area: x.area, face: champion(x) }));
       return group('gauntlets', t('ftModeGauntlets'), list, g, list.filter((x) => x.got).length, list.length);
     })();
     // How to show the lists goes just over them.
