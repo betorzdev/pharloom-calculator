@@ -936,7 +936,7 @@
     mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
     mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
     mapFocusNext:   { es: 'La siguiente', en: 'Next' },
-    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
+    mapFocusOff:    { es: 'Volver al mapa', en: 'Return to the map' },   // the game's words: CTRL_RETURN + PANE_MAP
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
     roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}, con dos de las tres melodías aprendidas o tras derrotar a {foe}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}, with two of the three melodies learned or {foe} defeated' },

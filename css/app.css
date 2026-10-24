@@ -2666,15 +2666,17 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-found button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .mp-found small { font-size: var(--fs-2xs); color: var(--muted); }
 .mp-found-none { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--muted); }
-/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its ×. */
-.mp-find.mp-focus { width: min(26rem, calc(100% - var(--sp-16) * 2)); }
+/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its way
+   out, a labelled button (design/96, 1 A); as wide as it needs, short of the zoom's buttons. */
+.mp-find.mp-focus { width: auto; max-width: calc(100% - var(--ctl-sm) * 4 - var(--sp-3) * 3); }
 .mp-focus { display: flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm); padding: 0 var(--sp-1) 0 var(--sp-3);
   background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); }
 .mp-focus-t { display: flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 0; }
 .mp-focus-t > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-focus-t .ic { flex: none; color: var(--ink-2); }
 .mp-focus-n { flex: none; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); white-space: nowrap; }
-.mp-focus :is(.mp-focus-go, .mp-focus-x) { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-go { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-x { flex: none; min-height: calc(var(--ctl-sm) - var(--sp-2)); margin-left: var(--sp-2); padding: 0 var(--sp-3); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); white-space: nowrap; }
 .mp-focus :is(.mp-focus-go, .mp-focus-x):is(:hover, :focus-visible) { color: var(--ink-strong); background: var(--veil); }
 .mp-tools { position: absolute; z-index: 4; top: var(--sp-3); right: var(--sp-3); display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); }
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
@@ -2772,11 +2774,11 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  /* The focus's line keeps the room the search leaves for the zoom's three buttons outside its
+     frame, its name over ‹ i of n › and the way out (that at the right). */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; margin-right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
   .mp-focus-t { flex-basis: 100%; }
-  .mp-find.mp-focus.is-one { flex-wrap: nowrap; }   /* one thing: its name and its × on one line */
-  .mp-focus.is-one .mp-focus-t { flex-basis: auto; }
+  .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
