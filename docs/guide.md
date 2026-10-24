@@ -675,7 +675,10 @@ place in its scene, put on the map by the game's own rule for Hornet's compass a
 checked against the benches, which fall by the game's own bench pins). What has no object of its
 own sits where whoever stands for it is: Shakra and the vendors where they stand, and what they
 sell with them; a wish's reward with whoever hands it over, else at its Wishwall or at who offers it; a boss where
-it waits in its arena, and what it drops there; a gauntlet at its arena; a lost flea in its cage.
+it waits in its arena, and what it drops there (one the game makes there with no record of its own
+on the arena it shares with another boss, Tormented Trobbio on Trobbio's stage; one fought in a
+place the map can't draw at the game's pin for the objective it ends, Lost Lace at the dive in the
+Abyss); a gauntlet at its arena; a lost flea in its cage.
 What's inside a room the map doesn't draw (an interior: Plinney's house, the Bellhome, the Skull
 Cave) sits at the door it's entered by, the game's own door in the room around it; one with no such
 door, or a room drawn as a point (a bench's own room), stays at that room's point, as on the game's
