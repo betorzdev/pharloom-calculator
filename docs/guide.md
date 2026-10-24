@@ -706,7 +706,8 @@ dimmed and ticked as always), centred on it, its card open and a ring pulsing on
 the search's place with its name and area and a «Return to the map» button back to the whole map
 (under the name on a phone). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
-ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
+ring, the snare's pieces, what's next for Silk and Soul, each wish where it stands now as its own
+pin has it: its giver, its step's targets once taken, or its hunting grounds), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
 nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
