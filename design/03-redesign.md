@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1293,6 +1293,38 @@ the Map; D the chip is the Map's pin).
 already has (`wishRow`: who asks, what it asks, «More» with the game's words, its area), their pin
 the Tasks tab's (`focus`, `taskPin`). One open at a time, the chip white on grey as the game selects,
 kept by its wish while the page is (`optOpen`); folding «and n more» shuts a card of the folded ones.
+
+### Tasks' people, one row each (24 October 2026)
+
+Albert: at the bottom of Tasks there are many characters, and it looks disorganised and chaotic.
+Seen over five games (Act 1, 2, 3, late, Free mode) at 1440 and 390: «Who makes a wish» was a
+gallery in four CSS columns read top to bottom, so the order (by Act, then name) read as random and
+the columns ended ragged; one person was a line, another (the Couriers) seven, a promised wish a
+tall box of meters; whoever was done still took a block of «Complete», «Completed» and one picture;
+the figures floated at different heights with no ground; in Free mode the line under a wish
+repeated the person over it; on a phone each person took a screen. The sibling's Pantheons are one
+row per thing, its picture, its name, its marks lined up. `110-tasks-givers-variants.html` (kept
+out of the repo), the real rows, figures and meters captured over those games: 1 the layout (**A**
+one row per person, read across: figure, name, area, count, then the lines left two side by side
+and what's later or done as pictures with no label; B those rows grouped by area; C even cards in a
+grid, the wishes as pictures, a tap opening its line; D as it was); 2 who has nothing to take now
+(**A** gathered in a strip at the end, figures only, under «Later» or «Completed»; B kept in place
+as a short row); 3 the figure (**A** the same slot for all, on a pool of its area's light as the
+walls; B plain). Albert then found the promised wish's box ugly (the veil fading behind its whole
+line), and a second round on the same page drew 4 a row's ground (**A** no box, the promised one
+known by the game's hollow diamond alone, the people parted by a hairline fading at both ends; B no
+box, the figure's light carrying the row; C a faint frame line, no fill; D the box).
+
+**Decision: 1 A, 2 A, 3 A, 4 A** (24 October 2026), the box gone on the walls too, and the line
+under a wish that only names the person over it dropped. Built (`js/app-progress.js` `tasks()`,
+`css/app.css`): the people as `.pg-people` rows (`.pg-person`, `.pg-person-fig` lit by
+`--area-line` / `--area-fill` from `giverOf()`'s area `key`, `.pg-person-who`, `.pg-person-wishes`
+with the lines in a grid and `.pg-person-pics`, their «Later» and «Completed» kept for screen
+readers), whoever has nothing left now in `.pg-folk` under `pgTasksLater` or `pgTasksDone`
+(`leftOf()` shared with the walls' `taskList()`); a wish's `loc` goes from a person's row when it
+names that person and their area («Greyroot of Shellwood»), not when it names somewhere else
+(«Yarnaby of Greymoor»). Gone: the CSS columns, each person's «Complete», and
+`.pg-tasks .pg-item.is-promised`'s veil.
 
 ## Step 6 · Map
 

@@ -1605,15 +1605,15 @@ kbd {
   .pg-walls { grid-template-columns: minmax(0, 1fr); }
   .pg-wall + .pg-wall { border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); padding-top: var(--sp-6); }
 }
-/* A task left, with air: no rule between lines, the pane's picture larger; a promised one lit
-   faintly, what it asks counted as the pane counts it (its slim bar, or a dot each for twelve or
-   fewer: assets/icons/tasks, tools/extract-wish-icons.py). */
+/* A task left, with air: no rule between lines, the pane's picture larger; a promised one marked by
+   the game's hollow diamond alone, no box behind it (design/110, 4 A), what it asks counted as the
+   pane counts it (its slim bar, or a dot each for twelve or fewer: assets/icons/tasks,
+   tools/extract-wish-icons.py). */
 .pg-tasks .pg-item { grid-template-columns: var(--sp-3) 44px minmax(0, 1fr) 28px; gap: 0 var(--sp-2); padding: var(--sp-2) var(--sp-1); border-bottom: 0; }
 .pg-tasks .pg-art { width: 44px; height: 44px; }
 .pg-tasks .pg-art img { max-width: 42px; max-height: 42px; }
 .pg-tasks .pg-name { white-space: normal; }
 .pg-tasks .pg-how { line-height: 1.4; }
-.pg-tasks .pg-item.is-promised { background: linear-gradient(to right, var(--veil), transparent 70%); }
 .pg-meters { display: grid; gap: var(--sp-1); margin-top: var(--sp-half); }
 .pg-meter { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
 .pg-meter-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
@@ -1628,18 +1628,44 @@ kbd {
 .pg-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: 0; padding: 0; list-style: none; }
 .pg-pics img { display: block; width: 30px; height: 30px; object-fit: contain; opacity: 0.3; }
 .pg-pics .is-done img { opacity: 0.75; }
-/* Who asks in person: a gallery, each standing large over their name, flowing in columns with no holes. */
-.pg-people { columns: 4 calc(var(--sp-16) * 3.75); column-gap: var(--sp-6); }
-.pg-person { display: grid; gap: var(--sp-2); margin-bottom: var(--sp-6); break-inside: avoid; }
-.pg-person-who { display: grid; justify-items: center; gap: var(--sp-half); padding-bottom: var(--sp-2); text-align: center; border-bottom: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); }
-.pg-person-who > img, .pg-person-none { width: 88px; height: 88px; object-fit: contain; }
-.pg-person-none { display: grid; place-items: center; }
+/* Who asks in person (design/110, 1 A, 2 A, 3 A, 4 A): one row each, read across: the figure in a
+   slot of its own on a pool of its area's light (--area-line, --area-fill, set inline as the
+   walls'), the name, where and the count; then what's left as lines, two side by side where there's
+   room, and what's later or done as pictures. The people parted by a hairline fading at both ends,
+   as the game's dividers. Who has nothing to take now waits in a strip at the end, figures only. */
+.pg-people { --rule: linear-gradient(to right, transparent, color-mix(in oklab, var(--filigree) 18%, transparent) 15%, color-mix(in oklab, var(--filigree) 18%, transparent) 85%, transparent);
+  display: grid; background: var(--rule) bottom / 100% 1px no-repeat; }
+.pg-person { display: grid; grid-template-columns: 72px calc(var(--sp-16) * 3.2) minmax(0, 1fr); align-items: start; gap: 0 var(--sp-4); padding: var(--sp-3) var(--sp-2);
+  background: var(--rule) top / 100% 1px no-repeat; }
+.pg-person-fig { position: relative; display: grid; place-items: end center; width: 72px; height: 72px; }
+.pg-person-fig::before { content: ""; position: absolute; left: 50%; bottom: calc(-1 * var(--sp-1)); width: 150%; height: 70%; transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--area-line, var(--spotlight)) 24%, transparent), transparent); pointer-events: none; }
+.pg-person-fig img { position: relative; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 var(--sp-1) var(--sp-2) color-mix(in oklab, var(--area-fill, var(--scene-glow)) 90%, transparent)); }
+.pg-person-none { position: relative; display: grid; place-items: center; width: 100%; height: 100%; }
 .pg-person-none i { width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--line-ctl); }
-.pg-person-who h4 { margin: var(--sp-1) 0 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
+.pg-person-who { display: grid; gap: var(--sp-half); align-content: center; min-width: 0; min-height: 72px; }
+.pg-person-who h4 { margin: 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
 .pg-person-who p { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+.pg-person-wishes { display: grid; gap: var(--sp-2); min-width: 0; }
+.pg-person-wishes .pg-tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--sp-16) * 5.5), 1fr)); gap: 0 var(--sp-4); }
+.pg-person-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.pg-folk-sec .pg-tasks-l { margin-top: var(--sp-4); }
+.pg-folk { display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 2)); gap: var(--sp-3) var(--sp-4); margin: 0; padding: 0; list-style: none; }
+.pg-folk li { display: grid; justify-items: center; align-content: start; gap: var(--sp-1); min-width: 0; text-align: center; font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-folk .pg-person-fig { width: 52px; height: 52px; }
+.pg-folk .pg-person-pics, .pg-folk .pg-pics { justify-content: center; }
+.pg-folk .pg-pics img { width: 22px; height: 22px; }
+.pg-folk.is-later .pg-person-fig img { opacity: 0.45; filter: grayscale(0.6); }
+.pg-folk.is-later .pg-folk-name { color: var(--muted); }
 @media (max-width: 700px) {
   .pg-track { grid-template-columns: minmax(0, 1fr); }
   .pg-track-row { flex-wrap: wrap; justify-content: center; }
+  .pg-person { grid-template-columns: 56px minmax(0, 1fr); gap: var(--sp-1) var(--sp-3); padding-inline: 0; }
+  .pg-person > .pg-person-fig { width: 56px; height: 56px; }
+  .pg-person-who { min-height: 56px; }
+  .pg-person-wishes { grid-column: 1 / -1; }
+  .pg-folk { grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 1.4)); gap: var(--sp-3) var(--sp-2); }
 }
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
