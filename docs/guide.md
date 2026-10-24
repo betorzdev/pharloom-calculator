@@ -439,8 +439,8 @@ beaten, before it was broken). What only
 one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
-whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
-switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
+whole group, in ink when all of it is on, dimmer when part, dimmest when none. Inside, each layer's
+switch is the game's own picture of it, grey and faded when off, its name dimmed too. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
 (the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
