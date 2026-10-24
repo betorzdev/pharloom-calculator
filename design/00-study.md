@@ -1714,7 +1714,8 @@ completionist's Act 3 for a Steel Soul fight beaten in Act 2, now 2 in `tools/ge
 had a placeholder 0 that showed as Act 1 (the walls, caches and the ways open, some in the Abyss)
 and 487 none, shown under every Act; and an Act showed only what first appears in it, hiding what's
 still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
-card and title still say its Act, and Progress keeps its own.
+card and title still say its Act, and Progress keeps its own. (Back on 24 October, up to an Act and
+with every mark given one: «The Map's Act filter, back», below.)
 
 **The Map with every mark shown** (14 October). Albert found the site slow once the Map showed
 everything. Measured in headless Chrome over file:// (ANGLE-GL on the GPU; 1440 px, and 390 px at
@@ -2381,3 +2382,24 @@ is set whether or not the wish was on. The two Spine Cores in Bone_East_14b's wa
 above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all
 match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
 and after each fixed wish and in Free mode, no console errors.
+
+**The Map's Act filter, back** (24 October 2026, Albert: «a big and important task would be to be
+able to put an Act filter on the Map»; `design/03-redesign.md`, step 6, the Act filter, round
+`98`). What killed the first one is fixed at the source: «Up to Act N» shows what can be had by
+Act N (not only what first appears in it), and every mark has an Act. Of the 2,066 marks of Free
+mode, 541 carry their own (the completionist's, read again on 18 October); the other 1,525 take
+their room's first Act, which `tools/gen-spots.js` works out on the game's doors (js/graph.js) as
+ROOM_ACT: Act 3 what only Act 3 has (the 18-October rule), Act 1 what the doors reach from Tut_01 or
+from a room holding a thing of Act 1 (115 rooms: it proves the room open then, as the Slab's cell),
+without a door of ACT2_DOORS, Act 2 the rest. The twelve doors, each with its source: the Grand Gate
+and the Phantom's way (the Acts page: Act 2 «begins upon entering the Citadel after defeating the
+Last Judge or Phantom»), the Citadel's doors from Bilewater and the Slab, Mount Fay's two and the
+Sands of Karak's three (their wiki pages: the Clawline), Wisp Thicket's (the Faydown Cloak), the
+Ducts' from Bilewater (opened from within) and the Flea Caravan's to Fleatopia. 308 rooms of Act 1,
+189 of Act 2, 46 of Act 3; every area of the Citadel, Mount Fay, the Sands, Wisp Thicket and the
+Ducts is Act 2 whole, every other outer area Act 1 whole. A scene the doors don't know takes its
+area's (AREA_ACT: the Ventrica hub's station). The run stops if a door's far side is open in Act 1
+anyway, and test/room-acts.test.js checks no thing's own Act is earlier than its room's. Act 1 is
+generous where an ability of Act 2 opens a corner of an Act 1 area (the Faydown Cloak's ledges):
+those things carry their own Act already, and the doors can't say more. Marks by Act in Free mode:
+1,111 / 757 / 198. Only the Act fields of js/spots.js changed (ROOM_ACT, AREA_ACT).

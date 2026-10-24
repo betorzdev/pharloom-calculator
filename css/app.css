@@ -2645,6 +2645,9 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-all .text-btn { font-size: var(--fs-sm); }
 .mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
 .mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
+/* The Act filter (design/98, 3 A): the site's chooser, labelled, first of the options. */
+.mp-acts { display: inline-flex; align-items: center; gap: var(--sp-3); }
+.mp-acts-t { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
 .mp-sec { border-top: 1px solid var(--inv-line); }
 .mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
 .mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
@@ -2664,6 +2667,10 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-kind-t { transition: color var(--dur) var(--ease); }
 .mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
 .mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+/* Nothing of it up to the Act chosen: greyed as off, its count 0. */
+.mp-kind.is-empty .mp-kind-t, .mp-kind.is-empty .mp-n b { color: var(--muted); }
+.mp-kind.is-empty .mp-art > img { filter: var(--missing-art); }
+.mp-kind.is-empty .mp-art > svg { opacity: 0.35; }
 .mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
 .mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .mp-art > svg { width: 70%; height: 70%; }
@@ -2738,6 +2745,7 @@ html:has(.mp.is-full) { overflow: hidden; }
   .mp-legend-h { grid-template-columns: minmax(0, 1fr); }
   .mp-opts { gap: var(--sp-1) var(--sp-6); }
   .mp-checks { flex-direction: column; align-items: flex-start; }
+  .mp-acts { flex-basis: 100%; }
   .mp-kinds { padding-left: 0; gap: var(--sp-1) var(--sp-4); }
   .mp-inside { margin-left: var(--sp-2); }
 }

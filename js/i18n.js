@@ -276,6 +276,8 @@
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
+    mapActUpTo:     { es: 'Hasta', en: 'Up to' },   // no game text: the Act filter's label (design/98), the Acts are saveAct
+    mapActAll:      { es: 'Todos', en: 'All' },   // no game text: every Act
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH

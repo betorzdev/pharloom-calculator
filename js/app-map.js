@@ -38,6 +38,8 @@
    Each layer's switch is the game's own picture, with had of total (in Free mode, the total),
    counted by thing: marks that share one save check count once; "Only the 100%" turns on just
    the layers that count (design/03-redesign.md, step 6, the switches' contents).
+   "Up to" an Act shows what can be had by then (prefs.mapActPick, per slot; the save's Act at
+   first: design/03-redesign.md, step 6, the Act filter).
    In a save (or Free mode's marks) what's had is left out; "Show Completed" (prefs.mapHad) brings
    it back, dimmed and ticked (design/03-redesign.md, step 6). A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
@@ -796,15 +798,35 @@
   // The mark that stands for a key folded into another's card (else the key itself).
   App.mapKeyOf = (key) => (all(), folded.get(key) || key);
 
-  /* Which marks show: the layer on, and in a save (or Free mode's marks) not had yet. The pins
-     show open or not; the Journal's and the save's own layers need a save. (Two filters were here
-     until 14-Oct-2026: by Act, which most marks had no Act of their own for, an Act showing only
-     what first appears in it; and «what I can reach now», which only 44 marks had any needs for,
-     js/spots.js NEEDS. A mark's card and title still say its Act; Progress says what it waits on.) */
-  function passes(m, g, own) {
-    return !(OWN_ONLY.has(m.layer) && !own);
+  /* Which marks show: the layer on, up to the Act chosen, and in a save (or Free mode's marks) not
+     had yet. The pins show open or not; the Journal's and the save's own layers need a save. («What
+     I can reach now» was here until 14-Oct-2026, which only 44 marks had any needs for, js/spots.js
+     NEEDS; Progress says what a thing waits on.)
+     The Act filter (design/03-redesign.md, step 6, the Act filter: design/98, all A): «Up to Act N»
+     shows what can be had by Act N, nothing of a later one. A mark's Act is its own (its card and
+     title say it) or its room's first (js/spots.js ROOM_ACT: the Citadel and what the Clawline or
+     the Faydown Cloak opens are Act 2's, what only Act 3 has Act 3's), the later. (An earlier filter,
+     until 14-Oct-2026, showed only what first appears in an Act, and most marks had no Act.) */
+  let doored = null;   // the scenes js/graph.js knows; one it doesn't takes its area's (js/spots.js AREA_ACT)
+  function roomAct(scene) {
+    const r = SP.ROOM_ACT || {}, k = lower(scene), room = lower((R.roomOf(scene) || {}).scene);
+    if (r[k] || r[room]) return r[k] || r[room];
+    if (!doored) doored = new Set(Object.entries(SS.graph || {}).flatMap(([a, bs]) => [a, ...bs]).map(lower));
+    return doored.has(k) || doored.has(room) ? 1 : (SP.AREA_ACT || {})[R.areaOf(scene)] || 1;
   }
-  const shows = (m, g, own) => passes(m, g, own) && !(closed(m, g) && !prefs.mapHad);
+  const markAct = (m) => Math.max(m.act || 0, m.scene ? roomAct(m.scene) : 1);
+  /* The Act shown: a pick, kept per slot (prefs.mapActPick, slot → { n, at }), while its game stays in
+     the Act it was picked in (at); else the game's own Act, so a save that reaches the next Act shows
+     it; Free mode, All (0) unless picked. */
+  function actShown(own) {
+    const at = own ? own.act || 1 : 0;
+    const p = (prefs.mapActPick || {})[App.slotNow ? App.slotNow() : 0];
+    return p && p.at === at && p.n >= 0 && p.n <= 3 ? p.n : at;
+  }
+  function passes(m, g, own, act = actShown(own)) {
+    if (OWN_ONLY.has(m.layer) && !own) return false;
+    return !act || m.layer === 'cocoon' || markAct(m) <= act;
+  }
 
   /* ── The map, in SVG in the image's own pixels (M.W × M.H): the view is its viewBox, as the
      sibling's (hallownest-calculator js/app-map.js). ── */
@@ -923,10 +945,10 @@
   // Per layer: how many there are, how many had, how many show. REST: a resting mark's lift.
   const REST = 0.53;
   function layout(list, g, own, on) {
-    const count = {}, items = [], fine = new Map(), placed = new Map();
+    const count = {}, items = [], fine = new Map(), placed = new Map(), act = actShown(own);
     for (const m of list) {
       const inFocus = !!focusSet && focusSet.keys.includes(m.key);
-      if (!inFocus && !passes(m, g, own)) continue;
+      if (!inFocus && !passes(m, g, own, act)) continue;
       const c = count[m.layer] || (count[m.layer] = { all: 0, had: 0, shown: 0, seen: new Set() });
       // Counted by thing: marks that share one save check (two places for one map, a wish's Silver
       // Bells, the Bell Beast's spots) count once (design/03-redesign.md, step 6, the switches' contents).
@@ -1165,11 +1187,15 @@
     };
     const nOf = ([had, all]) => (had == null ? (all ? `<span class="mp-n"><b>${num(all)}</b></span>` : '')
       : all ? `<span class="mp-n${had === all ? ' is-full' : ''}"><b>${num(had)}</b><i>/${num(all)}</i></span>` : '');
+    /* Under an Act before the last, a layer with nothing up to it is greyed, its count 0 (design/98):
+       it's there, only later. */
+    const actNow = actShown(own);
+    const none = (ids) => actNow > 0 && actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
     const chip = (id, ids, act, extra = '') => {
-      const nOn = ids.filter((k) => on.has(k)).length, isOn = nOn > 0;
+      const nOn = ids.filter((k) => on.has(k)).length, isOn = nOn > 0, empty = none(ids);
       const name = SETS[id] ? SETS[id].name() : LAYER.get(id).name();
-      return `<button type="button" class="mp-kind${isOn ? '' : ' is-off'}${isOn && nOn < ids.length ? ' is-some' : ''}" data-act="${act}" data-value="${id}" aria-pressed="${isOn}">
-        ${legendArt(id)}<span class="mp-kind-t"${NT}>${esc(name)}</span>${nOf(tally(ids))}</button>${extra}`;
+      return `<button type="button" class="mp-kind${isOn ? '' : ' is-off'}${isOn && nOn < ids.length ? ' is-some' : ''}${empty ? ' is-empty' : ''}" data-act="${act}" data-value="${id}" aria-pressed="${isOn}">
+        ${legendArt(id)}<span class="mp-kind-t"${NT}>${esc(name)}</span>${empty ? `<span class="mp-n"><b>${num(0)}</b></span>` : nOf(tally(ids))}</button>${extra}`;
     };
     const kinds = (id) => {
       if (!SETS[id]) return chip(id, [id], 'mapLayer');
@@ -1196,6 +1222,8 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
+            <div class="mp-acts"><span class="mp-acts-t" id="mp-acts-t">${esc(t('mapActUpTo'))}</span><div class="seg sm" role="group" aria-labelledby="mp-acts-t">${[0, 1, 2, 3].map((n) =>
+              `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${actNow === n}">${esc(n ? t('saveAct', { n: num(n) }) : t('mapActAll'))}</button>`).join('')}</div></div>
             <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}${g ? check('mapHad', !!prefs.mapHad, t('mapHad')) : ''}</div>
           </div>
         </div>
@@ -1994,6 +2022,13 @@
     mapNames() { prefs.mapNames = prefs.mapNames === false; savePrefs(); redraw(); },
     // What's had, back on the map (design/77): a choice of yours, kept in the prefs.
     mapHad() { prefs.mapHad = !prefs.mapHad; savePrefs(); redraw(); },
+    // The Act filter: the pick kept for this slot while its game is in the Act it was picked in (actShown).
+    mapAct(node) {
+      const own = App.game(), slot = App.slotNow ? App.slotNow() : 0;
+      prefs.mapActPick = { ...(prefs.mapActPick || {}), [slot]: { n: Number(node.dataset.value) || 0, at: own ? own.act || 1 : 0 } };
+      savePrefs();
+      redraw();
+    },
     // A search result: its layer on, the view close on it, its card open.
     mapGo(node) {
       const x = finds[Number(node.dataset.value)];
@@ -2021,7 +2056,7 @@
     mapFocusOff() { focusSet = null; arrive = null; pick1(''); render(); },
   });
   // Whatever changes what the Map shows ends the focus, so a switch never seems to do nothing.
-  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame', 'mapHad']) {
+  for (const k of ['mapLayer', 'mapGroup', 'mapSet', 'mapAll', 'mapHundred', 'mapGame', 'mapHad', 'mapAct']) {
     const f = actions[k];
     actions[k] = (node) => { focusSet = null; arrive = null; f(node); };
   }

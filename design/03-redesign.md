@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the Act filter 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `98-map-act-filter-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1798,6 +1798,41 @@ with each option, real saves, 1440 and 390; kept out of the repo). **Decision: A
    be struck alone. A test pins it. B was one mark for the chain.
 
 A slot kept while those doors were locks still has them (`{ wasKind: 'lock' }`).
+
+### The Act filter (24 October 2026)
+
+Albert: «a big and important task would be to be able to put an Act filter on the Map». The one
+removed on 14 October (`design/00-study.md`) showed only what first appears in an Act, and most marks
+had no Act: of the 2,066 marks of Free mode (the Journal's enemies apart), 541 carry an Act of their
+own (163 / 192 / 186) and 1,525 none (the benches, the people, the caches, walls and levers). The
+options went to Albert in `98-map-act-filter-variants.html` (the live site with a copy of the Map's
+code answering each option, three real saves and Free mode, 1440 and 390; kept out of the repo).
+**Decision: A in all four** (Albert, 24 October 2026):
+
+1. **Up to Act N**, cumulative: what can be had by Act N, nothing of a later Act (no spoilers,
+   nothing out of reach). B was only Act N (the old filter), C everything with the later Acts faint.
+2. **A mark with no Act of its own takes its room's first Act**, from the game's doors
+   (`tools/gen-spots.js` ROOM_ACT): Act 3 what only Act 3 has (the rule of 18 October); Act 1 every
+   room the doors reach from the first room, or from a room holding a thing of Act 1, without a door
+   of ACT2_DOORS (the Grand Gate, the Phantom's way, the Citadel's other two doors, Mount Fay's and
+   the Sands of Karak's for the Clawline, Wisp Thicket's for the Faydown Cloak, the Ducts' from
+   Bilewater, each with its source); Act 2 the rest. 308 / 189 / 46 rooms; every mark then has one
+   (1,111 / 757 / 198 in Free mode). A mark goes by the later of its own and its room's. Its card
+   still says its own Act only. B was showing them under every Act.
+3. **The site's chooser** (`.seg sm`, the diamonds), labelled «Up to / Hasta», first of the legend's
+   options; on a phone a line of its own. «Act 1 / Acto 1» is ACT_1_SUPER (`saveAct`), «All /
+   Todos» the site's own. B was a boxed line on the map under the zoom, C a select.
+4. **It opens on the save's Act** (Free mode: All); a pick is kept per profile
+   (`prefs.mapActPick`, slot → the Act picked and the game's Act then) while its game stays in that
+   Act, and once the save reaches another Act the Map follows it. B was All with the pick kept for
+   good, C the save's Act every time. Under an Act before the last, a layer with nothing up to it is
+   greyed with a 0 rather than countless.
+
+Checked in headless Chrome over file:// (npm run drive, port 9458): saves of Act 1, 2 and 3 and Free
+mode, every layer on, 1440 and 390, es and en, no console errors; and the follow-through: an Act 1
+save with All picked, synced to an Act 2 save of the same profile (the Map on Act 2), Act 1 picked,
+synced to Act 3 (on Act 3), a second profile keeping its own pick, Free mode on All and keeping its
+pick. test/room-acts.test.js.
 
 ## Step 7 · Journal
 
