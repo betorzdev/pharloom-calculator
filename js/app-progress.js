@@ -1009,16 +1009,28 @@
   }
   const OPTS = 4;   // the nearest wishes for points shown before «and n more»
   let todoN = 0;    // each list's own ids (the guide has one per road's step opened)
+  /* A wish for points opens in place (design/97-road-points-links-variants.html, A): each is a
+     button that opens its card under the points' row, drawn as the required wishes' rows (who asks
+     and what it asks, «More» with the game's words, its area, its pin to where it stands now). One
+     open at a time, kept by its wish while the page is (optOpen, as routeOpen). */
+  let optOpen = -1;
   function todoHtml(r, s, ps, g) {
     const toggle = !!g, heads = ps.length > 1;
     const items = todo(r, s, ps, !!prefs.pgAll);
     if (!items.length && !heads) return '';
-    const opt = (o, i) => `<li${i >= OPTS ? ' class="is-extra"' : ''}><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`;
+    const hid = 'pg-todo-' + (++todoN);
+    const opt = (o, i) => { const on = o.wish === optOpen;
+      return `<li class="${i >= OPTS ? 'is-extra' : ''}${on ? ' is-open' : ''}"><button type="button" class="pg-opt" data-act="pgOpt" data-value="${o.wish}" aria-expanded="${on}" aria-controls="${hid}-card-${o.wish}"><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span>${App.chevron(on)}</button></li>`; };
+    const card = (o) => `<li class="pg-opt-li" id="${hid}-card-${o.wish}" data-wish="${o.wish}"${o.wish === optOpen ? '' : ' hidden'}><div class="pg-item pg-opt-card" role="group" aria-label="${esc(o.name)}">
+          <span class="pg-art"><img src="${o.icon}" alt="" loading="lazy"></span>
+          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says)}</span>
+          <span class="pg-place"><span class="pg-where">${o.area ? `<span${NT}>${esc(areaName(o.area))}</span>` : ''}</span></span>
+          ${o.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(o.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + o.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+        </div></li>`;
     const had = (o) => `<li class="is-got">${App.tick}<img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span></li>`;
     let n = 0;
     // In the guide (toggle off), the whole list under its station, with no «What's missing ·
     // Everything»: nothing's next or done there.
-    const hid = 'pg-todo-' + (++todoN);
     return `<section class="pg-todo"${toggle ? ` aria-label="${esc(t('pgTodo'))}"` : ''}>
       ${toggle ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
@@ -1041,7 +1053,7 @@
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
-        </li>`;
+        </li>${x.opts ? x.opts.map(card).join('') : ''}`;
     };
       if (!heads) return `<ol class="pg-list">${items.map(li).join('')}</ol>`;
       // Each part's head: its picture, its name and its count, ticked when met; its rows under it.
@@ -1256,6 +1268,22 @@
       const open = ul.classList.toggle('is-open');
       node.setAttribute('aria-expanded', String(open));
       node.textContent = open ? t('pgHowLess') : t('pgTodoMore', { n: num(ul.querySelectorAll('.is-extra').length) });
+      // Folded away, a wish's card goes with it.
+      const shut = !open && ul.querySelector('.is-extra.is-open .pg-opt');
+      if (shut) actions.pgOpt(shut);
+    },
+    // A wish for points: its card opens under the points' row, the one open before shuts (design/97, A).
+    pgOpt(node) {
+      optOpen = node.getAttribute('aria-expanded') === 'true' ? -1 : Number(node.dataset.value);
+      const list = node.closest('.pg-list');
+      if (!list) return;
+      for (const b of list.querySelectorAll('.pg-opt')) {
+        const on = Number(b.dataset.value) === optOpen;
+        b.setAttribute('aria-expanded', String(on));
+        b.parentNode.classList.toggle('is-open', on);
+        b.querySelector('.chev').classList.toggle('up', on);
+      }
+      for (const c of list.querySelectorAll('.pg-opt-li')) c.hidden = Number(c.dataset.wish) !== optOpen;
     },
     // The tab: kept in the preferences, so the one used last opens next time.
     pgTab(node) {
