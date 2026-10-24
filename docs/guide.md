@@ -604,8 +604,8 @@ while the wish is on, as the game shows him one at a time; the rescues and
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
   shows it; with a save where that wish is taken and not yet granted, only the station the Bell
-  Beast waits at shows, as in the game, and all twelve before it's taken, once it's granted and in
-  Free mode, one thing on the count). Each is done as your save says: the wish granted, the objective complete
+  Beast waits at shows, as in the game, all twelve before it's taken and in Free
+  mode, and none once it's granted, though it still counts as had: one thing on the count). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
