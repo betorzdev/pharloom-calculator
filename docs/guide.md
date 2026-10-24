@@ -405,8 +405,8 @@ it swaps to twice the resolution. The last button, the four corners, takes it to
 the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map shows only
-that thing, as a focus of one (its name and area in the search's place, × back to the whole map,
-with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
+that thing, as a focus of one (its name and area in the search's place, «Return to the map» back
+to the whole map, with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
 three times. An area's name centres the map on it with its ring. With the whole map in view, an
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
@@ -689,13 +689,15 @@ Other screens open the map on a thing: «See on the map» on each missing row of
 Journal entry, and the buttons on a card that go to someone else's mark. One thing is shown alone,
 as the search does: only its mark, whatever the switches and «Show completed» say (what you have
 dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
-the search's place with its name and area and its × back to the whole map. A step of Progress's road
+the search's place with its name and area and a «Return to the map» button back to the whole map
+(under the name on a phone). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
 ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
-nearest to your bench first, «1 of 2», each centred with its card and its ring) and its × back to
-the whole map. Any switch below ends it too; Back returns to Progress.
+nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
+«Return to the map». Esc ends it too (once no card or full screen is open: those close first), as do
+the Map's tab and any switch below; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
 rules, taken from its files and its code, in a dim tone, with Hornet sitting at her bench, her feet

@@ -1367,10 +1367,11 @@
   function focusBar() {
     const f = focusSet, n = f.keys.length;
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
-    // One thing (App.mapShow) has nothing to go through: its name and its ×.
+    // One thing (App.mapShow) has nothing to go through: its name and the way out. The way out
+    // says what it does (design/96, 1 A): a labelled button at the line's end, under the name on a phone.
     return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
         ${n < 2 ? '' : `${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}`}
-        <button type="button" class="mp-focus-x" data-act="mapFocusOff" aria-label="${esc(t('mapFocusOff'))}" title="${esc(t('mapFocusOff'))}">${App.cross}</button></div>`;
+        <button type="button" class="mp-focus-x" data-act="mapFocusOff">${esc(t('mapFocusOff'))}</button></div>`;
   }
   // The view around the focus's marks, a little room round them, never closer than a quarter of the map.
   function fitTo(keys) {
@@ -1561,7 +1562,7 @@
     else if (prefs.view === 'map') { vb = null; applyView(); }    // in, or out by its button: fitted to the window as it is now
   });
   // Esc where the browser doesn't take it (filling the window); an open card takes the first Esc.
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && full && !e.defaultPrevented) setFull(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && full && !e.defaultPrevented) { e.preventDefault(); setFull(false); } });
   App.mapFullOff = fullOff;
 
   /* What sits over the map in the page (Hornet): at its map point (data-x, -y),
@@ -2025,6 +2026,13 @@
     const f = actions[k];
     actions[k] = (node) => { focusSet = null; arrive = null; f(node); };
   }
+  /* The focus's other ways out (design/96, 3 A): the Map's tab while on the Map, and Esc once
+     nothing nearer takes it (an open card, full screen: their handlers run first and claim it). */
+  const toView = actions.view;
+  actions.view = (node) => { if (focusSet && node.dataset.value === 'map' && prefs.view === 'map') { focusSet = null; arrive = null; pick1(''); } toView(node); };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !e.defaultPrevented && focusSet && prefs.view === 'map') { e.preventDefault(); actions.mapFocusOff(); }
+  });
 
   // For the admin mode (js/app-map-admin.js): what it reads of the Map, and the list worked out
   // again once a fix changes.
