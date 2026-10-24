@@ -1431,6 +1431,19 @@ kbd {
 .pg-opts:not(.is-open) li.is-extra { display: none; }
 .pg-opts li.is-got { border-style: dashed; color: var(--muted); }
 .pg-opts li.is-got .ic { width: 10px; height: 10px; color: var(--ink-2); }
+/* A wish for points opens its card in place (design/97, A): the chip a button, the open one white
+   on grey as the game selects; its card under the points' row, aligned with the names, framed and
+   lit along its top, as the required wishes' rows. */
+.pg-opts li:has(> .pg-opt) { padding: 0; transition: border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease); }
+.pg-opt { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: var(--sp-6); padding: 0 var(--sp-2); border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pg-opt .chev { flex: none; color: var(--muted); }
+.pg-opts li:has(> .pg-opt:is(:hover, :focus-visible)) { border-color: var(--accent-line); color: var(--ink-strong); }
+.pg-opt:focus-visible { outline: 1px solid var(--accent); outline-offset: 1px; }
+.pg-opts li.is-open { border-color: var(--accent-line); background: var(--picked); color: var(--ink-strong); }
+.pg-opts li.is-open .chev { color: var(--ink-strong); }
+.pg-opt-li { padding: 0 0 var(--sp-3) calc(var(--sp-1) + var(--sp-6) + 40px + var(--sp-3) * 2); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); }
+.pg-item:has(.pg-opts):has(~ .pg-opt-li:not([hidden])) { border-bottom: 0; }
+.pg-todo .pg-opt-card { grid-template-columns: 40px minmax(0, 1fr) auto 28px; border: 1px solid var(--line-ctl); border-top-color: var(--accent-line); background: var(--veil); }
 /* The one list's toggle under its title, and a done row: the number's diamond, dimmed, with the tick
    (design/82, 1 A). */
 .pg-todo .pg-seg { display: flex; justify-content: flex-end; margin-bottom: var(--sp-2); }
@@ -1809,6 +1822,11 @@ kbd {
   .pg-where { justify-content: flex-start; }
   .pg-item .pg-onmap { grid-row: 1 / span 2; grid-column: -2; }
   .pg-name { white-space: normal; }
+  /* A wish's card (design/97, A): the rows' whole width, its place under its name. */
+  .pg-opt-li { padding-left: 0; }
+  .pg-todo .pg-opt-card { grid-template-columns: 36px minmax(0, 1fr) 28px; }
+  .pg-opt-card .pg-place { grid-column: 2; }
+  .pg-opt-card .pg-art { grid-row: 1 / span 2; }
 }
 
 /* Since the previous save (js/app-home.js, js/changes.js): opened by what the completion went up

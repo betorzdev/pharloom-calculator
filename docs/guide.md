@@ -798,7 +798,9 @@ that the Needolin, not a Bind, is what snares her.
 its area and the Map's pin when it has the thing: each required wish (under its head just its name,
 «Balm for the Wounded», with who asks for it in the game's words and what it asks),
 the wish points short («Get 1 more wish point») with the four wishes nearest your bench that would
-give it («and n more» unfolds the rest), each condition not met (the Flea Caravan, the Faydown Cloak,
+give it («and n more» unfolds the rest; tapping one opens its card under the row, drawn as a
+required wish's: who asks and what it asks, «More», its area and its pin to where it stands now,
+one open at a time), each condition not met (the Flea Caravan, the Faydown Cloak,
 Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
 piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
 Each row is its name and one line, how to get it, ended by «More» when there's more to
