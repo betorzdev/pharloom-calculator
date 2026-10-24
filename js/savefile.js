@@ -49,6 +49,10 @@
   const LEFT = Object.entries(SP.LEFT || {});
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
+  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's), as ['<id>:<scene>', check].
+  const HERE = [...(PE.PEOPLE || []).filter((x) => x.here).flatMap((x) => Object.entries(x.here).map(([sc, c]) => [x.id + ':' + sc.toLowerCase(), c])),
+    ...Object.entries(PE.HERE || {}).flatMap(([id, m]) => Object.entries(m).map(([sc, c]) => [id + ':' + sc.toLowerCase(), c]))];
+  const HERE_KEYS = new Set(HERE.map(([k]) => k));
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -345,6 +349,7 @@
       switch (c[0]) {
         case 'flag': return !!pd[c[1]];
         case 'min': return (Number(pd[c[1]]) || 0) >= c[2];
+        case 'is': return pd[c[1]] === c[2];   // a field with that value (a number, a scene's name)
         case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
         case 'accepted': return !!(quests.get(c[1]) || {}).IsAccepted;   // taken, done or not
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
@@ -479,6 +484,9 @@
       opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
+      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's) has them
+      // now, by '<id>:<scene>'; a spot a slot has no word of is shown.
+      peopleHere: Object.fromEntries(HERE.map(([k, c]) => [k, has(c)])),
     };
   }
 
@@ -506,7 +514,7 @@
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
                           everbloom, purse, rosaries, shards, farsight, hasJournal, items, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
-                          (visited … elsewhere, steelSpots, peopleVars)
+                          (visited … elsewhere, steelSpots, peopleVars, peopleHere)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -587,7 +595,7 @@
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
-    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   /* The last games read, by their keys' text: the screens ask for the game many times a render
      (Free mode's Progress, two hundred), and reading it each time took a good part of one
@@ -682,6 +690,7 @@
     out.mapFlags = out.mapFlags.filter((f) => MAP_VARY.includes(f));
     out.mapVars = Object.fromEntries(Object.entries(out.mapVars).filter(([k, x]) => MAP.VARS.includes(k) && mapValue(x, undefined) !== undefined));
     out.peopleVars = Object.fromEntries(Object.entries(out.peopleVars).filter(([k, x]) => PE.VARS.includes(k) && mapValue(x, undefined) !== undefined));
+    out.peopleHere = Object.fromEntries(Object.entries(out.peopleHere).filter(([k, x]) => HERE_KEYS.has(k) && typeof x === 'boolean'));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
