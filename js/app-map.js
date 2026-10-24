@@ -99,8 +99,11 @@
     L('tools-blue', () => t('ct_blue'), 'assets/icons/tools/druids-eye.webp'),
     L('tools-yellow', () => t('ct_yellow'), 'assets/icons/tools/compass.webp'),
     L('tools-other', () => t('mapToolsOut'), 'assets/icons/tools/snare-setter.webp'),
-    L('crests', () => t('cat_crests'), 'assets/icons/crests/reaper.webp'),
-    L('skills', () => t('cat_skills'), 'assets/icons/skills/silkspear.webp'),
+    /* The Crests and the Silk Skills in the game's lit pictures (design/109, C): the pause menu's
+       Crest tab and the Silk Skill's solid inventory sprite; their line art is hairlines at 28 px,
+       barely changed when off. */
+    L('crests', () => t('cat_crests'), ICON('hornet_inv_pane_icons_0001_crest')),
+    L('skills', () => t('cat_skills'), 'assets/icons/skills-inv/silkspear.webp'),
     // The abilities: the seven of the 100% (js/completion.js ARTS) and the four outside it.
     L('arts', () => t('mapArtsIn'), 'assets/icons/arts/swift-step.webp'),
     L('arts-other', () => t('mapToolsOut'), 'assets/icons/arts/drifters-cloak.webp'),

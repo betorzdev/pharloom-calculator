@@ -432,6 +432,7 @@
     "assets/map/icons/hornet_extractor_pins.webp": [104, 128, 52.0, 64.0, 128, 70.7],
     "assets/map/icons/hornet_icon_0000_r_psalm_cylinder_white.webp": [120, 121, 59.5, 60.5, 121, 68.9],
     "assets/map/icons/hornet_icon_bell_clapper.webp": [99, 128, 50.0, 63.5, 125, 72.0],
+    "assets/map/icons/hornet_inv_pane_icons_0001_crest.webp": [75, 84, 38.0, 41.0, 80, 40.2],
     "assets/map/icons/hornet_inv_pane_icons_0002_wish.webp": [65, 96, 32.5, 47.5, 95, 47.5],
     "assets/map/icons/hornet_inv_pane_icons_0003_journal.webp": [70, 72, 35.0, 37.0, 68, 36.8],
     "assets/map/icons/i_chute_key_whiteward.webp": [123, 128, 61.0, 64.0, 126, 86.3],
