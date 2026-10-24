@@ -10686,6 +10686,7 @@
     'boss:shrine-guardian-seth': [778.6, 993.2],
     'boss:summoned-saviour': [218.8, 1496.2],
     'boss:lace-the-cradle': [1374.8, 304.2],
+    'boss:moss-mother-weavenest-atla': [505.5, 1576.7],
     'boss:moss-mother-act-3-moss-grotto': [553.3, 1542.9],
     'boss:skull-tyrant-bone-bottom': [716.8, 1466.9],
     'journal:mossgrub': [464.4, 1558.3],

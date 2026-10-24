@@ -1568,13 +1568,21 @@ const inScene = (scene, x, y) => {
 // it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
 // its point is brought to the scene's edge. One at the scene's origin is parked: not used.
 const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
-// A Journal entry's enemy in a scene: the first carrying its record there, else what names it.
+/* A Journal entry's enemy in a scene: the first carrying its record there, else what names it. When
+   only something parked at the scene's origin names it, the scene's one arena (its BattleScene's
+   point, pickups.json battles): Weave_03's pair of Moss Mothers, whose EnemyDeathEffects carry no
+   record (the «Battle End» FSM under «Boss Scene», at the origin, counts their kill), fight in its
+   arena at the room's west end, not at the room's middle the Map otherwise falls back to (read in
+   the scene, 24-Oct-2026). */
 const recordAt = (e, scene) => {
   const host = hostOf(scene);   // a boss scene's room (toMap)
   const size = P.sizes[host];
-  const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
+  const named = ((e && P.records[e.key]) || []).filter(([sc]) => lower(sc) === lower(scene));
+  const hits = named.filter(([, , , x, y]) => typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
   const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
+  const arenas = P.battles[lower(scene)] || [];
+  if (!hit && named.length && arenas.length === 1 && inScene(host, arenas[0][1], arenas[0][2])) return toMap(host, arenas[0][1], arenas[0][2]);
   if (!hit || !size) return null;
   const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
   return toMap(host, clamp(hit[3], size[0]), clamp(hit[4], size[1]));

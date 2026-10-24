@@ -194,6 +194,9 @@
     el.masthead.classList.toggle('is-lang-open', langOpen);
     // In the page's order the sister's link, the language and Share, the title and the save: the
     // keyboard walks the header left to right, and a phone's second row in its own order (css).
+    // The flea on the donation link hops once, when the page opens; repainted later, it stays still.
+    const hop = !fleaSettled;
+    fleaSettled = true;
     el.masthead.innerHTML = `
       ${App.sister ? App.sister.linkHtml() : ''}
       <div class="mh-tools">
@@ -202,7 +205,7 @@
           <ul class="lang-menu" id="lang-menu"${langOpen ? '' : ' hidden'}>${I.LANGS.map(langItem).join('')}</ul>
         </div>
         <button type="button" class="text-btn mh-link" data-act="share" title="${esc(t('shareHint'))}">${esc(t('share'))}</button>
-        <a class="text-btn mh-link mh-support" href="${KOFI}" target="_blank" rel="noopener" title="${esc(t('supportHint'))}" aria-label="${esc(t('support'))}"><span class="support-long">${esc(t('support'))}</span><span class="support-short">Ko-fi</span></a>
+        <a class="text-btn mh-link mh-support" href="${KOFI}" target="_blank" rel="noopener" title="${esc(t('supportHint'))}" aria-label="${esc(t('support'))}"><span class="support-long">${esc(t('support'))}</span><span class="support-short">Ko-fi</span><img class="support-flea${hop ? ' is-hop' : ''}" src="${FLEA}" alt="" width="30" height="31"></a>
       </div>
       <a class="brand" href="${here(hashFor('home'))}" data-act="view" data-value="home" title="${esc(t('goHome'))}">
         ${CROWN}
@@ -271,6 +274,20 @@
 
   // Where donations go: a plain link, never Ko-fi's widget (it loads third-party scripts; docs/guide.md, "Privacy").
   const KOFI = 'https://ko-fi.com/betorzdev';
+  /* The flea from the caravan (design/03-redesign.md, step 1d, second round): on the header's link,
+     as the Knight on the sister's, and on every screen's frame by its top-right corner, a plain link
+     to Ko-fi as well. Each hops once (the header's when the page opens, the frame's when a screen is
+     arrived at) and on hover; still otherwise (css/app.css, .support-perch). */
+  const FLEA = 'assets/icons/pieces/flea.webp';
+  let fleaSettled = false, perchView = null;
+  function renderPerch() {
+    const sec = screenOf(prefs.view);
+    if (!sec || sec.querySelector(':scope > .support-perch')) return;
+    const hop = perchView !== prefs.view;
+    perchView = prefs.view;
+    sec.insertAdjacentHTML('beforeend', `<a class="support-perch${hop ? ' is-hop' : ''}" href="${KOFI}" target="_blank" rel="noopener" title="${esc(t('supportHint'))}" aria-label="${esc(t('support'))}">
+      <img src="${FLEA}" alt="" width="64" height="65"><span class="support-say" aria-hidden="true"><span class="support-long">${esc(t('support'))}</span><span class="support-short">Ko-fi</span></span></a>`);
+  }
   // Who runs the site, for the legal notice (LSSI art. 10).
   const OWNER = 'betorzdev';
   // GitHub's mark (Octicons mark-github), in currentColor so it takes the links' accent.
@@ -389,13 +406,15 @@
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
   const screenOf = (v) => el.screens.querySelector(`.screen[data-view="${v}"]`);
-  /* A render for one screen's own switches (the Map's legend): that screen drawn again, not every
-     one; the rest are drawn again when shown (go, render). */
+  /* Only the screen that shows is drawn: every render ends in showScreen(), so a hidden one is
+     drawn when it's shown (go, render). Drawing all eight at every render took most of the first
+     paint (22-Oct-2026: 0.7 s of 0.9 s on a phone's CPU) and fetched the hidden screens' pictures.
+     A render for one screen's own switches (the Map's legend): that screen drawn again, if it shows. */
   let only = null;
   App.renderOnly = (v) => { only = v; try { render(); } finally { only = null; } };
   function renderScreens() {
     for (const v of VIEWS) {
-      if (only && v !== only) continue;
+      if (v !== prefs.view || (only && v !== only)) continue;
       const sec = screenOf(v);
       if (!sec) continue;
       if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }
@@ -454,6 +473,7 @@
     renderScreens();                        // each screen on its own (safely, above)
     safely('banner', renderBanner);
     showScreen();
+    safely('perch', renderPerch);           // the flea on the frame of the screen just shown
     restoreFocus(focus);
     if (App.hornet) safely('hornet', () => App.hornet.sync());   // Hornet takes her place on what was just painted (js/app-hornet.js)
     if (App.sister) safely('sister', () => App.sister.sync());   // and the Knight on the sister site's link (js/app-sister.js)
@@ -546,9 +566,11 @@
   // The language's list is a dropdown: a tap anywhere else closes it (and still does what it was for).
   document.addEventListener('click', (ev) => {
     if (langOpen && !ev.target.closest('.langsel')) langMenu(false);
-    // The donation link, wherever it is (header, footer, the About block's answer): `at` says which.
+    /* The donation link, wherever it is: `at` says which (header, frame: the flea on the screen's
+       frame, footer, about: the About block's answer), and `other` one placed nowhere of those. */
     const kofi = ev.target.closest(`a[href="${KOFI}"]`);
-    if (kofi) track('support', { at: kofi.closest('#masthead') ? 'header' : kofi.closest('#colophon') ? 'footer' : 'about' });
+    if (kofi) track('support', { at: kofi.closest('#masthead') ? 'header' : kofi.closest('.support-perch') ? 'frame'
+      : kofi.closest('#colophon') ? 'footer' : kofi.closest('#about') ? 'about' : 'other' });
     const node = ev.target.closest('[data-act]');
     if (!node) return;
     if (node.tagName === 'A' && (ev.ctrlKey || ev.metaKey || ev.shiftKey || ev.altKey || ev.button)) return;

@@ -1080,8 +1080,9 @@
     const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
     if (!w || !h) return;
-    const { view, key } = areaCtx, box = areaCut(r);
-    const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
+    const { view, key, box: area } = areaCtx, box = areaCut(r);
+    // Composed for the area's box only (MP.compose's clip): another area is composed again.
+    const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale + '@' + [area.x, area.y, area.w, area.h].join(',');
     const draw = () => {
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
       MP.paint(cv.getContext('2d'), areaComp, box, w, h);
@@ -1089,7 +1090,7 @@
     if (areaCompKey === ck) { draw(); return; }
     sheet(scale, () => {
       if (!cv.isConnected) return;
-      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas);
+      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas, area);
       areaCompKey = ck;
       draw();
     });

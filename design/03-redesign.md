@@ -50,7 +50,7 @@ the work up reads it first, then the step it's on.
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 | 1c | The site's icon: the favicon, the home-screen icon | **Built** (14 Oct) | `72-site-icon-variants.html` (kept out of the repo) |
-| 1d | The donation link (Ko-fi) | **Built, draft** (18 Oct) | `94-donate-variants.html`, `94b-donate-variants.html` (kept out of the repo) |
+| 1d | The donation link (Ko-fi) | **Built** (18 Oct; the caravan flea, 24 Oct) | `94-donate-variants.html`, `94b-donate-variants.html`, `99-support-nudge-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -2352,4 +2352,30 @@ carry it in every option.
 
 A and A: "Support the site" («Apoya la web») after Share, set apart by the same thin rule as the
 language, "Ko-fi" alone on a phone; plus the footer line and the FAQ's. Left in a draft PR.
+
+### Second round: few clicks (24 October 2026)
+
+Footworn, 4 to 24 October: 288 visitors, six `support` clicks, every one from the header, none
+from the footer or the FAQ; the screens people open are the Map (518) and Progress (353), far ahead
+of Your game (160). `99-support-nudge-variants.html` first drew a quiet line at the moment of
+value (under Your game's scene or the road) with words on who makes the site and what it pays.
+Albert: too much text, nobody stops to read it; it has to catch the eye. The second drawing, in
+the game's own pictures and almost no words: 1 · the idea, **A** a flea from the caravan
+(`assets/icons/pieces/flea.webp`) perched on the header's link and on the screen, B a rosary string
+(the game's money) in a pause-menu plaque with a glint, and hanging from a silk thread on the
+screen, C a milestone on Progress once per new tenth of the 100% (the crown, the figure, embers, the
+plaque); 2 · where on the screens, **A** the frame's top-right corner on every screen, B the Map's
+empty corner and the road's end, C the header only; 3 · motion, **A** every few seconds, B once, C
+still.
+
+### Decision (24 October 2026)
+
+A, A and B: the flea perches on the header's link (as the Knight on the sister's) and on every
+screen's frame by its top-right corner, sitting on the frame's line, with a soft halo. It hops once
+when the page opens (the header's) or a screen is arrived at (the frame's) and on hover; still
+otherwise, and never with reduced motion. On hover the frame's shows the link's name in a small
+plaque left of it, on the frame's line, in front of everything and clear of every screen's controls
+(Albert: the first drawing's label hid behind the Map's zoom bar); "Ko-fi" under 1100px, none on a
+phone. No new strings. Its clicks are `support` with `at: 'frame'`, and a Ko-fi link outside the
+header, the frame, the footer and the About block counts as `other` instead of `about`.
 
