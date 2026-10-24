@@ -1573,11 +1573,29 @@ const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
    point, pickups.json battles): Weave_03's pair of Moss Mothers, whose EnemyDeathEffects carry no
    record (the «Battle End» FSM under «Boss Scene», at the origin, counts their kill), fight in its
    arena at the room's west end, not at the room's middle the Map otherwise falls back to (read in
-   the scene, 24-Oct-2026). */
+   the scene, 24-Oct-2026). A boss the game makes from its prefab (SS.journalHow 'spawn': nothing in
+   the scene names its record) in a room where one other boss's record is: that boss's arena, the
+   one they share. Tormented Trobbio, on Trobbio's stage in Library_13 (his spawner at (77.1, 16.3),
+   Trobbio at (73.8, 16.4), read in the scene on 24-Oct-2026), not at the room's middle. Left at
+   their room's middle, which is in their arena (read in the scenes the same day):
+     · the Last Judge, made from its prefab too, alone in Coral_Judge_Arena, its arena whole (its
+       object waits off the scene above the Great Gate and leaps in: brought to the edge, it would
+       sit in the room's corner);
+     · the Far Fields' Savage Beastfly, whose record only bone_east_08_boss_beastfly carries (loaded
+       over Bone_East_08 by its «Boss Beastfly Loader»), on the Beastfly itself waiting in the lava
+       under the floor (81, 0.5): brought to the edge, it would sit on the room's bottom, farther
+       from the arena it shares with the Fourth Chorus (its Home Point at (80.8, 14.7)) than the
+       middle is.
+   A record in a scene the Map can't place (Lost Lace's cocoon) is placed below (BOSS_PIN). */
+const BOSS_KEYS = new Set(BOSSES.map(([foe, , , , more]) => (bookOf((more && more.of) || foe) || {}).key).filter(Boolean));
 const recordAt = (e, scene) => {
   const host = hostOf(scene);   // a boss scene's room (toMap)
   const size = P.sizes[host];
   const named = ((e && P.records[e.key]) || []).filter(([sc]) => lower(sc) === lower(scene));
+  if (!named.length && e && BOSS_KEYS.has(e.key) && SS.journalHow[e.key] === 'spawn') {
+    const others = [...BOSS_KEYS].filter((k) => k !== e.key && (P.records[k] || []).some(([sc]) => lower(sc) === lower(scene)));
+    if (others.length === 1) return recordAt(J.BOOK.find((x) => x.key === others[0]), scene);
+  }
   const hits = named.filter(([, , , x, y]) => typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
   const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
@@ -2155,6 +2173,28 @@ const OPENS = {};
     OPENS[key] = { ...(o.wish ? { wish: o.wish } : o.after ? { after: o.after } : o.art ? { art: o.art } : { freed: o.freed }), check };
   }
 }
+
+/* A boss fought in a scene the Map can't place, which only its room loads, with no door into it
+   (SS.sceneHosts): where the game pins the main objective its beating ends, in that room (a goal
+   whose check holds the boss's own), not at the room's middle. Lost Lace's cocoon, abyss_cocoon,
+   which Abyss_05's «Abyss Dive Cutscene» loads (through Last_Dive) at the dive, in the room's lower
+   west end (37.9, 8.1): the Act 3 finale's pin (Black Thread Pt6 Flower, done once Lost Lace is in
+   the Journal) is there (read in the scene, 24-Oct-2026). Its Journal entry's mark goes with it.
+   The run stops if such a boss has no such pin. The Bell Eater's arena, which every Bellway station
+   loads, keeps the room it's called to (Belltown_basement, a point on the map). */
+const BOSS_PIN = [];
+for (const [foe, scene, check, , more] of BOSSES) {
+  const e = bookOf((more && more.of) || foe);
+  const recs = (e && P.records[e.key]) || [];
+  if (XY['boss:' + foe] || !recs.length || !recs.every(([sc]) => (SS.sceneHosts[lower(sc)] || []).map(lower).join() === lower(scene))) continue;
+  const has = (c) => JSON.stringify(c) === JSON.stringify(check) || ((c[0] === 'any' || c[0] === 'all') && c.slice(1).some(has));
+  const pins = TASKS.map((t, i) => i).filter((i) => TASKS[i][0] === 'goal' && sameRoom(TASKS[i][3], scene) && has(TASKS[i][2]) && XY['task:' + i]);
+  if (pins.length !== 1) fail(`${foe} is fought in ${recs.map(([sc]) => sc).join(', ')}, off the map, and ${pins.length} objectives' pins in ${scene} end it: BOSS_PIN needs reading again`);
+  put2('boss:' + foe, XY['task:' + pins[0]]);
+  if (!XY['journal:' + e.id] && lower(((SS.journalRooms[e.key] || []).map(([s]) => s)).find(onMap)) === lower(scene)) put2('journal:' + e.id, XY['task:' + pins[0]]);
+  BOSS_PIN.push(foe);
+}
+console.log(`bosses at their objective's pin, their arena off the map: ${BOSS_PIN.join(', ') || 'none'}`);
 
 /* ── Objective steps on one point (21-Oct-2026, Albert's D32) ──
    The game draws one objective's pin at a time (QuestMapMarker); the steps whose pins fall on the
