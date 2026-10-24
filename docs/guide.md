@@ -704,13 +704,14 @@ Journal entry, and the buttons on a card that go to someone else's mark. One thi
 as the search does: only its mark, whatever the switches and «Show completed» say (what you have
 dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
 the search's place with its name and area and a «Return to the map» button back to the whole map
-(under the name on a phone). A step of Progress's road
+(on a phone the line takes the whole width, the name beside the zoom's buttons and never cut: it
+wraps, the area under it, and the button on a row below). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
 ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
 nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
-«Return to the map». Esc ends it too (once no card or full screen is open: those close first), as do
+«Return to the map» (on a phone, one row with the ‹ ›). Esc ends it too (once no card or full screen is open: those close first), as do
 the Map's tab and any switch below; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
