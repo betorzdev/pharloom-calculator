@@ -7,6 +7,8 @@ What each is (read on 11-Oct-2026, in atlases_assets_assets/sprites/_atlases/):
     i_slab_key                           the Key of Indolent's mark: a key of the inventory (locked doors draw a padlock glyph)
     hornet_inv_pane_icons_0002_wish      Wishwalls: the pause menu's Wishes tab (inventory)
     hornet_inv_pane_icons_0003_journal   the Journal's layer: its tab (inventory)
+    hornet_inv_pane_icons_0001_crest     the Crests' layer: the pause menu's Crest tab (inventory; the Crests'
+                                         own art is line art, a few hairlines at a selector's size)
     quest_icon_large__0008_gather        who asks for a wish: a wish's emblem (wish)
     quest_icon_large_0006_herald         who gives a thing of the 100%: the herald's emblem (wish)
     I_map                                Maps: an area's map, rolled, as the inventory shows it (inventory)
@@ -34,7 +36,7 @@ import UnityPy
 
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'   # Unity 6 strips its version from the bundles
 WANT = {
-    'inventory': ['I_slab_key', 'Hornet_Inv_pane_icons_0002_wish', 'Hornet_Inv_pane_icons_0003_journal', 'I_map',
+    'inventory': ['I_slab_key', 'Hornet_Inv_pane_icons_0002_wish', 'Hornet_Inv_pane_icons_0003_journal', 'Hornet_Inv_pane_icons_0001_crest', 'I_map',
                   'I_token_of_faith', 'I_slab_key_gold', 'I_slab_key_brass', 'I_key_whiteward', 'cog_heart_pieces', '_0000_T_web_shot_broken',
                   'dock_key', 'belltown_house_key', 'Hornet_icon_0000_R_psalm_cylinder_white'],
     'inventory_furniture_items': ['farsight', 'materium', 'crawbell'],
