@@ -872,10 +872,12 @@ step, each with what the game says of it and its way onto the Map, as above:
      - four conditions: the Flea Caravan at Fleatopia, the Faydown Cloak, Lace defeated in the
        Cradle (with the three melodies that lead there), and the Bellhome Key. Pavo gives the key
        after Bellhart's Glory and 2 wishes of his list, once you've rested at a bench outside
-       Bellhart, and its row says so until then. The caravan says where it stands and the fleas
-       rescued: Mooshka takes it to Fleatopia with 22, once the empty Pale Lake has been seen (and
-       on the Phantom's way, the Last Judge beaten first: its stop before is the Judge's arena);
-       at each stop it moves on only after you've talked to him and rested at a bench away from it.
+       Bellhart, and its row says so until then. The caravan moves three times, each when you
+       talk to Mooshka at its stop with enough fleas rescued: 5 to leave the Marrow, 12 to leave
+       Greymoor (with the Last Judge beaten and the Grand Gate open, even on the Phantom's way)
+       and 22 to leave the Blasted Steps (with the empty Pale Lake seen); in Greymoor and the
+       Blasted Steps, also after a rest at a bench away from the stop once you've met him there.
+       With a save, its row gives the fleas of its next move and only what that move still asks.
   2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
      you to him). Offered and turned down isn't taken: the step says to talk to him again.
   3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the

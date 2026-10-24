@@ -256,6 +256,8 @@
 
   const list = (v) => (v && Array.isArray(v.savedData) ? v.savedData : []);
   const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
+  // What Mooshka's FSMs check besides the fleas before the caravan moves on (js/acts.js LEGS).
+  const CARAVAN_FLAGS = ['SeenLastJudgeGateOpen', 'CaravanTroupeLeaderCanLeaveGreymoor', 'CaravanTroupeLeaderCanLeaveJudge', 'SeenFleatopiaEmpty'];
 
   /* playerData and sceneData → what the site keeps of a game, in its own ids:
        tools, crests      owned (IsUnlocked; a Tool also not IsHidden), by js/collectibles.js's names
@@ -305,7 +307,9 @@
        bells              every Bellshrine rung, the Songclave's too (the Map's; the Grand Gate wants five)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
        caravan            where the flea caravan is (CaravanTroupeLocation: 3 is Fleatopia)
-       doubleJump         the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
+       caravanFlags       of CARAVAN_FLAGS, those set: what its moves ask besides the fleas
+                          (js/acts.js LEGS); caravanRead as foundRead
+       doubleJump        the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
                           Cradle's tower (defeatedLaceTower)
        bellhomeKey        Pavo has given the Bellhome's key (BelltownGreeterHouseFullDlg)
        snareOffered       the Caretaker has offered the wish Silk and Soul (CaretakerOfferedSnareQuest)
@@ -405,6 +409,8 @@
       lastJudge: pd.defeatedLastJudge === true,
       phantom: pd.defeatedPhantom === true,
       caravan: int(pd.CaravanTroupeLocation),
+      caravanFlags: CARAVAN_FLAGS.filter((f) => pd[f] === true),
+      caravanRead: true,
       doubleJump: pd.hasDoubleJump === true,
       laceTower: pd.defeatedLaceTower === true,
       bellhomeKey: pd.BelltownGreeterHouseFullDlg === true,
@@ -572,7 +578,7 @@
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
-    quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });

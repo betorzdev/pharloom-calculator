@@ -718,19 +718,28 @@
     return QU.GROUPS[name].quests.filter((q) => q.required === required)
       .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g)).sort(byAct);
   }
-  /* The caravan, while it isn't in Fleatopia (js/acts.js): the fleas rescued and its stop now, what
-     its last move asks (the empty Pale Lake seen), and on the Phantom's way, the Last Judge (the
-     stop after Greymoor is the Judge's arena). It moves on only once time has passed since Mooshka
-     was met at that stop, away from its room (GameManager.TimePasses: CaravanTroupeLeaderCanLeave
-     Greymoor and Judge, not in Greymoor_08 or Coral_Judge_Arena): a bench's rest. Without a save, the rule. */
+  /* The caravan, while it isn't in Fleatopia (js/acts.js LEGS, caravanOf): its next move, from the
+     stop it's at, with the fleas that move asks and the rest of what it asks not met yet (the
+     Last Judge and the Grand Gate to leave Greymoor, the empty Pale Lake to leave the Blasted
+     Steps, and at both, a bench's rest away from the stop once Mooshka has been met there); a slot
+     kept before the site read those flags lists them all. Without a save, the three moves' rule. */
   const STOP = ['BONEFOREST', 'GREYMOOR', 'CORAL_STEPS'];
-  // { how, more }: where it stands, then what its next stop asks first.
+  // { how, more }: the next move's fleas, then what else it asks.
   function caravanHow(c, g) {
-    const lake = t('roadCaravanLake', { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') });
-    const rest = t('roadCaravanRest', { npc: pick(HW.NPCS.mooshka) });
-    if (!g || !c) return { how: t('roadCaravanRule', { need: num(A.FLEAS), npc: pick(HW.NPCS.mooshka) }), more: [lake, rest] };
-    return { how: t('roadCaravanHow', { n: num(c.fleas), need: num(c.need), npc: pick(HW.NPCS.mooshka), at: areaName(STOP[c.at]) }),
-      more: [c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : '', rest].filter(Boolean) };
+    const npc = pick(HW.NPCS.mooshka), judge = foeName('last-judge'), gate = gateOf({});
+    const lake = { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') };
+    if (!g || !c) {
+      const [a, b, d] = A.LEGS.map((l) => num(l.fleas));
+      return { how: t('roadCaravanRule', { npc, a, b, c: d, s0: areaName(STOP[0]), s1: areaName(STOP[1]), s2: areaName(STOP[2]) }),
+        more: [t('roadCaravanRuleJudge', { at: areaName(STOP[1]), judge, gate }), t('roadCaravanRuleLake', { at: areaName(STOP[2]), ...lake }),
+          t('roadCaravanRuleRest', { a: areaName(STOP[1]), b: areaName(STOP[2]), npc })] };
+    }
+    const at = areaName(STOP[c.at]);
+    const ask = { judge: () => t('roadCaravanJudge', { judge }), gate: () => t('roadCaravanGate', { gate }),
+      lake: () => t('roadCaravanLake', lake), rest: () => t('roadCaravanRest', { npc, at }) };
+    const words = { n: num(c.fleas), need: num(c.need), from: at, to: c.at + 1 < STOP.length ? areaName(STOP[c.at + 1]) : t('roadFleatopia'), npc };
+    return { how: t(c.fleas >= c.need ? 'roadCaravanEnough' : 'roadCaravanHow', words),
+      more: c.asks.filter((x) => x.ok !== true).map((x) => ask[x.id]()) };
   }
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
   /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace
