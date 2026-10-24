@@ -671,7 +671,7 @@
         en: 'Pious Isamor',
         key: 'OLD_STATUE_SUPER+OLD_STATUE_MAIN+OLD_STATUE_SUB',
       },
-      art: null,
+      art: 'people/old-statue',
       spots: [['library_10', 1816.4, 720.3]],
       met: ['libraryStatueWoken'],
     },

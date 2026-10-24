@@ -591,7 +591,8 @@ leaves those off.
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
-  from the game's sprites (tools/extract-people.py), named as their title card names them. With a
+  from the game's sprites (tools/extract-people.py; the Last Conductor, whom the game draws only as
+  a black shadow, keeps the herald), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
   now, each spot by the switches the game turns it on with (the flea troupe at its camp, Kratt
