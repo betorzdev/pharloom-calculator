@@ -1568,13 +1568,21 @@ const inScene = (scene, x, y) => {
 // it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
 // its point is brought to the scene's edge. One at the scene's origin is parked: not used.
 const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
-// A Journal entry's enemy in a scene: the first carrying its record there, else what names it.
+/* A Journal entry's enemy in a scene: the first carrying its record there, else what names it. When
+   only something parked at the scene's origin names it, the scene's one arena (its BattleScene's
+   point, pickups.json battles): Weave_03's pair of Moss Mothers, whose EnemyDeathEffects carry no
+   record (the «Battle End» FSM under «Boss Scene», at the origin, counts their kill), fight in its
+   arena at the room's west end, not at the room's middle the Map otherwise falls back to (read in
+   the scene, 24-Oct-2026). */
 const recordAt = (e, scene) => {
   const host = hostOf(scene);   // a boss scene's room (toMap)
   const size = P.sizes[host];
-  const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
+  const named = ((e && P.records[e.key]) || []).filter(([sc]) => lower(sc) === lower(scene));
+  const hits = named.filter(([, , , x, y]) => typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
   const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
+  const arenas = P.battles[lower(scene)] || [];
+  if (!hit && named.length && arenas.length === 1 && inScene(host, arenas[0][1], arenas[0][2])) return toMap(host, arenas[0][1], arenas[0][2]);
   if (!hit || !size) return null;
   const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
   return toMap(host, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
@@ -1839,8 +1847,9 @@ const TASKS = [], HUNTS = {}, ASKS = {};
      Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
      station cut from the game), under Greymoor_17 in the black. Each of the others carries its
      station's value (alt.at, as a Flintbeetle's places): a save with the wish taken and not done
-     shows only the one the beast is at; before it's taken, once it's done and in Free mode, all
-     twelve (one check, so one thing on the layer's count). */
+     shows only the one the beast is at; before it's taken and in Free mode, all twelve (one check,
+     so one thing on the layer's count); once it's done, none (alt.vanish: the pins go, the wish
+     stays counted as had; Albert's choice, 24-Oct-2026). */
   const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
   let unstationed = 0;
   const STATION = 'FastTravelNPCLocation';
@@ -1878,8 +1887,8 @@ const TASKS = [], HUNTS = {}, ASKS = {};
       if (sprite === 'quest_map_icon_bellbeast') {
         const v = stationOf(off, pinName);
         STATION_AT.set(v, [scene, M.PINS.find((x) => x[0] === 'bellway' && sceneOfPart(x[3]) === scene)]);
-        // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
-        alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
+        // Not taken yet, or not done and the beast waits at its station (the value, as 'min' reads an int).
+        alt = { at: ['any', ['not', ['accepted', q]], ['all', ['not', check], ['min', STATION, v], ['not', ['min', STATION, v + 1]]]], vanish: true };
       }
       task('goal', q, check, scene, p, null, art('pins/' + sprite), null, null, alt);
     } else {
@@ -2291,10 +2300,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
-              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              alt { at, by, open, foe, vanish } for one of the places one thing may be in (a Flintbeetle's
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
-              enemy's name (the Bellbeast's and the Herald's have at alone)
+              enemy's name; vanish: once the thing is done and this isn't the place, it has no pin
+              but counts as had (the Bellbeast's; it and the Herald's have no by, open or foe)
      HUNTS    a hunt or gather wish whose thing only enemies give while it's on → [the thing's save
               name (its js/quests.js CHAIN asks), [[Journal entry key, scene, how many], ...]]: the
               rooms on the map where those enemies are, the most first (the Map's «Where to hunt»)

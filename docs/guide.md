@@ -520,7 +520,10 @@ leaves those off.
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
+  your game hasn't opened them: a station not unlocked, a toll not paid), the **Flea Caravan**
+  itself (the game's own pin for it, on at first): with a save, one mark at the stop your caravan
+  is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
+  none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
   the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
   being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
@@ -604,8 +607,8 @@ while the wish is on, as the game shows him one at a time; the rescues and
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
   shows it; with a save where that wish is taken and not yet granted, only the station the Bell
-  Beast waits at shows, as in the game, and all twelve before it's taken, once it's granted and in
-  Free mode, one thing on the count). Each is done as your save says: the wish granted, the objective complete
+  Beast waits at shows, as in the game, all twelve before it's taken and in Free
+  mode, and none once it's granted, though it still counts as had: one thing on the count). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
@@ -1111,15 +1114,20 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - Save files are read in the browser; nothing is uploaded.
 - **Donations**: a plain link to [Ko-fi](https://ko-fi.com/betorzdev), "Support the site" in the
   header after Share ("Ko-fi" alone on a phone), a line in the footer and the end of the About
-  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). Never
-  Ko-fi's widget: it loads third-party scripts, and the privacy notice says there are none.
+  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). A flea
+  from the caravan (the game's own picture) perches on the header's link, as the Knight on the
+  sister's, and on every screen's frame by its top-right corner, a link to Ko-fi too: it hops once
+  when the page opens (the header's) or a screen is arrived at (the frame's) and on hover, never
+  with reduced motion; on hover the frame's shows the link's name beside it, on the frame's line
+  (`renderPerch` in `js/app.js`; design/99). Never Ko-fi's widget: it loads third-party scripts,
+  and the privacy notice says there are none.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
 `404.html` loads it too, to see which broken addresses people land on), Albert's own, on a
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (which donation link was clicked: `header`, `frame` (the flea on the screen's frame), `footer`, `about` (the About block's answer) or `other`), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that

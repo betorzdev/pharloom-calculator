@@ -69,10 +69,11 @@
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
-              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              alt { at, by, open, foe, vanish } for one of the places one thing may be in (a Flintbeetle's
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
-              enemy's name (the Bellbeast's and the Herald's have at alone)
+              enemy's name; vanish: once the thing is done and this isn't the place, it has no pin
+              but counts as had (the Bellbeast's; it and the Herald's have no by, open or foe)
      HUNTS    a hunt or gather wish whose thing only enemies give while it's on → [the thing's save
               name (its js/quests.js CHAIN asks), [[Journal entry key, scene, how many], ...]]: the
               rooms on the map where those enemies are, the most first (the Map's «Where to hunt»)
@@ -7775,13 +7776,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 15],
             ['not', ['min', 'FastTravelNPCLocation', 16]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7798,9 +7800,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 5], ['not', ['min', 'FastTravelNPCLocation', 6]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 5],
+            ['not', ['min', 'FastTravelNPCLocation', 6]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7817,13 +7824,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 13],
             ['not', ['min', 'FastTravelNPCLocation', 14]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7840,9 +7848,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 3], ['not', ['min', 'FastTravelNPCLocation', 4]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 3],
+            ['not', ['min', 'FastTravelNPCLocation', 4]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7859,9 +7872,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 1], ['not', ['min', 'FastTravelNPCLocation', 2]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 1],
+            ['not', ['min', 'FastTravelNPCLocation', 2]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7878,13 +7896,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 9],
             ['not', ['min', 'FastTravelNPCLocation', 10]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7901,9 +7920,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 6], ['not', ['min', 'FastTravelNPCLocation', 7]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 6],
+            ['not', ['min', 'FastTravelNPCLocation', 7]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7920,9 +7944,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 2], ['not', ['min', 'FastTravelNPCLocation', 3]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 2],
+            ['not', ['min', 'FastTravelNPCLocation', 3]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7939,9 +7968,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
-          ['all', ['min', 'FastTravelNPCLocation', 4], ['not', ['min', 'FastTravelNPCLocation', 5]]],
+          [
+            'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
+            ['min', 'FastTravelNPCLocation', 4],
+            ['not', ['min', 'FastTravelNPCLocation', 5]],
+          ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7958,13 +7992,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 11],
             ['not', ['min', 'FastTravelNPCLocation', 12]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -7981,13 +8016,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 14],
             ['not', ['min', 'FastTravelNPCLocation', 15]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -8004,13 +8040,14 @@
         at: [
           'any',
           ['not', ['accepted', 'Bellbeast Rescue']],
-          ['any', ['quest', 'Bellbeast Rescue']],
           [
             'all',
+            ['not', ['any', ['quest', 'Bellbeast Rescue']]],
             ['min', 'FastTravelNPCLocation', 12],
             ['not', ['min', 'FastTravelNPCLocation', 13]],
           ],
         ],
+        vanish: true,
       },
     ],
     [
@@ -10649,6 +10686,7 @@
     'boss:shrine-guardian-seth': [778.6, 993.2],
     'boss:summoned-saviour': [218.8, 1496.2],
     'boss:lace-the-cradle': [1374.8, 304.2],
+    'boss:moss-mother-weavenest-atla': [505.5, 1576.7],
     'boss:moss-mother-act-3-moss-grotto': [553.3, 1542.9],
     'boss:skull-tyrant-bone-bottom': [716.8, 1466.9],
     'journal:mossgrub': [464.4, 1558.3],

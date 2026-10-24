@@ -62,18 +62,25 @@ test('an interior the map does not draw goes where its door is; every gauntlet a
   }
   // Each state shows its own: the Ventrica hub's bench and station, and the diving bell's bench.
   // Then the Flea Caravan's two benches of its own (Greymoor, the Blasted Steps), Fleatopia's and
-  // the Songclave's, the Bellhome's (lit once the house is unlocked) and the Border Caves' (lit in Act 3), after the rest so the pins before keep their index (js/map-fixes.js).
-  assert.deepEqual(kinds, { bench: 84, bellway: 12, ventrica: 8 });
-  assert.deepEqual(M.PINS.slice(98).map((p) => p[3]), ['Aqueduct_05', 'Coral_Judge_Arena', 'Greymoor_08', 'Song_Enclave', 'Belltown_Room_Spare', 'Cradle_Destroyed_Challenge_Bench']);
+  // the Songclave's, the Bellhome's (lit once the house is unlocked) and the Border Caves' (lit in Act 3),
+  // then the Flea Caravan's own pin at each of its stops, after the rest so the pins before keep their index (js/map-fixes.js).
+  assert.deepEqual(kinds, { bench: 84, bellway: 12, ventrica: 8, caravan: 4 });
+  assert.deepEqual(M.PINS.slice(98).map((p) => p[3]), ['Aqueduct_05', 'Coral_Judge_Arena', 'Greymoor_08', 'Song_Enclave', 'Belltown_Room_Spare', 'Cradle_Destroyed_Challenge_Bench',
+    'Bone_10_left', 'Greymoor_08', 'Coral_Judge_Arena', 'Aqueduct_05']);
   const count = (g) => R.pinsOn(g).reduce((o, p) => ({ ...o, [p[0]]: (o[p[0]] || 0) + 1 }), {});
-  assert.deepEqual(count(null), { bench: 82, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 79, bellway: 12, ventrica: 7 });
-  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 80, bellway: 12, ventrica: 7 });
+  assert.deepEqual(count(null), { bench: 82, bellway: 12, ventrica: 7, caravan: 4 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true })), { bench: 79, bellway: 12, ventrica: 7, caravan: 1 });
+  assert.deepEqual(count(world({ act3MapUpdated: true, SeenDivingBellGoneAbyss: true, HasWhiteFlower: true })), { bench: 80, bellway: 12, ventrica: 7, caravan: 1 });
   // A caravan's bench shows only where your caravan is (CaravanTroupeLocation: 1 Greymoor, 2 the
   // Blasted Steps); with no game, both.
-  const caravan = (at) => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5]).map((p) => p[3]);
-  assert.deepEqual([0, 1, 2, 3].map(caravan), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
-  assert.deepEqual(R.pinsOn(null).filter((p) => p[5]).map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
+  const caravan = (at, kind = 'bench') => R.pinsOn({ ...world({}), caravan: at }).filter((p) => p[5] && p[0] === kind).map((p) => p[3]);
+  assert.deepEqual([0, 1, 2, 3].map((at) => caravan(at)), [[], ['Greymoor_08'], ['Coral_Judge_Arena'], []]);
+  assert.deepEqual(R.pinsOn(null).filter((p) => p[5] && p[0] === 'bench').map((p) => p[3]), ['Coral_Judge_Arena', 'Greymoor_08']);
+  // The caravan's own pin (the game's "Flea Caravan Pin") only at the stop your save names, dimmed
+  // until SeenFleaCaravan; with no game, at its four stops.
+  assert.deepEqual([0, 1, 2, 3].map((at) => caravan(at, 'caravan')), [['Bone_10_left'], ['Greymoor_08'], ['Coral_Judge_Arena'], ['Aqueduct_05']]);
+  assert.deepEqual(R.pinsOn(null).filter((p) => p[0] === 'caravan').map((p) => p[3]), ['Bone_10_left', 'Greymoor_08', 'Coral_Judge_Arena', 'Aqueduct_05']);
+  assert.ok(M.PINS.filter((p) => p[0] === 'caravan').every((p) => JSON.stringify(p[4]) === '["flag","SeenFleaCaravan"]'));
   // A bench pin in a part of its room is that room's (js/rooms.js restPoint finds it by that).
   const parts = { Tube_Hub_right: 'Tube_Hub', Bone_01c_bot: 'Bone_01c', Coral_Tower_01_Bench: 'Coral_Tower_01', Mosstown_03_bot: 'Mosstown_03', Belltown_Shrine: 'Belltown_Shrine' };
   for (const [pin, room] of Object.entries(parts)) assert.equal(R.roomPiece(pin), room, pin);

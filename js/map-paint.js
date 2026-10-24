@@ -26,16 +26,25 @@
      canvas. At scale 2 the map is cut into scale × scale tiles of about the map's own size, so
      that no canvas is larger than one at scale 1 (Safari refuses one above 16.7 million pixels).
      Returns { scale, tiles: [{ x, y, w, h (its share, in the map's pixels), pad (how far its
-     canvas reaches past it, in the canvas's pixels), canvas }] }. */
-  function compose(view, sheet, scale, faint, make) {
+     canvas reaches past it, in the canvas's pixels), canvas }] }.
+     With `clip` ({ x, y, w, h } in the map's pixels), only that part, as one tile on whole map
+     pixels: Your game's area (js/app-map.js areaPaint), whose largest box is a few million canvas
+     pixels at scale 2, where the whole map took four canvases of six million and a second to
+     compose on a phone (22-Oct-2026). */
+  function compose(view, sheet, scale, faint, make, clip) {
     const tw = M.W / scale, th = M.H / scale;
     const faints = view.pieces.filter((p) => p.faint), wholes = view.pieces.filter((p) => !p.faint);
-    const cw = M.W + 2 * PAD, ch = M.H + 2 * PAD;   // a tile's canvas: its share (tw × scale) and the reach
+    const cut = clip && (() => {
+      const x = Math.max(0, Math.floor(clip.x)), y = Math.max(0, Math.floor(clip.y));
+      return { x, y, w: Math.min(M.W, Math.ceil(clip.x + clip.w)) - x, h: Math.min(M.H, Math.ceil(clip.y + clip.h)) - y };
+    })();
+    // A tile's canvas: its share (tw × scale) and the reach.
+    const cw = cut ? cut.w * scale + 2 * PAD : M.W + 2 * PAD, ch = cut ? cut.h * scale + 2 * PAD : M.H + 2 * PAD;
     const layer = faints.length ? make(cw, ch) : null;
     const tiles = [];
-    for (let r = 0; r < scale; r++) {
-      for (let c = 0; c < scale; c++) {
-        const t = { x: c * tw, y: r * th, w: tw, h: th, pad: PAD, canvas: make(cw, ch) };
+    for (let r = 0; r < (cut ? 1 : scale); r++) {
+      for (let c = 0; c < (cut ? 1 : scale); c++) {
+        const t = cut ? { ...cut, pad: PAD, canvas: make(cw, ch) } : { x: c * tw, y: r * th, w: tw, h: th, pad: PAD, canvas: make(cw, ch) };
         const ctx = t.canvas.getContext('2d');
         if (layer) {
           // The faint pieces as the game would draw them, then faded as one.
