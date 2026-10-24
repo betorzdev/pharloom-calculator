@@ -701,8 +701,9 @@
   /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES; with none
      there, the area it's taken in), the room it's taken in and its mark on the Map, who asks for it
      (the game's line), what it asks to be brought and what posts it, half a point when it's worth
-     that, and the wishes to do before it. */
-  function wishRow(x, got, done, g) {
+     that, and the wishes to do before it. Its pin is the Tasks tab's own for it (taskPin): the Map
+     on where the wish stands now, its step's targets once taken. */
+  function wishRow(x, got, done, g, pin) {
     const w = x.wish >= 0 ? CO.WISHES[x.wish] : null;
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
     const from = wishFrom(x.quest, done);
@@ -712,26 +713,36 @@
     const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest)].filter(Boolean).join(' · ');
     const more = got ? [] : (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
     return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
-      scene: from.scene, mark: from.mark, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
   }
   function groupRows(name, g, required) {
-    const done = new Set(g ? g.quests : []);
+    // cur: the game the Tasks tab reads (a save, Free mode's marks or none), so the pins agree.
+    const done = new Set(g ? g.quests : []), pin = taskPin(cur);
     return QU.GROUPS[name].quests.filter((q) => q.required === required)
-      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g)).sort(byAct);
+      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g, pin)).sort(byAct);
   }
-  /* The caravan, while it isn't in Fleatopia (js/acts.js): the fleas rescued and its stop now, what
-     its last move asks (the empty Pale Lake seen), and on the Phantom's way, the Last Judge (the
-     stop after Greymoor is the Judge's arena). It moves on only once time has passed since Mooshka
-     was met at that stop, away from its room (GameManager.TimePasses: CaravanTroupeLeaderCanLeave
-     Greymoor and Judge, not in Greymoor_08 or Coral_Judge_Arena): a bench's rest. Without a save, the rule. */
+  /* The caravan, while it isn't in Fleatopia (js/acts.js LEGS, caravanOf): its next move, from the
+     stop it's at, with the fleas that move asks and the rest of what it asks not met yet (the
+     Last Judge and the Grand Gate to leave Greymoor, the empty Pale Lake to leave the Blasted
+     Steps, and at both, a bench's rest away from the stop once Mooshka has been met there); a slot
+     kept before the site read those flags lists them all. Without a save, the three moves' rule. */
   const STOP = ['BONEFOREST', 'GREYMOOR', 'CORAL_STEPS'];
-  // { how, more }: where it stands, then what its next stop asks first.
+  // { how, more }: the next move's fleas, then what else it asks.
   function caravanHow(c, g) {
-    const lake = t('roadCaravanLake', { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') });
-    const rest = t('roadCaravanRest', { npc: pick(HW.NPCS.mooshka) });
-    if (!g || !c) return { how: t('roadCaravanRule', { need: num(A.FLEAS), npc: pick(HW.NPCS.mooshka) }), more: [lake, rest] };
-    return { how: t('roadCaravanHow', { n: num(c.fleas), need: num(c.need), npc: pick(HW.NPCS.mooshka), at: areaName(STOP[c.at]) }),
-      more: [c.at === 2 ? lake : '', c.at < 2 && !g.lastJudge ? t('roadCaravanJudge', { steps: areaName('CORAL_STEPS'), judge: foeName('last-judge') }) : '', rest].filter(Boolean) };
+    const npc = pick(HW.NPCS.mooshka), judge = foeName('last-judge'), gate = gateOf({});
+    const lake = { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') };
+    if (!g || !c) {
+      const [a, b, d] = A.LEGS.map((l) => num(l.fleas));
+      return { how: t('roadCaravanRule', { npc, a, b, c: d, s0: areaName(STOP[0]), s1: areaName(STOP[1]), s2: areaName(STOP[2]) }),
+        more: [t('roadCaravanRuleJudge', { at: areaName(STOP[1]), judge, gate }), t('roadCaravanRuleLake', { at: areaName(STOP[2]), ...lake }),
+          t('roadCaravanRuleRest', { a: areaName(STOP[1]), b: areaName(STOP[2]), npc })] };
+    }
+    const at = areaName(STOP[c.at]);
+    const ask = { judge: () => t('roadCaravanJudge', { judge }), gate: () => t('roadCaravanGate', { gate }),
+      lake: () => t('roadCaravanLake', lake), rest: () => t('roadCaravanRest', { npc, at }) };
+    const words = { n: num(c.fleas), need: num(c.need), from: at, to: c.at + 1 < STOP.length ? areaName(STOP[c.at + 1]) : t('roadFleatopia'), npc };
+    return { how: t(c.fleas >= c.need ? 'roadCaravanEnough' : 'roadCaravanHow', words),
+      more: c.asks.filter((x) => x.ok !== true).map((x) => ask[x.id]()) };
   }
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
   /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace
@@ -1008,16 +1019,28 @@
   }
   const OPTS = 4;   // the nearest wishes for points shown before «and n more»
   let todoN = 0;    // each list's own ids (the guide has one per road's step opened)
+  /* A wish for points opens in place (design/97-road-points-links-variants.html, A): each is a
+     button that opens its card under the points' row, drawn as the required wishes' rows (who asks
+     and what it asks, «More» with the game's words, its area, its pin to where it stands now). One
+     open at a time, kept by its wish while the page is (optOpen, as routeOpen). */
+  let optOpen = -1;
   function todoHtml(r, s, ps, g) {
     const toggle = !!g, heads = ps.length > 1;
     const items = todo(r, s, ps, !!prefs.pgAll);
     if (!items.length && !heads) return '';
-    const opt = (o, i) => `<li${i >= OPTS ? ' class="is-extra"' : ''}><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span></li>`;
+    const hid = 'pg-todo-' + (++todoN);
+    const opt = (o, i) => { const on = o.wish === optOpen;
+      return `<li class="${i >= OPTS ? 'is-extra' : ''}${on ? ' is-open' : ''}"><button type="button" class="pg-opt" data-act="pgOpt" data-value="${o.wish}" aria-expanded="${on}" aria-controls="${hid}-card-${o.wish}"><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span>${App.chevron(on)}</button></li>`; };
+    const card = (o) => `<li class="pg-opt-li" id="${hid}-card-${o.wish}" data-wish="${o.wish}"${o.wish === optOpen ? '' : ' hidden'}><div class="pg-item pg-opt-card" role="group" aria-label="${esc(o.name)}">
+          <span class="pg-art"><img src="${o.icon}" alt="" loading="lazy"></span>
+          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says)}</span>
+          <span class="pg-place"><span class="pg-where">${o.area ? `<span${NT}>${esc(areaName(o.area))}</span>` : ''}</span></span>
+          ${o.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(o.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + o.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+        </div></li>`;
     const had = (o) => `<li class="is-got">${App.tick}<img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span><span class="sr-only">${esc(t('pgGot'))}</span></span></li>`;
     let n = 0;
     // In the guide (toggle off), the whole list under its station, with no «What's missing ·
     // Everything»: nothing's next or done there.
-    const hid = 'pg-todo-' + (++todoN);
     return `<section class="pg-todo"${toggle ? ` aria-label="${esc(t('pgTodo'))}"` : ''}>
       ${toggle ? `<div class="seg pg-seg" role="group" aria-label="${esc(t('pgShow'))}">
         <button type="button" data-act="pgShow" data-value="missing" aria-pressed="${!prefs.pgAll}">${esc(t('pgMissing'))}</button>
@@ -1031,15 +1054,16 @@
           <span class="pg-onmap is-none" aria-hidden="true"></span>
         </li>`;
       }
-      const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
+      // A wish goes where it stands now (focus, taskPin), as the Tasks tab's pin.
+      const onMap = x.focus || (x.mark && App.mapHas && App.mapHas(x.mark));
       const more = x.opts ? x.opts.length - OPTS : 0;
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
           <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says)}
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
-          ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
-        </li>`;
+          ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+        </li>${x.opts ? x.opts.map(card).join('') : ''}`;
     };
       if (!heads) return `<ol class="pg-list">${items.map(li).join('')}</ol>`;
       // Each part's head: its picture, its name and its count, ticked when met; its rows under it.
@@ -1254,6 +1278,22 @@
       const open = ul.classList.toggle('is-open');
       node.setAttribute('aria-expanded', String(open));
       node.textContent = open ? t('pgHowLess') : t('pgTodoMore', { n: num(ul.querySelectorAll('.is-extra').length) });
+      // Folded away, a wish's card goes with it.
+      const shut = !open && ul.querySelector('.is-extra.is-open .pg-opt');
+      if (shut) actions.pgOpt(shut);
+    },
+    // A wish for points: its card opens under the points' row, the one open before shuts (design/97, A).
+    pgOpt(node) {
+      optOpen = node.getAttribute('aria-expanded') === 'true' ? -1 : Number(node.dataset.value);
+      const list = node.closest('.pg-list');
+      if (!list) return;
+      for (const b of list.querySelectorAll('.pg-opt')) {
+        const on = Number(b.dataset.value) === optOpen;
+        b.setAttribute('aria-expanded', String(on));
+        b.parentNode.classList.toggle('is-open', on);
+        b.querySelector('.chev').classList.toggle('up', on);
+      }
+      for (const c of list.querySelectorAll('.pg-opt-li')) c.hidden = Number(c.dataset.wish) !== optOpen;
     },
     // The tab: kept in the preferences, so the one used last opens next time.
     pgTab(node) {

@@ -25,7 +25,12 @@ Where it is (found on 27-Sep-2026, design/00-study.md §4.7):
     them (their DeactivatePlayerDataTest on CaravanTroupeLocation), and Fleatopia's "Pre" bench
     is there until the caravan comes, so Fleatopia always has one; they go after the rest, so
     the pins before keep their index (js/map-fixes.js keys them by it; tools/follow-fixes.js rekeys
-    them when they shift, below). Left out: the Steel Soul
+    them when they shift, below). The caravan itself ("Flea Caravan Pin", pin_flea, the map key's
+    KEY_CARAVAN; read on 24-Oct-2026) has a pin at each of its four stops, Bone_10_left,
+    Greymoor_08, Coral_Judge_Arena and Aqueduct_05, switched off (DeactivatePlayerDataTest) while
+    CaravanTroupeLocation names another stop, while SeenFleaCaravan is false, or without the
+    vendor pins (hasPinShop): kind 'caravan', here its stop and lit SeenFleaCaravan, last of all
+    so no pin before moves. Left out: the Steel Soul
     and fake ones, the vendors (each with its own merchant's state), and the arrows and markers.
     Three benches have no pin on the game's map: the Songclave's (UNPINNED), placed by its RestBench
     (kb/data/game/pickups.json, tools/extract-pickups.py) as tools/gen-spots.js places a point, and
@@ -115,6 +120,7 @@ NOT_AREAS = {'Pan Audio Loop', 'Main Quest Pins', 'Compass Icon', 'Shade Pos', '
 ICONS = ('pin_', 'quest_map_icon', 'Map_Arrow')
 PIN = re.compile(r'^(Bench|Bellway|Tube) Pin( Toll| Bellshrine| Swamp Shaman| Caravan| Pre)?( \(\d+\))?$')
 PIN_KIND = {'Bench': 'bench', 'Bellway': 'bellway', 'Tube': 'ventrica'}
+CARAVAN_PIN = re.compile(r'^Flea Caravan Pin( \(\d+\))?$')
 # The benches the game's map has no pin for, placed by their scene's RestBench: the Songclave's
 # (Song_Enclave; it appears once the Songclave grows, enclaveLevel, and stays in Act 3).
 UNPINNED = ['Song_Enclave']
@@ -210,6 +216,26 @@ def caravan_here(t):
             at = ['is', 'CaravanTroupeLocation', x['IntValue']]
             here = at if x['NumType'] == 1 else ['not', at]
     return here
+
+
+def caravan_pin(t):
+    """The Flea Caravan's own pin's DeactivatePlayerDataTest → (here, lit): its stop, the
+    CaravanTroupeLocation it shows at, and SeenFleaCaravan, without which the game doesn't draw it
+    yet (the site dims it). The pin set bought (hasPinShop) is left out, as for every pin."""
+    here = lit = None
+    for g in t['TestGroups']:
+        for x in g['Tests']:
+            if x['Type'] == 0 and x['FieldName'].startswith('hasPin'):
+                continue
+            if x['Type'] == 0 and x['FieldName'] == 'SeenFleaCaravan' and not x['BoolValue'] and not lit:
+                lit = ['flag', 'SeenFleaCaravan']
+            elif x['FieldName'] == 'CaravanTroupeLocation' and x['Type'] in (1, 3) and x['NumType'] == 1 and not here:
+                here = ['is', 'CaravanTroupeLocation', x['IntValue']]
+            else:
+                raise ValueError(f'a caravan pin switched off by something else: {t}')
+    if not (here and lit):
+        raise ValueError(f'a caravan pin with no stop or no sighting: {t}')
+    return here, lit
 
 
 # ── A map rule: a PlayerDataTest in js/rooms.js's form, read against a save's VARS ──
@@ -482,7 +508,7 @@ def main(game):
                                          for q in tree['positionsOrdered']]
 
     # The pieces: Game_Map_Hornet / <area> / <piece>, with the GameMapScene's rules.
-    pieces, pins = [], []
+    pieces, pins, caravans = [], [], []
     by_id = {}
     for o in env.objects:
         if o.type.name != 'GameObject':
@@ -509,6 +535,13 @@ def main(game):
                 raise ValueError(f'a caravan bench that never goes: {"/".join(names)}')
             x, y, _, _ = world(ts)
             pins.append({'kind': PIN_KIND[m.group(1)], 'scene': names[2], 'x': x, 'y': y, 'lit': lit, 'here': here, 'caravan': caravan})
+            continue
+        if CARAVAN_PIN.match(go.m_Name) and sr is not None and len(names) >= 4 and names[0] == 'Game_Map_Hornet':
+            test = next((tree['test'] for cls, tree, _ in behaviours.get(o.path_id, []) if cls == 'DeactivatePlayerDataTest'), None)
+            if not test:
+                raise ValueError(f'a caravan pin that never goes: {"/".join(names)}')
+            x, y, _, _ = world(ts)
+            caravans.append((names[2], x, y) + caravan_pin(test))
             continue
         if sr is None or len(names) != 3 or names[0] != 'Game_Map_Hornet' or names[1] in NOT_AREAS:
             continue
@@ -737,6 +770,11 @@ def main(game):
         else:
             x, y = r[0], r[1]   # a room with no drawing: the point where the game places it
         PINS.append(['bench', round(x), round(y), s, ['flag', flag]])
+    # The caravan's own pin, one per stop, in the order of its stops (CaravanTroupeLocation).
+    if sorted(c[3][2] for c in caravans) != [0, 1, 2, 3]:
+        raise ValueError(f'the caravan\'s pins are not one per stop: {caravans}')
+    for s, x, y, here, lit in sorted(caravans, key=lambda c: c[3][2]):
+        PINS.append(['caravan', round((x - minx) * PPU), round((maxy - y) * PPU), s, lit, here])
 
     out = os.path.join(ROOT, 'assets', 'map')
     os.makedirs(out, exist_ok=True)
@@ -762,7 +800,8 @@ def main(game):
            "   unlocked, the toll paid) in js/collectibles.js's form; a plain bench has none (null when\n"
            "   here follows). A pin is there when its scene's piece is; a Flea Caravan bench's here is\n"
            "   where the caravan has to be, a rule over CaravanTroupeLocation. The caravan's come after\n"
-           "   the rest, then the Songclave's and the Bellhome's benches, which the game doesn't pin.\n"
+           "   the rest, then the Songclave's and the Bellhome's benches, which the game doesn't pin, then\n"
+           "   the Flea Caravan's own pin at each of its four stops (kind: caravan; lit once seen).\n"
            "   PIECES: each map piece, in the order the game draws them (the farthest first): s its\n"
            "   scene, a its area, st its first state (0 Hidden, 1 Rough,\n"
            "   2 Full); w its whole drawing, a CELLS index per sprite (ws: the rules of all but the last)\n"

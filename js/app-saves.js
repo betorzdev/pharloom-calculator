@@ -635,6 +635,8 @@
 
   // The slot you're playing, or 0 (S.FREE) in free mode; and its game, as the screens read it.
   const activeSlot = () => (store ? S.read(store).active : S.FREE);
+  // The slot the site shows (js/saves.js FREE in Free mode): the Map keeps its Act filter's pick per slot.
+  App.slotNow = activeSlot;
   App.game = () => (store && activeSlot() ? F.gameOf(S.snapshot(store)) : null);
   App.gameMeta = () => (store && activeSlot() ? F.metaOf(S.snapshot(store)) : null);
   /* Free mode's own marks (design/03-redesign.md, step 4): your game, marked by hand, in the same
