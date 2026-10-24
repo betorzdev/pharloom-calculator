@@ -750,7 +750,7 @@
      Steps, and at both, a bench's rest away from the stop once Mooshka has been met there); a slot
      kept before the site read those flags lists them all. Without a save, the three moves' rule. */
   const STOP = ['BONEFOREST', 'GREYMOOR', 'CORAL_STEPS'];
-  // { how, more }: the next move's fleas, then what else it asks.
+  // { how, more }: the next move's fleas, then what else it asks; with the fleas there, what it still asks leads.
   function caravanHow(c, g) {
     const npc = pick(HW.NPCS.mooshka), judge = foeName('last-judge'), gate = gateOf({});
     const lake = { lake: t('roadPaleLake'), ducts: areaName('AQUEDUCTS') };
@@ -764,8 +764,10 @@
     const ask = { judge: () => t('roadCaravanJudge', { judge }), gate: () => t('roadCaravanGate', { gate }),
       lake: () => t('roadCaravanLake', lake), rest: () => t('roadCaravanRest', { npc, at }) };
     const words = { n: num(c.fleas), need: num(c.need), from: at, to: c.at + 1 < STOP.length ? areaName(STOP[c.at + 1]) : t('roadFleatopia'), npc };
-    return { how: t(c.fleas >= c.need ? 'roadCaravanEnough' : 'roadCaravanHow', words),
-      more: c.asks.filter((x) => x.ok !== true).map((x) => ask[x.id]()) };
+    const left = c.asks.filter((x) => x.ok !== true).map((x) => ask[x.id]());
+    // The fleas there and the move still waiting on something: that leads, Mooshka after it.
+    if (c.fleas >= c.need && left.length) return { how: [...left, t('roadCaravanThen', words)].join(' · '), more: [] };
+    return { how: t(c.fleas >= c.need ? 'roadCaravanEnough' : 'roadCaravanHow', words), more: left };
   }
   const count = (got, max) => `<span class="pg-count"><b>${num(got)}</b><i class="u">/${num(max)}</i></span>`;
   /* The Soul Snare's four checks on the save (js/acts.js): the caravan, the Faydown Cloak, Lace

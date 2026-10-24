@@ -779,8 +779,8 @@ own placement.
 
 At the top, **where you are**: the three Acts on one thread as the game titles them (Act 1
 Pharloom, Act 2 Citadel of Song, Act 3 Abyss), yours marked «You are here», and one sentence:
-which Act you're in and what opening the next takes («Opening Act 3 takes 5 steps: you're on step
-1, with 3 things left in it»), in Act 3 what's left of the 100%, at 100% that you have it all.
+which Act you're in and what opening the next takes («Step 1 of 5 to Act 3: 3 things left»), in
+Act 3 what's left of the 100%, at 100% that you have it all.
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then three tabs, as three cards, each with its own picture of how far you are; the one you used last
@@ -803,7 +803,7 @@ Bellshrines and the Grand Gate to its own framed station, «Instead of steps 1 a
 Phantom», with an «or» between the threads and what it needs (the Needolin and the Cling Grip, ticked
 when held). Its thread is dotted until you hold both, dashed once it's open and lit once Phantom is
 defeated; the steps it skipped are then crossed out on a dotted thread and say «No longer needed:
-defeating Phantom opens another way in».
+you defeated Phantom». Under its title, «Opens once you have both», or «Open now».
 
 **What the game says of a step**: the objective as the game's pause menu «Tasks» titles it, with the
 picture the Tasks tab draws by it, its line («Grand Gate · Pharloom») and its description as the game
@@ -829,10 +829,11 @@ the wish points short («Get 1 more wish point») with the four wishes nearest y
 give it («and n more» unfolds the rest; tapping one opens its card under the row, drawn as a
 required wish's: who asks and what it asks, «More», its area and its pin to where it stands now,
 one open at a time), each condition not met (the Flea Caravan, the Faydown Cloak,
-Lace, the Bellhome Key, or «Talk to Pavo» once he has it for you), each Bellshrine not rung, each
+Lace, the Bellhome Key, or «Talk to Pavo for the Bellhome Key» once he has it for you), each Bellshrine not rung, each
 piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
-Each row is its name and one line, how to get it, ended by «More» when there's more to
-say: it unfolds what the thing waits for (what posts the wish, when it shows up, the wish to do first) and
+Each row is its name and one short line, how to get it, the number or the thing first («Pavo of
+Bellhart · 250 rosaries», «9 of 12 fleas rescued; then talk to Mooshka at Greymoor»), ended by
+«More» when there's more to say: it unfolds what the thing waits for (what posts the wish, when it shows up, the wish to do first) and
 what the game says
 of it: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
 once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
@@ -907,7 +908,9 @@ step, each with what the game says of it and its way onto the Map, as above:
        Greymoor (with the Last Judge beaten and the Grand Gate open, even on the Phantom's way)
        and 22 to leave the Blasted Steps (with the empty Pale Lake seen); in Greymoor and the
        Blasted Steps, also after a rest at a bench away from the stop once you've met him there.
-       With a save, its row gives the fleas of its next move and only what that move still asks.
+       With a save, its row gives the fleas of its next move and only what that move still asks;
+       once the fleas are there, what it still asks leads («first visit the empty Pale Lake, in
+       the Putrified Ducts · then talk to Mooshka at Blasted Steps»), and «More» doesn't repeat it.
   2. Accept the wish from the Caretaker in Songclave (Bellhart's Wishwall posts it too, and sends
      you to him). Offered and turned down isn't taken: the step says to talk to him again.
   3. Gather the snare's four pieces: the Chapel Maid's and the Bell Hermit's souls, given once the
@@ -922,7 +925,7 @@ step, each with what the game says of it and its way onto the Map, as above:
 While Hornet is cursed (the Cursed Crest, until the wish Infestation Operation cures her), the step
 you're on says that the curse blocks the road: Pavo won't give the key, Couriers Tipp & Pill hand
 out no deliveries, and defeating Grand Mother Silk gives the Twisted Child ending instead. The key's
-row says so in place of «Talk to Pavo».
+row says so («not while you're cursed») in place of «Talk to Pavo».
 
 Each missing wish shows its Act, its area, who asks for it in the game's own words («Creige of
 the Halfway Home»), what it asks to be brought, read from the game's files (the four required
@@ -934,8 +937,8 @@ when there is one. «What's next» says the same under each wish it lists. The r
 maps, counted, the Faydown Cloak, and two of the three melodies or Groal the Great defeated; Balm
 for the Wounded: Sherma met and the Whiteward visited; Strengthening Songclave, Restoration of
 Bellhart; Bellhart's Glory: the Cogwork Dancers, the Clawline or Songclave entered) and that each
-shows up when you rest at a bench (outside Bellhart, outside Songclave, or in another area, as the
-game has it), and Pinmaster's Oil that
+shows up after a rest at a bench («then rest at a bench outside Bellhart»: outside Bellhart,
+outside Songclave, or in another area, as the game has it), and Pinmaster's Oil that
 Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
 they're closed in that game. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
