@@ -1109,15 +1109,20 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - Save files are read in the browser; nothing is uploaded.
 - **Donations**: a plain link to [Ko-fi](https://ko-fi.com/betorzdev), "Support the site" in the
   header after Share ("Ko-fi" alone on a phone), a line in the footer and the end of the About
-  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). Never
-  Ko-fi's widget: it loads third-party scripts, and the privacy notice says there are none.
+  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). A flea
+  from the caravan (the game's own picture) perches on the header's link, as the Knight on the
+  sister's, and on every screen's frame by its top-right corner, a link to Ko-fi too: it hops once
+  when the page opens (the header's) or a screen is arrived at (the frame's) and on hover, never
+  with reduced motion; on hover the frame's shows the link's name beside it, on the frame's line
+  (`renderPerch` in `js/app.js`; design/99). Never Ko-fi's widget: it loads third-party scripts,
+  and the privacy notice says there are none.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
 `404.html` loads it too, to see which broken addresses people land on), Albert's own, on a
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (which donation link was clicked: `header`, `frame` (the flea on the screen's frame), `footer`, `about` (the About block's answer) or `other`), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that
