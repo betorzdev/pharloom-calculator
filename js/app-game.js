@@ -8,8 +8,9 @@
    the Tools on their slots by colour, one slot per point of the 100% (a Tool and its upgrade
    share one, the two a wish lends apart). Under both, across the width, what she carries: the
    purse (Rosaries and Shell Shards with the strings, bundles and shards that break into them,
-   design/29-inventory-variants.html, A; under them the Silkeaters held, design/91, 1 A), the items, the Relics and the Mementos, each a plate
-   with its name. Every shelf's head counts n/max and its rule lights up to it.
+   design/29-inventory-variants.html, A; under them the Silkeaters held, design/91, 1 A), the items
+   (the lasting ones the pane holds: the Everbloom, the Bellhome's pieces, the keys, the Old Hearts,
+   the melodies), the Relics and the Mementos, each a plate with its name. Every shelf's head counts n/max and its rule lights up to it.
    In Free mode all of it is set here: your game marked by hand, from a New Game
    (js/app-saves.js, App.freeGame; design/42-free-mode-start-variants.html, 1 A): the levels, a
    tap on a thing had or not, − N + for what comes in numbers. Progress counts it, and the Crest
@@ -59,12 +60,18 @@
   const EVOLVED = [EVA_AT('hunter-2'), EVA_AT('hunter-3')].filter((i) => i >= 0);
   const hunterStage = (g) => Math.max((g.build && g.build.hunterStage) || 1, 1 + EVOLVED.filter((i) => g.extras.includes(i)).length);
   const shardCap = (pouch) => D.HORNET.shells.base + D.HORNET.shells.perPouch * pouch;
+  /* The items a save says were had (js/data.js ITEMS had / of; js/savefile.js game() items): the
+     Plasmium Gland, the Materium, the Crawbell and the keys, a key still had once spent at its door.
+     The Simple Keys and the Slab's three come in numbers; the rest are one each. */
+  const HELD = D.ITEMS.filter((x) => x.had || x.of);
+  const HELD_IDS = HELD.map((x) => x.id);
 
   // Free mode's «Everything maxed»: every thing marked, at the top of every ladder, the Hunter fully evolved (nothing loose or carried: a full game has spent it).
   function fullGame() {
     return { tools: D.TOOLS.map((x) => x.id), crests: D.CRESTS.map((x) => x.id), skills: D.SKILLS.map((x) => x.id),
       arts: D.ARTS.map((x) => x.id), masks: 5, spools: 9, hearts: 3, needle: 4, kit: 4, pouch: 4, everbloom: true,
       pieces: CO.PIECES.map((p, i) => i), purse: {}, rosaries: 0, shards: 0, farsight: true, hasJournal: true,
+      items: Object.fromEntries(HELD.map((x) => [x.id, x.max || 1])),
       extras: [...RELIC_AT, ...MEMENTOS], journal: {}, act: 3, build: { hunterStage: 3 } };
   }
   App.fullGame = fullGame;
@@ -99,6 +106,11 @@
     it('everbloom', g.everbloom);
     it('farsight', g.farsight);
     it('hunters-journal', g.hasJournal);
+    for (const x of HELD) {
+      const v = Math.min(x.max || 1, (g.items || {})[x.id] || 0);
+      if (x.of) it(x.id, v > 0, `${num(v)}/${num(x.max)}`, [v, x.max]);
+      else it(x.id, v > 0);
+    }
     // The purse: the two currencies (their picture opens the text), and what breaks into them, held counts.
     for (const id of ['rosaries', 'shell-shards']) { const x = item(id); out.push({ list: 'items', id, name: x.name, desc: x.desc, got: true, shelf: 'currency' }); }
     for (const [id, , cur, worth, max] of CO.PURSE) {
@@ -148,13 +160,14 @@
         <img src="${icon(x.list, x.art || x.id)}" alt="" loading="lazy"></button>${pips}</li>`;
   }
   /* Free mode marks (design/03-redesign.md, step 4): a tap on a Tool, Crest, Silk Skill,
-     ability, the Everbloom, an Old Heart or a melody marks it had or not and opens its text; the
-     counted ones (loose shards and fragments, lockets, Craftmetal, Pale Oil, fleas, what's in the
-     purse, the Silkeaters, the Relics of each kind) go by − N +, and the two currencies are typed.
+     ability, an item or key, an Old Heart or a melody marks it had or not and opens its text; the
+     counted ones (loose shards and fragments, lockets, Craftmetal, Pale Oil, the Simple and Slab
+     keys, fleas, what's in the purse, the Silkeaters, the Relics of each kind) go by − N +, and the
+     two currencies are typed.
      The Hunter Crest is always had: Hornet starts with it. */
   let marking = false;
   const markable = (x) => !x.n && x.id !== 'silk-heart' && !(x.list === 'crests' && x.id === 'hunter')
-    && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal'].includes(x.id));
+    && (x.list !== 'items' || ['everbloom', 'farsight', 'hunters-journal', ...HELD_IDS].includes(x.id));
   /* x.top: how far + goes, when less than the most there can be (the loose shards once the masks are
      whole). of: the figure carries its maximum, as a save's count does (design/62, 2 A: the
      materials, the purse, the Relics and the fleas; the loose shards say theirs beside it). */
@@ -194,7 +207,7 @@
   /* A shelf's or a loose piece's pin (design/106-group-pins-variants.html, 2 A): the Map on what's
      missing of it, by the Map's layers (js/app-map.js App.groupPin); none once it's all had. */
   const LAYERS_OF = { skills: ['skills'], arts: ['arts'], crests: ['crests'], tools: ['tools-red', 'tools-blue', 'tools-yellow'],
-    items: ['everbloom', 'old-heart', 'melody', 'flea'], relics: RELICS, mementos: ['memento'] };
+    items: ['everbloom', 'key', 'old-heart', 'melody', 'flea'], relics: RELICS, mementos: ['memento'] };
   const mapPin = (id, layers, name) => (App.groupPin ? App.groupPin('inv:' + id, App.mapLayerKeys(layers), name, 'inv-pin') : '');
   // A piece is its own layer on the Map (the Silkeater's, a consumable, has no pin).
   const piecePin = (x) => (x.shelf === 'eaters' ? '' : mapPin(x.id, [x.id], pick(x.name)));
@@ -356,8 +369,12 @@
     }).join('');
     // The Hunter Crest is always had, and drawn lit: the head counts it with the rest (the 100% doesn't).
     const crests = by('crests'), crestsN = { got: crests.filter((x) => x.got).length, max: crests.length };
-    // The items: the Everbloom, the Farsight, the Journal, the Old Hearts and the melodies; the fleas count on their own plate.
-    const items = [item('everbloom'), item('farsight'), item('hunters-journal'), ...by('pieces').filter((x) => x.id !== 'silk-heart')];
+    /* The items: the Everbloom and the Plasmium Gland, the Bellhome's three, the Journal, the keys,
+       the Old Hearts and the melodies; what comes in numbers (the Simple Keys, the Slab's keys, the
+       fleas) counts on its own plate. */
+    const items = [item('everbloom'), item('plasmium-gland'), item('farsight'), item('materium'), item('crawbell'), item('hunters-journal'),
+      ...HELD_IDS.filter((id) => !['plasmium-gland', 'materium', 'crawbell'].includes(id)).map(item),
+      ...by('pieces').filter((x) => x.id !== 'silk-heart')];
     const itemsN = { got: items.filter((x) => x.got && !x.n).length, max: items.filter((x) => !x.n).length };
     const relics = all.filter((x) => x.shelf === 'relics'), mementos = all.filter((x) => x.shelf === 'mementos');
     const money = own ? { rosaries: (App.gameMeta() || {}).rosaries || 0, shards: (App.gameMeta() || {}).shards || 0 } : g;
@@ -401,7 +418,8 @@
     const cur = App.freeGame();
     if (!cur) return;
     const m = { ...cur, tools: [...cur.tools], crests: [...cur.crests], skills: [...cur.skills], arts: [...cur.arts], everbloom: !!cur.everbloom, pieces: [...cur.pieces],
-      purse: { ...cur.purse }, rosaries: cur.rosaries || 0, shards: cur.shards || 0, farsight: !!cur.farsight, hasJournal: !!cur.hasJournal, extras: [...cur.extras] };
+      purse: { ...cur.purse }, rosaries: cur.rosaries || 0, shards: cur.shards || 0, farsight: !!cur.farsight, hasJournal: !!cur.hasJournal,
+      items: { ...cur.items }, extras: [...cur.extras] };
     f(m);
     if (!m.crests.includes('hunter')) m.crests.unshift('hunter');
     App.setFreeGame(m);
@@ -442,6 +460,7 @@
         else if (x.id === 'everbloom') m.everbloom = !m.everbloom;
         else if (x.id === 'farsight') m.farsight = !m.farsight;
         else if (x.id === 'hunters-journal') m.hasJournal = !m.hasJournal;
+        else if (HELD_IDS.includes(x.id)) m.items[x.id] = m.items[x.id] ? 0 : 1;
         else if (x.extra != null) m.extras = toggle(m.extras, x.extra);
         else if (x.piece != null) m.pieces = toggle(m.pieces, x.piece);
       });
@@ -464,11 +483,12 @@
       const on = node.dataset.value === '1', list = node.dataset.list;
       mark((m) => {
         if (list === 'items') {
-          // Only what the Items shelf holds: the three key items, the Old Hearts, the melodies and the fleas.
+          // Only what the Items shelf holds: its items and keys, the Old Hearts, the melodies and the fleas.
           const kinds = ['old-heart', 'melody', 'flea'];
           m.everbloom = on;
           m.farsight = on;
           m.hasJournal = on;
+          m.items = Object.fromEntries(HELD.map((x) => [x.id, on ? x.max || 1 : 0]));
           m.pieces = [...m.pieces.filter((i) => !kinds.includes(CO.PIECES[i][0])),
             ...(on ? CO.PIECES.map((p, i) => (kinds.includes(p[0]) ? i : -1)).filter((i) => i >= 0) : [])];
           return;
@@ -487,6 +507,7 @@
       const back = () => refocus(`[data-act="invCount"][data-key="${key}"][data-dir="${dir}"]`, `[data-act="invCount"][data-key="${key}"][data-dir="${other}"]`);
       if (x.shelf === 'purse') { mark((m) => { m.purse[x.id] = v; }); back(); return; }
       if (x.shelf === 'eaters') { mark((m) => { m.silkeaters = v; }); back(); return; }
+      if (HELD_IDS.includes(x.id)) { mark((m) => { m.items[x.id] = v; }); back(); return; }
       if (x.shelf === 'relics') { mark((m) => setRelics(m, x.kind, v)); back(); return; }
       // The loose shards and fragments come after those already in whole masks and spools.
       const over = x.id === 'mask-shard' ? 4 * b.masks : x.id === 'spool-fragment' ? 2 * b.spools : 0;

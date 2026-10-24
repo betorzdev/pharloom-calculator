@@ -29,6 +29,8 @@
   const D = SS.data || require('./data.js');
   // The most Silkeaters Hornet can hold (the wiki's infobox, js/data.js ITEMS).
   const EATERS = D.ITEMS.find((x) => x.id === 'silkeater').max;
+  // The items a save says were had (js/data.js ITEMS had / of): the keys, the Bellhome's pieces.
+  const HELD = D.ITEMS.filter((x) => x.had || x.of);
   const GA = SS.gauntlets || require('./gauntlets.js');
   const MAP = SS.map || require('./map.js');
   const QU = SS.quests || require('./quests.js');
@@ -47,6 +49,10 @@
   const LEFT = Object.entries(SP.LEFT || {});
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
+  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's), as ['<id>:<scene>', check].
+  const HERE = [...(PE.PEOPLE || []).filter((x) => x.here).flatMap((x) => Object.entries(x.here).map(([sc, c]) => [x.id + ':' + sc.toLowerCase(), c])),
+    ...Object.entries(PE.HERE || {}).flatMap(([id, m]) => Object.entries(m).map(([sc, c]) => [id + ':' + sc.toLowerCase(), c]))];
+  const HERE_KEYS = new Set(HERE.map(([k]) => k));
   // The map's pins that light up (a station, a toll bench), by what they are: "bellway Bellway_02".
   const pinKey = (p) => p[0] + ' ' + p[3];
   const LIGHTS = MAP.PINS.filter((p) => p[4]);
@@ -256,6 +262,8 @@
 
   const list = (v) => (v && Array.isArray(v.savedData) ? v.savedData : []);
   const named = (v) => { const m = new Map(); for (const e of list(v)) if (e && !m.has(e.Name)) m.set(e.Name, e.Data || {}); return m; };
+  // What Mooshka's FSMs check besides the fleas before the caravan moves on (js/acts.js LEGS).
+  const CARAVAN_FLAGS = ['SeenLastJudgeGateOpen', 'CaravanTroupeLeaderCanLeaveGreymoor', 'CaravanTroupeLeaderCanLeaveJudge', 'SeenFleatopiaEmpty'];
 
   /* playerData and sceneData → what the site keeps of a game, in its own ids:
        tools, crests      owned (IsUnlocked; a Tool also not IsHidden), by js/collectibles.js's names
@@ -270,6 +278,9 @@
                           js/data.js ITEMS' max for it
        rosaries, shards   what Hornet holds (geo, ShellShards); farsight: the Farsight carried or
                           already assembled (ConstructedFarsight); hasJournal: the Hunter's Journal
+       items              { item id: how many had } of js/data.js ITEMS with a save check (the keys,
+                          the Plasmium Gland, the Materium, the Crawbell): had (1 or 0) or of (the
+                          pieces had); a key spent at its door still counts
        pieces             the indices of js/collectibles.js's PIECES found
        wishes             the indices of its WISHES done (the pane «Tareas»)
        gauntlets          the ids of js/gauntlets.js's enemy gauntlets cleared (each one's done)
@@ -305,7 +316,9 @@
        bells              every Bellshrine rung, the Songclave's too (the Map's; the Grand Gate wants five)
        lastJudge, phantom the two bosses either of which opens the Citadel (defeated*)
        caravan            where the flea caravan is (CaravanTroupeLocation: 3 is Fleatopia)
-       doubleJump         the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
+       caravanFlags       of CARAVAN_FLAGS, those set: what its moves ask besides the fleas
+                          (js/acts.js LEGS); caravanRead as foundRead
+       doubleJump        the Faydown Cloak (hasDoubleJump); laceTower: Lace beaten atop the
                           Cradle's tower (defeatedLaceTower)
        bellhomeKey        Pavo has given the Bellhome's key (BelltownGreeterHouseFullDlg)
        snareOffered       the Caretaker has offered the wish Silk and Soul (CaretakerOfferedSnareQuest)
@@ -336,6 +349,7 @@
       switch (c[0]) {
         case 'flag': return !!pd[c[1]];
         case 'min': return (Number(pd[c[1]]) || 0) >= c[2];
+        case 'is': return pd[c[1]] === c[2];   // a field with that value (a number, a scene's name)
         case 'quest': return !!(quests.get(c[1]) || {}).IsCompleted;
         case 'accepted': return !!(quests.get(c[1]) || {}).IsAccepted;   // taken, done or not
         case 'bool': return !!bools.get(c[1] + '\u0000' + c[2]);
@@ -382,6 +396,7 @@
       rosaries: Math.max(0, int(pd.geo)), shards: Math.max(0, int(pd.ShellShards)),
       farsight: int((items.get('Farsight') || {}).Amount) > 0 || pd.ConstructedFarsight === true,
       hasJournal: pd.hasJournal === true,
+      items: Object.fromEntries(HELD.map((x) => [x.id, x.of ? x.of.filter(has).length : has(x.had) ? 1 : 0])),
       pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
       wishes: CO.WISHES.map((w, i) => (has(w[2]) ? i : -1)).filter((i) => i >= 0),
       gauntlets: GA.GAUNTLETS.filter((x) => has(x.done)).map((x) => x.id),
@@ -405,6 +420,8 @@
       lastJudge: pd.defeatedLastJudge === true,
       phantom: pd.defeatedPhantom === true,
       caravan: int(pd.CaravanTroupeLocation),
+      caravanFlags: CARAVAN_FLAGS.filter((f) => pd[f] === true),
+      caravanRead: true,
       doubleJump: pd.hasDoubleJump === true,
       laceTower: pd.defeatedLaceTower === true,
       bellhomeKey: pd.BelltownGreeterHouseFullDlg === true,
@@ -467,6 +484,9 @@
       opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
+      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's) has them
+      // now, by '<id>:<scene>'; a spot a slot has no word of is shown.
+      peopleHere: Object.fromEntries(HERE.map(([k, c]) => [k, has(c)])),
     };
   }
 
@@ -492,9 +512,9 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
+                          everbloom, purse, rosaries, shards, farsight, hasJournal, items, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
-                          (visited … elsewhere, steelSpots, peopleVars)
+                          (visited … elsewhere, steelSpots, peopleVars, peopleHere)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
      toSnapshot() writes them; gameOf() reads them back into one game, with the same defaults as
      an empty game for anything missing or damaged. */
@@ -571,15 +591,29 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
-    quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false, laceTower: false,
+    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, items: {}, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
+    quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
-    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
-  // Each field only if it has the type an empty game gives it.
+  /* The last games read, by their keys' text: the screens ask for the game many times a render
+     (Free mode's Progress, two hundred), and reading it each time took a good part of one
+     (22-Oct-2026). Each caller gets its own copy, so none changes another's. */
+  const READ = [];
   function gameOf(snap) {
     const s = snap || {};
+    const owned = s['pharloom.owned'], progress = s['pharloom.progress'], journal = s['pharloom.journal'];
+    let hit = READ.find((r) => r.owned === owned && r.progress === progress && r.journal === journal);
+    if (!hit) {
+      hit = { owned, progress, journal, game: readGame(s) };
+      READ.unshift(hit);
+      if (READ.length > 6) READ.pop();
+    }
+    return structuredClone(hit.game);
+  }
+  // Each field only if it has the type an empty game gives it.
+  function readGame(s) {
     const src = { ...parse(s['pharloom.owned']), ...parse(s['pharloom.progress']), journal: parse(s['pharloom.journal']) };
     const out = {};
     for (const [k, def] of Object.entries(EMPTY)) {
@@ -590,6 +624,7 @@
     // The held counts: only the items the list has, as whole numbers.
     out.purse = Object.fromEntries(CO.PURSE.map((p) => [p[0], Number.isInteger(out.purse[p[0]]) ? Math.max(0, out.purse[p[0]]) : 0]));
     out.silkeaters = Number.isInteger(out.silkeaters) ? Math.max(0, Math.min(EATERS, out.silkeaters)) : 0;
+    out.items = Object.fromEntries(HELD.map((x) => [x.id, Number.isInteger(out.items[x.id]) ? Math.max(0, Math.min(x.max || 1, out.items[x.id])) : 0]));
     out.carried = Object.fromEntries(ASKED.filter((n) => Number.isInteger(out.carried[n]) && out.carried[n] > 0).map((n) => [n, out.carried[n]]));
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);
@@ -655,6 +690,7 @@
     out.mapFlags = out.mapFlags.filter((f) => MAP_VARY.includes(f));
     out.mapVars = Object.fromEntries(Object.entries(out.mapVars).filter(([k, x]) => MAP.VARS.includes(k) && mapValue(x, undefined) !== undefined));
     out.peopleVars = Object.fromEntries(Object.entries(out.peopleVars).filter(([k, x]) => PE.VARS.includes(k) && mapValue(x, undefined) !== undefined));
+    out.peopleHere = Object.fromEntries(Object.entries(out.peopleHere).filter(([k, x]) => HERE_KEYS.has(k) && typeof x === 'boolean'));
     return out;
   }
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,

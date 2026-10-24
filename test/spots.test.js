@@ -419,10 +419,11 @@ test("the Bellbeast's twelve stations are one check, and a save with its wish on
   const pd = { ...base, ...quest(false), FastTravelNPCLocation: 9 };
   const g = F.game(pd);
   assert.deepEqual(shown(g).map((i) => SP.TASKS[i][3]), ['Bellway_City']);
-  // Not taken yet (the field follows the beast all game) and done: all twelve.
+  // Not taken yet (the field follows the beast all game): all twelve. Done: none, though still had.
   assert.deepEqual(shown(F.game({ ...base, FastTravelNPCLocation: 9 })), pins);
   const done = F.game({ ...base, ...quest(true), FastTravelNPCLocation: 2 });
-  assert.deepEqual(shown(done), pins);
+  assert.deepEqual(shown(done), [], 'done: no pin at any station');
+  assert.ok(pins.every((i) => SP.TASKS[i][9].vanish), 'each says it vanishes once done');
   assert.ok(pins.every((i) => done.tasks.includes(i)));
   // A slot keeps it; one kept before it has none, and the Map shows all twelve.
   const snap = F.toSnapshot(pd);

@@ -635,6 +635,8 @@
 
   // The slot you're playing, or 0 (S.FREE) in free mode; and its game, as the screens read it.
   const activeSlot = () => (store ? S.read(store).active : S.FREE);
+  // The slot the site shows (js/saves.js FREE in Free mode): the Map keeps its Act filter's pick per slot.
+  App.slotNow = activeSlot;
   App.game = () => (store && activeSlot() ? F.gameOf(S.snapshot(store)) : null);
   App.gameMeta = () => (store && activeSlot() ? F.metaOf(S.snapshot(store)) : null);
   /* Free mode's own marks (design/03-redesign.md, step 4): your game, marked by hand, in the same
@@ -669,7 +671,7 @@
       'pharloom.progress': JSON.stringify({ needle: int(g.needle, top.needle), kit: int(g.kit, top.kit), pouch: int(g.pouch, top.pouch),
         masks: int(g.masks, top.masks), spools: int(g.spools, top.spools), hearts: int(g.hearts, top.hearts), build: { hunterStage: stage },
         everbloom: !!g.everbloom, pieces: g.pieces.map((i) => F.pieceKey(SS.collectibles.PIECES[i])),
-        purse: g.purse || {}, silkeaters: g.silkeaters || 0, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal,
+        purse: g.purse || {}, silkeaters: g.silkeaters || 0, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal, items: g.items || {},
         extras: (g.extras || []).map((i) => F.pieceKey(SS.spots.EXTRAS[i])) }),
     };
     if (!store || memFree !== undefined) { memFree = snap; return; }

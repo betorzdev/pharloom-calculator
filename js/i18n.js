@@ -276,6 +276,8 @@
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
+    mapActUpTo:     { es: 'Hasta', en: 'Up to' },   // no game text: the Act filter's label (design/98), the Acts are saveAct
+    mapActAll:      { es: 'Todos', en: 'All' },   // no game text: every Act
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
@@ -359,6 +361,7 @@
     mapLayer_bells: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
     mapLayer_locks: { es: 'Puertas cerradas', en: 'Locked doors' },   // BELLTOWN_HOUSE_LOCKED says «cerrado con llave»; no game text for the layer
     mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
+    mapLayer_caravan: { es: 'Caravana de las pulgas', en: 'Flea Caravan' },   // KEY_CARAVAN (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who makes a wish' },
@@ -795,9 +798,9 @@
     pgActName3:     { es: 'ABISMO', en: 'ABYSS' },   // ACT_3_NAME
     pgHere:         { es: 'Estás aquí', en: 'You are here' },
     pgHereAct:      { es: 'Estás en el Acto {n}.', en: 'You\'re in Act {n}.' },
-    pgHereNext:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te quedan {n} cosas.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} things left in it.' },
-    pgHereNext1:    { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te queda {n} cosa.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} thing left in it.' },
-    pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
+    pgHereNext:     { es: 'Paso {i} de {of} hacia el Acto {m}: te quedan {n} cosas.', en: 'Step {i} of {of} to Act {m}: {n} things left.' },
+    pgHereNext1:    { es: 'Paso {i} de {of} hacia el Acto {m}: te queda {n} cosa.', en: 'Step {i} of {of} to Act {m}: {n} thing left.' },
+    pgHereStep:     { es: 'Paso {i} de {of} hacia el Acto {m}.', en: 'Step {i} of {of} to Act {m}.' },
     pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
     pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
     pgHereNone:     { es: 'Silksong tiene tres actos. Sin un perfil cargado, esta pestaña es la guía: lo que pide el juego para pasar de uno a otro, y todo lo que cuenta para el 100 %.',
@@ -817,11 +820,11 @@
     pgTodo:         { es: 'Lo siguiente', en: 'What\'s next' },
     pgTodoPoints:   { es: 'Consigue {n} puntos más de deseos', en: 'Get {n} more wish points' },
     pgTodoPoints1:  { es: 'Consigue {n} punto más de deseos', en: 'Get {n} more wish point' },
-    pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos; por ejemplo:', en: 'Any of these {n} wishes will do; for example:' },
-    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; los más cercanos a tu banco:', en: 'Any of these {n} wishes will do; the nearest to your bench:' },
+    pgTodoAny:      { es: 'Vale cualquiera de estos {n} deseos:', en: 'Any of these {n} wishes:' },
+    pgTodoAnyNear:  { es: 'Vale cualquiera de estos {n} deseos; primero los más cercanos:', en: 'Any of these {n} wishes; the nearest first:' },
     pgTodoShrine:   { es: 'Haz sonar el Santuario de Campana de {area}', en: 'Ring the Bellshrine in {area}' },   // the game's word in it: BELLSHRINE
     pgTodoGet:      { es: 'Consigue: {name}', en: 'Get: {name}' },
-    pgTodoPavo:     { es: 'Habla con Pabo: te da la {key}', en: 'Talk to Pavo: he gives you the {key}' },   // his name: BELLHART_GREETER_MAIN
+    pgTodoPavo:     { es: 'Pide a Pabo la {key}', en: 'Talk to Pavo for the {key}' },   // his name: BELLHART_GREETER_MAIN
     pgTodoMore:     { es: 'y {n} más', en: 'and {n} more' },
     /* A how line on a phone: its lead, and what it waits for behind a button (design/41, 2 B). */
     pgHowMore:      { es: '+{n} más', en: '+{n} more' },
@@ -836,7 +839,7 @@
     pgFoundNoPin:   { es: 'Se encuentra en la zona', en: 'Found in the area' },
     /* Free mode with the Inventory's marks (design/41, 6 A). */
     pgHereFreeK:    { es: 'Modo libre.', en: 'Free mode.' },
-    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario, desde una partida nueva; el camino es la guía, como sin un perfil cargado.', en: 'The 100% counts what you mark here or in the Inventory, from a New Game; the road is the guide, as with no profile loaded.' },
+    pgHereFree:     { es: 'El 100 % cuenta lo que marcas aquí o en el Inventario; el camino es la guía.', en: 'The 100% counts what you mark here or in the Inventory; the road is the guide.' },
     pgLadderNote:   { es: 'Esto se fija en el Inventario:', en: 'This is set in the Inventory:' },
     /* The 100% tab (4 A), and the guide without a save (5 A) */
     pgInCats:       { es: 'en {n} categorías', en: 'in {n} categories' },
@@ -855,20 +858,19 @@
     roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
     roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
-    roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
-                      en: 'What the game asks before Act 3 opens, read from its own files. Guides usually give six wishes: the ones before them count too, and so do a minimum of wish points and four more conditions.' },
+    roadNote3:      { es: 'Leído de los archivos del juego. Las guías dan seis deseos; el juego pide también los que van antes, un mínimo de puntos de deseos y cuatro condiciones.', en: 'Read from the game\'s files. Guides list six wishes; the game also asks for the ones before them, a minimum of wish points and four conditions.' },
     roadStale:      { es: 'Este perfil se guardó en la web antes de que leyera los deseos: vuelve a importarlo para ver su camino.', en: 'This profile was kept before the site read the wishes: import it again to see its road.' },
     // Defeating a foe as the game words it (MQ_TYPE_DEFEAT, DEFEATED_*_DESC: «Derrota a…», "Defeat…").
-    roadBypassed:   { es: 'Ya no hace falta: derrotar a {phantom} abre otro camino.', en: 'No longer needed: defeating {phantom} opens another way in.' },
+    roadBypassed:   { es: 'Ya no hace falta: derrotaste a {phantom}.', en: 'No longer needed: you defeated {phantom}.' },
     roadBells:      { es: 'Haz sonar los cinco Santuarios de Campana', en: 'Ring the five Bellshrines' },   // the game's word in it: BELLSHRINE
     // The Gate opens only once its Judge is beaten (design/90c, 2 A): MQ_BELLSHRINES_NAME, NAME_LAST_JUDGE
     roadGate:       { es: 'Abre la {gate}: derrota a la {judge}', en: 'Open the {gate}: defeat the {judge}' },
     /* The other way in (design/90c, 1 A): the Phantom (NAME_PHANTOM), in place of the steps it skips */
     roadPhantom:    { es: 'Derrota a {phantom}', en: 'Defeat {phantom}' },
     roadInstead:    { es: 'En lugar de los pasos {a} y {b}', en: 'Instead of steps {a} and {b}' },
-    roadAltOpen:    { es: 'Abierto ya: te ahorra los pasos {a} y {b}.', en: 'Open now: it skips steps {a} and {b}.' },
-    roadAltShut:    { es: 'Se abre en cuanto tengas las dos: te ahorra los pasos {a} y {b}.', en: 'Opens once you have both: it skips steps {a} and {b}.' },
-    roadAltGuide:   { es: 'Se abre desde el paso {a} con las dos: te ahorra los pasos {a} y {b}.', en: 'Open from step {a} with both: it skips steps {a} and {b}.' },
+    roadAltOpen:    { es: 'Abierto ya.', en: 'Open now.' },
+    roadAltShut:    { es: 'Se abre en cuanto tengas las dos.', en: 'Opens once you have both.' },
+    roadAltGuide:   { es: 'Se abre en cuanto tengas las dos.', en: 'Opens once you have both.' },
     roadAltDone:    { es: 'Hecho: la {gate} ya no hace falta.', en: 'Done: the {gate} is no longer needed.' },
     roadNeeds:      { es: 'Requiere', en: 'Needs' },
     roadOr:         { es: 'o', en: 'or' },
@@ -880,37 +882,46 @@
     roadHalf:       { es: '½ punto', en: '½ point' },
     roadBefore:     { es: 'antes: {name}', en: 'first: {name}' },
     roadFour:       { es: 'Cuatro condiciones', en: 'Four conditions' },
-    roadAllThree:   { es: 'Para que el {caretaker} te ofrezca «{wish}» hacen falta las tres cosas:', en: 'For the {caretaker} to offer you "{wish}", all three are needed:' },
+    roadAllThree:   { es: 'El {caretaker} te lo ofrece cuando cumples las tres:', en: 'The {caretaker} offers it once all three are met:' },
     roadLeft1:      { es: 'Te falta {n}.', en: '{n} to go.' },
     roadCaravan:    { es: 'La Caravana de las pulgas en Pulgatopía', en: 'The Flea Caravan at Fleatopia' },   // KEY_CARAVAN, FLEATOPIA
     roadLace:       { es: 'Derrota a Lace en la Cuna', en: 'Defeat Lace in the Cradle' },   // DEFEATED_LACE_2_DESC
     roadKey:        { es: 'Llave de hogar campana', en: 'Bellhome Key' },   // INV_NAME_BELL_HOUSE_KEY
     roadPavo:       { es: 'lista: habla con Pabo', en: 'ready: talk to Pavo' },   // his name: BELLHART_GREETER_MAIN
-    roadKeyCursed:  { es: 'mientras estés maldita, {pavo} no te la da', en: 'while you\'re cursed, {pavo} won\'t give it' },   // the game's word: ENDING_D_DESC «mientras estás maldita»
-    roadKeyRest:    { es: 'tras «{glory}», descansa en un banco fuera de {town} antes de hablar con {pavo}', en: 'after {glory}, rest at a bench outside {town} before talking to {pavo}' },
-    roadCursed:     { es: 'Estás maldita: hasta que «{cure}» te cure, {pavo} no te da la llave, los {couriers} no te dan entregas y vencer a la {silk} da el final «{twisted}».', en: 'You\'re cursed: until {cure} cures you, {pavo} won\'t give you the key, {couriers} won\'t hand you deliveries and defeating {silk} gives the {twisted} ending.' },   // GAINED_CURSE, ENDING_D_DESC
-    roadKeyRule:    { es: 'Pabo la da tras «{glory}» y {n} deseos de su lista', en: 'Pavo gives it after {glory} and {n} wishes of his list' },
+    roadKeyCursed:  { es: 'no mientras estés maldita', en: 'not while you\'re cursed' },   // the game's word: ENDING_D_DESC «mientras estás maldita»
+    roadKeyRest:    { es: 'antes de hablar con {pavo}, descansa en un banco fuera de {town}', en: 'before talking to {pavo}, rest at a bench outside {town}' },
+    roadCursed:     { es: 'Estás maldita hasta «{cure}»: {pavo} no te da la llave, los {couriers} no te dan entregas y la {silk} da el final «{twisted}».', en: 'You\'re cursed until {cure}: {pavo} won\'t give you the key, {couriers} won\'t hand you deliveries and {silk} gives the {twisted} ending.' },   // GAINED_CURSE, ENDING_D_DESC
+    roadKeyRule:    { es: 'tras «{glory}» y {n} deseos de Pabo', en: 'after {glory} and {n} of Pavo\'s wishes' },
     roadOffer:      { es: 'Acepta «{wish}»: habla con el {caretaker} en {clave}', en: 'Accept "{wish}": talk to the {caretaker} in {clave}' },
-    roadOfferNote:  { es: 'Con todo cumplido, te llama con la mano. El deseo sale también en el muro de deseos de {town}, que te manda a él.', en: 'Once everything is met he waves you over. The wish also shows on the Wishwall in {town}, which sends you to him.' },
-    roadDeclined:   { es: 'Ya te lo ofreció y lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'He offered it and you turned it down: talk to him again and accept.' },
+    roadOfferNote:  { es: 'Te llama con la mano; el muro de deseos de {town} también te manda a él.', en: 'He waves you over; the Wishwall in {town} also sends you to him.' },
+    roadDeclined:   { es: 'Lo rechazaste: vuelve a hablar con él y acéptalo.', en: 'You turned it down: talk to him again and accept.' },
     roadCaretaker:  { es: 'Cuidador', en: 'Caretaker' },   // CARETAKER_MAIN
     roadPieces:     { es: 'Reúne las cuatro piezas de la trampa', en: 'Gather the snare\'s four pieces' },
-    roadPieceGiven: { es: 'te la da al aceptar el deseo: {npc}', en: 'given once you accept the wish: {npc}' },
+    roadPieceGiven: { es: 'te la da {npc} al aceptar el deseo', en: '{npc} gives it once you accept the wish' },
     roadPieceAfter: { es: 'tras derrotar a {foe}', en: 'after defeating {foe}' },
     roadPieceNeeds: { es: 'requiere: {art}', en: 'needs: {art}' },
-    roadHermitMeet: { es: 'si nunca habías hablado con él, te la da la segunda vez', en: 'if you\'d never talked to him, he gives it the second time' },
-    roadHermitWay:  { es: 'cruza la pared oculta a la derecha de la Vía Campana y baja: está a la izquierda', en: 'walk through the hidden wall right of the Bellway and drop down: he\'s to the left' },   // the game's word in it: KEY_BELLWAY
+    roadHermitMeet: { es: 'si no lo conocías, habla con él dos veces', en: 'if you\'d never met him, talk to him twice' },
+    roadHermitWay:  { es: 'por la pared oculta a la derecha de la Vía Campana, abajo a la izquierda', en: 'through the hidden wall right of the Bellway, down and left' },   // the game's word in it: KEY_BELLWAY
     roadReady:      { es: 'Llévaselas al {caretaker} en {clave}', en: 'Bring them to the {caretaker} in {clave}' },
     roadSilk:       { es: 'Derrota a la Gran Madre Seda y atrápala con la trampa anímica', en: 'Defeat Grand Mother Silk and entrap her with the Soul Snare' },   // ENDING_C_DESC
-    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3. Si estás maldita, vencerla da en cambio el final «{twisted}».', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3. If you\'re cursed, defeating her gives the {twisted} ending instead.' },
-    roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
-    roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
-    // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
-    roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; habla con {npc} en cada parada (ahora: {at})', en: '{n} of {need} fleas rescued; talk to {npc} at each stop (now: {at})' },
-    roadCaravanRest:{ es: 'en cada parada, tras hablar con {npc}, descansa en un banco lejos de ella antes de que siga', en: 'at each stop, once you\'ve talked to {npc}, rest at a bench away from it before it moves on' },
-    roadCaravanRule:{ es: 'rescata {need} pulgas y habla con {npc} en cada parada de la caravana', en: 'rescue {need} fleas and talk to {npc} at each of the Caravan\'s stops' },
+    roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Cierra los otros dos finales del Acto 2; tras los créditos, se abre el Acto 3. Si estás maldita, el final es «{twisted}».', en: 'On the final blow, play the Needolin instead of binding her. It closes the other two Act 2 endings; after the credits, Act 3 opens. If you\'re cursed, the ending is {twisted}.' },
+    roadRunt:       { es: 'cuenta la versión principal, no la de la cría', en: 'the main version counts, not the runt\'s' },
+    roadMelodies:   { es: 'melodías para la Cuna: {n} de 3', en: 'melodies for the Cradle: {n} of 3' },
+    /* The caravan (js/acts.js LEGS: Mooshka's FSM at each stop): the fleas its next move asks, and
+       what else that move asks (leading, then Mooshka, once the fleas are there); without a save,
+       the three moves. */
+    roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; luego habla con {npc} en {from}', en: '{n} of {need} fleas rescued; then talk to {npc} at {from}' },
+    roadCaravanEnough:{ es: '{need} de {need} pulgas rescatadas: habla con {npc} en {from}', en: '{need} of {need} fleas rescued: talk to {npc} at {from}' },
+    roadCaravanJudge:{ es: 'antes, derrota a la {judge}', en: 'first defeat the {judge}' },
+    roadCaravanGate:{ es: 'antes, abre la {gate}', en: 'first open the {gate}' },
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
-    roadCaravanJudge:{ es: 'antes de su parada en los {steps}, derrota a la {judge}', en: 'before its stop on the {steps}, defeat the {judge}' },
+    roadCaravanRest:{ es: 'tras hablar con {npc}, descansa en un banco lejos de {at}', en: 'after talking to {npc}, rest at a bench away from {at}' },
+    roadCaravanThen:{ es: 'luego habla con {npc} en {from}', en: 'then talk to {npc} at {from}' },
+    roadCaravanRule:{ es: 'habla con {npc} en {s0} con {a} pulgas rescatadas, en {s1} con {b} y en los {s2} con {c}', en: 'talk to {npc} at {s0} with {a} fleas rescued, at {s1} with {b} and on the {s2} with {c}' },
+    roadCaravanRuleJudge:{ es: 'para dejar {at}: la {judge} derrotada y la {gate} abierta', en: 'to leave {at}: the {judge} defeated and the {gate} open' },
+    roadCaravanRuleLake:{ es: 'para dejar los {at}: visita el {lake} vacío, en los {ducts}', en: 'to leave the {at}: visit the empty {lake}, in the {ducts}' },
+    roadCaravanRuleRest:{ es: 'en {a} y en los {b}, tras hablar con {npc}, descansa en un banco lejos de la parada', en: 'in {a} and on the {b}, after talking to {npc}, rest at a bench away from the stop' },
+    roadFleatopia:  { es: 'Pulgatopía', en: 'Fleatopia' },   // FLEATOPIA
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
     /* Each step and row in the game's own words (design/28, 1 A to 5 A): what the pane «Tareas»
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
@@ -935,23 +946,23 @@
     mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
     mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
     mapFocusNext:   { es: 'La siguiente', en: 'Next' },
-    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
+    mapFocusOff:    { es: 'Volver al mapa', en: 'Return to the map' },   // the game's words: CTRL_RETURN + PANE_MAP
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
-    roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}, con dos de las tres melodías aprendidas o tras derrotar a {foe}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}, with two of the three melodies learned or {foe} defeated' },
-    roadOpensSherma:{ es: 'sale tras conocer a {npc} en {clave} y visitar el {ward}', en: 'posted after meeting {npc} in {clave} and visiting the {ward}' },
-    roadOpensClave: { es: 'sale cuando {clave} crece: «{first}» y otros 3 deseos de su muro', en: 'posted once {clave} grows: "{first}" and 3 more wishes from its board' },
-    roadOpensTown:  { es: 'sale tras la primera mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after your first Needle upgrade, selling a relic to {npc} and speaking with {pavo}' },
+    roadOpensShakra:{ es: 'sale con todos los mapas de {npc}, la {art} y dos melodías o {foe} derrotado', en: 'posted with all of {npc}\'s maps, the {art}, and two melodies or {foe} defeated' },
+    roadOpensSherma:{ es: 'sale tras conocer a {npc} y visitar el {ward}', en: 'posted after meeting {npc} and visiting the {ward}' },
+    roadOpensClave: { es: 'sale tras 4 deseos de su muro', en: 'posted after 4 wishes from its board' },
+    roadOpensTown:  { es: 'sale tras una mejora de aguja, venderle una reliquia a {npc} y hablar con {pavo}', en: 'posted after a Needle upgrade, selling a relic to {npc} and talking to {pavo}' },
     roadOpensGlory: { es: 'sale tras derrotar a los {foe}, conseguir {art} o entrar en {clave}', en: 'posted after defeating the {foe}, getting the {art} or entering {clave}' },
-    roadRestOut:    { es: 'aparece al descansar en un banco fuera de {area}', en: 'it shows up when you rest at a bench outside {area}' },
-    roadRestAway:   { es: 'aparece al descansar en un banco de otra zona', en: 'it shows up when you rest at a bench in another area' },
+    roadRestOut:    { es: 'luego descansa en un banco fuera de {area}', en: 'then rest at a bench outside {area}' },
+    roadRestAway:   { es: 'luego descansa en un banco de otra zona', en: 'then rest at a bench in another area' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
-    roadAskRosaries:{ es: 'pide {n} rosarios', en: 'asks for {n} rosaries' },   // the game's word in it: INV_NAME_COIN
-    roadAskShards:  { es: 'pide {n} fragmentos de coraza', en: 'asks for {n} shell shards' },   // the game's word in it: INV_NAME_SHARD
-    roadAskJournal: { es: 'pide {n} entradas en el {journal}', en: 'asks for {n} entries in the {journal}' },
-    roadAskItems:   { es: 'pide: {items}', en: 'asks for: {items}' },
+    roadAskRosaries:{ es: '{n} rosarios', en: '{n} rosaries' },   // the game's word in it: INV_NAME_COIN
+    roadAskShards:  { es: '{n} fragmentos de coraza', en: '{n} shell shards' },   // the game's word in it: INV_NAME_SHARD
+    roadAskJournal: { es: '{n} entradas en el {journal}', en: '{n} entries in the {journal}' },
+    roadAskItems:   { es: '{items}', en: '{items}' },
     roadAskN:       { es: '{n} × {item}', en: '{n} × {item}' },
 
     /* Progress: how to get each thing of the 100% (js/how.js), the traps, what's left to buy */

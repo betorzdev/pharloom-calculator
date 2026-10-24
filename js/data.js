@@ -22,7 +22,9 @@
      attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's
                   drills, the Witch's whip): { slash, down, run }, each hits [×Needle, times],
                   charged (held) and onHit (only when it lands); read from the Crest's page.
-     MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'. */
+     MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'.
+     ITEMS        art: the folder of its picture when not items/; max: how many can be held or had;
+                  had / of: how a save says it was had, one check or one per piece (js/savefile.js). */
 (() => {
   'use strict';
   const SS = globalThis.SS || (globalThis.SS = {});
@@ -1688,6 +1690,149 @@
         key: 'INV_DESC_SETH_MEMENTO',
       },
       art: 'extras',
+    },
+    {
+      id: 'plasmium-gland',
+      key: 'INV_NAME_PLASMIUM_GLAND',
+      name: { es: 'Glándula de plasmio', en: 'Plasmium Gland', key: 'INV_NAME_PLASMIUM_GLAND' },
+      desc: {
+        es: 'Órgano pulsante del interior de la coraza del alquimista Zylotol. La glándula se repone con el tiempo, proporcionando una fuente casi ilimitada de plasmio. La fabricación de nuevas ampollas de plasmio ya no requiere una reserva.',
+        en: 'Pulsating organ grown within the shell of Alchemist Zylotol. The gland replenishes over time, providing a near limitless source of Plasmium. Crafting new Plasmium Phials no longer requires a reserve.',
+        key: 'INV_DESC_PLASMIUM_GLAND',
+      },
+      had: ['held', 'Plasmium Gland'],
+    },
+    {
+      id: 'materium',
+      key: 'INV_NAME_MATERIUM',
+      name: { es: 'Materium', en: 'Materium', key: 'INV_NAME_MATERIUM' },
+      desc: {
+        es: 'Tubos y receptáculos construidos para el almacenamiento, registro e investigación de diversos materiales. El Materium puede montarse en un hogar.',
+        en: 'Tubes and receptacles built for the storing, recording and research of various materials. The Materium can be assembled in a home.',
+        key: 'INV_DESC_MATERIUM',
+      },
+      had: ['any', ['held', 'Materium'], ['flag', 'ConstructedMaterium']],
+    },
+    {
+      id: 'crawbell',
+      key: 'INV_NAME_CRAWBELL',
+      name: { es: 'Nido campana', en: 'Crawbell', key: 'INV_NAME_CRAWBELL' },
+      desc: {
+        es: 'Nido hecho con una vieja campana. Una vez colocado, los jóvenes cuervones se posarán ocasionalmente en su interior, llenando la campana de fragmentos de coraza y rosarios. El nido campana puede instalarse en el exterior de un hogar.',
+        en: 'Nest fashioned from an old bell. Once set up, young Craws will occasionally roost within, filling the bell with shell shards and rosaries. The Crawbell can be installed on the exterior of a home.',
+        key: 'INV_DESC_CRAWBELL',
+      },
+      had: [
+        'any',
+        ['held', 'Crawbell'],
+        ['flag', 'CrawbellInstalled'],
+        ['bool', 'Room_CrowCourt_02', 'Collectable Item Pickup Crawbell'],
+      ],
+    },
+    {
+      id: 'simple-key',
+      key: 'INV_NAME_TOKEN_FAITH',
+      name: { es: 'Llave sencilla', en: 'Simple Key', key: 'INV_NAME_TOKEN_FAITH' },
+      desc: {
+        es: 'Llave oxidada de diseño común. Puede utilizarse para abrir diversas cerraduras sencillas. El tiempo la ha deteriorado; se romperá tras un solo uso.',
+        en: 'Rusted key of common design. Can be used to open a range of simple locks. Degraded by time, it will break after a single use.',
+        key: 'INV_DESC_TOKEN_FAITH',
+      },
+      max: 4,
+      of: [
+        ['flag', 'PurchasedBonebottomFaithToken'],
+        ['flag', 'CollectedDustCageKey'],
+        ['flag', 'MerchantEnclaveSimpleKey'],
+        ['bool', 'Bellshrine_Coral', 'Collectable Item Pickup'],
+      ],
+    },
+    {
+      id: 'slab-keys',
+      key: 'INV_NAME_SLAB_KEYRING',
+      name: { es: 'Llaves de la Losa', en: 'Slab Keys', key: 'INV_NAME_SLAB_KEYRING' },
+      desc: {
+        es: 'Llaves de las celdas y pasadizos de la Losa.',
+        en: 'Keys to the cells and passages of the Slab.',
+        key: 'INV_DESC_SLAB_KEYRING',
+      },
+      max: 3,
+      of: [['flag', 'HasSlabKeyA'], ['flag', 'HasSlabKeyB'], ['flag', 'HasSlabKeyC']],
+    },
+    {
+      id: 'white-key',
+      key: 'INV_NAME_WARD_KEY',
+      name: { es: 'Llave blanca', en: 'White Key', key: 'INV_NAME_WARD_KEY' },
+      desc: {
+        es: 'Llave de metal finamente elaborada, con forma de instrumento quirúrgico. Otorga acceso al Ala Blanca de la Ciudadela.',
+        en: 'Finely crafted metal key, shaped to resemble a surgical implement. Grants access to the Citadel\'s Whiteward.',
+        key: 'INV_DESC_WARD_KEY',
+      },
+      had: [
+        'any',
+        ['held', 'Ward Key'],
+        ['flag', 'collectedWardKey'],
+        ['flag', 'MerchantEnclaveWardKey'],
+      ],
+    },
+    {
+      id: 'surgeons-key',
+      key: 'INV_NAME_WARD_BOSS_KEY',
+      name: { es: 'Llave del cirujano', en: 'Surgeon\'s Key', key: 'INV_NAME_WARD_BOSS_KEY' },
+      desc: {
+        es: 'Llave descartada del Ala Blanca. Abre la compuerta bajo el quirófano.',
+        en: 'Discarded key of the Whiteward. Opens the sluice beneath the operating theatre.',
+        key: 'INV_DESC_WARD_BOSS_KEY',
+      },
+      had: ['any', ['held', 'Ward Boss Key'], ['flag', 'collectedWardBossKey']],
+    },
+    {
+      id: 'architects-key',
+      key: 'INV_NAME_ARCHITECT_KEY',
+      name: { es: 'Llave de los Arquitectos', en: 'Architect\'s Key', key: 'INV_NAME_ARCHITECT_KEY' },
+      desc: {
+        es: 'Llave rotatoria de los Arquitectos. Abre su capilla en los Talleres Inferiores.',
+        en: 'Rotary key of the Architects. Opens their Chapel in the Underworks.',
+        key: 'INV_DESC_ARCHITECT_KEY',
+      },
+      had: ['any', ['held', 'Architect Key'], ['flag', 'PurchasedArchitectKey']],
+    },
+    {
+      id: 'diving-bell-key',
+      key: 'INV_NAME_DOCK_KEY',
+      name: { es: 'Llave de campana de buceo', en: 'Diving Bell Key', key: 'INV_NAME_DOCK_KEY' },
+      desc: {
+        es: 'Pequeña llave de un obrero. Abre la puerta que conduce a la campana de buceo en Muelles Profundos.',
+        en: 'Small worker\'s key. Unlocks the door to the diving bell in Deep Docks.',
+        key: 'INV_DESC_DOCK_KEY',
+      },
+      had: ['any', ['held', 'Dock Key'], ['flag', 'BallowGivenKey']],
+    },
+    {
+      id: 'bellhome-key',
+      key: 'INV_NAME_BELL_HOUSE_KEY',
+      name: { es: 'Llave de hogar campana', en: 'Bellhome Key', key: 'INV_NAME_BELL_HOUSE_KEY' },
+      desc: {
+        es: 'Llave para acceder a una campana restaurada sobre Campanilla.',
+        en: 'Key to a restored bell above Bellhart.',
+        key: 'INV_DESC_BELL_HOUSE_KEY',
+      },
+      had: [
+        'any',
+        ['held', 'Belltown House Key'],
+        ['flag', 'BelltownGreeterHouseFullDlg'],
+        ['flag', 'BelltownHouseUnlocked'],
+      ],
+    },
+    {
+      id: 'craw-summons',
+      key: 'INV_NAME_CRAW_SUMMONS',
+      name: { es: 'Citación cuervona', en: 'Craw Summons', key: 'INV_NAME_CRAW_SUMMONS' },
+      desc: {
+        es: 'Carta garabateada en un trapo negro hecho jirones. "Profanadora... Oscuridad... Acude... Hogar... Rueda...".',
+        en: 'Scrawled missive on tattered black rag. "Defiler... Dark... Attend... Home... Wheel..."',
+        key: 'INV_DESC_CRAW_SUMMONS',
+      },
+      had: ['any', ['held', 'Craw Summons'], ['flag', 'OpenedCrowSummonsDoor']],
     },
   ];
 

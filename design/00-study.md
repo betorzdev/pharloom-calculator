@@ -1553,6 +1553,13 @@ time with no reload and no stale row. Fixed on the way:
   check, in place of CaravanTroupeLocation ≥ 2, the same on all 73 saves). The Progress row says
   the Blasted Steps, and the Map puts it on Mooshka there instead of at Fleatopia
   (`tools/completionist.js PIECE_FIX`; the wiki's Spool Fragment and Blasted Steps pages agree).
+  And its three moves (24 October; js/acts.js LEGS, from Mooshka's Dialogue FSM at each stop and
+  GameManager.TimePasses): 5 fleas to leave the Marrow (the wish The Lost Fleas ending), 12 with
+  the Last Judge beaten, the Grand Gate seen open and a rest since he was met to leave Greymoor,
+  22 with the empty Pale Lake seen (SeenFleatopiaEmpty, a trigger in aqueduct_05_pre) and a rest
+  to leave the Blasted Steps. The road's row said 22 for all of them; it now gives the next move's
+  fleas and what it still asks (savefile's caravanFlags). Over the 88 saves, no stop is reached
+  without its leg's conditions, and the site's flea count equals the game's Fleas Saved.
 - **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
   Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
   which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
@@ -1714,7 +1721,8 @@ completionist's Act 3 for a Steel Soul fight beaten in Act 2, now 2 in `tools/ge
 had a placeholder 0 that showed as Act 1 (the walls, caches and the ways open, some in the Abyss)
 and 487 none, shown under every Act; and an Act showed only what first appears in it, hiding what's
 still to get from the Acts before. The game sorts nothing by Act. Albert's choice: gone; a mark's
-card and title still say its Act, and Progress keeps its own.
+card and title still say its Act, and Progress keeps its own. (Back on 24 October, up to an Act and
+with every mark given one: «The Map's Act filter, back», below.)
 
 **The Map with every mark shown** (14 October). Albert found the site slow once the Map showed
 everything. Measured in headless Chrome over file:// (ANGLE-GL on the GPU; 1440 px, and 390 px at
@@ -2381,3 +2389,75 @@ is set whether or not the wish was on. The two Spine Cores in Bone_East_14b's wa
 above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all
 match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
 and after each fixed wish and in Free mode, no console errors.
+
+**The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
+at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
+the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each
+stop's room (Bone_10_left, Greymoor_08, Coral_Judge_Arena, Aqueduct_05), each switched off by a
+DeactivatePlayerDataTest while CaravanTroupeLocation names another stop, while SeenFleaCaravan is
+false, or without the vendor pins (hasPinShop, left out as every pin set). `tools/extract-map.py`
+keeps them as PINS of kind `caravan` (here its stop, lit SeenFleaCaravan), last of all so no index
+moves; `rooms.js pinsOn` already shows a pin with a `here` only at the save's stop (in Free mode,
+the four). The Map draws it as the stations, a layer of its own in Places, on at first (a list
+stored before it gets it once, silently), dimmed with «Not met yet» until seen. Over the 88 saves:
+35 at 0 (32 not seen yet, 3 seen), 10 at 1, 4 at 2, 39 at 3; SeenFleaCaravan is set exactly when
+MetCaravanTroupeLeader is. Checked in headless Chrome at 1440 and 390, en and es, with a save at
+each stop, one before the caravan is seen, and Free mode.
+
+**The Map's Act filter, back** (24 October 2026, Albert: «a big and important task would be to be
+able to put an Act filter on the Map»; `design/03-redesign.md`, step 6, the Act filter, round
+`98`). What killed the first one is fixed at the source: «Up to Act N» shows what can be had by
+Act N (not only what first appears in it), and every mark has an Act. Of the 2,066 marks of Free
+mode, 541 carry their own (the completionist's, read again on 18 October); the other 1,525 take
+their room's first Act, which `tools/gen-spots.js` works out on the game's doors (js/graph.js) as
+ROOM_ACT: Act 3 what only Act 3 has (the 18-October rule), Act 1 what the doors reach from Tut_01 or
+from a room holding a thing of Act 1 (115 rooms: it proves the room open then, as the Slab's cell),
+without a door of ACT2_DOORS, Act 2 the rest. The twelve doors, each with its source: the Grand Gate
+and the Phantom's way (the Acts page: Act 2 «begins upon entering the Citadel after defeating the
+Last Judge or Phantom»), the Citadel's doors from Bilewater and the Slab, Mount Fay's two and the
+Sands of Karak's three (their wiki pages: the Clawline), Wisp Thicket's (the Faydown Cloak), the
+Ducts' from Bilewater (opened from within) and the Flea Caravan's to Fleatopia. 308 rooms of Act 1,
+189 of Act 2, 46 of Act 3; every area of the Citadel, Mount Fay, the Sands, Wisp Thicket and the
+Ducts is Act 2 whole, every other outer area Act 1 whole. A scene the doors don't know takes its
+area's (AREA_ACT: the Ventrica hub's station). The run stops if a door's far side is open in Act 1
+anyway, and test/room-acts.test.js checks no thing's own Act is earlier than its room's. Act 1 is
+generous where an ability of Act 2 opens a corner of an Act 1 area (the Faydown Cloak's ledges):
+those things carry their own Act already, and the doors can't say more. Marks by Act in Free mode:
+1,111 / 757 / 198. Only the Act fields of js/spots.js changed (ROOM_ACT, AREA_ACT).
+
+**The Inventory's items, audited** (24 October 2026). The game's collectables
+(`collectableitems.bundle`, 87 of them) against the screen: the purse, the Relics, the Mementos,
+the materials and the upgrades were all there; the keys and three lasting items were not. Added to
+the Items shelf, each by how the save says it was had, read over the 88 saves (`js/data.js` ITEMS
+`had` / `of`, from `tools/gen-data.js` HELD): the Plasmium Gland, the Materium, the Crawbell, the
+Simple Keys (of 4, by where each is had: held plus the doors opened equals it in every save), the
+Slab's keys (of 3, one item in the game), the White Key (bought from Jubilana in the Steel Soul game,
+whose pickup flag stays false), the Surgeon's, the Architect's, the Diving Bell's and the Bellhome's
+keys, and the Craw Summons. A key stays had once spent. Their pictures are the game's
+(`tools/extract-item-icons.py`, lossless): the wiki refused its files to scripts that day. No save
+holds the Plasmium Gland or the Crawbell, so theirs are the game's own checks, not seen true. Left
+out for Albert: the wish deliverables (about 35 things carried for a wish and handed over), the
+Cogheart Pieces and the Ruined Tool, the Map & Quill, the Gate Key (the demo's).
+
+**Shakra, and everyone else, where the save has them** (24 October 2026, Albert: «Shakra aparece en
+todas las áreas… pero va desapareciendo»; his pick: only where she still is, then the same for every
+other person). Shakra's 17 spots all run one FSM template, `mapper_evaluate_location`
+(`fsmtemplates_assets_mapper.bundle`), with their area's `SeenMapper<Area>`: its
+`SceneTravelerTempEval` sends her away when `MapperLeft<Area>` is set, which
+`GameManager.MapperLeavePreviousLocations` sets for every area she's been seen in but the one Hornet
+sees her in now, `MapperLeaveAll` for all once her last maps are bought (`ShakraFinalQuestAppear`),
+and the template's own "Set Left" states once Hornet's past an area (the Bell Beast for the Marrow,
+the Citadel for Hunter's March and the Wormways, the Faydown Cloak for Mount Fay…). Bone Bottom and
+Bellhart are rests ruled by their Mapper Control FSMs; Act 3's guard posts in Greymoor_08 and
+Shellwood_01 and her Bellhart rest go by `mapperLocationAct3` (`GameManager.TimePasses` draws 1 to
+3 once she's been seen in Act 3), and nowhere while Trail's End is taken. `tools/gen-people.js`
+SHAKRA writes it, `js/savefile.js peopleHere` says it per save, and the Map shows her only there
+(Free mode: all 17). Over the 91 saves: Act 1 between 9 and 13 spots (she's ahead of Hornet in
+every area she maps), Act 2 from 1 to 9, Act 3 one place or the two guard posts, and one save
+nowhere (her last maps bought, Trail's End not taken yet: she's at Shadow_24). The same sweep over
+the People layer (`HAND here`, each spot by its object's and its parents' switches): 29 people now
+go by the save spot by spot, six more are gone in Act 3 (or once they leave). Only scripts decide for Garmond,
+Mister Mushroom, Seth's other rooms and the Green Prince caged, so those spots stay. The People
+(100%) layer and the vendors were looked at and left as they are: they guide to what someone
+gives or sells, and hiding them would hide what's missable (Loddie and Lumble leave in Act 3, the
+Mottled Skarr when killed, Pebb when Bone Bottom's shop closes).

@@ -1568,13 +1568,39 @@ const inScene = (scene, x, y) => {
 // it. One waiting just off its scene (the Widow above, Groal under the swamp) comes in where it waits:
 // its point is brought to the scene's edge. One at the scene's origin is parked: not used.
 const foeAt = (foe, scene) => recordAt(bookOf(foe), scene);
-// A Journal entry's enemy in a scene: the first carrying its record there, else what names it.
+/* A Journal entry's enemy in a scene: the first carrying its record there, else what names it. When
+   only something parked at the scene's origin names it, the scene's one arena (its BattleScene's
+   point, pickups.json battles): Weave_03's pair of Moss Mothers, whose EnemyDeathEffects carry no
+   record (the «Battle End» FSM under «Boss Scene», at the origin, counts their kill), fight in its
+   arena at the room's west end, not at the room's middle the Map otherwise falls back to (read in
+   the scene, 24-Oct-2026). A boss the game makes from its prefab (SS.journalHow 'spawn': nothing in
+   the scene names its record) in a room where one other boss's record is: that boss's arena, the
+   one they share. Tormented Trobbio, on Trobbio's stage in Library_13 (his spawner at (77.1, 16.3),
+   Trobbio at (73.8, 16.4), read in the scene on 24-Oct-2026), not at the room's middle. Left at
+   their room's middle, which is in their arena (read in the scenes the same day):
+     · the Last Judge, made from its prefab too, alone in Coral_Judge_Arena, its arena whole (its
+       object waits off the scene above the Great Gate and leaps in: brought to the edge, it would
+       sit in the room's corner);
+     · the Far Fields' Savage Beastfly, whose record only bone_east_08_boss_beastfly carries (loaded
+       over Bone_East_08 by its «Boss Beastfly Loader»), on the Beastfly itself waiting in the lava
+       under the floor (81, 0.5): brought to the edge, it would sit on the room's bottom, farther
+       from the arena it shares with the Fourth Chorus (its Home Point at (80.8, 14.7)) than the
+       middle is.
+   A record in a scene the Map can't place (Lost Lace's cocoon) is placed below (BOSS_PIN). */
+const BOSS_KEYS = new Set(BOSSES.map(([foe, , , , more]) => (bookOf((more && more.of) || foe) || {}).key).filter(Boolean));
 const recordAt = (e, scene) => {
   const host = hostOf(scene);   // a boss scene's room (toMap)
   const size = P.sizes[host];
-  const hits = ((e && P.records[e.key]) || []).filter(([sc, , , x, y]) => lower(sc) === lower(scene) && typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
+  const named = ((e && P.records[e.key]) || []).filter(([sc]) => lower(sc) === lower(scene));
+  if (!named.length && e && BOSS_KEYS.has(e.key) && SS.journalHow[e.key] === 'spawn') {
+    const others = [...BOSS_KEYS].filter((k) => k !== e.key && (P.records[k] || []).some(([sc]) => lower(sc) === lower(scene)));
+    if (others.length === 1) return recordAt(J.BOOK.find((x) => x.key === others[0]), scene);
+  }
+  const hits = named.filter(([, , , x, y]) => typeof x === 'number' && (Math.abs(x) > 0.5 || Math.abs(y) > 0.5));
   const first = (l) => l.find(([, comp]) => /^EnemyDeathEffects/.test(comp)) || l[0];
   const hit = first(hits.filter(([, , , x, y]) => inScene(host, x, y))) || first(hits);
+  const arenas = P.battles[lower(scene)] || [];
+  if (!hit && named.length && arenas.length === 1 && inScene(host, arenas[0][1], arenas[0][2])) return toMap(host, arenas[0][1], arenas[0][2]);
   if (!hit || !size) return null;
   const clamp = (v, n) => Math.min(Math.max(v, 1), n - 1);
   return toMap(host, clamp(hit[3], size[0]), clamp(hit[4], size[1]));
@@ -1839,8 +1865,9 @@ const TASKS = [], HUNTS = {}, ASKS = {};
      Waterwheel's, FastTravelNPCLocation 7, a value the game's FastTravelLocations doesn't have (a
      station cut from the game), under Greymoor_17 in the black. Each of the others carries its
      station's value (alt.at, as a Flintbeetle's places): a save with the wish taken and not done
-     shows only the one the beast is at; before it's taken, once it's done and in Free mode, all
-     twelve (one check, so one thing on the layer's count). */
+     shows only the one the beast is at; before it's taken and in Free mode, all twelve (one check,
+     so one thing on the layer's count); once it's done, none (alt.vanish: the pins go, the wish
+     stays counted as had; Albert's choice, 24-Oct-2026). */
   const stations = new Set(M.PINS.filter((x) => x[0] === 'bellway').map((x) => sceneOfPart(x[3])));
   let unstationed = 0;
   const STATION = 'FastTravelNPCLocation';
@@ -1878,8 +1905,8 @@ const TASKS = [], HUNTS = {}, ASKS = {};
       if (sprite === 'quest_map_icon_bellbeast') {
         const v = stationOf(off, pinName);
         STATION_AT.set(v, [scene, M.PINS.find((x) => x[0] === 'bellway' && sceneOfPart(x[3]) === scene)]);
-        // Its station's: not taken yet, done, or the beast waits there (the value, as 'min' reads an int).
-        alt = { at: ['any', ['not', ['accepted', q]], check, ['all', ['min', STATION, v], ['not', ['min', STATION, v + 1]]]] };
+        // Not taken yet, or not done and the beast waits at its station (the value, as 'min' reads an int).
+        alt = { at: ['any', ['not', ['accepted', q]], ['all', ['not', check], ['min', STATION, v], ['not', ['min', STATION, v + 1]]]], vanish: true };
       }
       task('goal', q, check, scene, p, null, art('pins/' + sprite), null, null, alt);
     } else {
@@ -2147,6 +2174,28 @@ const OPENS = {};
   }
 }
 
+/* A boss fought in a scene the Map can't place, which only its room loads, with no door into it
+   (SS.sceneHosts): where the game pins the main objective its beating ends, in that room (a goal
+   whose check holds the boss's own), not at the room's middle. Lost Lace's cocoon, abyss_cocoon,
+   which Abyss_05's «Abyss Dive Cutscene» loads (through Last_Dive) at the dive, in the room's lower
+   west end (37.9, 8.1): the Act 3 finale's pin (Black Thread Pt6 Flower, done once Lost Lace is in
+   the Journal) is there (read in the scene, 24-Oct-2026). Its Journal entry's mark goes with it.
+   The run stops if such a boss has no such pin. The Bell Eater's arena, which every Bellway station
+   loads, keeps the room it's called to (Belltown_basement, a point on the map). */
+const BOSS_PIN = [];
+for (const [foe, scene, check, , more] of BOSSES) {
+  const e = bookOf((more && more.of) || foe);
+  const recs = (e && P.records[e.key]) || [];
+  if (XY['boss:' + foe] || !recs.length || !recs.every(([sc]) => (SS.sceneHosts[lower(sc)] || []).map(lower).join() === lower(scene))) continue;
+  const has = (c) => JSON.stringify(c) === JSON.stringify(check) || ((c[0] === 'any' || c[0] === 'all') && c.slice(1).some(has));
+  const pins = TASKS.map((t, i) => i).filter((i) => TASKS[i][0] === 'goal' && sameRoom(TASKS[i][3], scene) && has(TASKS[i][2]) && XY['task:' + i]);
+  if (pins.length !== 1) fail(`${foe} is fought in ${recs.map(([sc]) => sc).join(', ')}, off the map, and ${pins.length} objectives' pins in ${scene} end it: BOSS_PIN needs reading again`);
+  put2('boss:' + foe, XY['task:' + pins[0]]);
+  if (!XY['journal:' + e.id] && lower(((SS.journalRooms[e.key] || []).map(([s]) => s)).find(onMap)) === lower(scene)) put2('journal:' + e.id, XY['task:' + pins[0]]);
+  BOSS_PIN.push(foe);
+}
+console.log(`bosses at their objective's pin, their arena off the map: ${BOSS_PIN.join(', ') || 'none'}`);
+
 /* ── Objective steps on one point (21-Oct-2026, Albert's D32) ──
    The game draws one objective's pin at a time (QuestMapMarker); the steps whose pins fall on the
    same point (within 3 px) are one mark: STEPS, each group of TASKS indices in the objectives'
@@ -2215,6 +2264,80 @@ const STEPS = [], GOAL_ACT = {};
   console.log(`how they're had: ${sold} extras sold by a vendor, ${Object.keys(HOW_EXTRA).length} by a fight, a person or a challenge; `
     + `${Object.keys(JOURNAL).length} Journal entries with rooms by Act (${JOURNAL_ACT3.length} Act 3 only); ${Object.keys(OPENS).length} fights opened by something; `
     + `objective steps on one point: ${STEPS.map((g) => g.join('+')).join(', ')}`);
+}
+
+/* ── Each room's first Act: the Map's Act filter (design/03-redesign.md, step 6, the Act filter) ──
+   A mark is filtered by its own Act or its room's, the later (js/app-map.js). Most marks have no Act
+   of their own (the benches, the people, the caches, walls and levers: 1,525 of 2,066 in Free mode);
+   their room's is the first Act it can be entered in, worked out on the game's doors (js/graph.js):
+     3  what only Act 3 has (act3Only above: the map's Act 3 pieces, the rooms only reached through
+        them, the Abyss and Lost Verdania)
+     1  every room the doors reach from the first room (Tut_01), or from a room that holds a thing of
+        Act 1 of its own (it proves the room open then: the Slab's, reached through its cell), without
+        going through a door of ACT2_DOORS or into a room of Act 3
+     2  the rest: the Citadel, where Act 2 begins (the Acts page: «The second Act begins upon entering
+        the Citadel»), and what only an ability of Act 2 opens (the Clawline, the Faydown Cloak: both
+        Act 2's, js/collectibles.js WHERE)
+   ACT2_DOORS: each way in, [one side, the other, why], both ways. A door whose far side the run finds
+   open in Act 1 anyway (a thing of Act 1 there, or another way round) stops it: the table needs reading.
+   Out: ROOM_ACT, scene (lower case) → 2 or 3; a room not in it is Act 1. A scene the doors don't
+   know (a room of its own on the map with no door read: the Ventrica hub's station) takes its
+   area's (AREA_ACT, area → 2 or 3, when every room of it the doors know is that Act or later). */
+const ACT2_DOORS = [
+  ['Coral_10', 'Song_19_entrance', 'the Grand Gate (wiki Acts: Act 2 begins upon entering the Citadel, after the Last Judge)'],
+  ['Organ_01', 'Library_12', 'the Phantom\'s way into the Citadel (wiki Acts: after defeating the Phantom)'],
+  ['Shadow_22', 'Library_07', 'Bilewater into the Whispering Vaults: the Citadel'],
+  ['Slab_01', 'Song_04', 'the Slab into the Choral Chambers: the Citadel'],
+  ['Peak_01', 'Peak_02', 'wiki Mount Fay: «The Clawline is needed to access it»'],
+  ['Peak_01', 'Peak_07', 'wiki Mount Fay: «The Clawline is needed to access it»'],
+  ['Coral_34', 'Coral_25', 'wiki Sands of Karak: the Clawline\'s rings are «the only entry point», the shortcuts open from within'],
+  ['Coral_32', 'Coral_38', 'wiki Sands of Karak: the Clawline\'s rings are «the only entry point», the shortcuts open from within'],
+  ['Coral_35', 'Coral_35b', 'wiki Sands of Karak: the Clawline\'s rings are «the only entry point», the shortcuts open from within'],
+  ['Greymoor_06', 'Wisp_04', 'wiki Wisp Thicket: «The Faydown Cloak is required to enter this area»'],
+  ['Shadow_01', 'Aqueduct_04', 'wiki Putrified Ducts: the Bilewater way is opened from within, «the rest ... through the Memorium entrance»'],
+  ['Room_Caravan_Spa', 'aqueduct_05_caravan', 'the Flea Caravan settles in Fleatopia only once Hornet has seen it (js/acts.js)'],
+];
+const ROOM_ACT = {}, AREA_ACT = {};
+{
+  const low = (s) => String(s).toLowerCase();
+  const adj = new Map();
+  const link = (a, b) => { if (!adj.has(a)) adj.set(a, new Set()); adj.get(a).add(b); };
+  for (const [a, bs] of Object.entries(SS.graph)) for (const b of bs) { link(low(a), low(b)); link(low(b), low(a)); }
+  const shut = new Set();
+  for (const [a, b] of ACT2_DOORS) {
+    if (!(adj.get(low(a)) || new Set()).has(low(b))) fail(`ACT2_DOORS: js/graph.js has no door ${a} ↔ ${b} any more`);
+    shut.add(low(a) + '|' + low(b)); shut.add(low(b) + '|' + low(a));
+  }
+  // The rooms that hold a thing of Act 1 of its own.
+  const ones = [];
+  CO.PIECES.forEach((p, i) => { if (p[1] === 1) ones.push(AT.pieces[i]); });
+  for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [id, w] of Object.entries(CO.WHERE[cat])) if (w[0] === 1) ones.push(AT[cat][id]);
+  for (const [, scene, , act] of BOSSES) if (act === 1) ones.push(scene);
+  for (const g of SS.gauntlets.GAUNTLETS) if (g.act === 1) ones.push(g.scene);
+  for (const x of EXTRAS) if (x[1] === 1) ones.push(x[3]);
+  TASKS.forEach((x, i) => {
+    const w = CO.WISHES.find((v) => JSON.stringify(v[2]).includes(JSON.stringify(x[1])));
+    if ((x[0] === 'goal' ? GOAL_ACT[i] : w && w[1]) === 1) ones.push(x[3]);
+  });
+  const seeds = new Set(['tut_01']);
+  for (const s of ones) {
+    if (!s) continue;
+    const k = adj.has(low(s)) ? low(s) : low((R.roomOf(s) || {}).scene || s);
+    if (adj.has(k) && !act3Only(k)) seeds.add(k);
+  }
+  const one = new Set(seeds), todo = [...seeds];
+  while (todo.length) {
+    const n = todo.pop();
+    for (const m of adj.get(n) || []) if (!one.has(m) && !shut.has(n + '|' + m) && !act3Only(m)) { one.add(m); todo.push(m); }
+  }
+  for (const [a, b, why] of ACT2_DOORS) if (one.has(low(a)) && one.has(low(b))) fail(`ACT2_DOORS: ${a} ↔ ${b} (${why}) is open in Act 1 on both sides: read it again`);
+  for (const s of [...adj.keys()].sort()) { const v = act3Only(s) ? 3 : one.has(s) ? 1 : 2; if (v > 1) ROOM_ACT[s] = v; }
+  for (const s of [...ACT3_ROOMS].sort()) ROOM_ACT[s] = 3;
+  const lowest = {};
+  for (const s of adj.keys()) { const a = R.areaOf(s); if (a) lowest[a] = Math.min(lowest[a] || 3, ROOM_ACT[s] || 1); }
+  for (const [a, v] of Object.entries(lowest).sort()) if (v > 1) AREA_ACT[a] = v;
+  const n2 = Object.values(ROOM_ACT).filter((v) => v === 2).length;
+  console.log(`rooms by first Act: ${one.size} Act 1, ${n2} Act 2, ${Object.keys(ROOM_ACT).length - n2} Act 3 (${ACT2_DOORS.length} doors of Act 2, ${seeds.size} rooms holding a thing of Act 1)`);
 }
 
 // The Map admin's fixes keyed by an index of these lists follow their marks (stops the run if one can't).
@@ -2291,10 +2414,11 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               under assets/map/, name the thing's (a wish's and an objective's are the quest's),
               mode 'steel' when only Steel Soul has it, steel the spot's scene when the save
               chooses it (SteelQuestSpots), gone 'act3' when the game takes it away as Act 3 begins,
-              alt { at, by, open, foe } for one of the places one thing may be in (a Flintbeetle's
+              alt { at, by, open, foe, vanish } for one of the places one thing may be in (a Flintbeetle's
               two, the Bellbeast's twelve stations): at the check that it's this one in this game,
               by what picks ('shortcut'), open whether it's this one once that's open, foe the
-              enemy's name (the Bellbeast's and the Herald's have at alone)
+              enemy's name; vanish: once the thing is done and this isn't the place, it has no pin
+              but counts as had (the Bellbeast's; it and the Herald's have no by, open or foe)
      HUNTS    a hunt or gather wish whose thing only enemies give while it's on → [the thing's save
               name (its js/quests.js CHAIN asks), [[Journal entry key, scene, how many], ...]]: the
               rooms on the map where those enemies are, the most first (the Map's «Where to hunt»)
@@ -2326,9 +2450,13 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
               entry's enemies freed), and the save's check that it holds
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
-     GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)`,
+     GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)
+     ROOM_ACT a room's scene (lower case) → its first Act, 2 or 3 (a room not in it is Act 1): the
+              Map's Act filter for the marks with no Act of their own (ACT2_DOORS, act3Only)
+     AREA_ACT an area → 2 or 3 when every room of it the doors know is: a scene they don't know
+              takes it`,
 'spots', [['AT', AT], ['ALSO', ALSO], ['PLACES', PLACES], ['VARIANTS', VARIANTS], ['LEFT', LEFT], ['EXTRAS', EXTRAS], ['BOSSES', BOSSES], ['VENDORS', VENDORS], ['PEOPLE', PEOPLE], ['BELLS', BELLS], ['KEYS', KEYS], ['MAPS', MAPS], ['TASKS', TASKS], ['HUNTS', HUNTS], ['ASKS', ASKS], ['XY', XY], ['SEATS', SEATS], ['GIVER', GIVERS], ['QUEST_GIVER', QUEST_GIVER],
-  ['JOURNAL', JOURNAL], ['JOURNAL_ACT3', JOURNAL_ACT3], ['OPENS', OPENS], ['STEPS', STEPS], ['GOAL_ACT', GOAL_ACT]]);
+  ['JOURNAL', JOURNAL], ['JOURNAL_ACT3', JOURNAL_ACT3], ['OPENS', OPENS], ['STEPS', STEPS], ['GOAL_ACT', GOAL_ACT], ['ROOM_ACT', ROOM_ACT], ['AREA_ACT', AREA_ACT]]);
 const kinds = {};
 for (const x of EXTRAS) kinds[x[0]] = (kinds[x[0]] || 0) + 1;
 console.log(`js/spots.js  ${placed.length} things of the 100% placed, ${EXTRAS.length} extras (${Object.entries(kinds).map(([k, n]) => n + ' ' + k).join(', ')}), `

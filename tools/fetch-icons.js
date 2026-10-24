@@ -107,7 +107,8 @@ async function fetchFile(file) {
     ['heart-hunter', "Icon SS Hunter's Heart Art.png"], ['heart-clover', 'Icon SS Conjoined Heart Art.png'],
     ['melody-architect', "Icon SS Architect's Melody Art.png"], ['melody-librarian', "Icon SS Vaultkeeper's Melody Art.png"],
     ['melody-conductor', "Icon SS Conductor's Melody Art.png"]]) jobs.push([`pieces/${id}`, file]);
-  for (const x of D.ITEMS.filter((y) => !y.art)) add('items', x.id, x.name.en, ["%'s Journal (Silksong)"]);
+  // The items a save reads (the keys, the Bellhome's pieces: had / of) are the game's own pictures, tools/extract-item-icons.py.
+  for (const x of D.ITEMS.filter((y) => !y.art && !y.had && !y.of)) add('items', x.id, x.name.en, ["%'s Journal (Silksong)"]);
   /* The Hunter's Journal's portraits: the wiki's table names each row's file with the page it
      links to ("[[File:HJ Mossgrub.png|60px|link=Mossgrub]]"); they're paired with js/journal.js's
      entries by that page's name, not by order (the Steel Soul row carries an icon between the two,

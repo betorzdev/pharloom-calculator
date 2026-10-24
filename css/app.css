@@ -369,6 +369,47 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   width: 1px; height: var(--sp-4); transform: translateY(-50%); background: var(--line-ctl);
 }
 .support-short { display: none; }
+/* The flea from the caravan (assets/icons/pieces/flea.webp; design/03-redesign.md, step 1d, second
+   round): perched on the donation link, as the Knight on the sister's, and on every screen's frame
+   by its top-right corner (js/app.js, renderPerch), sitting on the frame's line. */
+.support-flea { position: absolute; right: calc(var(--sp-1) * -1); bottom: 78%; width: 30px; height: auto; pointer-events: none; transform-origin: 50% 100%; }
+.support-perch { position: absolute; z-index: 3; top: calc(var(--frame-inset) - 38px); right: calc(var(--frame-corner) + var(--sp-4)); line-height: 0; text-decoration: none; }
+.support-perch img { position: relative; width: 64px; height: auto; transform-origin: 50% 100%; filter: drop-shadow(0 0 var(--sp-2) color-mix(in oklab, var(--filigree) 18%, transparent)); }
+/* Its halo: the soft light the game's interactables carry. */
+.support-perch::before {
+  content: ''; position: absolute; left: 50%; top: 50%; width: calc(var(--sp-16) * 2); height: calc(var(--sp-16) * 2); translate: -50% -50%;
+  border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, var(--filigree) 16%, transparent) 0%, transparent 65%); pointer-events: none;
+}
+/* Its name, on hover or focus: a small plaque left of it, on the frame's line (38px down the
+   perch), so it clears every screen's controls (they start under the line) and the title's
+   plaque (centred); in front of all of them. Shorter under 1100px, where the title comes closer. */
+.support-say {
+  position: absolute; z-index: 5; top: 38px; right: calc(100% + var(--sp-1)); translate: 0 -50%;
+  padding: var(--sp-1) var(--sp-3); border: 1px solid color-mix(in oklab, var(--filigree) 55%, transparent); background: var(--inv-bg);
+  font-size: var(--fs-xs); line-height: 1.4; letter-spacing: var(--track-label); white-space: nowrap; color: var(--ink-strong);
+  opacity: 0; pointer-events: none; transition: opacity var(--dur) var(--ease);
+}
+.support-perch:is(:hover, :focus-visible) .support-say { opacity: 1; }
+@media (max-width: 1099px) {
+  .support-say .support-long { display: none; }
+  .support-say .support-short { display: inline; }
+}
+/* Smaller where the screen bar comes closer to the frame (the Inventory's second row, under 900px). */
+@media (max-width: 899px) {
+  .support-flea { width: 24px; }
+  .support-perch { top: calc(var(--frame-inset) - 24px); }
+  .support-perch img { width: 38px; }
+  .support-perch::before { width: var(--sp-16); height: var(--sp-16); }
+  .support-say { top: 24px; }
+}
+/* It hops once (the header's when the page opens, the frame's when a screen is arrived at) and on
+   hover; still otherwise, and always with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .support-flea.is-hop, .support-perch.is-hop img { animation: flea-hop 0.9s var(--ease) 0.6s 1; }
+  .mh-support:is(:hover, :focus-visible) .support-flea, .support-perch:is(:hover, :focus-visible) img { animation: flea-hop-again 0.9s var(--ease) 1; }
+}
+@keyframes flea-hop { 0%, 100% { transform: none; } 20% { transform: translateY(1px) scale(1.08, 0.9); } 50% { transform: translateY(calc(var(--sp-2) * -1)) scale(0.95, 1.06); } 78% { transform: scale(1.05, 0.95); } }
+@keyframes flea-hop-again { 0%, 100% { transform: none; } 20% { transform: translateY(1px) scale(1.08, 0.9); } 50% { transform: translateY(calc(var(--sp-2) * -1)) scale(0.95, 1.06); } 78% { transform: scale(1.05, 0.95); } }
 .lang-btn[aria-expanded="true"] { color: var(--ink-strong); text-decoration-color: var(--accent); }
 .lang-code { display: none; }
 .lang-menu {
@@ -671,6 +712,10 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .lang-code { display: inline; }
   .support-long { display: none; }
   .support-short { display: inline; }
+  /* The flea on the frame's corner; no name beside it: a phone has no hover, and on the line it
+     would meet the title's plaque (the link keeps its title and label). */
+  .support-perch { right: calc(var(--frame-corner) - var(--sp-4)); }
+  .support-say { display: none; }
   /* At the right edge, the list opens leftwards. */
   .lang-menu { left: auto; right: calc(var(--sp-4) * -1); }
   .title { font-size: var(--fs-lg); text-align: left; letter-spacing: var(--track-title); }
@@ -1431,6 +1476,19 @@ kbd {
 .pg-opts:not(.is-open) li.is-extra { display: none; }
 .pg-opts li.is-got { border-style: dashed; color: var(--muted); }
 .pg-opts li.is-got .ic { width: 10px; height: 10px; color: var(--ink-2); }
+/* A wish for points opens its card in place (design/97, A): the chip a button, the open one white
+   on grey as the game selects; its card under the points' row, aligned with the names, framed and
+   lit along its top, as the required wishes' rows. */
+.pg-opts li:has(> .pg-opt) { padding: 0; transition: border-color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease); }
+.pg-opt { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: var(--sp-6); padding: 0 var(--sp-2); border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.pg-opt .chev { flex: none; color: var(--muted); }
+.pg-opts li:has(> .pg-opt:is(:hover, :focus-visible)) { border-color: var(--accent-line); color: var(--ink-strong); }
+.pg-opt:focus-visible { outline: 1px solid var(--accent); outline-offset: 1px; }
+.pg-opts li.is-open { border-color: var(--accent-line); background: var(--picked); color: var(--ink-strong); }
+.pg-opts li.is-open .chev { color: var(--ink-strong); }
+.pg-opt-li { padding: 0 0 var(--sp-3) calc(var(--sp-1) + var(--sp-6) + 40px + var(--sp-3) * 2); border-bottom: 1px solid color-mix(in oklab, var(--filigree) 10%, transparent); }
+.pg-item:has(.pg-opts):has(~ .pg-opt-li:not([hidden])) { border-bottom: 0; }
+.pg-todo .pg-opt-card { grid-template-columns: 40px minmax(0, 1fr) auto 28px; border: 1px solid var(--line-ctl); border-top-color: var(--accent-line); background: var(--veil); }
 /* The one list's toggle under its title, and a done row: the number's diamond, dimmed, with the tick
    (design/82, 1 A). */
 .pg-todo .pg-seg { display: flex; justify-content: flex-end; margin-bottom: var(--sp-2); }
@@ -1547,15 +1605,15 @@ kbd {
   .pg-walls { grid-template-columns: minmax(0, 1fr); }
   .pg-wall + .pg-wall { border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); padding-top: var(--sp-6); }
 }
-/* A task left, with air: no rule between lines, the pane's picture larger; a promised one lit
-   faintly, what it asks counted as the pane counts it (its slim bar, or a dot each for twelve or
-   fewer: assets/icons/tasks, tools/extract-wish-icons.py). */
+/* A task left, with air: no rule between lines, the pane's picture larger; a promised one marked by
+   the game's hollow diamond alone, no box behind it (design/110, 4 A), what it asks counted as the
+   pane counts it (its slim bar, or a dot each for twelve or fewer: assets/icons/tasks,
+   tools/extract-wish-icons.py). */
 .pg-tasks .pg-item { grid-template-columns: var(--sp-3) 44px minmax(0, 1fr) 28px; gap: 0 var(--sp-2); padding: var(--sp-2) var(--sp-1); border-bottom: 0; }
 .pg-tasks .pg-art { width: 44px; height: 44px; }
 .pg-tasks .pg-art img { max-width: 42px; max-height: 42px; }
 .pg-tasks .pg-name { white-space: normal; }
 .pg-tasks .pg-how { line-height: 1.4; }
-.pg-tasks .pg-item.is-promised { background: linear-gradient(to right, var(--veil), transparent 70%); }
 .pg-meters { display: grid; gap: var(--sp-1); margin-top: var(--sp-half); }
 .pg-meter { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
 .pg-meter-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
@@ -1570,18 +1628,44 @@ kbd {
 .pg-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: 0; padding: 0; list-style: none; }
 .pg-pics img { display: block; width: 30px; height: 30px; object-fit: contain; opacity: 0.3; }
 .pg-pics .is-done img { opacity: 0.75; }
-/* Who asks in person: a gallery, each standing large over their name, flowing in columns with no holes. */
-.pg-people { columns: 4 calc(var(--sp-16) * 3.75); column-gap: var(--sp-6); }
-.pg-person { display: grid; gap: var(--sp-2); margin-bottom: var(--sp-6); break-inside: avoid; }
-.pg-person-who { display: grid; justify-items: center; gap: var(--sp-half); padding-bottom: var(--sp-2); text-align: center; border-bottom: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); }
-.pg-person-who > img, .pg-person-none { width: 88px; height: 88px; object-fit: contain; }
-.pg-person-none { display: grid; place-items: center; }
+/* Who asks in person (design/110, 1 A, 2 A, 3 A, 4 A): one row each, read across: the figure in a
+   slot of its own on a pool of its area's light (--area-line, --area-fill, set inline as the
+   walls'), the name, where and the count; then what's left as lines, two side by side where there's
+   room, and what's later or done as pictures. The people parted by a hairline fading at both ends,
+   as the game's dividers. Who has nothing to take now waits in a strip at the end, figures only. */
+.pg-people { --rule: linear-gradient(to right, transparent, color-mix(in oklab, var(--filigree) 18%, transparent) 15%, color-mix(in oklab, var(--filigree) 18%, transparent) 85%, transparent);
+  display: grid; background: var(--rule) bottom / 100% 1px no-repeat; }
+.pg-person { display: grid; grid-template-columns: 72px calc(var(--sp-16) * 3.2) minmax(0, 1fr); align-items: start; gap: 0 var(--sp-4); padding: var(--sp-3) var(--sp-2);
+  background: var(--rule) top / 100% 1px no-repeat; }
+.pg-person-fig { position: relative; display: grid; place-items: end center; width: 72px; height: 72px; }
+.pg-person-fig::before { content: ""; position: absolute; left: 50%; bottom: calc(-1 * var(--sp-1)); width: 150%; height: 70%; transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--area-line, var(--spotlight)) 24%, transparent), transparent); pointer-events: none; }
+.pg-person-fig img { position: relative; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 var(--sp-1) var(--sp-2) color-mix(in oklab, var(--area-fill, var(--scene-glow)) 90%, transparent)); }
+.pg-person-none { position: relative; display: grid; place-items: center; width: 100%; height: 100%; }
 .pg-person-none i { width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--line-ctl); }
-.pg-person-who h4 { margin: var(--sp-1) 0 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
+.pg-person-who { display: grid; gap: var(--sp-half); align-content: center; min-width: 0; min-height: 72px; }
+.pg-person-who h4 { margin: 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
 .pg-person-who p { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+.pg-person-wishes { display: grid; gap: var(--sp-2); min-width: 0; }
+.pg-person-wishes .pg-tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--sp-16) * 5.5), 1fr)); gap: 0 var(--sp-4); }
+.pg-person-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.pg-folk-sec .pg-tasks-l { margin-top: var(--sp-4); }
+.pg-folk { display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 2)); gap: var(--sp-3) var(--sp-4); margin: 0; padding: 0; list-style: none; }
+.pg-folk li { display: grid; justify-items: center; align-content: start; gap: var(--sp-1); min-width: 0; text-align: center; font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-folk .pg-person-fig { width: 52px; height: 52px; }
+.pg-folk .pg-person-pics, .pg-folk .pg-pics { justify-content: center; }
+.pg-folk .pg-pics img { width: 22px; height: 22px; }
+.pg-folk.is-later .pg-person-fig img { opacity: 0.45; filter: grayscale(0.6); }
+.pg-folk.is-later .pg-folk-name { color: var(--muted); }
 @media (max-width: 700px) {
   .pg-track { grid-template-columns: minmax(0, 1fr); }
   .pg-track-row { flex-wrap: wrap; justify-content: center; }
+  .pg-person { grid-template-columns: 56px minmax(0, 1fr); gap: var(--sp-1) var(--sp-3); padding-inline: 0; }
+  .pg-person > .pg-person-fig { width: 56px; height: 56px; }
+  .pg-person-who { min-height: 56px; }
+  .pg-person-wishes { grid-column: 1 / -1; }
+  .pg-folk { grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 1.4)); gap: var(--sp-3) var(--sp-2); }
 }
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
@@ -1809,6 +1893,11 @@ kbd {
   .pg-where { justify-content: flex-start; }
   .pg-item .pg-onmap { grid-row: 1 / span 2; grid-column: -2; }
   .pg-name { white-space: normal; }
+  /* A wish's card (design/97, A): the rows' whole width, its place under its name. */
+  .pg-opt-li { padding-left: 0; }
+  .pg-todo .pg-opt-card { grid-template-columns: 36px minmax(0, 1fr) 28px; }
+  .pg-opt-card .pg-place { grid-column: 2; }
+  .pg-opt-card .pg-art { grid-row: 1 / span 2; }
 }
 
 /* Since the previous save (js/app-home.js, js/changes.js): opened by what the completion went up
@@ -2621,15 +2710,17 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-found button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .mp-found small { font-size: var(--fs-2xs); color: var(--muted); }
 .mp-found-none { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--muted); }
-/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its ×. */
-.mp-find.mp-focus { width: min(26rem, calc(100% - var(--sp-16) * 2)); }
+/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its way
+   out, a labelled button (design/96, 1 A); as wide as it needs, short of the zoom's buttons. */
+.mp-find.mp-focus { width: auto; max-width: calc(100% - var(--ctl-sm) * 4 - var(--sp-3) * 3); }
 .mp-focus { display: flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm); padding: 0 var(--sp-1) 0 var(--sp-3);
   background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); }
 .mp-focus-t { display: flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 0; }
 .mp-focus-t > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-focus-t .ic { flex: none; color: var(--ink-2); }
 .mp-focus-n { flex: none; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); white-space: nowrap; }
-.mp-focus :is(.mp-focus-go, .mp-focus-x) { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-go { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-x { flex: none; min-height: calc(var(--ctl-sm) - var(--sp-2)); margin-left: var(--sp-2); padding: 0 var(--sp-3); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); white-space: nowrap; }
 .mp-focus :is(.mp-focus-go, .mp-focus-x):is(:hover, :focus-visible) { color: var(--ink-strong); background: var(--veil); }
 .mp-tools { position: absolute; z-index: 4; top: var(--sp-3); right: var(--sp-3); display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); }
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
@@ -2645,6 +2736,9 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-all .text-btn { font-size: var(--fs-sm); }
 .mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
 .mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
+/* The Act filter (design/98, 3 A): the site's chooser, labelled, first of the options. */
+.mp-acts { display: inline-flex; align-items: center; gap: var(--sp-3); }
+.mp-acts-t { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
 .mp-sec { border-top: 1px solid var(--inv-line); }
 .mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
 .mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
@@ -2652,25 +2746,30 @@ html:has(.mp.is-full) { overflow: hidden; }
 /* A caret in plain ink: the frame's light is the tab's colour, never a control's. */
 .mp-caret { flex: none; width: 10px; height: 10px; color: var(--ink-2); transition: rotate var(--dur) var(--ease); }
 .mp-sec.is-open .mp-fold .mp-caret, .mp-more[aria-expanded="true"] .mp-caret { rotate: 90deg; }
-/* The group's title is its switch: all on in ink, some in ink-2, none muted. */
+/* The group's title is its switch: all on in ink, some in ink-2, none in --ink-off. */
 .mp-sec-sw { display: flex; flex: 1; align-items: center; gap: var(--sp-3); min-height: var(--ctl); padding: 0; text-align: left; color: var(--ink-strong); }
 .mp-sec-sw.is-some { color: var(--ink-2); }
-.mp-sec-sw.is-none { color: var(--muted); }
+.mp-sec-sw.is-none { color: var(--ink-off); }
 .mp-sec-sw:is(:hover, :focus-visible) .mp-sec-t, .mp-fold:is(:hover, :focus-visible) + .mp-sec-sw .mp-sec-t { color: var(--accent); }
 .mp-sec-t { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; transition: color var(--dur) var(--ease); }
 .mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); padding: 0 0 var(--sp-3) var(--sp-6); }
-/* A layer: the game's picture, bare, is the switch; off, in grey (the Inventory's missing look). */
+/* A layer: the game's picture, bare, is the switch; off, its picture grey and faded and its name in
+   --ink-off (design/109, C): no hue, as the game selects with white on grey. */
 .mp-kind { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-sm); color: var(--ink); text-align: left; }
 .mp-kind-t { transition: color var(--dur) var(--ease); }
 .mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
-.mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+.mp-kind.is-off :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
+/* Nothing of it up to the Act chosen: greyed as off, its count 0. */
+.mp-kind.is-empty :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
+.mp-kind.is-empty .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-empty .mp-art > svg { opacity: 0.25; }
 .mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
 .mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .mp-art > svg { width: 70%; height: 70%; }
 /* The Needle, a long thin line, laid across as on the map. */
 .mp-art.is-needle > img { transform: rotate(35deg) scale(1.15); }
-.mp-kind.is-off .mp-art > img { filter: var(--missing-art); }
-.mp-kind.is-off .mp-art > svg { opacity: 0.35; }
+.mp-kind.is-off .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-off .mp-art > svg { opacity: 0.25; }
 /* A set with some of its layers off: its picture half lit. */
 .mp-kind.is-some .mp-art > img { filter: grayscale(0.5) brightness(0.75); }
 /* How many: had of total in the figures' face; complete, in --good. */
@@ -2727,17 +2826,23 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
-  .mp-focus-t { flex-basis: 100%; }
-  .mp-find.mp-focus.is-one { flex-wrap: nowrap; }   /* one thing: its name and its × on one line */
-  .mp-focus.is-one .mp-focus-t { flex-basis: auto; }
+  /* The focus's line takes the whole width, the zoom's three buttons over its top right corner:
+     its name beside them, whole (it wraps) with one thing's area under it as the card writes it
+     (design/107, A), then ‹ i of n › and the way out (that at the right) on one row below them. */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp.is-full .mp-find.mp-focus { right: var(--sp-3); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp-focus-t { flex-basis: 100%; min-height: calc(var(--ctl-sm) - var(--sp-1)); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-2)); }
+  .mp-focus-t > span { overflow: visible; white-space: normal; }
+  .mp-focus-dot { display: none; }
+  .mp-focus-a { display: block; font-size: var(--fs-xs); color: var(--muted); }
+  .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
   .mp-legend-h { grid-template-columns: minmax(0, 1fr); }
   .mp-opts { gap: var(--sp-1) var(--sp-6); }
   .mp-checks { flex-direction: column; align-items: flex-start; }
+  .mp-acts { flex-basis: 100%; }
   .mp-kinds { padding-left: 0; gap: var(--sp-1) var(--sp-4); }
   .mp-inside { margin-left: var(--sp-2); }
 }
