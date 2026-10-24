@@ -910,7 +910,8 @@ Each missing wish shows its Act, its area, who asks for it in the game's own wor
 the Halfway Home»), what it asks to be brought, read from the game's files (the four required
 donations: 250 and 400 rosaries for Pavo, 300 and 500 for the Caretaker, 1,450 in all; Flick's
 shell shards, 200, 300 and 440; the Journal's 100 entries for Nuu; 25 Ragpelts, 12 Fine Pins, the
-Great Gourmand's five dishes…), a pin to where it's taken on the Map, and the wish to do before it
+Great Gourmand's five dishes…), a pin to the Map on where it stands now (the Wishes tab's own pin for it: who
+gives it before you take it, then what is left of its step), and the wish to do before it
 when there is one. «What's next» says the same under each wish it lists. The required wishes the game posts later say what posts them (Trail's End: all of Shakra's
 maps, counted, the Faydown Cloak, and two of the three melodies or Groal the Great defeated; Balm
 for the Wounded: Sherma met and the Whiteward visited; Strengthening Songclave, Restoration of
