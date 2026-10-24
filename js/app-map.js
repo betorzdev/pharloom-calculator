@@ -369,6 +369,12 @@
     const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
     return { met, gone, where: where.size ? where : null };
   }
+  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's) has them now
+     (js/savefile.js peopleHere); with no save, or no word of it in the slot, it's shown. */
+  const hereNow = (own, id, scene) => {
+    const h = own && own.peopleHere, k = id + ':' + lower(scene);
+    return !h || !(k in h) || h[k] === true;
+  };
   // The Journal entries whose things have a switch of their own (the Void Masses' cores).
   const OWN_SWITCH = new Set(SP.EXTRAS.filter((x) => layerOf(x) === 'void-mass').map((x) => x[4] && x[4].key).filter(Boolean));
   // A mark folded into another's card (a wish's place that is a boss's fight) → that mark's key.
@@ -599,7 +605,8 @@
     }
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (vendorGone(own, v)) continue;   // taken away for good (js/spots.js LEFT: the Twelfth Architect)
-      if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
+      // Shakra only where your game has her now (she moves on as Hornet does: js/people.js HERE).
+      if (v === 'shakra') { scenes.forEach((scene, i) => hereNow(own, 'shakra', scene) && add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
         draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
@@ -679,6 +686,7 @@
       if (now.gone) continue;
       for (const [scene, px, py] of x.spots) {
         if (now.where && !now.where.has(lower(scene))) continue;
+        if (!hereNow(own, x.id, scene)) continue;
         add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
           off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
       }
@@ -1746,7 +1754,9 @@
     } else if (kind === 'npc') {
       const x = m.person, s = m.now;
       if (s.met != null) acts = state(t(s.met ? 'mapMet' : 'mapNotMet'));
-      note = s.unsure ? t('mapNpcUnsure') : !s.where && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
+      // Every spot of theirs by the save (js/people.js here): where they are now, no "turns up in n places".
+      const placed = !!own && !!x.here && x.spots.every(([sc]) => (x.id + ':' + lower(sc)) in (own.peopleHere || {}));
+      note = s.unsure ? t('mapNpcUnsure') : !s.where && !placed && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
       if (m.trade) {

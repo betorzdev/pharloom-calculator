@@ -536,7 +536,11 @@ leaves those off.
   is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
   none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
   the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
-  being one of the game's shops too, her card saying which of her maps you lack. The shops are the
+  being one of the game's shops too, her card saying which of her maps you lack. She moves on as
+  Hornet does: with a save, only the spots she's still at show, by the game's own rules (gone from
+  an area once she's been seen in another, or once Hornet's past it; her rests in Bone Bottom and
+  Bellhart; in Act 3 the guard post or rest the save names; none while Trail's End is taken). In
+  Free mode, all seventeen. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys
@@ -590,10 +594,13 @@ leaves those off.
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
-  now (the flea troupe at its camp, Kratt strung up in Greymoor until he's back, Nuu at home, the
-  Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
-  is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
-  goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
+  now, each spot by the switches the game turns it on with (the flea troupe at its camp, Kratt
+  strung up in Greymoor until he's back, Nuu outside a boss's room or at home, the Second Sentinel
+  resting where he's sent until you meet him there, Pilby, the Chapel Maid, Ballow from the forge to
+  the sauna and the diving bell, Gilly, Sherma, the Songclave's pilgrims by its level, Seth at the
+  Flea Festival); who has left, died or isn't there in Act 3 is gone. Where only a script of theirs
+  decides, the spot stays (Garmond comes and goes, and his card says so; Mister Mushroom, Seth's
+  other rooms, the Green Prince caged). In Free mode, everyone everywhere.
   Each person once in a room: where another mark already stands for them (who makes a wish, a
   boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who makes

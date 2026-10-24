@@ -60,3 +60,67 @@ test('each person once in a room: not again where who asks for a wish, a boss or
   // Mister Mushroom is the Herald's spot where the wish's mark is.
   assert.ok(!spotsOf('mr-mushroom').includes(room('Peak_08b')));
 });
+
+/* Where they are now (js/people.js here, HERE): the game's own switches, read in its scenes and its
+   FSM templates (tools/gen-people.js), and the save says which hold (js/savefile.js peopleHere). */
+const here = (pd, id) => Object.fromEntries(Object.entries(F.game({ silk: 0, ...pd }).peopleHere)
+  .filter(([k]) => k.startsWith(id + ':')).map(([k, v]) => [k.slice(id.length + 1), v]));
+const taken = (name, done) => ({ QuestCompletionData: { savedData: [{ Name: name, Data: { IsAccepted: true, IsCompleted: done } }] } });
+
+test('Shakra: a rule for each of her 17 spots, and a save shows her only where she is now', () => {
+  const SP = require('../js/spots.js');
+  assert.deepStrictEqual(Object.keys(PE.HERE.shakra).sort(), SP.VENDORS.shakra.map((s) => s.toLowerCase()).sort());
+  // A new game: ahead of Hornet in every area she maps, not yet at her rests, not in Act 3's posts.
+  let at = here({}, 'shakra');
+  assert.ok(at.bone_04 && at.bone_east_01 && at.shellwood_16 && at.peak_02 && at.dust_10);
+  assert.ok(!at.belltown && !at.bonetown && !at.greymoor_08 && !at.shellwood_01);
+  // Seen elsewhere (MapperLeft<Area>), or Hornet's past the area (the Bell Beast beaten): gone from the Marrow.
+  assert.strictEqual(here({ MapperLeftBoneForest: true }, 'shakra').bone_04, false);
+  at = here({ defeatedBellBeast: true }, 'shakra');
+  assert.ok(!at.bone_04 && at.bonetown);
+  // Greymoor's stays while Hornet rests at its bench.
+  assert.strictEqual(here({ hasThreadSphere: true }, 'shakra').greymoor_02, false);
+  assert.strictEqual(here({ hasThreadSphere: true, respawnScene: 'Greymoor_02' }, 'shakra').greymoor_02, true);
+  // Mount Fay's keeps her until the Faydown Cloak, whatever its flag says.
+  assert.strictEqual(here({ MapperLeftPeak: true }, 'shakra').peak_02, true);
+  assert.strictEqual(here({ hasDoubleJump: true }, 'shakra').peak_02, false);
+  // Bellhart from the Widow's fall, not while her last maps are bought and Trail's End isn't done.
+  assert.strictEqual(here({ spinnerDefeated: true }, 'shakra').belltown, true);
+  assert.strictEqual(here({ spinnerDefeated: true, ShakraFinalQuestAppear: true }, 'shakra').belltown, false);
+  assert.strictEqual(here({ spinnerDefeated: true, ShakraFinalQuestAppear: true, ...taken('Shakra Final Quest', true) }, 'shakra').belltown, true);
+  // Trail's End taken and not done: nowhere among her shops.
+  assert.ok(Object.values(here({ spinnerDefeated: true, ...taken('Shakra Final Quest', false) }, 'shakra')).every((v) => !v));
+  // Act 3, by mapperLocationAct3: both guard posts before she's met (0), Shellwood's at 1, Bellhart at 2, Greymoor's at 3.
+  const act3 = (n, more) => Object.entries(here({ blackThreadWorld: true, mapperLocationAct3: n, ...more }, 'shakra'))
+    .filter(([k, v]) => v && ['belltown', 'greymoor_08', 'shellwood_01'].includes(k)).map(([k]) => k).sort();
+  assert.deepStrictEqual(act3(0), ['greymoor_08', 'shellwood_01']);
+  assert.deepStrictEqual(act3(1), ['shellwood_01']);
+  assert.deepStrictEqual(act3(2), ['belltown']);
+  assert.deepStrictEqual(act3(3), ['greymoor_08']);
+  assert.deepStrictEqual(act3(3, { CaravanTroupeLocation: 1 }), []);   // the caravan camps in Greymoor
+  // A slot keeps it; one kept before says nothing (every spot shown).
+  const back = F.gameOf(F.toSnapshot({ silk: 0, MapperLeftBoneForest: true }));
+  assert.strictEqual(back.peopleHere['shakra:bone_04'], false);
+  assert.deepStrictEqual(F.gameOf({}).peopleHere, {});
+});
+
+test('the people the game moves or takes away: each spot by its own switches', () => {
+  for (const x of PE.PEOPLE) for (const sc of Object.keys(x.here || {})) assert.ok(x.spots.some(([s]) => s === sc), `${x.id}: ${sc} isn't a spot of theirs`);
+  // Ballow: the forge, the Deep Docks' sauna, then the diving bell.
+  assert.deepStrictEqual(here({}, 'ballow'), { dock_10: false, dock_12: false, room_forge: true });
+  assert.deepStrictEqual(here({ BallowInSauna: true }, 'ballow'), { dock_10: true, dock_12: false, room_forge: false });
+  assert.deepStrictEqual(here({ BallowMovedToDivingBell: true }, 'ballow'), { dock_10: false, dock_12: true, room_forge: false });
+  // Pilby: Bone Bottom, then the Pilgrim's Rest, outside or in; none of it in Act 3.
+  assert.deepStrictEqual(here({}, 'little-pilgrim-n'), { bone_east_10: false, bone_east_10_room: false, bonetown: true });
+  assert.deepStrictEqual(here({ skullKingKilled: true, pilbyAtPilgrimsRest: true, pilbyInsidePilgrimsRest: true }, 'little-pilgrim-n'),
+    { bone_east_10: false, bone_east_10_room: true, bonetown: false });
+  assert.ok(Object.values(here({ blackThreadWorld: true, pilbyAtPilgrimsRest: true }, 'little-pilgrim-n')).every((v) => !v));
+  // The Second Sentinel rests where he's sent until he's met there.
+  assert.strictEqual(here({ songChevalierActiveInSong_07: true }, 'song-knight').song_07, true);
+  assert.strictEqual(here({ songChevalierActiveInSong_07: true, songChevalierSeenInSong_07: true }, 'song-knight').song_07, false);
+  // Sherma's rescue only while Save Sherma is taken.
+  assert.strictEqual(here(taken('Save Sherma', false), 'sherma').ward_09, true);
+  assert.strictEqual(here(taken('Save Sherma', true), 'sherma').ward_09, false);
+  // Act 3 takes some away for good (gone).
+  for (const id of ['bell-hermit', 'last-conductor', 'fisher-npc']) assert.ok(PE.PEOPLE.find((x) => x.id === id).gone.includes('blackThreadWorld'), id);
+});

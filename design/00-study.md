@@ -2438,3 +2438,26 @@ keys, and the Craw Summons. A key stays had once spent. Their pictures are the g
 holds the Plasmium Gland or the Crawbell, so theirs are the game's own checks, not seen true. Left
 out for Albert: the wish deliverables (about 35 things carried for a wish and handed over), the
 Cogheart Pieces and the Ruined Tool, the Map & Quill, the Gate Key (the demo's).
+
+**Shakra, and everyone else, where the save has them** (24 October 2026, Albert: «Shakra aparece en
+todas las áreas… pero va desapareciendo»; his pick: only where she still is, then the same for every
+other person). Shakra's 17 spots all run one FSM template, `mapper_evaluate_location`
+(`fsmtemplates_assets_mapper.bundle`), with their area's `SeenMapper<Area>`: its
+`SceneTravelerTempEval` sends her away when `MapperLeft<Area>` is set, which
+`GameManager.MapperLeavePreviousLocations` sets for every area she's been seen in but the one Hornet
+sees her in now, `MapperLeaveAll` for all once her last maps are bought (`ShakraFinalQuestAppear`),
+and the template's own "Set Left" states once Hornet's past an area (the Bell Beast for the Marrow,
+the Citadel for Hunter's March and the Wormways, the Faydown Cloak for Mount Fay…). Bone Bottom and
+Bellhart are rests ruled by their Mapper Control FSMs; Act 3's guard posts in Greymoor_08 and
+Shellwood_01 and her Bellhart rest go by `mapperLocationAct3` (`GameManager.TimePasses` draws 1 to
+3 once she's been seen in Act 3), and nowhere while Trail's End is taken. `tools/gen-people.js`
+SHAKRA writes it, `js/savefile.js peopleHere` says it per save, and the Map shows her only there
+(Free mode: all 17). Over the 91 saves: Act 1 between 9 and 13 spots (she's ahead of Hornet in
+every area she maps), Act 2 from 1 to 9, Act 3 one place or the two guard posts, and one save
+nowhere (her last maps bought, Trail's End not taken yet: she's at Shadow_24). The same sweep over
+the People layer (`HAND here`, each spot by its object's and its parents' switches): 29 people now
+go by the save spot by spot, six more are gone in Act 3 (or once they leave). Only scripts decide for Garmond,
+Mister Mushroom, Seth's other rooms and the Green Prince caged, so those spots stay. The People
+(100%) layer and the vendors were looked at and left as they are: they guide to what someone
+gives or sells, and hiding them would hide what's missable (Loddie and Lumble leave in Act 3, the
+Mottled Skarr when killed, Pebb when Bone Bottom's shop closes).
