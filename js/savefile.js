@@ -583,9 +583,23 @@
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
-  // Each field only if it has the type an empty game gives it.
+  /* The last games read, by their keys' text: the screens ask for the game many times a render
+     (Free mode's Progress, two hundred), and reading it each time took a good part of one
+     (22-Oct-2026). Each caller gets its own copy, so none changes another's. */
+  const READ = [];
   function gameOf(snap) {
     const s = snap || {};
+    const owned = s['pharloom.owned'], progress = s['pharloom.progress'], journal = s['pharloom.journal'];
+    let hit = READ.find((r) => r.owned === owned && r.progress === progress && r.journal === journal);
+    if (!hit) {
+      hit = { owned, progress, journal, game: readGame(s) };
+      READ.unshift(hit);
+      if (READ.length > 6) READ.pop();
+    }
+    return structuredClone(hit.game);
+  }
+  // Each field only if it has the type an empty game gives it.
+  function readGame(s) {
     const src = { ...parse(s['pharloom.owned']), ...parse(s['pharloom.progress']), journal: parse(s['pharloom.journal']) };
     const out = {};
     for (const [k, def] of Object.entries(EMPTY)) {
