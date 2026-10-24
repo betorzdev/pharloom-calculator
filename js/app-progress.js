@@ -700,8 +700,9 @@
   /* A wish of a group as a row: its Act and area (the pane's, js/collectibles.js WISHES; with none
      there, the area it's taken in), the room it's taken in and its mark on the Map, who asks for it
      (the game's line), what it asks to be brought and what posts it, half a point when it's worth
-     that, and the wishes to do before it. */
-  function wishRow(x, got, done, g) {
+     that, and the wishes to do before it. Its pin is the Tasks tab's own for it (taskPin): the Map
+     on where the wish stands now, its step's targets once taken. */
+  function wishRow(x, got, done, g, pin) {
     const w = x.wish >= 0 ? CO.WISHES[x.wish] : null;
     const runt = HW.TRAPS.find((r) => r.id === 'broodfeast-runt');
     const from = wishFrom(x.quest, done);
@@ -711,12 +712,13 @@
     const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest)].filter(Boolean).join(' · ');
     const more = got ? [] : (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
     return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
-      scene: from.scene, mark: from.mark, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
   }
   function groupRows(name, g, required) {
-    const done = new Set(g ? g.quests : []);
+    // cur: the game the Tasks tab reads (a save, Free mode's marks or none), so the pins agree.
+    const done = new Set(g ? g.quests : []), pin = taskPin(cur);
     return QU.GROUPS[name].quests.filter((q) => q.required === required)
-      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g)).sort(byAct);
+      .map((q) => wishRow(A.missing(q.quest, done, required ? undefined : q.value), done.has(q.quest), done, g, pin)).sort(byAct);
   }
   /* The caravan, while it isn't in Fleatopia (js/acts.js): the fleas rescued and its stop now, what
      its last move asks (the empty Pale Lake seen), and on the Phantom's way, the Last Judge (the
@@ -1030,14 +1032,15 @@
           <span class="pg-onmap is-none" aria-hidden="true"></span>
         </li>`;
       }
-      const onMap = x.mark && App.mapHas && App.mapHas(x.mark);
+      // A wish goes where it stands now (focus, taskPin), as the Tasks tab's pin.
+      const onMap = x.focus || (x.mark && App.mapHas && App.mapHas(x.mark));
       const more = x.opts ? x.opts.length - OPTS : 0;
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
           <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says)}
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
-          ${onMap ? `<button type="button" class="pg-onmap" data-act="mapShow" data-value="${esc(x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
+          ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </li>`;
     };
       if (!heads) return `<ol class="pg-list">${items.map(li).join('')}</ol>`;
