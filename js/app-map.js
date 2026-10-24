@@ -1334,11 +1334,11 @@
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
     savePrefs();
-    focusMarks([key], [m.name, areaName(R.areaOf(m.scene) || m.area)].filter(Boolean).join(' · '));
+    focusMarks([key], m.name, areaName(R.areaOf(m.scene) || m.area));
   };
   // The Map on these marks alone, whatever its layers and filters: one centred with its card, several fitted.
-  function focusMarks(keys, name) {
-    focusSet = { keys, name, i: keys.length > 1 ? -1 : 0, fit: keys.length > 1 };
+  function focusMarks(keys, name, area = '') {
+    focusSet = { keys, name, area, i: keys.length > 1 ? -1 : 0, fit: keys.length > 1 };
     pick1('');
     pending = keys.length > 1 ? '' : keys[0];
     if (prefs.view === 'map') render(); else App.go('map');
@@ -1348,7 +1348,7 @@
      and filters, fitted to them, and a line in the search's place says what they are, with ‹ i of
      n › to go through them in the order given (the nearest to the bench first: the caller's) and
      its × back to the whole map; each of them rings. One mark is App.mapShow's. */
-  let focusSet = null;   // { keys, name, i (-1: none picked yet), fit } while it lasts
+  let focusSet = null;   // { keys, name, area (one thing's), i (-1: none picked yet), fit } while it lasts
   App.mapFocus = (keys, name) => {
     const list = all().list, ok = [...new Set(keys)].filter((k) => list.some((m) => m.key === k));
     if (ok.length < 2) { if (ok.length) App.mapShow(ok[0]); return; }
@@ -1414,7 +1414,10 @@
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
     // One thing (App.mapShow) has nothing to go through: its name and the way out. The way out
     // says what it does (design/96, 1 A): a labelled button at the line's end, under the name on a phone.
-    return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
+    // One thing's area comes apart from its name: «name · area» on one line, under the name on a
+    // phone, where the name wraps whole (design/107, A).
+    const area = f.area ? `<span class="mp-focus-a"><span class="mp-focus-dot"> · </span>${esc(f.area)}</span>` : '';
+    return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc([f.name, f.area].filter(Boolean).join(' · '))}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}${area}</span></span>
         ${n < 2 ? '' : `${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}`}
         <button type="button" class="mp-focus-x" data-act="mapFocusOff">${esc(t('mapFocusOff'))}</button></div>`;
   }

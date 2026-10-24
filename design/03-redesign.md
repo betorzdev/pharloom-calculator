@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the switches off 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `109-legend-contrast-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1842,6 +1842,25 @@ Save 2 with each way out over it, 1440 and 390; kept out of the repo). **Decisio
 
 In passing, the phone's line kept room for four zoom buttons where a phone shows three: it keeps
 three now, so a long name has one more button's width.
+
+### The focus's long name on a phone (24 October 2026)
+
+Albert: «fix the long name cut off on the phone». At 390 px the focus's line shared its row with
+the zoom's three buttons and cut a long name with an ellipsis («Melodía de los Guardianes…»: one
+thing's name and area run to 62 characters in Spanish, «Melodía de los Guardianes de las Bóvedas ·
+Bóvedas Susurrantes»), and with ‹ i of n › the way out fell to a third row. The options went to
+Albert in `107-focus-name-variants.html` (the real line with Save 1 and the longest names the site
+carries, each option's CSS in the real page, 390 and 1440, both languages; kept out of the repo).
+**Decision: A** (Albert, 24 October 2026): **the name over its area**. On a phone the name wraps
+whole, never cut, and one thing's area goes under it on a line of its own, small and grey as the
+card writes it (`focusBar` writes the two apart); a group's or a hunt's name has no area and just
+wraps. At 1440 the line stays «name · area» on one line. B was one text wrapping (the area wherever
+the break fell), C the name alone with the area left to the card.
+
+With it, Albert's ask from the same page: **‹ i of n › and «Return to the map» share one row** on a
+phone. The line couldn't hold both beside the zoom's buttons (about 190 px inside, 245 to 290
+needed, more with a touch screen's 44 px buttons), so it takes the whole width now, the zoom's
+buttons over its top right corner, the name beside them and the row below them (full screen too).
 
 ### The Act filter (24 October 2026)
 

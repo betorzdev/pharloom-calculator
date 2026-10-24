@@ -2800,10 +2800,15 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom's three buttons outside its
-     frame, its name over ‹ i of n › and the way out (that at the right). */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; margin-right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
-  .mp-focus-t { flex-basis: 100%; }
+  /* The focus's line takes the whole width, the zoom's three buttons over its top right corner:
+     its name beside them, whole (it wraps) with one thing's area under it as the card writes it
+     (design/107, A), then ‹ i of n › and the way out (that at the right) on one row below them. */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp.is-full .mp-find.mp-focus { right: var(--sp-3); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp-focus-t { flex-basis: 100%; min-height: calc(var(--ctl-sm) - var(--sp-1)); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-2)); }
+  .mp-focus-t > span { overflow: visible; white-space: normal; }
+  .mp-focus-dot { display: none; }
+  .mp-focus-a { display: block; font-size: var(--fs-xs); color: var(--muted); }
   .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }

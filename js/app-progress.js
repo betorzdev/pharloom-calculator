@@ -251,7 +251,9 @@
      row has a picture; keys, the group's marks when its rows have none (the gauntlets). */
   /* The group's pin (design/106-group-pins-variants.html, 1 A): the Map on what's missing of it, at
      the end of its head, in the rows' pins' column; a group with nothing left there keeps the place. */
-  const groupKeys = (list) => list.filter((x) => !x.got).flatMap((x) => (x.focus && FOCUS.has(x.focus) ? FOCUS.get(x.focus).keys : x.mark ? [x.mark] : []));
+  // A row's marks: a wish's where it stands now (its pin's focus, taskPin), else its own mark.
+  const rowKeys = (x) => (x.focus && FOCUS.has(x.focus) ? FOCUS.get(x.focus).keys : x.mark ? [x.mark] : []);
+  const groupKeys = (list) => list.filter((x) => !x.got).flatMap(rowKeys);
   function group(id, title, list, g, got, max, o = {}) {
     const all = o.all || prefs.pgAll || !g;
     const open = isOpen(id);
@@ -662,8 +664,9 @@
       ready: () => [caretakerMark()],
       silk: () => [goal('Silk Defeat Snare')],
     }[s.id];
-    // A step of several things: what's next of it with a place on the Map.
-    const keys = of ? of() : todo(r, s, parts(r, s, g)).flatMap((x) => (x.opts ? x.opts : [x])).filter((x) => x.mark).map((x) => x.mark);
+    /* A step of several things: what's next of it with a place on the Map, each wish where it
+       stands now, as its row's pin (rowKeys): the union of their marks, one focus. */
+    const keys = of ? of() : todo(r, s, parts(r, s, g)).flatMap((x) => (x.opts ? x.opts : [x])).flatMap(rowKeys);
     // The nearest to the bench first, in rooms (each mark's room on the Map), the rest as they come.
     const marks = App.mapApi ? App.mapApi.list() : [];
     const roomsAway = (k) => { const m = marks.find((x) => x.key === k); return m && m.scene ? away(m.scene) : null; };
