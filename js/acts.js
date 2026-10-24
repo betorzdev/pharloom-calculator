@@ -18,12 +18,9 @@
                   the Faydown Cloak, Lace beaten atop the Cradle's tower, and the Bellhome's key.
                   Pavo gives that key when Bellhart's Glory is done and 2 of the group 'Belltown
                   House Key''s wishes are (read from his FSM: the Belltown Greeter's). The
-                  caravan settles in Fleatopia when Mooshka, at the Blasted Steps, has 22 fleas
-                  and Hornet has seen the empty Pale Lake (his FSM there: Caravan Troupe Leader
-                  Judge NPC, Fleas Saved and SeenFleatopiaEmpty), and once time has passed since
-                  she met him there (CaravanTroupeLeaderCanLeaveJudge: GameManager.TimePasses sets
-                  it after MetCaravanTroupeLeaderJudge, away from Coral_Judge_Arena; a bench's rest,
-                  its Bench Control FSM's Save Game state, is where time passes).
+                  caravan gets to Fleatopia in three moves, each asking its own (LEGS, below):
+                  5 fleas to leave the Marrow, 12 and the Last Judge to leave Greymoor, 22 and
+                  the empty Pale Lake to leave the Blasted Steps.
                   While Hornet wears the Cursed Crest (PlayerData.IsAnyCursed: CurrentCrestID is
                   it), Pavo gives only his cursed talk, never the key (his FSM's Convo state:
                   IsAnyCursed and not soulSnareReady), and Grand Mother Silk's Death Type state
@@ -106,10 +103,50 @@
   const EMPTY = { quests: [], arts: [], bellshrines: [], lastJudge: false, phantom: false, caravan: 0, doubleJump: false,
     laceTower: false, bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, act: 1, pieces: [] };
   /* The Flea Caravan: CaravanTroupeLocation 0 the Marrow, 1 Greymoor, 2 the Blasted Steps, 3
-     Fleatopia; it moves when Mooshka is spoken to. Its last move asks for 22 Lost Fleas (the
-     game's Fleas Saved: the site's flea pieces, Kratt and Vog among them). */
-  const FLEATOPIA = 3, FLEAS = 22;
+     Fleatopia. It moves only when Mooshka is spoken to at its stop, and each move, a leg, asks
+     its own (LEGS[stop]; read on 24-Oct-2026, patch 1.0.30000, from his Dialogue FSM at each stop):
+       0 → 1  the Marrow (Bone_10, Caravan Troupe Leader Bone NPC): the wish The Lost Fleas can end
+              (CanEndQuest on Save the Fleas, whose one target is 5 of the FleasCollected Target;
+              its template caravan_troupe_leader_quest1_tryend ends it, then offers the ride).
+              Nothing else, no wait: with 5 fleas the first talk is enough.
+       1 → 2  Greymoor (Greymoor_08_caravan, Caravan Troupe Leader Greymoor NPC, Convo Choice): Fleas
+              Saved 12 or more (below it: Need More Fleas), defeatedLastJudge, SeenLastJudgeGateOpen
+              (the Grand Gate seen open) and CaravanTroupeLeaderCanLeaveGreymoor.
+       2 → 3  the Blasted Steps (Coral_Judge_Arena, Caravan Troupe Leader Judge NPC, Met?): Fleas
+              Saved 22 or more, CaravanTroupeLeaderCanLeaveJudge, then SeenFleatopiaEmpty (the
+              empty Pale Lake seen, Enough Fleas: without it he only hears there's no place yet).
+     The two CanLeave flags are GameManager.TimePasses's: it sets each once Mooshka has been met at
+     that stop (MetCaravanTroupeLeaderGreymoor, MetCaravanTroupeLeaderJudge, set at the first talk
+     or on arriving with him) and time passes away from its room (not in Greymoor_08 or
+     Coral_Judge_Arena): a bench's rest, its Bench Control FSM's Save Game state.
+     Fleas Saved is the FleasCollected Target's CompletedCount: the 27 SavedFlea_<room> flags plus
+     CaravanLechSaved (Kratt), MetTroupeHunterWild (Vog) and tamedGiantFlea (the Huge Flea). The
+     site's flea pieces read Kratt by CaravanLechReturnedToCaravan, which TimePasses sets after
+     CaravanLechSaved; both are true at once in every save of the author's folder (88), and so is
+     the site's count with the game's.
+     The wiki (Flea Caravan, Fleamaster Mooshka) agrees on 5, 12 with the Last Judge and the Grand
+     Gate, and 22 with the Pale Lake; it doesn't name the bench's rest. Each leg's asks besides the
+     fleas: judge (defeatedLastJudge), gate, lake and rest (savefile's caravanFlags). */
+  const FLEATOPIA = 3;
+  const LEGS = [
+    { fleas: 5, asks: [] },
+    { fleas: 12, asks: ['judge', 'gate', 'rest'] },
+    { fleas: 22, asks: ['lake', 'rest'] },
+  ];
+  const ASK_FLAG = { gate: () => 'SeenLastJudgeGateOpen', lake: () => 'SeenFleatopiaEmpty',
+    rest: (at) => (at === 1 ? 'CaravanTroupeLeaderCanLeaveGreymoor' : 'CaravanTroupeLeaderCanLeaveJudge') };
   const FLEA_AT = CO.PIECES.map((p, i) => (p[0] === 'flea' ? i : -1)).filter((i) => i >= 0);
+  /* The caravan → { at (its stop, 0 to 3), fleas (rescued), need (what its next move asks; 0 at
+     Fleatopia), asks: [{ id, ok }] }: ok true or false, or null when the slot was kept before the
+     site read the caravan's flags (caravanRead). */
+  function caravanOf(g) {
+    const at = Math.max(0, Math.min(FLEATOPIA, g.caravan | 0));
+    const fleas = FLEA_AT.filter((i) => g.pieces.includes(i)).length;
+    const leg = LEGS[at] || { fleas: 0, asks: [] };
+    const flags = new Set(g.caravanFlags || []);
+    const ok = (id) => (id === 'judge' ? !!g.lastJudge : g.caravanRead ? flags.has(ASK_FLAG[id](at)) : null);
+    return { at, fleas, need: leg.fleas, asks: leg.asks.map((id) => ({ id, ok: ok(id) })) };
+  }
   const step = (id, done, total, extra) => ({ id, ok: done >= total, done, total, ...extra });
 
   // The abilities the Phantom's way asks: the Needolin for the Mist, the Cling Grip for Sinner's Road.
@@ -143,9 +180,8 @@
     const tests = rule.tests.map((t) => (t.id === 'bellhomeKey' ? { ...t, key: {
       glory: done.has('Belltown House Mid'), gloryQuest: glory, got: key.points.got, need: key.points.need,
       missing: key.points.missing, ready: done.has('Belltown House Mid') && key.points.got >= key.points.need, cursed: cursed(g) } }
-      // The caravan, while it isn't there: where it stands and the fleas rescued, of the 22.
-      : t.id === 'caravan' ? { ...t, caravan: { at: Math.max(0, Math.min(FLEATOPIA, g.caravan | 0)),
-        fleas: FLEA_AT.filter((i) => g.pieces.includes(i)).length, need: FLEAS } } : t));
+      // The caravan: where it stands, the fleas rescued, and what its next move asks.
+      : t.id === 'caravan' ? { ...t, caravan: caravanOf(g) } : t));
     const unlockTotal = rule.required.total + 1 + tests.length;
     const unlockDone = rule.required.done + (rule.points.got >= rule.points.need ? 1 : 0) + tests.filter((t) => t.ok).length;
     const wished = g.snareOffered || done.has('Soul Snare Pre');
@@ -177,8 +213,7 @@
                     'doubleJump', 'laceTower', 'bellhomeKey'); the bellhomeKey test carries key:
                     { glory, gloryQuest (a wish: Bellhart's Glory), got, need, missing: [wish],
                     ready (go and talk to Pavo), cursed (he won't, while she's cursed) }; the
-                    caravan test carries caravan: { at (its
-                    stop, 0 to 3), fleas (rescued), need (22) }
+                    caravan test carries caravan: caravanOf()'s { at, fleas, need, asks }
        offer        quest ('Soul Snare Pre': the wish Silk and Soul), declined (offered, and
                     turned down: talk to the Caretaker again)
        pieces       pieces: [{ kind, save, name, ok }]
@@ -196,6 +231,6 @@
     return { act: g.act + 1, done: ok, total: steps.length, steps, alt: g.act === 2 ? [] : altAct2(g), ...(g.act === 2 ? { cursed: cursed(g) } : {}) };
   }
 
-  SS.acts = { FIELDS, FLEAS, group, missing, next };
+  SS.acts = { FIELDS, LEGS, group, missing, next };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.acts;
 })();

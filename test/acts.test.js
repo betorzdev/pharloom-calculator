@@ -155,12 +155,22 @@ test('offered is not accepted: the Caretaker sets his flag as he asks, so a wish
   assert.deepEqual(step(road, 'pieces').pieces.map((p) => p.ok), [false, false, true, false]);
 });
 
-test("the caravan's check says where it stands and the fleas rescued, of the 22 its last move asks", () => {
+test("the caravan's check says where it stands, the fleas rescued and what its next move asks", () => {
   const fleas = CO.PIECES.map((p, i) => (p[0] === 'flea' ? i : -1)).filter((i) => i >= 0);
   assert.equal(fleas.length, 30);
+  // Mooshka's FSM at each stop: 5 to leave the Marrow, 12 to leave Greymoor, 22 to leave the Blasted Steps.
+  assert.deepEqual(A.LEGS.map((l) => [l.fleas, l.asks]), [[5, []], [12, ['judge', 'gate', 'rest']], [22, ['lake', 'rest']]]);
   const caravan = (g) => step(A.next({ act: 2, ...g }), 'unlock').tests.find((t) => t.id === 'caravan');
-  assert.deepEqual(caravan({ caravan: 2, pieces: fleas.slice(0, 21) }).caravan, { at: 2, fleas: 21, need: A.FLEAS });
-  assert.equal(A.FLEAS, 22);
+  assert.deepEqual(caravan({ caravan: 0, pieces: fleas.slice(0, 3) }).caravan, { at: 0, fleas: 3, need: 5, asks: [] });
+  // Greymoor's leg: the Judge from the save's lastJudge; the gate and the rest from caravanFlags.
+  assert.deepEqual(caravan({ caravan: 1, pieces: fleas.slice(0, 14), lastJudge: true, caravanRead: true, caravanFlags: ['SeenLastJudgeGateOpen'] }).caravan,
+    { at: 1, fleas: 14, need: 12, asks: [{ id: 'judge', ok: true }, { id: 'gate', ok: true }, { id: 'rest', ok: false }] });
+  // Its rest is Greymoor's flag, not the Blasted Steps'.
+  assert.equal(caravan({ caravan: 1, caravanRead: true, caravanFlags: ['CaravanTroupeLeaderCanLeaveJudge'] }).caravan.asks[2].ok, false);
+  assert.deepEqual(caravan({ caravan: 2, pieces: fleas.slice(0, 21), caravanRead: true, caravanFlags: ['CaravanTroupeLeaderCanLeaveJudge'] }).caravan,
+    { at: 2, fleas: 21, need: 22, asks: [{ id: 'lake', ok: false }, { id: 'rest', ok: true }] });
+  // A slot kept before the flags were read doesn't say (null), but the Judge it always knows.
+  assert.deepEqual(caravan({ caravan: 1 }).caravan.asks.map((x) => x.ok), [false, null, null]);
   assert.equal(caravan({ caravan: 3, pieces: fleas }).ok, true);
   assert.equal(caravan({}).caravan.at, 0);
 });
@@ -199,7 +209,7 @@ test('what each wish asks to be brought, from its targets: the donations\' rosar
 });
 
 test('game() reads the fields of the road, and a slot keeps them', () => {
-  const pd = { silk: 0, CaravanTroupeLocation: 3, hasDoubleJump: true, defeatedLaceTower: true, BelltownGreeterHouseFullDlg: true,
+  const pd = { silk: 0, CaravanTroupeLocation: 3, SeenFleatopiaEmpty: true, CaravanTroupeLeaderCanLeaveJudge: true, hasDoubleJump: true, defeatedLaceTower: true, BelltownGreeterHouseFullDlg: true,
     CaretakerOfferedSnareQuest: true, soulSnareReady: false, bellShrineWilds: true, visitedGrandGate: true, defeatedPhantom: true,
     Collectables: { savedData: [{ Name: 'Snare Soul Churchkeeper', Data: { Amount: 1 } }, { Name: 'Snare Soul Bell Hermit', Data: { Amount: 0 } }] },
     Tools: { savedData: [{ Name: 'Silk Snare', Data: { IsUnlocked: true } }] },
@@ -207,6 +217,7 @@ test('game() reads the fields of the road, and a slot keeps them', () => {
   const g = F.game(pd);
   assert.deepEqual([g.caravan, g.doubleJump, g.laceTower, g.bellhomeKey, g.snareOffered, g.snareReady, g.phantom, g.lastJudge],
     [3, true, true, true, true, false, true, false]);
+  assert.deepEqual([g.caravanFlags, g.caravanRead], [['CaravanTroupeLeaderCanLeaveJudge', 'SeenFleatopiaEmpty'], true]);
   assert.deepEqual(g.snarePieces, ['Snare Soul Churchkeeper', 'Silk Snare']);
   assert.deepEqual(g.bellshrines, ['bellShrineWilds']);
   assert.deepEqual(g.quests, ['Journal']);

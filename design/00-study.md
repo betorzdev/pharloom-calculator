@@ -1553,6 +1553,13 @@ time with no reload and no stale row. Fixed on the way:
   check, in place of CaravanTroupeLocation ≥ 2, the same on all 73 saves). The Progress row says
   the Blasted Steps, and the Map puts it on Mooshka there instead of at Fleatopia
   (`tools/completionist.js PIECE_FIX`; the wiki's Spool Fragment and Blasted Steps pages agree).
+  And its three moves (24 October; js/acts.js LEGS, from Mooshka's Dialogue FSM at each stop and
+  GameManager.TimePasses): 5 fleas to leave the Marrow (the wish The Lost Fleas ending), 12 with
+  the Last Judge beaten, the Grand Gate seen open and a rest since he was met to leave Greymoor,
+  22 with the empty Pale Lake seen (SeenFleatopiaEmpty, a trigger in aqueduct_05_pre) and a rest
+  to leave the Blasted Steps. The road's row said 22 for all of them; it now gives the next move's
+  fleas and what it still asks (savefile's caravanFlags). Over the 88 saves, no stop is reached
+  without its leg's conditions, and the site's flea count equals the game's Fleas Saved.
 - **Nineteen things of the 100% had no area** (Voltvessels, Flintslate, Swift Step, Clawline,
   Silkspear, three Spool Fragments…): the completionist files them as the area alone ("Deep Docks"),
   which the generator only read with a colon after it. Only the Everbloom has none now (a wish's).
