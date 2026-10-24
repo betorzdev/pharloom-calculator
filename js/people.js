@@ -7,8 +7,11 @@
              x?, y?]] (their point in the map's pixels), met?, gone?, at?, unsure? }]: the save's
              rules (tools/gen-people.js HAND): met, any of these playerData fields set; gone, left
              or dead; at, [field, value, scene]…, the first that holds says where they are now;
-             unsure 'always', no saying where
+             unsure 'always', no saying where; here, { scene: check }, a spot shown only while its
+             check holds (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
+     HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
+             (shakra: her 17 spots, js/spots.js VENDORS.shakra)
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars) */
 (() => {
   'use strict';
@@ -24,12 +27,35 @@
       },
       art: 'people/ant-entry-pilgrim',
       spots: [['bone_08', 1151.6, 1394.4]],
+      here: { bone_08: ['all', ['flag', 'ant02GuardDefeated'], ['not', ['flag', 'hasDash']]] },
     },
     {
       id: 'ballow',
       name: { es: 'Ballow', en: 'Ballow', key: 'BALLOW_MAIN' },
       art: 'people/ballow',
       spots: [['dock_10', 1429.2, 1600.9], ['dock_12', 1597.7, 1617.7], ['room_forge', 1516.2, 1516.5]],
+      here: {
+        dock_10: [
+          'all',
+          ['flag', 'BallowInSauna'],
+          ['not', ['flag', 'BallowLeftSauna']],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+        dock_12: ['flag', 'BallowMovedToDivingBell'],
+        room_forge: [
+          'all',
+          [
+            'not',
+            [
+              'all',
+              ['flag', 'BallowInSauna'],
+              ['not', ['flag', 'BallowLeftSauna']],
+              ['not', ['flag', 'blackThreadWorld']],
+            ],
+          ],
+          ['not', ['flag', 'BallowMovedToDivingBell']],
+        ],
+      },
     },
     {
       id: 'bb-pilgrim-horned',
@@ -40,6 +66,15 @@
       },
       art: 'people/bb-pilgrim-horned',
       spots: [['bonetown', 685.6, 1469.2]],
+      here: {
+        bonetown: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'bonetownPilgrimHornedActive'],
+          ['not', ['flag', 'skullKingInvaded']],
+          ['min', 'bonetownPilgrimHornedCount', 1],
+        ],
+      },
     },
     {
       id: 'bb-pilgrim-round',
@@ -50,6 +85,22 @@
       },
       art: 'people/bb-pilgrim-round',
       spots: [['belltown', 1180.4, 1239.3], ['bone_08', 1151.6, 1394.4], ['bonetown', 659.2, 1469.2]],
+      here: {
+        belltown: [
+          'any',
+          ['flag', 'blackThreadWorld'],
+          ['all', ['flag', 'belltownCrowdsReady'], ['is', 'belltownCrowd', 1]],
+        ],
+        bone_08: ['all', ['flag', 'ant02GuardDefeated'], ['not', ['flag', 'hasDash']]],
+        bonetown: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'bonetownPilgrimRoundActive'],
+          ['not', ['flag', 'skullKingInvaded']],
+          ['not', ['flag', 'skullKingWillInvade']],
+          ['min', 'bonetownPilgrimRoundCount', 1],
+        ],
+      },
     },
     {
       id: 'bellhart-greeter',
@@ -57,6 +108,7 @@
       art: 'people/bellhart-greeter',
       spots: [['belltown', 1191.7, 1237.6]],
       met: ['BelltownGreeterConvo'],
+      here: { belltown: ['all', ['flag', 'spinnerDefeated'], ['not', ['flag', 'blackThreadWorld']]] },
     },
     {
       id: 'bellway-pilgrim',
@@ -67,6 +119,7 @@
       },
       art: 'people/bellway-pilgrim',
       spots: [['bellway_01', 675.9, 1469.6]],
+      gone: ['blackThreadWorld', 'BonebottomBellwayPilgrimLeft'],
     },
     {
       id: 'bell-hermit',
@@ -78,6 +131,7 @@
       art: 'people/bell-hermit',
       spots: [['belltown_basement_03', 1183.1, 1294.9]],
       met: ['BelltownHermitMet'],
+      gone: ['soulSnareReady', 'blackThreadWorld'],
     },
     {
       id: 'bonetown-funeral-leader',
@@ -88,6 +142,14 @@
       },
       art: 'people/bonetown-funeral-leader',
       spots: [['bonetown', 611.8, 1470.4]],
+      here: {
+        bonetown: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'boneBottomFuneral'],
+          ['not', ['flag', 'boneBottomFuneralComplete']],
+        ],
+      },
     },
     {
       id: 'caretaker',
@@ -95,6 +157,15 @@
       art: 'people/caretaker',
       spots: [['cradle_03', 1354.5, 171.9], ['song_enclave', 1655, 552.5]],
       met: ['metCaretaker'],
+      here: {
+        cradle_03: ['all', ['flag', 'soulSnareReady'], ['not', ['flag', 'caretakerSoulSnareConvo']]],
+        song_enclave: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'bellShrineEnclave'],
+          ['not', ['min', 'enclaveLevel', 1]],
+        ],
+      },
     },
     {
       id: 'churchkeeper',
@@ -102,7 +173,27 @@
       art: 'people/churchkeeper',
       spots: [['bonetown', 509.7, 1468.2], ['tut_03', 516.2, 1487.1]],
       met: ['churchKeeperIntro'],
-      at: [['ChurchKeeperLeftBasement', false, 'tut_03']],
+      here: {
+        bonetown: [
+          'all',
+          ['not', ['flag', 'soulSnareReady']],
+          ['not', ['flag', 'blackThreadWorld']],
+          ['not', ['all', ['flag', 'skullKingWillInvade'], ['not', ['flag', 'skullKingKilled']]]],
+          [
+            'any',
+            ['not', ['flag', 'churchKeeperIntro']],
+            ['flag', 'ChurchKeeperLeftBasement'],
+            ['not', ['flag', 'spinnerDefeated']],
+          ],
+        ],
+        tut_03: [
+          'all',
+          ['not', ['flag', 'soulSnareReady']],
+          ['flag', 'spinnerDefeated'],
+          ['not', ['flag', 'ChurchKeeperLeftBasement']],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+      },
     },
     {
       id: 'enclave-pilgrim',
@@ -113,6 +204,7 @@
       },
       art: 'people/enclave-pilgrim',
       spots: [['song_enclave', 1642.9, 552.2]],
+      here: { song_enclave: ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 1]] },
     },
     {
       id: 'enclave-pilgrim-act2',
@@ -123,6 +215,7 @@
       },
       art: 'people/enclave-pilgrim-act2',
       spots: [['song_enclave', 1627, 552.4]],
+      here: { song_enclave: ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 2]] },
     },
     {
       id: 'enclave-pilgrim-act2-large',
@@ -133,6 +226,7 @@
       },
       art: 'people/enclave-pilgrim-act2-large',
       spots: [['song_enclave', 1643, 552.1]],
+      here: { song_enclave: ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 1]] },
     },
     {
       id: 'enclave-pilgrim-act3',
@@ -143,6 +237,13 @@
       },
       art: 'people/enclave-pilgrim-act3',
       spots: [['song_enclave', 1633.4, 552.4]],
+      here: {
+        song_enclave: [
+          'any',
+          ['flag', 'blackThreadWorld'],
+          ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 3]],
+        ],
+      },
     },
     {
       id: 'enclave-pilgrim-large-act3',
@@ -153,6 +254,13 @@
       },
       art: 'people/enclave-pilgrim-large-act3',
       spots: [['song_enclave', 1668.8, 552.3]],
+      here: {
+        song_enclave: [
+          'any',
+          ['flag', 'blackThreadWorld'],
+          ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 2]],
+        ],
+      },
     },
     {
       id: 'fisher-npc',
@@ -167,12 +275,27 @@
         ['belltown_07', 1091.6, 1238.3],
         ['shellwood_01', 1060, 1231.3],
       ],
+      gone: ['blackThreadWorld'],
     },
     {
       id: 'fixer',
       name: { es: 'Flick El arreglador', en: 'Flick The Fixer', key: 'FIXER_MAIN+FIXER_SUB' },
       art: 'people/fixer',
       spots: [['bone_10', 968, 1428.4], ['bonetown', 697.7, 1469]],
+      here: {
+        bone_10: ['flag', 'blackThreadWorld'],
+        bonetown: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['any', ['flag', 'defeatedBellBeast'], ['flag', 'visitedShellwood']],
+          ['not', ['flag', 'skullKingInvaded']],
+          ['not', ['all', ['flag', 'skullKingKilled'], ['not', ['flag', 'skullKingBenchMended']]]],
+          [
+            'not',
+            ['all', ['flag', 'boneBottomFuneral'], ['not', ['flag', 'boneBottomFuneralComplete']]],
+          ],
+        ],
+      },
     },
     {
       id: 'fleamember-short',
@@ -199,6 +322,7 @@
       spots: [['aqueduct_05_caravan', 2379, 575.9], ['bone_10', 960.1, 1428]],
       met: ['MetCaravanTroupeLeader'],
       at: [['CaravanTroupeLocation', 0, 'bone_10'], ['CaravanTroupeLocation', 3, 'aqueduct_05_caravan']],
+      here: { aqueduct_05_caravan: ['flag', 'blackThreadWorld'] },
     },
     {
       id: 'flea-lech',
@@ -220,6 +344,7 @@
         ['CaravanTroupeLocation', 2, 'coral_judge_arena'],
         ['CaravanTroupeLocation', 3, 'aqueduct_05_caravan'],
       ],
+      here: { greymoor_24: ['not', ['flag', 'blackThreadWorld']] },
     },
     {
       id: 'flea-tracker',
@@ -284,6 +409,46 @@
         ['bone_east_24', 1944.1, 1291],
       ],
       met: ['gillyMet'],
+      here: {
+        ant_05c: ['all', ['not', ['flag', 'blackThreadWorld']], ['is', 'gillyLocation', 0]],
+        ant_17: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['is', 'gillyLocation', 1],
+          ['flag', 'visitedCitadel'],
+        ],
+        ant_queen: [
+          'all',
+          ['is', 'gillyLocationAct3', 3],
+          ['not', ['all', ['accepted', 'Ant Trapper'], ['not', ['quest', 'Ant Trapper']]]],
+        ],
+        bone_east_04c: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['not', ['flag', 'visitedHuntersTrail']],
+          [
+            'not',
+            [
+              'all',
+              ['flag', 'hasWalljump'],
+              ['not', ['flag', 'boneEastJailerClearedOut']],
+              ['not', ['flag', 'slab_cloak_battle_completed']],
+              ['not', ['flag', 'visitedUpperSlab']],
+            ],
+          ],
+        ],
+        bone_east_14b: ['not', ['flag', 'visitedCitadel']],
+        bone_east_18: [
+          'all',
+          ['is', 'gillyLocationAct3', 0],
+          ['not', ['all', ['accepted', 'Ant Trapper'], ['not', ['quest', 'Ant Trapper']]]],
+        ],
+        bone_east_24: [
+          'all',
+          ['is', 'gillyLocationAct3', 1],
+          ['not', ['all', ['accepted', 'Ant Trapper'], ['not', ['quest', 'Ant Trapper']]]],
+        ],
+      },
     },
     {
       id: 'green-prince',
@@ -299,6 +464,17 @@
         ['dust_02', 1768.7, 1076.1],
         ['song_04', 1013.3, 675.8],
       ],
+      here: {
+        clover_01: ['not', ['flag', 'defeatedCloverDancers']],
+        clover_01b: [
+          'all',
+          ['not', ['flag', 'fullyEnteredVerdania']],
+          ['not', ['flag', 'defeatedWhiteCloverstag']],
+        ],
+        clover_06: ['not', ['flag', 'defeatedWhiteCloverstag']],
+        clover_18: ['not', ['flag', 'summonedLakeOrbs']],
+        song_04: ['all', ['is', 'GreenPrinceLocation', 1], ['not', ['flag', 'blackThreadWorld']]],
+      },
     },
     {
       id: 'grubfarmer',
@@ -306,6 +482,7 @@
       art: 'people/grubfarmer',
       spots: [['dust_11', 2026.7, 1052.7]],
       met: ['metGrubFarmer'],
+      here: { dust_11: ['is', 'permadeathMode', 0] },
     },
     {
       id: 'grubfarmer-mimic',
@@ -313,6 +490,7 @@
       art: 'people/grubfarmer-mimic',
       spots: [['dust_11', 2046.8, 1056.7]],
       met: ['MetGrubFarmerMimic'],
+      here: { dust_11: ['not', ['is', 'permadeathMode', 0]] },
     },
     {
       id: 'hh-patron-left',
@@ -324,6 +502,14 @@
       art: 'people/hh-patron-left',
       spots: [['halfway_01']],
       gone: ['HalfwayPatronLeftGone'],
+      here: {
+        halfway_01: [
+          'all',
+          ['flag', 'laceMeetCitadel'],
+          ['flag', 'HalfwayPatronsCanVisit'],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+      },
     },
     {
       id: 'hh-patron-right',
@@ -335,6 +521,15 @@
       art: 'people/hh-patron-right',
       spots: [['halfway_01']],
       gone: ['HalfwayPatronRightGone'],
+      here: {
+        halfway_01: [
+          'all',
+          ['flag', 'spinnerDefeated'],
+          ['not', ['flag', 'laceMeetCitadel']],
+          ['flag', 'HalfwayPatronsCanVisit'],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+      },
     },
     {
       id: 'hunter-fan',
@@ -348,12 +543,43 @@
       ],
       met: ['MetHalfwayHunterFan'],
       at: [['nuuIsHome', true, 'halfway_01']],
+      here: {
+        bone_15: [
+          'all',
+          ['flag', 'nuuVisiting_skullKing'],
+          ['not', ['flag', 'nuuEncountered_skullKing']],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+        coral_11: [
+          'all',
+          ['flag', 'nuuVisiting_coralDrillers'],
+          ['not', ['flag', 'nuuEncountered_coralDrillers']],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+        coral_29: [
+          'all',
+          ['flag', 'nuuVisiting_zapNest'],
+          ['not', ['flag', 'nuuEncountered_zapNest']],
+          ['not', ['flag', 'blackThreadWorld']],
+        ],
+        shellwood_18: [
+          'all',
+          [
+            'all',
+            ['flag', 'nuuVisiting_splinterQueen'],
+            ['not', ['flag', 'nuuEncountered_splinterQueen']],
+            ['not', ['flag', 'blackThreadWorld']],
+          ],
+          ['flag', 'defeatedSplinterQueen'],
+        ],
+      },
     },
     {
       id: 'huntress-runt',
       name: { es: 'Pequeñuela', en: 'Runt', key: 'HUNTRESS_RUNT_MAIN' },
       art: 'people/huntress-runt',
       spots: [['room_huntress']],
+      here: { room_huntress: ['all', ['flag', 'blackThreadWorld'], ['flag', 'HuntressRuntAppeared']] },
     },
     {
       id: 'judge-gate-pilgrim',
@@ -365,12 +591,14 @@
       art: 'people/judge-gate-pilgrim',
       spots: [['coral_judge_arena', 794.3, 894.8]],
       met: ['metGatePilgrim'],
+      gone: ['blackThreadWorld'],
     },
     {
       id: 'large-cog-work',
       name: { es: 'Loam', en: 'Loam', key: 'LARGE_COG_WORK_MAIN' },
       art: 'people/large-cog-work',
       spots: [['under_03d', 1192.9, 902.4]],
+      gone: ['blackThreadWorld'],
     },
     {
       id: 'last-conductor',
@@ -381,6 +609,7 @@
       },
       art: null,
       spots: [['hang_12', 1121.8, 509.5]],
+      gone: ['blackThreadWorld'],
     },
     {
       id: 'librarian-relic',
@@ -398,10 +627,29 @@
       art: 'people/little-pilgrim-n',
       spots: [['bone_east_10', 1909, 1388.4], ['bone_east_10_room'], ['bonetown', 658.9, 1469.2]],
       met: ['pilbyMeetConvo'],
-      at: [
-        ['pilbyInsidePilgrimsRest', true, 'bone_east_10_room'],
-        ['pilbyAtPilgrimsRest', true, 'bone_east_10'],
-      ],
+      here: {
+        bone_east_10: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'pilbyAtPilgrimsRest'],
+          ['not', ['flag', 'pilbyInsidePilgrimsRest']],
+          ['not', ['flag', 'pilbyLeftPilgrimsRest']],
+        ],
+        bone_east_10_room: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'pilbyAtPilgrimsRest'],
+          ['flag', 'pilbyInsidePilgrimsRest'],
+          ['not', ['flag', 'pilbyLeftPilgrimsRest']],
+        ],
+        bonetown: [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['not', ['flag', 'skullKingInvaded']],
+          ['not', ['flag', 'skullKingKilled']],
+          ['not', ['flag', 'visitedCitadel']],
+        ],
+      },
     },
     {
       id: 'mask-maker',
@@ -456,6 +704,29 @@
         ['ward_09'],
       ],
       met: ['metSherma'],
+      here: {
+        belltown: [
+          'all',
+          ['flag', 'spinnerDefeated'],
+          ['flag', 'shermaInBellhart'],
+          ['not', ['flag', 'shermaSeenInBellhart']],
+          ['not', ['flag', 'shermaSeenInSteps']],
+          ['not', ['flag', 'blackThreadWorld']],
+          ['not', ['flag', 'visitedCitadel']],
+          ['not', ['all', ['flag', 'shermaAtSteps'], ['flag', 'UnlockedCoralTowerStation']]],
+        ],
+        bellway_08: ['all', ['flag', 'shermaAtSteps'], ['not', ['flag', 'visitedCitadel']]],
+        bone_01: ['not', ['flag', 'metMapper']],
+        bone_east_10: ['not', ['flag', 'blackThreadWorld']],
+        coral_10: ['all', ['not', ['flag', 'shermaCitadelSpa_Seen']], ['not', ['flag', 'shermaInEnclave']]],
+        song_10: ['not', ['flag', 'shermaInEnclave']],
+        song_enclave: [
+          'all',
+          ['all', ['not', ['flag', 'blackThreadWorld']], ['min', 'enclaveLevel', 2]],
+          ['not', ['flag', 'shermaQuestActive']],
+        ],
+        ward_09: ['all', ['accepted', 'Save Sherma'], ['not', ['quest', 'Save Sherma']]],
+      },
     },
     {
       id: 'sherma-pilgrim',
@@ -472,6 +743,17 @@
         ['bonetown', 657.6, 1469.7],
         ['halfway_01'],
       ],
+      here: {
+        belltown: [
+          'any',
+          ['flag', 'blackThreadWorld'],
+          ['all', ['flag', 'belltownCrowdsReady'], ['is', 'belltownCrowd', 6]],
+        ],
+        bone_10: ['flag', 'blackThreadWorld'],
+        bone_east_10: ['not', ['flag', 'blackThreadWorld']],
+        bonetown: ['not', ['flag', 'blackThreadWorld']],
+        halfway_01: ['not', ['flag', 'blackThreadWorld']],
+      },
     },
     {
       id: 'slab-prisoner',
@@ -488,6 +770,7 @@
       },
       art: 'people/snail-shamans',
       spots: [['tut_04']],
+      here: { tut_04: ['not', ['flag', 'CompletedRedMemory']] },
     },
     {
       id: 'song-knight',
@@ -500,11 +783,30 @@
         ['song_24', 1462.6, 716.5],
       ],
       met: ['songChevalierRestingMet', 'encounteredSongChevalierBoss', 'songChevalierEncounters'],
-      at: [
-        ['songChevalierActiveInHang_02', true, 'hang_02'],
-        ['songChevalierActiveInSong_07', true, 'song_07'],
-        ['songChevalierActiveInSong_24', true, 'song_24'],
-      ],
+      here: {
+        hang_02: [
+          'all',
+          ['flag', 'songChevalierActiveInHang_02'],
+          ['not', ['flag', 'songChevalierSeenInHang_02']],
+          ['not', ['flag', 'songChevalierEncounterCooldown']],
+          ['not', ['flag', 'songChevalierQuestReady']],
+        ],
+        song_07: [
+          'all',
+          ['flag', 'songChevalierActiveInSong_07'],
+          ['not', ['flag', 'songChevalierSeenInSong_07']],
+          ['not', ['flag', 'songChevalierEncounterCooldown']],
+          ['not', ['flag', 'songChevalierQuestReady']],
+        ],
+        song_24: [
+          'all',
+          ['flag', 'songChevalierActiveInSong_24'],
+          ['not', ['flag', 'songChevalierSeenInSong_24']],
+          ['not', ['flag', 'songChevalierEncounterCooldown']],
+          ['not', ['flag', 'songChevalierQuestReady']],
+        ],
+        hang_07: ['all', ['is', 'songChevalierPosition', 1], ['not', ['flag', 'blackThreadWorld']]],
+      },
     },
   ];
 
@@ -537,13 +839,190 @@
     },
   ];
 
+  const HERE = {
+    shakra: {
+      ant_04_mid: [
+        'all',
+        ['not', ['flag', 'blackThreadWorld']],
+        ['any', ['not', ['flag', 'ant04_battleCompleted']], ['flag', 'mapperMetInAnt04']],
+        [
+          'all',
+          [
+            'not',
+            ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+          ],
+          ['not', ['flag', 'MapperLeftHuntersNest']],
+          ['not', ['flag', 'visitedCitadel']],
+        ],
+      ],
+      ant_20: [
+        'all',
+        ['not', ['flag', 'mapperMetInAnt04']],
+        [
+          'all',
+          [
+            'not',
+            ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+          ],
+          ['not', ['flag', 'MapperLeftHuntersNest']],
+          ['not', ['flag', 'visitedCitadel']],
+        ],
+      ],
+      belltown: [
+        'any',
+        ['all', ['flag', 'blackThreadWorld'], ['is', 'mapperLocationAct3', 2]],
+        [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          ['flag', 'spinnerDefeated'],
+          [
+            'not',
+            ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+          ],
+          [
+            'not',
+            ['all', ['flag', 'ShakraFinalQuestAppear'], ['not', ['quest', 'Shakra Final Quest']]],
+          ],
+        ],
+      ],
+      bone_04: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftBoneForest']],
+        ['not', ['flag', 'defeatedBellBeast']],
+      ],
+      bone_east_01: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftDocks']],
+        ['not', ['any', ['flag', 'bellShrineWilds'], ['flag', 'spinnerDefeated']]],
+      ],
+      bone_east_21: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftWilds']],
+        [
+          'not',
+          ['any', ['flag', 'hasBrolly'], ['flag', 'spinnerDefeated'], ['flag', 'visitedCitadel']],
+        ],
+      ],
+      bonetown: [
+        'all',
+        ['flag', 'defeatedBellBeast'],
+        ['not', ['flag', 'blackThreadWorld']],
+        ['not', ['flag', 'spinnerDefeated']],
+        ['not', ['flag', 'skullKingInvaded']],
+        ['not', ['flag', 'skullKingWillInvade']],
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+      ],
+      coral_12: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftJudgeSteps']],
+        ['not', ['flag', 'defeatedLastJudge']],
+      ],
+      coral_40: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftCoralCaverns']],
+        ['not', ['flag', 'defeatedCoralDrillerSolo']],
+      ],
+      crawl_01: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftCrawl']],
+        ['not', ['flag', 'visitedCitadel']],
+      ],
+      dust_10: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftDustpens']],
+      ],
+      greymoor_02: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftGreymoor']],
+        [
+          'not',
+          ['all', ['flag', 'hasThreadSphere'], ['not', ['is', 'respawnScene', 'Greymoor_02']]],
+        ],
+      ],
+      greymoor_08: [
+        'all',
+        ['flag', 'blackThreadWorld'],
+        ['not', ['is', 'mapperLocationAct3', 1]],
+        ['not', ['is', 'mapperLocationAct3', 2]],
+        ['not', ['is', 'CaravanTroupeLocation', 1]],
+      ],
+      peak_02: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'hasDoubleJump']],
+      ],
+      shadow_23: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftShadow']],
+        ['not', ['flag', 'DefeatedSwampShaman']],
+      ],
+      shellwood_01: [
+        'all',
+        ['flag', 'blackThreadWorld'],
+        ['not', ['is', 'mapperLocationAct3', 2]],
+        ['not', ['is', 'mapperLocationAct3', 3]],
+      ],
+      shellwood_16: [
+        'all',
+        [
+          'not',
+          ['all', ['accepted', 'Shakra Final Quest'], ['not', ['quest', 'Shakra Final Quest']]],
+        ],
+        ['not', ['flag', 'MapperLeftShellwood']],
+        ['not', ['any', ['flag', 'hasWalljump'], ['flag', 'spinnerDefeated']]],
+      ],
+    },
+  };
+
   const VARS = [
     'BelltownGreeterConvo',
     'BelltownHermitMet',
+    'BonebottomBellwayPilgrimLeft',
     'CaravanLechMet',
     'CaravanLechReturnedToCaravan',
     'CaravanTroupeLocation',
-    'ChurchKeeperLeftBasement',
     'HalfwayPatronLeftGone',
     'HalfwayPatronRightGone',
     'MetCaravanTroupeLeader',
@@ -553,6 +1032,7 @@
     'MetSethNPC',
     'MetTroupeHunterWild',
     'SethJoinedFleatopia',
+    'blackThreadWorld',
     'churchKeeperIntro',
     'encounteredSongChevalierBoss',
     'garmondBlackThreadDefeated',
@@ -564,16 +1044,12 @@
     'metGrubFarmer',
     'metSherma',
     'nuuIsHome',
-    'pilbyAtPilgrimsRest',
-    'pilbyInsidePilgrimsRest',
     'pilbyMeetConvo',
-    'songChevalierActiveInHang_02',
-    'songChevalierActiveInSong_07',
-    'songChevalierActiveInSong_24',
     'songChevalierEncounters',
     'songChevalierRestingMet',
+    'soulSnareReady',
   ];
 
-  SS.people = { PEOPLE, TRADE, VARS };
+  SS.people = { PEOPLE, TRADE, HERE, VARS };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.people;
 })();

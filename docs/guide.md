@@ -439,8 +439,8 @@ beaten, before it was broken). What only
 one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
-whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
-switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
+whole group, in ink when all of it is on, dimmer when part, dimmest when none. Inside, each layer's
+switch is the game's own picture of it, grey and faded when off, its name dimmed too. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
 (the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
@@ -536,7 +536,11 @@ leaves those off.
   is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
   none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
   the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
-  being one of the game's shops too, her card saying which of her maps you lack. The shops are the
+  being one of the game's shops too, her card saying which of her maps you lack. She moves on as
+  Hornet does: with a save, only the spots she's still at show, by the game's own rules (gone from
+  an area once she's been seen in another, or once Hornet's past it; her rests in Bone Bottom and
+  Bellhart; in Act 3 the guard post or rest the save names; none while Trail's End is taken). In
+  Free mode, all seventeen. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys
@@ -590,10 +594,13 @@ leaves those off.
   from the game's sprites (tools/extract-people.py), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
-  now (the flea troupe at its camp, Kratt strung up in Greymoor until he's back, Nuu at home, the
-  Second Sentinel resting, Pilby, the Chapel Maid, Seth at the Flea Festival); who has left or died
-  is gone. Where the save doesn't say, every spot shows and the card says so (Garmond comes and
-  goes, Sherma, Gilly, the Green Prince, Mister Mushroom…). In Free mode, everyone everywhere.
+  now, each spot by the switches the game turns it on with (the flea troupe at its camp, Kratt
+  strung up in Greymoor until he's back, Nuu outside a boss's room or at home, the Second Sentinel
+  resting where he's sent until you meet him there, Pilby, the Chapel Maid, Ballow from the forge to
+  the sauna and the diving bell, Gilly, Sherma, the Songclave's pilgrims by its level, Seth at the
+  Flea Festival); who has left, died or isn't there in Act 3 is gone. Where only a script of theirs
+  decides, the spot stays (Garmond comes and goes, and his card says so; Mister Mushroom, Seth's
+  other rooms, the Green Prince caged). In Free mode, everyone everywhere.
   Each person once in a room: where another mark already stands for them (who makes a wish, a
   boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
 - **Tasks**, as the game's pause menu calls its wishes and objectives: the Wishwalls and who makes
@@ -675,7 +682,10 @@ place in its scene, put on the map by the game's own rule for Hornet's compass a
 checked against the benches, which fall by the game's own bench pins). What has no object of its
 own sits where whoever stands for it is: Shakra and the vendors where they stand, and what they
 sell with them; a wish's reward with whoever hands it over, else at its Wishwall or at who offers it; a boss where
-it waits in its arena, and what it drops there; a gauntlet at its arena; a lost flea in its cage.
+it waits in its arena, and what it drops there (one the game makes there with no record of its own
+on the arena it shares with another boss, Tormented Trobbio on Trobbio's stage; one fought in a
+place the map can't draw at the game's pin for the objective it ends, Lost Lace at the dive in the
+Abyss); a gauntlet at its arena; a lost flea in its cage.
 What's inside a room the map doesn't draw (an interior: Plinney's house, the Bellhome, the Skull
 Cave) sits at the door it's entered by, the game's own door in the room around it; one with no such
 door, or a room drawn as a point (a bench's own room), stays at that room's point, as on the game's
@@ -704,13 +714,15 @@ Journal entry, and the buttons on a card that go to someone else's mark. One thi
 as the search does: only its mark, whatever the switches and «Show completed» say (what you have
 dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
 the search's place with its name and area and a «Return to the map» button back to the whole map
-(under the name on a phone). A step of Progress's road
+(on a phone the line takes the whole width, the name beside the zoom's buttons and never cut: it
+wraps, the area under it, and the button on a row below). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
-ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
+ring, the snare's pieces, what's next for Silk and Soul, each wish where it stands now as its own
+pin has it: its giver, its step's targets once taken, or its hunting grounds), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
 nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
-«Return to the map». Esc ends it too (once no card or full screen is open: those close first), as do
+«Return to the map» (on a phone, one row with the ‹ ›). Esc ends it too (once no card or full screen is open: those close first), as do
 the Map's tab and any switch below; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own

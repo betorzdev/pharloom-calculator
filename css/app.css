@@ -2746,29 +2746,30 @@ html:has(.mp.is-full) { overflow: hidden; }
 /* A caret in plain ink: the frame's light is the tab's colour, never a control's. */
 .mp-caret { flex: none; width: 10px; height: 10px; color: var(--ink-2); transition: rotate var(--dur) var(--ease); }
 .mp-sec.is-open .mp-fold .mp-caret, .mp-more[aria-expanded="true"] .mp-caret { rotate: 90deg; }
-/* The group's title is its switch: all on in ink, some in ink-2, none muted. */
+/* The group's title is its switch: all on in ink, some in ink-2, none in --ink-off. */
 .mp-sec-sw { display: flex; flex: 1; align-items: center; gap: var(--sp-3); min-height: var(--ctl); padding: 0; text-align: left; color: var(--ink-strong); }
 .mp-sec-sw.is-some { color: var(--ink-2); }
-.mp-sec-sw.is-none { color: var(--muted); }
+.mp-sec-sw.is-none { color: var(--ink-off); }
 .mp-sec-sw:is(:hover, :focus-visible) .mp-sec-t, .mp-fold:is(:hover, :focus-visible) + .mp-sec-sw .mp-sec-t { color: var(--accent); }
 .mp-sec-t { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; transition: color var(--dur) var(--ease); }
 .mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); padding: 0 0 var(--sp-3) var(--sp-6); }
-/* A layer: the game's picture, bare, is the switch; off, in grey (the Inventory's missing look). */
+/* A layer: the game's picture, bare, is the switch; off, its picture grey and faded and its name in
+   --ink-off (design/109, C): no hue, as the game selects with white on grey. */
 .mp-kind { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-sm); color: var(--ink); text-align: left; }
 .mp-kind-t { transition: color var(--dur) var(--ease); }
 .mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
-.mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+.mp-kind.is-off :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
 /* Nothing of it up to the Act chosen: greyed as off, its count 0. */
-.mp-kind.is-empty .mp-kind-t, .mp-kind.is-empty .mp-n b { color: var(--muted); }
-.mp-kind.is-empty .mp-art > img { filter: var(--missing-art); }
-.mp-kind.is-empty .mp-art > svg { opacity: 0.35; }
+.mp-kind.is-empty :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
+.mp-kind.is-empty .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-empty .mp-art > svg { opacity: 0.25; }
 .mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
 .mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .mp-art > svg { width: 70%; height: 70%; }
 /* The Needle, a long thin line, laid across as on the map. */
 .mp-art.is-needle > img { transform: rotate(35deg) scale(1.15); }
-.mp-kind.is-off .mp-art > img { filter: var(--missing-art); }
-.mp-kind.is-off .mp-art > svg { opacity: 0.35; }
+.mp-kind.is-off .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-off .mp-art > svg { opacity: 0.25; }
 /* A set with some of its layers off: its picture half lit. */
 .mp-kind.is-some .mp-art > img { filter: grayscale(0.5) brightness(0.75); }
 /* How many: had of total in the figures' face; complete, in --good. */
@@ -2825,10 +2826,15 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom's three buttons outside its
-     frame, its name over ‹ i of n › and the way out (that at the right). */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; margin-right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
-  .mp-focus-t { flex-basis: 100%; }
+  /* The focus's line takes the whole width, the zoom's three buttons over its top right corner:
+     its name beside them, whole (it wraps) with one thing's area under it as the card writes it
+     (design/107, A), then ‹ i of n › and the way out (that at the right) on one row below them. */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp.is-full .mp-find.mp-focus { right: var(--sp-3); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp-focus-t { flex-basis: 100%; min-height: calc(var(--ctl-sm) - var(--sp-1)); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-2)); }
+  .mp-focus-t > span { overflow: visible; white-space: normal; }
+  .mp-focus-dot { display: none; }
+  .mp-focus-a { display: block; font-size: var(--fs-xs); color: var(--muted); }
   .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
