@@ -10686,6 +10686,7 @@
     'boss:watcher-at-the-edge': [271.9, 856.2],
     'boss:palestag': [2315, 1050.7],
     'boss:gurr-the-outcast': [2243.4, 1420.1],
+    'boss:tormented-trobbio': [1566.5, 693],
     'boss:pinstress': [642.7, 432.9],
     'boss:shrine-guardian-seth': [778.6, 993.2],
     'boss:summoned-saviour': [218.8, 1496.2],
@@ -10844,6 +10845,7 @@
     'journal:scrollreader': [1628.5, 631.7],
     'journal:vaultkeeper': [1568.1, 562],
     'journal:trobbio': [1566.5, 693],
+    'journal:tormented-trobbio': [1566.5, 693],
     'journal:penitent': [705.4, 567.4],
     'journal:puny-penitent': [692.8, 591.3],
     'journal:scabfly': [705.9, 531.5],
@@ -11143,6 +11145,8 @@
     'journal:guardfly:slab_23': [846.1, 603.4],
     'journal:nuphar:arborium_09': [1459.2, 458.7],
     'journal:kindanir:clover_04b': [2318.9, 1088.3],
+    'boss:lost-lace': [1371.9, 1917.4],
+    'journal:lost-lace': [1371.9, 1917.4],
   };
 
   const SEATS = {

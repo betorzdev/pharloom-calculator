@@ -439,8 +439,8 @@ beaten, before it was broken). What only
 one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
 Then eleven groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
-whole group, in ink when all of it is on, dimmer when part, muted when none. Inside, each layer's
-switch is the game's own picture of it, in grey when off. Beside each, how many: in a save, had of
+whole group, in ink when all of it is on, dimmer when part, dimmest when none. Inside, each layer's
+switch is the game's own picture of it, grey and faded when off, its name dimmed too. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
 (the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
@@ -682,7 +682,10 @@ place in its scene, put on the map by the game's own rule for Hornet's compass a
 checked against the benches, which fall by the game's own bench pins). What has no object of its
 own sits where whoever stands for it is: Shakra and the vendors where they stand, and what they
 sell with them; a wish's reward with whoever hands it over, else at its Wishwall or at who offers it; a boss where
-it waits in its arena, and what it drops there; a gauntlet at its arena; a lost flea in its cage.
+it waits in its arena, and what it drops there (one the game makes there with no record of its own
+on the arena it shares with another boss, Tormented Trobbio on Trobbio's stage; one fought in a
+place the map can't draw at the game's pin for the objective it ends, Lost Lace at the dive in the
+Abyss); a gauntlet at its arena; a lost flea in its cage.
 What's inside a room the map doesn't draw (an interior: Plinney's house, the Bellhome, the Skull
 Cave) sits at the door it's entered by, the game's own door in the room around it; one with no such
 door, or a room drawn as a point (a bench's own room), stays at that room's point, as on the game's
@@ -711,13 +714,15 @@ Journal entry, and the buttons on a card that go to someone else's mark. One thi
 as the search does: only its mark, whatever the switches and «Show completed» say (what you have
 dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
 the search's place with its name and area and a «Return to the map» button back to the whole map
-(under the name on a phone). A step of Progress's road
+(on a phone the line takes the whole width, the name beside the zoom's buttons and never cut: it
+wraps, the area under it, and the button on a row below). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
-ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
+ring, the snare's pieces, what's next for Silk and Soul, each wish where it stands now as its own
+pin has it: its giver, its step's targets once taken, or its hunting grounds), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
 nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
-«Return to the map». Esc ends it too (once no card or full screen is open: those close first), as do
+«Return to the map» (on a phone, one row with the ‹ ›). Esc ends it too (once no card or full screen is open: those close first), as do
 the Map's tab and any switch below; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
