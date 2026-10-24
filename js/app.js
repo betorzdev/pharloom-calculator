@@ -406,13 +406,15 @@
   /* ── The screens ─────────────────────────────────────────────────────── */
   App.screens = {};   // view → painter, registered by each screen's script (js/app-*.js)
   const screenOf = (v) => el.screens.querySelector(`.screen[data-view="${v}"]`);
-  /* A render for one screen's own switches (the Map's legend): that screen drawn again, not every
-     one; the rest are drawn again when shown (go, render). */
+  /* Only the screen that shows is drawn: every render ends in showScreen(), so a hidden one is
+     drawn when it's shown (go, render). Drawing all eight at every render took most of the first
+     paint (22-Oct-2026: 0.7 s of 0.9 s on a phone's CPU) and fetched the hidden screens' pictures.
+     A render for one screen's own switches (the Map's legend): that screen drawn again, if it shows. */
   let only = null;
   App.renderOnly = (v) => { only = v; try { render(); } finally { only = null; } };
   function renderScreens() {
     for (const v of VIEWS) {
-      if (only && v !== only) continue;
+      if (v !== prefs.view || (only && v !== only)) continue;
       const sec = screenOf(v);
       if (!sec) continue;
       if (App.screens[v]) { safely('screen-' + v, () => App.screens[v](sec)); continue; }
