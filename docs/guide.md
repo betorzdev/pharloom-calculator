@@ -987,14 +987,20 @@ title over its filigree, with how many are done.
   by its area's colour, with the town's name and its count. On each, the wishes it posts (33: Bone
   Bottom 8, Bellhart 15, the Songclave 10; a wish a board sends you on to someone else counts as the
   board's, and the Lost Fleas are on Bone Bottom's though Mooshka offers them too).
-- **Who makes a wish**: the 20 wishes asked for in person, under whoever asks, each standing over
-  their name and their area (their figure, as the game draws them at rest), in the order you meet
-  them: the Couriers' seven deliveries, the Alchemist's two, Mister Mushroom's at his tablet…
-In each wall and under each person, what's left as lines: the picture the game's pane draws by it
-(a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
-its title: «Frey of Bellhart») and the lists' round pin to the Map. Then what comes in a later Act
-than yours, faded, and what's done («Completed», as the pane says), each as a row of pictures (a
-picture's name shows on hovering it). Every wish is on its wall, the ten Act 3 requires too, though
+- **Who makes a wish**: the 20 wishes asked for in person, one row for each person who asks, in the
+  order you meet them (the Couriers' seven deliveries, the Alchemist's two, Mister Mushroom's at his
+  tablet…): their figure (as the game draws them at rest) on a pool of their area's light, their
+  name, their area and how many of theirs are done; then their wishes left, two side by side on a
+  wide screen, and what comes later or is done as small pictures at the end of the row. A hairline
+  fading at both ends parts the people. Whoever has nothing for you to take now leaves the rows for
+  a strip at the end, their figure and their pictures under «Later» (faded) or «Completed».
+On each wall and in each person's row, what's left as lines: the picture the game's pane draws by
+it (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
+its title: «Frey of Bellhart»; in a person's row it goes when it only names that person and their
+area) and the lists' round pin to the Map. A wish you've promised has the game's hollow diamond by
+it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
+(«Completed», as the pane says) follow, each as a row of pictures (a picture's name shows on
+hovering it). Every wish is on its wall, the ten Act 3 requires too, though
 the road's tab lists them as well. The one only Steel Soul has, and the one only Classic has, show
 only in a save of that mode, and both in Free mode, as the Journal and the Map show them. A task done
 also shows in "Since the previous save".
