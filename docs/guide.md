@@ -405,8 +405,8 @@ it swaps to twice the resolution. The last button, the four corners, takes it to
 the same button leave it; where the browser can't, it fills the window). On it: a search at the top left and the zoom at the top right.
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map shows only
-that thing, as a focus of one (its name and area in the search's place, × back to the whole map,
-with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
+that thing, as a focus of one (its name and area in the search's place, «Return to the map» back
+to the whole map, with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
 three times. An area's name centres the map on it with its ring. With the whole map in view, an
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
@@ -414,7 +414,16 @@ on a phone the area names show only zoomed in.
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
 its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
 categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
-Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then «Whole map» with a save, on at first (see
+Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then
+«Up to · All · Act 1 · Act 2 · Act 3» (on a phone, a line of its own): up to an Act, the map shows
+only what can be had by then, nothing of a later Act. A mark goes by its own Act (the one its card
+says) or its room's, the later: a room's is the first Act it can be entered in, worked out on the
+game's doors (the Citadel and what the Clawline or the Faydown Cloak opens, Mount Fay, the Sands of
+Karak, Wisp Thicket and the Putrified Ducts, are Act 2's; the Abyss, Verdania, the destroyed Cradle
+and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. With a save
+the Map opens on its Act; Free mode on All. What you pick is kept for that profile while its game
+stays in that Act, and once the save reaches the next Act the Map follows it there. A layer with
+nothing up to the Act picked is greyed, its count 0. Then «Whole map» with a save, on at first (see
 below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
 Wishes pane), off at first: on, what you already have comes back to the map too, each mark
 dimmed with a green tick on its corner, whole again under the pointer or once picked, its card
@@ -520,7 +529,10 @@ leaves those off.
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
+  your game hasn't opened them: a station not unlocked, a toll not paid), the **Flea Caravan**
+  itself (the game's own pin for it, on at first): with a save, one mark at the stop your caravan
+  is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
+  none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
   the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
   being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
@@ -604,8 +616,8 @@ while the wish is on, as the game shows him one at a time; the rescues and
   layers of their own; Beast in the Bells has one pin per Bellway station, and the game's
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
   shows it; with a save where that wish is taken and not yet granted, only the station the Bell
-  Beast waits at shows, as in the game, and all twelve before it's taken, once it's granted and in
-  Free mode, one thing on the count). Each is done as your save says: the wish granted, the objective complete
+  Beast waits at shows, as in the game, all twelve before it's taken and in Free
+  mode, and none once it's granted, though it still counts as had: one thing on the count). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
@@ -689,13 +701,15 @@ Other screens open the map on a thing: «See on the map» on each missing row of
 Journal entry, and the buttons on a card that go to someone else's mark. One thing is shown alone,
 as the search does: only its mark, whatever the switches and «Show completed» say (what you have
 dimmed and ticked as always), centred on it, its card open and a ring pulsing on it, and a line in
-the search's place with its name and area and its × back to the whole map. A step of Progress's road
+the search's place with its name and area and a «Return to the map» button back to the whole map
+(under the name on a phone). A step of Progress's road
 opens it on all that's left of the step at once («See the 2 on the map»: the Bellshrines still to
 ring, the snare's pieces, what's next for Silk and Soul), and so do a Journal entry's rooms and a
 wish's hunting grounds: the map shows only those marks, whatever its switches say, framed to fit
 them, each with the ring, and the line names the step, with ‹ › to go from one to the next (the
-nearest to your bench first, «1 of 2», each centred with its card and its ring) and its × back to
-the whole map. Any switch below ends it too; Back returns to Progress.
+nearest to your bench first, «1 of 2», each centred with its card and its ring) and the same
+«Return to the map». Esc ends it too (once no card or full screen is open: those close first), as do
+the Map's tab and any switch below; Back returns to Progress.
 
 Pharloom as the game's own map screen draws it for your game, piece by piece and by its own
 rules, taken from its files and its code, in a dim tone, with Hornet sitting at her bench, her feet
@@ -1110,15 +1124,20 @@ for (LSSI art. 22.2, ePrivacy art. 5.3), and never leaves it:
 - Save files are read in the browser; nothing is uploaded.
 - **Donations**: a plain link to [Ko-fi](https://ko-fi.com/betorzdev), "Support the site" in the
   header after Share ("Ko-fi" alone on a phone), a line in the footer and the end of the About
-  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). Never
-  Ko-fi's widget: it loads third-party scripts, and the privacy notice says there are none.
+  block's "Is it free?" answer (`KOFI` in `js/app.js`, `tools/pages-text.js`; design/94b). A flea
+  from the caravan (the game's own picture) perches on the header's link, as the Knight on the
+  sister's, and on every screen's frame by its top-right corner, a link to Ko-fi too: it hops once
+  when the page opens (the header's) or a screen is arrived at (the frame's) and on hover, never
+  with reduced motion; on hover the frame's shows the link's name beside it, on the frame's line
+  (`renderPerch` in `js/app.js`; design/99). Never Ko-fi's widget: it loads third-party scripts,
+  and the privacy notice says there are none.
 
 The visit counter is [Footworn](https://github.com/betorzdev/footworn) (`track()` in `js/app.js`;
 `404.html` loads it too, to see which broken addresses people land on), Albert's own, on a
 Cloudflare Worker in Western Europe. It sets no cookies, keeps no IP, and stores one row per visit
 with nothing that names you: the page, referrer host, browser and system families, screen width,
 language, country and the site's events (`screen` with `view` and `lang`, `lang`, `error` with
-`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (`header`, `footer` or `about`: which donation link was clicked), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
+`part`, `msg` (the first 64 characters of what went wrong) and `at` (the script and line), `sister` with `to` (the other site's id), `support` with `at` (which donation link was clicked: `header`, `frame` (the flea on the screen's frame), `footer`, `about` (the About block's answer) or `other`), and the plain ones: `share`, `save-import`, `save-sync`...). With a real save loaded (never in Free mode) every event also carries `pct` (the completion as the game shows it, a whole number) and `act` (the save's Act, 1 to 3). The owner sees them as daily
 counts and, for today only, one by one, rounded (the minute, phone/tablet/desktop); its own
 record of what it stores is at footworn.betorzdev.workers.dev/privacy. That fits the AEPD's exemption for audience measurement ("Guía uso de
 cookies para herramientas de medición de audiencia", January 2024), whose one condition that

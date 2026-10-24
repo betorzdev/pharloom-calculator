@@ -369,6 +369,47 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   width: 1px; height: var(--sp-4); transform: translateY(-50%); background: var(--line-ctl);
 }
 .support-short { display: none; }
+/* The flea from the caravan (assets/icons/pieces/flea.webp; design/03-redesign.md, step 1d, second
+   round): perched on the donation link, as the Knight on the sister's, and on every screen's frame
+   by its top-right corner (js/app.js, renderPerch), sitting on the frame's line. */
+.support-flea { position: absolute; right: calc(var(--sp-1) * -1); bottom: 78%; width: 30px; height: auto; pointer-events: none; transform-origin: 50% 100%; }
+.support-perch { position: absolute; z-index: 3; top: calc(var(--frame-inset) - 38px); right: calc(var(--frame-corner) + var(--sp-4)); line-height: 0; text-decoration: none; }
+.support-perch img { position: relative; width: 64px; height: auto; transform-origin: 50% 100%; filter: drop-shadow(0 0 var(--sp-2) color-mix(in oklab, var(--filigree) 18%, transparent)); }
+/* Its halo: the soft light the game's interactables carry. */
+.support-perch::before {
+  content: ''; position: absolute; left: 50%; top: 50%; width: calc(var(--sp-16) * 2); height: calc(var(--sp-16) * 2); translate: -50% -50%;
+  border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, var(--filigree) 16%, transparent) 0%, transparent 65%); pointer-events: none;
+}
+/* Its name, on hover or focus: a small plaque left of it, on the frame's line (38px down the
+   perch), so it clears every screen's controls (they start under the line) and the title's
+   plaque (centred); in front of all of them. Shorter under 1100px, where the title comes closer. */
+.support-say {
+  position: absolute; z-index: 5; top: 38px; right: calc(100% + var(--sp-1)); translate: 0 -50%;
+  padding: var(--sp-1) var(--sp-3); border: 1px solid color-mix(in oklab, var(--filigree) 55%, transparent); background: var(--inv-bg);
+  font-size: var(--fs-xs); line-height: 1.4; letter-spacing: var(--track-label); white-space: nowrap; color: var(--ink-strong);
+  opacity: 0; pointer-events: none; transition: opacity var(--dur) var(--ease);
+}
+.support-perch:is(:hover, :focus-visible) .support-say { opacity: 1; }
+@media (max-width: 1099px) {
+  .support-say .support-long { display: none; }
+  .support-say .support-short { display: inline; }
+}
+/* Smaller where the screen bar comes closer to the frame (the Inventory's second row, under 900px). */
+@media (max-width: 899px) {
+  .support-flea { width: 24px; }
+  .support-perch { top: calc(var(--frame-inset) - 24px); }
+  .support-perch img { width: 38px; }
+  .support-perch::before { width: var(--sp-16); height: var(--sp-16); }
+  .support-say { top: 24px; }
+}
+/* It hops once (the header's when the page opens, the frame's when a screen is arrived at) and on
+   hover; still otherwise, and always with reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .support-flea.is-hop, .support-perch.is-hop img { animation: flea-hop 0.9s var(--ease) 0.6s 1; }
+  .mh-support:is(:hover, :focus-visible) .support-flea, .support-perch:is(:hover, :focus-visible) img { animation: flea-hop-again 0.9s var(--ease) 1; }
+}
+@keyframes flea-hop { 0%, 100% { transform: none; } 20% { transform: translateY(1px) scale(1.08, 0.9); } 50% { transform: translateY(calc(var(--sp-2) * -1)) scale(0.95, 1.06); } 78% { transform: scale(1.05, 0.95); } }
+@keyframes flea-hop-again { 0%, 100% { transform: none; } 20% { transform: translateY(1px) scale(1.08, 0.9); } 50% { transform: translateY(calc(var(--sp-2) * -1)) scale(0.95, 1.06); } 78% { transform: scale(1.05, 0.95); } }
 .lang-btn[aria-expanded="true"] { color: var(--ink-strong); text-decoration-color: var(--accent); }
 .lang-code { display: none; }
 .lang-menu {
@@ -671,6 +712,10 @@ html { scroll-padding-block-start: calc(var(--sticky-h) + var(--sp-3)); }
   .lang-code { display: inline; }
   .support-long { display: none; }
   .support-short { display: inline; }
+  /* The flea on the frame's corner; no name beside it: a phone has no hover, and on the line it
+     would meet the title's plaque (the link keeps its title and label). */
+  .support-perch { right: calc(var(--frame-corner) - var(--sp-4)); }
+  .support-say { display: none; }
   /* At the right edge, the list opens leftwards. */
   .lang-menu { left: auto; right: calc(var(--sp-4) * -1); }
   .title { font-size: var(--fs-lg); text-align: left; letter-spacing: var(--track-title); }
@@ -2621,15 +2666,17 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-found button { display: flex; flex-direction: column; align-items: flex-start; gap: 0; }
 .mp-found small { font-size: var(--fs-2xs); color: var(--muted); }
 .mp-found-none { padding: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--muted); }
-/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its ×. */
-.mp-find.mp-focus { width: min(26rem, calc(100% - var(--sp-16) * 2)); }
+/* The focus (App.mapFocus): in the search's place, what the marks are, ‹ i of n › and its way
+   out, a labelled button (design/96, 1 A); as wide as it needs, short of the zoom's buttons. */
+.mp-find.mp-focus { width: auto; max-width: calc(100% - var(--ctl-sm) * 4 - var(--sp-3) * 3); }
 .mp-focus { display: flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm); padding: 0 var(--sp-1) 0 var(--sp-3);
   background: color-mix(in oklab, var(--scene-bg) 88%, transparent); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); }
 .mp-focus-t { display: flex; align-items: center; gap: var(--sp-2); flex: 1; min-width: 0; }
 .mp-focus-t > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .mp-focus-t .ic { flex: none; color: var(--ink-2); }
 .mp-focus-n { flex: none; font-family: var(--font-num); font-size: var(--fs-xs); color: var(--ink-2); white-space: nowrap; }
-.mp-focus :is(.mp-focus-go, .mp-focus-x) { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-go { flex: none; display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); color: var(--ink-2); font-size: var(--fs-md); }
+.mp-focus .mp-focus-x { flex: none; min-height: calc(var(--ctl-sm) - var(--sp-2)); margin-left: var(--sp-2); padding: 0 var(--sp-3); border: 1px solid var(--line-ctl); font-size: var(--fs-sm); color: var(--ink); white-space: nowrap; }
 .mp-focus :is(.mp-focus-go, .mp-focus-x):is(:hover, :focus-visible) { color: var(--ink-strong); background: var(--veil); }
 .mp-tools { position: absolute; z-index: 4; top: var(--sp-3); right: var(--sp-3); display: flex; border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--scene-bg) 88%, transparent); }
 .mp-tools button { width: var(--ctl-sm); height: var(--ctl-sm); font-family: var(--font-num); font-size: var(--fs-md); color: var(--ink-2); }
@@ -2645,6 +2692,9 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-all .text-btn { font-size: var(--fs-sm); }
 .mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
 .mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
+/* The Act filter (design/98, 3 A): the site's chooser, labelled, first of the options. */
+.mp-acts { display: inline-flex; align-items: center; gap: var(--sp-3); }
+.mp-acts-t { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
 .mp-sec { border-top: 1px solid var(--inv-line); }
 .mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
 .mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
@@ -2664,6 +2714,10 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-kind-t { transition: color var(--dur) var(--ease); }
 .mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
 .mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+/* Nothing of it up to the Act chosen: greyed as off, its count 0. */
+.mp-kind.is-empty .mp-kind-t, .mp-kind.is-empty .mp-n b { color: var(--muted); }
+.mp-kind.is-empty .mp-art > img { filter: var(--missing-art); }
+.mp-kind.is-empty .mp-art > svg { opacity: 0.35; }
 .mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
 .mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .mp-art > svg { width: 70%; height: 70%; }
@@ -2727,17 +2781,18 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom outside its frame, its name over ‹ i of n ›. */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; margin-right: calc(var(--ctl-sm) * 4 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  /* The focus's line keeps the room the search leaves for the zoom's three buttons outside its
+     frame, its name over ‹ i of n › and the way out (that at the right). */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; margin-right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
   .mp-focus-t { flex-basis: 100%; }
-  .mp-find.mp-focus.is-one { flex-wrap: nowrap; }   /* one thing: its name and its × on one line */
-  .mp-focus.is-one .mp-focus-t { flex-basis: auto; }
+  .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
   .mp-tools { top: 0; }
   .mp-legend-h { grid-template-columns: minmax(0, 1fr); }
   .mp-opts { gap: var(--sp-1) var(--sp-6); }
   .mp-checks { flex-direction: column; align-items: flex-start; }
+  .mp-acts { flex-basis: 100%; }
   .mp-kinds { padding-left: 0; gap: var(--sp-1) var(--sp-4); }
   .mp-inside { margin-left: var(--sp-2); }
 }

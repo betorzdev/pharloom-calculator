@@ -276,6 +276,8 @@
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
+    mapActUpTo:     { es: 'Hasta', en: 'Up to' },   // no game text: the Act filter's label (design/98), the Acts are saveAct
+    mapActAll:      { es: 'Todos', en: 'All' },   // no game text: every Act
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
@@ -359,6 +361,7 @@
     mapLayer_bells: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
     mapLayer_locks: { es: 'Puertas cerradas', en: 'Locked doors' },   // BELLTOWN_HOUSE_LOCKED says «cerrado con llave»; no game text for the layer
     mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
+    mapLayer_caravan: { es: 'Caravana de las pulgas', en: 'Flea Caravan' },   // KEY_CARAVAN (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who makes a wish' },
@@ -935,7 +938,7 @@
     mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
     mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
     mapFocusNext:   { es: 'La siguiente', en: 'Next' },
-    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
+    mapFocusOff:    { es: 'Volver al mapa', en: 'Return to the map' },   // the game's words: CTRL_RETURN + PANE_MAP
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
     roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}, con dos de las tres melodías aprendidas o tras derrotar a {foe}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}, with two of the three melodies learned or {foe} defeated' },
