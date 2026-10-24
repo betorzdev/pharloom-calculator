@@ -23,8 +23,9 @@ What it writes:
            that switch those objects. tools/gen-people.js checks its hand table against them. }
   shops    [scene, object, class]: every ShopOwner and SimpleQuestsShopOwner.
   figures  title key → the sprite drawn (its collection and definition): the person's figure as the
-           scene first draws it (the tk2dSprite on their object, else the first under it),
-           cut to head and shoulders (a square from the top), FIG pixels, into
+           scene first draws it (the tk2dSprite on their object, else the first under it; the
+           frame SPRITE names for one who starts as something else), cut to head and shoulders
+           (a square from the top), FIG pixels, into
            assets/map/people/<id>.webp, id the key in lower case with dashes. """
 import json, os, re, struct, sys, warnings
 import UnityPy
@@ -41,7 +42,11 @@ TEXT = os.path.join(ROOT, 'kb', 'data', 'all_text.json')
 FIG = 72
 # The figures whose first sprite isn't the person (an effect, Hornet at the dice, a pod): left out,
 # tools/gen-people.js draws them with their Journal portrait or the herald.
-NO_FIGURE = {'CREST_UPG_SHRINE', 'DICE_PILGRIM', 'LAST_CONDUCTOR', 'SONG_KNIGHT', 'WICKER_BUG', 'SHELLWOOD_WITCH', 'MAPPER', 'GARMOND'}
+NO_FIGURE = {'CREST_UPG_SHRINE', 'DICE_PILGRIM', 'LAST_CONDUCTOR', 'SONG_KNIGHT', 'WICKER_BUG', 'MAPPER', 'GARMOND'}
+# The figures whose first sprite is a frame of something else they do, by the frame to draw instead
+# (a definition of the same collection, named as the game names it). Greyroot (Room_Witch's Wood
+# Witch) starts on WW_appear0002, the mound she rises from: her figure is her first idle frame.
+SPRITE = {'SHELLWOOD_WITCH': 'WW_idle0000'}
 # Where the head is, as a share of the figure's height from its top, for those whose antlers fill
 # the top square (Styx, the Huntress).
 BUST_TOP = {'GRUBFARMER': 0.3, 'HUNTRESS': 0.2}
@@ -94,7 +99,7 @@ def main(game):
                     cab[m.lower()] = f
     colls, envs = {}, {}
 
-    def figure(o, d):
+    def figure(o, d, frame=None):
         c = d.get('collection') or d.get('_collection') or {}
         fid, pid = c.get('m_FileID'), c.get('m_PathID')
         if not fid:
@@ -109,7 +114,7 @@ def main(game):
             colls[(b, pid)] = (t, [by[x['m_PathID']].read().image if x['m_PathID'] in by else None for x in t['textures']])
         t, tex = colls[(b, pid)]
         defs = t['spriteDefinitions']
-        sid = d.get('_spriteId', 0)
+        sid = next((j for j, x in enumerate(defs) if x['name'] == frame), len(defs)) if frame else d.get('_spriteId', 0)
         if sid >= len(defs) or defs[sid]['materialId'] >= len(tex) or tex[defs[sid]['materialId']] is None:
             return None
         df = defs[sid]
@@ -244,7 +249,7 @@ def main(game):
                 sprites = [(x, d) for g, cs in comps.items() if gid in chain(g) for c, d, x in cs if c == 'tk2dSprite']
                 sprites.sort(key=lambda s: 0 if s[1]['m_GameObject']['m_PathID'] == gid else 1)
                 for o, d in sprites:
-                    got = figure(o, d)
+                    got = figure(o, d, SPRITE.get(k))
                     if got:
                         figures[k] = got[1]
                         bust(got[0], os.path.join(FIGS, k.lower().replace('_', '-') + '.webp'), BUST_TOP.get(k, 0))

@@ -276,6 +276,8 @@
     mapPlaces:      { es: 'Lugares', en: 'Places' },
     mapNames:       { es: 'Nombres de zona', en: 'Area names' },
     mapHad:         { es: 'Mostrar completados', en: 'Show Completed' },   // INV_TOGGLE_COMPLETED_ON
+    mapActUpTo:     { es: 'Hasta', en: 'Up to' },   // no game text: the Act filter's label (design/98), the Acts are saveAct
+    mapActAll:      { es: 'Todos', en: 'All' },   // no game text: every Act
     mapFit:         { es: 'Entero', en: 'Whole' },
     mapAlt:         { es: 'El mapa de Telalejana', en: 'The map of Pharloom' },
     mapPlace_bench1:{ es: 'Banco', en: 'Bench' },   // KEY_BENCH
@@ -359,6 +361,7 @@
     mapLayer_bells: { es: 'Santuario de Campana', en: 'Bellshrine' },   // BELLSHRINE
     mapLayer_locks: { es: 'Puertas cerradas', en: 'Locked doors' },   // BELLTOWN_HOUSE_LOCKED says «cerrado con llave»; no game text for the layer
     mapLayer_shops: { es: 'Vendedor', en: 'Vendor' },   // KEY_SHOP (the game's map key)
+    mapLayer_caravan: { es: 'Caravana de las pulgas', en: 'Flea Caravan' },   // KEY_CARAVAN (the game's map key)
     mapLayer_shakra:{ es: 'Shakra', en: 'Shakra' },   // MAPPER_MAIN
     mapLayer_wishwall1: { es: 'Muro de deseos', en: 'Wishwall' },   // QUESTBOARD_TITLE
     mapLayer_givers:{ es: 'Quien pide un deseo', en: 'Who makes a wish' },
@@ -905,12 +908,19 @@
     roadSilkNote:   { es: 'En el golpe final, toca el Agujolín en vez de enlazarla. Ese final cierra en esa partida los otros dos del Acto 2; tras los créditos, la partida se abre ya en el Acto 3. Si estás maldita, vencerla da en cambio el final «{twisted}».', en: 'On the final blow, play the Needolin instead of binding her. That ending closes the other two Act 2 endings in that game; after the credits the game opens in Act 3. If you\'re cursed, defeating her gives the {twisted} ending instead.' },
     roadRunt:       { es: 'para el Acto 3 cuenta su versión principal, no la de la cría', en: 'for Act 3 its main version counts, not the runt\'s' },
     roadMelodies:   { es: 'para llegar a la Cuna, las tres melodías: {n} de 3', en: 'to reach the Cradle, the three melodies: {n} of 3' },
-    // The caravan (js/acts.js: Mooshka's FSM): its stop now, the fleas, and what its last move asks.
-    roadCaravanHow: { es: '{n} de {need} pulgas rescatadas; habla con {npc} en cada parada (ahora: {at})', en: '{n} of {need} fleas rescued; talk to {npc} at each stop (now: {at})' },
-    roadCaravanRest:{ es: 'en cada parada, tras hablar con {npc}, descansa en un banco lejos de ella antes de que siga', en: 'at each stop, once you\'ve talked to {npc}, rest at a bench away from it before it moves on' },
-    roadCaravanRule:{ es: 'rescata {need} pulgas y habla con {npc} en cada parada de la caravana', en: 'rescue {need} fleas and talk to {npc} at each of the Caravan\'s stops' },
+    /* The caravan (js/acts.js LEGS: Mooshka's FSM at each stop): the fleas its next move asks, and
+       what else that move asks; without a save, the three moves. */
+    roadCaravanHow: { es: '{n} de {need} pulgas rescatadas para ir de {from} a {to}; luego habla con {npc}', en: '{n} of {need} fleas rescued to move from {from} to {to}; then talk to {npc}' },
+    roadCaravanEnough:{ es: 'ya tienes las {need} pulgas que pide para ir de {from} a {to}; habla con {npc}', en: 'you have the {need} fleas it asks to move from {from} to {to}; talk to {npc}' },
+    roadCaravanJudge:{ es: 'antes, derrota a la {judge}', en: 'first defeat the {judge}' },
+    roadCaravanGate:{ es: 'antes, abre la {gate}', en: 'first open the {gate}' },
     roadCaravanLake:{ es: 'antes, visita el {lake} vacío, en los {ducts}', en: 'first visit the empty {lake}, in the {ducts}' },
-    roadCaravanJudge:{ es: 'antes de su parada en los {steps}, derrota a la {judge}', en: 'before its stop on the {steps}, defeat the {judge}' },
+    roadCaravanRest:{ es: 'tras hablar con {npc} en {at}, descansa en un banco lejos de allí antes de que siga', en: 'once you\'ve talked to {npc} at {at}, rest at a bench away from there before it moves on' },
+    roadCaravanRule:{ es: 'habla con {npc} en cada parada con las pulgas rescatadas que pide: {a} en {s0}, {b} en {s1} y {c} en los {s2}', en: 'talk to {npc} at each stop with the fleas rescued it asks for: {a} in {s0}, {b} in {s1} and {c} on the {s2}' },
+    roadCaravanRuleJudge:{ es: 'para dejar {at}, además, derrota a la {judge} y abre la {gate}', en: 'to leave {at}, also defeat the {judge} and open the {gate}' },
+    roadCaravanRuleLake:{ es: 'para dejar los {at}, además, visita el {lake} vacío, en los {ducts}', en: 'to leave the {at}, also visit the empty {lake}, in the {ducts}' },
+    roadCaravanRuleRest:{ es: 'en {a} y en los {b}, tras hablar con {npc}, descansa en un banco lejos de la parada antes de que siga', en: 'in {a} and on the {b}, once you\'ve talked to {npc}, rest at a bench away from the stop before it moves on' },
+    roadFleatopia:  { es: 'Pulgatopía', en: 'Fleatopia' },   // FLEATOPIA
     roadPaleLake:   { es: 'Lago Pálido', en: 'Pale Lake' },   // WHITELAKE
     /* Each step and row in the game's own words (design/28, 1 A to 5 A): what the pane «Tareas»
        says of it, its Wishwall, the Inventory, the Journal or the Caretaker. */
@@ -935,7 +945,7 @@
     mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
     mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
     mapFocusNext:   { es: 'La siguiente', en: 'Next' },
-    mapFocusOff:    { es: 'Volver al mapa entero', en: 'Back to the whole map' },
+    mapFocusOff:    { es: 'Volver al mapa', en: 'Return to the map' },   // the game's words: CTRL_RETURN + PANE_MAP
     /* What posts a required wish later than the rest (its playerData test in js/quests.js CHAIN when,
        and the wiki's prerequisites for what sets it; checked on the author's saves). */
     roadOpensShakra:{ es: 'sale al comprarle a {npc} todos sus mapas y tener la {art}, con dos de las tres melodías aprendidas o tras derrotar a {foe}', en: 'posted once you have bought all of {npc}\'s maps and have the {art}, with two of the three melodies learned or {foe} defeated' },

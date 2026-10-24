@@ -522,6 +522,7 @@
     "assets/map/people/seamstress.webp": [72, 72, 36.0, 38.5, 72, 43.0],
     "assets/map/people/seth-npc-bc.webp": [72, 72, 36.5, 36.0, 72, 40.7],
     "assets/map/people/seth-npc.webp": [72, 72, 42.0, 36.0, 72, 41.5],
+    "assets/map/people/shellwood-witch.webp": [72, 72, 36.0, 36.0, 72, 50.2],
     "assets/map/people/sherma-pilgrim.webp": [72, 72, 36.0, 36.0, 72, 48.1],
     "assets/map/people/sherma.webp": [72, 72, 36.0, 36.0, 72, 40.5],
     "assets/map/people/slab-prisoner.webp": [72, 72, 36.0, 36.0, 72, 45.5],
