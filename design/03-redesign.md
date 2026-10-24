@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -50,7 +50,7 @@ the work up reads it first, then the step it's on.
 | 6c | The Map's people: everyone in the world and every place that sells | **Built** (11 Oct) | `30-map-people-variants.html` (kept out of the repo) |
 | 6b | The Map's admin mode (`#view=map&admin=1`): the panel, adding, the save check, hide and delete, the marks | **Built** (11 Oct) | `30-map-admin-variants.html` (kept out of the repo) |
 | 1c | The site's icon: the favicon, the home-screen icon | **Built** (14 Oct) | `72-site-icon-variants.html` (kept out of the repo) |
-| 1d | The donation link (Ko-fi) | **Built, draft** (18 Oct) | `94-donate-variants.html`, `94b-donate-variants.html` (kept out of the repo) |
+| 1d | The donation link (Ko-fi) | **Built** (18 Oct; the caravan flea, 24 Oct) | `94-donate-variants.html`, `94b-donate-variants.html`, `99-support-nudge-variants.html` (kept out of the repo) |
 
 ## Step 1 · The shell
 
@@ -1818,6 +1818,66 @@ with each option, real saves, 1440 and 390; kept out of the repo). **Decision: A
 
 A slot kept while those doors were locks still has them (`{ wasKind: 'lock' }`).
 
+### The way out of a pin's focus (24 October 2026)
+
+Albert: coming to the Map through a pin, the way back to the normal Map wasn't clear. Every
+pin that opens it on something (a Progress row's or step's, a group's on Progress, the Inventory or
+the Journal's areas, a Journal entry's rooms, a wish's hunting grounds, a search's result) ends in
+the same focus (`js/app-map.js` focusMarks): a line in the search's place that looked like the
+search, closed by a bare ×. The Map's tab kept the focus, and Esc only closed a card or full screen.
+The options went to Albert with `96-map-pin-exit-variants.html` (the real Map screen captured from
+Save 2 with each way out over it, 1440 and 390; kept out of the repo). **Decision: A in all three**
+(Albert, 24 October 2026):
+
+1. **The way out is a labelled button at the end of the focus's line**, in the site's control line
+   (white on grey under the pointer); on a phone the line wraps, the name over ‹ i of n › and the
+   button. B was a row of its own above the map, C a prompt line along the map's foot (the game's
+   menus), D the site's main button floating over the map.
+2. **Its words are «Volver al mapa» / "Return to the map"**, the game's CTRL_RETURN with PANE_MAP
+   (`mapFocusOff`). B kept «Volver al mapa entero» / "Back to the whole map" (the site's own, and
+   "Whole map" is a legend switch), C «Volver» / "Return" alone (it reads as going back to the
+   screen you came from).
+3. **Esc and the Map's tab also leave it**: Esc once nothing nearer takes it (an open card, then
+   full screen, close first), the tab while on the Map. B was the button alone.
+
+In passing, the phone's line kept room for four zoom buttons where a phone shows three: it keeps
+three now, so a long name has one more button's width.
+
+### The Act filter (24 October 2026)
+
+Albert: «a big and important task would be to be able to put an Act filter on the Map». The one
+removed on 14 October (`design/00-study.md`) showed only what first appears in an Act, and most marks
+had no Act: of the 2,066 marks of Free mode (the Journal's enemies apart), 541 carry an Act of their
+own (163 / 192 / 186) and 1,525 none (the benches, the people, the caches, walls and levers). The
+options went to Albert in `98-map-act-filter-variants.html` (the live site with a copy of the Map's
+code answering each option, three real saves and Free mode, 1440 and 390; kept out of the repo).
+**Decision: A in all four** (Albert, 24 October 2026):
+
+1. **Up to Act N**, cumulative: what can be had by Act N, nothing of a later Act (no spoilers,
+   nothing out of reach). B was only Act N (the old filter), C everything with the later Acts faint.
+2. **A mark with no Act of its own takes its room's first Act**, from the game's doors
+   (`tools/gen-spots.js` ROOM_ACT): Act 3 what only Act 3 has (the rule of 18 October); Act 1 every
+   room the doors reach from the first room, or from a room holding a thing of Act 1, without a door
+   of ACT2_DOORS (the Grand Gate, the Phantom's way, the Citadel's other two doors, Mount Fay's and
+   the Sands of Karak's for the Clawline, Wisp Thicket's for the Faydown Cloak, the Ducts' from
+   Bilewater, each with its source); Act 2 the rest. 308 / 189 / 46 rooms; every mark then has one
+   (1,111 / 757 / 198 in Free mode). A mark goes by the later of its own and its room's. Its card
+   still says its own Act only. B was showing them under every Act.
+3. **The site's chooser** (`.seg sm`, the diamonds), labelled «Up to / Hasta», first of the legend's
+   options; on a phone a line of its own. «Act 1 / Acto 1» is ACT_1_SUPER (`saveAct`), «All /
+   Todos» the site's own. B was a boxed line on the map under the zoom, C a select.
+4. **It opens on the save's Act** (Free mode: All); a pick is kept per profile
+   (`prefs.mapActPick`, slot → the Act picked and the game's Act then) while its game stays in that
+   Act, and once the save reaches another Act the Map follows it. B was All with the pick kept for
+   good, C the save's Act every time. Under an Act before the last, a layer with nothing up to it is
+   greyed with a 0 rather than countless.
+
+Checked in headless Chrome over file:// (npm run drive, port 9458): saves of Act 1, 2 and 3 and Free
+mode, every layer on, 1440 and 390, es and en, no console errors; and the follow-through: an Act 1
+save with All picked, synced to an Act 2 save of the same profile (the Map on Act 2), Act 1 picked,
+synced to Act 3 (on Act 3), a second profile keeping its own pick, Free mode on All and keeping its
+pick. test/room-acts.test.js.
+
 ## Step 7 · Journal
 
 ### What there is (28 September 2026)
@@ -2371,4 +2431,30 @@ carry it in every option.
 
 A and A: "Support the site" («Apoya la web») after Share, set apart by the same thin rule as the
 language, "Ko-fi" alone on a phone; plus the footer line and the FAQ's. Left in a draft PR.
+
+### Second round: few clicks (24 October 2026)
+
+Footworn, 4 to 24 October: 288 visitors, six `support` clicks, every one from the header, none
+from the footer or the FAQ; the screens people open are the Map (518) and Progress (353), far ahead
+of Your game (160). `99-support-nudge-variants.html` first drew a quiet line at the moment of
+value (under Your game's scene or the road) with words on who makes the site and what it pays.
+Albert: too much text, nobody stops to read it; it has to catch the eye. The second drawing, in
+the game's own pictures and almost no words: 1 · the idea, **A** a flea from the caravan
+(`assets/icons/pieces/flea.webp`) perched on the header's link and on the screen, B a rosary string
+(the game's money) in a pause-menu plaque with a glint, and hanging from a silk thread on the
+screen, C a milestone on Progress once per new tenth of the 100% (the crown, the figure, embers, the
+plaque); 2 · where on the screens, **A** the frame's top-right corner on every screen, B the Map's
+empty corner and the road's end, C the header only; 3 · motion, **A** every few seconds, B once, C
+still.
+
+### Decision (24 October 2026)
+
+A, A and B: the flea perches on the header's link (as the Knight on the sister's) and on every
+screen's frame by its top-right corner, sitting on the frame's line, with a soft halo. It hops once
+when the page opens (the header's) or a screen is arrived at (the frame's) and on hover; still
+otherwise, and never with reduced motion. On hover the frame's shows the link's name in a small
+plaque left of it, on the frame's line, in front of everything and clear of every screen's controls
+(Albert: the first drawing's label hid behind the Map's zoom bar); "Ko-fi" under 1100px, none on a
+phone. No new strings. Its clicks are `support` with `at: 'frame'`, and a Ko-fi link outside the
+header, the frame, the footer and the About block counts as `other` instead of `about`.
 
