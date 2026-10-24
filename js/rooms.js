@@ -281,8 +281,8 @@
     return { pieces, zones, off, zoneOn };
   }
   /* The pins drawn for a game: those whose piece a rule hasn't taken off the map, and a Flea
-     Caravan bench only where your caravan is (its here, over savefile's caravan,
-     CaravanTroupeLocation); with no game, all of them, as a guide. */
+     Caravan bench, and the caravan's own pin, only where your caravan is (its here, over
+     savefile's caravan, CaravanTroupeLocation); with no game, all of them, as a guide. */
   const pinsOn = (g) => {
     const off = mapView(g).off, at = { CaravanTroupeLocation: g ? g.caravan || 0 : 0 };
     return M.PINS.filter((p) => !off.has(p[3]) && !(g && p[5] && !rule(p[5], at)));
