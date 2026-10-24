@@ -520,7 +520,10 @@ leaves those off.
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
   which its map doesn't pin; the Flea Caravan's two of its own, in Greymoor and the Blasted Steps,
   only while your caravan is there), Bellway and Ventrica stations (dimmed while
-  your game hasn't opened them: a station not unlocked, a toll not paid), the six Bellshrines (the Grand Gate asks for five of them;
+  your game hasn't opened them: a station not unlocked, a toll not paid), the **Flea Caravan**
+  itself (the game's own pin for it, on at first): with a save, one mark at the stop your caravan
+  is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
+  none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
   the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
   being one of the game's shops too, her card saying which of her maps you lack. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the

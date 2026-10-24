@@ -2381,3 +2381,17 @@ is set whether or not the wish was on. The two Spine Cores in Bone_East_14b's wa
 above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on the 88 saves (all
 match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
 and after each fixed wish and in Free mode, no console errors.
+
+**The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
+at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
+the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each
+stop's room (Bone_10_left, Greymoor_08, Coral_Judge_Arena, Aqueduct_05), each switched off by a
+DeactivatePlayerDataTest while CaravanTroupeLocation names another stop, while SeenFleaCaravan is
+false, or without the vendor pins (hasPinShop, left out as every pin set). `tools/extract-map.py`
+keeps them as PINS of kind `caravan` (here its stop, lit SeenFleaCaravan), last of all so no index
+moves; `rooms.js pinsOn` already shows a pin with a `here` only at the save's stop (in Free mode,
+the four). The Map draws it as the stations, a layer of its own in Places, on at first (a list
+stored before it gets it once, silently), dimmed with «Not met yet» until seen. Over the 88 saves:
+35 at 0 (32 not seen yet, 3 seen), 10 at 1, 4 at 2, 39 at 3; SeenFleaCaravan is set exactly when
+MetCaravanTroupeLeader is. Checked in headless Chrome at 1440 and 390, en and es, with a save at
+each stop, one before the caravan is seen, and Free mode.

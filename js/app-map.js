@@ -107,6 +107,7 @@
     L('bench', () => t('mapPlace_bench1'), PIN('pin_bench')),
     L('bellway', () => t('mapPlace_bellway'), PIN('pin_stag_station')),
     L('ventrica', () => t('mapPlace_ventrica'), PIN('pin_tube_station')),
+    L('caravan', () => t('mapLayer_caravan'), PIN('pin_flea')),   // the game's map key has it apart (KEY_CARAVAN)
     L('bellshrine', () => t('mapLayer_bells'), PIN('quest_map_icon_grand_gate_final')),
     L('shop', () => t('mapLayer_shops'), PIN('pin_shop')),
     L('lift', () => t('mapLayer_lifts'), null),   // the glyph
@@ -164,7 +165,7 @@
     ['crest', ['tools', 'crests', 'eva', 'skills']],   // PANE_TOOLS
     ['extras', ['memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'relics', 'memento', 'bellhome']],
     ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
-    ['places', ['bench', 'bellway', 'ventrica', 'bellshrine', 'shop', 'shakra']],
+    ['places', ['bench', 'bellway', 'ventrica', 'caravan', 'bellshrine', 'shop', 'shakra']],
     ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall', 'lift']],   // design/03-redesign.md, step 6, Passages
     ['fights', ['gauntlet', 'boss', 'void-mass']],
     ['people', ['person', 'npc']],
@@ -180,9 +181,9 @@
   const HUNDRED = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'arts', 'tools-red', 'tools-blue',
     'tools-yellow', 'crests', 'skills', 'everbloom'];
   /* On at first: the whole 100%, the abilities outside it, what leads to it (Memory Lockets, Lost
-     Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), the stations, the gauntlets and bosses, and
-     your cocoon. */
-  const FIRST_ON = [...HUNDRED, 'arts-other', 'memory-locket', 'flea', 'old-heart', 'melody', 'craftmetal', 'pale-oil', 'bellway', 'ventrica', 'gauntlet', 'boss', 'cocoon'];
+     Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), the stations, the Flea Caravan, the gauntlets
+     and bosses, and your cocoon. */
+  const FIRST_ON = [...HUNDRED, 'arts-other', 'memory-locket', 'flea', 'old-heart', 'melody', 'craftmetal', 'pale-oil', 'bellway', 'ventrica', 'caravan', 'gauntlet', 'boss', 'cocoon'];
   // So many they'd hide the map: drawn only close up; from afar, a count per room.
   const FINE = new Set(['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked']);
   // The layers that only a save can say anything about.
@@ -234,6 +235,13 @@
     else if (!prefs.mapArtsOut) {
       if (prefs.mapLayers.includes('arts') && !prefs.mapLayers.includes('arts-other')) prefs.mapLayers = [...prefs.mapLayers, 'arts-other'];
       prefs.mapArtsOut = true;
+      savePrefs();
+    }
+    // The Flea Caravan came after the lists stored before it: on in them once, as it is at first.
+    if (!Array.isArray(prefs.mapLayers)) prefs.mapCaravan = true;
+    else if (!prefs.mapCaravan) {
+      if (!prefs.mapLayers.includes('caravan')) prefs.mapLayers = [...prefs.mapLayers, 'caravan'];
+      prefs.mapCaravan = true;
       savePrefs();
     }
     if (Array.isArray(prefs.mapLayers)) return prefs.mapLayers.flatMap((k) => (k === 'tools' ? ['tools-red', 'tools-blue', 'tools-yellow'] : [k])).filter((k) => LAYER.has(k));
@@ -537,18 +545,20 @@
     }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
-    // Places: the pins (a station not open, a toll not paid: dimmed, cls ' is-off'). A bench
-    // with a seat rests on its floor, where Hornet sits (js/rooms.js benchSeat; rests: layout).
+    // Places: the pins (a station not open, a toll not paid, the Flea Caravan not seen yet: dimmed,
+    // cls ' is-off'). A bench with a seat rests on its floor, where Hornet sits (js/rooms.js
+    // benchSeat; rests: layout). The caravan's is at the stop your save has it at (js/rooms.js pinsOn).
     const lit = new Set(own ? own.lit : []);
+    const PIN_ART = { bench: 'pin_bench', bellway: 'pin_stag_station', ventrica: 'pin_tube_station', caravan: 'pin_flea' };
     R.pinsOn(own).forEach((p) => {
       const open = !p[4] || !own || lit.has(pinKey(p));
       const tube = p[0] === 'ventrica' && TUBE[lower(p[3])];
-      const name = t(tube || (p[0] === 'bench' ? 'mapPlace_bench1' : 'mapPlace_' + p[0]));
-      const shut = open ? '' : t(p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed');
+      const name = t(tube || (p[0] === 'bench' ? 'mapPlace_bench1' : p[0] === 'caravan' ? 'mapLayer_caravan' : 'mapPlace_' + p[0]));
+      const shut = open ? '' : t(p[0] === 'caravan' ? 'mapNotMet' : p[0] === 'bench' && /bell_toll_machine/.test(JSON.stringify(p[4])) ? 'mapToll' : 'mapClosed');
       const seat = R.benchSeat(p);
       out.push({ key: 'pin:' + M.PINS.indexOf(p), layer: p[0], scene: p[3], at: seat || { x: p[1], y: p[2] }, rests: !!seat, got: false, off: !open, pinData: p,
         name, shut, sub: [tube ? t('mapPlace_ventrica') : '', shut].filter(Boolean).join(' · '),
-        draw: (s, ti, k, c) => pin(p[0], p[0] === 'bench' ? 'pin_bench' : p[0] === 'bellway' ? 'pin_stag_station' : 'pin_tube_station', s, ti, k, c + (open ? '' : ' is-off')) });
+        draw: (s, ti, k, c) => pin(p[0], PIN_ART[p[0]], s, ti, k, c + (open ? '' : ' is-off')) });
     });
     /* A gauntlet won by beating its boss (its check is the boss's: Lugoli's, the Coral Tower's four
        ending in Khann…) is that boss's fight: on the boss's card, not a mark of its own (Albert's
@@ -1095,7 +1105,7 @@
   window.addEventListener('resize', () => { if (document.querySelector('.hmB-canvas')) areaPaint(); });
 
   /* The layers whose things aren't had (a bench, a shop, a person): a count, not had of total. */
-  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'shop', 'shakra', 'person', 'npc', 'cocoon']);
+  const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'caravan', 'shop', 'shakra', 'person', 'npc', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
   // The groups open: as left (prefs.mapOpen); at first all of them, on a phone the first two.
   const openGroups = () => (prefs.mapOpen && !Array.isArray(prefs.mapOpen) ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])
