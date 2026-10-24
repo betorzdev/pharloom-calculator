@@ -29,6 +29,8 @@
   const D = SS.data || require('./data.js');
   // The most Silkeaters Hornet can hold (the wiki's infobox, js/data.js ITEMS).
   const EATERS = D.ITEMS.find((x) => x.id === 'silkeater').max;
+  // The items a save says were had (js/data.js ITEMS had / of): the keys, the Bellhome's pieces.
+  const HELD = D.ITEMS.filter((x) => x.had || x.of);
   const GA = SS.gauntlets || require('./gauntlets.js');
   const MAP = SS.map || require('./map.js');
   const QU = SS.quests || require('./quests.js');
@@ -272,6 +274,9 @@
                           js/data.js ITEMS' max for it
        rosaries, shards   what Hornet holds (geo, ShellShards); farsight: the Farsight carried or
                           already assembled (ConstructedFarsight); hasJournal: the Hunter's Journal
+       items              { item id: how many had } of js/data.js ITEMS with a save check (the keys,
+                          the Plasmium Gland, the Materium, the Crawbell): had (1 or 0) or of (the
+                          pieces had); a key spent at its door still counts
        pieces             the indices of js/collectibles.js's PIECES found
        wishes             the indices of its WISHES done (the pane «Tareas»)
        gauntlets          the ids of js/gauntlets.js's enemy gauntlets cleared (each one's done)
@@ -386,6 +391,7 @@
       rosaries: Math.max(0, int(pd.geo)), shards: Math.max(0, int(pd.ShellShards)),
       farsight: int((items.get('Farsight') || {}).Amount) > 0 || pd.ConstructedFarsight === true,
       hasJournal: pd.hasJournal === true,
+      items: Object.fromEntries(HELD.map((x) => [x.id, x.of ? x.of.filter(has).length : has(x.had) ? 1 : 0])),
       pieces: CO.PIECES.map((p, i) => (has(p[2]) ? i : -1)).filter((i) => i >= 0),
       wishes: CO.WISHES.map((w, i) => (has(w[2]) ? i : -1)).filter((i) => i >= 0),
       gauntlets: GA.GAUNTLETS.filter((x) => has(x.done)).map((x) => x.id),
@@ -498,7 +504,7 @@
        pharloom.owned     { tools, crests, skills, arts }: what the Crest screen can equip
        pharloom.journal   { entry id: kills }
        pharloom.progress  the rest of game(): masks, spools, hearts, needle, kit, pouch,
-                          everbloom, purse, rosaries, shards, farsight, hasJournal, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
+                          everbloom, purse, rosaries, shards, farsight, hasJournal, items, pieces, wishes, gauntlets, lit, act, mapFlags, mapVars, bench,
                           area, build, the road's fields (quests … snareReady) and the Map's
                           (visited … elsewhere, steelSpots, peopleVars)
        pharloom.meta      what the profile screen shows (meta()) and when the file was saved
@@ -577,7 +583,7 @@
     };
   }
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
-    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
+    needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, items: {}, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
@@ -610,6 +616,7 @@
     // The held counts: only the items the list has, as whole numbers.
     out.purse = Object.fromEntries(CO.PURSE.map((p) => [p[0], Number.isInteger(out.purse[p[0]]) ? Math.max(0, out.purse[p[0]]) : 0]));
     out.silkeaters = Number.isInteger(out.silkeaters) ? Math.max(0, Math.min(EATERS, out.silkeaters)) : 0;
+    out.items = Object.fromEntries(HELD.map((x) => [x.id, Number.isInteger(out.items[x.id]) ? Math.max(0, Math.min(x.max || 1, out.items[x.id])) : 0]));
     out.carried = Object.fromEntries(ASKED.filter((n) => Number.isInteger(out.carried[n]) && out.carried[n] > 0).map((n) => [n, out.carried[n]]));
     // The pieces by their keys → today's places in the list; a key the list no longer has is dropped.
     out.pieces = out.pieces.map((k) => KEY_AT.get(k)).filter((i) => i !== undefined);

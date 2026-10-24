@@ -2424,3 +2424,17 @@ anyway, and test/room-acts.test.js checks no thing's own Act is earlier than its
 generous where an ability of Act 2 opens a corner of an Act 1 area (the Faydown Cloak's ledges):
 those things carry their own Act already, and the doors can't say more. Marks by Act in Free mode:
 1,111 / 757 / 198. Only the Act fields of js/spots.js changed (ROOM_ACT, AREA_ACT).
+
+**The Inventory's items, audited** (24 October 2026). The game's collectables
+(`collectableitems.bundle`, 87 of them) against the screen: the purse, the Relics, the Mementos,
+the materials and the upgrades were all there; the keys and three lasting items were not. Added to
+the Items shelf, each by how the save says it was had, read over the 88 saves (`js/data.js` ITEMS
+`had` / `of`, from `tools/gen-data.js` HELD): the Plasmium Gland, the Materium, the Crawbell, the
+Simple Keys (of 4, by where each is had: held plus the doors opened equals it in every save), the
+Slab's keys (of 3, one item in the game), the White Key (bought from Jubilana in the Steel Soul game,
+whose pickup flag stays false), the Surgeon's, the Architect's, the Diving Bell's and the Bellhome's
+keys, and the Craw Summons. A key stays had once spent. Their pictures are the game's
+(`tools/extract-item-icons.py`, lossless): the wiki refused its files to scripts that day. No save
+holds the Plasmium Gland or the Crawbell, so theirs are the game's own checks, not seen true. Left
+out for Albert: the wish deliverables (about 35 things carried for a wish and handed over), the
+Cogheart Pieces and the Ruined Tool, the Map & Quill, the Gate Key (the demo's).

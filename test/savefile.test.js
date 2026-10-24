@@ -202,6 +202,26 @@ test('the purse: what is held of each Collectable, the two currencies, the Farsi
   assert.equal('other' in F.gameOf(bad).purse, false);
 });
 
+test('the keys and lasting items: held, or spent at their door; kept in a slot', () => {
+  const held = (Name, Amount) => ({ Name, Data: { Amount } });
+  // As the author's saves have them: one Simple Key held after buying Pebb's and Jubilana's and
+  // using one, the Architect's Key spent on its chapel, the White Key bought from Jubilana (its
+  // pickup flag false), two of the Slab's keys, the Materium carried.
+  const pd = { ...BASE, PurchasedBonebottomFaithToken: true, MerchantEnclaveSimpleKey: true, PurchasedArchitectKey: true,
+    MerchantEnclaveWardKey: true, HasSlabKeyA: true, HasSlabKeyC: true, OpenedCrowSummonsDoor: true,
+    Collectables: { savedData: [held('Simple Key', 1), held('Architect Key', 0), held('Materium', 1), held('Craw Summons', 0)] } };
+  const g = F.game(pd, null);
+  assert.deepEqual(g.items, { 'plasmium-gland': 0, materium: 1, crawbell: 0, 'simple-key': 2, 'slab-keys': 2, 'white-key': 1,
+    'surgeons-key': 0, 'architects-key': 1, 'diving-bell-key': 0, 'bellhome-key': 0, 'craw-summons': 1 });
+  // The Karak corpse's key, by its room's pickup.
+  const sd = { persistentBools: { serializedList: [{ SceneName: 'Bellshrine_Coral', ID: 'Collectable Item Pickup', Value: true }] } };
+  assert.equal(F.game(BASE, sd).items['simple-key'], 1);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).items, g.items);
+  // A damaged or unknown count falls back to none, and a count stops at the most there are.
+  const bad = F.gameOf({ 'pharloom.progress': '{"items":{"simple-key":9,"white-key":"x","other":1}}' }).items;
+  assert.deepEqual([bad['simple-key'], bad['white-key'], 'other' in bad], [4, 0, false]);
+});
+
 test('a Tool handed back (unlocked and hidden) is gaveBack, not held; kept in a slot', () => {
   const tool = (Name, IsUnlocked, IsHidden) => ({ Name, Data: { IsUnlocked, IsHidden } });
   // As Zylotol leaves it once Alchemist's Assistant is done, and the Caretaker the Snare Setter.
