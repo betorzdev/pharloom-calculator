@@ -967,7 +967,7 @@ title over its filigree, with how many are done.
   Bottom 8, Bellhart 15, the Songclave 10; a wish a board sends you on to someone else counts as the
   board's, and the Lost Fleas are on Bone Bottom's though Mooshka offers them too).
 - **Who makes a wish**: the 20 wishes asked for in person, under whoever asks, each standing over
-  their name and their area (their figure from the Map; Greyroot has none), in the order you meet
+  their name and their area (their figure, as the game draws them at rest), in the order you meet
   them: the Couriers' seven deliveries, the Alchemist's two, Mister Mushroom's at his tablet…
 In each wall and under each person, what's left as lines: the picture the game's pane draws by it
 (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under

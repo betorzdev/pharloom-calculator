@@ -324,9 +324,10 @@
     return npc ? { npc, giver: ((SS.spots || {}).QUEST_GIVER || {})[q] || npc } : {};
   }
   /* Who asks in person, by name and figure (assets/map/people, named as the game's NPC key);
-     Greyroot has no figure. Fleatopia's wish has nobody in its room (GIVER null): it's Mister
-     Mushroom's, offered at his tablet (tools/gen-spots.js), so he stands for it (js/people.js). */
-  const NO_FIGURE = new Set(['SHELLWOOD_WITCH']);
+     NO_FIGURE, one tools/extract-people.py takes no figure of (none since Greyroot's, 24-Oct).
+     Fleatopia's wish has nobody in its room (GIVER null): it's Mister Mushroom's, offered at his
+     tablet (tools/gen-spots.js), so he stands for it (js/people.js). */
+  const NO_FIGURE = new Set();
   const NOBODY = { Aqueduct_05: 'mr-mushroom' };
   function giverOf(src) {
     const G = (SS.spots || {}).GIVER || {}, gv = G[src.giver] || G[src.npc];
