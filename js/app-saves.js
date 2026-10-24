@@ -669,7 +669,7 @@
       'pharloom.progress': JSON.stringify({ needle: int(g.needle, top.needle), kit: int(g.kit, top.kit), pouch: int(g.pouch, top.pouch),
         masks: int(g.masks, top.masks), spools: int(g.spools, top.spools), hearts: int(g.hearts, top.hearts), build: { hunterStage: stage },
         everbloom: !!g.everbloom, pieces: g.pieces.map((i) => F.pieceKey(SS.collectibles.PIECES[i])),
-        purse: g.purse || {}, silkeaters: g.silkeaters || 0, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal,
+        purse: g.purse || {}, silkeaters: g.silkeaters || 0, rosaries: g.rosaries || 0, shards: g.shards || 0, farsight: !!g.farsight, hasJournal: !!g.hasJournal, items: g.items || {},
         extras: (g.extras || []).map((i) => F.pieceKey(SS.spots.EXTRAS[i])) }),
     };
     if (!store || memFree !== undefined) { memFree = snap; return; }

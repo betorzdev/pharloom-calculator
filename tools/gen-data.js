@@ -439,11 +439,50 @@ const ITEMS = [
   ['surface-memento', 'INV_NAME_MEMENTO_SURFACE', 'extras'], ['hunters-memento', 'INV_NAME_HUNTER_MEMENTO', 'extras'],
   ['craw-memento', 'INV_NAME_MEMENTO_CROWMAN', 'extras'], ['sprintmaster-memento', 'INV_NAME_SPRINT_MEMENTO', 'extras'],
   ['guardians-memento', 'INV_NAME_SETH_MEMENTO', 'extras'],
+  /* The rest of the pane's lasting things (the Inventory's Items shelf): the Plasmium Gland, the
+     Bellhome's two (the Farsight is above), and the keys (the wiki's Items page, "Keys"). The
+     Slab's three keys are one item the pane shows by the keys held (INV_NAME_SLAB_KEYRING). */
+  ['plasmium-gland', 'INV_NAME_PLASMIUM_GLAND'], ['materium', 'INV_NAME_MATERIUM'], ['crawbell', 'INV_NAME_CRAWBELL'],
+  ['simple-key', 'INV_NAME_TOKEN_FAITH'], ['slab-keys', 'INV_NAME_SLAB_KEYRING'], ['white-key', 'INV_NAME_WARD_KEY'],
+  ['surgeons-key', 'INV_NAME_WARD_BOSS_KEY'], ['architects-key', 'INV_NAME_ARCHITECT_KEY'], ['diving-bell-key', 'INV_NAME_DOCK_KEY'],
+  ['bellhome-key', 'INV_NAME_BELL_HOUSE_KEY'], ['craw-summons', 'INV_NAME_CRAW_SUMMONS'],
 ];
+/* How a save says Hornet has had each of those (js/savefile.js game() reads them, its checks'
+   shapes): had: one check; of: one check per piece, the count the ones that hold (its maximum
+   their number). A key is spent at its door, and a Bellhome piece once installed, so each is
+   "held, or what having it did". Read over the author's 88 saves (24-Oct-2026), 0% to 100%,
+   Steel Soul among them:
+     simple-key    the four the wiki lists, by where each is had: Pebb's (or, in Act 3, Grindle's:
+                   the same ShopItem flag), the Roachkeeper's, Jubilana's and the Sands of Karak
+                   corpse's pickup. Held plus the four doors opened equals it in every save.
+     white-key     found in the Songclave (collectedWardKey), or bought from Jubilana once it's a
+                   town (MerchantEnclaveWardKey: the Steel Soul game, whose collectedWardKey stays false).
+     bellhome-key  as the Map's mark (js/spots.js EXTRAS 'key'): Pavo's last line, the bell opened, or held.
+     craw-summons  held, then spent at the Craws' door (OpenedCrowSummonsDoor).
+     materium      held, or assembled (ConstructedMaterium).
+   No save holds the Plasmium Gland (Zylotol's wish, never done there) or the Crawbell: theirs are
+   the game's own (the item held; the Crawbell's pickup and CrawbellInstalled, as the Map's mark). */
+const HELD = {
+  'plasmium-gland': { had: ['held', 'Plasmium Gland'] },
+  materium: { had: ['any', ['held', 'Materium'], ['flag', 'ConstructedMaterium']] },
+  crawbell: { had: ['any', ['held', 'Crawbell'], ['flag', 'CrawbellInstalled'], ['bool', 'Room_CrowCourt_02', 'Collectable Item Pickup Crawbell']] },
+  'simple-key': { of: [['flag', 'PurchasedBonebottomFaithToken'], ['flag', 'CollectedDustCageKey'], ['flag', 'MerchantEnclaveSimpleKey'],
+    ['bool', 'Bellshrine_Coral', 'Collectable Item Pickup']] },
+  'slab-keys': { of: [['flag', 'HasSlabKeyA'], ['flag', 'HasSlabKeyB'], ['flag', 'HasSlabKeyC']] },
+  'white-key': { had: ['any', ['held', 'Ward Key'], ['flag', 'collectedWardKey'], ['flag', 'MerchantEnclaveWardKey']] },
+  'surgeons-key': { had: ['any', ['held', 'Ward Boss Key'], ['flag', 'collectedWardBossKey']] },
+  'architects-key': { had: ['any', ['held', 'Architect Key'], ['flag', 'PurchasedArchitectKey']] },
+  'diving-bell-key': { had: ['any', ['held', 'Dock Key'], ['flag', 'BallowGivenKey']] },
+  'bellhome-key': { had: ['any', ['held', 'Belltown House Key'], ['flag', 'BelltownGreeterHouseFullDlg'], ['flag', 'BelltownHouseUnlocked']] },
+  'craw-summons': { had: ['any', ['held', 'Craw Summons'], ['flag', 'OpenedCrowSummonsDoor']] },
+};
+for (const id of Object.keys(HELD)) if (!ITEMS.some(([x]) => x === id)) fail(`HELD names ${id}, which ITEMS doesn't list`);
 /* Their description, the inventory's: INV_DESC_ for INV_NAME_; the Crafting Kit has none of its
    own, and shares the Tool Pouch's pane text (INV_DESC_POUCHANDTOOLKIT); the Journal has none.
    The Silkeater's is two of the game's texts, what it is and what it does, read as one paragraph. */
 const ITEM_DESC = { 'crafting-kit': 'INV_DESC_POUCHANDTOOLKIT', silkeater: 'INV_DESC_SILK_GRUB+INV_DESC_SILK_GRUB_FUNCTION' };
+// Every item but the Journal has its text (a key renamed in a patch stops the run).
+const NO_DESC = ['hunters-journal'];
 // How many can be held, from the item's wiki infobox ("max = 10").
 const ITEM_MAX = { silkeater: 'Silkeater' };
 const maxOf = (id) => {
@@ -452,8 +491,12 @@ const maxOf = (id) => {
   if (!m) fail(`${ITEM_MAX[id]}: no max in its infobox`);
   return Number(m[1]);
 };
-const buildItems = () => ITEMS.map(([id, key, art]) => ({ id, key, name: text(key),
-  desc: (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined, art, max: maxOf(id) }));
+const buildItems = () => ITEMS.map(([id, key, art]) => {
+  const desc = (ITEM_DESC[id] ? text(ITEM_DESC[id], true) : text(key.replace('INV_NAME_', 'INV_DESC_'), true)) || undefined;
+  if (!desc && !NO_DESC.includes(id)) fail(`the item ${id} has no description (${key})`);
+  const h = HELD[id] || {};
+  return { id, key, name: text(key), desc, art, max: h.of ? h.of.length : maxOf(id), had: h.had, of: h.of };
+});
 
 /* The Shell Shards' capacity, read from the Tool Pouch & Crafting Kit page's sentence ("a capacity
    of 400, up to 800", "by 100"); it fails if the wiki rewords it. */
@@ -518,7 +561,9 @@ const HORNET = {
      attacks      a Crest's slashes when they aren't one hit at 1x the Needle (the Architect's
                   drills, the Witch's whip): { slash, down, run }, each hits [×Needle, times],
                   charged (held) and onHit (only when it lands); read from the Crest's page.
-     MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'.`;
+     MODIFIERS    add = into (1 + Σ), mul = after it; to = 'needle' or 'skill'.
+     ITEMS        art: the folder of its picture when not items/; max: how many can be held or had;
+                  had / of: how a save says it was had, one check or one per piece (js/savefile.js).`;
   const size = write(OUT, header, 'data', parts);
   console.log(`js/data.js: ${crests.length} Crests, ${tools.length} Tools, ${skills.length} Silk Skills (${(size / 1024).toFixed(1)} KB)`);
 })().catch((e) => { console.error(e.message); process.exitCode = 1; });

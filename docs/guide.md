@@ -146,7 +146,9 @@ and under each what breaks into it, counted, with the sum you would get from bre
 five Rosary strings and necklaces under the rosaries; the Beast Shards, Shard Bundles, Pristine
 Cores, Hornet Statuettes and the Growstone under the shards, the last only in a Steel Soul game or Free mode; and under
 both, the **Silkeaters** you hold, up to ten, the grubs you consume to bring your cocoon back); the **items** (the
-Everbloom, the Farsight, the Hunter's Journal, the Old Hearts, the melodies and the fleas); the
+Everbloom, the Plasmium Gland, the Bellhome's Farsight, Materium and Crawbell, the Hunter's Journal,
+the keys, the Old Hearts, the melodies and the fleas: a key stays found once spent at its door, the
+Simple Keys count of 4 and the Slab's of 3); the
 **Relics** (how many you hold of each kind) and the **Mementos**. Crests, items, what's in the
 purse, Relics and Mementos are plates with their name, and under it their count or «Not found
 yet». Every head says how many of how many, and its rule lights up that far (complete, its diamond
@@ -158,10 +160,10 @@ In **Free mode** it's your game, marked by hand, and it starts as the game does:
 with the base Needle, five masks, nine silk and the Hunter Crest, nothing else. A line under the
 title says so. On the left, tap a Needle, a mask, a bead of
 silk, a Silk Heart or a level (tap the last one lit to take it back). Tap a Tool,
-Crest, Silk Skill, ability, the Everbloom, the Farsight, the Journal, an Old Heart, a melody or a
+Crest, Silk Skill, ability, an item or key, an Old Heart, a melody or a
 Memento to mark it had or not (its text opens under the shelf); a slot a Tool shares with its
 upgrade goes none, had, upgraded with each tap. Each shelf has «All · None», and what comes in numbers (loose Mask
-Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, fleas, what's in the purse, the
+Shards and Spool Fragments, Memory Lockets, Craftmetal, Pale Oil, the Simple and Slab keys, fleas, what's in the purse, the
 Silkeaters, the Relics of each kind) has − N +, its maximum beside the figure («− 6/20 +»): the loose shards and fragments stop at what the masks and silk
 left unfilled. The Rosaries and Shell Shards are typed: Enter or leaving the field
 takes the figure, and the shards stop at what your Pouch holds. With the keyboard, the focus stays
