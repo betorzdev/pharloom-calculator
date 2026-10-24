@@ -632,18 +632,20 @@
       if (own && ((mode === 'steel' && !steelGame) || (spot && !own.steelSpots.includes(spot)))) return;
       /* Of the places one thing may be in (alt: a Flintbeetle's two, by the shortcut; the Bellbeast's
          twelve stations while its wish is on), only the one this game has it in; all in Free mode
-         or when the slot can't say (kept before it). */
-      if (alt && own && (own.elsewhere || []).includes(i)) return;
+         or when the slot can't say (kept before it). A wish done (alt.vanish: the Bellbeast's) has
+         no pin at all, yet its marks stay in the list: it counts as had, once (layout). */
+      const doneStep = (j) => !!g && (g.tasks || []).includes(j);
+      const vanish = !!(alt && alt.vanish && own && (own.elsewhere || []).includes(i) && doneStep(i));
+      if (alt && own && (own.elsewhere || []).includes(i) && !vanish) return;
       const boss = kind === 'wspot' && WISH_FIGHT[quest] && bossAt.get(lower(scene) + '|' + WISH_FIGHT[quest]);
       if (boss) { boss.quests = (boss.quests || []).concat(quest); folded.set('task:' + i, boss.key); return; }
       /* An objective's steps the game pins on one point (js/spots.js STEPS: D32) are one mark, the
          first step's: done once all are, named by the step this game is on, its Act the first's. */
       const steps = stepsOf.get(i);
       if (steps && steps[0] !== i) { folded.set('task:' + i, 'task:' + steps[0]); return; }
-      const doneStep = (j) => !!g && (g.tasks || []).includes(j);
       const now = steps ? steps.find((j) => !doneStep(j)) : i;
       const w = CO.WISHES[wishOf(quest)], q = steps && now != null ? SP.TASKS[now][1] : quest;
-      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? (SP.GOAL_ACT || {})[i] : w && w[1], got: steps ? steps.every(doneStep) : doneStep(i), lost: gone === 'act3' ? goneAct3(own) : null, quest: q, chk: JSON.stringify(check), alt, steps,
+      add({ key: 'task:' + i, layer: kind, scene, act: kind === 'goal' ? (SP.GOAL_ACT || {})[i] : w && w[1], got: steps ? steps.every(doneStep) : doneStep(i), lost: gone === 'act3' ? goneAct3(own) : null, quest: q, chk: JSON.stringify(check), alt, steps, vanish,
         name: name ? pick(name) : pick(QU.CHAIN[q].name), sub: name ? pick(QU.CHAIN[quest].name) : '',
         draw: (s, ti, k, c) => dot(kind, `assets/map/${art}.webp`, s, ti, k, c) });
     });
@@ -947,6 +949,7 @@
       // In a focus, its marks whatever the filter, had and lost ones dimmed as always (the sibling's).
       const had = !!(g && m.got), lost = !had && closed(m, g), hide = !prefs.mapHad && !inFocus;
       if (had) { if (first) c.had++; if (hide) continue; } else if (lost) { if (hide) continue; } else if (first) c.shown++;
+      if (m.vanish) continue;   // counted as had (the Bellbeast's wish, done), but no pin
       const p = m.fix || pointOf(m);
       if (!p) continue;
       placed.set(m.key, { x: p.x, y: p.y, lift: m.rests ? REST : 0 });
@@ -1087,8 +1090,9 @@
     const r = cv.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
     const w = Math.round(r.width * dpr), h = Math.round(r.height * dpr);
     if (!w || !h) return;
-    const { view, key } = areaCtx, box = areaCut(r);
-    const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale;
+    const { view, key, box: area } = areaCtx, box = areaCut(r);
+    // Composed for the area's box only (MP.compose's clip): another area is composed again.
+    const scale = w / box.w > 1.1 ? 2 : 1, ck = key + '@' + scale + '@' + [area.x, area.y, area.w, area.h].join(',');
     const draw = () => {
       if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; }
       MP.paint(cv.getContext('2d'), areaComp, box, w, h);
@@ -1096,7 +1100,7 @@
     if (areaCompKey === ck) { draw(); return; }
     sheet(scale, () => {
       if (!cv.isConnected) return;
-      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas);
+      areaComp = MP.compose(view, sheets[scale].img, scale, faintOf(), makeCanvas, area);
       areaCompKey = ck;
       draw();
     });
