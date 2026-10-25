@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1952,6 +1952,26 @@ B a stronger off for every switch, C both. **Decision: C** (Albert, 24 October 2
 Measured again (390): the Crests 100 on, 17 off; the Silk Skills the same; the other nine 26 to 40
 on, about 4 off; every name 90 on, 49 off. Checked in headless Chrome over file:// (npm run drive,
 port 9467): a real save and Free mode, some layers off, 1440 and 390, es and en, no console errors.
+
+### The givers' figures (25 October 2026)
+
+«Who gives a 100% thing» (`ELSEWHERE: 'person'` in `tools/gen-people.js`) drew every mark with the
+herald, the layer's emblem, though Plinney, Pinstress, Loddie and Mooshka had figures all along, and
+Lumble got his (PR #192). The options went to Albert in `108-giver-figures-variants.html` (the
+givers focused with the «Everyone else» people of their area, a real save and Free mode, 1440 and
+390; kept out of the repo): A the herald, as before; B each giver's own figure, as «Everyone else»
+draws people; C the figure with a small herald disc on its lower right. **Decision: C** (Albert,
+25 October 2026):
+
+- **Each giver's figure**, from `js/people.js GIVERS` (npc id → `people/<id>`, written by
+  `tools/gen-people.js` from the title key of `js/how.js NPCS`), **the herald on its lower right**:
+  the had tick's disc mirrored (same radius, ringed as the mark's rim, `.mp-giver`), so it never
+  meets the tick, the cross or a cluster's count, all on the upper right. The same in the card and
+  the lists (the HTML badge, `GIVER_HERALD`).
+- **No figure, the herald alone**: Eva. The legend switch keeps the herald.
+
+Checked in headless Chrome over file:// (npm run drive, port 9465): Plinney, Pinstress and Eva
+focused with their cards, restoreData21 and Free mode, 1440 and 390, es and en, no console errors.
 
 ## Step 7 · Journal
 

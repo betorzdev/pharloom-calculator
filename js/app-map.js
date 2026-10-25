@@ -355,7 +355,10 @@
      for it), gone, and where: the scenes they're in now (null: every spot, as in Free mode). A
      field the save doesn't carry (a slot kept before) says nothing. */
   const truthy = (v) => v === true || (typeof v === 'number' && v > 0);
-  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : ICON('quest_icon_large_0006_herald'));
+  const HERALD = ICON('quest_icon_large_0006_herald');
+  // The herald on a giver's figure, in a list or a card (css .mp-giver; on the Map, GIVER_DISC).
+  const GIVER_HERALD = `<span class="mp-giver" aria-hidden="true"><img src="${HERALD}" alt="" loading="lazy"></span>`;
+  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : HERALD);
   function personNow(x, own) {
     const v = own && own.peopleVars;
     if (!v) return { met: null, gone: false, where: null };
@@ -663,12 +666,15 @@
     });
     // Who gives a thing of the 100%, but where they sell it: their shop is them (Jubilana in the Songclave).
     const sameRoom = (a, b) => lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+    /* Each one their own figure, the herald small on its lower right (design/03-redesign.md, step 6,
+       round 108, C): it still says «gives a thing of the 100%». With no figure (Eva), the herald. */
+    const fig = (id) => (PE.GIVERS || {})[id];
     // Scrounge, who only buys the relics, goes among the shops, his key kept (js/map-fixes.js).
     for (const [id, scene] of Object.entries(SP.PEOPLE)) {
       if ((SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) continue;
       if (id === 'scrounge') { add({ key: 'person:' + id, layer: 'shop', scene, got: false, npc: id, name: t('mapScrounge'), draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }); continue; }
-      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
-        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) }, own);
+      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]), giver: !!fig(id),
+        draw: (s, ti, k, c) => badge('person', fig(id) ? img(`assets/map/${fig(id)}.webp`) + GIVER_HERALD : img(HERALD), s, ti, k, c) }, own);
     }
     /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
        (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
@@ -955,9 +961,12 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${m.giver ? GIVER_DISC : ''}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
   // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
   const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
+  /* A giver's herald (round 108, C): the tick's disc mirrored onto the lower right, so it never meets
+     the tick, the cross or a cluster's count (all on the upper right), the herald inside. */
+  const GIVER_DISC = `<g class="mp-giver" aria-hidden="true"><circle cx="0.36" cy="0.36" r="0.22"/><image href="${HERALD}" x="0.2" y="0.2" width="0.32" height="0.32"/></g>`;
   // What the game took away (design/86, 1 A): the tick's disc in --muted, a cross where the tick goes.
   const LOST_CROSS = '<g class="mp-cross" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.29 -0.43 L0.43 -0.29 M0.43 -0.43 L0.29 -0.29"/></g>';
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');

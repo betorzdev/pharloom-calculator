@@ -2894,6 +2894,10 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-cross { pointer-events: none; }
 .mp-cross circle { fill: var(--scene-bg); stroke: var(--muted); stroke-width: 0.05; }
 .mp-cross path { fill: none; stroke: var(--muted); stroke-width: 0.06; stroke-linecap: round; }
+/* Who gives a thing of the 100% (design/03-redesign.md, step 6, round 108, C): their figure, the
+   herald small on its lower right, in a disc ringed as the mark's own. */
+.mp-giver { pointer-events: none; }
+.mp-giver circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.05; }
 .mp-glyph { color: var(--ink-strong); }
 /* Behind the picture, the inventory's pale plate (--halo-plate), so a dark portrait or a thin
    needle reads on the black disc. */
@@ -2984,6 +2988,11 @@ span.mp-pin { border-radius: 50%; background: var(--scene-bg); border: 1px solid
 .mp-pin svg { width: 55%; height: 55%; }
 .mp-pin.is-gauntlet img { width: 80%; height: 80%; object-fit: contain; }
 .mp-pin.is-badge img { width: calc(var(--mp-s, 22px) * 0.8); height: calc(var(--mp-s, 22px) * 0.8); object-fit: contain; }
+/* The same in a list or a card: the tick's place mirrored (js/app-map.js GIVER_HERALD). */
+:is(.mp-card-art, .hm-art.is-mark, .mp-adm, .mp-near-list) .mp-pin.is-person { position: relative; }
+.mp-pin .mp-giver { position: absolute; left: 64%; top: 64%; width: 44%; height: 44%; display: grid; place-items: center;
+  border-radius: 50%; background: var(--scene-bg); border: 1px solid var(--line-ctl); }
+.mp-pin.is-badge .mp-giver img { width: 72%; height: 72%; }
 .mp-pin.is-off { filter: var(--missing-soft) drop-shadow(0 1px 2px var(--badge-shadow)); opacity: var(--missing-soft-opacity); }
 /* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
    previous bench), her feet and her middle on the point. */
