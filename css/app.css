@@ -1567,15 +1567,15 @@ kbd {
   .pg-walls { grid-template-columns: minmax(0, 1fr); }
   .pg-wall + .pg-wall { border-left: 0; border-top: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); padding-top: var(--sp-6); }
 }
-/* A task left, with air: no rule between lines, the pane's picture larger; a promised one lit
-   faintly, what it asks counted as the pane counts it (its slim bar, or a dot each for twelve or
-   fewer: assets/icons/tasks, tools/extract-wish-icons.py). */
+/* A task left, with air: no rule between lines, the pane's picture larger; a promised one marked by
+   the game's hollow diamond alone, no box behind it (design/110, 4 A), what it asks counted as the
+   pane counts it (its slim bar, or a dot each for twelve or fewer: assets/icons/tasks,
+   tools/extract-wish-icons.py). */
 .pg-tasks .pg-item { grid-template-columns: var(--sp-3) 44px minmax(0, 1fr) 28px; gap: 0 var(--sp-2); padding: var(--sp-2) var(--sp-1); border-bottom: 0; }
 .pg-tasks .pg-art { width: 44px; height: 44px; }
 .pg-tasks .pg-art img { max-width: 42px; max-height: 42px; }
 .pg-tasks .pg-name { white-space: normal; }
 .pg-tasks .pg-how { line-height: 1.4; }
-.pg-tasks .pg-item.is-promised { background: linear-gradient(to right, var(--veil), transparent 70%); }
 .pg-meters { display: grid; gap: var(--sp-1); margin-top: var(--sp-half); }
 .pg-meter { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
 .pg-meter-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
@@ -1590,18 +1590,44 @@ kbd {
 .pg-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin: 0; padding: 0; list-style: none; }
 .pg-pics img { display: block; width: 30px; height: 30px; object-fit: contain; opacity: 0.3; }
 .pg-pics .is-done img { opacity: 0.75; }
-/* Who asks in person: a gallery, each standing large over their name, flowing in columns with no holes. */
-.pg-people { columns: 4 calc(var(--sp-16) * 3.75); column-gap: var(--sp-6); }
-.pg-person { display: grid; gap: var(--sp-2); margin-bottom: var(--sp-6); break-inside: avoid; }
-.pg-person-who { display: grid; justify-items: center; gap: var(--sp-half); padding-bottom: var(--sp-2); text-align: center; border-bottom: 1px solid color-mix(in oklab, var(--filigree) 12%, transparent); }
-.pg-person-who > img, .pg-person-none { width: 88px; height: 88px; object-fit: contain; }
-.pg-person-none { display: grid; place-items: center; }
+/* Who asks in person (design/110, 1 A, 2 A, 3 A, 4 A): one row each, read across: the figure in a
+   slot of its own on a pool of its area's light (--area-line, --area-fill, set inline as the
+   walls'), the name, where and the count; then what's left as lines, two side by side where there's
+   room, and what's later or done as pictures. The people parted by a hairline fading at both ends,
+   as the game's dividers. Who has nothing to take now waits in a strip at the end, figures only. */
+.pg-people { --rule: linear-gradient(to right, transparent, color-mix(in oklab, var(--filigree) 18%, transparent) 15%, color-mix(in oklab, var(--filigree) 18%, transparent) 85%, transparent);
+  display: grid; background: var(--rule) bottom / 100% 1px no-repeat; }
+.pg-person { display: grid; grid-template-columns: 72px calc(var(--sp-16) * 3.2) minmax(0, 1fr); align-items: start; gap: 0 var(--sp-4); padding: var(--sp-3) var(--sp-2);
+  background: var(--rule) top / 100% 1px no-repeat; }
+.pg-person-fig { position: relative; display: grid; place-items: end center; width: 72px; height: 72px; }
+.pg-person-fig::before { content: ""; position: absolute; left: 50%; bottom: calc(-1 * var(--sp-1)); width: 150%; height: 70%; transform: translateX(-50%);
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--area-line, var(--spotlight)) 24%, transparent), transparent); pointer-events: none; }
+.pg-person-fig img { position: relative; width: 100%; height: 100%; object-fit: contain;
+  filter: drop-shadow(0 var(--sp-1) var(--sp-2) color-mix(in oklab, var(--area-fill, var(--scene-glow)) 90%, transparent)); }
+.pg-person-none { position: relative; display: grid; place-items: center; width: 100%; height: 100%; }
 .pg-person-none i { width: var(--sp-3); height: var(--sp-3); transform: rotate(45deg); border: 1px solid var(--line-ctl); }
-.pg-person-who h4 { margin: var(--sp-1) 0 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
+.pg-person-who { display: grid; gap: var(--sp-half); align-content: center; min-width: 0; min-height: 72px; }
+.pg-person-who h4 { margin: 0; font-family: var(--font-display); font-size: var(--fs-md); font-weight: 400; color: var(--ink-strong); }
 .pg-person-who p { margin: 0; font-size: var(--fs-xs); color: var(--muted); }
+.pg-person-wishes { display: grid; gap: var(--sp-2); min-width: 0; }
+.pg-person-wishes .pg-tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--sp-16) * 5.5), 1fr)); gap: 0 var(--sp-4); }
+.pg-person-pics { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.pg-folk-sec .pg-tasks-l { margin-top: var(--sp-4); }
+.pg-folk { display: grid; grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 2)); gap: var(--sp-3) var(--sp-4); margin: 0; padding: 0; list-style: none; }
+.pg-folk li { display: grid; justify-items: center; align-content: start; gap: var(--sp-1); min-width: 0; text-align: center; font-size: var(--fs-xs); color: var(--ink-2); }
+.pg-folk .pg-person-fig { width: 52px; height: 52px; }
+.pg-folk .pg-person-pics, .pg-folk .pg-pics { justify-content: center; }
+.pg-folk .pg-pics img { width: 22px; height: 22px; }
+.pg-folk.is-later .pg-person-fig img { opacity: 0.45; filter: grayscale(0.6); }
+.pg-folk.is-later .pg-folk-name { color: var(--muted); }
 @media (max-width: 700px) {
   .pg-track { grid-template-columns: minmax(0, 1fr); }
   .pg-track-row { flex-wrap: wrap; justify-content: center; }
+  .pg-person { grid-template-columns: 56px minmax(0, 1fr); gap: var(--sp-1) var(--sp-3); padding-inline: 0; }
+  .pg-person > .pg-person-fig { width: 56px; height: 56px; }
+  .pg-person-who { min-height: 56px; }
+  .pg-person-wishes { grid-column: 1 / -1; }
+  .pg-folk { grid-template-columns: repeat(auto-fill, calc(var(--sp-16) * 1.4)); gap: var(--sp-3) var(--sp-2); }
 }
 /* The 100% and Tasks (design/75, 2 B): an open group's rows take the whole width, and on a wide
    screen each thing is one line: its picture, its name, how to get it, where, the pin. */
@@ -2681,29 +2707,30 @@ html:has(.mp.is-full) { overflow: hidden; }
 /* A caret in plain ink: the frame's light is the tab's colour, never a control's. */
 .mp-caret { flex: none; width: 10px; height: 10px; color: var(--ink-2); transition: rotate var(--dur) var(--ease); }
 .mp-sec.is-open .mp-fold .mp-caret, .mp-more[aria-expanded="true"] .mp-caret { rotate: 90deg; }
-/* The group's title is its switch: all on in ink, some in ink-2, none muted. */
+/* The group's title is its switch: all on in ink, some in ink-2, none in --ink-off. */
 .mp-sec-sw { display: flex; flex: 1; align-items: center; gap: var(--sp-3); min-height: var(--ctl); padding: 0; text-align: left; color: var(--ink-strong); }
 .mp-sec-sw.is-some { color: var(--ink-2); }
-.mp-sec-sw.is-none { color: var(--muted); }
+.mp-sec-sw.is-none { color: var(--ink-off); }
 .mp-sec-sw:is(:hover, :focus-visible) .mp-sec-t, .mp-fold:is(:hover, :focus-visible) + .mp-sec-sw .mp-sec-t { color: var(--accent); }
 .mp-sec-t { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; letter-spacing: var(--track-caps); text-transform: uppercase; transition: color var(--dur) var(--ease); }
 .mp-kinds { display: flex; flex-wrap: wrap; gap: var(--sp-1) var(--sp-6); padding: 0 0 var(--sp-3) var(--sp-6); }
-/* A layer: the game's picture, bare, is the switch; off, in grey (the Inventory's missing look). */
+/* A layer: the game's picture, bare, is the switch; off, its picture grey and faded and its name in
+   --ink-off (design/109, C): no hue, as the game selects with white on grey. */
 .mp-kind { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-sm); color: var(--ink); text-align: left; }
 .mp-kind-t { transition: color var(--dur) var(--ease); }
 .mp-kind:is(:hover, :focus-visible) .mp-kind-t { color: var(--accent); }
-.mp-kind.is-off .mp-kind-t, .mp-kind.is-off .mp-n b { color: var(--muted); }
+.mp-kind.is-off :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
 /* Nothing of it up to the Act chosen: greyed as off, its count 0. */
-.mp-kind.is-empty .mp-kind-t, .mp-kind.is-empty .mp-n b { color: var(--muted); }
-.mp-kind.is-empty .mp-art > img { filter: var(--missing-art); }
-.mp-kind.is-empty .mp-art > svg { opacity: 0.35; }
+.mp-kind.is-empty :is(.mp-kind-t, .mp-n, .mp-n b) { color: var(--ink-off); }
+.mp-kind.is-empty .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-empty .mp-art > svg { opacity: 0.25; }
 .mp-art { --a: 28px; flex: none; display: inline-grid; place-items: center; width: var(--a); height: var(--a); color: var(--ink-2); }
 .mp-art > img { display: block; width: var(--a); height: var(--a); max-width: none; object-fit: contain; transition: filter var(--dur) var(--ease), opacity var(--dur) var(--ease); }
 .mp-art > svg { width: 70%; height: 70%; }
 /* The Needle, a long thin line, laid across as on the map. */
 .mp-art.is-needle > img { transform: rotate(35deg) scale(1.15); }
-.mp-kind.is-off .mp-art > img { filter: var(--missing-art); }
-.mp-kind.is-off .mp-art > svg { opacity: 0.35; }
+.mp-kind.is-off .mp-art > img { filter: var(--layer-off-art); }
+.mp-kind.is-off .mp-art > svg { opacity: 0.25; }
 /* A set with some of its layers off: its picture half lit. */
 .mp-kind.is-some .mp-art > img { filter: grayscale(0.5) brightness(0.75); }
 /* How many: had of total in the figures' face; complete, in --good. */
@@ -2760,10 +2787,15 @@ html:has(.mp.is-full) { overflow: hidden; }
   /* Whole, the map is too short to float the search on: it goes above it. */
   .mp-stage { display: flex; flex-direction: column; }
   .mp-find { position: static; order: -1; width: auto; margin: 0 var(--sp-3) var(--sp-2); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-3)); }
-  /* The focus's line keeps the room the search leaves for the zoom's three buttons outside its
-     frame, its name over ‹ i of n › and the way out (that at the right). */
-  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; margin-right: calc(var(--ctl-sm) * 3 + var(--sp-3) * 2); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
-  .mp-focus-t { flex-basis: 100%; }
+  /* The focus's line takes the whole width, the zoom's three buttons over its top right corner:
+     its name beside them, whole (it wraps) with one thing's area under it as the card writes it
+     (design/107, A), then ‹ i of n › and the way out (that at the right) on one row below them. */
+  .mp-find.mp-focus { flex-wrap: wrap; width: auto; max-width: none; padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp.is-full .mp-find.mp-focus { right: var(--sp-3); padding: var(--sp-1) var(--sp-1) var(--sp-1) var(--sp-3); }
+  .mp-focus-t { flex-basis: 100%; min-height: calc(var(--ctl-sm) - var(--sp-1)); padding-right: calc(var(--ctl-sm) * 3 + var(--sp-2)); }
+  .mp-focus-t > span { overflow: visible; white-space: normal; }
+  .mp-focus-dot { display: none; }
+  .mp-focus-a { display: block; font-size: var(--fs-xs); color: var(--muted); }
   .mp-focus .mp-focus-x { margin-left: auto; }
   /* Whole, the map is small: smaller marks, so they don't cover it. */
   .mp-view:not(.is-zoomed) { --mp-s: 16px; }
@@ -2823,6 +2855,10 @@ img.mp-fit { transform: translate(calc(var(--fx) * 100%), calc(var(--fy) * 100%)
 .mp-cross { pointer-events: none; }
 .mp-cross circle { fill: var(--scene-bg); stroke: var(--muted); stroke-width: 0.05; }
 .mp-cross path { fill: none; stroke: var(--muted); stroke-width: 0.06; stroke-linecap: round; }
+/* Who gives a thing of the 100% (design/03-redesign.md, step 6, round 108, C): their figure, the
+   herald small on its lower right, in a disc ringed as the mark's own. */
+.mp-giver { pointer-events: none; }
+.mp-giver circle { fill: var(--scene-bg); stroke: var(--line-ctl); stroke-width: 0.05; }
 .mp-glyph { color: var(--ink-strong); }
 /* Behind the picture, the inventory's pale plate (--halo-plate), so a dark portrait or a thin
    needle reads on the black disc. */
@@ -2913,6 +2949,11 @@ span.mp-pin { border-radius: 50%; background: var(--scene-bg); border: 1px solid
 .mp-pin svg { width: 55%; height: 55%; }
 .mp-pin.is-gauntlet img { width: 80%; height: 80%; object-fit: contain; }
 .mp-pin.is-badge img { width: calc(var(--mp-s, 22px) * 0.8); height: calc(var(--mp-s, 22px) * 0.8); object-fit: contain; }
+/* The same in a list or a card: the tick's place mirrored (js/app-map.js GIVER_HERALD). */
+:is(.mp-card-art, .hm-art.is-mark, .mp-adm, .mp-near-list) .mp-pin.is-person { position: relative; }
+.mp-pin .mp-giver { position: absolute; left: 64%; top: 64%; width: 44%; height: 44%; display: grid; place-items: center;
+  border-radius: 50%; background: var(--scene-bg); border: 1px solid var(--line-ctl); }
+.mp-pin.is-badge .mp-giver img { width: 72%; height: 72%; }
 .mp-pin.is-off { filter: var(--missing-soft) drop-shadow(0 1px 2px var(--badge-shadow)); opacity: var(--missing-soft-opacity); }
 /* Hornet at her bench: the .hn sprite (sitting; running while js/app-hornet.js walks her from the
    previous bench), her feet and her middle on the point. */

@@ -99,8 +99,11 @@
     L('tools-blue', () => t('ct_blue'), 'assets/icons/tools/druids-eye.webp'),
     L('tools-yellow', () => t('ct_yellow'), 'assets/icons/tools/compass.webp'),
     L('tools-other', () => t('mapToolsOut'), 'assets/icons/tools/snare-setter.webp'),
-    L('crests', () => t('cat_crests'), 'assets/icons/crests/reaper.webp'),
-    L('skills', () => t('cat_skills'), 'assets/icons/skills/silkspear.webp'),
+    /* The Crests and the Silk Skills in the game's lit pictures (design/109, C): the pause menu's
+       Crest tab and the Silk Skill's solid inventory sprite; their line art is hairlines at 28 px,
+       barely changed when off. */
+    L('crests', () => t('cat_crests'), ICON('hornet_inv_pane_icons_0001_crest')),
+    L('skills', () => t('cat_skills'), 'assets/icons/skills-inv/silkspear.webp'),
     // The abilities: the seven of the 100% (js/completion.js ARTS) and the four outside it.
     L('arts', () => t('mapArtsIn'), 'assets/icons/arts/swift-step.webp'),
     L('arts-other', () => t('mapToolsOut'), 'assets/icons/arts/drifters-cloak.webp'),
@@ -352,7 +355,10 @@
      for it), gone, and where: the scenes they're in now (null: every spot, as in Free mode). A
      field the save doesn't carry (a slot kept before) says nothing. */
   const truthy = (v) => v === true || (typeof v === 'number' && v > 0);
-  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : ICON('quest_icon_large_0006_herald'));
+  const HERALD = ICON('quest_icon_large_0006_herald');
+  // The herald on a giver's figure, in a list or a card (css .mp-giver; on the Map, GIVER_DISC).
+  const GIVER_HERALD = `<span class="mp-giver" aria-hidden="true"><img src="${HERALD}" alt="" loading="lazy"></span>`;
+  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : HERALD);
   function personNow(x, own) {
     const v = own && own.peopleVars;
     if (!v) return { met: null, gone: false, where: null };
@@ -366,6 +372,12 @@
     const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
     return { met, gone, where: where.size ? where : null };
   }
+  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's) has them now
+     (js/savefile.js peopleHere); with no save, or no word of it in the slot, it's shown. */
+  const hereNow = (own, id, scene) => {
+    const h = own && own.peopleHere, k = id + ':' + lower(scene);
+    return !h || !(k in h) || h[k] === true;
+  };
   // The Journal entries whose things have a switch of their own (the Void Masses' cores).
   const OWN_SWITCH = new Set(SP.EXTRAS.filter((x) => layerOf(x) === 'void-mass').map((x) => x[4] && x[4].key).filter(Boolean));
   // A mark folded into another's card (a wish's place that is a boss's fight) → that mark's key.
@@ -596,7 +608,8 @@
     }
     for (const [v, scenes] of Object.entries(SP.VENDORS)) {
       if (vendorGone(own, v)) continue;   // taken away for good (js/spots.js LEFT: the Twelfth Architect)
-      if (v === 'shakra') { scenes.forEach((scene, i) => add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
+      // Shakra only where your game has her now (she moves on as Hornet does: js/people.js HERE).
+      if (v === 'shakra') { scenes.forEach((scene, i) => hereNow(own, 'shakra', scene) && add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
         draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
@@ -653,12 +666,15 @@
     });
     // Who gives a thing of the 100%, but where they sell it: their shop is them (Jubilana in the Songclave).
     const sameRoom = (a, b) => lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+    /* Each one their own figure, the herald small on its lower right (design/03-redesign.md, step 6,
+       round 108, C): it still says «gives a thing of the 100%». With no figure (Eva), the herald. */
+    const fig = (id) => (PE.GIVERS || {})[id];
     // Scrounge, who only buys the relics, goes among the shops, his key kept (js/map-fixes.js).
     for (const [id, scene] of Object.entries(SP.PEOPLE)) {
       if ((SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) continue;
       if (id === 'scrounge') { add({ key: 'person:' + id, layer: 'shop', scene, got: false, npc: id, name: t('mapScrounge'), draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }); continue; }
-      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
-        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) }, own);
+      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]), giver: !!fig(id),
+        draw: (s, ti, k, c) => badge('person', fig(id) ? img(`assets/map/${fig(id)}.webp`) + GIVER_HERALD : img(HERALD), s, ti, k, c) }, own);
     }
     /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
        (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
@@ -676,6 +692,7 @@
       if (now.gone) continue;
       for (const [scene, px, py] of x.spots) {
         if (now.where && !now.where.has(lower(scene))) continue;
+        if (!hereNow(own, x.id, scene)) continue;
         add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
           off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
       }
@@ -944,9 +961,12 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${m.giver ? GIVER_DISC : ''}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
   // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
   const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
+  /* A giver's herald (round 108, C): the tick's disc mirrored onto the lower right, so it never meets
+     the tick, the cross or a cluster's count (all on the upper right), the herald inside. */
+  const GIVER_DISC = `<g class="mp-giver" aria-hidden="true"><circle cx="0.36" cy="0.36" r="0.22"/><image href="${HERALD}" x="0.2" y="0.2" width="0.32" height="0.32"/></g>`;
   // What the game took away (design/86, 1 A): the tick's disc in --muted, a cross where the tick goes.
   const LOST_CROSS = '<g class="mp-cross" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.29 -0.43 L0.43 -0.29 M0.43 -0.43 L0.29 -0.29"/></g>';
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
@@ -1331,11 +1351,11 @@
     const on = layersOn();
     if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
     savePrefs();
-    focusMarks([key], [m.name, areaName(R.areaOf(m.scene) || m.area)].filter(Boolean).join(' · '));
+    focusMarks([key], m.name, areaName(R.areaOf(m.scene) || m.area));
   };
   // The Map on these marks alone, whatever its layers and filters: one centred with its card, several fitted.
-  function focusMarks(keys, name) {
-    focusSet = { keys, name, i: keys.length > 1 ? -1 : 0, fit: keys.length > 1 };
+  function focusMarks(keys, name, area = '') {
+    focusSet = { keys, name, area, i: keys.length > 1 ? -1 : 0, fit: keys.length > 1 };
     pick1('');
     pending = keys.length > 1 ? '' : keys[0];
     if (prefs.view === 'map') render(); else App.go('map');
@@ -1345,7 +1365,7 @@
      and filters, fitted to them, and a line in the search's place says what they are, with ‹ i of
      n › to go through them in the order given (the nearest to the bench first: the caller's) and
      its × back to the whole map; each of them rings. One mark is App.mapShow's. */
-  let focusSet = null;   // { keys, name, i (-1: none picked yet), fit } while it lasts
+  let focusSet = null;   // { keys, name, area (one thing's), i (-1: none picked yet), fit } while it lasts
   App.mapFocus = (keys, name) => {
     const list = all().list, ok = [...new Set(keys)].filter((k) => list.some((m) => m.key === k));
     if (ok.length < 2) { if (ok.length) App.mapShow(ok[0]); return; }
@@ -1411,7 +1431,10 @@
     const b = (dir, label, glyph) => `<button type="button" class="mp-focus-go" data-act="mapFocusStep" data-value="${dir}" aria-label="${esc(label)}" title="${esc(label)}">${glyph}</button>`;
     // One thing (App.mapShow) has nothing to go through: its name and the way out. The way out
     // says what it does (design/96, 1 A): a labelled button at the line's end, under the name on a phone.
-    return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc(f.name)}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}</span></span>
+    // One thing's area comes apart from its name: «name · area» on one line, under the name on a
+    // phone, where the name wraps whole (design/107, A).
+    const area = f.area ? `<span class="mp-focus-a"><span class="mp-focus-dot"> · </span>${esc(f.area)}</span>` : '';
+    return `<div class="mp-find mp-focus${n < 2 ? ' is-one' : ''}" role="group" aria-label="${esc([f.name, f.area].filter(Boolean).join(' · '))}"><span class="mp-focus-t">${App.pin}<span>${esc(f.name)}${area}</span></span>
         ${n < 2 ? '' : `${b(-1, t('mapFocusPrev'), '‹')}<span class="mp-focus-n">${esc(t('mapFocusOf', { i: f.i < 0 ? '–' : num(f.i + 1), n: num(n) }))}</span>${b(1, t('mapFocusNext'), '›')}`}
         <button type="button" class="mp-focus-x" data-act="mapFocusOff">${esc(t('mapFocusOff'))}</button></div>`;
   }
@@ -1740,7 +1763,9 @@
     } else if (kind === 'npc') {
       const x = m.person, s = m.now;
       if (s.met != null) acts = state(t(s.met ? 'mapMet' : 'mapNotMet'));
-      note = s.unsure ? t('mapNpcUnsure') : !s.where && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
+      // Every spot of theirs by the save (js/people.js here): where they are now, no "turns up in n places".
+      const placed = !!own && !!x.here && x.spots.every(([sc]) => (x.id + ':' + lower(sc)) in (own.peopleHere || {}));
+      note = s.unsure ? t('mapNpcUnsure') : !s.where && !placed && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
       if (m.trade) {

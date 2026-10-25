@@ -313,6 +313,10 @@
      half opacity, and the diamond pip under each picture says had or missing outright. */
   --missing-soft: grayscale(1) brightness(0.6);
   --missing-soft-opacity: 0.55;
+  /* A Map layer that's hidden (design/109, C): its name and count a step below --muted (4.9:1, still
+     AA) and its picture grey, darker and half faded, so a picture dark in itself still reads off. */
+  --ink-off: #857d7a;
+  --layer-off-art: grayscale(1) brightness(0.3) opacity(0.55);
   /* The Journal's kill ring (design/15-journal-variants.html, A): the kills as an arc of the
      silk's white round each portrait, over a faint track of its rim; the mask keeps the ring's
      width (--ring) and cuts out the middle. Not seen: the portrait in shadow (they're drawn on a dark
