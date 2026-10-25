@@ -105,7 +105,7 @@
               for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
               entry's enemies freed), and the save's check that it holds
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
-     GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)
+     GOAL_ACT TASKS index → the first Act each objective pin can be on (its chain, or its wish's)
      ROOM_ACT a room's scene (lower case) → its first Act, 2 or 3 (a room not in it is Act 1): the
               Map's Act filter for the marks with no Act of their own (ACT2_DOORS, act3Only)
      AREA_ACT an area → 2 or 3 when every room of it the doors know is: a scene they don't know
@@ -11783,7 +11783,38 @@
 
   const STEPS = [[57, 60, 61], [58, 62], [63, 65], [76, 78]];
 
-  const GOAL_ACT = { '57': 3, '58': 3, '60': 3, '61': 3, '62': 3, '63': 2, '65': 2, '76': 3, '78': 3 };
+  const GOAL_ACT = {
+    '44': 3,
+    '45': 3,
+    '46': 3,
+    '47': 3,
+    '48': 3,
+    '49': 3,
+    '50': 3,
+    '51': 3,
+    '52': 3,
+    '53': 3,
+    '54': 3,
+    '55': 3,
+    '56': 1,
+    '57': 3,
+    '58': 3,
+    '59': 3,
+    '60': 3,
+    '61': 3,
+    '62': 3,
+    '63': 2,
+    '64': 2,
+    '65': 2,
+    '66': 2,
+    '67': 1,
+    '76': 3,
+    '77': 3,
+    '78': 3,
+    '79': 1,
+    '80': 2,
+    '81': 2,
+  };
 
   const ROOM_ACT = {
     abandoned_town: 3,

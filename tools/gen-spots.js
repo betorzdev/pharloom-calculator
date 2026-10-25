@@ -2199,14 +2199,18 @@ console.log(`bosses at their objective's pin, their arena off the map: ${BOSS_PI
 /* ── Objective steps on one point (21-Oct-2026, Albert's D32) ──
    The game draws one objective's pin at a time (QuestMapMarker); the steps whose pins fall on the
    same point (within 3 px) are one mark: STEPS, each group of TASKS indices in the objectives'
-   order (js/quests.js CHAIN prev), and GOAL_ACT, each step's Act: 3 past After the Fall (Black
-   Thread Pt0, the Act 3 objective all the others follow), 2 past The Great Citadel (Citadel Seeker,
-   which entering the Citadel ends), else 1. */
+   order (js/quests.js CHAIN prev), and GOAL_ACT, every objective pin's Act (not only a group's: the
+   Bellbeast's twelve stations had none, so the Map filed them under their rooms' Act 1 or 2): 3 past
+   After the Fall (Black Thread Pt0, the Act 3 objective all the others follow), 2 past The Great
+   Citadel (Citadel Seeker, which entering the Citadel ends), else 1, or its Act in the pane «Tareas»
+   (js/collectibles.js WISHES) when that is later (Beast in the Bells: 3, though no chain leads to it). */
 const STEPS = [], GOAL_ACT = {};
 {
   const goals = TASKS.map((x, i) => i).filter((i) => TASKS[i][0] === 'goal' && XY['task:' + i]);
   const depth = (q) => { let n = 0; for (let c = Q.CHAIN[q]; c && c.prev; c = Q.CHAIN[c.prev]) n++; return n; };
   const past = (q, root) => { for (let k = (Q.CHAIN[q] || {}).prev; k; k = (Q.CHAIN[k] || {}).prev) if (k === root) return true; return q === root && root === 'Black Thread Pt0'; };
+  const wish = (q) => (CO.WISHES.find((w) => JSON.stringify(w[2]) === JSON.stringify(['quest', q])) || [])[1] || 1;
+  for (const j of goals) GOAL_ACT[j] = Math.max(past(TASKS[j][1], 'Black Thread Pt0') ? 3 : past(TASKS[j][1], 'Citadel Seeker') ? 2 : 1, wish(TASKS[j][1]));
   const used = new Set();
   for (const i of goals) {
     if (used.has(i)) continue;
@@ -2216,7 +2220,6 @@ const STEPS = [], GOAL_ACT = {};
     g.forEach((j) => used.add(j));
     g.sort((a, b) => depth(TASKS[a][1]) - depth(TASKS[b][1]) || a - b);
     STEPS.push(g);
-    for (const j of g) GOAL_ACT[j] = past(TASKS[j][1], 'Black Thread Pt0') ? 3 : past(TASKS[j][1], 'Citadel Seeker') ? 2 : 1;
   }
 }
 
@@ -2450,7 +2453,7 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
               entry's enemies freed), and the save's check that it holds
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
-     GOAL_ACT TASKS index → the first Act that step can be on (its objective's chain)
+     GOAL_ACT TASKS index → the first Act each objective pin can be on (its chain, or its wish's)
      ROOM_ACT a room's scene (lower case) → its first Act, 2 or 3 (a room not in it is Act 1): the
               Map's Act filter for the marks with no Act of their own (ACT2_DOORS, act3Only)
      AREA_ACT an area → 2 or 3 when every room of it the doors know is: a scene they don't know
