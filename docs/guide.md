@@ -422,7 +422,10 @@ only what can be had by then, nothing of a later Act. A mark goes by its own Act
 says) or its room's, the later: a room's is the first Act it can be entered in, worked out on the
 game's doors (the Citadel and what the Clawline or the Faydown Cloak opens, Mount Fay, the Sands of
 Karak, Wisp Thicket and the Putrified Ducts, are Act 2's; the Abyss, Verdania, the destroyed Cradle
-and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. With a save
+and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. A main
+objective's pins take its Act in «Tareas» (Beast in the Bells, at any Bellway station: Act 3), a
+Wishwall or someone who offers wishes their first wish's, and someone in a room only Act 3 has them
+in, Act 3 (Gilly's Act 3 rooms, Ballow at the Diving Bell). With a save
 the Map opens on its Act; Free mode on All. What you pick is kept for that profile while its game
 stays in that Act, and once the save reaches the next Act the Map follows it there. A layer with
 nothing up to the Act picked is greyed, its count 0. Then «Whole map» with a save, on at first (see

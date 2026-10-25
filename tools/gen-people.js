@@ -18,6 +18,9 @@
      unsure 'always': the save can't say where (Garmond: his garmondIn<Room> flags stay set after he
             moves on, and in Act 3 his encounters wait on a cooldown): every spot, and the card
             says so.
+     act3   [scene…]: the spots only Act 3 has, for the Map's Act filter: the ones whose here needs
+            blackThreadWorld or a field of Act 3's own (gillyLocationAct3), and those HAND names
+            (Ballow at the Diving Bell)
      here   { scene: check }: a spot shown only while its check holds (js/savefile.js has(): flag,
             is, min, not, all, any, accepted, quest), the switches the game turns that object on
             and off by (its Deactivate/ActivateIfPlayerdata*, TestGameObjectActivator,
@@ -81,6 +84,8 @@ const flag = (f) => ['flag', f], not = (c) => ['not', c], all = (...c) => ['all'
 const is = (f, v) => ['is', f, v], min = (f, n) => ['min', f, n];
 const ACT3 = flag('blackThreadWorld');
 const fieldsIn = (c) => (['flag', 'is', 'min'].includes(c[0]) ? [c[1]] : ['not', 'all', 'any'].includes(c[0]) ? c.slice(1).flatMap(fieldsIn) : []);
+// A spot's check that holds only in Act 3: blackThreadWorld set, or a field of Act 3's own.
+const act3Only = (c) => (c[0] === 'flag' && c[1] === 'blackThreadWorld') || (c[0] === 'is' && /Act3$/.test(c[1])) || (c[0] === 'all' && c.slice(1).some(act3Only));
 const questsIn = (c) => (['accepted', 'quest'].includes(c[0]) ? [c[1]] : ['not', 'all', 'any'].includes(c[0]) ? c.slice(1).flatMap(questsIn) : []);
 
 /* HAND: per person (their key), what the save says. The rest are in the list with no state.
@@ -109,7 +114,8 @@ const knight = (room) => all(flag('songChevalierActiveIn' + room), not(flag('son
   not(flag('songChevalierEncounterCooldown')), not(flag('songChevalierQuestReady')));
 const HAND = {
   ANT_ENTRY_PILGRIM: { here: { bone_08: all(flag('ant02GuardDefeated'), not(flag('hasDash'))) } },
-  BALLOW: { here: { dock_10: SAUNA, dock_12: flag('BallowMovedToDivingBell'), room_forge: all(not(SAUNA), not(flag('BallowMovedToDivingBell'))) } },
+  // At the Diving Bell once he moves there for The Dark Below's chain (Diving Bell Pt2 Ballow, after After the Fall).
+  BALLOW: { act3: ['dock_12'], here: { dock_10: SAUNA, dock_12: flag('BallowMovedToDivingBell'), room_forge: all(not(SAUNA), not(flag('BallowMovedToDivingBell'))) } },
   BB_PILGRIM_HORNED: { here: { bonetown: all(NOT_ACT3, flag('bonetownPilgrimHornedActive'), not(flag('skullKingInvaded')), min('bonetownPilgrimHornedCount', 1)) } },
   BB_PILGRIM_ROUND: { here: { belltown: any(ACT3, all(flag('belltownCrowdsReady'), is('belltownCrowd', 1))),
     bone_08: all(flag('ant02GuardDefeated'), not(flag('hasDash'))),
@@ -287,6 +293,7 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     for (const f of [...(h.met || []), ...(h.gone || []), ...(h.at || []).map((a) => a[0])]) {
       if (!fs1.has(f) && !(f === 'blackThreadWorld' && (h.gone || []).includes(f))) fail(`${key}: ${f} isn't read by any of their scripts: HAND needs reading again`);
     }
+    for (const scene of h.act3 || []) if (!rooms.has(scene)) fail(`${key}: act3 ${scene} isn't one of their rooms (${[...rooms].join(', ')})`);
     for (const [, , scene] of h.at || []) if (!rooms.has(scene)) fail(`${key}: ${scene} isn't one of their rooms (${[...rooms].join(', ')})`);
     for (const [scene, c] of Object.entries(h.here || {})) {
       if (!rooms.has(scene)) fail(`${key}: here ${scene} isn't one of their rooms (${[...rooms].join(', ')})`);
@@ -343,8 +350,9 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     const id = idOf(key);
     const art = fs.existsSync(path.join(FIGS, id + '.webp')) ? 'people/' + id : PORTRAIT[key] ? 'journal/' + PORTRAIT[key] : null;
     const here = Object.entries(h.here || {}).filter(([sc]) => spots.some((sp) => sp[0] === sc));
+    const act3 = spots.map((sp) => sp[0]).filter((sc) => (h.act3 || []).includes(sc) || here.some(([s2, c]) => s2 === sc && act3Only(c)));
     PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: goneOf(h).length ? goneOf(h) : undefined, at: h.at, unsure: h.unsure,
-      here: here.length ? Object.fromEntries(here) : undefined });
+      act3: act3.length ? act3 : undefined, here: here.length ? Object.fromEntries(here) : undefined });
   }
   // Shakra's spots (js/spots.js VENDORS.shakra), each with its rule: every one, and only those.
   const SH = SP.VENDORS.shakra.map((sc) => sc.toLowerCase());
@@ -383,11 +391,12 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
 
      PEOPLE  [{ id, name: { es, en, key } (the game's title), art ('people/<id>': their figure in
              assets/map/, 'journal/<id>': a Journal portrait, null: the herald), spots: [[scene,
-             x?, y?]] (their point in the map's pixels), met?, gone?, at?, unsure? }]: the save's
+             x?, y?]] (their point in the map's pixels), met?, gone?, at?, unsure?, act3?, here? }]: the save's
              rules (tools/gen-people.js HAND): met, any of these playerData fields set; gone, left
              or dead; at, [field, value, scene]…, the first that holds says where they are now;
-             unsure 'always', no saying where; here, { scene: check }, a spot shown only while its
-             check holds (js/savefile.js has(), peopleHere)
+             unsure 'always', no saying where; act3, the spots only Act 3 has (the Map's Act
+             filter); here, { scene: check }, a spot shown only while its check holds
+             (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
              (shakra: her 17 spots, js/spots.js VENDORS.shakra)
