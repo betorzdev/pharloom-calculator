@@ -417,13 +417,14 @@ Under the map, **What the map shows**, as the Hollow Knight site has it: «Show 
 its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
 categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
 Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then
-«Up to · All · Act 1 · Act 2 · Act 3» (on a phone, a line of its own): up to an Act, the map shows
-only what can be had by then, nothing of a later Act. A mark goes by its own Act (the one its card
+«Up to · Act 1 · Act 2 · Act 3» (on a phone, a line of its own), the three Acts on a thread lit up to
+the one picked, your game's Act ringed («You are here» on hover): up to an Act, the map shows only
+what can be had by then, nothing of a later Act; up to Act 3 is everything. A mark goes by its own Act (the one its card
 says) or its room's, the later: a room's is the first Act it can be entered in, worked out on the
 game's doors (the Citadel and what the Clawline or the Faydown Cloak opens, Mount Fay, the Sands of
 Karak, Wisp Thicket and the Putrified Ducts, are Act 2's; the Abyss, Verdania, the destroyed Cradle
 and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. With a save
-the Map opens on its Act; Free mode on All. What you pick is kept for that profile while its game
+the Map opens on its Act; Free mode on Act 3. What you pick is kept for that profile while its game
 stays in that Act, and once the save reaches the next Act the Map follows it there. A layer with
 nothing up to the Act picked is greyed, its count 0. Then «Whole map» with a save, on at first (see
 below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
