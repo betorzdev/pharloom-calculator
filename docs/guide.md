@@ -589,7 +589,8 @@ leaves those off.
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
   freed (the Whispering Vaults' second gauntlet).
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
-  Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
+  Loddie, Lumble, Mooshka), each with their own figure and a small herald on its lower right, so
+  the mark still says they give a thing of the 100% (Eva, with no figure, is the herald alone). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py; the Last Conductor, whom the game draws only as
   a black shadow, keeps the herald), named as their title card names them. With a
@@ -673,7 +674,7 @@ opaque part is measured (tools/fit-marks.py, js/mark-fit.js), centred and drawn 
 or smaller where it would cross the plate; the selector under the map and Your game's lists measure
 them the same way. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
 inventory for the keys, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
-asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
+asks for one, the herald's emblem for who gives a thing of the 100% with no figure (Eva; on the others' figures it sits small), the game's Bellhome bench pin
 for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
 plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
 drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the

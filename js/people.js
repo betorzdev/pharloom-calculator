@@ -12,6 +12,8 @@
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
              (shakra: her 17 spots, js/spots.js VENDORS.shakra)
+     GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
+             (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars) */
 (() => {
   'use strict';
@@ -1016,6 +1018,15 @@
     },
   };
 
+  const GIVERS = {
+    eva: null,
+    pinstress: 'people/pinstress',
+    loddie: 'people/ladybug-large',
+    lumble: 'people/dice-pilgrim',
+    mooshka: 'people/fleamaster',
+    plinney: 'people/pinsmith',
+  };
+
   const VARS = [
     'BelltownGreeterConvo',
     'BelltownHermitMet',
@@ -1050,6 +1061,6 @@
     'soulSnareReady',
   ];
 
-  SS.people = { PEOPLE, TRADE, HERE, VARS };
+  SS.people = { PEOPLE, TRADE, HERE, GIVERS, VARS };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.people;
 })();

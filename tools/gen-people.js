@@ -41,6 +41,7 @@ require('../js/graph.js');
 const R = require('../js/rooms.js');
 const SP = require('../js/spots.js');
 const QU = require('../js/quests.js');
+const HW = require('../js/how.js');
 const M = globalThis.SS.map;
 
 const OUT = path.join(__dirname, '..', 'js', 'people.js');
@@ -360,6 +361,15 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     if (!spots.length) fail(`${id}: no room on the map`);
     TRADE.push({ id, name: titleOf(key), note: t.note, spots: spots.slice(0, 1) });
   }
+  /* Who gives a thing of the 100% (js/spots.js PEOPLE, ELSEWHERE 'person'), by their npc id: their
+     figure, which the Map draws with the herald on it (design/03-redesign.md, step 6, round 108, C);
+     null, none (Eva): the herald alone. */
+  const GIVERS = {};
+  for (const id of Object.keys(SP.PEOPLE)) {
+    const key = ((HW.NPCS[id] || {}).key || '').replace(/_MAIN$/, '');
+    if (ELSEWHERE[key] !== 'person') continue;
+    GIVERS[id] = fs.existsSync(path.join(FIGS, idOf(key) + '.webp')) ? 'people/' + idOf(key) : null;
+  }
   // Every key is someone's.
   for (const k of keys) if (!ELSEWHERE[k] && !PEOPLE.some((p) => p.id === idOf(k)) && place(k).some((sp) => !(absorbed.get(k) || new Set()).has(roomKey(sp[0])))) fail(`${k} is nobody's`);
   for (const k of Object.keys(ELSEWHERE)) if (!P.people[k]) fail(`${k} (ELSEWHERE) isn't in the scenes any more`);
@@ -381,8 +391,10 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
              (shakra: her 17 spots, js/spots.js VENDORS.shakra)
+     GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
+             (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars)`,
-  'people', [['PEOPLE', PEOPLE], ['TRADE', TRADE], ['HERE', HERE], ['VARS', [...VARS].sort()]]);
+  'people', [['PEOPLE', PEOPLE], ['TRADE', TRADE], ['HERE', HERE], ['GIVERS', GIVERS], ['VARS', [...VARS].sort()]]);
   const moving = PEOPLE.filter((p) => p.spots.length > 1);
   console.log(`js/people.js  ${PEOPLE.length} people in ${PEOPLE.reduce((n, p) => n + p.spots.length, 0)} spots, `
     + `${PEOPLE.filter((p) => p.met).length} with a met flag, ${moving.filter((p) => p.at || p.here).length} of ${moving.length} in more than one place with a rule, ${PEOPLE.filter((p) => p.here).length} with spots by the save (here), `
