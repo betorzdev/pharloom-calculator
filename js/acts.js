@@ -231,6 +231,61 @@
     return { act: g.act + 1, done: ok, total: steps.length, steps, alt: g.act === 2 ? [] : altAct2(g), ...(g.act === 2 ? { cursed: cursed(g) } : {}) };
   }
 
-  SS.acts = { FIELDS, LEGS, group, missing, next };
+  /* Act 3 → the end (the wiki's Acts page, the main objectives of «Tareas», js/quests.js CHAIN):
+     a step per objective the game names, in its order, each done once its last stage is.
+       fall        After the Fall (Black Thread Pt0): out of the Cradle.
+       chapel      Awaiting the End (Pt1 Shamans): the Ruined Chapel.
+       bell-eater  Beast in the Bells (Bellbeast Rescue): offered beside Awaiting the End.
+       dark-below  The Dark Below, four stages: the diving bell found, Ballow, the descent, the
+                   Abyss reached (Diving Bell Pt1 to Pt3, Black Thread Pt2 Abyss).
+       escape      Return to Pharloom (Pt3 Escape).
+       shamans     Spell Seeker (Pt4 Return).
+       hearts      The Old Hearts (Pt5 Heart): three of the four Old Hearts (the pieces 'old-heart',
+                   CollectedHeart*: a heart stays collected once given), then to the Shamans.
+       last-dive   Last Dive (Pt6 Flower): the Everbloom from the Red Memory, then Lost Lace. Its
+                   quest is never marked complete (seen on every save past it, 25-Oct-2026): the
+                   ending Sister of the Void is. */
+  const END_STEPS = [
+    ['fall', ['Black Thread Pt0']],
+    ['chapel', ['Black Thread Pt1 Shamans']],
+    ['bell-eater', ['Bellbeast Rescue']],
+    ['dark-below', ['Diving Bell Pt1 Inspect', 'Diving Bell Pt2 Ballow', 'Diving Bell Pt3 Descend', 'Black Thread Pt2 Abyss']],
+    ['escape', ['Black Thread Pt3 Escape']],
+    ['shamans', ['Black Thread Pt4 Return']],
+  ];
+  const HEARTS = CO.PIECES.map((p, i) => (p[0] === 'old-heart' ? i : -1)).filter((i) => i >= 0);
+  const HEARTS_NEED = 3;
+  function toEnd(g) {
+    const done = new Set(g.quests);
+    const ended = (g.endings || []).includes('sister-of-the-void');
+    const steps = END_STEPS.map(([id, stages]) => {
+      const n = stages.filter((q) => done.has(q)).length;
+      // The stage on: the first not done (its words are «Tareas»'s now).
+      return step(id, ended || done.has(stages[stages.length - 1]) ? stages.length : n, stages.length,
+        { quest: stages.find((q) => !done.has(q)) || stages[stages.length - 1], stages: stages.map((q) => ({ quest: q, ok: ended || done.has(q) })) });
+    });
+    const given = ended || done.has('Black Thread Pt5 Heart');
+    const hearts = HEARTS.map((i) => ({ piece: i, name: CO.PIECES[i][4], area: CO.PIECES[i][3], ok: g.pieces.includes(i) }));
+    const held = Math.min(HEARTS_NEED, hearts.filter((h) => h.ok).length);
+    steps.push(step('hearts', given ? HEARTS_NEED + 1 : held, HEARTS_NEED + 1,
+      { quest: 'Black Thread Pt5 Heart', hearts, need: HEARTS_NEED, held, given }));
+    const bloom = ended || !!g.everbloom;
+    steps.push(step('last-dive', (bloom ? 1 : 0) + (ended ? 1 : 0), 2, { quest: 'Black Thread Pt6 Flower', everbloom: bloom, ended }));
+    return steps;
+  }
+  /* A game in Act 3 → its road to the end, or null before Act 3: { act: 3, end: 'sister-of-the-void'
+     (the ending it leads to, js/savefile.js ENDINGS), done, total, steps, alt: [] }. Each step is
+     { id, ok, done, total, quest (its stage on) } with its own parts:
+       a step of stages   stages: [{ quest, ok }]
+       hearts             hearts: [{ piece, name, area, ok }], need (3), held (up to 3), given
+       last-dive          everbloom, ended */
+  function end(game) {
+    const g = { ...EMPTY, ...(game || {}) };
+    if (g.act < 3) return null;
+    const steps = toEnd(g);
+    return { act: 3, end: 'sister-of-the-void', done: steps.filter((s) => s.ok).length, total: steps.length, steps, alt: [] };
+  }
+
+  SS.acts = { FIELDS, LEGS, group, missing, next, end };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.acts;
 })();

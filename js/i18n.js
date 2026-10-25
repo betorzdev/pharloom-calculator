@@ -785,13 +785,7 @@
     pgToGo:         { es: '{pct} por conseguir', en: '{pct} to go' },
     pgShrines:      { es: 'Santuarios de Campana', en: 'Bellshrines' },   // BELLSHRINE, in the plural
     pgPoints:       { es: 'Puntos de deseos', en: 'Wish points' },
-    pgEndings:      { es: 'Finales', en: 'Endings' },   // no word of the game's for them
     /* An Act 2 ending closed in an Act 3 game (design/41, 1 A): the ring counts what's still within reach. */
-    pgEndingsReach: { es: 'Finales a tu alcance', en: 'Endings within reach' },
-    pgEndingsShut:  { es: 'Cerrado en esta partida: {name}', en: 'Closed in this game: {name}' },
-    pgEndingsShutN: { es: 'Cerrados en esta partida: {name}', en: 'Closed in this game: {name}' },
-    pgShut:         { es: 'cerrado', en: 'closed' },
-    pgOnlyAct3:     { es: 'Solo en el Acto 3', en: 'Only in Act 3' },
     /* Progress at first sight (design/40-progress-clarity-variants.html): where you are, over the tabs */
     pgActName1:     { es: 'TELALEJANA', en: 'PHARLOOM' },   // ACT_1_NAME
     pgActName2:     { es: 'CIUDADELA MELODIOSA', en: 'CITADEL OF SONG' },   // ACT_2_NAME
@@ -800,6 +794,9 @@
     pgHereAct:      { es: 'Estás en el Acto {n}.', en: 'You\'re in Act {n}.' },
     pgHereNext:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te quedan {n} cosas.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} things left in it.' },
     pgHereNext1:    { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}, y en él te queda {n} cosa.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}, with {n} thing left in it.' },
+    pgHereEnd:      { es: 'Hasta el final hay {of} pasos: vas por el {i}, y en él te quedan {n} cosas.', en: 'The end takes {of} steps: you\'re on step {i}, with {n} things left in it.' },
+    pgHereEnd1:     { es: 'Hasta el final hay {of} pasos: vas por el {i}, y en él te queda {n} cosa.', en: 'The end takes {of} steps: you\'re on step {i}, with {n} thing left in it.' },
+    pgHereEndStep:  { es: 'Hasta el final hay {of} pasos: vas por el {i}.', en: 'The end takes {of} steps: you\'re on step {i}.' },
     pgHereStep:     { es: 'Para abrir el Acto {m} hay {of} pasos: vas por el {i}.', en: 'Opening Act {m} takes {of} steps: you\'re on step {i}.' },
     pgHere100:      { es: 'Para el 100 % te queda un {pct}.', en: '{pct} to go for 100%.' },
     pgHereFull:     { es: 'Acto 3 y el 100 %: lo tienes todo.', en: 'Act 3 and 100%: you have it all.' },
@@ -853,10 +850,9 @@
     ending_C:       { es: 'Atadura de seda', en: 'Snared Silk' },   // ENDING_C_NAME
     ending_D:       { es: 'Niña retorcida', en: 'Twisted Child' },   // ENDING_D_NAME
     ending_E:       { es: 'Hermana del vacío', en: 'Sister of the Void' },   // ENDING_E_NAME
-    roadGame:       { es: 'Tu partida', en: 'Your game' },
-    roadEndings:    { es: '{n} de {of} finales', en: '{n} of {of} endings' },
-    roadEndingsReach:{ es: '{n} de {of} finales a tu alcance', en: '{n} of {of} endings within reach' },
-    roadBoth:       { es: 'Los caminos a los Actos 2 y 3', en: 'The roads to Acts 2 and 3' },
+    roadTitleEnd:   { es: 'Camino al final', en: 'The road to the end' },
+    roadNoteEnd:    { es: 'Los objetivos principales del Acto 3, en el orden del juego, hasta su final.', en: 'Act 3\'s main objectives, in the game\'s order, up to its ending.' },
+    roadAll:        { es: 'Los caminos a los Actos 2 y 3, y al final', en: 'The roads to Acts 2 and 3, and to the end' },
     roadNote2:      { es: 'Lo que pide el juego para entrar en la Ciudadela, paso a paso.', en: 'What the game asks before you walk into the Citadel, step by step.' },
     roadNote3:      { es: 'Lo que pide el juego para abrir el Acto 3, leído de sus propios archivos. Las guías suelen dar solo seis deseos: cuentan también los que van antes de ellos, un mínimo de puntos de deseos y cuatro condiciones más.',
                       en: 'What the game asks before Act 3 opens, read from its own files. Guides usually give six wishes: the ones before them count too, and so do a minimum of wish points and four more conditions.' },
@@ -932,6 +928,8 @@
     pgMapN:         { es: 'Ver los {n} en el mapa', en: 'See the {n} on the map' },
     // The route's last station, over the Act it opens (design/83, 4 A).
     pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
+    // Act 3's road ends at its ending, named under it.
+    pgRouteEnding:  { es: 'El final', en: 'The ending' },
     roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
     roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
                       en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER
