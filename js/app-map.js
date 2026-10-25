@@ -39,7 +39,7 @@
    counted by thing: marks that share one save check count once; "Only the 100%" turns on just
    the layers that count (design/03-redesign.md, step 6, the switches' contents).
    "Up to" an Act shows what can be had by then (prefs.mapActPick, per slot; the save's Act at
-   first: design/03-redesign.md, step 6, the Act filter).
+   first: design/03-redesign.md, step 6, the Act filter); Act 3 is everything.
    In a save (or Free mode's marks) what's had is left out; "Show Completed" (prefs.mapHad) brings
    it back, dimmed and ticked (design/03-redesign.md, step 6). A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
@@ -836,8 +836,10 @@
      The Act filter (design/03-redesign.md, step 6, the Act filter: design/98, all A): «Up to Act N»
      shows what can be had by Act N, nothing of a later one. A mark's Act is its own (its card and
      title say it) or its room's first (js/spots.js ROOM_ACT: the Citadel and what the Clawline or
-     the Faydown Cloak opens are Act 2's, what only Act 3 has Act 3's), the later. (An earlier filter,
-     until 14-Oct-2026, showed only what first appears in an Act, and most marks had no Act.) */
+     the Faydown Cloak opens are Act 2's, what only Act 3 has Act 3's), the later. Nothing is later
+     than Act 3, so up to Act 3 is everything: an «All» beside it showed the same (design/112, 1 A).
+     (An earlier filter, until 14-Oct-2026, showed only what first appears in an Act, and most marks
+     had no Act.) */
   let doored = null;   // the scenes js/graph.js knows; one it doesn't takes its area's (js/spots.js AREA_ACT)
   function roomAct(scene) {
     const r = SP.ROOM_ACT || {}, k = lower(scene), room = lower((R.roomOf(scene) || {}).scene);
@@ -848,15 +850,15 @@
   const markAct = (m) => Math.max(m.act || 0, m.scene ? roomAct(m.scene) : 1);
   /* The Act shown: a pick, kept per slot (prefs.mapActPick, slot → { n, at }), while its game stays in
      the Act it was picked in (at); else the game's own Act, so a save that reaches the next Act shows
-     it; Free mode, All (0) unless picked. */
+     it; Free mode, Act 3 (everything) unless picked. A pick of 0 is the «All» there was, Act 3. */
   function actShown(own) {
     const at = own ? own.act || 1 : 0;
     const p = (prefs.mapActPick || {})[App.slotNow ? App.slotNow() : 0];
-    return p && p.at === at && p.n >= 0 && p.n <= 3 ? p.n : at;
+    return (p && p.at === at && p.n >= 0 && p.n <= 3 ? p.n : at) || 3;
   }
   function passes(m, g, own, act = actShown(own)) {
     if (OWN_ONLY.has(m.layer) && !own) return false;
-    return !act || m.layer === 'cocoon' || markAct(m) <= act;
+    return m.layer === 'cocoon' || markAct(m) <= act;
   }
 
   /* ── The map, in SVG in the image's own pixels (M.W × M.H): the view is its viewBox, as the
@@ -1226,7 +1228,7 @@
     /* Under an Act before the last, a layer with nothing up to it is greyed, its count 0 (design/98):
        it's there, only later. */
     const actNow = actShown(own);
-    const none = (ids) => actNow > 0 && actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
+    const none = (ids) => actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
     const chip = (id, ids, act, extra = '') => {
       const nOn = ids.filter((k) => on.has(k)).length, isOn = nOn > 0, empty = none(ids);
       const name = SETS[id] ? SETS[id].name() : LAYER.get(id).name();
@@ -1258,8 +1260,8 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="mp-acts"><span class="mp-acts-t" id="mp-acts-t">${esc(t('mapActUpTo'))}</span><div class="seg sm" role="group" aria-labelledby="mp-acts-t">${[0, 1, 2, 3].map((n) =>
-              `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${actNow === n}">${esc(n ? t('saveAct', { n: num(n) }) : t('mapActAll'))}</button>`).join('')}</div></div>
+            <div class="mp-acts"><span class="mp-acts-t" id="mp-acts-t">${esc(t('mapActUpTo'))}</span><div class="mp-thread" role="group" aria-labelledby="mp-acts-t">${[1, 2, 3].map((n) =>
+              `${n > 1 ? `<i class="mp-thread-line${n <= actNow ? ' is-in' : ''}" aria-hidden="true"></i>` : ''}<button type="button" class="${[n <= actNow ? 'is-in' : '', own && own.act === n ? 'is-own' : ''].join(' ').trim()}" data-act="mapAct" data-value="${n}" aria-pressed="${actNow === n}"${own && own.act === n ? ` title="${esc(t('pgHere'))}"` : ''}><i aria-hidden="true"></i>${esc(t('saveAct', { n: num(n) }))}</button>`).join('')}</div></div>
             <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}${g ? check('mapHad', !!prefs.mapHad, t('mapHad')) : ''}</div>
           </div>
         </div>
@@ -2067,7 +2069,7 @@
     // The Act filter: the pick kept for this slot while its game is in the Act it was picked in (actShown).
     mapAct(node) {
       const own = App.game(), slot = App.slotNow ? App.slotNow() : 0;
-      prefs.mapActPick = { ...(prefs.mapActPick || {}), [slot]: { n: Number(node.dataset.value) || 0, at: own ? own.act || 1 : 0 } };
+      prefs.mapActPick = { ...(prefs.mapActPick || {}), [slot]: { n: Number(node.dataset.value) || 3, at: own ? own.act || 1 : 0 } };
       savePrefs();
       redraw();
     },

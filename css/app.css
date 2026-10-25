@@ -2697,9 +2697,27 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-all .text-btn { font-size: var(--fs-sm); }
 .mp-opts { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-8); }
 .mp-checks { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-6); }
-/* The Act filter (design/98, 3 A): the site's chooser, labelled, first of the options. */
+/* The Act filter (design/98, 3 A): labelled, first of the options. The three Acts on
+   one line joined by a thread (design/112, 2 A), lit up to the one picked, so «up to» is seen: the
+   earlier Acts in silk, the one picked in the accent; your game's Act ringed (3 A). */
 .mp-acts { display: inline-flex; align-items: center; gap: var(--sp-3); }
 .mp-acts-t { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+.mp-thread { display: inline-flex; align-items: center; padding-left: var(--sp-1); }
+.mp-thread button { display: inline-flex; align-items: center; gap: var(--sp-2); min-height: var(--ctl-sm); padding: 0; font-size: var(--fs-xs); color: var(--muted); transition: color var(--dur) var(--ease); }
+.mp-thread button > i {
+  flex: none; width: var(--diamond); height: var(--diamond); transform: rotate(45deg);
+  border: 1px solid color-mix(in oklab, var(--accent-line) 80%, transparent);
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.mp-thread button.is-in { color: var(--ink-2); }
+.mp-thread button.is-in > i { background: var(--silk); border-color: var(--silk); }
+.mp-thread button[aria-pressed="true"] { color: var(--ink-strong); }
+.mp-thread button[aria-pressed="true"] > i { background: var(--accent); border-color: var(--accent); box-shadow: var(--glow); }
+.mp-thread button.is-own > i { outline: 1px solid var(--accent-line); outline-offset: 3px; }
+.mp-thread button:is(:hover, :focus-visible):not([aria-pressed="true"]) { color: var(--accent); }
+.mp-thread button:is(:hover, :focus-visible) > i { border-color: var(--accent); }
+.mp-thread-line { flex: none; width: var(--sp-6); height: 1px; margin: 0 var(--sp-2); background: color-mix(in oklab, var(--silk-rim) 35%, transparent); }
+.mp-thread-line.is-in { background: var(--silk); }
 .mp-sec { border-top: 1px solid var(--inv-line); }
 .mp-sec:last-child { border-bottom: 1px solid var(--inv-line); }
 .mp-sec-h { display: flex; align-items: center; gap: var(--sp-3); }
