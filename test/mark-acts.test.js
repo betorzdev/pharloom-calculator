@@ -117,3 +117,26 @@ test('the Acts read by hand stay as read: upgrades after their Tool, the complet
   assert.equal(relic('Seal Chit Silk Siphon'), 2);   // a Faydown Cloak jump will do
   assert.equal(GA.GAUNTLETS.find((x) => x.id === 'hunters-march-5').act, 2);   // once the Mottled Skarr is dead
 });
+
+test("every objective pin has its Act, no earlier than its wish's in «Tareas»: the Bellbeast's twelve stations, Act 3", () => {
+  const goals = SP.TASKS.map((x, i) => [x, i]).filter(([x]) => x[0] === 'goal');
+  for (const [x, i] of goals) {
+    assert.ok(SP.GOAL_ACT[i] >= 1, `task:${i} ${x[1]} has no Act`);
+    const w = CO.WISHES.find((v) => JSON.stringify(v[2]) === JSON.stringify(['quest', x[1]]));
+    if (w) assert.ok(SP.GOAL_ACT[i] >= w[1], `task:${i} ${x[1]}: Act ${SP.GOAL_ACT[i]}, its wish's ${w[1]}`);
+  }
+  const beast = goals.filter(([x]) => x[1] === 'Bellbeast Rescue');
+  assert.equal(beast.length, 12);
+  for (const [, i] of beast) assert.equal(SP.GOAL_ACT[i], 3);
+  assert.equal(SP.GOAL_ACT[goals.find(([x]) => x[1] === 'Diving Bell Pt2 Ballow')[1]], 3);   // past After the Fall
+});
+
+test('a person\'s spot only Act 3 has says so (act3): Act 3\'s switch, or a field of its own', () => {
+  const PE = require('../js/people.js');
+  const of = (id) => PE.PEOPLE.find((p) => p.id === id).act3 || [];
+  assert.deepEqual(of('gilly'), ['ant_queen', 'bone_east_18', 'bone_east_24']);
+  assert.deepEqual(of('ballow'), ['dock_12']);
+  for (const [id, scene] of [['fixer', 'bone_10'], ['huntress-runt', 'room_huntress'], ['fleamember-tall', 'aqueduct_05_caravan']]) assert.ok(of(id).includes(scene), id);
+  // Who leaves when Act 3 begins has no Act 3 spot.
+  for (const p of PE.PEOPLE) if ((p.gone || []).includes('blackThreadWorld')) assert.deepEqual(of(p.id), [], p.id);
+});

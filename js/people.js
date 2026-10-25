@@ -4,11 +4,12 @@
 
      PEOPLE  [{ id, name: { es, en, key } (the game's title), art ('people/<id>': their figure in
              assets/map/, 'journal/<id>': a Journal portrait, null: the herald), spots: [[scene,
-             x?, y?]] (their point in the map's pixels), met?, gone?, at?, unsure? }]: the save's
+             x?, y?]] (their point in the map's pixels), met?, gone?, at?, unsure?, act3?, here? }]: the save's
              rules (tools/gen-people.js HAND): met, any of these playerData fields set; gone, left
              or dead; at, [field, value, scene]…, the first that holds says where they are now;
-             unsure 'always', no saying where; here, { scene: check }, a spot shown only while its
-             check holds (js/savefile.js has(), peopleHere)
+             unsure 'always', no saying where; act3, the spots only Act 3 has (the Map's Act
+             filter); here, { scene: check }, a spot shown only while its check holds
+             (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
              (shakra: her 17 spots, js/spots.js VENDORS.shakra)
@@ -36,6 +37,7 @@
       name: { es: 'Ballow', en: 'Ballow', key: 'BALLOW_MAIN' },
       art: 'people/ballow',
       spots: [['dock_10', 1429.2, 1600.9], ['dock_12', 1597.7, 1617.7], ['room_forge', 1516.2, 1516.5]],
+      act3: ['dock_12'],
       here: {
         dock_10: [
           'all',
@@ -284,6 +286,7 @@
       name: { es: 'Flick El arreglador', en: 'Flick The Fixer', key: 'FIXER_MAIN+FIXER_SUB' },
       art: 'people/fixer',
       spots: [['bone_10', 968, 1428.4], ['bonetown', 697.7, 1469]],
+      act3: ['bone_10'],
       here: {
         bone_10: ['flag', 'blackThreadWorld'],
         bonetown: [
@@ -324,6 +327,7 @@
       spots: [['aqueduct_05_caravan', 2379, 575.9], ['bone_10', 960.1, 1428]],
       met: ['MetCaravanTroupeLeader'],
       at: [['CaravanTroupeLocation', 0, 'bone_10'], ['CaravanTroupeLocation', 3, 'aqueduct_05_caravan']],
+      act3: ['aqueduct_05_caravan'],
       here: { aqueduct_05_caravan: ['flag', 'blackThreadWorld'] },
     },
     {
@@ -411,6 +415,7 @@
         ['bone_east_24', 1944.1, 1291],
       ],
       met: ['gillyMet'],
+      act3: ['ant_queen', 'bone_east_18', 'bone_east_24'],
       here: {
         ant_05c: ['all', ['not', ['flag', 'blackThreadWorld']], ['is', 'gillyLocation', 0]],
         ant_17: [
@@ -581,6 +586,7 @@
       name: { es: 'Pequeñuela', en: 'Runt', key: 'HUNTRESS_RUNT_MAIN' },
       art: 'people/huntress-runt',
       spots: [['room_huntress']],
+      act3: ['room_huntress'],
       here: { room_huntress: ['all', ['flag', 'blackThreadWorld'], ['flag', 'HuntressRuntAppeared']] },
     },
     {
@@ -745,6 +751,7 @@
         ['bonetown', 657.6, 1469.7],
         ['halfway_01'],
       ],
+      act3: ['bone_10'],
       here: {
         belltown: [
           'any',

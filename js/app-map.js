@@ -629,7 +629,9 @@
         givers.get(k).quests.push(quest);
       }
     }
-    for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
+    // A Wishwall's or a giver's Act: its first wish's (Mister Mushroom's, in an Act 2 room, offers only in Act 3).
+    const firstAct = (quests) => Math.min(...quests.map((q) => CO.WISHES[wishOf(q)][1] || 1));
+    for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, act: firstAct(b.quests), quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
     /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
@@ -682,7 +684,7 @@
       const [, who, mark] = SP.GIVER[b.gid] || [];
       const theirs = mark && out.find((x) => x.key === mark);
       if (theirs) { theirs.quests = (theirs.quests || []).concat(b.quests); continue; }
-      add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
+      add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, act: firstAct(b.quests), quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
         name: who ? pick(who) : t('mapLayer_giver1'), sub: who ? t('mapLayer_giver1') : '', draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
     }
     /* Everyone else (js/people.js), each at their own point in the room: in a save, only where it
@@ -693,7 +695,7 @@
       for (const [scene, px, py] of x.spots) {
         if (now.where && !now.where.has(lower(scene))) continue;
         if (!hereNow(own, x.id, scene)) continue;
-        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
+        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, act: (x.act3 || []).includes(scene) ? 3 : undefined, at: px != null ? { x: px, y: py } : undefined, got: false,
           off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
       }
     }
