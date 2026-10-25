@@ -1468,7 +1468,8 @@ game's scenes give every person: an NpcDialogueTitle names them (its keys are th
 `<KEY>_SUPER/_MAIN/_SUB`, Flick «El arreglador»), and some talkers show their title from their
 own FSM. `tools/extract-people.py` reads them all into kb/data/game/people.json (each one's spots,
 one per scene, and every name their scripts and the tests switching them read) and cuts each
-figure from its tk2d sprite into assets/map/people/. `tools/gen-people.js` keeps those on the Map
+figure from its tk2d sprite into assets/map/people/ (the Old Statue's from the Unity sprites
+that draw him, 24 October). `tools/gen-people.js` keeps those on the Map
 under no other layer: 54 people in 140 spots (Lugoli, the Crawfather and the Father of the Flame
 are bosses with no talker and drop out). What a save says of each is a hand table checked against
 the scans: 25 have a met flag their own scripts read (others, such as MetBelltownDoctor, exist but
