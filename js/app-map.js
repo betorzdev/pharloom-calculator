@@ -39,7 +39,7 @@
    counted by thing: marks that share one save check count once; "Only the 100%" turns on just
    the layers that count (design/03-redesign.md, step 6, the switches' contents).
    "Up to" an Act shows what can be had by then (prefs.mapActPick, per slot; the save's Act at
-   first: design/03-redesign.md, step 6, the Act filter).
+   first: design/03-redesign.md, step 6, the Act filter); Act 3 is everything.
    In a save (or Free mode's marks) what's had is left out; "Show Completed" (prefs.mapHad) brings
    it back, dimmed and ticked (design/03-redesign.md, step 6). A tap
    on a mark, or on an area's name, opens its card. Hornet sits at your bench, or stands where the
@@ -355,7 +355,10 @@
      for it), gone, and where: the scenes they're in now (null: every spot, as in Free mode). A
      field the save doesn't carry (a slot kept before) says nothing. */
   const truthy = (v) => v === true || (typeof v === 'number' && v > 0);
-  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : ICON('quest_icon_large_0006_herald'));
+  const HERALD = ICON('quest_icon_large_0006_herald');
+  // The herald on a giver's figure, in a list or a card (css .mp-giver; on the Map, GIVER_DISC).
+  const GIVER_HERALD = `<span class="mp-giver" aria-hidden="true"><img src="${HERALD}" alt="" loading="lazy"></span>`;
+  const personArt = (x) => (x.art ? `assets/${x.art.startsWith('journal/') ? 'icons' : 'map'}/${x.art}.webp` : HERALD);
   function personNow(x, own) {
     const v = own && own.peopleVars;
     if (!v) return { met: null, gone: false, where: null };
@@ -626,7 +629,9 @@
         givers.get(k).quests.push(quest);
       }
     }
-    for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
+    // A Wishwall's or a giver's Act: its first wish's (Mister Mushroom's, in an Act 2 room, offers only in Act 3).
+    const firstAct = (quests) => Math.min(...quests.map((q) => CO.WISHES[wishOf(q)][1] || 1));
+    for (const [k, b] of boards) add({ key: 'board:' + k, layer: 'wishwall', scene: b.scene, act: firstAct(b.quests), quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
       name: t('mapLayer_wishwall1'), draw: (s, ti, kk, c) => badge('wishwall', img(ICON('hornet_inv_pane_icons_0002_wish')), s, ti, kk, c) });
     /* The wishes and the main objectives (js/spots.js TASKS): what a wish asks for, where a wish is
        done, the main objectives' pins. A Steel Soul wish only in Steel Soul, and of the Steel
@@ -663,12 +668,15 @@
     });
     // Who gives a thing of the 100%, but where they sell it: their shop is them (Jubilana in the Songclave).
     const sameRoom = (a, b) => lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+    /* Each one their own figure, the herald small on its lower right (design/03-redesign.md, step 6,
+       round 108, C): it still says «gives a thing of the 100%». With no figure (Eva), the herald. */
+    const fig = (id) => (PE.GIVERS || {})[id];
     // Scrounge, who only buys the relics, goes among the shops, his key kept (js/map-fixes.js).
     for (const [id, scene] of Object.entries(SP.PEOPLE)) {
       if ((SP.VENDORS[id] || []).some((sc) => sameRoom(sc, scene))) continue;
       if (id === 'scrounge') { add({ key: 'person:' + id, layer: 'shop', scene, got: false, npc: id, name: t('mapScrounge'), draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }); continue; }
-      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]),
-        draw: (s, ti, k, c) => badge('person', img(ICON('quest_icon_large_0006_herald')), s, ti, k, c) }, own);
+      withAlso(add, { key: 'person:' + id, layer: 'person', scene, got: false, npc: id, name: pick(HW.NPCS[id]), giver: !!fig(id),
+        draw: (s, ti, k, c) => badge('person', fig(id) ? img(`assets/map/${fig(id)}.webp`) + GIVER_HERALD : img(HERALD), s, ti, k, c) }, own);
     }
     /* Who offers a wish (js/spots.js GIVER), by name: on the mark that is them in that room already
        (a vendor, who gives a thing of the 100%) their wishes go on it; else a mark of its own. */
@@ -676,7 +684,7 @@
       const [, who, mark] = SP.GIVER[b.gid] || [];
       const theirs = mark && out.find((x) => x.key === mark);
       if (theirs) { theirs.quests = (theirs.quests || []).concat(b.quests); continue; }
-      add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
+      add({ key: 'giver:' + k, layer: 'giver', scene: b.scene, act: firstAct(b.quests), quests: b.quests, got: !!g && b.quests.every((q) => wishDone(g, q)),
         name: who ? pick(who) : t('mapLayer_giver1'), sub: who ? t('mapLayer_giver1') : '', draw: (s, ti, kk, c) => badge('giver', img(ICON('quest_icon_large__0008_gather')), s, ti, kk, c) });
     }
     /* Everyone else (js/people.js), each at their own point in the room: in a save, only where it
@@ -687,7 +695,7 @@
       for (const [scene, px, py] of x.spots) {
         if (now.where && !now.where.has(lower(scene))) continue;
         if (!hereNow(own, x.id, scene)) continue;
-        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, at: px != null ? { x: px, y: py } : undefined, got: false,
+        add({ key: 'npc:' + x.id + ':' + lower(scene), layer: 'npc', scene, act: (x.act3 || []).includes(scene) ? 3 : undefined, at: px != null ? { x: px, y: py } : undefined, got: false,
           off: now.met === false, person: x, now, name: pick(x.name), draw: (s, ti, k, c) => badge('npc', img(personArt(x)), s, ti, k, c) });
       }
     }
@@ -828,8 +836,10 @@
      The Act filter (design/03-redesign.md, step 6, the Act filter: design/98, all A): «Up to Act N»
      shows what can be had by Act N, nothing of a later one. A mark's Act is its own (its card and
      title say it) or its room's first (js/spots.js ROOM_ACT: the Citadel and what the Clawline or
-     the Faydown Cloak opens are Act 2's, what only Act 3 has Act 3's), the later. (An earlier filter,
-     until 14-Oct-2026, showed only what first appears in an Act, and most marks had no Act.) */
+     the Faydown Cloak opens are Act 2's, what only Act 3 has Act 3's), the later. Nothing is later
+     than Act 3, so up to Act 3 is everything: an «All» beside it showed the same (design/112, 1 A).
+     (An earlier filter, until 14-Oct-2026, showed only what first appears in an Act, and most marks
+     had no Act.) */
   let doored = null;   // the scenes js/graph.js knows; one it doesn't takes its area's (js/spots.js AREA_ACT)
   function roomAct(scene) {
     const r = SP.ROOM_ACT || {}, k = lower(scene), room = lower((R.roomOf(scene) || {}).scene);
@@ -840,15 +850,15 @@
   const markAct = (m) => Math.max(m.act || 0, m.scene ? roomAct(m.scene) : 1);
   /* The Act shown: a pick, kept per slot (prefs.mapActPick, slot → { n, at }), while its game stays in
      the Act it was picked in (at); else the game's own Act, so a save that reaches the next Act shows
-     it; Free mode, All (0) unless picked. */
+     it; Free mode, Act 3 (everything) unless picked. A pick of 0 is the «All» there was, Act 3. */
   function actShown(own) {
     const at = own ? own.act || 1 : 0;
     const p = (prefs.mapActPick || {})[App.slotNow ? App.slotNow() : 0];
-    return p && p.at === at && p.n >= 0 && p.n <= 3 ? p.n : at;
+    return (p && p.at === at && p.n >= 0 && p.n <= 3 ? p.n : at) || 3;
   }
   function passes(m, g, own, act = actShown(own)) {
     if (OWN_ONLY.has(m.layer) && !own) return false;
-    return !act || m.layer === 'cocoon' || markAct(m) <= act;
+    return m.layer === 'cocoon' || markAct(m) <= act;
   }
 
   /* ── The map, in SVG in the image's own pixels (M.W × M.H): the view is its viewBox, as the
@@ -955,9 +965,12 @@
         stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${g[1]}</svg>` : '';
   }
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
-        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
+        data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${m.giver ? GIVER_DISC : ''}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
   // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
   const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
+  /* A giver's herald (round 108, C): the tick's disc mirrored onto the lower right, so it never meets
+     the tick, the cross or a cluster's count (all on the upper right), the herald inside. */
+  const GIVER_DISC = `<g class="mp-giver" aria-hidden="true"><circle cx="0.36" cy="0.36" r="0.22"/><image href="${HERALD}" x="0.2" y="0.2" width="0.32" height="0.32"/></g>`;
   // What the game took away (design/86, 1 A): the tick's disc in --muted, a cross where the tick goes.
   const LOST_CROSS = '<g class="mp-cross" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.29 -0.43 L0.43 -0.29 M0.43 -0.43 L0.29 -0.29"/></g>';
   const markTitle = (m) => [m.name, m.sub, m.act ? t('saveAct', { n: m.act }) : ''].filter(Boolean).join(' · ');
@@ -1215,7 +1228,7 @@
     /* Under an Act before the last, a layer with nothing up to it is greyed, its count 0 (design/98):
        it's there, only later. */
     const actNow = actShown(own);
-    const none = (ids) => actNow > 0 && actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
+    const none = (ids) => actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
     const chip = (id, ids, act, extra = '') => {
       const nOn = ids.filter((k) => on.has(k)).length, isOn = nOn > 0, empty = none(ids);
       const name = SETS[id] ? SETS[id].name() : LAYER.get(id).name();
@@ -1247,8 +1260,8 @@
           <h3 class="mp-legend-t" id="mp-legend-t">${esc(t('mapShows'))}</h3>
           <span class="mp-all"><button type="button" class="text-btn" data-act="mapAll" data-value="1">${esc(t('mapShowAll'))}</button><button type="button" class="text-btn" data-act="mapAll" data-value="0">${esc(t('mapHideAll'))}</button><button type="button" class="text-btn" data-act="mapHundred">${esc(t('mapOnlyHundred'))}</button></span>
           <div class="mp-opts">
-            <div class="mp-acts"><span class="mp-acts-t" id="mp-acts-t">${esc(t('mapActUpTo'))}</span><div class="seg sm" role="group" aria-labelledby="mp-acts-t">${[0, 1, 2, 3].map((n) =>
-              `<button type="button" data-act="mapAct" data-value="${n}" aria-pressed="${actNow === n}">${esc(n ? t('saveAct', { n: num(n) }) : t('mapActAll'))}</button>`).join('')}</div></div>
+            <div class="mp-acts"><span class="mp-acts-t" id="mp-acts-t">${esc(t('mapActUpTo'))}</span><div class="mp-thread" role="group" aria-labelledby="mp-acts-t">${[1, 2, 3].map((n) =>
+              `${n > 1 ? `<i class="mp-thread-line${n <= actNow ? ' is-in' : ''}" aria-hidden="true"></i>` : ''}<button type="button" class="${[n <= actNow ? 'is-in' : '', own && own.act === n ? 'is-own' : ''].join(' ').trim()}" data-act="mapAct" data-value="${n}" aria-pressed="${actNow === n}"${own && own.act === n ? ` title="${esc(t('pgHere'))}"` : ''}><i aria-hidden="true"></i>${esc(t('saveAct', { n: num(n) }))}</button>`).join('')}</div></div>
             <div class="mp-checks">${own ? check('mapGame', !exact, t('mapWhole'), t('mapWholeTip')) : ''}${check('mapNames', names, t('mapNames'))}${g ? check('mapHad', !!prefs.mapHad, t('mapHad')) : ''}</div>
           </div>
         </div>
@@ -2056,7 +2069,7 @@
     // The Act filter: the pick kept for this slot while its game is in the Act it was picked in (actShown).
     mapAct(node) {
       const own = App.game(), slot = App.slotNow ? App.slotNow() : 0;
-      prefs.mapActPick = { ...(prefs.mapActPick || {}), [slot]: { n: Number(node.dataset.value) || 0, at: own ? own.act || 1 : 0 } };
+      prefs.mapActPick = { ...(prefs.mapActPick || {}), [slot]: { n: Number(node.dataset.value) || 3, at: own ? own.act || 1 : 0 } };
       savePrefs();
       redraw();
     },

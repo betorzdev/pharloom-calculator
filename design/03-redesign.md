@@ -41,8 +41,8 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -1326,6 +1326,28 @@ names that person and their area («Greyroot of Shellwood»), not when it names 
 («Yarnaby of Greymoor»). Gone: the CSS columns, each person's «Complete», and
 `.pg-tasks .pg-item.is-promised`'s veil.
 
+### The road to the end, in Act 3 (25 October 2026)
+
+Albert: in Act 3 the road's tab shows something confusing and without much sense, while the game has
+a clearly marked path to the end. It drew the four endings on a thread (not a sequence) and two rings,
+«Endings within reach» and «Only in Act 3»: nothing said what to do next. The game's path is its
+main objectives in «Tasks» (the wiki's Acts page; js/quests.js CHAIN, Black Thread Pt0 to Pt6, the
+Diving Bell's three stages, Bellbeast Rescue), and the save keeps each (QuestCompletionData), checked
+on the author's 37 Act 3 saves. `111-act3-road-variants.html` (kept out of the repo), the real tab
+drawn as the road to the end over `user4.dat` (The Dark Below), `Restore_Points3/restoreData33.dat`
+(two Old Hearts) and `user1.dat` (Sister of the Void seen, 100%), and the guide: 1 under the road
+(**A** nothing, the road ends at Sister of the Void; B the endings' strip; C the strip and the two
+rings), 2 the guide without a save (**A** three roads, to Act 2, Act 3 and the end; B two).
+
+**Decision: 1 A, 2 A** (25 October 2026). Built: `js/acts.js` `end()` (a step per objective, the
+Dark Below's four stages counted, the Old Hearts as any three of the four `old-heart` pieces then the
+Shamans, Last Dive as the Everbloom and the ending: its quest is never marked complete),
+`js/app-progress.js` (the route's stations titled by «Tasks», its words by the stage on, its pins the
+objectives' own, the Bell Eater's at every Bellway; the end node «The ending · Sister of the Void»,
+lit once seen; the tab's card and the line on top count its steps), `css/app.css` `.pg-rt-end.is-done`.
+The endings' strip, the rings and their medallions are gone (`gameHtml`, `ring`, `medal`, their CSS
+and tokens).
+
 ## Step 6 · Map
 
 ### What there is (28 September 2026)
@@ -1929,6 +1951,22 @@ save with All picked, synced to an Act 2 save of the same profile (the Map on Ac
 synced to Act 3 (on Act 3), a second profile keeping its own pick, Free mode on All and keeping its
 pick. test/room-acts.test.js.
 
+**Second round, «All» (25 October 2026).** Albert: «All and Act 3, are they the same?». They were:
+no mark's Act is above 3, so «Up to Act 3» showed every mark «All» did, and the four buttons read as
+if they did different things. The options went to Albert in `112-act-filter-variants.html` (the
+real Map and legend captured with saves of Act 1, 2 and 3 and Free mode, each Act picked, only the
+chooser redrawn; 1440 and 390; kept out of the repo). A first look, Progress's road with the Acts'
+names and «You are here» under, was turned down: «it takes too much room». **Decision: A in all
+three** (Albert, 25 October 2026):
+
+1. **Act 1 · Act 2 · Act 3, no «All»**: up to Act 3 is everything; Free mode opens on Act 3, and a
+   pick of All kept from before reads as Act 3. B was Act 1 · Act 2 · All, C «Act 3 · all».
+2. **One line, joined by a thread** (`.mp-thread`), as tall as the chooser was: each Act its diamond
+   and word, every Act up to the one picked lit (silk), the one picked in the accent, so «up to» is
+   seen. B was the chooser as it was, C Progress's road, small, the word under.
+3. **Your game's Act ringed**, a thin ring round its diamond, «You are here» (`pgHere`) on hover. B
+   was Progress's «You are here» chip under it (one more line), C nothing.
+
 ### The switches off (24 October 2026)
 
 Albert: «'Crests' when it's on, you can't really see the difference from when it's off». Off, a
@@ -1952,6 +1990,26 @@ B a stronger off for every switch, C both. **Decision: C** (Albert, 24 October 2
 Measured again (390): the Crests 100 on, 17 off; the Silk Skills the same; the other nine 26 to 40
 on, about 4 off; every name 90 on, 49 off. Checked in headless Chrome over file:// (npm run drive,
 port 9467): a real save and Free mode, some layers off, 1440 and 390, es and en, no console errors.
+
+### The givers' figures (25 October 2026)
+
+«Who gives a 100% thing» (`ELSEWHERE: 'person'` in `tools/gen-people.js`) drew every mark with the
+herald, the layer's emblem, though Plinney, Pinstress, Loddie and Mooshka had figures all along, and
+Lumble got his (PR #192). The options went to Albert in `108-giver-figures-variants.html` (the
+givers focused with the «Everyone else» people of their area, a real save and Free mode, 1440 and
+390; kept out of the repo): A the herald, as before; B each giver's own figure, as «Everyone else»
+draws people; C the figure with a small herald disc on its lower right. **Decision: C** (Albert,
+25 October 2026):
+
+- **Each giver's figure**, from `js/people.js GIVERS` (npc id → `people/<id>`, written by
+  `tools/gen-people.js` from the title key of `js/how.js NPCS`), **the herald on its lower right**:
+  the had tick's disc mirrored (same radius, ringed as the mark's rim, `.mp-giver`), so it never
+  meets the tick, the cross or a cluster's count, all on the upper right. The same in the card and
+  the lists (the HTML badge, `GIVER_HERALD`).
+- **No figure, the herald alone**: Eva. The legend switch keeps the herald.
+
+Checked in headless Chrome over file:// (npm run drive, port 9465): Plinney, Pinstress and Eva
+focused with their cards, restoreData21 and Free mode, 1440 and 390, es and en, no console errors.
 
 ## Step 7 · Journal
 

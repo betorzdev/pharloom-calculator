@@ -282,3 +282,26 @@ test('where each wish is taken: the game\'s Wishwalls and the NPCs who offer the
   assert.deepEqual(Q.FROM['Courier Delivery Songclave'], { npc: ['Belltown'] });
   assert.deepEqual(Q.FROM['Great Gourmand'], { npc: ['Song_09b'] });
 });
+
+test("Act 3's road to the end: the main objectives in the game's order, the Old Hearts any three", () => {
+  assert.equal(A.end({ act: 2 }), null);
+  let road = A.end({ act: 3 });
+  assert.deepEqual([road.act, road.end, road.done, road.total], [3, 'sister-of-the-void', 0, 8]);
+  assert.deepEqual(road.steps.map((s) => s.id), ['fall', 'chapel', 'bell-eater', 'dark-below', 'escape', 'shamans', 'hearts', 'last-dive']);
+  // Every stage is a main objective the save keeps.
+  for (const s of road.steps) assert.ok(Q.CHAIN[s.quest] && Q.CHAIN[s.quest].main, s.quest);
+  // Two stages of The Dark Below done: it counts them, and its words are the third's.
+  const dark = ['Black Thread Pt0', 'Black Thread Pt1 Shamans', 'Bellbeast Rescue', 'Diving Bell Pt1 Inspect', 'Diving Bell Pt2 Ballow'];
+  road = A.end({ act: 3, quests: dark });
+  assert.deepEqual([road.done, step(road, 'dark-below').done, step(road, 'dark-below').quest], [3, 2, 'Diving Bell Pt3 Descend']);
+  // The hearts: any three of four, then the Shamans.
+  const hearts = CO.PIECES.map((p, i) => (p[0] === 'old-heart' ? i : -1)).filter((i) => i >= 0);
+  assert.equal(hearts.length, 4);
+  const h = step(A.end({ act: 3, pieces: hearts }), 'hearts');
+  assert.deepEqual([h.held, h.need, h.ok, h.done, h.total], [3, 3, false, 3, 4]);
+  assert.equal(step(A.end({ act: 3, quests: ['Black Thread Pt5 Heart'] }), 'hearts').ok, true);
+  // Last Dive: the Everbloom, then the ending (its quest is never marked complete).
+  assert.deepEqual([step(A.end({ act: 3, everbloom: true }), 'last-dive').done, step(A.end({ act: 3, everbloom: true }), 'last-dive').ok], [1, false]);
+  road = A.end({ act: 3, endings: ['sister-of-the-void'] });
+  assert.deepEqual([road.done, road.total], [8, 8]);
+});

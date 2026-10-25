@@ -417,13 +417,17 @@ Under the map, **What the map shows**, as the Hollow Knight site has it: «Show 
 its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
 categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
 Crafting Kit, the seven abilities, the 51 Tools, the Crests, the Silk Skills and the Everbloom), then
-«Up to · All · Act 1 · Act 2 · Act 3» (on a phone, a line of its own): up to an Act, the map shows
-only what can be had by then, nothing of a later Act. A mark goes by its own Act (the one its card
+«Up to · Act 1 · Act 2 · Act 3» (on a phone, a line of its own), the three Acts on a thread lit up to
+the one picked, your game's Act ringed («You are here» on hover): up to an Act, the map shows only
+what can be had by then, nothing of a later Act; up to Act 3 is everything. A mark goes by its own Act (the one its card
 says) or its room's, the later: a room's is the first Act it can be entered in, worked out on the
 game's doors (the Citadel and what the Clawline or the Faydown Cloak opens, Mount Fay, the Sands of
 Karak, Wisp Thicket and the Putrified Ducts, are Act 2's; the Abyss, Verdania, the destroyed Cradle
-and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. With a save
-the Map opens on its Act; Free mode on All. What you pick is kept for that profile while its game
+and Cogwork Core Act 3's), so a bench or a cache with no Act of its own goes by its room. A main
+objective's pins take its Act in «Tareas» (Beast in the Bells, at any Bellway station: Act 3), a
+Wishwall or someone who offers wishes their first wish's, and someone in a room only Act 3 has them
+in, Act 3 (Gilly's Act 3 rooms, Ballow at the Diving Bell). With a save
+the Map opens on its Act; Free mode on Act 3. What you pick is kept for that profile while its game
 stays in that Act, and once the save reaches the next Act the Map follows it there. A layer with
 nothing up to the Act picked is greyed, its count 0. Then «Whole map» with a save, on at first (see
 below), the area names on or off, and «Show Completed» (the game's own words for the switch on its
@@ -589,9 +593,11 @@ leaves those off.
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
   freed (the Whispering Vaults' second gauntlet).
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
-  Loddie, Lumble, Mooshka). **Everyone else** (off at first): every
+  Loddie, Lumble, Mooshka), each with their own figure and a small herald on its lower right, so
+  the mark still says they give a thing of the 100% (Eva, with no figure, is the herald alone). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
-  from the game's sprites (tools/extract-people.py), named as their title card names them. With a
+  from the game's sprites (tools/extract-people.py; the Last Conductor, whom the game draws only as
+  a black shadow, keeps the herald), named as their title card names them. With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
   now, each spot by the switches the game turns it on with (the flea troupe at its camp, Kratt
@@ -672,7 +678,7 @@ opaque part is measured (tools/fit-marks.py, js/mark-fit.js), centred and drawn 
 or smaller where it would cross the plate; the selector under the map and Your game's lists measure
 them the same way. What has no picture of its own takes one of the game's: Shakra's Journal portrait, a key of the
 inventory for the keys, the pause menu's Wishes tab for a Wishwall, a wish's emblem for who
-asks for one, the herald's emblem for who gives a thing of the 100%, the game's Bellhome bench pin
+asks for one, the herald's emblem for who gives a thing of the 100% with no figure (Eva; on the others' figures it sits small), the game's Bellhome bench pin
 for its furnishings, the Citadel's brass lever for the levers and a Docks plate for the pressure
 plates (tools/extract-map-icons.py takes them from the game's files). The breakable walls keep a
 drawn sign, bricks: the game's walls are tall dark rock that doesn't read that small; so do the
@@ -780,7 +786,8 @@ own placement.
 At the top, **where you are**: the three Acts on one thread as the game titles them (Act 1
 Pharloom, Act 2 Citadel of Song, Act 3 Abyss), yours marked «You are here», and one sentence:
 which Act you're in and what opening the next takes («Step 1 of 5 to Act 3: 3 things left»), in
-Act 3 what's left of the 100%, at 100% that you have it all.
+Act 3 what the end takes («Step 4 of 8 to the end: 2 things left»), and past it what's left of the
+100%, at 100% that you have it all.
 Without a save it says what the tab is: the guide to the three Acts and to the 100%.
 
 Then three tabs, as three cards, each with its own picture of how far you are; the one you used last
@@ -849,15 +856,17 @@ to be brought, the shop and its price), then what it waits for (what posts the w
 first, the Act it comes in, the keys or abilities it needs). On the road «More» holds the rest; in the
 100% tab's lists it follows the lead, and on a phone «+n more» opens it.
 
-In Act 3 the tab is **«Your game»**: the four endings on a thread (the Acts are already on top), lit
-the ones your save has seen (the game keeps them: Weaver Queen, Snared Silk, Twisted Child, Sister
-of the Void); a ring for the endings and one for the things of the 100% only Act 3 holds. An Act 2
-ending you never saw is closed in that game for good: the thread crosses it out with «closed» under
-it, and the ring and the tab's card count only the endings still within reach («2 of 3 endings
-within reach»), with a line under the ring naming the closed one.
+In Act 3 the tab is **«The road to the end»**, drawn as the roads to the Acts: a station per main
+objective as «Tasks» titles them, in the game's order (After the Fall, Awaiting the End, Beast in the
+Bells, The Dark Below, Return to Pharloom, Spell Seeker, The Old Hearts, Last Dive), each with what
+«Tasks» says of the stage you're on and its pins on the Map (the Bell Eater's at every Bellway). The
+Dark Below counts its four stages (the diving bell found, Ballow, the descent, the Abyss reached);
+the Old Hearts lists the four hearts (any three, each with its pin) and then the Snail Shamans; Last
+Dive, the Everbloom and Lost Lace. The route ends at «The ending · Sister of the Void», lit once your
+save has seen it; its card then says so.
 
 **Without a save**, a notice over every tab invites you to import yours (what it would show, and
-the button), the 100% card says «100% in 10 categories», and the road tab is both roads as a guide,
+the button), the 100% card says «100% in 10 categories», and the road tab is the three roads as a guide (to Act 2, to Act 3 and to the end),
 each under its title and what it is, as the route with no step yours: each station says how much it
 asks («5», «31») and opens, shut at first, on what the game says of it, its parts and the whole of
 its list, with no «What's missing · Everything».
@@ -886,7 +895,7 @@ and each missing row has a box to mark it here too (on a Tool marked with its up
 such as the Curvesickle, the box unmarks both); masks, silk, the Silk Hearts, the Needle, the
 Kit and the Pouch follow what the Inventory sets, and their groups say so, with the way there. The
 line on top says it's Free mode, counting your marks from a New Game, and that the road is the
-guide; the road tab is «The roads to Acts 2 and 3».
+guide; the road tab is «The roads to Acts 2 and 3, and to the end».
 
 The whole road, as the game's own rules have it (read from its files, not from a guide), step by
 step, each with what the game says of it and its way onto the Map, as above:
@@ -921,6 +930,11 @@ step, each with what the game says of it and its way onto the Map, as above:
      Map.
   4. Bring them to the Caretaker in Songclave.
   5. Snare Grand Mother Silk with the Needolin.
+- **To the end**, Act 3's main objectives: escape the Cradle; reach the Ruined Chapel; defeat the Bell
+  Eater; find the diving bell in Deep Docks, get Ballow's help, descend and reach the Abyss's heart;
+  escape the Abyss; return to the Snail Shamans; bring them three of the four Old Hearts (Crust King
+  Khann's, Nyleth's, Skarrsinger Karmelita's, the Clover Dancers'); then the Everbloom, from the Red
+  Memory, and Lost Lace: Sister of the Void.
 
 While Hornet is cursed (the Cursed Crest, until the wish Infestation Operation cures her), the step
 you're on says that the curse blocks the road: Pavo won't give the key, Couriers Tipp & Pill hand
@@ -939,8 +953,7 @@ for the Wounded: Sherma met and the Whiteward visited; Strengthening Songclave, 
 Bellhart; Bellhart's Glory: the Cogwork Dancers, the Clawline or Songclave entered) and that each
 shows up after a rest at a bench («then rest at a bench outside Bellhart»: outside Bellhart,
 outside Songclave, or in another area, as the game has it), and Pinmaster's Oil that
-Plinney's second Needle upgrade counts for it too. In Act 3, the Act 2 endings you never saw say
-they're closed in that game. Where it's taken is the game's: the Wishwall that lists it
+Plinney's second Needle upgrade counts for it too. Where it's taken is the game's: the Wishwall that lists it
 (Bellhart's, Bone Bottom's or Songclave's), or the NPC who offers it; a wish that comes after
 another on a board (Crawbug Clearing, Berry Picking…) counts the board until that one is done, and
 the NPC after. A part
