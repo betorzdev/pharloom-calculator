@@ -1748,11 +1748,13 @@
     // Two sentences of a card's note, one after the other.
     const then = (a, b) => (a && b ? a + (/[.!?)]$/.test(a) ? ' ' : '. ') + b : a || b);
     /* What the game waits for before it puts this fight there (js/spots.js OPENS: a wish taken, a
-       wish granted, an ability, the enemies freed), and with a save whether this game has it (D27). */
+       wish granted, an ability, the enemies freed), and with a save whether this game has it (D27).
+       A thing in a room whose only door that wish opens (OPENS room: the Reserve Bind, past the
+       Second Sentinel's wall in Hang_08), the same, said of its room. */
     const opensNote = (k) => {
       const o = (SP.OPENS || {})[k];
       if (!o) return '';
-      const what = o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
+      const what = o.room ? t('mapOpensRoom', { wish: pick(QU.CHAIN[o.wish].name) }) : o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
         : o.art ? t('howNeeds', { keys: pick(D.ARTS.find((x) => x.id === o.art).name) }) : t('mapOpensFreed', { foe: pick(BOOK_KEY.get(o.freed).name) });
       // What posts its wish, while it isn't taken (js/app-progress.js OPENS: Final Audience's Second Sentinel).
       const posts = o.wish && App.wishPosts ? App.wishPosts(o.wish, own || g).lines : [];
@@ -1796,7 +1798,7 @@
     const kind = key.split(':')[0];
     if (kind === 'piece') {
       const i = Number(key.split(':')[1]);   // its other room's too ('piece:<i>:<vendor>')
-      note = m.note || (App.howPiece ? App.howPiece(i) : '');
+      note = then(m.note || (App.howPiece ? App.howPiece(i) : ''), !g || !m.got ? opensNote(key) : '');
       /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
          Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
@@ -1807,7 +1809,7 @@
       if (cyl) acts += btn('mapShow', cyl.key, t('mapToCylinder'));
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
-      note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
+      note = then(m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · '), !g || !m.got ? opensNote(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
       /* A wish's reward whose wish waits for another not done yet (js/how.js after; the card says
          «first:», as App.howOf): a way to who asks for that one. The Witch Crest: Yarnaby opens her
@@ -1880,6 +1882,7 @@
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      if (!g || !m.got) note = then(note, opensNote(key));   // in a room another wish shuts (js/spots.js OPENS room)
       if (m.alt && ALT_BY[m.alt.by]) note += ' ' + t(ALT_BY[m.alt.by][+m.alt.open], { foe: pick(m.alt.foe) });
       /* An objective's steps on this point, in order: each objective once (two steps of one share its
          name), with a save done or the one this game is on. */
@@ -1897,7 +1900,7 @@
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
       acts += takenAt(m.quest);
     } else if (kind === 'extra') {
-      note = m.note || '';
+      note = then(m.note || '', !g || !m.got ? opensNote(key) : '');
 
       // Eva's: the slots it needs, and with a save how many are open.
       if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))

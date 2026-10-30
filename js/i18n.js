@@ -474,6 +474,8 @@
     mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
     mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
     mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
+    // A thing in a room whose only way in the game shuts until a wish is taken (js/spots.js OPENS room).
+    mapOpensRoom:   { es: 'Su sala se abre al aceptar el deseo «{wish}»', en: 'Its room opens once the wish "{wish}" is taken' },
     mapOpenYes:     { es: 'ya está', en: 'done' },
     mapOpenNo:      { es: 'aún no', en: 'not yet' },
     // What Frey's furnishings wait for (js/shop.js needs), and the names in them.

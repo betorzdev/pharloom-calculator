@@ -2212,6 +2212,45 @@ const OPENS = {};
     OPENS[key] = { ...(o.wish ? { wish: o.wish } : o.after ? { after: o.after } : o.art ? { art: o.art } : { freed: o.freed }), check };
   }
 }
+/* What lies in a room every door into which a wish shuts (kb/data/game/gating.json doors,
+   tools/extract-gating.py; the doors into each room, entrances.json) takes that wish's opening, said
+   of its room: OPENS key → { wish, room: true, check } (js/app-map.js). Read on 30-Oct-2026: Hang_17b,
+   the Second Sentinel's arena, behind Hang_08's wall until Final Audience is taken (the Reserve Bind it
+   gives there: with game 4, Albert followed the Map to a wall), and Ward_09 behind Ward_03's door
+   until Balm for the Wounded is (the Spool Fragment Sherma gives there). Neither room was entered
+   before its wish was taken in any of the author's saves. A door that opens only once its wish can be
+   handed in (Bonegrave's, to the Summoned Saviour, Steel Sentinel's) has no check in the save: left
+   out. What is the wish's own there (where it's done) keeps its own card; a fight there must have that
+   wish's opening already (above), and another room's mark (ALSO, PLACES, VARIANTS) in a shut room
+   stops the run, as does a shut room the scan no longer finds. */
+{
+  const E = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'entrances.json'), 'utf8'));
+  if (E.patch !== P.patch) fail(`entrances.json is of patch ${E.patch}, pickups.json of ${P.patch}: run tools/extract-entrances.py again`);
+  const DOORS = GATING.doors || fail('gating.json has no doors: run tools/extract-gating.py again');
+  const SHUT = new Map();   // a room (lower case) → the wish whose taking opens its every door
+  for (const [room, ins] of Object.entries(E.doors)) {
+    const by = ins.map(([sc, door]) => DOORS[`${sc}|${door}`.toLowerCase()]);
+    if (by.length && by.every((x) => x && x[1] === 'accepted' && x[0] === by[0][0])) SHUT.set(room, by[0][0]);
+  }
+  if (SHUT.get('hang_17b') !== 'Song Knight') fail('SHUT: Hang_17b is no longer shut by Final Audience alone: read gating.json doors again');
+  let n = 0;
+  const shut = (scene, key, own) => {
+    const q = SHUT.get(lower(scene));
+    if (!q || q === own) return;
+    if (!Q.CHAIN[q]) fail(`SHUT: ${scene}'s wish ${q} isn't one of js/quests.js`);
+    if (OPENS[key]) { if (OPENS[key].wish !== q) fail(`SHUT: ${key} opens with ${OPENS[key].wish || '?'}, its room with ${q}`); return; }
+    OPENS[key] = { wish: q, room: true, check: ['accepted', q] };
+    n++;
+  };
+  for (const cat of ['pieces', 'tools', 'crests', 'skills', 'arts']) for (const [id, sc] of Object.entries(AT[cat])) shut(sc, (cat === 'pieces' ? 'piece' : cat) + ':' + id);
+  EXTRAS.forEach((x, i) => shut(x[3], 'extra:' + i));
+  TASKS.forEach((x, i) => shut(x[3], 'task:' + i, x[1]));
+  for (const b of BOSSES) if (SHUT.has(lower(b[1])) && !OPENS['boss:' + b[0]]) fail(`SHUT: ${b[0]}'s arena ${b[1]} is shut by ${SHUT.get(lower(b[1]))}, but OPENS has no word of it`);
+  const elsewhere = [...Object.entries(ALSO).map(([k, v]) => [k, v[0]]), ...Object.entries(PLACES).flatMap(([k, v]) => v.at.map((a) => [k, a[0]])),
+    ...Object.entries(VARIANTS).flatMap(([k, v]) => v.at.map((a) => [k, a[2]]))];
+  for (const [k, sc] of elsewhere) if (SHUT.has(lower(sc))) fail(`SHUT: ${k} has a place in ${sc}, which a wish shuts: give it its opening`);
+  console.log(`rooms a wish shuts: ${[...SHUT].map(([r, q]) => `${r} (${q})`).join(', ')}; ${n} marks in them take its opening`);
+}
 
 /* A boss fought in a scene the Map can't place, which only its room loads, with no door into it
    (SS.sceneHosts): where the game pins the main objective its beating ends, in that room (a goal
@@ -2492,7 +2531,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      JOURNAL_ACT3  the entries no room has before Act 3
      OPENS    'boss:<foe>' or 'gaunt:<id>' → { wish | after | art | freed, check }: what the game waits
               for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
-              entry's enemies freed), and the save's check that it holds
+              entry's enemies freed), and the save's check that it holds; also 'tools:<id>',
+              'piece:<i>', 'extra:<i>' or 'task:<i>' → { wish, room: true, check }: a thing in a room
+              every door into which that wish shuts until it's taken (the Reserve Bind, in Hang_17b)
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
      GOAL_ACT TASKS index → the first Act each objective pin can be on (its chain, or its wish's)
      ROOM_ACT a room's scene (lower case) → its first Act, 2 or 3 (a room not in it is Act 1): the

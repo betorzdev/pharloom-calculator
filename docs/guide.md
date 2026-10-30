@@ -456,7 +456,10 @@ What counts for the 100% is in the first two groups and the Everbloom, each thin
 it's had: lying there, at the shop that sells it, with whoever hands over a wish's reward (Shakra
 in Bilewater for Trail's End's Throwing Ring, the Pinstress atop Mount Fay, Sherma in the Whiteward:
 the card says who gives it and where the wish is taken), else at the Wishwall or with whoever gives
-the wish, in its boss's arena, with the person who gives it. All of it on at first, and what leads to it too
+the wish, in its boss's arena, with the person who gives it. A thing in a room whose every door the game
+keeps shut until a wish is taken says so on its card, with what posts that wish and, with a save,
+whether yours has it: the Reserve Bind, in the Second Sentinel's arena past a wall in the High Halls
+(Final Audience), and Sherma's Spool Fragment in the Whiteward (Balm for the Wounded). All of it on at first, and what leads to it too
 (Memory Lockets, Lost Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), though «Only the 100%»
 leaves those off.
 
