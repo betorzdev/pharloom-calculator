@@ -827,11 +827,6 @@
       notes: {
         cog_10: [
           {
-            es: 'Un autómata inerte con el pecho vacío.',
-            en: 'An inert automaton with an empty chest.',
-            key: 'SONG_KNIGHT_TUBE',
-          },
-          {
             es: '¿Introducir corazón mecánico?',
             en: 'Insert Cogwork Heart?',
             key: 'SONG_KNIGHT_TUBE_PROMPT',

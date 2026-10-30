@@ -189,7 +189,7 @@ test('the Second Sentinel lies in the Cogwork Core until it\'s woken, Final Audi
   const sp = x.spots.find((s) => s[0] === 'cog_10');
   assert.ok(sp && sp.length === 3, 'a point in Cog_10');
   assert.deepStrictEqual(x.here.cog_10, ['not', ['flag', 'wokeSongChevalier']]);
-  assert.deepStrictEqual(x.notes.cog_10.map((n) => n.key), ['SONG_KNIGHT_TUBE', 'SONG_KNIGHT_TUBE_PROMPT']);
+  assert.deepStrictEqual(x.notes.cog_10.map((n) => n.key), ['SONG_KNIGHT_TUBE_PROMPT']);
   assert.strictEqual(PE.STEP['Song Knight'], 'song-knight:cog_10');
   // The step the Map's button goes to, per state: inert (user4) → there; woken → no longer (the Wishwall).
   const step = (pd) => F.game({ silk: 0, ...pd }).peopleHere[PE.STEP['Song Knight']];

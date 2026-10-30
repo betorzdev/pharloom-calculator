@@ -2464,7 +2464,7 @@ Albert's «Marca + botón al paso»: the button goes to the next step. For Final
 Sentinel is woken, that's the Sentinel itself, now a mark of its own in Cog_10 (tools/gen-people.js
 DORMANT: the «Song Knight Sleeping» FSM that takes the Cogheart, its point where pickups.json items
 gives the Cogheart Pieces; shown while wokeSongChevalier isn't set, through peopleHere; its card the
-game's SONG_KNIGHT_TUBE and SONG_KNIGHT_TUBE_PROMPT, and the pieces held). js/people.js STEP names it
+game's SONG_KNIGHT_TUBE_PROMPT and the pieces held as a count, no met state: Albert, «una guía, no lore»). js/people.js STEP names it
 as the wish's first step; the Wishwall's card has the same button while it's shown. Woken, the button
 goes to the Wishwall, which counts the meetings. In all 94 saves neither room is entered before its
 wish is taken.

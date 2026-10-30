@@ -96,11 +96,11 @@ const questsIn = (c) => (['accepted', 'quest'].includes(c[0]) ? [c[1]] : ['not',
    «Song Knight Tube» bool is set by then). It has no NpcDialogueTitle, so tools/extract-people.py
    doesn't list it: its point is that FSM's object, where pickups.json items has the Cogheart Pieces
    given. A spot of theirs shown while here holds (not woken); note, the game's own lines there
-   (SONG_KNIGHT_TUBE, SONG_KNIGHT_TUBE_PROMPT), on its card; step, the wish it's the first step of:
+   (SONG_KNIGHT_TUBE_PROMPT: the action, not the lore), on its card; step, the wish it's the first step of:
    the Map's way to that wish goes to it while the save shows it (STEP). The run stops if the object
    or the room is gone. */
 const DORMANT = { SONG_KNIGHT: { scene: 'cog_10', item: 'Cog Heart Pieces', obj: 'Song Knight Sleeping', here: not(flag('wokeSongChevalier')),
-  note: ['SONG_KNIGHT_TUBE', 'SONG_KNIGHT_TUBE_PROMPT'], step: 'Song Knight' } };
+  note: ['SONG_KNIGHT_TUBE_PROMPT'], step: 'Song Knight' } };
 
 /* HAND: per person (their key), what the save says. The rest are in the list with no state.
    Checked over the 77 files of the author's saves (16-Oct-2026, design/03-redesign.md, step 6, the

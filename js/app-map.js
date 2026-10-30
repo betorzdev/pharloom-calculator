@@ -1876,12 +1876,13 @@
       const placed = !!own && !!x.here && x.spots.every(([sc]) => (x.id + ':' + lower(sc)) in (own.peopleHere || {}));
       note = s.unsure ? t('mapNpcUnsure') : !s.where && !placed && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
       /* The game's lines on this spot (js/people.js notes: the Second Sentinel inert in Cog_10, «Insert
-         Cogwork Heart?»), and there, with a save, the Cogheart Pieces it holds. */
+         Cogwork Heart?»), and there, with a save, the Cogheart Pieces held as a count, in place of
+         the met state, which says nothing of someone not woken yet (Albert: a guide, not lore). */
       const lines = (x.notes || {})[lower(m.scene)];
       if (lines) {
-        const sn = own && own.sentinel, pieces = x.id === 'song-knight' && sn && sn.read && !sn.woke
-          ? `${t('roadCogPieces')}: ${t('roadKnightPieces', { n: num(Math.min(3, sn.pieces)) })}` : '';
-        note = [lines.map(pick).join(' '), pieces].filter(Boolean).join(' · ');
+        const sn = own && own.sentinel;
+        note = lines.map(pick).join(' ');
+        acts = x.id === 'song-knight' && sn && sn.read && !sn.woke ? state(`${t('roadCogPieces')} ${num(Math.min(3, sn.pieces))}/3`) : '';
       }
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
