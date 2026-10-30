@@ -41,8 +41,8 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; why a wish isn't posted yet, 31 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html`, `117-tasks-why-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; why a wish isn't posted yet, 31 Oct; a guide, not lore, 31 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html`, `117-tasks-why-variants.html`, `118-guide-not-lore-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct; a guide, not lore, 31 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html`, `118-guide-not-lore-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -2074,6 +2074,46 @@ Checked in headless Chrome over file:// (npm run drive, port 9455): restoreData1
 1440 and 390, es and en, the legend's groups and counts dumped, a group switch and a set switch
 toggled in Free mode, a stored fold with `game` dropped; user1 (Act 3) on the Map, Your game,
 Progress and the Journal; no console errors.
+
+### A guide, not lore (31 October 2026)
+
+Albert, on the dormant Second Sentinel's card (PR #212: «Un autómata inerte con el pecho vacío.
+¿Introducir corazón mecánico? · Piezas de corazón de engranajes: 3 de 3 conseguidas · Aún no os
+habéis visto»): «La gente que entra en nuestra web lo que busca es una guía, no lore», for the whole
+site, every wish and every Map entry. A sweep of every kind of card and of Progress's rows, in es
+and en, Free mode and seven saves (design/00-study.md, §9, «A guide, not lore», with the counts),
+found almost no lore on the Map but states and sentences that don't help, and the lore in Progress's
+quotes. `118-guide-not-lore-variants.html` (kept out of the repo): each card and row of the site
+captured, now and with each option. Map: 1 people's cards (**A** no met state and no place notes;
+B only «Not met yet», short notes; C as now), 2 a Wishwall's card (**A** each wish not posted yet
+with its next step, a link, App.wishNext as the Tasks tab since PR #213; B the open wishes' names
+only; C the paragraph), 3 a count (**A** «what n/m» in the state row; B in the sentence), 4 the
+game's prompt (**A** quoted; B a plain line; C framed), 5 outside the 100% (**A** a state, a short
+note; B the sentence), 6 nothing left (**A** one «Nothing left here» state; B nothing; C the
+sentences), 7 an area's card (**A** zeros hidden; B as now), 8 the Citadel's map machines (**A**
+«Map machine: 70 rosaries»; B the game's words and the price; C as now). Progress: 9 a wish's quote
+(**A** the «Tasks» line always; B none; C the Wishwall's plea), 10 a wish not posted yet on the road
+(**A** its next step, a link, as on Tasks; B its steps under «More»), 11 the road's other quotes
+(**A** all go: the Faydown Cloak's and the Bellhome Key's descriptions, the Phantom's Journal entry,
+the Caretaker's lines; B only the Caretaker's kept; C as now), 12 the Inventory's and the Journal's
+own panels (**A** their game text kept, where the pause menu shows it; B dropped too). And fixes with
+no choice: «first» said twice, a boss's card naming its wish twice and giving two ways to it, Creige's
+«Sells drinks.», «Had in this room.», «Makes a wish» under a giver's name, the hidden corners' «What
+covers parts of this room…», Shakra's Free-mode «…moves around Pharloom; the other 14 are found».
+
+**Decision: all A, and the fixes** (31 October 2026). Built: `js/app-map.js` cardHtml (no met state
+nor place notes; `wishSteps`/`stepLine` from `App.wishNext` on a Wishwall's card, `.mp-card-steps`;
+`count`/`killsState` in the state row; the prompt through `mapPrompt`; `m.out` and the layer's
+«Outside the 100%» as a state; `mapNothingLeft`; the area's zeros; the boss's wish once and one way,
+the step the save shows first; `TRADE_NOTE`; no `mapMapFound`; no giver sub), `js/app-progress.js`
+(`wishSays` the «Tareas» line only; `wishRow`'s `lead`, the next step from `wishNext` through
+`stepFocusOf`, `foldHtml`'s fourth argument; no `SNARE_SAYS`, `ALT_SAYS`, the cloak's and the key's
+descriptions), `js/i18n.js` (gone: `mapMet`, `mapNpcSpots`, `mapNpcUnsure`, `mapKills`, `mapEvaHave`,
+`mapHuntHave`, `mapSellsNone`, `mapWishesNone`, `mapShakraAll`, `mapMapFound`, `mapArtOut`,
+`mapTrade_creige`, `roadKeyDesc`, `roadSays_*`; new: `mapDefeated`, `mapEvaOpen`, `mapNothingLeft`,
+`mapPrompt`; shorter: `mapToolUpgrade`, `mapToolLent`, `mapToolGivenUp`, `mapEvaSlots`,
+`mapMapMachine`, `mapHiddenNote`, `mapShakraNote`), `css/app.css` `.mp-card-steps` and the count's
+figure inside a card, test/guide-not-lore.test.js.
 
 ## Step 7 · Journal
 
