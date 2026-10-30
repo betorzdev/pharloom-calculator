@@ -1750,19 +1750,25 @@
     /* What the game waits for before it puts this fight there (js/spots.js OPENS: a wish taken, a
        wish granted, an ability, the enemies freed), and with a save whether this game has it (D27).
        A thing in a room whose only door that wish opens (OPENS room: the Reserve Bind, past the
-       Second Sentinel's wall in Hang_08), the same, said of its room. */
+       Second Sentinel's wall in Hang_08), the same, said of its room. One short line: what posts
+       the wish is on its own card, a button away (opensBtn; Albert, PR #212: less text). */
     const opensNote = (k) => {
       const o = (SP.OPENS || {})[k];
       if (!o) return '';
       const what = o.room ? t('mapOpensRoom', { wish: pick(QU.CHAIN[o.wish].name) }) : o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
         : o.art ? t('howNeeds', { keys: pick(D.ARTS.find((x) => x.id === o.art).name) }) : t('mapOpensFreed', { foe: pick(BOOK_KEY.get(o.freed).name) });
-      // What posts its wish, while it isn't taken (js/app-progress.js OPENS: Final Audience's Second Sentinel).
-      const posts = o.wish && App.wishPosts ? App.wishPosts(o.wish, own || g).lines : [];
-      const post = (a) => (posts.length ? `${a}. ${posts[0][0].toUpperCase()}${posts.join(' · ').slice(1)}` : a);
-      if (!own || !own.opensRead) return post(what);
+      if (!own || !own.opensRead) return what;
       const yes = own.opens.includes(k), q = o.wish || o.after;
       const state = !yes ? t('mapOpenNo') : q ? t((own.quests || []).includes(q) ? 'mapWishGranted' : 'pgPromised') : o.art ? t('pgGot') : t('mapOpenYes');
-      return post(`${what} (${state})`);
+      return `${what} (${state})`;
+    };
+    /* The way to that wish's mark (App.wishFrom: its Wishwall or who asks for it, whose card says
+       what posts it), while this game hasn't opened it yet: as the Witch Crest's «See who asks for». */
+    const opensBtn = (k) => {
+      const o = (SP.OPENS || {})[k], q = o && (o.wish || o.after);
+      if (!q || (own && own.opensRead && own.opens.includes(k))) return '';
+      const f = App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+      return f.mark && list.some((x) => x.key === f.mark) ? btn('mapShow', f.mark, t('mapToFirst', { wish: pick(QU.CHAIN[q].name) })) : '';
     };
     // Only in a gauntlet's waves (js/spots.js JOURNAL): which ones, and whether this game has won them all.
     const wavesNote = (ids) => {
@@ -1878,6 +1884,12 @@
       if (m.quests) { note = then(note, wishesNote(m.quests)); acts += huntBtns(m.quests); }
     } else if (kind === 'board' || kind === 'giver') {
       note = wishesNote(m.quests);
+      /* What posts each wish here not taken yet (App.wishPosts: Final Audience, Balm for the Wounded…),
+         the place the other cards' «See who asks for» leads to (opensBtn). */
+      for (const q of new Set(m.quests)) {
+        const ls = !wishDone(g, q) && App.wishPosts ? App.wishPosts(q, own || g).lines : [];
+        if (ls.length) note = then(note, `${pick(QU.CHAIN[q].name)}: ${ls.join(' · ')}`);
+      }
       acts += huntBtns(m.quests);
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
@@ -1940,6 +1952,11 @@
       const why = m.lost.person ? LOST_WITH[m.lost.person]() : m.lost.left ? t('mapShotLeft', { npc: pick(HW.NPCS[m.lost.left]) }) : m.lost.arena ? t('mapLostArena', { name: App.gauntletName(m.lost.arena) }) : t('mapLostAct3');
       note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + why : why;
       acts = state(t('mapLost')) + (kind === 'gaunt' ? acts : '');
+    }
+    // What opens it still to do (OPENS): a way to its wish, unless the card has one to that mark already.
+    if (!(g && m.got) && !(own && m.lost)) {
+      const b = opensBtn(key), to = b && /data-value="([^"]*)"/.exec(b)[1];
+      if (b && !acts.includes(`data-value="${to}"`)) acts += b;
     }
     return cardShell(art, name, where, note, acts);
   }

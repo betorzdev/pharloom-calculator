@@ -2454,8 +2454,13 @@ opens once Steel Sentinel can be handed in, which the save doesn't keep (left ou
 gives every mark in a room all of whose doors one wish shuts that wish's opening (OPENS { wish, room,
 check }: the Reserve Bind and Sherma's Spool Fragment), not the wish's own place there, and stops if a
 fight there lacks it or another room's mark lands there. The card adds «Its room opens once the wish
-"…" is taken» (yours: not yet / Wish Promised / Wish Granted) and what posts the wish (App.wishPosts),
-while it isn't had. In all 94 saves neither room is entered before its wish is taken.
+"…" is taken» (yours: not yet / Wish Promised / Wish Granted) while it isn't had. Albert on the PR:
+«no me gusta tanto texto (la gente no se va a parar a leerlo). ¿no sería mejor poner enlace hacia el
+wish?». So no card with an OPENS line carries what posts the wish any more (the bosses' neither): a
+«See who asks for "…"» button (mapToFirst, as the Witch Crest's) goes to the wish's mark (App.wishFrom,
+its Wishwall), unless the card has a way there already (the Second Sentinel's «See the Wishwall»), and
+a Wishwall's or a giver's card says what posts each of its wishes not yet taken (App.wishPosts). In
+all 94 saves neither room is entered before its wish is taken.
 test/journal-acts.test.js.
 
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
