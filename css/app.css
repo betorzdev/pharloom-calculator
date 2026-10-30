@@ -2797,6 +2797,12 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-card-t { display: flex; flex-direction: column; gap: var(--sp-half); min-width: 0; font-size: var(--fs-xs); color: var(--muted); }
 .mp-card-t b { font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
 .mp-card-note { color: var(--ink-2); text-wrap: pretty; }
+/* A Wishwall's wishes not on it yet, a line each with its next step (design/118, 2 A), drawn as the
+   Tasks tab's (.pg-step); the count's figure at the line's size, not the card's name's. */
+.mp-card-steps { display: grid; gap: var(--sp-half); color: var(--ink-2); }
+.mp-card-steps > span { display: block; }
+.mp-card-steps .pg-step { vertical-align: bottom; }
+.mp-card-t .pg-step-n b { font-size: inherit; }
 .mp-card > .text-btn, .mp-card-state { grid-column: 2; justify-self: start; font-size: var(--fs-sm); }
 .mp-card-state { color: var(--muted); }
 .mp-card-x { grid-column: 3; grid-row: 1; align-self: start; }

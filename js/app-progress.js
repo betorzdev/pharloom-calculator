@@ -444,12 +444,7 @@
     const wishFocus = (j) => { const y = all.find((z) => z.i === j); return y && !y.got && y.focus ? y.focus : null; };
     for (const x of all) {
       x.rows = asRows; x.wishFocus = wishFocus;
-      x.stepFocus = (s, k) => {
-        const id = 'step:' + x.i + ':' + k;
-        FOCUS.set(id, { keys: s.keys.map((k, n) => ({ k, n, d: onMap.get(k).scene ? away(onMap.get(k).scene) : null }))
-          .sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k), name: s.text });
-        return id;
-      };
+      x.stepFocus = (s, k) => stepFocusOf(x.i, s, k, onMap);
       const n = x.next;
       if (n && !n.posted && !n.free) {
         const s = n.steps[n.next];
@@ -607,11 +602,10 @@
     const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'qitem' && JSON.stringify(k[2]).includes(held)) : -1;
     return i >= 0 ? 'task:' + i : null;
   }
-  // What the Caretaker says of each piece once the wish is taken (CARETAKER_SNARE_REPEAT_*).
-  const SNARE_SAYS = { 'Snare Soul Churchkeeper': 'roadSays_churchkeeper', 'Snare Soul Bell Hermit': 'roadSays_hermit',
-    'Snare Soul Swamp Bug': 'roadSays_swamp', 'Silk Snare': 'roadSays_snare' };
+  /* A piece's row: who gives it or what to beat, and where. The Caretaker's lines on each
+     (CARETAKER_SNARE_REPEAT_*) said it in his voice, and went (design/118, 11 A: a guide, not lore). */
   const snareRow = (x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null,
-    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x), says: SNARE_SAYS[x.save] ? says('caretaker', t(SNARE_SAYS[x.save])) : null });
+    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x) });
   /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
      it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
      (prev) is taken where the first one not done yet is: the board's Pre, then, once it's taken, the
@@ -815,6 +809,15 @@
     'Songclave Donation 2': (g, p, s) => (s.clave || 0) >= 2 && p.clave2,
     'Song Knight': (g, p, s) => !!s.ready,
   };
+  // The Map's marks now, by key, for the steps' ways (wishNext keeps those there and not had).
+  const onMapNow = () => new Map((App.mapApi ? App.mapApi.list() : []).map((m) => [m.key, m]));
+  // A step's marks as a focus of their own, nearest first (pgFocus): a wish's row's, on Tasks or the road.
+  function stepFocusOf(i, s, k, onMap = onMapNow()) {
+    const id = 'step:' + i + ':' + k;
+    FOCUS.set(id, { keys: s.keys.map((key, n) => ({ k: key, n, d: onMap.get(key) && onMap.get(key).scene ? away(onMap.get(key).scene) : null }))
+      .sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k), name: s.text });
+    return id;
+  }
   function wishNext(q, g, own, marks = new Map()) {
     if (own && ((own.quests || []).includes(q) || (own.taken || []).includes(q))) return null;
     const waits = App.wishWaits(wishAt(q), own);
@@ -841,27 +844,26 @@
   /* ── Each step and row in the game's own words (design/28-progress-steps-variants.html, 1 A to
      5 A) ─────────────────────────────────────────────────────────────────────────────
      What the pane «Tareas» says of it (js/quests.js CHAIN desc, or ready once its targets are
-     met), its Wishwall before it's taken (wall), the Inventory's line, the Journal's, or the
-     Caretaker's directions; each tagged with where the game says it. A step the game has no word
-     for (unlocking Silk and Soul, the caravan) has none: nothing is written by hand. */
+     met), tagged as the game's. Only that: what to do and where. The Wishwalls' pleas, the
+     Inventory's and the Journal's descriptions and the Caretaker's lines were quoted too, and went
+     (design/118, 9 A and 11 A: a guide, not lore). A step the game has no word for (unlocking Silk
+     and Soul, the caravan) has none: nothing is written by hand. */
   /* Act 3's road (js/acts.js end()): each step is a main objective, titled as «Tareas» titles it.
      A road's key tells it from the road to Act 3 in the guide, where both are drawn. */
   const END_IDS = ['fall', 'chapel', 'bell-eater', 'dark-below', 'escape', 'shamans', 'hearts', 'last-dive'];
   const objName = (s) => pick(QU.CHAIN[s.stages ? s.stages[0].quest : s.quest].name);
   const roadKey = (r) => (r.end ? 'end' : r.act);
-  const TAG = { tasks: () => t('pgTasks'), wall: () => t('mapLayer_wishwall1'), inv: () => t('navGame'), journal: () => t('navJournal'),
-    caretaker: () => t('roadCaretaker') };
+  const TAG = { tasks: () => t('pgTasks') };
   const says = (tag, text, name, loc) => (text ? { tag, text, name, loc } : null);
   const sayText = (v) => (typeof v === 'string' ? v : pick(v));
-  /* A wish as the game shows it now: its first stage not done (a board's Pre, then the wish); taken
-     (the save's IsAccepted, js/savefile.js taken), what «Tareas» says; else what its Wishwall says,
-     when it's posted on one. */
+  /* A wish as the game has it now: its first stage not done (a board's Pre, then the wish), in the
+     words «Tareas» gives it, what to do and where. Never its Wishwall's: the poster's plea, lore
+     (design/118, 9 A). */
   function wishSays(quest, g) {
-    const done = new Set(g ? g.quests : []), taken = new Set((g && g.taken) || []);
+    const done = new Set(g ? g.quests : []);
     let q = quest;
     while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
-    const e = QU.CHAIN[q] || {};
-    return !taken.has(q) && e.wall ? says('wall', e.wall) : says('tasks', e.desc);
+    return says('tasks', (QU.CHAIN[q] || {}).desc);
   }
   /* Lace atop the Cradle's tower: the objective Pharloom's Crown at its stage (its melodies, all
      three learned, the lift, Silk), as «Tareas» says it. */
@@ -892,9 +894,8 @@
     ...Object.fromEntries(END_IDS.map((id) => [id, (s) => questSays(s.quest, s.held >= s.need ? 'ready' : 'desc')])),
   };
 
-  // The other way in (design/90c): no objective names the Phantom, so its Journal entry says who it is.
-  const journalSays = (id) => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === id); return e ? says('journal', e.desc, e.name) : null; };
-  const ALT_SAYS = { phantom: () => journalSays('phantom') };
+  /* The other way in (design/90c) quoted the Phantom's Journal entry, who it is: lore, and gone
+     (design/118, 11 A); its card keeps the way to it on the Map. */
 
   /* Where a step is on the Map (design/28, 3 A): the marks still to do, in the order to go. The
      objectives' are the game's own map pins, found by their quest (js/spots.js TASKS 'goal'). */
@@ -948,7 +949,7 @@
   }
   // A step's card (1 A): under its heading, what the game says of it and its way onto the Map.
   function stepCard(r, s, g, cls = '') {
-    const say = s.alt ? ALT_SAYS[s.id] : STEP_SAYS[s.id];
+    const say = s.alt ? null : STEP_SAYS[s.id];
     const x = say ? say(s) : null, map = mapLink(r, s, stepMarks(r, s, g));
     return x || map ? `<div class="pg-says${x && x.text ? '' : ' is-line'}${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
   }
@@ -973,9 +974,20 @@
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
     // Who asks and what it asks lead; what posts it follows (folded on a phone, design/41, 2 B).
     const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest)].filter(Boolean).join(' · ');
-    const more = got ? [] : (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
-    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
-      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+    const row = { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
+      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more: [], wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+    /* Not on its Wishwall yet: its next step on the same line, a way to it, as the Tasks tab's row
+       (wishNext, stepHtml; design/118, 10 A); in Free mode its steps under «More». A wish with no
+       such rule keeps what posts it there. */
+    const n = got || !x.quest ? null : wishNext(x.quest, g, App.game(), onMapNow());
+    if (n && !n.posted && n.steps.length) {
+      const ctx = { rows: new Set(), wishFocus: (j) => (pin && CO.WISHES[j] ? pin(CO.WISHES[j], j) : null), stepFocus: (s, k) => stepFocusOf(x.wish, s, k) };
+      // The wishes it waits for are steps of it: no «first:» beside them as well.
+      sub[1] = '';
+      if (n.free) row.more = n.steps.map((s) => (s.wish != null ? `${t('pgAfter')} ${s.text}` : s.of && !s.said ? `${s.text} ${num(s.of)}` : s.text));
+      else row.lead = stepHtml(n.steps[n.next], ctx, true, n.next);
+    } else if (!got && !n) row.more = (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
+    return row;
   }
   function groupRows(name, g, required) {
     // cur: the game the Tasks tab reads (a save, Free mode's marks or none), so the pins agree.
@@ -1021,13 +1033,12 @@
     const fay = CO.WHERE.arts['faydown-cloak'] || [];
     return [
       { test: 'caravan', name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png', ...(test('caravan').ok ? {} : caravanHow(test('caravan').caravan, g)) },
-      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak',
-        says: says('inv', D.ARTS.find((x) => x.id === 'faydown-cloak').desc) },
+      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
       { test: 'laceTower', name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'), mark: 'boss:lace-the-cradle',
         how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }), says: laceSays(g) },
       { test: 'bellhomeKey', ready: key.ready && !key.cursed, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
         how: test('bellhomeKey').ok ? '' : key.ready ? t(key.cursed ? 'roadKeyCursed' : 'roadPavo', { pavo: personName('bellhart-greeter') }) : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }),
-        more: test('bellhomeKey').ok ? [] : [t('roadKeyRest', { glory: wishName('Belltown House Mid'), town: areaName('BELLHART'), pavo: personName('bellhart-greeter') })], says: says('inv', t('roadKeyDesc')) },
+        more: test('bellhomeKey').ok ? [] : [t('roadKeyRest', { glory: wishName('Belltown House Mid'), town: areaName('BELLHART'), pavo: personName('bellhart-greeter') })] },
     ].map((x) => ({ act: 0, area: null, ...x }));
   }
 
@@ -1178,8 +1189,7 @@
     const needs = done ? '' : `<span class="pg-rt-needs"><span class="pg-rt-pk">${esc(t('roadNeeds'))}</span>${w.needs.map((x) => `<span class="${guide || x.ok ? 'is-on' : 'is-off'}"><img src="assets/icons/arts/${x.id}.webp" alt="" loading="lazy"><span${NT}>${esc(artName(x.id))}</span>${!guide && x.ok
       ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgGot'))}</span>` : ''}</span>`).join('')}</span>`;
     const x = { ...w, alt: true };
-    const says = done && ALT_SAYS[w.id] ? ALT_SAYS[w.id](x) : null;
-    const body = open ? `<div class="pg-rt-body">${done ? (says ? `<div class="pg-says">${saysHtml(says)}</div>` : '') : stepCard(r, x, g)}</div>` : '';
+    const body = open && !done ? `<div class="pg-rt-body">${stepCard(r, x, g)}</div>` : '';
     return `<li class="pg-rt-st is-alt${done ? ' is-done' : guide ? '' : ' is-later'}">
           <h3 class="pg-rt-h"><span class="pg-rt-dia" aria-hidden="true"></span><span class="pg-rt-or" aria-hidden="true">${esc(t('roadOr'))}</span><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
             <img class="pg-rt-art" src="${STEP_ART[w.id] || BOARD}" alt="" loading="lazy">
@@ -1262,11 +1272,12 @@
   }
   /* A row's how (design/103, 1 A): its lead on one line, «More» at its end unfolding what it waits
      for and what the game says of it (pgFold). */
-  function foldHtml(how, more = [], says = null) {
+  function foldHtml(how, more = [], says = null, lead = '') {
     const q = says && says.text ? says : null;
-    if (!more.length && !q) return how ? `<span class="pg-how">${esc(how)}</span>` : '';
+    const head = [how ? esc(how) : '', lead].filter(Boolean).join(' · ');
+    if (!more.length && !q) return head ? `<span class="pg-how">${head}</span>` : '';
     const id = 'pg-fold-' + (++howN);
-    return `<span class="pg-how">${how ? esc(how) + ' · ' : ''}<button type="button" class="text-btn pg-fold-btn" data-act="pgFold" aria-expanded="false" aria-controls="${id}">${esc(t('pgFold'))}${App.chevron(false)}</button></span>
+    return `<span class="pg-how">${head ? head + ' · ' : ''}<button type="button" class="text-btn pg-fold-btn" data-act="pgFold" aria-expanded="false" aria-controls="${id}">${esc(t('pgFold'))}${App.chevron(false)}</button></span>
         <span class="pg-fold" id="${id}" hidden>${more.map((m) => `<span>${esc(m)}</span>`).join('')}${q
           ? `<span class="pg-says-q"><span class="pg-says-tag">${esc(TAG[q.tag]())}</span> <span${NT}>${esc(sayText(q.text))}</span></span>` : ''}</span>`;
   }
@@ -1286,7 +1297,7 @@
       return `<li class="${i >= OPTS ? 'is-extra' : ''}${on ? ' is-open' : ''}"><button type="button" class="pg-opt" data-act="pgOpt" data-value="${o.wish}" aria-expanded="${on}" aria-controls="${hid}-card-${o.wish}"><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span>${App.chevron(on)}</button></li>`; };
     const card = (o) => `<li class="pg-opt-li" id="${hid}-card-${o.wish}" data-wish="${o.wish}"${o.wish === optOpen ? '' : ' hidden'}><div class="pg-item pg-opt-card" role="group" aria-label="${esc(o.name)}">
           <span class="pg-art"><img src="${o.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says)}</span>
+          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says, o.lead)}</span>
           <span class="pg-place"><span class="pg-where">${o.area ? `<span${NT}>${esc(areaName(o.area))}</span>` : ''}</span></span>
           ${o.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(o.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + o.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </div></li>`;
@@ -1312,7 +1323,7 @@
       const more = x.opts ? x.opts.length - OPTS : 0;
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says)}
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says, x.lead)}
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}

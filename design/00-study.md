@@ -2480,6 +2480,24 @@ goes to the Wishwall, which counts the meetings. In all 94 saves neither room is
 wish is taken.
 test/journal-acts.test.js.
 
+**A guide, not lore** (31 October 2026, Albert: «La gente que entra en nuestra web lo que busca es
+una guía, no lore»). Every kind of Map card and every Progress row that quotes the game, swept in
+es and en over Free mode and seven saves (Act 1 and Act 2 restore points, user2, user3, user4,
+user1 at 100%), each card's text dumped through cardHtml. The Map had almost no lore left (the
+dormant Sentinel's flavour line went in PR #212); what it had were states that don't help, long
+sentences and repeats. The lore was in Progress's quotes: the Wishwalls' pleas (35 wishes have
+one), the Faydown Cloak's and the Bellhome Key's descriptions, the Phantom's Journal entry and the
+Caretaker's four lines. Decided in design/03-redesign.md, step 6, «A guide, not lore»; the rule
+now: cards and rows say what it is, where, what to do, the game's prompt when it names the action
+(quoted), what's missing, the save's state as a count («Defeated 9/25»), a way to the next step;
+never flavour text, never a state that doesn't help. test/guide-not-lore.test.js keeps it. Counts
+before → after (en; es the same, but for its own words): the met state 40 → 0 (Act 1 save), place
+notes 95 → 0 (Free mode), prose counts 1,341 → 0 (100%, as many states now), sentences of nothing
+left 33 → 0 (user3; 26 «Nothing left here» states), areas with a zero 31 → 0, the hidden corners'
+long note 216 → 0, the Citadel's machines 8, «Had in this room.» 8, «Makes a wish» 13, the bosses'
+repeated wish 4, «first» twice 2, Creige's drinks 1 → 0 each; on Progress, quotes in the 51% save
+{Tasks 13, Wishwall 7, Inventory 1} → {Tasks 20}, the road's posting paragraphs 8 → 0.
+
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
 at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
 the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each
