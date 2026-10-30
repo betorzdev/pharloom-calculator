@@ -1640,6 +1640,18 @@ const fleaIn = (scene) => {
 for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('person:' + id, whoAt(id, PEOPLE[id]));
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
+/* A vendor who stands elsewhere in the room in Act 3 (its scene's Black Thread World object), by
+   vendor and scene: the object (pickups.json npcs) and its point in the scene, read in the game's
+   files on 30-Oct-2026. Jubilana's Songclave stall moves to the room's east corner (the Black
+   Thread World «City Merchant Enclave»; the Normal World one, at 78.99, 8.14, is people.json's).
+   XY key + ':act3': the Map takes it in a game in Act 3. */
+const SHOP_ACT3 = { jubilana: { song_enclave: ['City Merchant Enclave', 101.47, 7.59] } };
+for (const [v, at] of Object.entries(SHOP_ACT3)) for (const [sc, [obj, x, y]] of Object.entries(at)) {
+  const i = (VENDORS[v] || []).indexOf(sc);
+  if (i < 0) fail(`SHOP_ACT3: ${v} doesn't sell in ${sc}`);
+  if (!(P.npcs[obj] || []).some((e) => lower(e[0]) === sc && Math.abs(e[2] - x) < 0.01 && Math.abs(e[3] - y) < 0.01)) fail(`SHOP_ACT3: no ${obj} at ${x}, ${y} in ${sc} (pickups.json): read it again`);
+  put2('shop:' + v + ':' + i + ':act3', toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
+}
 // A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
 for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));

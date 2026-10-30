@@ -258,6 +258,30 @@ const SHAKRA = {
   shellwood_01: all(ACT3, not(is('mapperLocationAct3', 2)), not(is('mapperLocationAct3', 3))),
   shellwood_16: walks('Shellwood'),
 };
+/* Jubilana (CITY_MERCHANT, the shops' layer, js/spots.js VENDORS.jubilana: the three rooms she sells
+   in): where she is now, as the game decides it (read 30-Oct-2026, patch 1.0.30000, in the scenes).
+     · the Songclave (Song_Enclave's «City Merchant Enclave», one under Normal World's Level 1, from
+       enclaveLevel 1 up, and Act 3's under Black Thread World, at the room's east corner): each has
+       two TestGameObjectActivators on itself, on once The Wandering Merchant is done, off while The
+       Lost Merchant is available and not done (its prerequisites, js/quests.js CHAIN: The Wandering
+       Merchant done and cityMerchantCanLeaveForBridge), when she's out at the Memorium;
+     · scavenging in the Grand Forum (Hang_04, after its battle: Aftermath Control, hang04Battle) and
+       by the Whispering Vaults (Library_03), never in Act 3: her «City Merchant Scavenge Generic»
+       Dialogue FSM's Init cancels in Act 3, while The Lost Merchant is taken and not done, while
+       cityMerchantRecentlySeenInEnclave holds, unless the spot's Appear bool is set
+       (cityMerchantInGrandForum, cityMerchantInLibrary03: both on once met in the Songclave) or
+       once its Leave bool is (set on scavenging in the other spot once this one has been seen).
+   Not among the three: where the two wishes find her (Song_07, Arborium_11), drawn as those wishes'
+   places (js/spots.js TASKS). */
+const WANDERING = 'Save City Merchant', LOST = 'Save City Merchant Bridge';
+const LOST_TAKEN = all(['accepted', LOST], not(['quest', LOST]));
+const scavenges = (at) => all(not(ACT3), not(LOST_TAKEN), not(flag('cityMerchantRecentlySeenInEnclave')), flag('cityMerchantIn' + at),
+  not(flag('cityMerchantIn' + at + 'Left')));
+const JUBILANA = {
+  hang_04: all(flag('hang04Battle'), scavenges('GrandForum')),
+  library_03: scavenges('Library03'),
+  song_enclave: all(['quest', WANDERING], any(ACT3, min('enclaveLevel', 1)), any(not(flag('cityMerchantCanLeaveForBridge')), ['quest', LOST])),
+};
 // The fields Shakra's rules read that her scenes' objects don't (the template's, and the property
 // CaravanInGreymoor): tools/extract-people.py reads only the scenes.
 const SHAKRA_READS = new Set(['blackThreadWorld', 'CaravanTroupeLocation', 'hasDoubleJump', 'MapperLeftDustpens',
@@ -359,7 +383,11 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
   for (const sc of SH) if (!SHAKRA[sc]) fail(`Shakra's ${sc} has no rule: SHAKRA needs reading again`);
   for (const sc of Object.keys(SHAKRA)) if (!SH.includes(sc)) fail(`SHAKRA: ${sc} isn't one of her spots (js/spots.js VENDORS.shakra)`);
   check('MAPPER', { here: SHAKRA, reads: SHAKRA_READS });
-  const HERE = { shakra: SHAKRA };
+  // Jubilana's spots (js/spots.js VENDORS.jubilana) the same way; the quest's own field is the wish's (js/quests.js CHAIN when).
+  const JU = SP.VENDORS.jubilana.map((sc) => sc.toLowerCase()).sort();
+  if (JSON.stringify(JU) !== JSON.stringify(Object.keys(JUBILANA).sort())) fail(`JUBILANA (${Object.keys(JUBILANA)}) isn't her spots (js/spots.js VENDORS.jubilana: ${JU})`);
+  check('CITY_MERCHANT', { here: JUBILANA, reads: ['cityMerchantCanLeaveForBridge'] });
+  const HERE = { shakra: SHAKRA, jubilana: JUBILANA };
   const TRADE = [];
   for (const [id, t] of Object.entries(TRADERS)) {
     const key = t.keys[0], h = HAND[key] || {};
@@ -398,8 +426,8 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
              filter); here, { scene: check }, a spot shown only while its check holds
              (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
-     HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
-             (shakra: her 17 spots, js/spots.js VENDORS.shakra)
+     HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
+             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3)
      GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
              (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars)`,

@@ -1420,7 +1420,14 @@ fix from the game's files and a save field):
 - **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
   marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
   own shop pins add the Flea Caravan's and one in the Whispering Vaults (Library_08), left to the
-  people and vendors layer.
+  people and vendors layer. (30 October: Jubilana's three follow the save, as Shakra's do,
+  js/people.js HERE.jubilana from her scenes' switches and FSMs: the Songclave once The Wandering
+  Merchant is done and not while The Lost Merchant is posted and not done, at the room's east
+  corner in Act 3; the Forum and Library_03 once met there, not while The Lost Merchant is taken,
+  never in Act 3. Read but left alone, the same gap in the other shops: Mort and Pebb are gone in
+  Act 3 (their stock to Grindle's), Pebb also while the Skull Tyrant has invaded, during Bone
+  Bottom's funeral and once her stock is sold, the Mottled Skarr once antMerchantKilled, Frey only
+  from the Widow's fall; their marks still show in every save.)
 
 **What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
 doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
