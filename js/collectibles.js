@@ -491,7 +491,7 @@
       reaper: [1, 'GREYMOOR'],
       wanderer: [1, 'MOSSCAVE'],
       beast: [1, 'HUNTERS_MARCH'],
-      witch: [2, 'BELLHART'],
+      witch: [2, 'GREYMOOR'],
       architect: [2, 'UNDERSTORE'],
       shaman: [3, 'MOSSCAVE'],
     },
