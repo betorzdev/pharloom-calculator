@@ -56,7 +56,9 @@ test('the Wingmoulds and a cocoon off the map go to the room that loads their sc
 
 test('a fight the game puts there only once something holds says what, and the save says whether', () => {
   const want = { 'boss:broodmother': 'Broodmother Hunt', 'boss:savage-beastfly-far-fields': 'Beastfly Hunt', 'boss:gurr-the-outcast': 'Ant Trapper',
-    'boss:lost-garmond': 'Garmond Black Threaded', 'boss:tormented-trobbio': 'Tormented Trobbio', 'boss:second-sentinel': 'Song Knight' };
+    'boss:lost-garmond': 'Garmond Black Threaded', 'boss:tormented-trobbio': 'Tormented Trobbio', 'boss:second-sentinel': 'Song Knight',
+    // Atop Mount Fay only once Fatal Resolve is taken at the note in her home (Peak_07's «Pinstress Control»).
+    'boss:pinstress': 'Pinstress Battle' };
   for (const [k, q] of Object.entries(want)) assert.deepEqual(SP.OPENS[k].check, ['accepted', q], k);
   assert.deepEqual(SP.OPENS['boss:shakra'].check, ['quest', 'Shakra Final Quest']);
   assert.deepEqual(SP.OPENS['boss:fourth-chorus'].check, ['flag', 'hasBrolly']);
