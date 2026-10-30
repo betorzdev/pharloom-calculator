@@ -2150,15 +2150,18 @@ const JOURNAL = {}, JOURNAL_ACT3 = [];
    pages); Greymoor_08 loads Shakra's duel only once Trail's End is granted (Mapper Sparring Scene
    Loader); Bone_East_08 loads the Fourth Chorus only with the Drifter's Cloak (hasBrolly); Library_02
    holds the Acolytes' arena only once scholarAcolytesReleased (TimePassesElsewhere sets
-   scholarAcolytesInLibrary_02 then; StartAct3 sets it). The Pinstress's and the Summoned Saviour's
-   wishes are their fights' places already (js/app-map.js WISH_FIGHT). */
+   scholarAcolytesInLibrary_02 then; StartAct3 sets it); Peak_07's «Pinstress Control» puts the
+   Pinstress atop Mount Fay only in Act 3 with Fatal Resolve tracked (CheckQuestState of Pinstress
+   Battle, the quest her NPC ends), which the note she leaves in her home offers (Room_Pinstress's
+   «Pinstress States», Add Quest Note: read on 30-Oct-2026); its Pre on Bellhart's board only sends
+   you there. Their wishes' places are these fights (js/app-map.js WISH_FIGHT). */
 const OPENS = {};
 {
   const ART_PD = require('../js/savefile.js').ART_PD;
   const HAND = {
     'boss:broodmother': { wish: 'Broodmother Hunt' }, 'boss:savage-beastfly-far-fields': { wish: 'Beastfly Hunt' },
     'boss:gurr-the-outcast': { wish: 'Ant Trapper' }, 'boss:lost-garmond': { wish: 'Garmond Black Threaded' },
-    'boss:tormented-trobbio': { wish: 'Tormented Trobbio' }, 'boss:second-sentinel': { wish: 'Song Knight' },
+    'boss:tormented-trobbio': { wish: 'Tormented Trobbio' }, 'boss:second-sentinel': { wish: 'Song Knight' }, 'boss:pinstress': { wish: 'Pinstress Battle' },
     'boss:shakra': { after: 'Shakra Final Quest' }, 'boss:fourth-chorus': { art: 'drifters-cloak' },
     'gaunt:whispering-vaults-2': { freed: 'NAME_SCHOLAR', flag: 'scholarAcolytesReleased' },
   };
