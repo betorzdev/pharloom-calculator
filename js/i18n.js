@@ -971,6 +971,27 @@
     roadKnightLacks:{ es: 'falta: {list}', en: 'missing: {list}' },
     roadKnightOneMore:{ es: 'otro deseo de {clave}', en: 'another of {clave}\'s wishes' },
     pgNotPosted:    { es: 'Aún no está en su muro', en: 'Not on its Wishwall yet' },
+    /* What posts a late wish, as steps (js/app-progress.js wishNext; design/117): short, to act on.
+       The names are the game's: {npc} BELLHART_RELICDEALER_MAIN, BELLHART_GREETER_MAIN, SHERMA,
+       SONG_KNIGHT_SUPER+_MAIN; {foe} the Journal's; {area} the areas'; «reliquia» as
+       COLLECTION_HEADING_RELICDEALER. With no source for the verbs, written for the context. */
+    pgAfter:        { es: 'tras', en: 'after' },
+    pgPostedLater:  { es: 'Sale más tarde', en: 'Posted later' },
+    pgWhy:          { es: 'Por qué', en: 'Why' },
+    pgStepRelic:    { es: 'Vende una reliquia a {npc}', en: 'Sell a relic to {npc}' },
+    pgStepTalk:     { es: 'Habla con {npc}', en: 'Talk to {npc}' },
+    pgStepRestOut:  { es: 'Descansa en un banco fuera de {area}', en: 'Rest at a bench outside {area}' },
+    pgStepRestAway: { es: 'Descansa en un banco de otra zona', en: 'Rest at a bench in another area' },
+    pgStepRest:     { es: 'Descansa en un banco', en: 'Rest at a bench' },
+    pgStepMaps:     { es: 'Mapas de {npc}', en: '{npc}\'s maps' },
+    pgStepGroal:    { es: '{foe} o 2 melodías', en: '{foe} or 2 melodies' },
+    pgStepGlory:    { es: 'Vence a los {foe}, consigue {art} o entra en {clave}', en: 'Beat the {foe}, get the {art} or enter {clave}' },
+    pgStepMeet:     { es: 'Encuentra a {npc} en {area}', en: 'Meet {npc} in {area}' },
+    pgStepEnter:    { es: 'Entra en {area}', en: 'Enter {area}' },
+    pgStepWishes:   { es: 'Deseos de {area}', en: '{area} wishes' },
+    pgStepWake:     { es: 'Despierta al {npc}', en: 'Wake the {npc}' },
+    pgStepFind:     { es: 'Encuentra al {npc}', en: 'Find the {npc}' },
+    pgStepFindOr:   { es: 'Encuentra al {npc} 2 veces, o 1 con la {flower}', en: 'Find the {npc} twice, or once with the {flower}' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.

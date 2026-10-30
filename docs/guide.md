@@ -1059,15 +1059,26 @@ title over its filigree, with how many are done.
 On each wall and in each person's row, what's left as lines: the picture the game's pane draws by
 it (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
 its title: «Frey of Bellhart»; in a person's row it goes when it only names that person and their
-area) and the lists' round pin to the Map. A wish the game posts only once something holds has
-«More» after that line, which unfolds what posts it, as on the road (Trail's End, Balm for the
-Wounded, Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory, Pinmaster's Oil, Final
-Audience). Final Audience is posted on Songclave's Wishwall after you wake the Second Sentinel in
-the Cogwork Core with the three Cogheart Pieces and then meet it twice with the Conductor's Melody
-and two of Songclave's wishes done, Building Up Songclave among them, or once with the Everbloom,
-and rest at a bench; with a save it says «Not on its Wishwall yet» instead of who asks, and under
-«More» how many pieces you have or how often you've met it and what's still missing. Its fight's
-card on the Map says the same until you take it. A wish you've promised has the game's hollow
+area) and the lists' round pin to the Map. A wish the game posts only once something holds
+(Restoration of Bellhart, Trail's End, Bellhart's Glory, Balm for the Wounded, Strengthening
+Songclave, Final Audience, and one that waits for another, as Infestation Operation for Rite of
+Rebirth) says, with a save, why it isn't on its wall yet: its picture dimmed, and in place of who
+asks only the next thing to do, with its picture and its count («Shakra's maps 10/14», «Wake the
+Second Sentinel»), a link that opens the Map on it (the row's pin goes there too). One that waits
+for another wish says «after» that wish, with its picture: a tap brings its row into view and lights
+it a moment (or, when it has no row here, opens its pin on the Map). The steps are each wish's own
+test in the game's files and the flags a rest sets: Restoration, a Needle upgrade, a relic sold to
+Scrounge, Pavo talked to and a rest outside Bellhart; Trail's End, all of Shakra's maps, Groal or two
+melodies, the Faydown Cloak and a rest outside Bellhart; Bellhart's Glory, Restoration done, then
+the Cogwork Dancers beaten, the Clawline or Songclave entered, and a rest outside Bellhart; Balm,
+Sherma met in Songclave, the Whiteward entered and a rest in another area; Strengthening, Building
+Up Songclave and 4 of Songclave's wishes, then a rest outside it; Final Audience, the three
+Cogheart Pieces, the Second Sentinel woken in the Cogwork Core, then found twice with the
+Conductor's Melody and two of Songclave's wishes (Building Up Songclave among them) or once with the
+Everbloom, and a rest. Once the save says it's on its wall, the row says only who asks. In Free mode
+(or a slot kept before the site read these) it says «Posted later · Why», and «Why» unfolds its
+steps, each with its picture and its link. Pinmaster's Oil keeps «More» for its other way (Plinney's
+second Needle upgrade). A wish you've promised has the game's hollow
 diamond by it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
 («Completed», as the pane says) follow, each as a row of pictures (a picture's name shows on
 hovering it). Every wish is on its wall, the ten Act 3 requires too, though

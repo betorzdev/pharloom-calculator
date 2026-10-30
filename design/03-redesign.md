@@ -41,7 +41,7 @@ the work up reads it first, then the step it's on.
 | 2 | **The components**: the four buttons, choose-one, on/off, search, lists and rows, tags, notices, empty states, the toast | **Built** (28 Sep) | [`05-components-variants.html`](05-components-variants.html) |
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
-| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html` |
+| 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; why a wish isn't posted yet, 31 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html`, `117-tasks-why-variants.html` |
 | 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
@@ -1347,6 +1347,34 @@ objectives' own, the Bell Eater's at every Bellway; the end node «The ending ·
 lit once seen; the tab's card and the line on top count its steps), `css/app.css` `.pg-rt-end.is-done`.
 The endings' strip, the rings and their medallions are gone (`gameHtml`, `ring`, `medal`, their CSS
 and tokens).
+
+### Why a wish isn't on its Wishwall yet (31 October 2026)
+
+Albert, after the Map's card for the Reserve Bind (PR #212): the Tasks rows have the same problem,
+much text nobody will read, and a player still won't know why a wish isn't there. The rows of the
+late wishes said who asks and «More», which unfolded the whole rule in a paragraph (Final Audience's
+four lines), the same whether the wish was posted or not: the save says it. Read in the game's files
+(each quest's playerDataTest in `questsystem/quests.bundle`, and GameManager.TimePasses and
+TimePassesElsewhere in Assembly-CSharp) and checked against the 87 saves: Restoration of Bellhart
+also needs a relic sold to Scrounge (BelltownRelicDealerGaveRelic) and a Needle upgrade, Pavo's
+part is only talking to him (BelltownGreeterConvo); Trail's End also the Faydown Cloak; Bellhart's
+Glory BelltownHouseState 1 (Restoration done, then a rest); Balm Sherma met in Songclave
+(metShermaEnclave), not anywhere; Strengthening enclaveLevel 2 too. `117-tasks-why-variants.html`
+(kept out of the repo), the real tab captured over `user4.dat` (Act 3), two restore points (Act 2,
+Act 1) and Free mode: 1 a wish not posted, with a save (**A** its next step alone, its picture, words
+and count, a link to it on the Map, the row's pin too; B every step as pictures, the next ringed;
+C «Not on its Wishwall yet · Why» with the steps as a checklist), 2 one that waits for another wish
+(**A** «after» it, a jump to its row; B its name, no link; C moved to «Later»), 3 Free mode (**A**
+«Posted later · Why» with the steps folded; B nothing). Common to all: a wish the save says is
+posted says only who asks; one not posted has its picture dimmed.
+
+**Decision: 1 A, 2 A, 3 A** (31 October 2026; Albert, the same day: people come for a guide, not
+lore, so the steps are short and to act on). Built: `js/savefile.js` `posting` (the flags above),
+`js/app-progress.js` `wishNext()` (the steps by wish, `STEPS` and `POSTED`; `App.wishNext` for the
+Map's Wishwall cards, which still say `App.wishPosts`' rule), `nextHtml()`, `stepHtml()`, the
+`pgJump` action and `pgFold`'s own label; `css/app.css` `.pg-task.is-locked`, `.pg-step`,
+`.pg-task.is-flash`; the steps' words in `js/i18n.js` (`pgStep*`, `pgAfter`, `pgPostedLater`,
+`pgWhy`). Final Audience's step to wake the Sentinel goes to its dormant mark in Cog_10 (PR #212).
 
 ## Step 6 · Map
 

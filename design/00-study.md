@@ -2015,6 +2015,16 @@ corroboration, never a web guide:
   Game state; dying and quitting to the menu run it too). Balm for the Wounded's shermaQuestActive
   is set in TimePassesElsewhere, which runs only when the map zone differs from the last time's.
   Each of those rows now says the rest.
+- **What posts a wish is its quest asset's own test** (read 31-Oct-2026 in
+  `questsystem/quests.bundle`, each quest's `playerDataTest`): Restoration of Bellhart wants
+  nailUpgrades > 0, BelltownRelicDealerGaveRelic and BelltownGreeterMetTimePassed (which TimePasses
+  sets once BelltownGreeterConvo > 0, outside Bellhart's zone: Pavo's FSM has no other gate); Trail's
+  End ShakraFinalQuestAppear and hasDoubleJump; Bellhart's Glory BelltownHouseState 1 and
+  citadelHalfwayComplete; Balm shermaQuestActive (TimePassesElsewhere: metShermaEnclave and
+  visitedWard, not metSherma); Strengthening Songclave enclaveLevel 2 and enclaveDonation2_Available;
+  Final Audience songChevalierQuestReady. The save keeps them all (js/savefile.js `posting`, checked
+  on the 87 saves: no game sets a flag without its conditions), so the Tasks tab says, per game,
+  whether each is on its wall and the next step if not (design/03-redesign.md, step 5, 31 October).
 - **The Bell Hermit** gives his soul only once BelltownHermitMet is set (his FSM, Do Snare Convo?):
   never met, the first talk is his meeting.
 Checked: npm test, the text audit, check-pack on the 77 saves (nothing changes in its counts), and
