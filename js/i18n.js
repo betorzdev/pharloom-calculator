@@ -303,7 +303,6 @@
     mapGroup_quests:  { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     mapGroup_extras:  { es: 'Coleccionables', en: 'Collectibles' },
     mapGroup_secrets: { es: 'Secretos', en: 'Secrets' },
-    mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
     mapShows:       { es: 'Qué se ve en el mapa', en: 'What the map shows' },
     mapShowAll:     { es: 'Mostrar todo', en: 'Show all' },
     mapHideAll:     { es: 'Esconder todo', en: 'Hide all' },
@@ -406,6 +405,9 @@
     mapExtra_map:      { es: 'Mapa', en: 'Map' },   // INV_NAME_MAP
     mapExtra_rosaries: { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
+    // Inside the Rosaries' and Shell Shards' sets, the strings and bundles by the game's item for them.
+    mapLayer_strings:  { es: 'Ristra de rosarios', en: 'Rosary String' },   // INV_NAME_COIN_SET_S
+    mapLayer_bundles:  { es: 'Manojo de fragmentos', en: 'Shard Bundle' },   // INV_NAME_SHARD_POUCH
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
     mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT

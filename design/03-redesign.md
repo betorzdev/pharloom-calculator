@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -2010,6 +2010,42 @@ draws people; C the figure with a small herald disc on its lower right. **Decisi
 
 Checked in headless Chrome over file:// (npm run drive, port 9465): Plinney, Pinstress and Eva
 focused with their cards, restoreData21 and Free mode, 1440 and 390, es and en, no console errors.
+
+### The legend's groups (30 October 2026)
+
+Albert: a fresh look at how «What the map shows» is grouped, past choices weighing nothing (what
+was built only option A). Grounded in the game's own map key (`KEY_BENCH`, `KEY_BELLWAY`,
+`KEY_TUBE`, `KEY_CARAVAN`, `KEY_SHOP`, `KEY_FLEA`; Shakra sells the Vendor Pins with the Bench,
+Bellway and Ventrica Pins, `MAPPER_ITEM_PIN_*`, and has no pin of her own), and in use: the Map is
+the most viewed screen (Footworn, 16 to 30 October: 719 of about 2,000 screen views, a quarter of
+the visits on phones, where only the first two groups open at first). The options went to Albert
+in `113-map-legend-groups-variants.html` (every group the site's own markup, captured with
+GROUPS swapped per option, over restoreData14 of slot 2, Act 2 with a cocoon lying, and Free mode;
+1440 and 390; kept out of the repo): 1 vendors and Shakra (A in Places, B both to People, **C**
+Shakra alone to People); 2 the rosaries and shell shards, five switches in two groups (A as they
+were, **B** two sets in Items, C a group of their own); 3 the Journal and the cocoon (A «Your
+game», B the Journal to Fights and the cocoon alone, **C** the Journal to Fights and the cocoon to
+Places); 4 the Bellshrines (A in Places, **B** to Tasks, after Objectives). **Decision: C, B, C, B**
+(Albert, 30 October 2026). `js/app-map.js` GROUPS and SETS:
+
+- **Places is the game's map key**: Bench, Bellway, Ventrica, Flea Caravan, Vendor, and your cocoon
+  (a spot the game pins itself, counted as Places count). **People**: Shakra, who gives a thing of
+  the 100%, everyone else.
+- **Items** ends in two sets, **Rosaries** (`INV_NAME_COIN`: the strings and necklaces, inside as
+  «Rosary String», `INV_NAME_COIN_SET_S`; the caches; the loose rosaries) and **Shell Shards**
+  (`INV_NAME_SHARD`: the bundles, inside as «Shard Bundle», `INV_NAME_SHARD_POUCH`; the caches), the
+  layer's `legend` name inside the set, its own on the cards and in the search. **Secrets** keeps the
+  breakable walls, hidden corners and silk cocoons.
+- **Fights** ends in the Journal; **Tasks** in the Bellshrines, the Grand Gate objective's steps on
+  its own pin. «Your game» is gone (`mapGroup_game`); its two layers, only a save's, have no switch
+  in Free mode (`shownIds`, also for a group's switch).
+- No layer changed its id, so a stored list of switches reads as it did; a stored fold
+  (`prefs.mapOpen`) loses its `game` key once, silently.
+
+Checked in headless Chrome over file:// (npm run drive, port 9455): restoreData14 and Free mode,
+1440 and 390, es and en, the legend's groups and counts dumped, a group switch and a set switch
+toggled in Free mode, a stored fold with `game` dropped; user1 (Act 3) on the Map, Your game,
+Progress and the Journal; no console errors.
 
 ## Step 7 · Journal
 
