@@ -2401,6 +2401,29 @@ above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on 
 match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
 and after each fixed wish and in Free mode, no console errors.
 
+**What posts Final Audience** (30 October 2026, Albert: «Revisa el wish final audience. Ver qué
+hace falta para que aparezca»). The Tasks tab listed it on Songclave's Wall with no word of why the
+wall didn't have it. Its offer test is `songChevalierQuestReady` (js/quests.js CHAIN when), which no
+FSM sets: `GameManager.TimePasses` does (Assembly-CSharp, read with dnfile and dncil), at a bench's
+rest, when the wish isn't complete and either `songChevalierEncounters` ≥ 2, `HasMelodyConductor`
+and `enclaveLevel` ≥ 2 (Building Up Songclave and 2 of Songclave's board done, at a rest away from
+it, the same method), or `songChevalierEncounters` ≥ 1 and the Everbloom held (`HasWhiteFlower`:
+Collectables "White Flower"). The encounters count only once the Second Sentinel is woken
+(`wokeSongChevalier`, Cog_10's «Song Knight Sleeping»: the tube broken, then 3 "Cog Heart Pieces"
+given, Collectables Amount 3 → 0): each rest sends it to Song_25 and Song_27 (fighting beside
+Hornet), Song_04 (once its gauntlet is won) and in Act 3 to Song_02, Song_24, Hang_02 and Song_07
+(this one with The Wandering Merchant done), and the first sight of it in each adds one, once per
+rest (`songChevalierEncounterCooldown`). The wiki (Second Sentinel) asks the melody and the two
+Songclave wishes of both ways; the game doesn't, and wins. Of the 94 saves, 14 have it woken, all in Act 3
+with the Everbloom; Restore_Points1 has it woken and met 0 (33), met 1 and posted (34), taken (35),
+done (36); user4 holds the 3 pieces, not woken. js/savefile.js `sentinel` reads the six fields;
+js/app-progress.js OPENS «Song Knight» says the rule and, with a save, the pieces held or the
+meetings of how many and what's missing; shown on the road's points, under «More» on its Tasks row
+(«Not on its Wishwall yet» in place of who asks, with a save that says so: every OPENS wish now
+folds its rule there too) and on the Second Sentinel's card on the Map (App.wishPosts), gone once
+posted. Left out: the battle encounters and the Cog_10 body aren't Map marks (the people layer has
+only its Act 3 resting spots).
+
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
 at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
 the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each

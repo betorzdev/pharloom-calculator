@@ -953,6 +953,17 @@
     roadOpensGlory: { es: 'sale tras derrotar a los {foe}, conseguir {art} o entrar en {clave}', en: 'posted after defeating the {foe}, getting the {art} or entering {clave}' },
     roadRestOut:    { es: 'luego descansa en un banco fuera de {area}', en: 'then rest at a bench outside {area}' },
     roadRestAway:   { es: 'luego descansa en un banco de otra zona', en: 'then rest at a bench in another area' },
+    roadRestAny:    { es: 'luego descansa en un banco', en: 'then rest at a bench' },
+    // Final Audience: what posts it (js/app-progress.js OPENS, GameManager.TimePasses), and what the save lacks.
+    roadOpensKnight:{ es: 'sale tras despertar al {knight} en el {core} con 3 {pieces}', en: 'posted after waking the {knight} in the {core} with 3 {pieces}' },
+    roadCogPieces:  { es: 'Piezas de corazón de engranajes', en: 'Cogheart Pieces' },   // INV_NAME_COG_HEART_PIECES
+    roadKnightPieces:{ es: '{n} de 3 conseguidas', en: '{n} of 3 found' },
+    roadOpensKnightMeet:{ es: 'y encontrarlo dos veces con la {melody} y dos deseos de {clave} cumplidos, entre ellos «{donation}», o una vez con la {flower}',
+      en: 'and meeting them twice with the {melody} and two of {clave}\'s wishes done, "{donation}" among them, or once with the {flower}' },
+    roadKnightMet:  { es: 'despierto, encontrado {n} de {of}', en: 'woken, met {n} of {of}' },
+    roadKnightLacks:{ es: 'falta: {list}', en: 'missing: {list}' },
+    roadKnightOneMore:{ es: 'otro deseo de {clave}', en: 'another of {clave}\'s wishes' },
+    pgNotPosted:    { es: 'Aún no está en su muro', en: 'Not on its Wishwall yet' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
