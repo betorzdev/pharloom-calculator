@@ -1769,7 +1769,7 @@ px); `js/rooms.js restPoint` puts her there, sitting or standing, and the Map, t
 walk between benches use it. The sprite's anchor was already her feet (row 116 of her cell, the
 bottom of the game's Sit frame). A room the map draws as a point (an interior: the Pilgrim's Rest,
 the Cogwork Core's bench) has her at that point or on the game's pin, as before. Left as it was: a
-death marker in an interior the map doesn't have (Belltown_Room_doctor: Belltown's middle) and
+death marker in an interior the map doesn't have (Belltown_Room_doctor: its room's middle) and
 Tut_05, which has no room (no Hornet). Checked over every bench (the 90 RestBench scenes, each set
 in an Act 2 and an Act 3 save) and the author's 71 user and restore-point files, the Map zoomed onto
 her and the area map, in headless Chrome over file:// (1440 and 390, es and en, no console errors);
@@ -2141,8 +2141,11 @@ dnfile and dncil) and over the 89 files of the author's saves:
   the room the Map files it under (js/rooms.js roomOf), for gen-spots and gen-people alike: Plinney and
   the Needle upgrades at his house's door in Bellhart, the Skull Cave's Mask Shard at its door in
   Bone_East_14b, the Bellhome's built furnishings at its door, the Bellway Pilgrim at Bellway_01's door
-  in Bone Bottom. An interior with no door in that room (the Doctor's house, whose only TransitionPoint
-  is Wisp_03's) keeps the room's point. The benches and where Hornet wakes keep the game's own pins
+  in Bone Bottom. An interior with no door in that room keeps the room's point. The Doctor's house
+  (Belltown_Room_doctor) was one, at Bellhart's middle by its name; its only TransitionPoint is
+  Wisp_03's, at the top of Greymoor («Yarnaby of Greymoor»), so from 30 October `js/rooms.js`
+  ENTRANCE files it there: Yarnaby and the Witch Crest are at her door, and the crest's area is
+  Greymoor (`tools/gen-collectibles.js` WHERE_AREA: the completionist says Bellhart). The benches and where Hornet wakes keep the game's own pins
   (`toRoom`). The Flea Games' Pale Oil, which had no point, is on the piñata (aqueduct_05_festival
   shares Aqueduct_05's place).
 - **Plinney leaves in Act 3.** Belltown's «hanging_bell_house_Pinsmith» opens on (!blackThreadWorld
