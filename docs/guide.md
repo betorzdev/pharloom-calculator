@@ -1030,8 +1030,16 @@ title over its filigree, with how many are done.
 On each wall and in each person's row, what's left as lines: the picture the game's pane draws by
 it (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
 its title: «Frey of Bellhart»; in a person's row it goes when it only names that person and their
-area) and the lists' round pin to the Map. A wish you've promised has the game's hollow diamond by
-it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
+area) and the lists' round pin to the Map. A wish the game posts only once something holds has
+«More» after that line, which unfolds what posts it, as on the road (Trail's End, Balm for the
+Wounded, Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory, Pinmaster's Oil, Final
+Audience). Final Audience is posted on Songclave's Wishwall after you wake the Second Sentinel in
+the Cogwork Core with the three Cogheart Pieces and then meet it twice with the Conductor's Melody
+and two of Songclave's wishes done, Building Up Songclave among them, or once with the Everbloom,
+and rest at a bench; with a save it says «Not on its Wishwall yet» instead of who asks, and under
+«More» how many pieces you have or how often you've met it and what's still missing. Its fight's
+card on the Map says the same until you take it. A wish you've promised has the game's hollow
+diamond by it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
 («Completed», as the pane says) follow, each as a row of pictures (a picture's name shows on
 hovering it). Every wish is on its wall, the ten Act 3 requires too, though
 the road's tab lists them as well. The one only Steel Soul has, and the one only Classic has, show
