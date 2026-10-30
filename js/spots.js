@@ -11778,6 +11778,7 @@
     'boss:lost-garmond': { wish: 'Garmond Black Threaded', check: ['accepted', 'Garmond Black Threaded'] },
     'boss:tormented-trobbio': { wish: 'Tormented Trobbio', check: ['accepted', 'Tormented Trobbio'] },
     'boss:second-sentinel': { wish: 'Song Knight', check: ['accepted', 'Song Knight'] },
+    'boss:pinstress': { wish: 'Pinstress Battle', check: ['accepted', 'Pinstress Battle'] },
     'boss:shakra': { after: 'Shakra Final Quest', check: ['quest', 'Shakra Final Quest'] },
     'boss:fourth-chorus': { art: 'drifters-cloak', check: ['flag', 'hasBrolly'] },
     'gaunt:whispering-vaults-2': { freed: 'NAME_SCHOLAR', check: ['flag', 'scholarAcolytesReleased'] },

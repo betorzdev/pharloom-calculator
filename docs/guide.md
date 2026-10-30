@@ -583,13 +583,17 @@ leaves those off.
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
   A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
-  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own. Moorwing, if
+  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own,
+  with the way to where the wish is taken while it's open. Fatal Resolve is taken at the note the
+  Pinstress leaves in her home in the Blasted Steps (Bellhart's Wishwall, once you have Silk Soar,
+  only sends you there): with its Wishwall part taken, the way goes to her home. Moorwing, if
   you enter Bellhart without beating it, waits by the Greymoor Bellway from Act 2: with a save that
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
   your save names. A fight the game only puts there once something holds says so on its card, and
   with a save whether yours has it: the wish that brings it (the Broodmother, the Far Fields Savage
-  Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel), the wish granted first
+  Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel, the Pinstress atop Mount
+  Fay), the wish granted first
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
   freed (the Whispering Vaults' second gauntlet).
 - **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
@@ -1036,7 +1040,10 @@ also shows in "Since the previous save".
 Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
 it, who gives it (its Wishwall, or whoever asks: Plinney, the Couriers, Creige, the Moss Druid,
 Mooshka and the Pinstress on the mark that is them already); once taken, what's still to do of it
-(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. What a
+(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. A
+Wishwall part that sends you to someone (Crawbug Clearing's to Creige, Fatal Resolve's to the
+Pinstress's home, Berry Picking's to the Moss Druid, The Lost Fleas' to Mooshka…), once taken,
+points to them until they hand you the rest of the wish. What a
 wish asks for that another layer of the Map marks is on its pin too, until you have enough of it:
 Pinmaster's Oil's Pale Oil (any of the three), Berry Picking's Mossberries (three held), The Lost
 Fleas' fleas (five saved), Dark Hearts' Void Masses (twelve destroyed), Silk and Soul's Snare
