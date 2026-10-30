@@ -408,7 +408,7 @@ the same button leave it; where the browser can't, it fills the window). On it: 
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map shows only
 that thing, as a focus of one (its name and area in the search's place, «Return to the map» back
-to the whole map, with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
+to the whole map as you had it, its layers untouched), centred on its mark as drawn, its card open and a ring pulsing on it
 three times. An area's name centres the map on it with its ring. With the whole map in view, an
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
