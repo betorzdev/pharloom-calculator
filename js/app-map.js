@@ -1689,10 +1689,13 @@
       if (!o) return '';
       const what = o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
         : o.art ? t('howNeeds', { keys: pick(D.ARTS.find((x) => x.id === o.art).name) }) : t('mapOpensFreed', { foe: pick(BOOK_KEY.get(o.freed).name) });
-      if (!own || !own.opensRead) return what;
+      // What posts its wish, while it isn't taken (js/app-progress.js OPENS: Final Audience's Second Sentinel).
+      const posts = o.wish && App.wishPosts ? App.wishPosts(o.wish, own || g).lines : [];
+      const post = (a) => (posts.length ? `${a}. ${posts[0][0].toUpperCase()}${posts.join(' · ').slice(1)}` : a);
+      if (!own || !own.opensRead) return post(what);
       const yes = own.opens.includes(k), q = o.wish || o.after;
       const state = !yes ? t('mapOpenNo') : q ? t((own.quests || []).includes(q) ? 'mapWishGranted' : 'pgPromised') : o.art ? t('pgGot') : t('mapOpenYes');
-      return `${what} (${state})`;
+      return post(`${what} (${state})`);
     };
     // Only in a gauntlet's waves (js/spots.js JOURNAL): which ones, and whether this game has won them all.
     const wavesNote = (ids) => {

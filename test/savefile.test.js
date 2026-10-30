@@ -71,6 +71,19 @@ test("a game goes into a slot's four keys and comes back whole; a damaged key fa
   assert.deepEqual(F.gameOf(null).journal, {});
 });
 
+test('what posts Final Audience: the Second Sentinel woken and met, Songclave\'s level, the Cogheart Pieces held', () => {
+  // GameManager.TimePasses (js/app-progress.js OPENS): read so the Tasks tab can say what's missing.
+  const pd = { ...BASE, wokeSongChevalier: true, songChevalierEncounters: 1, songChevalierQuestReady: false, enclaveLevel: 2,
+    Collectables: { savedData: [{ Name: 'Cog Heart Pieces', Data: { Amount: 0 } }] } };
+  const want = { read: true, woke: true, met: 1, ready: false, clave: 2, pieces: 0 };
+  assert.deepEqual(F.game(pd).sentinel, want);
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).sentinel, want);
+  assert.deepEqual(F.game({ ...BASE, Collectables: { savedData: [{ Name: 'Cog Heart Pieces', Data: { Amount: 2 } }] } }).sentinel,
+    { read: true, woke: false, met: 0, ready: false, clave: 0, pieces: 2 });
+  // A slot kept before the site read them says nothing: the rule alone is shown.
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': JSON.stringify({ sentinel: { met: 'x' } }) }).sentinel, {});
+});
+
 test("a slot keeps its pieces by what they are, so a regenerated list still finds them", () => {
   const CO = require('../js/collectibles.js');
   const i = CO.PIECES.findIndex((p) => p[2][0] === 'bool' && p[2][1] === 'Crawl_02');
