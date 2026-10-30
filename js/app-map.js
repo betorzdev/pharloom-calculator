@@ -16,25 +16,30 @@
                     outside the 100%: four upgrades, two a wish lends), Crests, Eva's rewards and
                     Silk Skills
      Places         benches, Bellway and Ventrica stations (the game's own pins, dimmed while your
-                    game hasn't opened them), the Bellshrines, the shops and Shakra's spots
+                    game hasn't opened them), the Flea Caravan, the shops (the game's map key) and
+                    your cocoon
      Passages       what opens a way and stays open, each gone once your save has it open: levers
                     and pressure plates, gates, the doors a key opens and the keys lying, shortcuts
                     (the one-way walls among them), silk walls and the lifts (off at first;
                     design/03-redesign.md, step 6), whether the save keeps them per room or in playerData
-     Fights         the gauntlets and bosses not beaten, the Void Masses' cores
-     People         the people who give a thing of the 100%, and everyone else
+     Fights         the gauntlets and bosses not beaten, the Void Masses' cores, the Journal's
+                    entries still missing
+     People         Shakra's spots, the people who give a thing of the 100%, and everyone else
      Tasks          the Wishwalls and who offers a wish still open, where a wish is done, what a
-                    wish asks for, and the main objectives where the game's map pins them
+                    wish asks for, the main objectives where the game's map pins them, and the
+                    Bellshrines (the Grand Gate objective's steps)
      Collectibles   Memory Lockets, Lost Fleas, the Old Hearts, Melodies and the Everbloom, the
                     relics (one switch, its caret opening the six), Mementos and the Bellhome's
                     furnishings
      Items          Craftmetal, Pale Oil, Mossberries, Silkeaters, the area maps where each is had
-                    (Shakra's spot in its area, or where it lies), the key items, the rosaries and
-                    shell shards lying in a room or given (the Fixer's, the Sprintmaster's)
-     Secrets        the rosary and shell shard caches, breakable walls, loose rosaries and each room's
-                    hidden corners (off at first; from afar, a count per room), and the small silk
-                    cocoons
-     Your game      your cocoon; the Journal's entries still missing
+                    (Shakra's spot in its area, or where it lies), the key items, and the two
+                    currencies, each one switch whose caret opens its kinds: the Rosaries (strings
+                    and necklaces lying in a room or given, the caches, the loose ones) and the
+                    Shell Shards (bundles lying or given, the caches)
+     Secrets        breakable walls and each room's hidden corners (off at first; from afar, a count
+                    per room), and the small silk cocoons
+   Your cocoon and the Journal show only with a save (OWN_ONLY): in Free mode their switches aren't
+   there (design/03-redesign.md, step 6, the legend's groups).
    Each layer's switch is the game's own picture, with had of total (in Free mode, the total),
    counted by thing: marks that share one save check count once; "Only the 100%" turns on just
    the layers that count (design/03-redesign.md, step 6, the switches' contents).
@@ -154,8 +159,10 @@
     L('bellhome', () => t('mapExtra_bellhome'), PIN('pin_bench_bell')),
     // The area maps (the inventory's rolled map), and the rosaries and shell shards lying in a room.
     L('map', () => t('mapExtra_map'), ICON('i_map')),
-    L('rosaries', () => t('mapExtra_rosaries'), 'assets/icons/items/rosary-string.webp'),
-    L('shards', () => t('mapExtra_shards'), 'assets/icons/items/shard-bundle.webp'),
+    /* Inside their set the strings and bundles take the game's item for them (`legend`), the set
+       having the currency's name; a mark's card and the search keep the currency's. */
+    { ...L('rosaries', () => t('mapExtra_rosaries'), 'assets/icons/items/rosary-string.webp'), legend: () => t('mapLayer_strings') },
+    { ...L('shards', () => t('mapExtra_shards'), 'assets/icons/items/shard-bundle.webp'), legend: () => t('mapLayer_bundles') },
     L('keyitem', () => t('mapExtra_keyitems'), ICON('cog_heart_pieces')),
     L('silk-cocoon', () => t('mapExtra_cocoons'), ICON('silk_grub_small_cocoon')),
     L('eva', () => t('mapExtra_eva', { npc: pick(HW.NPCS.eva) }), 'assets/crests/hunter-3.webp'),
@@ -177,25 +184,33 @@
      (the sibling's, design/24 there). */
   const SETS = { relics: { name: () => t('mapSet_relics'), art: 'assets/icons/extras/bone-scroll.webp', layers: RELICS },
     tools: { name: () => t('cat_tools'), art: 'assets/icons/tools/straight-pin.webp', layers: ['tools-red', 'tools-blue', 'tools-yellow', 'tools-other'] },
+    // The two currencies, each with its caches (and the rosaries' loose beads).
+    coin: { name: () => t('mapExtra_rosaries'), art: 'assets/icons/items/rosary-string.webp', layers: ['rosaries', 'rosary-cache', 'bead'] },
+    shard: { name: () => t('mapExtra_shards'), art: 'assets/icons/items/shard-bundle.webp', layers: ['shards', 'shard-cache'] },
     abilities: { name: () => t('cat_arts'), art: 'assets/icons/arts/swift-step.webp', layers: ['arts', 'arts-other'] } };
   /* The selector's groups, in this order (design/03-redesign.md, step 6, the groups and the
-     switches' contents: Albert's choices); what counts for the 100% in the first two and the
-     Everbloom. Eva's rewards are the Crest pane's; Shakra is one of the game's shops; a lift, gone
-     once called, is a passage; the small silk cocoons, struck for a little silk, a secret. */
+     switches' contents, and the legend's groups: Albert's choices); what counts for the 100% in the
+     first two and the Everbloom. Eva's rewards are the Crest pane's; Places is the game's map key
+     (KEY_BENCH, KEY_BELLWAY, KEY_TUBE, KEY_CARAVAN, KEY_SHOP) and your cocoon; Shakra, with no pin
+     in the game and following the save from spot to spot, is among the people; the Bellshrines,
+     the Grand Gate objective's steps on its own pin, a task; a lift, gone once called, a passage;
+     the small silk cocoons, struck for a little silk, a secret. The layers kept their ids when
+     they moved, so a stored list of switches (prefs.mapLayers) reads as it did. */
   const GROUPS = [
     ['upgrades', ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'tool-pouch', 'crafting-kit', 'abilities']],
     ['crest', ['tools', 'crests', 'eva', 'skills']],   // PANE_TOOLS
     ['extras', ['memory-locket', 'flea', 'old-heart', 'melody', 'everbloom', 'relics', 'memento', 'bellhome']],
-    ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'rosaries', 'shards']],
-    ['places', ['bench', 'bellway', 'ventrica', 'caravan', 'bellshrine', 'shop', 'shakra']],
+    ['items', ['craftmetal', 'pale-oil', 'mossberry', 'silkeater', 'map', 'keyitem', 'coin', 'shard']],
+    ['places', ['bench', 'bellway', 'ventrica', 'caravan', 'shop', 'cocoon']],
     ['passage', ['lever', 'gate', 'lock', 'key', 'shortcut', 'silkwall', 'lift']],   // design/03-redesign.md, step 6, Passages
-    ['fights', ['gauntlet', 'boss', 'void-mass']],
-    ['people', ['person', 'npc']],
+    ['fights', ['gauntlet', 'boss', 'void-mass', 'journal']],
+    ['people', ['shakra', 'person', 'npc']],
     // The game's Tasks (PANE_QUESTS): the wishes and the main objectives (design/03-redesign.md, step 6).
-    ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal']],
-    ['secrets', ['rosary-cache', 'shard-cache', 'wall', 'bead', 'masked', 'silk-cocoon']],
-    ['game', ['cocoon', 'journal']],
+    ['quests', ['wishwall', 'giver', 'wspot', 'qitem', 'goal', 'bellshrine']],
+    ['secrets', ['wall', 'masked', 'silk-cocoon']],
   ];
+  // A group's switches as the legend shows them: without a save, none of the layers only a save has.
+  const shownIds = (ids, own) => (own ? ids : ids.filter((k) => !OWN_ONLY.has(k)));
   const layersOf = (ids) => ids.flatMap((k) => (SETS[k] ? SETS[k].layers : [k]));
   const GROUP_OF = new Map(GROUPS.flatMap(([g, ids]) => layersOf(ids).map((k) => [k, g])));
   const groupName = (g) => t('mapGroup_' + g);
@@ -1180,8 +1195,14 @@
   const PLAIN = new Set(['bench', 'bellway', 'ventrica', 'caravan', 'shop', 'shakra', 'person', 'npc', 'cocoon']);
   const CARET = '<svg class="mp-caret" viewBox="0 0 10 10" aria-hidden="true"><path d="M3 1 L8 5 L3 9 Z" fill="currentColor"/></svg>';
   // The groups open: as left (prefs.mapOpen); at first all of them, on a phone the first two.
-  const openGroups = () => (prefs.mapOpen && !Array.isArray(prefs.mapOpen) ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])
-    : matchMedia('(max-width: 599px)').matches ? ['upgrades', 'crest'] : GROUPS.map(([g]) => g));
+  /* «Your game» (the cocoon and the Journal) was a group before they went to Places and Fights: its
+     fold left out of a stored choice, once, silently. */
+  function openGroups() {
+    const stored = prefs.mapOpen && !Array.isArray(prefs.mapOpen);
+    if (stored && 'game' in prefs.mapOpen) { delete prefs.mapOpen.game; savePrefs(); }
+    return stored ? Object.keys(prefs.mapOpen).filter((k) => prefs.mapOpen[k])
+      : matchMedia('(max-width: 599px)').matches ? ['upgrades', 'crest'] : GROUPS.map(([g]) => g);
+  }
   const inside = new Set();   // the sets whose caret is open, while the page is
   const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   let finds = [], placed = new Map(), pending = '';
@@ -1237,8 +1258,8 @@
     // How many: of a layer whose things are had, had of total in a save (all of them in Free
     // mode); of the rest (places, people), how many show. A layer complete in --good.
     const tally = (ids) => {
-      // A group counts its layers but the cocoon, which isn't had nor many: «Your game» counts as
-      // its Journal does, had of total (design/64, 1 A).
+      // A group counts its layers but the cocoon, which isn't had nor many; the Journal's switch
+      // counts as the Journal does, had of total (design/64, 1 A).
       if (ids.length > 1) ids = ids.filter((k) => k !== 'cocoon');
       const cs = ids.map((k) => count[k] || { all: 0, had: 0, shown: 0 });
       const sum = (f) => cs.reduce((a, c) => a + c[f], 0);
@@ -1253,7 +1274,7 @@
     const none = (ids) => actNow < 3 && ids.every((k) => !(count[k] && count[k].all));
     const chip = (id, ids, act, extra = '') => {
       const nOn = ids.filter((k) => on.has(k)).length, isOn = nOn > 0, empty = none(ids);
-      const name = SETS[id] ? SETS[id].name() : LAYER.get(id).name();
+      const name = SETS[id] ? SETS[id].name() : (LAYER.get(id).legend || LAYER.get(id).name)();
       return `<button type="button" class="mp-kind${isOn ? '' : ' is-off'}${isOn && nOn < ids.length ? ' is-some' : ''}${empty ? ' is-empty' : ''}" data-act="${act}" data-value="${id}" aria-pressed="${isOn}">
         ${legendArt(id)}<span class="mp-kind-t"${NT}>${esc(name)}</span>${empty ? `<span class="mp-n"><b>${num(0)}</b></span>` : nOf(tally(ids))}</button>${extra}`;
     };
@@ -1263,7 +1284,7 @@
       return `<span class="mp-set">${chip(id, ids, 'mapSet', `<button type="button" class="mp-more" data-act="mapInside" data-value="${id}" aria-expanded="${isOpen}" aria-label="${esc(label)}" title="${esc(label)}">${CARET}</button>`)}</span>`
         + (isOpen ? `<div class="mp-inside" role="group" aria-label="${esc(label)}">${ids.map((k) => chip(k, [k], 'mapLayer')).join('')}</div>` : '');
     };
-    const groups = GROUPS.filter(([gr]) => gr !== 'game' || own).map(([gr, ids]) => {
+    const groups = GROUPS.map(([gr, ids]) => [gr, shownIds(ids, own)]).filter(([, ids]) => ids.length).map(([gr, ids]) => {
       const all = layersOf(ids), nOn = all.filter((k) => on.has(k)).length, isOpen = open.includes(gr);
       const allOn = nOn === all.length, title = groupName(gr);
       return `<section class="mp-sec${isOpen ? ' is-open' : ''}">
@@ -2061,7 +2082,7 @@
       savePrefs(); redraw();
     },
     // A group's switch: all of it on, or, when it's all on already, all of it off.
-    mapGroup(node) { switchAll(layersOf(GROUPS.find(([g]) => g === node.dataset.value)[1])); },
+    mapGroup(node) { switchAll(layersOf(shownIds(GROUPS.find(([g]) => g === node.dataset.value)[1], cardCtx && cardCtx.own))); },
     // A set's switch: all of its layers on, or, when any is on, all of them off.
     mapSet(node) { const ids = SETS[node.dataset.value].layers; switchAll(ids, ids.some((k) => layersOn().includes(k))); },
     mapInside(node) { const k = node.dataset.value; if (inside.has(k)) inside.delete(k); else inside.add(k); redraw(); },
