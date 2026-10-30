@@ -12,7 +12,9 @@
              (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
-             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3)
+             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3; pebb, mort,
+             mottled-skarr, frey) and the traders (TRADE: couriers); the Forge Daughter,
+             Grindle, the Moss Druid and Creige are always there
      GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
              (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars) */
@@ -1069,6 +1071,22 @@
         ],
       ],
     },
+    pebb: {
+      bonetown: [
+        'all',
+        ['not', ['flag', 'blackThreadWorld']],
+        ['not', ['flag', 'skullKingInvaded']],
+        [
+          'not',
+          ['all', ['flag', 'boneBottomFuneral'], ['not', ['flag', 'boneBottomFuneralComplete']]],
+        ],
+        ['not', ['flag', 'BoneBottomShopKeepLeft']],
+      ],
+    },
+    mort: { bone_east_10_room: ['not', ['flag', 'blackThreadWorld']] },
+    'mottled-skarr': { ant_merchant: ['not', ['flag', 'antMerchantKilled']] },
+    frey: { belltown: ['flag', 'spinnerDefeated'] },
+    couriers: { belltown: ['all', ['quest', 'Save Courier Short'], ['quest', 'Save Courier Tall']] },
   };
 
   const GIVERS = {

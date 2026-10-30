@@ -127,6 +127,39 @@ test('Jubilana: a rule for each of her 3 shops, her Act 3 stall in the Songclave
   assert.ok(x3 - x2 > 10 && Math.abs(y3 - y2) < 2, `the Act 3 stall (${x3}, ${y3}) east of the Act 2 one (${x2}, ${y2})`);
 });
 
+test('the other shops come and go as the game has them: Pebb, Mort, the Mottled Skarr, Frey, the Couriers', () => {
+  const SP = require('../js/spots.js');
+  // Every shop has a rule or is always there (gen-people.js SHOPS, ALWAYS) or goes for good (LEFT).
+  const always = ['forge-daughter', 'grindle', 'druid', 'creige'];
+  for (const id of [...Object.keys(SP.VENDORS), ...PE.TRADE.map((x) => x.id)]) {
+    assert.ok(PE.HERE[id] || always.includes(id) || SP.LEFT[id], `${id}: no rule for where it is`);
+  }
+  for (const v of ['pebb', 'mort', 'mottled-skarr', 'frey']) assert.deepStrictEqual(Object.keys(PE.HERE[v]), SP.VENDORS[v].map((s) => s.toLowerCase()));
+  const at = (pd, id) => Object.values(here(pd, id))[0];
+  // Pebb: there from the start; gone while the Skull Tyrant has invaded, during the funeral, once sold out, in Act 3.
+  assert.strictEqual(at({}, 'pebb'), true);
+  assert.strictEqual(at({ skullKingInvaded: true }, 'pebb'), false);
+  assert.strictEqual(at({ skullKingKilled: true }, 'pebb'), true);
+  assert.strictEqual(at({ boneBottomFuneral: true }, 'pebb'), false);
+  assert.strictEqual(at({ boneBottomFuneral: true, boneBottomFuneralComplete: true }, 'pebb'), true);
+  assert.strictEqual(at({ BoneBottomShopKeepWillLeave: true }, 'pebb'), true);
+  assert.strictEqual(at({ BoneBottomShopKeepLeft: true }, 'pebb'), false);
+  assert.strictEqual(at({ blackThreadWorld: true }, 'pebb'), false);
+  // Mort: gone in Act 3 only.
+  assert.strictEqual(at({ didRhinoRuckus: true }, 'mort'), true);
+  assert.strictEqual(at({ blackThreadWorld: true }, 'mort'), false);
+  // The Mottled Skarr: till he's killed.
+  assert.strictEqual(at({ MetAntMerchant: true }, 'mottled-skarr'), true);
+  assert.strictEqual(at({ antMerchantKilled: true }, 'mottled-skarr'), false);
+  // Frey: from the Widow's fall, Act 3 too.
+  assert.strictEqual(at({}, 'frey'), false);
+  assert.strictEqual(at({ spinnerDefeated: true, blackThreadWorld: true }, 'frey'), true);
+  // The Couriers' shop: once both are found.
+  const quests = (...q) => ({ QuestCompletionData: { savedData: q.map(([Name, IsCompleted]) => ({ Name, Data: { IsAccepted: true, IsCompleted } })) } });
+  assert.strictEqual(at(quests(['Save Courier Short', true], ['Save Courier Tall', false]), 'couriers'), false);
+  assert.strictEqual(at(quests(['Save Courier Short', true], ['Save Courier Tall', true]), 'couriers'), true);
+});
+
 test('the people the game moves or takes away: each spot by its own switches', () => {
   for (const x of PE.PEOPLE) for (const sc of Object.keys(x.here || {})) assert.ok(x.spots.some(([s]) => s === sc), `${x.id}: ${sc} isn't a spot of theirs`);
   // Ballow: the forge, the Deep Docks' sauna, then the diving bell.

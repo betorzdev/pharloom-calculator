@@ -1424,10 +1424,20 @@ fix from the game's files and a save field):
   js/people.js HERE.jubilana from her scenes' switches and FSMs: the Songclave once The Wandering
   Merchant is done and not while The Lost Merchant is posted and not done, at the room's east
   corner in Act 3; the Forum and Library_03 once met there, not while The Lost Merchant is taken,
-  never in Act 3. Read but left alone, the same gap in the other shops: Mort and Pebb are gone in
-  Act 3 (their stock to Grindle's), Pebb also while the Skull Tyrant has invaded, during Bone
-  Bottom's funeral and once her stock is sold, the Mottled Skarr once antMerchantKilled, Frey only
-  from the Widow's fall; their marks still show in every save.)
+  never in Act 3. The same day the other shops followed, tools/gen-people.js SHOPS, read in each
+  object's switches, its parents' and its FSMs: Pebb's Bonechurch_Shop under Bonetown's Normal
+  World (off in Act 3) and off itself while skullKingInvaded, during the funeral
+  (boneBottomFuneral, not boneBottomFuneralComplete) and once BoneBottomShopKeepLeft (a
+  DeactivatePlayerDataTest, a switch tools/extract-people.py didn't read till then); Mort under
+  his room's Normal World, gone in Act 3; the Mottled Skarr off once antMerchantKilled; Frey under
+  Bellhart's Spinner Defeated (the Bagpipers above her never come: their Here? state cancels
+  itself); the Couriers' shop under Couriers States/Here, once both couriers' wishes are done.
+  Nothing switches the Forge Daughter, Grindle, the Moss Druid or Creige; the generator stops on
+  a shop with no rule. Over the 94 saves (11 in Act 1, 38 in Act 2, 45 in Act 3): Frey hidden in
+  the 9 before the Widow, Pebb in the 4 Act 2 ones where he'd sold out and left and in every Act 3
+  one, Mort in Act 3, the Skarr in the 79 where he's dead, the Couriers' shop in the 40 before
+  both are found; none caught mid-invasion or mid-funeral. A shop's card lists its wares by the way the game takes now (wayOf), so
+  Grindle's gets Pebb's and Mort's only in Act 3.)
 
 **What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
 doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
@@ -2494,4 +2504,6 @@ go by the save spot by spot, six more are gone in Act 3 (or once they leave). On
 Mister Mushroom, Seth's other rooms and the Green Prince caged, so those spots stay. The People
 (100%) layer and the vendors were looked at and left as they are: they guide to what someone
 gives or sells, and hiding them would hide what's missable (Loddie and Lumble leave in Act 3, the
-Mottled Skarr when killed, Pebb when Bone Bottom's shop closes).
+Mottled Skarr when killed, Pebb when Bone Bottom's shop closes). (30 October 2026, Albert's: the
+vendors' shop marks now follow the save; their wares keep their own marks, moved where the game
+moves them, so nothing missable hides. The Vendors note above.)

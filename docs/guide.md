@@ -553,7 +553,13 @@ leaves those off.
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys
-  the relics.
+  the relics. With a save, the others come and go by the game's rules too: Pebb not while the
+  Skull Tyrant has invaded Bone Bottom, during its funeral, once he's sold everything and left,
+  or in Act 3; Mort not in Act 3 (Grindle sells what they had left then); the Mottled Skarr only
+  while he's alive; Frey from the Widow's fall; the Couriers' shop once both are found; the
+  Twelfth Architect not once he's gone. In Free mode, every one. A shop's card lists what it
+  sells still missing, as your game has it sell now (Pebb's and Mort's wares on Grindle's card
+  in Act 3, not before).
   The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
   Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
   Terminus, Choral Chambers…) with «Ventrica» under it.
