@@ -2440,6 +2440,36 @@ folds its rule there too) and on the Second Sentinel's card on the Map (App.wish
 posted. Left out: the battle encounters and the Cog_10 body aren't Map marks (the people layer has
 only its Act 3 resting spots).
 
+**Rooms a wish shuts** (30 October 2026, Albert: «si voy a la ubicación de Reserve Bind, no puedo
+acceder a ese pasillo», with user4). The mark was in the right room and spot: Hang_17b, the Second
+Sentinel's arena, where it hands the Reserve Bind over. But that room's only door (entrances.json)
+is Hang_08's right1, and Hang_08's «Song_Knight_Wall» (a TestGameObjectActivator testing Song Knight
+IsAccepted) keeps «closed» there until Final Audience is taken; user4 hasn't even woken the Sentinel.
+The card said «Wish: Final Audience» and nothing of the wall. tools/extract-gating.py now writes
+gating.json `doors`: each door a quest-tested wall (one quest, no playerData, a wall that doesn't
+save its own state) stands within 3 units of, → [quest, accepted | completable | completed]. Over
+the game's 589 scenes: Hang_08 → Hang_17b and Ward_03 → Ward_09 (Balm for the Wounded) shut a room
+outright; Song_05 ↔ Song_27 (The Wandering Merchant) is one door of three; Bonegrave → Bone_Steel_Servant
+opens once Steel Sentinel can be handed in, which the save doesn't keep (left out). tools/gen-spots.js
+gives every mark in a room all of whose doors one wish shuts that wish's opening (OPENS { wish, room,
+check }: the Reserve Bind and Sherma's Spool Fragment), not the wish's own place there, and stops if a
+fight there lacks it or another room's mark lands there. The card adds «Its room opens once the wish
+"…" is taken» (yours: not yet / Wish Promised / Wish Granted) while it isn't had. Albert on the PR:
+«no me gusta tanto texto (la gente no se va a parar a leerlo). ¿no sería mejor poner enlace hacia el
+wish?». So no card with an OPENS line carries what posts the wish any more (the bosses' neither): a
+«See who asks for "…"» button (mapToFirst, as the Witch Crest's) goes to the wish's mark (App.wishFrom,
+its Wishwall), unless the card has a way there already (the Second Sentinel's «See the Wishwall»), and
+a Wishwall's or a giver's card says what posts each of its wishes not yet taken (App.wishPosts). Then
+Albert's «Marca + botón al paso»: the button goes to the next step. For Final Audience before the
+Sentinel is woken, that's the Sentinel itself, now a mark of its own in Cog_10 (tools/gen-people.js
+DORMANT: the «Song Knight Sleeping» FSM that takes the Cogheart, its point where pickups.json items
+gives the Cogheart Pieces; shown while wokeSongChevalier isn't set, through peopleHere; its card the
+game's SONG_KNIGHT_TUBE_PROMPT and the pieces held as a count, no met state: Albert, «una guía, no lore»). js/people.js STEP names it
+as the wish's first step; the Wishwall's card has the same button while it's shown. Woken, the button
+goes to the Wishwall, which counts the meetings. In all 94 saves neither room is entered before its
+wish is taken.
+test/journal-acts.test.js.
+
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
 at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
 the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each

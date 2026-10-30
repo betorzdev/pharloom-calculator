@@ -1,4 +1,26 @@
 {
+ "doors": {
+  "bonegrave|left1": [
+   "Steel Sentinel",
+   "completable"
+  ],
+  "hang_08|right1": [
+   "Song Knight",
+   "accepted"
+  ],
+  "song_05|right4": [
+   "Save City Merchant",
+   "accepted"
+  ],
+  "song_27|left1": [
+   "Save City Merchant",
+   "accepted"
+  ],
+  "ward_03|door1": [
+   "Save Sherma",
+   "accepted"
+  ]
+ },
  "items": {
   "Abandoned_town|thread_memory": {
    "inside": "Memory Group"

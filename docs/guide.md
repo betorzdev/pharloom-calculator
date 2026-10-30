@@ -456,7 +456,12 @@ What counts for the 100% is in the first two groups and the Everbloom, each thin
 it's had: lying there, at the shop that sells it, with whoever hands over a wish's reward (Shakra
 in Bilewater for Trail's End's Throwing Ring, the Pinstress atop Mount Fay, Sherma in the Whiteward:
 the card says who gives it and where the wish is taken), else at the Wishwall or with whoever gives
-the wish, in its boss's arena, with the person who gives it. All of it on at first, and what leads to it too
+the wish, in its boss's arena, with the person who gives it. A thing in a room whose every door the game
+keeps shut until a wish is taken says so on its card in one line, with a save whether yours has
+it, and a button to your next step for that wish: the Wishwall or whoever asks for it, whose card
+says what posts it, or, for Final Audience before the Second Sentinel is woken, the Sentinel itself,
+lying inert in the Cogwork Core («Insert Cogwork Heart?») until you bring it the Cogheart: the Reserve Bind, in the Second Sentinel's arena past a wall in the High Halls
+(Final Audience), and Sherma's Spool Fragment in the Whiteward (Balm for the Wounded). All of it on at first, and what leads to it too
 (Memory Lockets, Lost Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), though «Only the 100%»
 leaves those off.
 
@@ -608,7 +613,9 @@ leaves those off.
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
   your save names. A fight the game only puts there once something holds says so on its card, and
-  with a save whether yours has it: the wish that brings it (the Broodmother, the Far Fields Savage
+  with a save whether yours has it (a wish not yet taken or granted, with a button to where it's
+  taken, unless the card has one there already: a Wishwall's card says what posts each wish on it
+  still to take): the wish that brings it (the Broodmother, the Far Fields Savage
   Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel, the Pinstress atop Mount
   Fay), the wish granted first
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers

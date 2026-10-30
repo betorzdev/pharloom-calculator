@@ -57,11 +57,22 @@ What it writes (read on 16-Oct-2026, patch 1.0.30000, against the 77 files of th
                      outside, the wall takes the mask with it, which then never saves)
   receptacles  each ItemReceptacle (a door a key opens) → [Scene, object, the saved item its
           `persistent` names or null, its playerDataBool or null, demo (true/false)]
+  doors   each door a wish's test shuts (read on 30-Oct-2026): a TestGameObjectActivator testing
+          one quest and no playerData, whose object it switches off once the test holds (the wall,
+          not one that saves its own state: that one Hornet opens herself) lies within 3 units of
+          a TransitionPoint, by "scene|door" in lower case → [quest, test]: 'accepted' (the wish
+          taken, IsAccepted, which stays true once it's done), 'completable' or 'completed'.
+          Hang_08's Song_Knight_Wall shuts the only way into Hang_17b, the Second Sentinel's arena
+          where it gives the Reserve Bind, until Final Audience is taken; Ward_03's door into
+          Ward_09, where Sherma gives a Spool Fragment, until Balm for the Wounded is; Bonegrave's
+          Steel_Servant_Tunnel opens once Steel Sentinel can be handed in. tools/gen-spots.js
+          gives what lies in a room every door into which a wish shuts that wish's opening (OPENS)
   patch   the game's version the scan read, as tools/extract-pickups.py writes it: npm run data stops
           if the two differ (tools/gating.js), so a patch re-extracts both
 Scene names are the scene's own, as the save writes them (aa/catalog.bin), as extract-pickups.py. """
 import json, os, pickle, re, struct, sys, warnings
 import UnityPy
+from scene_place import world_of
 
 warnings.filterwarnings('ignore')
 UnityPy.config.FALLBACK_UNITY_VERSION = '6000.0.50f1'
@@ -71,6 +82,9 @@ SAVED = {'PersistentBoolItem', 'PersistentIntItem'}
 FLAG_FIELDS = {('Lever', 'playerDataBool'), ('Lever_tk2d', 'setPlayerDataBool'), ('PersistentPressurePlate', 'playerDataBool')}
 WORLD, MODE, DEMO = 'blackThreadWorld', 'permadeathMode', 'IsDemoMode'
 GATES = {'Gate', 'TempGate', 'Trapdoor', 'TrapBridgeExtend'}
+NEAR_DOOR = 3.0   # how far from its door a wish's wall stands (2.4 at Hang_08, 2.5 at Bonegrave)
+# A quest test's fields → the door's test (the first one set: Song_Knight_Wall tests IsAccepted alone).
+QUEST_TEST = [('CheckAccepted', 'IsAccepted', 'accepted'), ('CheckCompletable', 'IsCompletable', 'completable'), ('CheckCompleted', 'IsCompleted', 'completed')]
 
 
 def set_bools(d):
@@ -141,9 +155,19 @@ def scan(game, only=None):
     CLS = {o.path_id: o.read().m_ClassName for o in UnityPy.load(mono).objects if o.type.name == 'MonoScript'}
     with open(os.path.join(aa, '..', 'catalog.bin'), 'rb') as fh:
         NAMES = {n.decode().lower(): n.decode() for n in re.findall(rb'([A-Za-z0-9_ ()-]+)\.unity', fh.read())}
+    # The quests by their asset (a scene's quest test points at one in these bundles): their save names.
+    qdir = os.path.join(aa, 'dataassets_assets_assets', 'dataassets', 'questsystem')
+    QUESTS = {}
+    for b in ('quests.bundle', 'mainquests.bundle'):
+        for o in UnityPy.load(os.path.join(qdir, b)).objects:
+            if o.type.name == 'MonoBehaviour':
+                try:
+                    QUESTS[(o.assets_file.name, o.path_id)] = o.read_typetree()['m_Name']
+                except Exception:
+                    pass
     sdir = os.path.join(aa, 'scenes_scenes_scenes')
     names = sorted(f[:-7] for f in os.listdir(sdir) if f.endswith('.bundle') and f != 'menu_title.bundle' and (not only or f[:-7] in only))
-    items, receptacles = {}, []
+    items, receptacles, doors = {}, [], {}
     for n, scene in enumerate(names):
         if n % 50 == 0:
             print(f'{n}/{len(names)} {scene}', file=sys.stderr, flush=True)
@@ -167,6 +191,37 @@ def scan(game, only=None):
             if o.type.name == 'MonoBehaviour' and len(raw) >= 28:
                 cls = CLS.get(struct.unpack_from('<q', raw, 20)[0])
             comps.setdefault(gid, []).append((cls or o.type.name, o))
+        # The doors a wish's test shuts (the header's doors), before the scenes with nothing saved go.
+        walls = [o for cs in comps.values() for c, o in cs if c == 'TestGameObjectActivator']
+        if walls:
+            world = world_of(T, of_go)
+            exits = []
+            for gid, cs in comps.items():
+                for c, o in cs:
+                    if c == 'TransitionPoint':
+                        try:
+                            if o.read_typetree().get('targetScene'):
+                                exits.append((gos[gid].m_Name, world(gid)))
+                        except Exception:
+                            pass
+            for o in walls:
+                try:
+                    d = o.read_typetree()
+                except Exception:
+                    continue
+                qt, wall = d.get('questTests') or [], pptr(d.get('deactivateGameObject'))
+                # A wall that saves its own state is one Hornet can open herself (Bone_East_16's
+                # breakable wall, Hang_07's shortcut): not shut, a way the Map marks already.
+                if len(qt) != 1 or tests_of(d) or wall not in gos or any(c in SAVED for c, _ in comps.get(wall, [])):
+                    continue
+                r = qt[0].get('Quest') or {}
+                cab = o.assets_file.name if r.get('m_FileID') == 0 else o.assets_file.externals[r['m_FileID'] - 1].path.split('/')[-1]
+                quest = QUESTS.get((cab, r.get('m_PathID'))) or fail(f'{scene}: a quest test points outside the quest bundles ({cab})')
+                test = next((name for check, want, name in QUEST_TEST if qt[0].get(check) and qt[0].get(want)), None)
+                at = world(wall)
+                for door, p in exits:
+                    if test and at and p and ((p[0] - at[0]) ** 2 + (p[1] - at[1]) ** 2) ** 0.5 <= NEAR_DOOR:
+                        doors[f'{scene}|{door}'.lower()] = [quest, test]
         saved = [(gid, o) for gid, cs in comps.items() for c, o in cs if c in SAVED]
         if not saved:
             continue
@@ -379,7 +434,7 @@ def scan(game, only=None):
                     m[k] = vals[0]
             if m:
                 items[key] = m
-    return items, receptacles
+    return items, receptacles, doors
 
 
 def game_patch(game):
@@ -397,20 +452,23 @@ def game_patch(game):
 
 def main(game, only=None, cache=None):
     got = pickle.load(open(cache, 'rb')) if cache and os.path.exists(cache) and not only else None
-    items, receptacles = got or scan(game, only)
+    items, receptacles, doors = got or scan(game, only)
     if cache and not got and not only:
-        pickle.dump((items, receptacles), open(cache, 'wb'))
+        pickle.dump((items, receptacles, doors), open(cache, 'wb'))
     if only:   # a look at some scenes, nothing written
-        print(json.dumps({'items': items, 'receptacles': receptacles}, indent=1))
+        print(json.dumps({'items': items, 'receptacles': receptacles, 'doors': doors}, indent=1))
         return
     kinds = {k: sum(1 for r in items.values() if k in r) for k in ('flags', 'removedBy', 'partner', 'world', 'mode', 'demo', 'never', 'inside', 'battle', 'withPerson', 'breaks')}
     if kinds['flags'] < 25 or kinds['world'] < 100 or kinds['partner'] < 4 or len(receptacles) < 8:
         fail(f'too few of something ({kinds}, {len(receptacles)} receptacles): the components need reading again')
-    out = {'items': dict(sorted(items.items())), 'receptacles': sorted(receptacles, key=lambda r: [str(x) for x in r]), 'patch': game_patch(game)}
+    if doors.get('hang_08|right1') != ['Song Knight', 'accepted']:
+        fail('Hang_08\'s Song_Knight_Wall no longer reads as Final Audience\'s at its door: the doors need reading again')
+    out = {'items': dict(sorted(items.items())), 'receptacles': sorted(receptacles, key=lambda r: [str(x) for x in r]),
+           'doors': dict(sorted(doors.items())), 'patch': game_patch(game)}
     with open(OUT, 'w') as fh:
         json.dump(out, fh, indent=1, sort_keys=True)
         fh.write('\n')
-    print(f"{len(items)} items ({', '.join(f'{v} {k}' for k, v in kinds.items())}), {len(receptacles)} receptacles → {os.path.relpath(OUT)} ({os.path.getsize(OUT) // 1024} KB)")
+    print(f"{len(items)} items ({', '.join(f'{v} {k}' for k, v in kinds.items())}), {len(receptacles)} receptacles, {len(doors)} doors a wish shuts → {os.path.relpath(OUT)} ({os.path.getsize(OUT) // 1024} KB)")
 
 
 if __name__ == '__main__':

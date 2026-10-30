@@ -474,6 +474,8 @@
     mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
     mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
     mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
+    // A thing in a room whose only way in the game shuts until a wish is taken (js/spots.js OPENS room).
+    mapOpensRoom:   { es: 'Su sala se abre al aceptar el deseo «{wish}»', en: 'Its room opens once the wish "{wish}" is taken' },
     mapOpenYes:     { es: 'ya está', en: 'done' },
     mapOpenNo:      { es: 'aún no', en: 'not yet' },
     // What Frey's furnishings wait for (js/shop.js needs), and the names in them.
@@ -513,6 +515,8 @@
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
     mapToFirst:     { es: 'Ver quién pide «{wish}»', en: 'See who asks for "{wish}"' },
+    // A wish's first step on the Map (js/people.js STEP): {npc} the game's name (SONG_KNIGHT_SUPER+_MAIN), written for the context.
+    mapToWake:      { es: 'Ver dónde despertar al {npc}', en: 'See where to wake the {npc}' },
     // The Sacred Cylinder and the melody it leads to, each card pointing at the other: {npc} Cardinius, {melody} SQ_MELODY_LIBRARIAN_NAME.
     mapCylinderFor: { es: 'Llévaselo a {npc} para aprender la {melody}.', en: 'Bring it to {npc} to learn the {melody}.' },
     mapToMelody:    { es: 'Ver la melodía', en: 'See the melody' },
