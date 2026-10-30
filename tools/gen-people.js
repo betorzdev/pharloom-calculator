@@ -67,7 +67,8 @@ const ELSEWHERE = {
    SimpleQuestsShopOwner, in Bellhart only), the Moss Druid (Mossberries for rosaries,
    MOSSCREEP_TRADE_BERRY) and Creige (HH_BARTENDER_DRINK_PROMPT, «¿Comprar una bebida?»). Styx
    and Crull and Benjin were looked at and aren't: Styx grows morsels for Hornet, and nothing in
-   the dump has the Dust Traders sell. Scrounge buys the relics and keeps her layer. */
+   the dump has the Dust Traders sell. Scrounge buys the relics and keeps her layer. Where they are
+   now, as the vendors': SHOPS below. */
 const TRADERS = { couriers: { keys: ['COURIERS_SHOP'], note: 'couriers' }, druid: { keys: ['MOSSCREEP'], note: 'druid' },
   creige: { keys: ['HH_BARTENDER'], note: 'creige' } };
 // The troupe's camp, by CaravanTroupeLocation (js/rooms.js pinsOn follows it for the camp's bench).
@@ -282,6 +283,39 @@ const JUBILANA = {
   library_03: scavenges('Library03'),
   song_enclave: all(['quest', WANDERING], any(ACT3, min('enclaveLevel', 1)), any(not(flag('cityMerchantCanLeaveForBridge')), ['quest', LOST])),
 };
+/* The other shops (js/spots.js VENDORS, and TRADERS above), by their person's key: where they are
+   now, as the game decides it (read 30-Oct-2026, patch 1.0.30000, each object's own switches and
+   its parents', their FSMs and Assembly-CSharp's TestGameObjectActivator and DeactivatePlayerDataTest).
+     · Pebb (Bonetown's Bonechurch_Shop) stands under the room's Black Thread States/Normal World,
+       off in Act 3, and his own object goes off while the Skull Tyrant has invaded
+       (DeactivateIfPlayerdataTrue skullKingInvaded, false again once he's beaten: Pebb's Post
+       Boss talk waits on skullKingKilled, and none of Albert's saves has it set), during Bone
+       Bottom's funeral (PlayerDataTestResponse) and once he's left, his stock sold
+       (DeactivatePlayerDataTest BoneBottomShopKeepLeft; his Dialogue says so on the last sale,
+       BoneBottomShopKeepWillLeave);
+     · Mort (Bone_East_10_Room's Pilgrims Rest Shop) under its room's Normal World too: gone in Act 3
+       (his Memory Locket and Tool Pouch, as Pebb's wares, are Grindle's then: tools/gen-spots.js
+       ALSO; his Weighted Belt lies by his body, Bone_East_07's Mort Death Scene);
+     · the Mottled Skarr (Ant_Merchant's Ant Merchant), off from Ant Merchant States'
+       TestGameObjectActivator once antMerchantKilled (his Curveclaw and Fractured Mask by the body);
+     · Frey (Bellhart's Belltown Shop NPC) under Town States/Spinner Defeated: only from the Widow's
+       fall. Above her, Bagpipers Not Here, which the Bagpipers' Dialogue would switch off with
+       citadelWoken, but its Here? state sends itself CANCEL first: they never come, and she stays;
+     · the Couriers (COURIERS_SHOP, a trader) under Bellhart's Couriers States/Here, which its
+       TestGameObjectActivator turns on once My Missing Courier and My Missing Brother are both done.
+   Nothing switches the Forge Daughter (Room_Forge's _NPCs; the Forge Conversation Manager only
+   sets who talks), Grindle (Coral_42's Thief NPC Shop), the Moss Druid (Mosstown_02c's NPC Scene)
+   or Creige (Halfway_01's _NPCs): always there (ALWAYS). The Twelfth Architect goes for good
+   (js/spots.js LEFT, ArchitectLeft). */
+const SHOPS = {
+  pebb: { key: 'BB_SHOPKEEP', here: { bonetown: all(NOT_ACT3, not(flag('skullKingInvaded')),
+    not(all(flag('boneBottomFuneral'), not(flag('boneBottomFuneralComplete')))), not(flag('BoneBottomShopKeepLeft'))) } },
+  mort: { key: 'PILGRIM_REST_SHOP', here: { bone_east_10_room: NOT_ACT3 } },
+  'mottled-skarr': { key: 'ANT_MERCHANT', here: { ant_merchant: not(flag('antMerchantKilled')) } },
+  frey: { key: 'BELLHART_SHOPKEEP', here: { belltown: flag('spinnerDefeated') } },
+  couriers: { key: 'COURIERS_SHOP', trade: true, here: { belltown: all(['quest', 'Save Courier Short'], ['quest', 'Save Courier Tall']) } },
+};
+const ALWAYS = new Set(['forge-daughter', 'grindle', 'druid', 'creige']);
 // The fields Shakra's rules read that her scenes' objects don't (the template's, and the property
 // CaravanInGreymoor): tools/extract-people.py reads only the scenes.
 const SHAKRA_READS = new Set(['blackThreadWorld', 'CaravanTroupeLocation', 'hasDoubleJump', 'MapperLeftDustpens',
@@ -388,6 +422,17 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
   if (JSON.stringify(JU) !== JSON.stringify(Object.keys(JUBILANA).sort())) fail(`JUBILANA (${Object.keys(JUBILANA)}) isn't her spots (js/spots.js VENDORS.jubilana: ${JU})`);
   check('CITY_MERCHANT', { here: JUBILANA, reads: ['cityMerchantCanLeaveForBridge'] });
   const HERE = { shakra: SHAKRA, jubilana: JUBILANA };
+  // The other shops: each vendor and trader read (SHOPS, ALWAYS, js/spots.js LEFT), every one of their spots and only those.
+  for (const [id, s] of Object.entries(SHOPS)) {
+    if (!(s.trade ? TRADERS[id] && TRADERS[id].keys[0] === s.key : SP.VENDORS[id])) fail(`SHOPS: ${id} is no ${s.trade ? 'trader' : 'vendor'} of ${s.key}`);
+    const want = (s.trade ? spotsOf(s.key).map((sp) => sp[0]) : SP.VENDORS[id]).map((sc) => sc.toLowerCase()).sort();
+    if (JSON.stringify(want) !== JSON.stringify(Object.keys(s.here).sort())) fail(`SHOPS.${id} (${Object.keys(s.here)}) isn't their spots (${want})`);
+    check(s.key, { here: s.here });
+    HERE[id] = s.here;
+  }
+  for (const id of [...Object.keys(SP.VENDORS), ...Object.keys(TRADERS)]) {
+    if (!HERE[id] && !ALWAYS.has(id) && !(SP.LEFT || {})[id]) fail(`${id}: a shop no rule says where it is (SHOPS, ALWAYS or js/spots.js LEFT): read its scenes`);
+  }
   const TRADE = [];
   for (const [id, t] of Object.entries(TRADERS)) {
     const key = t.keys[0], h = HAND[key] || {};
@@ -427,7 +472,9 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
              (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
-             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3)
+             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3; pebb, mort,
+             mottled-skarr, frey) and the traders (TRADE: couriers); the Forge Daughter,
+             Grindle, the Moss Druid and Creige are always there
      GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
              (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars)`,

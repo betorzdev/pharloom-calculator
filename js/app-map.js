@@ -404,7 +404,7 @@
     const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
     return { met, gone, where: where.size ? where : null };
   }
-  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's, Jubilana's) has them now
+  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's, the shops') has them now
      (js/savefile.js peopleHere); with no save, or no word of it in the slot, it's shown. */
   const hereNow = (own, id, scene) => {
     const h = own && own.peopleHere, k = id + ':' + lower(scene);
@@ -643,16 +643,17 @@
       // Shakra only where your game has her now (she moves on as Hornet does: js/people.js HERE).
       if (v === 'shakra') { scenes.forEach((scene, i) => hereNow(own, 'shakra', scene) && add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
-      /* The others too where the game decides it (js/people.js HERE: Jubilana, out scavenging or at
-         the Memorium), at their Act 3 point in a game in Act 3 (js/spots.js XY key + ':act3'). */
+      /* The others too where the game decides it (js/people.js HERE: Jubilana out scavenging or at
+         the Memorium, Pebb and Mort gone in Act 3, the Mottled Skarr once killed, Frey from the
+         Widow's fall), at their Act 3 point in a game in Act 3 (js/spots.js XY key + ':act3'). */
       scenes.forEach((scene, i) => {
         const key = 'shop:' + v + ':' + i, xy3 = own && own.act === 3 && SP.XY[key + ':act3'];
         if (hereNow(own, v, scene)) add({ key, layer: 'shop', scene, at: xy3 ? { x: xy3[0], y: xy3[1] } : undefined, got: false, name: pick(HW.NPCS[v]), npc: v,
           draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) });
       });
     }
-    // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers, the Moss Druid, Creige.
-    for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,
+    // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers (once both found: HERE), the Moss Druid, Creige.
+    for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => hereNow(own, x.id, scene) && add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,
       at: px != null ? { x: px, y: py } : undefined, got: false, name: pick(x.name), trade: x.note, draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     // People: the Wishwalls and who offers a wish, each with the wishes still open there.
     const boards = new Map(), givers = new Map();
@@ -1697,12 +1698,18 @@
      marked had from it (a ladder's leads to the Inventory); a gauntlet or a boss takes you to fight it, a boss or an entry to the
      Journal. It follows its mark as the map moves; ×, Escape or a tap on the empty map close it. ── */
   let cardCtx = null;
-  // The things of the 100% a person gives or sells (js/how.js HOW), by the map's keys.
-  function givenBy(id) {
+  /* The things of the 100% a person gives or sells (js/how.js HOW), by the map's keys. With a save,
+     only those the game has them sell now (js/completion.js wayOf, the Act's way, as Progress says
+     it): Pebb's and Mort's wares are Grindle's in Act 3 and not before; Free mode, every one. */
+  function givenBy(id, own) {
     const keys = [];
-    const scan = (cat, ways, key) => { if ((ways || []).some((w) => (w.kind === 'shop' && w.vendor === id) || w.npc === id)) keys.push(key); };
-    for (const [i, ways] of Object.entries(HW.HOW.pieces)) scan('pieces', ways, 'piece:' + i);
-    for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [k, ways] of Object.entries(HW.HOW[cat])) scan(cat, ways, cat + ':' + k);
+    const theirs = (w) => !!w && ((w.kind === 'shop' && w.vendor === id) || w.npc === id);
+    // key: the map's; the way's key is HOW's ('tools:curveclaw', what savefile foundNow names).
+    const scan = (cat, id, ways, key) => {
+      if (own ? theirs(SS.completion.wayOf(ways, own, {}, cat + ':' + id).way) : (ways || []).some(theirs)) keys.push(key);
+    };
+    for (const [i, ways] of Object.entries(HW.HOW.pieces)) scan('pieces', i, ways, 'piece:' + i);
+    for (const cat of ['tools', 'crests', 'skills', 'arts']) for (const [k, ways] of Object.entries(HW.HOW[cat])) scan(cat, k, ways, cat + ':' + k);
     return keys;
   }
   // The pieces Free mode takes from the Inventory's ladders (js/app-progress.js freeView, LADDER).
@@ -1843,7 +1850,7 @@
       } else if (id === 'scrounge') {
         note = t('mapScroungeNote');
       } else {
-        const things = givenBy(id).map((k) => list.find((x) => x.key === k)).filter((x) => x && (!g || !x.got));
+        const things = givenBy(id, own).map((k) => list.find((x) => x.key === k)).filter((x) => x && (!g || !x.got));
         note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
       }
       // Where they are now (js/spots.js ALSO: Plinney, gone from Bellhart in Act 3).

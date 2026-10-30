@@ -19,8 +19,8 @@ What it writes:
            SplineWalker, the last point of its path on the ground),
            fields: the identifiers the person's scripts read: every length-prefixed name in the raw
            data of the FSMs on their objects and the four objects above them, and the playerData
-           tests (Deactivate/ActivateIfPlayerdata…, PlayerDataTestResponse, TestGameObjectActivator)
-           that switch those objects. tools/gen-people.js checks its hand table against them. }
+           tests (Deactivate/ActivateIfPlayerdata…, PlayerDataTestResponse, DeactivatePlayerDataTest,
+           TestGameObjectActivator) that switch those objects. tools/gen-people.js checks its hand table against them. }
   shops    [scene, object, class]: every ShopOwner and SimpleQuestsShopOwner.
   figures  title key → the sprite drawn (its collection and definition): the person's figure as the
            scene first draws it (the tk2dSprite on their object, else the first under it; the
@@ -66,8 +66,11 @@ BUST_TOP = {'GRUBFARMER': 0.3, 'HUNTRESS': 0.2}
 # sides (0 its left edge; the rest are centred): the Old Statue's mask peers out on his left.
 BUST_LEFT = {'OLD_STATUE': 0}
 NAME = re.compile(rb'[A-Za-z][A-Za-z0-9_]{4,47}')
+# DeactivatePlayerDataTest switches its own object off while its test holds (Pebb's Bonechurch_Shop
+# once BoneBottomShopKeepLeft: read 30-Oct-2026, Assembly-CSharp).
 TESTS = {'DeactivateIfPlayerdataTrue', 'DeactivateIfPlayerdataFalse', 'ActivateIfPlayerdataTrue', 'ActivateIfPlayerdataFalse',
-         'TestGameObjectActivator', 'PlayerDataTestResponse'}
+         'TestGameObjectActivator', 'PlayerDataTestResponse', 'DeactivatePlayerDataTest'}
+TESTED = {'PlayerDataTestResponse', 'DeactivatePlayerDataTest'}   # their test is `test`, not `playerDataTest`
 READ = TESTS | {'NpcDialogueTitle', 'ShopOwner', 'SimpleQuestsShopOwner', 'tk2dSprite', 'SplineWalker'}
 TALKS = {'PlayMakerNPC', 'BasicNPC'}
 # The talkers whose title only their FSM shows (read on 11-Oct-2026): a talker's FSM also names
@@ -89,9 +92,9 @@ def names_in(raw):
 
 
 def tests_of(c, d):
-    if c.startswith(('Deactivate', 'Activate')):
+    if c.startswith(('Deactivate', 'Activate')) and c not in TESTED:
         return {d.get('boolName')} - {None, ''}
-    t = d.get('test') if c == 'PlayerDataTestResponse' else d.get('playerDataTest')
+    t = d.get('test') if c in TESTED else d.get('playerDataTest')
     return {x['FieldName'] for g in (t or {}).get('TestGroups', []) for x in g.get('Tests', []) if x.get('FieldName')}
 
 
