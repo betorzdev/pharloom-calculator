@@ -180,3 +180,22 @@ test('the people the game moves or takes away: each spot by its own switches', (
   // Act 3 takes some away for good (gone).
   for (const id of ['bell-hermit', 'last-conductor', 'fisher-npc']) assert.ok(PE.PEOPLE.find((x) => x.id === id).gone.includes('blackThreadWorld'), id);
 });
+
+/* Final Audience's first step (Albert's choice on PR #212): the Second Sentinel inert in Cog_10, at
+   the «Song Knight Sleeping» that takes the Cogheart, shown while the save says it isn't woken; the
+   Map's way to the wish (js/app-map.js stepBtn) goes to it while it's shown, else to the Wishwall. */
+test('the Second Sentinel lies in the Cogwork Core until it\'s woken, Final Audience\'s first step', () => {
+  const x = PE.PEOPLE.find((p) => p.id === 'song-knight');
+  const sp = x.spots.find((s) => s[0] === 'cog_10');
+  assert.ok(sp && sp.length === 3, 'a point in Cog_10');
+  assert.deepStrictEqual(x.here.cog_10, ['not', ['flag', 'wokeSongChevalier']]);
+  assert.deepStrictEqual(x.notes.cog_10.map((n) => n.key), ['SONG_KNIGHT_TUBE', 'SONG_KNIGHT_TUBE_PROMPT']);
+  assert.strictEqual(PE.STEP['Song Knight'], 'song-knight:cog_10');
+  // The step the Map's button goes to, per state: inert (user4) → there; woken → no longer (the Wishwall).
+  const step = (pd) => F.game({ silk: 0, ...pd }).peopleHere[PE.STEP['Song Knight']];
+  assert.strictEqual(step({ wokeSongChevalier: false }), true);
+  assert.strictEqual(step({ wokeSongChevalier: true }), false);
+  assert.strictEqual(step({ wokeSongChevalier: true, songChevalierQuestReady: true }), false);
+  // Through a slot too.
+  assert.strictEqual(F.gameOf(F.toSnapshot({ silk: 0, wokeSongChevalier: true })).peopleHere['song-knight:cog_10'], false);
+});

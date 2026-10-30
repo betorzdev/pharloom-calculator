@@ -49,7 +49,8 @@ const M = globalThis.SS.map;
 
 const OUT = path.join(__dirname, '..', 'js', 'people.js');
 const P = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'people.json'), 'utf8'));
-const SIZES = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8')).sizes;
+const PICKUPS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'pickups.json'), 'utf8'));
+const SIZES = PICKUPS.sizes;
 const FIGS = path.join(__dirname, '..', 'assets', 'map', 'people');
 function fail(msg) { throw new Error('gen-people: ' + msg); }
 
@@ -88,6 +89,18 @@ const fieldsIn = (c) => (['flag', 'is', 'min'].includes(c[0]) ? [c[1]] : ['not',
 // A spot's check that holds only in Act 3: blackThreadWorld set, or a field of Act 3's own.
 const act3Only = (c) => (c[0] === 'flag' && c[1] === 'blackThreadWorld') || (c[0] === 'is' && /Act3$/.test(c[1])) || (c[0] === 'all' && c.slice(1).some(act3Only));
 const questsIn = (c) => (['accepted', 'quest'].includes(c[0]) ? [c[1]] : ['not', 'all', 'any'].includes(c[0]) ? c.slice(1).flatMap(questsIn) : []);
+/* Someone where they lie before they're anyone to talk to (Albert's choice on PR #212, 30-Oct-2026:
+   «Marca + botón al paso»): the Second Sentinel, inert in the Cogwork Core with its chest empty until
+   Hornet gives it the Cogheart. Cog_10's «Song Knight Sleeping» FSM takes the 3 Cogheart Pieces and
+   sets wokeSongChevalier (js/app-progress.js knightPosts; in every one of the author's saves its
+   «Song Knight Tube» bool is set by then). It has no NpcDialogueTitle, so tools/extract-people.py
+   doesn't list it: its point is that FSM's object, where pickups.json items has the Cogheart Pieces
+   given. A spot of theirs shown while here holds (not woken); note, the game's own lines there
+   (SONG_KNIGHT_TUBE, SONG_KNIGHT_TUBE_PROMPT), on its card; step, the wish it's the first step of:
+   the Map's way to that wish goes to it while the save shows it (STEP). The run stops if the object
+   or the room is gone. */
+const DORMANT = { SONG_KNIGHT: { scene: 'cog_10', item: 'Cog Heart Pieces', obj: 'Song Knight Sleeping', here: not(flag('wokeSongChevalier')),
+  note: ['SONG_KNIGHT_TUBE', 'SONG_KNIGHT_TUBE_PROMPT'], step: 'Song Knight' } };
 
 /* HAND: per person (their key), what the save says. The rest are in the list with no state.
    Checked over the 77 files of the author's saves (16-Oct-2026, design/03-redesign.md, step 6, the
@@ -412,6 +425,20 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
     PEOPLE.push({ id, name: titleOf(key), art, spots, met: h.met, gone: goneOf(h).length ? goneOf(h) : undefined, at: h.at, unsure: h.unsure,
       act3: act3.length ? act3 : undefined, here: here.length ? Object.fromEntries(here) : undefined });
   }
+  // Where someone lies before they're anyone (DORMANT): one spot more, by the save, with its lines.
+  const STEP = {};
+  for (const [key, d] of Object.entries(DORMANT)) {
+    const x = PEOPLE.find((p) => p.id === idOf(key)) || fail(`DORMANT: ${key} isn't on the Map`);
+    const at = ((PICKUPS.items[d.item] || {}).at || []).find((a) => a[0] === d.scene && a[2] === d.obj) || fail(`DORMANT: no ${d.obj} in ${d.scene} gives ${d.item} (pickups.json items)`);
+    const pt = R.roomOf(d.scene) && toMap(d.scene, at[3], at[4]);
+    if (!pt) fail(`DORMANT: ${key}'s ${d.scene} isn't on the map`);
+    if (x.spots.some((sp) => sp[0] === d.scene)) fail(`DORMANT: ${key} has a spot in ${d.scene} already`);
+    if (!QU.CHAIN[d.step]) fail(`DORMANT: ${key}'s wish ${d.step} isn't one of js/quests.js`);
+    x.spots.push([d.scene, ...pt]);
+    x.here = { ...(x.here || {}), [d.scene]: d.here };
+    x.notes = { ...(x.notes || {}), [d.scene]: d.note.map((k) => N.text(k)) };
+    STEP[d.step] = x.id + ':' + d.scene;
+  }
   // Shakra's spots (js/spots.js VENDORS.shakra), each with its rule: every one, and only those.
   const SH = SP.VENDORS.shakra.map((sc) => sc.toLowerCase());
   for (const sc of SH) if (!SHAKRA[sc]) fail(`Shakra's ${sc} has no rule: SHAKRA needs reading again`);
@@ -469,7 +496,11 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
              or dead; at, [field, value, scene]…, the first that holds says where they are now;
              unsure 'always', no saying where; act3, the spots only Act 3 has (the Map's Act
              filter); here, { scene: check }, a spot shown only while its check holds
-             (js/savefile.js has(), peopleHere)
+             (js/savefile.js has(), peopleHere); notes, { scene: [{ es, en, key }] }, the game's
+             lines on that spot's card (the Second Sentinel inert in Cog_10)
+     STEP    { quest: '<id>:<scene>' }: the spot that is that wish's first step (waking the Second
+             Sentinel for Final Audience): the Map's way to the wish goes to it while the save
+             shows it there (peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
              (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3; pebb, mort,
@@ -478,7 +509,7 @@ const idOf = (key) => key.toLowerCase().replace(/_/g, '-');
      GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
              (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars)`,
-  'people', [['PEOPLE', PEOPLE], ['TRADE', TRADE], ['HERE', HERE], ['GIVERS', GIVERS], ['VARS', [...VARS].sort()]]);
+  'people', [['PEOPLE', PEOPLE], ['STEP', STEP], ['TRADE', TRADE], ['HERE', HERE], ['GIVERS', GIVERS], ['VARS', [...VARS].sort()]]);
   const moving = PEOPLE.filter((p) => p.spots.length > 1);
   console.log(`js/people.js  ${PEOPLE.length} people in ${PEOPLE.reduce((n, p) => n + p.spots.length, 0)} spots, `
     + `${PEOPLE.filter((p) => p.met).length} with a met flag, ${moving.filter((p) => p.at || p.here).length} of ${moving.length} in more than one place with a rule, ${PEOPLE.filter((p) => p.here).length} with spots by the save (here), `

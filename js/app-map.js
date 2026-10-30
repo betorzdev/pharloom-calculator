@@ -1762,11 +1762,23 @@
       const state = !yes ? t('mapOpenNo') : q ? t((own.quests || []).includes(q) ? 'mapWishGranted' : 'pgPromised') : o.art ? t('pgGot') : t('mapOpenYes');
       return `${what} (${state})`;
     };
-    /* The way to that wish's mark (App.wishFrom: its Wishwall or who asks for it, whose card says
-       what posts it), while this game hasn't opened it yet: as the Witch Crest's «See who asks for». */
+    /* A wish's first step, while the save shows it there (js/people.js STEP, peopleHere: the Second
+       Sentinel inert in Cog_10 until it's woken, Final Audience's): the way to it, or ''. */
+    const stepBtn = (q) => {
+      const st = (PE.STEP || {})[q], mark = st && 'npc:' + st;
+      if (!st || !own || !own.peopleHere || own.peopleHere[st] !== true || !list.some((x) => x.key === mark)) return '';
+      const who = PE.PEOPLE.find((x) => x.id === st.split(':')[0]);
+      return btn('mapShow', mark, t('mapToWake', { npc: pick(who.name) }));
+    };
+    /* The way to that wish (Albert's choice on PR #212, «Marca + botón al paso»), while this game
+       hasn't opened it yet: to its first step while the save shows it (stepBtn), else to its mark
+       (App.wishFrom: its Wishwall or who asks for it, whose card says what posts it), as the Witch
+       Crest's «See who asks for». */
     const opensBtn = (k) => {
       const o = (SP.OPENS || {})[k], q = o && (o.wish || o.after);
       if (!q || (own && own.opensRead && own.opens.includes(k))) return '';
+      const step = stepBtn(q);
+      if (step) return step;
       const f = App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
       return f.mark && list.some((x) => x.key === f.mark) ? btn('mapShow', f.mark, t('mapToFirst', { wish: pick(QU.CHAIN[q].name) })) : '';
     };
@@ -1863,6 +1875,14 @@
       // Every spot of theirs by the save (js/people.js here): where they are now, no "turns up in n places".
       const placed = !!own && !!x.here && x.spots.every(([sc]) => (x.id + ':' + lower(sc)) in (own.peopleHere || {}));
       note = s.unsure ? t('mapNpcUnsure') : !s.where && !placed && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
+      /* The game's lines on this spot (js/people.js notes: the Second Sentinel inert in Cog_10, «Insert
+         Cogwork Heart?»), and there, with a save, the Cogheart Pieces it holds. */
+      const lines = (x.notes || {})[lower(m.scene)];
+      if (lines) {
+        const sn = own && own.sentinel, pieces = x.id === 'song-knight' && sn && sn.read && !sn.woke
+          ? `${t('roadCogPieces')}: ${t('roadKnightPieces', { n: num(Math.min(3, sn.pieces)) })}` : '';
+        note = [lines.map(pick).join(' '), pieces].filter(Boolean).join(' · ');
+      }
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
       if (m.trade) {
@@ -1888,7 +1908,7 @@
          the place the other cards' «See who asks for» leads to (opensBtn). */
       for (const q of new Set(m.quests)) {
         const ls = !wishDone(g, q) && App.wishPosts ? App.wishPosts(q, own || g).lines : [];
-        if (ls.length) note = then(note, `${pick(QU.CHAIN[q].name)}: ${ls.join(' · ')}`);
+        if (ls.length) { note = then(note, `${pick(QU.CHAIN[q].name)}: ${ls.join(' · ')}`); acts += stepBtn(q); }
       }
       acts += huntBtns(m.quests);
     } else if (kind === 'task') {

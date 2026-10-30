@@ -2459,8 +2459,15 @@ fight there lacks it or another room's mark lands there. The card adds «Its roo
 wish?». So no card with an OPENS line carries what posts the wish any more (the bosses' neither): a
 «See who asks for "…"» button (mapToFirst, as the Witch Crest's) goes to the wish's mark (App.wishFrom,
 its Wishwall), unless the card has a way there already (the Second Sentinel's «See the Wishwall»), and
-a Wishwall's or a giver's card says what posts each of its wishes not yet taken (App.wishPosts). In
-all 94 saves neither room is entered before its wish is taken.
+a Wishwall's or a giver's card says what posts each of its wishes not yet taken (App.wishPosts). Then
+Albert's «Marca + botón al paso»: the button goes to the next step. For Final Audience before the
+Sentinel is woken, that's the Sentinel itself, now a mark of its own in Cog_10 (tools/gen-people.js
+DORMANT: the «Song Knight Sleeping» FSM that takes the Cogheart, its point where pickups.json items
+gives the Cogheart Pieces; shown while wokeSongChevalier isn't set, through peopleHere; its card the
+game's SONG_KNIGHT_TUBE and SONG_KNIGHT_TUBE_PROMPT, and the pieces held). js/people.js STEP names it
+as the wish's first step; the Wishwall's card has the same button while it's shown. Woken, the button
+goes to the Wishwall, which counts the meetings. In all 94 saves neither room is entered before its
+wish is taken.
 test/journal-acts.test.js.
 
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
