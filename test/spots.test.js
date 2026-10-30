@@ -582,6 +582,29 @@ test('what Grindle sells only in Act 3, had elsewhere before, has his room too: 
   assert.equal(F.gameOf(F.toSnapshot({ ...base, act2Started: true, blackThreadWorld: true })).act, 3);
 });
 
+test('what Jubilana sells in the Songclave goes with her to the room\'s east corner in Act 3, away from the Wishwall', () => {
+  const SH = require('../js/shop.js');
+  const i = SP.VENDORS.jubilana.indexOf('song_enclave'), shop = 'shop:jubilana:' + i;
+  const before = SP.XY[shop], after = SP.XY[shop + ':act3'], board = SP.XY['board:song_enclave'];
+  const far = (a, b) => Math.hypot(a[0] - b[0], a[1] - b[1]);
+  assert.ok(far(after, board) > 2 * far(before, board), `her Act 3 stall (${after}) isn't away from the Wishwall (${board})`);
+  // Every thing of hers with a mark there (the Shop's Tools and pieces, the Seal Chit she hands over) has her Act 3 point.
+  const keys = SH.SHOP.filter((x) => x.vendor === 'jubilana' && (x.tool || x.piece != null)).map((x) => (x.tool ? 'tools:' + x.tool : 'piece:' + x.piece));
+  assert.ok(keys.length >= 6, keys.join(' '));
+  for (const key of keys) {
+    assert.deepEqual(SP.XY[key], before, `${key} isn't at her Songclave stall`);
+    assert.deepEqual(SP.XY[key + ':act3'], after, `${key} doesn't follow her in Act 3`);
+  }
+  const chit = SP.EXTRAS.findIndex((x) => x[2][0] === 'relic' && x[2][1] === 'Seal Chit City Merchant');
+  assert.deepEqual(SP.XY['extra:' + chit + ':act3'], after, 'the Seal Chit she hands over');
+  // Only what stands at her there moves: nothing else in the Songclave, and nothing of anyone else.
+  for (const key of Object.keys(SP.XY).filter((k) => k.endsWith(':act3'))) {
+    assert.deepEqual(SP.XY[key.slice(0, -5)], before, `${key}: not at Jubilana's stall`);
+    assert.deepEqual(SP.XY[key], after, key);
+  }
+  assert.ok(SP.XY['board:song_enclave'] && !SP.XY['board:song_enclave:act3'], 'the Wishwall stays');
+});
+
 test('the Silkshot has its three repairs, each where the game takes the Ruined Tool, and the save says which and what is closed', () => {
   const P = require('../kb/data/game/pickups.json');
   const H = require('../js/how.js');

@@ -551,7 +551,8 @@ leaves those off.
   arena the map has no room for, the Bell Eater's or Lost Lace's, goes to the room that leads
   there), its card saying how many rosaries it holds. Jubilana goes by the game's rules too: with a save, her Songclave
   stall once The Wandering Merchant is done (not while The Lost Merchant is posted and not done:
-  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it;
+  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it,
+  with what she sells there (not left by the Wishwall, at her Act 2 stall);
   her scavenging spots in the Grand Forum and by the Whispering Vaults only once met in the
   Songclave (the Forum's after its battle), not while The Lost Merchant is taken, never in Act 3.
   Where the two wishes find her is those wishes' place. The shops are the

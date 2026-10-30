@@ -1547,7 +1547,13 @@ const personAt = (key, scene) => {
   for (const [, , x, y] of spots) { const p = typeof x === 'number' ? toMap(scene, x, y) : null; if (p) return p; }
   return null;
 };
-const whoAt = (npc, scene) => (WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`));
+// Each point whoAt gives → [who, scene], so what's placed at a vendor follows them in Act 3 (SHOP_ACT3, below).
+const AT_WHO = new WeakMap();
+const whoAt = (npc, scene) => {
+  const p = WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`);
+  if (p) AT_WHO.set(p, [npc, lower(scene)]);
+  return p;
+};
 /* Where a wish nobody offers in person is taken: the object whose FSM offers a wish of that room
    (tools/extract-wishes.py offers), or the generator stops: there's always one, or a patch moved it. */
 const OFFERS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8')).offers
@@ -1644,13 +1650,19 @@ for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put
    vendor and scene: the object (pickups.json npcs) and its point in the scene, read in the game's
    files on 30-Oct-2026. Jubilana's Songclave stall moves to the room's east corner (the Black
    Thread World «City Merchant Enclave»; the Normal World one, at 78.99, 8.14, is people.json's).
-   XY key + ':act3': the Map takes it in a game in Act 3. */
+   XY key + ':act3': the Map takes it in a game in Act 3. Her shop's mark, and everything placed at
+   her there (what she sells, the Seal Chit she hands over: whoAt's points, AT_WHO), below, once
+   every point is in: not at her Act 2 stall, by the Songclave's Wishwall, while she stands at the
+   east corner (Albert's save 4, 30-Oct-2026). Read again in every vendor's and trader's scenes
+   (each object with their NpcDialogueTitle, 30-Oct-2026): she is the only one the game moves within
+   a room in Act 3; the others are switched on or off where they stand (tools/gen-people.js SHOPS). */
 const SHOP_ACT3 = { jubilana: { song_enclave: ['City Merchant Enclave', 101.47, 7.59] } };
+const ACT3_AT = new Map();   // 'vendor:scene' → their Act 3 point on the map
 for (const [v, at] of Object.entries(SHOP_ACT3)) for (const [sc, [obj, x, y]] of Object.entries(at)) {
   const i = (VENDORS[v] || []).indexOf(sc);
   if (i < 0) fail(`SHOP_ACT3: ${v} doesn't sell in ${sc}`);
   if (!(P.npcs[obj] || []).some((e) => lower(e[0]) === sc && Math.abs(e[2] - x) < 0.01 && Math.abs(e[3] - y) < 0.01)) fail(`SHOP_ACT3: no ${obj} at ${x}, ${y} in ${sc} (pickups.json): read it again`);
-  put2('shop:' + v + ':' + i + ':act3', toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
+  ACT3_AT.set(v + ':' + sc, toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
 }
 // A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
 for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
@@ -1733,6 +1745,18 @@ for (const g of SS.gauntlets.GAUNTLETS) {
   const named = flat(g.done).map((c) => all.find((b) => (c[0] === 'bool' && lower(c[1]) === lower(g.scene) && b[0] === c[2]) || (c[0] === 'flag' && b[3] === c[1]))).find(Boolean);
   const b = named || (all.length === 1 ? all[0] : null);
   put2('gaunt:' + g.id, b && inScene(g.scene, b[1], b[2]) ? toMap(g.scene, b[1], b[2]) : null);
+}
+// Whatever stands at a vendor who moves in Act 3 (SHOP_ACT3): its ':act3' point, theirs there.
+{
+  let moved = 0;
+  for (const [key, p] of Object.entries(XY)) {
+    const who = AT_WHO.get(p), p3 = who && ACT3_AT.get(who.join(':'));
+    if (p3) { put2(key + ':act3', p3); moved++; }
+  }
+  for (const [v, at] of Object.entries(SHOP_ACT3)) for (const sc of Object.keys(at)) {
+    if (!XY['shop:' + v + ':' + VENDORS[v].indexOf(sc) + ':act3']) fail(`SHOP_ACT3: ${v}'s shop in ${sc} has no Act 3 point`);
+  }
+  console.log(`at a vendor who moves in Act 3, with their point there: ${moved}`);
 }
 console.log(`${Object.keys(XY).length} things with their own point in their room`);
 
@@ -2449,7 +2473,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint); in an interior, the door
-              it's entered by (tools/map-point.js)
+              it's entered by (tools/map-point.js); '<key>:act3', where a thing at a vendor
+              is in a game in Act 3, when the game moves that vendor within the room then
+              (SHOP_ACT3: Jubilana in the Songclave, her shop and what she sells there)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
