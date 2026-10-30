@@ -104,6 +104,62 @@ test('Shakra: a rule for each of her 17 spots, and a save shows her only where s
   assert.deepStrictEqual(F.gameOf({}).peopleHere, {});
 });
 
+test('Jubilana: a rule for each of her 3 shops, her Act 3 stall in the Songclave\'s east corner', () => {
+  const SP = require('../js/spots.js');
+  assert.deepStrictEqual(Object.keys(PE.HERE.jubilana).sort(), SP.VENDORS.jubilana.map((s) => s.toLowerCase()).sort());
+  const quests = (...q) => ({ QuestCompletionData: { savedData: q.map(([Name, IsAccepted, IsCompleted]) => ({ Name, Data: { IsAccepted, IsCompleted } })) } });
+  const WM = 'Save City Merchant', LM = 'Save City Merchant Bridge';
+  const shown = (pd) => Object.entries(here(pd, 'jubilana')).filter(([, v]) => v).map(([k]) => k).sort();
+  // Not rescued yet (The Wandering Merchant taken: she's in Song_07, the wish's place): none of her shops.
+  assert.deepStrictEqual(shown({ enclaveLevel: 1, ...quests([WM, true, false]) }), []);
+  // Rescued: the Songclave; once met there, out scavenging too (the Forum after its battle).
+  const met = { enclaveLevel: 2, cityMerchantInGrandForum: true, cityMerchantInLibrary03: true };
+  assert.deepStrictEqual(shown({ enclaveLevel: 2, hang04Battle: true, ...quests([WM, true, true]) }), ['song_enclave']);
+  assert.deepStrictEqual(shown({ ...met, ...quests([WM, true, true]) }), ['library_03', 'song_enclave']);
+  assert.deepStrictEqual(shown({ ...met, hang04Battle: true, cityMerchantInLibrary03Left: true, ...quests([WM, true, true]) }), ['hang_04', 'song_enclave']);
+  // The Lost Merchant posted (cityMerchantCanLeaveForBridge) and not done: gone from the Songclave; taken, from her scavenging spots too.
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true]) }), ['library_03']);
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, false]) }), []);
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, true]) }), ['library_03', 'song_enclave']);
+  // Act 3: only the Songclave, at the room's east corner (its Black Thread World stall).
+  assert.deepStrictEqual(shown({ ...met, blackThreadWorld: true, hang04Battle: true, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, true]) }), ['song_enclave']);
+  const i = SP.VENDORS.jubilana.indexOf('song_enclave'), [x2, y2] = SP.XY['shop:jubilana:' + i], [x3, y3] = SP.XY['shop:jubilana:' + i + ':act3'];
+  assert.ok(x3 - x2 > 10 && Math.abs(y3 - y2) < 2, `the Act 3 stall (${x3}, ${y3}) east of the Act 2 one (${x2}, ${y2})`);
+});
+
+test('the other shops come and go as the game has them: Pebb, Mort, the Mottled Skarr, Frey, the Couriers', () => {
+  const SP = require('../js/spots.js');
+  // Every shop has a rule or is always there (gen-people.js SHOPS, ALWAYS) or goes for good (LEFT).
+  const always = ['forge-daughter', 'grindle', 'druid', 'creige'];
+  for (const id of [...Object.keys(SP.VENDORS), ...PE.TRADE.map((x) => x.id)]) {
+    assert.ok(PE.HERE[id] || always.includes(id) || SP.LEFT[id], `${id}: no rule for where it is`);
+  }
+  for (const v of ['pebb', 'mort', 'mottled-skarr', 'frey']) assert.deepStrictEqual(Object.keys(PE.HERE[v]), SP.VENDORS[v].map((s) => s.toLowerCase()));
+  const at = (pd, id) => Object.values(here(pd, id))[0];
+  // Pebb: there from the start; gone while the Skull Tyrant has invaded, during the funeral, once sold out, in Act 3.
+  assert.strictEqual(at({}, 'pebb'), true);
+  assert.strictEqual(at({ skullKingInvaded: true }, 'pebb'), false);
+  assert.strictEqual(at({ skullKingKilled: true }, 'pebb'), true);
+  assert.strictEqual(at({ boneBottomFuneral: true }, 'pebb'), false);
+  assert.strictEqual(at({ boneBottomFuneral: true, boneBottomFuneralComplete: true }, 'pebb'), true);
+  assert.strictEqual(at({ BoneBottomShopKeepWillLeave: true }, 'pebb'), true);
+  assert.strictEqual(at({ BoneBottomShopKeepLeft: true }, 'pebb'), false);
+  assert.strictEqual(at({ blackThreadWorld: true }, 'pebb'), false);
+  // Mort: gone in Act 3 only.
+  assert.strictEqual(at({ didRhinoRuckus: true }, 'mort'), true);
+  assert.strictEqual(at({ blackThreadWorld: true }, 'mort'), false);
+  // The Mottled Skarr: till he's killed.
+  assert.strictEqual(at({ MetAntMerchant: true }, 'mottled-skarr'), true);
+  assert.strictEqual(at({ antMerchantKilled: true }, 'mottled-skarr'), false);
+  // Frey: from the Widow's fall, Act 3 too.
+  assert.strictEqual(at({}, 'frey'), false);
+  assert.strictEqual(at({ spinnerDefeated: true, blackThreadWorld: true }, 'frey'), true);
+  // The Couriers' shop: once both are found.
+  const quests = (...q) => ({ QuestCompletionData: { savedData: q.map(([Name, IsCompleted]) => ({ Name, Data: { IsAccepted: true, IsCompleted } })) } });
+  assert.strictEqual(at(quests(['Save Courier Short', true], ['Save Courier Tall', false]), 'couriers'), false);
+  assert.strictEqual(at(quests(['Save Courier Short', true], ['Save Courier Tall', true]), 'couriers'), true);
+});
+
 test('the people the game moves or takes away: each spot by its own switches', () => {
   for (const x of PE.PEOPLE) for (const sc of Object.keys(x.here || {})) assert.ok(x.spots.some(([s]) => s === sc), `${x.id}: ${sc} isn't a spot of theirs`);
   // Ballow: the forge, the Deep Docks' sauna, then the diving bell.

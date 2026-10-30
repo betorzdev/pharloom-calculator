@@ -1420,7 +1420,24 @@ fix from the game's files and a save field):
 - **Vendors**, mapgenie 23 (eight shopkeepers and fifteen of Shakra's spots), the site 10 shop
   marks (the same eight, Jubilana in her three rooms) and 17 of Shakra's: none missing. The game's
   own shop pins add the Flea Caravan's and one in the Whispering Vaults (Library_08), left to the
-  people and vendors layer.
+  people and vendors layer. (30 October: Jubilana's three follow the save, as Shakra's do,
+  js/people.js HERE.jubilana from her scenes' switches and FSMs: the Songclave once The Wandering
+  Merchant is done and not while The Lost Merchant is posted and not done, at the room's east
+  corner in Act 3; the Forum and Library_03 once met there, not while The Lost Merchant is taken,
+  never in Act 3. The same day the other shops followed, tools/gen-people.js SHOPS, read in each
+  object's switches, its parents' and its FSMs: Pebb's Bonechurch_Shop under Bonetown's Normal
+  World (off in Act 3) and off itself while skullKingInvaded, during the funeral
+  (boneBottomFuneral, not boneBottomFuneralComplete) and once BoneBottomShopKeepLeft (a
+  DeactivatePlayerDataTest, a switch tools/extract-people.py didn't read till then); Mort under
+  his room's Normal World, gone in Act 3; the Mottled Skarr off once antMerchantKilled; Frey under
+  Bellhart's Spinner Defeated (the Bagpipers above her never come: their Here? state cancels
+  itself); the Couriers' shop under Couriers States/Here, once both couriers' wishes are done.
+  Nothing switches the Forge Daughter, Grindle, the Moss Druid or Creige; the generator stops on
+  a shop with no rule. Over the 94 saves (11 in Act 1, 38 in Act 2, 45 in Act 3): Frey hidden in
+  the 9 before the Widow, Pebb in the 4 Act 2 ones where he'd sold out and left and in every Act 3
+  one, Mort in Act 3, the Skarr in the 79 where he's dead, the Couriers' shop in the 40 before
+  both are found; none caught mid-invasion or mid-funeral. A shop's card lists its wares by the way the game takes now (wayOf), so
+  Grindle's gets Pebb's and Mort's only in Act 3.)
 
 **What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
 doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
@@ -1769,7 +1786,7 @@ px); `js/rooms.js restPoint` puts her there, sitting or standing, and the Map, t
 walk between benches use it. The sprite's anchor was already her feet (row 116 of her cell, the
 bottom of the game's Sit frame). A room the map draws as a point (an interior: the Pilgrim's Rest,
 the Cogwork Core's bench) has her at that point or on the game's pin, as before. Left as it was: a
-death marker in an interior the map doesn't have (Belltown_Room_doctor: Belltown's middle) and
+death marker in an interior the map doesn't have (Belltown_Room_doctor: its room's middle) and
 Tut_05, which has no room (no Hornet). Checked over every bench (the 90 RestBench scenes, each set
 in an Act 2 and an Act 3 save) and the author's 71 user and restore-point files, the Map zoomed onto
 her and the area map, in headless Chrome over file:// (1440 and 390, es and en, no console errors);
@@ -2141,8 +2158,11 @@ dnfile and dncil) and over the 89 files of the author's saves:
   the room the Map files it under (js/rooms.js roomOf), for gen-spots and gen-people alike: Plinney and
   the Needle upgrades at his house's door in Bellhart, the Skull Cave's Mask Shard at its door in
   Bone_East_14b, the Bellhome's built furnishings at its door, the Bellway Pilgrim at Bellway_01's door
-  in Bone Bottom. An interior with no door in that room (the Doctor's house, whose only TransitionPoint
-  is Wisp_03's) keeps the room's point. The benches and where Hornet wakes keep the game's own pins
+  in Bone Bottom. An interior with no door in that room keeps the room's point. The Doctor's house
+  (Belltown_Room_doctor) was one, at Bellhart's middle by its name; its only TransitionPoint is
+  Wisp_03's, at the top of Greymoor («Yarnaby of Greymoor»), so from 30 October `js/rooms.js`
+  ENTRANCE files it there: Yarnaby and the Witch Crest are at her door, and the crest's area is
+  Greymoor (`tools/gen-collectibles.js` WHERE_AREA: the completionist says Bellhart). The benches and where Hornet wakes keep the game's own pins
   (`toRoom`). The Flea Games' Pale Oil, which had no point, is on the piñata (aqueduct_05_festival
   shares Aqueduct_05's place).
 - **Plinney leaves in Act 3.** Belltown's «hanging_bell_house_Pinsmith» opens on (!blackThreadWorld
@@ -2391,6 +2411,29 @@ above. test/wish-asks.test.js. Checked: npm test, the text audit, check-pack on 
 match), Progress's pins in headless Chrome at 1440 and 390, es and en, with saves before, during
 and after each fixed wish and in Free mode, no console errors.
 
+**What posts Final Audience** (30 October 2026, Albert: «Revisa el wish final audience. Ver qué
+hace falta para que aparezca»). The Tasks tab listed it on Songclave's Wall with no word of why the
+wall didn't have it. Its offer test is `songChevalierQuestReady` (js/quests.js CHAIN when), which no
+FSM sets: `GameManager.TimePasses` does (Assembly-CSharp, read with dnfile and dncil), at a bench's
+rest, when the wish isn't complete and either `songChevalierEncounters` ≥ 2, `HasMelodyConductor`
+and `enclaveLevel` ≥ 2 (Building Up Songclave and 2 of Songclave's board done, at a rest away from
+it, the same method), or `songChevalierEncounters` ≥ 1 and the Everbloom held (`HasWhiteFlower`:
+Collectables "White Flower"). The encounters count only once the Second Sentinel is woken
+(`wokeSongChevalier`, Cog_10's «Song Knight Sleeping»: the tube broken, then 3 "Cog Heart Pieces"
+given, Collectables Amount 3 → 0): each rest sends it to Song_25 and Song_27 (fighting beside
+Hornet), Song_04 (once its gauntlet is won) and in Act 3 to Song_02, Song_24, Hang_02 and Song_07
+(this one with The Wandering Merchant done), and the first sight of it in each adds one, once per
+rest (`songChevalierEncounterCooldown`). The wiki (Second Sentinel) asks the melody and the two
+Songclave wishes of both ways; the game doesn't, and wins. Of the 94 saves, 14 have it woken, all in Act 3
+with the Everbloom; Restore_Points1 has it woken and met 0 (33), met 1 and posted (34), taken (35),
+done (36); user4 holds the 3 pieces, not woken. js/savefile.js `sentinel` reads the six fields;
+js/app-progress.js OPENS «Song Knight» says the rule and, with a save, the pieces held or the
+meetings of how many and what's missing; shown on the road's points, under «More» on its Tasks row
+(«Not on its Wishwall yet» in place of who asks, with a save that says so: every OPENS wish now
+folds its rule there too) and on the Second Sentinel's card on the Map (App.wishPosts), gone once
+posted. Left out: the battle encounters and the Cog_10 body aren't Map marks (the people layer has
+only its Act 3 resting spots).
+
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
 at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,
 the map key's KEY_CARAVAN «Caravana de las pulgas», apart from Vendor and Lost Flea), one under each
@@ -2461,4 +2504,6 @@ go by the save spot by spot, six more are gone in Act 3 (or once they leave). On
 Mister Mushroom, Seth's other rooms and the Green Prince caged, so those spots stay. The People
 (100%) layer and the vendors were looked at and left as they are: they guide to what someone
 gives or sells, and hiding them would hide what's missable (Loddie and Lumble leave in Act 3, the
-Mottled Skarr when killed, Pebb when Bone Bottom's shop closes).
+Mottled Skarr when killed, Pebb when Bone Bottom's shop closes). (30 October 2026, Albert's: the
+vendors' shop marks now follow the save; their wares keep their own marks, moved where the game
+moves them, so nothing missable hides. The Vendors note above.)

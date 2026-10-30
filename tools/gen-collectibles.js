@@ -261,6 +261,19 @@ for (const [k, fix] of Object.entries(WHERE_ACT)) {
     w[0] = act;
   }
 }
+/* The areas the completionist has wrong: where the game hands each over, as the run stops on one
+   it already agrees with.
+     witch   Yarnaby cures the curse in her house at the top of Greymoor, entered from Wisp_03
+             (kb/data/game/entrances.json; the game's «Yarnaby of Greymoor», QUEST_DOCTOR_CURSE_CURE_LOC,
+             and its wish's area in WISHES): the completionist says Bellhart, where she's from */
+const WHERE_AREA = { crests: { witch: 'GREYMOOR' } };
+for (const [k, fix] of Object.entries(WHERE_AREA)) {
+  for (const [id, area] of Object.entries(fix)) {
+    const w = WHERE[k][id] || fail(`WHERE_AREA: no ${k} ${id}`);
+    if (w[1] === area) fail(`WHERE_AREA: the completionist gives ${k} ${id} ${area} already: the fix goes`);
+    w[1] = area;
+  }
+}
 for (const [k, want] of [['tools', Object.keys(TOOLS).length], ['crests', 6], ['skills', 6], ['arts', 9]]) {
   const got = Object.keys(WHERE[k]).length;
   if (got < want) fail(`WHERE.${k}: ${got} of ${want} (${(k === 'tools' ? Object.keys(TOOLS) : []).filter((id) => !WHERE.tools[id]).join(', ')})`);

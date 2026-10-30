@@ -441,15 +441,16 @@ game that didn't get it, the other arena of the Slab's pair once you've fought o
 cell door in the Marrow once he's left it by himself (Shellwood or Far Fields reached, or Widow
 beaten, before it was broken). What only
 one mode has (a silkeater outside Steel Soul, a wall only in it) isn't on the other mode's map.
-Then eleven groups, each a row that folds (its caret; all open
+Then ten groups, each a row that folds (its caret; all open
 at first, only the first two on a phone, then as you left them) whose title is the switch for the
 whole group, in ink when all of it is on, dimmer when part, dimmest when none. Inside, each layer's
 switch is the game's own picture of it, grey and faded when off, its name dimmed too. Beside each, how many: in a save, had of
 the total (a layer complete in green); for places and people, which aren't had, how many there
 are; in Free mode, the total. They count things, not marks: the marks that share one save check
 (the two places one map or key may be found in, a Flintbeetle's two, the Silver Bells of one wish, the Bell Beast's
-spots) are one. A group's title counts its layers the same way, all but your cocoon, so «Your game»
-counts as its Journal does.
+spots) are one. A group's title counts its layers the same way, all but your cocoon, with the
+Journal's switch counted as the Journal counts. Your cocoon and the Journal show only with a save:
+in Free mode their switches aren't there.
 
 What counts for the 100% is in the first two groups and the Everbloom, each thing in the room where
 it's had: lying there, at the shop that sells it, with whoever hands over a wish's reward (Shakra
@@ -525,11 +526,18 @@ leaves those off.
   gone once your save has it. The Cradle's has two marks, one per Act: its machine in Act 2 (crossed
   out in an Act 3 game, which can't reach it), and in Act 3 the map found free by the broken
   machine by Ventrica's Terminus. The fourteen Shakra sells have no mark of their own
-  (they'd sit on her), her card says which you lack. And the **Rosaries** and **Shell Shards** lying in a
-  room (strings, necklaces, Shard Bundles, Great Shards, Pristine Cores), each by its own pickup
+  (they'd sit on her), her card says which you lack. And the two currencies, **Rosaries** and **Shell Shards**, each
+  one switch whose round caret opens its kinds (off at first). Inside the Rosaries: the
+  **Rosary String**, the strings and necklaces lying in a room, the **Rosary caches** and the
+  **Loose rosaries**; inside the Shell Shards: the **Shard Bundle**, the bundles lying in a room
+  (with the Great Shards and Pristine Cores), and the **Shell Shard caches**. What lies in a
+  room goes by its own pickup
   (one an arena drops once won says which: the Whispering Vaults' Heavy Rosary Necklace, the
   Cogwork Core's Pristine Core), and the ones given: the Fixer's Hornet Statuette in Bone Bottom and the Sprintmaster's two race
-  prizes (a Rosary Necklace and a Beast Shard).
+  prizes (a Rosary Necklace and a Beast Shard). The caches leave out the four ant strings and the
+  Deep Docks chest that only hold an item (that item has its own mark); a loose rosary is one
+  bead, cut from the game's picture of the Rosaries, so it doesn't look like a cache. Caches and
+  loose rosaries are so many that, as the Secrets, they're drawn one by one only close up.
   And the **Key items** lying in a room (the Cogheart Pieces, Farsight, the Materium, and the
   Crawbell, after the Court of Craws; the Ruined Tool goes with the Silkshot, among the Tools).
 - **Places**: benches (off at first: there are 82, the game's own bench pins, the Songclave's, the Bellhome's (dimmed until the house is unlocked) and the Border Caves' (dimmed until Act 3),
@@ -538,19 +546,27 @@ leaves those off.
   your game hasn't opened them: a station not unlocked, a toll not paid), the **Flea Caravan**
   itself (the game's own pin for it, on at first): with a save, one mark at the stop your caravan
   is at (the Marrow, Greymoor, the Blasted Steps or Fleatopia), dimmed until you've seen it; with
-  none, at its four stops, as a guide. The six Bellshrines (the Grand Gate asks for five of them;
-  the Songclave's is the sixth), the Vendors (the game's map key) and **Shakra**'s spots, she
-  being one of the game's shops too, her card saying which of her maps you lack. She moves on as
-  Hornet does: with a save, only the spots she's still at show, by the game's own rules (gone from
-  an area once she's been seen in another, or once Hornet's past it; her rests in Bone Bottom and
-  Bellhart; in Act 3 the guard post or rest the save names; none while Trail's End is taken). In
-  Free mode, all seventeen. The shops are the
+  none, at its four stops, as a guide. The Vendors (the game's map key), and with a save **your
+  cocoon**, where you last fell, at the spot the game's own map marks it (on at first; one in an
+  arena the map has no room for, the Bell Eater's or Lost Lace's, goes to the room that leads
+  there), its card saying how many rosaries it holds. Jubilana goes by the game's rules too: with a save, her Songclave
+  stall once The Wandering Merchant is done (not while The Lost Merchant is posted and not done:
+  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it;
+  her scavenging spots in the Grand Forum and by the Whispering Vaults only once met in the
+  Songclave (the Forum's after its battle), not while The Lost Merchant is taken, never in Act 3.
+  Where the two wishes find her is those wishes' place. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys
-  the relics.
-  The switches are named as the game's own map legend names them, one thing each (Bench, Bellway,
-  Vendor, Ventrica, Bellshrine), and a Ventrica station by its name in the game (First Shrine,
+  the relics. With a save, the others come and go by the game's rules too: Pebb not while the
+  Skull Tyrant has invaded Bone Bottom, during its funeral, once he's sold everything and left,
+  or in Act 3; Mort not in Act 3 (Grindle sells what they had left then); the Mottled Skarr only
+  while he's alive; Frey from the Widow's fall; the Couriers' shop once both are found; the
+  Twelfth Architect not once he's gone. In Free mode, every one. A shop's card lists what it
+  sells still missing, as your game has it sell now (Pebb's and Mort's wares on Grindle's card
+  in Act 3, not before).
+  Places is the game's own map legend, its switches named as it names them, one thing each (Bench,
+  Bellway, Ventrica, Flea Caravan, Vendor), and a Ventrica station by its name in the game (First Shrine,
   Terminus, Choral Chambers…) with «Ventrica» under it.
 - **Passages**, off at first: what opens a way and stays open, each read from the game's own
   scenes with the bool your save keeps once it's open, so with a save only what's still shut
@@ -583,16 +599,32 @@ leaves those off.
   Covetous Pilgrims, Shardillards) are found from their Journal entry, whose pin shows every room
   they're in. A wish done by a boss's fight (Fatal Resolve, the Pinstress on Mount Fay; the end of
   A Vassal Lost, the Summoned Saviour; Pain, Anguish and Misery, Tormented Trobbio; Final Audience,
-  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own. Moorwing, if
+  the Second Sentinel; Hero's Call, Lost Garmond) is on that boss's card, not a mark of its own,
+  with the way to where the wish is taken while it's open. Fatal Resolve is taken at the note the
+  Pinstress leaves in her home in the Blasted Steps (Bellhart's Wishwall, once you have Silk Soar,
+  only sends you there): with its Wishwall part taken, the way goes to her home. Moorwing, if
   you enter Bellhart without beating it, waits by the Greymoor Bellway from Act 2: with a save that
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
   your save names. A fight the game only puts there once something holds says so on its card, and
   with a save whether yours has it: the wish that brings it (the Broodmother, the Far Fields Savage
-  Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel), the wish granted first
+  Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel, the Pinstress atop Mount
+  Fay), the wish granted first
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
-  freed (the Whispering Vaults' second gauntlet).
-- **People**: who gives something of the 100% (Plinney, Eva, Pinstress,
+  freed (the Whispering Vaults' second gauntlet). And with a save, the **Journal**'s
+  entries still missing, where the enemy is in the room where each is found in your game's Act:
+  where it roams then first, else a gauntlet not yet won whose waves bring it, else the first room
+  it's in (the game keeps some enemies to the world before Act 3 and others to Act 3's; a gauntlet's
+  waves come once). An entry no room has before Act 3 says Act 3. A boss's entry is its boss's mark
+  already, and the Void Mass's its own switch's, not drawn again; they're counted as the Journal
+  counts them: every entry. The Wingmoulds, in the Red Memory the map has no room for, are at the
+  room that takes you there.
+- **People**: **Shakra**'s spots, her card saying which of her maps you lack (she's one of the
+  game's shops, but the game has no pin for her). She moves on as Hornet does: with a save, only
+  the spots she's still at show, by the game's own rules (gone from an area once she's been seen in
+  another, or once Hornet's past it; her rests in Bone Bottom and Bellhart; in Act 3 the guard post
+  or rest the save names; none while Trail's End is taken). In Free mode, all seventeen. Then who
+  gives something of the 100% (Plinney, Eva, Pinstress,
   Loddie, Lumble, Mooshka), each with their own figure and a small herald on its lower right, so
   the mark still says they give a thing of the 100% (Eva, with no figure, is the herald alone). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
@@ -632,7 +664,9 @@ while the wish is on, as the game shows him one at a time; the rescues and
   thirteenth, under Greymoor for a station cut from the game, is left out, as the game never
   shows it; with a save where that wish is taken and not yet granted, only the station the Bell
   Beast waits at shows, as in the game, all twelve before it's taken and in Free
-  mode, and none once it's granted, though it still counts as had: one thing on the count). Each is done as your save says: the wish granted, the objective complete
+  mode, and none once it's granted, though it still counts as had: one thing on the count), and
+  the six **Bellshrines**, the Grand Gate objective's steps on its own pin (the Grand Gate asks
+  for five of them; the Songclave's is the sixth). Each is done as your save says: the wish granted, the objective complete
   or a later step of it (Pale Monarch stays incomplete when Act 3 opens through the Soul Snare), a
   thing picked up, held (when it lies in one place only: each Pollip Heart and Flintgem goes by
   its own spot) or its wish granted. The three Flintgems drop from three Flintbeetles, and one of
@@ -648,28 +682,17 @@ while the wish is on, as the game shows him one at a time; the rescues and
   the enemy gives there and for which wish, and with the wish taken how many you have of how many
   («You have 7 of 12»). In Progress, a hunt taken and still short has its pin open those rooms,
   the nearest first. Broodfeast's organs come from any enemy a Tool kills, so it has none.
-- **Secrets**, off at first: the rosary and shell shard caches (not the four ant strings and the
-  Deep Docks chest that only hold an item: that item has its own mark), the breakable walls (the
+- **Secrets**, off at first: the breakable walls (the
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of
-  Karak do), the loose rosaries (one bead, cut from the game's picture of
-  the Rosaries, so they don't look like the caches) and the **Hidden corners** (what
+  Karak do) and the **Hidden corners** (what
   covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
   cover inside a breakable wall counts once the wall is broken, one the game takes away once it's
   gone, and one only the other mode has isn't asked for), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
-  many in its corner. Marks that would cover each other step a little apart, more the closer you zoom.
+  many in its corner (the caches and loose rosaries too, in Items). Marks that would cover each
+  other step a little apart, more the closer you zoom.
   And the **Silk cocoons**, the small ones beside the Silkeaters, which give a little silk when struck.
-- **Your game**, with a save: your cocoon, where you last fell, at the spot the game's own map
-  marks it (on at first; one in an arena the map has no room for, the Bell Eater's or Lost Lace's,
-  goes to the room that leads there), its card saying how many rosaries it holds, and the Journal's
-  entries still missing, where the enemy is in the room where each is found in your game's Act:
-  where it roams then first, else a gauntlet not yet won whose waves bring it, else the first room
-  it's in (the game keeps some enemies to the world before Act 3 and others to Act 3's; a gauntlet's
-  waves come once). An entry no room has before Act 3 says Act 3. A boss's entry is its boss's mark
-  already, and the Void Mass's its own switch's, not drawn again; they're counted as the Journal
-  counts them: every entry. The Wingmoulds, in the Red Memory the map has no room for, are at the
-  room that takes you there.
 
 Each mark is the thing's own picture on a dark disc with a thin rim, as the Hollow Knight site
 draws them, over a pale plate so a dark portrait reads, about the same size at any zoom, a little
@@ -693,7 +716,8 @@ on the arena it shares with another boss, Tormented Trobbio on Trobbio's stage; 
 place the map can't draw at the game's pin for the objective it ends, Lost Lace at the dive in the
 Abyss); a gauntlet at its arena; a lost flea in its cage.
 What's inside a room the map doesn't draw (an interior: Plinney's house, the Bellhome, the Skull
-Cave) sits at the door it's entered by, the game's own door in the room around it; one with no such
+Cave, Yarnaby's house at the top of Greymoor) sits at the door it's entered by, the game's own door
+in the room around it, even when its name says another area (Yarnaby's is named after Bellhart); one with no such
 door, or a room drawn as a point (a bench's own room), stays at that room's point, as on the game's
 map. Things on one point gather in a small grid around it. The map is drawn in SVG, so it
 stays sharp as you zoom.
@@ -1025,8 +1049,16 @@ title over its filigree, with how many are done.
 On each wall and in each person's row, what's left as lines: the picture the game's pane draws by
 it (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
 its title: «Frey of Bellhart»; in a person's row it goes when it only names that person and their
-area) and the lists' round pin to the Map. A wish you've promised has the game's hollow diamond by
-it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
+area) and the lists' round pin to the Map. A wish the game posts only once something holds has
+«More» after that line, which unfolds what posts it, as on the road (Trail's End, Balm for the
+Wounded, Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory, Pinmaster's Oil, Final
+Audience). Final Audience is posted on Songclave's Wishwall after you wake the Second Sentinel in
+the Cogwork Core with the three Cogheart Pieces and then meet it twice with the Conductor's Melody
+and two of Songclave's wishes done, Building Up Songclave among them, or once with the Everbloom,
+and rest at a bench; with a save it says «Not on its Wishwall yet» instead of who asks, and under
+«More» how many pieces you have or how often you've met it and what's still missing. Its fight's
+card on the Map says the same until you take it. A wish you've promised has the game's hollow
+diamond by it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
 («Completed», as the pane says) follow, each as a row of pictures (a picture's name shows on
 hovering it). Every wish is on its wall, the ten Act 3 requires too, though
 the road's tab lists them as well. The one only Steel Soul has, and the one only Classic has, show
@@ -1035,7 +1067,10 @@ also shows in "Since the previous save".
 Each task not done carries the lists' round pin to the Map, to where it stands now: before you take
 it, who gives it (its Wishwall, or whoever asks: Plinney, the Couriers, Creige, the Moss Druid,
 Mooshka and the Pinstress on the mark that is them already); once taken, what's still to do of it
-(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. What a
+(what it asks you to bring, where it's done), and when nothing is, back to whoever gives it. A
+Wishwall part that sends you to someone (Crawbug Clearing's to Creige, Fatal Resolve's to the
+Pinstress's home, Berry Picking's to the Moss Druid, The Lost Fleas' to Mooshka…), once taken,
+points to them until they hand you the rest of the wish. What a
 wish asks for that another layer of the Map marks is on its pin too, until you have enough of it:
 Pinmaster's Oil's Pale Oil (any of the three), Berry Picking's Mossberries (three held), The Lost
 Fleas' fleas (five saved), Dark Hearts' Void Masses (twelve destroyed), Silk and Soul's Snare

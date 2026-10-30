@@ -358,6 +358,7 @@
   },
   "BB_SHOPKEEP": {
    "fields": [
+    "BoneBottomShopKeepLeft",
     "BoneBottomShopKeepWillLeave",
     "Bonebottom",
     "CamLock",

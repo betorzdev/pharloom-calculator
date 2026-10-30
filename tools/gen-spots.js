@@ -1640,6 +1640,18 @@ const fleaIn = (scene) => {
 for (const id of Object.keys(PEOPLE)) if (!XY['person:' + id] && WHO[id]) put2('person:' + id, whoAt(id, PEOPLE[id]));
 // The vendors, Shakra and who offers a wish.
 for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put2((v === 'shakra' ? 'shakra:' : 'shop:' + v + ':') + i, whoAt(v, sc)));
+/* A vendor who stands elsewhere in the room in Act 3 (its scene's Black Thread World object), by
+   vendor and scene: the object (pickups.json npcs) and its point in the scene, read in the game's
+   files on 30-Oct-2026. Jubilana's Songclave stall moves to the room's east corner (the Black
+   Thread World «City Merchant Enclave»; the Normal World one, at 78.99, 8.14, is people.json's).
+   XY key + ':act3': the Map takes it in a game in Act 3. */
+const SHOP_ACT3 = { jubilana: { song_enclave: ['City Merchant Enclave', 101.47, 7.59] } };
+for (const [v, at] of Object.entries(SHOP_ACT3)) for (const [sc, [obj, x, y]] of Object.entries(at)) {
+  const i = (VENDORS[v] || []).indexOf(sc);
+  if (i < 0) fail(`SHOP_ACT3: ${v} doesn't sell in ${sc}`);
+  if (!(P.npcs[obj] || []).some((e) => lower(e[0]) === sc && Math.abs(e[2] - x) < 0.01 && Math.abs(e[3] - y) < 0.01)) fail(`SHOP_ACT3: no ${obj} at ${x}, ${y} in ${sc} (pickups.json): read it again`);
+  put2('shop:' + v + ':' + i + ':act3', toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
+}
 // A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
 for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
 for (const n of Object.keys(GIVER)) put2('giver:' + lower(n), giverAt(n));
@@ -2150,15 +2162,18 @@ const JOURNAL = {}, JOURNAL_ACT3 = [];
    pages); Greymoor_08 loads Shakra's duel only once Trail's End is granted (Mapper Sparring Scene
    Loader); Bone_East_08 loads the Fourth Chorus only with the Drifter's Cloak (hasBrolly); Library_02
    holds the Acolytes' arena only once scholarAcolytesReleased (TimePassesElsewhere sets
-   scholarAcolytesInLibrary_02 then; StartAct3 sets it). The Pinstress's and the Summoned Saviour's
-   wishes are their fights' places already (js/app-map.js WISH_FIGHT). */
+   scholarAcolytesInLibrary_02 then; StartAct3 sets it); Peak_07's «Pinstress Control» puts the
+   Pinstress atop Mount Fay only in Act 3 with Fatal Resolve tracked (CheckQuestState of Pinstress
+   Battle, the quest her NPC ends), which the note she leaves in her home offers (Room_Pinstress's
+   «Pinstress States», Add Quest Note: read on 30-Oct-2026); its Pre on Bellhart's board only sends
+   you there. Their wishes' places are these fights (js/app-map.js WISH_FIGHT). */
 const OPENS = {};
 {
   const ART_PD = require('../js/savefile.js').ART_PD;
   const HAND = {
     'boss:broodmother': { wish: 'Broodmother Hunt' }, 'boss:savage-beastfly-far-fields': { wish: 'Beastfly Hunt' },
     'boss:gurr-the-outcast': { wish: 'Ant Trapper' }, 'boss:lost-garmond': { wish: 'Garmond Black Threaded' },
-    'boss:tormented-trobbio': { wish: 'Tormented Trobbio' }, 'boss:second-sentinel': { wish: 'Song Knight' },
+    'boss:tormented-trobbio': { wish: 'Tormented Trobbio' }, 'boss:second-sentinel': { wish: 'Song Knight' }, 'boss:pinstress': { wish: 'Pinstress Battle' },
     'boss:shakra': { after: 'Shakra Final Quest' }, 'boss:fourth-chorus': { art: 'drifters-cloak' },
     'gaunt:whispering-vaults-2': { freed: 'NAME_SCHOLAR', flag: 'scholarAcolytesReleased' },
   };

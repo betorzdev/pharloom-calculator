@@ -349,11 +349,15 @@
         : `<span class="pg-bar">${h ? `<i style="width:${(100 * h / a.n).toFixed(1)}%"></i>` : ''}</span>`;
       return `<span class="pg-meter"><span${NT}>${esc(a.name)}</span><span class="pg-meter-n"><b>${num(h)}</b>/${num(a.n)}</span>${meter}</span>`; }).join('')}</span>` : '';
   }
-  // A task left: its mark (a promised one the game's diamond), its picture, its name, who asks or what's carried, its pin.
+  /* A task left: its mark (a promised one the game's diamond), its picture, its name, who asks or
+     what's carried, its pin. What posts it (wishPosts) folds under who asks, as on the road; a save
+     that says it isn't on its Wishwall yet says so instead (Final Audience). */
   function taskRow(x) {
+    const posts = !x.promise && x.posts && x.posts.lines.length ? x.posts : null;
+    const how = posts ? foldHtml(posts.posted === false ? t('pgNotPosted') : x.loc, posts.lines) : x.loc ? `<span class="pg-how">${esc(x.loc)}</span>` : '';
     return `<li class="pg-item pg-task${x.promise ? ' is-promised' : ''}"><span class="pg-mark" aria-hidden="true">${x.promise ? `<span class="pg-promise${x.promise.done ? ' is-ready' : ''}"></span>` : ''}</span>
         <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-        <span class="pg-main"><span class="pg-name"${NT}>${esc(x.name)}</span>${x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishMeter(x.promise)}` : x.loc ? `<span class="pg-how">${esc(x.loc)}</span>` : ''}</span>
+        <span class="pg-main"><span class="pg-name"${NT}>${esc(x.name)}</span>${x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishMeter(x.promise)}` : how}</span>
         ${x.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(x.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
   }
@@ -398,7 +402,8 @@
       const got = !!g && g.wishes.includes(i);
       return { name: pick(w[4]), got, act: w[1], icon: taskIcon(w), main, src: main || !q ? {} : wishSource(q), loc: q ? wishLoc(q) : '',
         desc: e.desc ? pick(e.desc).split('\n')[0] : '', later: !!g && !got && w[1] > g.act,
-        focus: got ? null : pin(w, i), promise: !g || got || main ? null : wishState(w, taken, g) };
+        focus: got ? null : pin(w, i), promise: !g || got || main ? null : wishState(w, taken, g),
+        posts: got || main || !q ? { lines: [] } : wishPosts(q, g) };
     });
     // A promised wish is under way whatever its Act.
     for (const x of all) if (x.promise) x.later = false;
@@ -480,7 +485,7 @@
     const own = App.game(), done = new Set(own ? own.quests : []), taken = new Set((own && own.taken) || []);
     const rooms = (k) => (marks.get(k).scene ? away(marks.get(k).scene) : null);
     return (w, i) => {
-      const q = wishQuest(w), from = q ? wishFrom(q, done).mark : null;
+      const q = wishQuest(w), at = q ? wishFrom(q, done, taken) : null, from = at && at.mark;
       const giver = from && marks.has(from) ? [from] : [];
       /* What it asks for on another layer, once the save has enough of it, is no more to find (Pale
          Oil held, three Mossberries, five fleas saved, twelve Void Masses): its marks drop out. */
@@ -493,7 +498,9 @@
       const hunt = own && isTaken && ((SS.spots || {}).HUNTS || {})[q];
       const ask = hunt && ((QU.CHAIN[q] || {}).asks || []).find((a) => a.save === hunt[0]);
       const grounds = ask && ((own.carried || {})[hunt[0]] || 0) < ask.n && App.mapHuntKeys ? App.mapHuntKeys(q) : [];
-      const keys = grounds.length ? grounds : !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
+      /* A board's Pre taken and not yet handed on (at.handoff) is still to be taken where it sends
+         you: Fatal Resolve's challenge at the Pinstress's home, before her fight on Mount Fay. */
+      const keys = at && at.handoff && giver.length ? giver : grounds.length ? grounds : !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
       if (!keys.length) return null;
       FOCUS.set('task:' + i, { keys: keys.map((k, n) => ({ k, n, d: rooms(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k),
         name: grounds.length ? t('mapHuntFocus', { wish: pick(w[4]) }) : pick(w[4]) });
@@ -557,8 +564,10 @@
     how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x), says: SNARE_SAYS[x.save] ? says('caretaker', t(SNARE_SAYS[x.save])) : null });
   /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
      it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
-     (prev) is taken where the first one not done yet is: the board's Pre, then the NPC it sends you to. */
-  function wishFrom(quest, done) {
+     (prev) is taken where the first one not done yet is: the board's Pre, then, once it's taken, the
+     NPC it sends you to (App.wishFrom, js/app-map.js). */
+  function wishFrom(quest, done, taken) {
+    if (App.wishFrom) return App.wishFrom(quest, done, taken);
     let q = quest;
     while (q && QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
     const f = (q && QU.FROM[q]) || QU.FROM[quest] || {};
@@ -597,7 +606,17 @@
        Strengthening    enclaveDonation2_Available (4 of Songclave's board done), not while in
                         Song_Enclave or Bellshrine_Enclave.
        Balm             shermaQuestActive, in TimePassesElsewhere: when the map zone differs
-                        from the last rest's. */
+                        from the last rest's.
+       Final Audience   songChevalierQuestReady (read 30-Oct-2026), once the Second Sentinel is
+                        woken (wokeSongChevalier: Cog_10's «Song Knight Sleeping» takes 3 Cogheart
+                        Pieces) and met (songChevalierEncounters, +1 where Hornet first sees it,
+                        resting or fighting beside her, once per rest: songChevalierEncounterCooldown):
+                        met 2 times with HasMelodyConductor and enclaveLevel 2 (Building Up
+                        Songclave and 2 of Songclave's board done, at a rest away from it), or once
+                        with the Everbloom (HasWhiteFlower). The wiki asks the melody and the board
+                        of both ways; the game doesn't. A wish of the points, it's also on its
+                        Wishwall's row in the Tasks tab (taskRow) and on its fight's card on the Map
+                        (App.wishPosts), and with a save says what's missing, gone once it's posted. */
   const SHAKRA_MAPS = SS.spots ? SS.spots.EXTRAS.filter((x) => x[0] === 'map' && x[5] && x[5].shop === 'shakra').map((x) => x[2][1].slice(3, -3)) : [];
   const OPENS = {
     'Shakra Final Quest': (g) => [t('roadOpensShakra', { npc: pick(HW.NPCS.shakra), art: artName('faydown-cloak'), foe: foeName('groal-the-great') }),
@@ -610,7 +629,36 @@
     'Belltown House Mid': () => [t('roadOpensGlory', { foe: foeName('cogwork-dancers'), art: artName('clawline'), clave: areaName('ENCLAVE') }),
       t('roadRestOut', { area: areaName('BELLHART') })],
     'A Pinsmiths Tools': () => [t('roadPinOil', { npc: pick(HW.NPCS.plinney) })],
+    'Song Knight': (g) => knightPosts(g),
   };
+  /* Final Audience's (above): the rule, and with a save that read it (sentinel.read) what's still
+     missing after each part; nothing once the wish is posted, taken or done. */
+  const CONDUCTOR = CO.PIECES.findIndex((p) => p[0] === 'melody' && p[2][1] === 'HasMelodyConductor');
+  function knightPosts(g) {
+    const s = g && g.sentinel && g.sentinel.read ? g.sentinel : null;
+    if (g && ((g.quests || []).includes('Song Knight') || (g.taken || []).includes('Song Knight') || (s && s.ready))) return [];
+    const knight = personName('song-knight'), melody = pick(CO.PIECES[CONDUCTOR][4]), donation = wishName('Songclave Donation 1'), clave = areaName('ENCLAVE');
+    const lines = [t('roadOpensKnight', { knight, core: areaName('COGWORK_CORE'), pieces: t('roadCogPieces') })];
+    if (s && !s.woke) lines.push(t('roadKnightPieces', { n: num(Math.min(3, s.pieces)) }));
+    lines.push(t('roadOpensKnightMeet', { melody, donation, clave, flower: pick(item('everbloom').name) }));
+    if (s && s.woke) {
+      const flower = !!g.everbloom, lacks = [];
+      if (!flower && !g.pieces.includes(CONDUCTOR)) lacks.push(melody);
+      if (!flower && !(g.quests || []).includes('Songclave Donation 1')) lacks.push(donation);
+      else if (!flower && s.clave < 2) lacks.push(t('roadKnightOneMore', { clave }));
+      lines.push([t('roadKnightMet', { n: num(s.met), of: num(flower ? 1 : 2) }), lacks.length ? t('roadKnightLacks', { list: lacks.join(', ') }) : ''].filter(Boolean).join(' · '));
+    }
+    lines.push(t('roadRestAny'));
+    return lines;
+  }
+  /* What posts a wish (OPENS), for the Tasks tab's rows and the Map's cards: [] for a wish with no
+     such rule, or done or taken. posted: false when the save says it isn't on its Wishwall yet. */
+  const wishPosts = (q, g) => {
+    if (!OPENS[q] || (g && ((g.quests || []).includes(q) || (g.taken || []).includes(q)))) return { lines: [], posted: null };
+    const lines = OPENS[q](g).filter(Boolean), s = g && g.sentinel;
+    return { lines, posted: q === 'Song Knight' && s && s.read ? !lines.length : null };
+  };
+  App.wishPosts = wishPosts;
   // A wish's quest (js/collectibles.js WISHES check): its own, or the first of several.
   const wishQuest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
   // The three melodies the Cradle's way asks for (the pieces of kind 'melody').

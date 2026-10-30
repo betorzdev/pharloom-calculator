@@ -49,7 +49,7 @@
   const LEFT = Object.entries(SP.LEFT || {});
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
-  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's), as ['<id>:<scene>', check].
+  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's and Jubilana's), as ['<id>:<scene>', check].
   const HERE = [...(PE.PEOPLE || []).filter((x) => x.here).flatMap((x) => Object.entries(x.here).map(([sc, c]) => [x.id + ':' + sc.toLowerCase(), c])),
     ...Object.entries(PE.HERE || {}).flatMap(([id, m]) => Object.entries(m).map(([sc, c]) => [id + ':' + sc.toLowerCase(), c]))];
   const HERE_KEYS = new Set(HERE.map(([k]) => k));
@@ -325,7 +325,13 @@
        snarePieces        the Soul Snare's pieces held, by their save names (js/quests.js SNARE): a
                           Collectable with Amount above 0, or the Tool unlocked. Given, they're 0.
        snareReady         the Soul Snare built (soulSnareReady)
-       endings            the endings seen, by ENDINGS' ids (CompletedEndings, a bit each) */
+       endings            the endings seen, by ENDINGS' ids (CompletedEndings, a bit each)
+       sentinel           what posts Final Audience on Songclave's Wishwall (js/app-progress.js
+                          OPENS): { read, woke, met, ready, clave, pieces }, the Second Sentinel
+                          woken (wokeSongChevalier), met how often (songChevalierEncounters), the
+                          wish posted (songChevalierQuestReady), Songclave's level (enclaveLevel),
+                          the Cogheart Pieces held (Collectables "Cog Heart Pieces", given on
+                          waking it); {} in a slot kept before the site read them */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     // The rooms' state (sceneData), each list by room and id; the first of a repeated one.
@@ -429,6 +435,8 @@
       snarePieces: QU.SNARE.filter(held).map((x) => x.save),
       snareReady: pd.soulSnareReady === true,
       endings: ENDINGS.filter((e) => (int(pd.CompletedEndings) & e.bit) !== 0).map((e) => e.id),
+      sentinel: { read: true, woke: pd.wokeSongChevalier === true, met: Math.max(0, int(pd.songChevalierEncounters)), ready: pd.songChevalierQuestReady === true,
+        clave: Math.max(0, int(pd.enclaveLevel)), pieces: Math.max(0, int((items.get('Cog Heart Pieces') || {}).Amount)) },
       // For the Map: the rooms entered and the rooms the game has mapped (scenesMapped: what its
       // map draws, behind what's entered until Hornet sits at a bench or with the Quill), the
       // Quill (hasQuill: without it the game draws nothing it has mapped), mapAllRooms, the areas
@@ -484,7 +492,7 @@
       opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
-      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's) has them
+      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's, Jubilana's) has them
       // now, by '<id>:<scene>'; a spot a slot has no word of is shown.
       peopleHere: Object.fromEntries(HERE.map(([k, c]) => [k, has(c)])),
     };
@@ -593,7 +601,7 @@
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, items: {}, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
-    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [],
+    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [], sentinel: {},
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
@@ -639,6 +647,9 @@
     // A slot kept before it (or with a key gone) has none: the Map shows every place.
     out.elsewhere = [...new Set(out.elsewhere.flatMap((k) => TASK_AT.get(k) || []))].filter((i) => SP.TASKS[i][9]).sort((a, b) => a - b);
     out.gaveBack = out.gaveBack.filter((id) => CO.TOOLS[id]);
+    // The Second Sentinel's fields, each of its type; a slot kept before has none (read false).
+    const sn = out.sentinel, whole = (v) => (Number.isInteger(v) ? Math.max(0, v) : 0);
+    out.sentinel = sn.read === true ? { read: true, woke: sn.woke === true, met: whole(sn.met), ready: sn.ready === true, clave: whole(sn.clave), pieces: whole(sn.pieces) } : {};
     out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
     out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
     out.placesNow = out.placesNow.filter((k) => typeof k === 'string' && (SP.PLACES || {})[k.split('@')[0]]);

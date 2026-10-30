@@ -294,6 +294,20 @@ test('a wish done by a boss\'s fight has its place in that boss\'s arena, which 
   }
 });
 
+test('a board\'s Pre sends you to who offers the next stage in person: Fatal Resolve\'s to the Pinstress\'s home', () => {
+  /* js/app-map.js App.wishFrom: once a board's Pre is taken, the wish is taken where its next stage
+     is offered (each Pre's «Tareas» line says to go there), so the task's pin and the fight's card
+     lead there first. Fatal Resolve: Bellhart's Pre, the note in Room_Pinstress, the fight in Peak_07. */
+  const pres = Object.entries(Q.CHAIN).filter(([, e]) => e.prev && Q.FROM[e.prev] && Q.FROM[e.prev].board);
+  assert.ok(pres.length >= 7, pres.length);
+  for (const [q, e] of pres) assert.ok((Q.FROM[q].npc || []).some(onMap), `${e.prev} → ${q}: offered in person on the Map`);
+  assert.deepEqual(Q.FROM['Pinstress Battle Pre'], { board: 'Belltown' });
+  assert.deepEqual(Q.FROM['Pinstress Battle'].npc, ['Room_Pinstress']);
+  assert.strictEqual(SP.GIVER.Room_Pinstress[2], 'person:pinstress');
+  assert.ok(SP.TASKS.some((x) => x[0] === 'wspot' && x[1] === 'Pinstress Battle' && x[3] === 'Peak_07'));
+  assert.deepEqual(SP.OPENS['boss:pinstress'].check, ['accepted', 'Pinstress Battle']);
+});
+
 test('every task of «Tareas» has a place on the Map: who gives it, or what it asks for', () => {
   /* js/app-progress.js taskPin (design/78): its Wishwall or who asks (js/quests.js FROM, of the
      quest or a stage before it), else its marks: TASKS by the quest or a stage before it, or the

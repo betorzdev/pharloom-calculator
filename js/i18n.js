@@ -303,7 +303,6 @@
     mapGroup_quests:  { es: 'Tareas', en: 'Tasks' },   // PANE_QUESTS
     mapGroup_extras:  { es: 'Coleccionables', en: 'Collectibles' },
     mapGroup_secrets: { es: 'Secretos', en: 'Secrets' },
-    mapGroup_game:    { es: 'Tu partida', en: 'Your game' },
     mapShows:       { es: 'Qué se ve en el mapa', en: 'What the map shows' },
     mapShowAll:     { es: 'Mostrar todo', en: 'Show all' },
     mapHideAll:     { es: 'Esconder todo', en: 'Hide all' },
@@ -406,6 +405,9 @@
     mapExtra_map:      { es: 'Mapa', en: 'Map' },   // INV_NAME_MAP
     mapExtra_rosaries: { es: 'Rosarios', en: 'Rosaries' },   // INV_NAME_COIN
     mapExtra_shards:   { es: 'Fragmentos de coraza', en: 'Shell Shards' },   // INV_NAME_SHARD
+    // Inside the Rosaries' and Shell Shards' sets, the strings and bundles by the game's item for them.
+    mapLayer_strings:  { es: 'Ristra de rosarios', en: 'Rosary String' },   // INV_NAME_COIN_SET_S
+    mapLayer_bundles:  { es: 'Manojo de fragmentos', en: 'Shard Bundle' },   // INV_NAME_SHARD_POUCH
     mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
     mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT
@@ -953,6 +955,17 @@
     roadOpensGlory: { es: 'sale tras derrotar a los {foe}, conseguir {art} o entrar en {clave}', en: 'posted after defeating the {foe}, getting the {art} or entering {clave}' },
     roadRestOut:    { es: 'luego descansa en un banco fuera de {area}', en: 'then rest at a bench outside {area}' },
     roadRestAway:   { es: 'luego descansa en un banco de otra zona', en: 'then rest at a bench in another area' },
+    roadRestAny:    { es: 'luego descansa en un banco', en: 'then rest at a bench' },
+    // Final Audience: what posts it (js/app-progress.js OPENS, GameManager.TimePasses), and what the save lacks.
+    roadOpensKnight:{ es: 'sale tras despertar al {knight} en el {core} con 3 {pieces}', en: 'posted after waking the {knight} in the {core} with 3 {pieces}' },
+    roadCogPieces:  { es: 'Piezas de corazón de engranajes', en: 'Cogheart Pieces' },   // INV_NAME_COG_HEART_PIECES
+    roadKnightPieces:{ es: '{n} de 3 conseguidas', en: '{n} of 3 found' },
+    roadOpensKnightMeet:{ es: 'y encontrarlo dos veces con la {melody} y dos deseos de {clave} cumplidos, entre ellos «{donation}», o una vez con la {flower}',
+      en: 'and meeting them twice with the {melody} and two of {clave}\'s wishes done, "{donation}" among them, or once with the {flower}' },
+    roadKnightMet:  { es: 'despierto, encontrado {n} de {of}', en: 'woken, met {n} of {of}' },
+    roadKnightLacks:{ es: 'falta: {list}', en: 'missing: {list}' },
+    roadKnightOneMore:{ es: 'otro deseo de {clave}', en: 'another of {clave}\'s wishes' },
+    pgNotPosted:    { es: 'Aún no está en su muro', en: 'Not on its Wishwall yet' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.
