@@ -331,7 +331,16 @@
                           woken (wokeSongChevalier), met how often (songChevalierEncounters), the
                           wish posted (songChevalierQuestReady), Songclave's level (enclaveLevel),
                           the Cogheart Pieces held (Collectables "Cog Heart Pieces", given on
-                          waking it); {} in a slot kept before the site read them */
+                          waking it); {} in a slot kept before the site read them
+       posting            what posts the other late wishes on their Wishwalls (js/app-progress.js
+                          wishNext), each wish's playerDataTest in its quest asset and the flags
+                          GameManager.TimePasses sets at a rest: { read, relic (BelltownRelicDealerGaveRelic),
+                          pavo (BelltownGreeterConvo > 0), greeter (BelltownGreeterMetTimePassed),
+                          house (BelltownHouseState), halfway (citadelHalfwayComplete), dancers
+                          (defeatedCogworkDancers), clawline (hasHarpoonDash), enclave (visitedEnclave),
+                          shakra (ShakraFinalQuestAppear), groal (DefeatedSwampShaman), sherma
+                          (metShermaEnclave), ward (visitedWard), balm (shermaQuestActive), clave2
+                          (enclaveDonation2_Available) }; {} in a slot kept before the site read them */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     // The rooms' state (sceneData), each list by room and id; the first of a repeated one.
@@ -437,6 +446,11 @@
       endings: ENDINGS.filter((e) => (int(pd.CompletedEndings) & e.bit) !== 0).map((e) => e.id),
       sentinel: { read: true, woke: pd.wokeSongChevalier === true, met: Math.max(0, int(pd.songChevalierEncounters)), ready: pd.songChevalierQuestReady === true,
         clave: Math.max(0, int(pd.enclaveLevel)), pieces: Math.max(0, int((items.get('Cog Heart Pieces') || {}).Amount)) },
+      posting: { read: true, relic: pd.BelltownRelicDealerGaveRelic === true, pavo: int(pd.BelltownGreeterConvo) > 0, greeter: pd.BelltownGreeterMetTimePassed === true,
+        house: Math.max(0, int(pd.BelltownHouseState)), halfway: pd.citadelHalfwayComplete === true, dancers: pd.defeatedCogworkDancers === true,
+        clawline: pd.hasHarpoonDash === true, enclave: pd.visitedEnclave === true, shakra: pd.ShakraFinalQuestAppear === true,
+        groal: pd.DefeatedSwampShaman === true, sherma: pd.metShermaEnclave === true, ward: pd.visitedWard === true, balm: pd.shermaQuestActive === true,
+        clave2: pd.enclaveDonation2_Available === true },
       // For the Map: the rooms entered and the rooms the game has mapped (scenesMapped: what its
       // map draws, behind what's entered until Hornet sits at a bench or with the Quill), the
       // Quill (hasQuill: without it the game draws nothing it has mapped), mapAllRooms, the areas
@@ -601,7 +615,7 @@
   const EMPTY = Object.freeze({ tools: [], gaveBack: [], crests: [], skills: [], arts: [], journal: {}, masks: 0, spools: 0, hearts: 0,
     needle: 0, kit: 0, pouch: 0, everbloom: false, purse: {}, silkeaters: 0, rosaries: 0, shards: 0, farsight: false, hasJournal: false, items: {}, pieces: [], wishes: [], gauntlets: [], lit: [], act: 1, mapFlags: [], mapRead: false, mapVars: {}, bench: '', rested: true, marker: '', area: '', build: {},
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
-    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [], sentinel: {},
+    bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [], sentinel: {}, posting: {},
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
     tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
@@ -650,6 +664,8 @@
     // The Second Sentinel's fields, each of its type; a slot kept before has none (read false).
     const sn = out.sentinel, whole = (v) => (Number.isInteger(v) ? Math.max(0, v) : 0);
     out.sentinel = sn.read === true ? { read: true, woke: sn.woke === true, met: whole(sn.met), ready: sn.ready === true, clave: whole(sn.clave), pieces: whole(sn.pieces) } : {};
+    const po = out.posting;
+    out.posting = po.read === true ? { read: true, ...Object.fromEntries(POSTING.map((k) => [k, po[k] === true])), house: whole(po.house) } : {};
     out.foundNow = [...new Set(out.foundNow.map((k) => FOUND_AT.get(k)).filter(Boolean))];
     out.left = out.left.filter((v) => LEFT.some(([x]) => x === v));
     out.placesNow = out.placesNow.filter((k) => typeof k === 'string' && (SP.PLACES || {})[k.split('@')[0]]);
@@ -704,6 +720,8 @@
     out.peopleHere = Object.fromEntries(Object.entries(out.peopleHere).filter(([k, x]) => HERE_KEYS.has(k) && typeof x === 'boolean'));
     return out;
   }
+  // The posting fields that are bools (house is a number).
+  const POSTING = ['relic', 'pavo', 'greeter', 'halfway', 'dancers', 'clawline', 'enclave', 'shakra', 'groal', 'sherma', 'ward', 'balm', 'clave2'];
   const metaOf = (snap) => ({ version: '', time: 0, completion: 0, rosaries: 0, shards: 0, steel: false, dead: false, saved: null,
     ...parse((snap || {})['pharloom.meta']) });
 

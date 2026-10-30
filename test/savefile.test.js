@@ -84,6 +84,17 @@ test('what posts Final Audience: the Second Sentinel woken and met, Songclave\'s
   assert.deepEqual(F.gameOf({ 'pharloom.progress': JSON.stringify({ sentinel: { met: 'x' } }) }).sentinel, {});
 });
 
+test('what posts the other late wishes: each quest\'s own test and what a rest sets (js/app-progress.js wishNext)', () => {
+  const pd = { ...BASE, BelltownRelicDealerGaveRelic: true, BelltownGreeterConvo: 1, BelltownGreeterMetTimePassed: false, BelltownHouseState: 1,
+    citadelHalfwayComplete: true, metShermaEnclave: true, visitedWard: false, shermaQuestActive: false, enclaveDonation2_Available: true };
+  const g = F.game(pd);
+  assert.deepEqual(g.posting, { read: true, relic: true, pavo: true, greeter: false, house: 1, halfway: true, dancers: false, clawline: false,
+    enclave: false, shakra: false, groal: false, sherma: true, ward: false, balm: false, clave2: true });
+  assert.deepEqual(F.gameOf(F.toSnapshot(pd)).posting, g.posting);
+  // A slot kept before the site read them says nothing: Free mode's «Posted later» is shown.
+  assert.deepEqual(F.gameOf({ 'pharloom.progress': JSON.stringify({ posting: { relic: true } }) }).posting, {});
+});
+
 test("a slot keeps its pieces by what they are, so a regenerated list still finds them", () => {
   const CO = require('../js/collectibles.js');
   const i = CO.PIECES.findIndex((p) => p[2][0] === 'bool' && p[2][1] === 'Crawl_02');
