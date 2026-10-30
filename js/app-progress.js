@@ -480,7 +480,7 @@
     const own = App.game(), done = new Set(own ? own.quests : []), taken = new Set((own && own.taken) || []);
     const rooms = (k) => (marks.get(k).scene ? away(marks.get(k).scene) : null);
     return (w, i) => {
-      const q = wishQuest(w), from = q ? wishFrom(q, done).mark : null;
+      const q = wishQuest(w), at = q ? wishFrom(q, done, taken) : null, from = at && at.mark;
       const giver = from && marks.has(from) ? [from] : [];
       /* What it asks for on another layer, once the save has enough of it, is no more to find (Pale
          Oil held, three Mossberries, five fleas saved, twelve Void Masses): its marks drop out. */
@@ -493,7 +493,9 @@
       const hunt = own && isTaken && ((SS.spots || {}).HUNTS || {})[q];
       const ask = hunt && ((QU.CHAIN[q] || {}).asks || []).find((a) => a.save === hunt[0]);
       const grounds = ask && ((own.carried || {})[hunt[0]] || 0) < ask.n && App.mapHuntKeys ? App.mapHuntKeys(q) : [];
-      const keys = grounds.length ? grounds : !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
+      /* A board's Pre taken and not yet handed on (at.handoff) is still to be taken where it sends
+         you: Fatal Resolve's challenge at the Pinstress's home, before her fight on Mount Fay. */
+      const keys = at && at.handoff && giver.length ? giver : grounds.length ? grounds : !own ? (giver.length ? giver : left) : giver.length && !isTaken ? giver : left.length ? left : giver;
       if (!keys.length) return null;
       FOCUS.set('task:' + i, { keys: keys.map((k, n) => ({ k, n, d: rooms(k) })).sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k),
         name: grounds.length ? t('mapHuntFocus', { wish: pick(w[4]) }) : pick(w[4]) });
@@ -557,8 +559,10 @@
     how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x), says: SNARE_SAYS[x.save] ? says('caretaker', t(SNARE_SAYS[x.save])) : null });
   /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
      it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
-     (prev) is taken where the first one not done yet is: the board's Pre, then the NPC it sends you to. */
-  function wishFrom(quest, done) {
+     (prev) is taken where the first one not done yet is: the board's Pre, then, once it's taken, the
+     NPC it sends you to (App.wishFrom, js/app-map.js). */
+  function wishFrom(quest, done, taken) {
+    if (App.wishFrom) return App.wishFrom(quest, done, taken);
     let q = quest;
     while (q && QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
     const f = (q && QU.FROM[q]) || QU.FROM[quest] || {};

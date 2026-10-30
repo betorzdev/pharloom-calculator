@@ -1,11 +1,13 @@
 /* js/rooms.js — where a scene is on the map (js/map.js): the point to draw it at. Pure.
    A scene the game's map draws is its room's middle, and a point in it goes where the game puts
    it (mapPoint). Some aren't drawn (an interior, a bench's own
-   small room: Belltown_Room_doctor, Cog_Bench): the scene named without its last part is tried
-   next (Belltown_Room_doctor → Belltown_Room → Belltown), down to the area's own name; without
-   any, null (the site doesn't place it rather than place it wrong). An interior with another name
-   goes where its door is (ENTRANCE: the room its door leads to, read from the scene's own doors,
-   their targetScene, in the game's files on 28-Sep-2026). Where Hornet is for a save: on the ground
+   small room: Belltown_Room_pinsmith, Cog_Bench): the scene named without its last part is tried
+   next (Belltown_Room_pinsmith → Belltown_Room → Belltown), down to the area's own name; without
+   any, null (the site doesn't place it rather than place it wrong). An interior with another name,
+   or whose name isn't where it is, goes where its door is (ENTRANCE: the room its door leads to,
+   read from the scene's own doors, their targetScene, in the game's files on 28-Sep-2026; Yarnaby's
+   house, Belltown_Room_doctor, is entered from Wisp_03 at the top of Greymoor, not in Bellhart:
+   kb/data/game/entrances.json, «Yarnaby of Greymoor», QUEST_DOCTOR_CURSE_CURE_LOC). Where Hornet is for a save: on the ground
    where the game wakes her (restPoint, js/spots.js SEATS), and a bench's mark on that same ground
    (benchSeat). And how to get from one room to another:
    js/graph.js's doors, and the stations a save has opened (walk, steps, path). */
@@ -18,7 +20,7 @@
   const ENTRANCE = {
     Bellway_01: 'Bonetown', Bone_East_LavaChallenge: 'Bone_East_14b', Room_CrowCourt: 'Greymoor_15b', Room_CrowCourt_02: 'Greymoor_15b',
     Memory_Ant_Queen: 'Ant_Queen', Memory_Coral_Tower: 'Coral_Tower_01', Room_Witch: 'Shellwood_Witch',
-    Cradle_Destroyed_Challenge_Bench: 'Cradle_Destroyed_Challenge_02',
+    Cradle_Destroyed_Challenge_Bench: 'Cradle_Destroyed_Challenge_02', Belltown_Room_doctor: 'Wisp_03',
   };
 
   /* Scene names by their lower case too: a scene nobody enters by a door (a boss's arena, a memory)

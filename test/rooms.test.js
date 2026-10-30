@@ -11,9 +11,11 @@ test('a scene the map draws is its room; one it does not, the room without its l
   assert.ok(M.W > 1000 && M.H > 1000 && Object.keys(M.ROOMS).length > 700);
   const r = M.ROOMS.Bellway_City;
   assert.deepEqual(R.roomOf('Bellway_City'), { scene: 'Bellway_City', x: r[0] + r[2] / 2, y: r[1] + r[3] / 2, area: r[4], exact: true });
-  const doc = R.roomOf('Belltown_Room_doctor');   // a bench's interior, not on the map
-  assert.equal(doc.scene, 'Belltown');
-  assert.equal(doc.exact, false);
+  const pin = R.roomOf('Belltown_Room_pinsmith');   // an interior, not on the map
+  assert.equal(pin.scene, 'Belltown');
+  assert.equal(pin.exact, false);
+  // Yarnaby's house is named after Bellhart, but its only door is in Wisp_03, at the top of Greymoor.
+  assert.deepEqual([R.roomOf('Belltown_Room_doctor').scene, R.areaOf('Belltown_Room_doctor')], ['Wisp_03', 'GREYMOOR']);
   assert.equal(R.roomOf('Nowhere'), null);
   assert.equal(R.roomOf(''), null);
 });

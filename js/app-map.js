@@ -71,6 +71,23 @@
      whose wishes go on it; the wishes' audit, 21-Oct-2026: their wishes' pins and «To who asks»
      looked for a giver: mark that isn't drawn), else their own. */
   App.giverMark = (quest, scene) => { const gid = giverOf(quest, scene); return ((SP.GIVER || {})[gid] || [])[2] || 'giver:' + lower(gid); };
+  /* Where a wish is taken now (js/quests.js FROM, the game's), by the quests done and taken: the
+     first stage not done (a board's Pre); once a board's Pre is taken, the stage after it, offered
+     in person where the Pre sends you (each Pre's «Tareas» line says to go and see who offers the
+     next one, and the game completes the Pre there as that one is taken: the author's saves have
+     Crow Feathers Pre complete with Crow Feathers taken; Fatal Resolve's Pre ends at the note the
+     Pinstress leaves in her home, Room_Pinstress). Steel Sentinel's first part is a wish of its
+     own, done before its second is offered. { quest, scene, board, mark, handoff }: handoff, a
+     board's Pre taken and not yet handed on. */
+  App.wishFrom = (quest, done, taken) => {
+    const chain = [quest];
+    while (QU.CHAIN[chain[0]] && QU.CHAIN[chain[0]].prev && !done.has(QU.CHAIN[chain[0]].prev)) chain.unshift(QU.CHAIN[chain[0]].prev);
+    const handoff = chain.length > 1 && !!taken && taken.has(chain[0]) && !!(QU.FROM[chain[0]] || {}).board && !!((QU.FROM[chain[1]] || {}).npc || []).length;
+    const q = handoff ? chain[1] : chain[0];
+    const f = QU.FROM[q] || QU.FROM[quest] || {};
+    const scene = f.board || (f.npc || [])[0] || null;
+    return { quest: q, scene, board: !!f.board, handoff, mark: scene ? (f.board ? 'board:' + lower(scene) : App.giverMark(q, scene)) : null };
+  };
 
   /* ── The layers ──
      Each: its group, its name, and its mark in the legend. The pieces' kinds keep their colour
@@ -1682,6 +1699,13 @@
       const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
       return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
     };
+    /* Where a wish is taken, as a way to its mark (App.wishFrom): the part of it still to take (a
+       «Pre» at the board, then, once taken, who it sends you to; Steel Sentinel's first part, then
+       its second), the first one if there's no save. */
+    const takenAt = (quest) => {
+      const f = App.wishFrom(quest, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+      return f.mark && list.some((x) => x.key === f.mark) ? btn('mapShow', f.mark, t(f.board ? 'mapToWall' : 'mapToGiver')) : '';
+    };
     // The hunts still open among the wishes asked here: a way to each one's grounds (design/103, 1 A).
     const huntBtns = (quests) => [...new Set(quests)].filter((q) => HUNTS[q] && !wishDone(g, q) && App.mapHuntKeys(q).length)
       .map((q) => btn('mapHunt', q, t('mapHuntGo', { wish: pick(QU.CHAIN[q].name) }))).join('');
@@ -1764,8 +1788,15 @@
       const fight = !App.VIEWS.includes('fight') ? '' : xs.length ? xs.map((x) => btn('mapFight', x.id, xs.length > 1 ? App.gauntletName(x.id) : t('mapFight'))).join('')
         : btn('mapFoe', m.foe, t('mapFight'));
       acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
-      // The wish whose place is this fight (Fatal Resolve, A Vassal Lost, Hero's Call... WISH_FIGHT).
-      if (m.quests) note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
+      /* The wish whose place is this fight (Fatal Resolve, A Vassal Lost, Hero's Call... WISH_FIGHT),
+         and while it's open, where it's taken: Fatal Resolve's challenge, accepted at the Pinstress's home. */
+      if (m.quests) {
+        note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
+        // One wish's stages (Steel Sentinel's two parts) are one wish: its last stage, from which takenAt walks back.
+        const depth = (q) => { let n = 0; for (let x = q; QU.CHAIN[x] && QU.CHAIN[x].prev; x = QU.CHAIN[x].prev) n++; return n; };
+        const open = [...new Set(m.quests)].filter((q) => !wishDone(g, q)).sort((a, b) => depth(b) - depth(a));
+        if (open.length && new Set(open.map(wishOf)).size === 1) acts += takenAt(open[0]);
+      }
       note = then(note, opensNote(key));
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
@@ -1815,14 +1846,7 @@
       }
       where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '']);
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
-      /* Where it's taken: the part of the wish still to do (a «Pre» at the board, then who it sends
-         you to; Steel Sentinel's first part, then its second), the first one if there's no save. */
-      const done = new Set(g ? g.quests : []);
-      let q = m.quest;
-      while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
-      const f = QU.FROM[q] || QU.FROM[m.quest] || {};
-      const to = f.board ? 'board:' + lower(f.board) : f.npc && f.npc.length ? App.giverMark(q, f.npc[0]) : '';
-      if (to && list.some((x) => x.key === to)) acts += btn('mapShow', to, t(f.board ? 'mapToWall' : 'mapToGiver'));
+      acts += takenAt(m.quest);
     } else if (kind === 'extra') {
       note = m.note || '';
 
