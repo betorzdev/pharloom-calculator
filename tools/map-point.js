@@ -11,8 +11,8 @@
        (kb/data/game/entrances.json, tools/extract-entrances.py) in the room the Map files it under
        (js/rooms.js roomOf: the scene named without its last part, or ENTRANCE), placed as any point
        of that room (doorAt). Its own coordinates aren't its door room's, so everything inside it
-       goes to that one point. With no such door (the Doctor's house, whose only door in the game's
-       files is Wisp_03's), none: the Map puts it at that room's point as before.
+       goes to that one point (Yarnaby's house, Belltown_Room_doctor, is filed by ENTRANCE under
+       Wisp_03, its only door). With no such door, none: the Map puts it at that room's point.
      · A point well outside its room's box is something parked off the scene: none. One just
        outside (a foot under the scene's floor, a walker leaving by the edge) is brought in to it.
    toRoom places a point in its own room only (no door): the benches against the map's pins and

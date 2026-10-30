@@ -693,7 +693,8 @@ on the arena it shares with another boss, Tormented Trobbio on Trobbio's stage; 
 place the map can't draw at the game's pin for the objective it ends, Lost Lace at the dive in the
 Abyss); a gauntlet at its arena; a lost flea in its cage.
 What's inside a room the map doesn't draw (an interior: Plinney's house, the Bellhome, the Skull
-Cave) sits at the door it's entered by, the game's own door in the room around it; one with no such
+Cave, Yarnaby's house at the top of Greymoor) sits at the door it's entered by, the game's own door
+in the room around it, even when its name says another area (Yarnaby's is named after Bellhart); one with no such
 door, or a room drawn as a point (a bench's own room), stays at that room's point, as on the game's
 map. Things on one point gather in a small grid around it. The map is drawn in SVG, so it
 stays sharp as you zoom.
