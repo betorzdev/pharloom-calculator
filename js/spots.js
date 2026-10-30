@@ -10547,6 +10547,7 @@
     'shakra:15': [1078.1, 1239.4],
     'shakra:16': [892.2, 1228],
     'shop:twelfth-architect:0': [1441.7, 855.8],
+    'shop:jubilana:2:act3': [1686.7, 552.1],
     'piece:38:grindle': [461.8, 909],
     'tools:magnetite-dice:grindle': [461.8, 909],
     'piece:0:grindle': [461.8, 909],

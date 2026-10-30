@@ -372,7 +372,7 @@
     const where = hit ? new Set([lower(hit[2])]) : new Set(x.spots.map((s) => lower(s[0])).filter((s) => !named.has(s)));
     return { met, gone, where: where.size ? where : null };
   }
-  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's) has them now
+  /* Whether a spot that goes by the save (js/people.js here and HERE: Shakra's, Jubilana's) has them now
      (js/savefile.js peopleHere); with no save, or no word of it in the slot, it's shown. */
   const hereNow = (own, id, scene) => {
     const h = own && own.peopleHere, k = id + ':' + lower(scene);
@@ -611,8 +611,13 @@
       // Shakra only where your game has her now (she moves on as Hornet does: js/people.js HERE).
       if (v === 'shakra') { scenes.forEach((scene, i) => hereNow(own, 'shakra', scene) && add({ key: 'shakra:' + i, layer: 'shakra', scene, got: false, name: pick(HW.NPCS.shakra), npc: 'shakra',
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
-      scenes.forEach((scene, i) => add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
-        draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
+      /* The others too where the game decides it (js/people.js HERE: Jubilana, out scavenging or at
+         the Memorium), at their Act 3 point in a game in Act 3 (js/spots.js XY key + ':act3'). */
+      scenes.forEach((scene, i) => {
+        const key = 'shop:' + v + ':' + i, xy3 = own && own.act === 3 && SP.XY[key + ':act3'];
+        if (hereNow(own, v, scene)) add({ key, layer: 'shop', scene, at: xy3 ? { x: xy3[0], y: xy3[1] } : undefined, got: false, name: pick(HW.NPCS[v]), npc: v,
+          draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) });
+      });
     }
     // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers, the Moss Druid, Creige.
     for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,

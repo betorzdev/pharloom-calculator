@@ -104,6 +104,29 @@ test('Shakra: a rule for each of her 17 spots, and a save shows her only where s
   assert.deepStrictEqual(F.gameOf({}).peopleHere, {});
 });
 
+test('Jubilana: a rule for each of her 3 shops, her Act 3 stall in the Songclave\'s east corner', () => {
+  const SP = require('../js/spots.js');
+  assert.deepStrictEqual(Object.keys(PE.HERE.jubilana).sort(), SP.VENDORS.jubilana.map((s) => s.toLowerCase()).sort());
+  const quests = (...q) => ({ QuestCompletionData: { savedData: q.map(([Name, IsAccepted, IsCompleted]) => ({ Name, Data: { IsAccepted, IsCompleted } })) } });
+  const WM = 'Save City Merchant', LM = 'Save City Merchant Bridge';
+  const shown = (pd) => Object.entries(here(pd, 'jubilana')).filter(([, v]) => v).map(([k]) => k).sort();
+  // Not rescued yet (The Wandering Merchant taken: she's in Song_07, the wish's place): none of her shops.
+  assert.deepStrictEqual(shown({ enclaveLevel: 1, ...quests([WM, true, false]) }), []);
+  // Rescued: the Songclave; once met there, out scavenging too (the Forum after its battle).
+  const met = { enclaveLevel: 2, cityMerchantInGrandForum: true, cityMerchantInLibrary03: true };
+  assert.deepStrictEqual(shown({ enclaveLevel: 2, hang04Battle: true, ...quests([WM, true, true]) }), ['song_enclave']);
+  assert.deepStrictEqual(shown({ ...met, ...quests([WM, true, true]) }), ['library_03', 'song_enclave']);
+  assert.deepStrictEqual(shown({ ...met, hang04Battle: true, cityMerchantInLibrary03Left: true, ...quests([WM, true, true]) }), ['hang_04', 'song_enclave']);
+  // The Lost Merchant posted (cityMerchantCanLeaveForBridge) and not done: gone from the Songclave; taken, from her scavenging spots too.
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true]) }), ['library_03']);
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, false]) }), []);
+  assert.deepStrictEqual(shown({ ...met, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, true]) }), ['library_03', 'song_enclave']);
+  // Act 3: only the Songclave, at the room's east corner (its Black Thread World stall).
+  assert.deepStrictEqual(shown({ ...met, blackThreadWorld: true, hang04Battle: true, cityMerchantCanLeaveForBridge: true, ...quests([WM, true, true], [LM, true, true]) }), ['song_enclave']);
+  const i = SP.VENDORS.jubilana.indexOf('song_enclave'), [x2, y2] = SP.XY['shop:jubilana:' + i], [x3, y3] = SP.XY['shop:jubilana:' + i + ':act3'];
+  assert.ok(x3 - x2 > 10 && Math.abs(y3 - y2) < 2, `the Act 3 stall (${x3}, ${y3}) east of the Act 2 one (${x2}, ${y2})`);
+});
+
 test('the people the game moves or takes away: each spot by its own switches', () => {
   for (const x of PE.PEOPLE) for (const sc of Object.keys(x.here || {})) assert.ok(x.spots.some(([s]) => s === sc), `${x.id}: ${sc} isn't a spot of theirs`);
   // Ballow: the forge, the Deep Docks' sauna, then the diving bell.

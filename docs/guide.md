@@ -544,7 +544,12 @@ leaves those off.
   Hornet does: with a save, only the spots she's still at show, by the game's own rules (gone from
   an area once she's been seen in another, or once Hornet's past it; her rests in Bone Bottom and
   Bellhart; in Act 3 the guard post or rest the save names; none while Trail's End is taken). In
-  Free mode, all seventeen. The shops are the
+  Free mode, all seventeen. Jubilana goes by the game's rules too: with a save, her Songclave
+  stall once The Wandering Merchant is done (not while The Lost Merchant is posted and not done:
+  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it;
+  her scavenging spots in the Grand Forum and by the Whispering Vaults only once met in the
+  Songclave (the Forum's after its battle), not while The Lost Merchant is taken, never in Act 3.
+  Where the two wishes find her is those wishes' place. The shops are the
   game's own (its ShopOwners: Pebb, Frey, Mort, the Forge Daughter, Grindle, Jubilana, the
   Mottled Skarr, the Twelfth Architect, Shakra) and those who trade outside them: the Couriers' delivery
   wishes in Bellhart, the Moss Druid, who buys Mossberries, Creige's drinks and Scrounge, who buys

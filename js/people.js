@@ -11,8 +11,8 @@
              filter); here, { scene: check }, a spot shown only while its check holds
              (js/savefile.js has(), peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
-     HERE    { layer id: { scene: check } }: the same for who's drawn under another layer
-             (shakra: her 17 spots, js/spots.js VENDORS.shakra)
+     HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
+             (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3)
      GIVERS  { npc id: 'people/<id>' | null }: the figure of who gives a thing of the 100%
              (js/spots.js PEOPLE), drawn with the herald on it; null: the herald alone
      VARS    the playerData fields those rules read (js/savefile.js keeps them, peopleVars) */
@@ -1021,6 +1021,52 @@
         ],
         ['not', ['flag', 'MapperLeftShellwood']],
         ['not', ['any', ['flag', 'hasWalljump'], ['flag', 'spinnerDefeated']]],
+      ],
+    },
+    jubilana: {
+      hang_04: [
+        'all',
+        ['flag', 'hang04Battle'],
+        [
+          'all',
+          ['not', ['flag', 'blackThreadWorld']],
+          [
+            'not',
+            [
+              'all',
+              ['accepted', 'Save City Merchant Bridge'],
+              ['not', ['quest', 'Save City Merchant Bridge']],
+            ],
+          ],
+          ['not', ['flag', 'cityMerchantRecentlySeenInEnclave']],
+          ['flag', 'cityMerchantInGrandForum'],
+          ['not', ['flag', 'cityMerchantInGrandForumLeft']],
+        ],
+      ],
+      library_03: [
+        'all',
+        ['not', ['flag', 'blackThreadWorld']],
+        [
+          'not',
+          [
+            'all',
+            ['accepted', 'Save City Merchant Bridge'],
+            ['not', ['quest', 'Save City Merchant Bridge']],
+          ],
+        ],
+        ['not', ['flag', 'cityMerchantRecentlySeenInEnclave']],
+        ['flag', 'cityMerchantInLibrary03'],
+        ['not', ['flag', 'cityMerchantInLibrary03Left']],
+      ],
+      song_enclave: [
+        'all',
+        ['quest', 'Save City Merchant'],
+        ['any', ['flag', 'blackThreadWorld'], ['min', 'enclaveLevel', 1]],
+        [
+          'any',
+          ['not', ['flag', 'cityMerchantCanLeaveForBridge']],
+          ['quest', 'Save City Merchant Bridge'],
+        ],
       ],
     },
   };

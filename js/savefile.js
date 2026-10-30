@@ -49,7 +49,7 @@
   const LEFT = Object.entries(SP.LEFT || {});
   // js/people.js, the Map's people: the playerData fields that say whom you've met and where they are.
   const PE = SS.people || (() => { try { return require('./people.js'); } catch (e) { return { VARS: [] }; } })();
-  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's), as ['<id>:<scene>', check].
+  // Their spots that go by the save (PEOPLE here, and HERE for Shakra's and Jubilana's), as ['<id>:<scene>', check].
   const HERE = [...(PE.PEOPLE || []).filter((x) => x.here).flatMap((x) => Object.entries(x.here).map(([sc, c]) => [x.id + ':' + sc.toLowerCase(), c])),
     ...Object.entries(PE.HERE || {}).flatMap(([id, m]) => Object.entries(m).map(([sc, c]) => [id + ':' + sc.toLowerCase(), c]))];
   const HERE_KEYS = new Set(HERE.map(([k]) => k));
@@ -484,7 +484,7 @@
       opensRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
-      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's) has them
+      // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's, Jubilana's) has them
       // now, by '<id>:<scene>'; a spot a slot has no word of is shown.
       peopleHere: Object.fromEntries(HERE.map(([k, c]) => [k, has(c)])),
     };
