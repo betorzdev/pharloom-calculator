@@ -1724,7 +1724,10 @@
     const btn = (act, value, label) => `<button type="button" class="text-btn" data-act="${act}" data-value="${esc(value)}">${esc(label)}</button>`;
     // The wishes still open of those asked here. One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
     const wishesNote = (quests) => {
-      const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
+      // Each with the wishes it waits for that aren't done (App.wishWaits): Infestation Operation, «first: Rite of Rebirth».
+      const first = (i) => { const xs = App.wishWaits ? App.wishWaits(i, g) : [];
+        return xs.length ? ` (${t('roadBefore', { name: xs.map((j) => pick(CO.WISHES[j][4])).join(', ') })})` : ''; };
+      const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]) + first(i));
       return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
     };
     /* Where a wish is taken, as a way to its mark (App.wishFrom): the part of it still to take (a
@@ -1801,6 +1804,16 @@
       // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
       note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      /* A wish's reward whose wish waits for another not done yet (js/how.js after; the card says
+         «first:», as App.howOf): a way to who asks for that one. The Witch Crest: Yarnaby opens her
+         door only once Rite of Rebirth has cursed Hornet, and that's Greyroot's, in Shellwood. */
+      if (!m.got) {
+        const w = SS.completion.wayOf(m.howWays || waysOf(key), own, SS.savefile.ART_PD, key);
+        const c = w.way && w.way.kind === 'wish' && w.first.length ? CO.WISHES[w.first[0]][2] : null;
+        const q = c && (c[0] === 'quest' ? c[1] : (c.slice(1).find((x) => x[0] === 'quest') || [])[1]);
+        const f = q && App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+        if (f && f.mark && list.some((x) => x.key === f.mark)) acts += btn('mapShow', f.mark, t('mapToFirst', { wish: pick(CO.WISHES[w.first[0]][4]) }));
+      }
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.shut);
       where = line([areaName(area), m.layer === 'ventrica' ? t('mapPlace_ventrica') : '']);
