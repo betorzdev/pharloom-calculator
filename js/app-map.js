@@ -542,7 +542,15 @@
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
     const out = [];
-    const add = (m) => { if (m.got || !own) m.lost = null; if (m.scene && R.roomOf(m.scene)) out.push(m); };
+    /* A mark at a vendor the game moves within the room in Act 3 (js/spots.js XY key + ':act3':
+       Jubilana's Songclave stall, her shop and what she sells there) is at their Act 3 point in a
+       game in Act 3, with them, not where they stood before. */
+    const add = (m) => {
+      if (m.got || !own) m.lost = null;
+      const xy3 = own && own.act === 3 && !m.at && SP.XY[m.key + ':act3'];
+      if (xy3) m.at = { x: xy3[0], y: xy3[1] };
+      if (m.scene && R.roomOf(m.scene)) out.push(m);
+    };
     // The 100%.
     CO.PIECES.forEach((p, i) => {
       const scene = SP.AT.pieces[i];
@@ -645,12 +653,9 @@
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       /* The others too where the game decides it (js/people.js HERE: Jubilana out scavenging or at
          the Memorium, Pebb and Mort gone in Act 3, the Mottled Skarr once killed, Frey from the
-         Widow's fall), at their Act 3 point in a game in Act 3 (js/spots.js XY key + ':act3'). */
-      scenes.forEach((scene, i) => {
-        const key = 'shop:' + v + ':' + i, xy3 = own && own.act === 3 && SP.XY[key + ':act3'];
-        if (hereNow(own, v, scene)) add({ key, layer: 'shop', scene, at: xy3 ? { x: xy3[0], y: xy3[1] } : undefined, got: false, name: pick(HW.NPCS[v]), npc: v,
-          draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) });
-      });
+         Widow's fall), at their Act 3 point in a game in Act 3 (add, above). */
+      scenes.forEach((scene, i) => hereNow(own, v, scene) && add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
+        draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     }
     // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers (once both found: HERE), the Moss Druid, Creige.
     for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => hereNow(own, x.id, scene) && add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,

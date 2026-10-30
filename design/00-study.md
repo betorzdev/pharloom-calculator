@@ -1437,7 +1437,13 @@ fix from the game's files and a save field):
   the 9 before the Widow, Pebb in the 4 Act 2 ones where he'd sold out and left and in every Act 3
   one, Mort in Act 3, the Skarr in the 79 where he's dead, the Couriers' shop in the 40 before
   both are found; none caught mid-invasion or mid-funeral. A shop's card lists its wares by the way the game takes now (wayOf), so
-  Grindle's gets Pebb's and Mort's only in Act 3.)
+  Grindle's gets Pebb's and Mort's only in Act 3. The same day, from Albert's save 4: what
+  Jubilana sells in the Songclave (her Spool Fragment, Mask Shard, Craftmetal, Spool Extender,
+  Ascendant's Grip, Spider Strings, and the Seal Chit she hands over) goes with her to the east
+  corner in Act 3, not left at her Act 2 stall by the Wishwall: tools/gen-spots.js gives every
+  point placed at a vendor SHOP_ACT3 moves a '<key>:act3' twin. Read again in every vendor's and
+  trader's scenes, each object with their NpcDialogueTitle: she is the only one the game moves
+  within a room in Act 3.)
 
 **What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
 doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the

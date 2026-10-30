@@ -86,7 +86,9 @@
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint); in an interior, the door
-              it's entered by (tools/map-point.js)
+              it's entered by (tools/map-point.js); '<key>:act3', where a thing at a vendor
+              is in a game in Act 3, when the game moves that vendor within the room then
+              (SHOP_ACT3: Jubilana in the Songclave, her shop and what she sells there)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
@@ -10547,7 +10549,6 @@
     'shakra:15': [1078.1, 1239.4],
     'shakra:16': [892.2, 1228],
     'shop:twelfth-architect:0': [1441.7, 855.8],
-    'shop:jubilana:2:act3': [1686.7, 552.1],
     'piece:38:grindle': [461.8, 909],
     'tools:magnetite-dice:grindle': [461.8, 909],
     'piece:0:grindle': [461.8, 909],
@@ -10920,6 +10921,15 @@
     'gaunt:verdania': [2313.3, 1088.3],
     'gaunt:whispering-vaults-1': [1575, 565.4],
     'gaunt:whispering-vaults-2': [1574.5, 565.3],
+    'person:jubilana:act3': [1686.7, 552.1],
+    'shop:jubilana:2:act3': [1686.7, 552.1],
+    'piece:14:act3': [1686.7, 552.1],
+    'piece:37:act3': [1686.7, 552.1],
+    'piece:65:act3': [1686.7, 552.1],
+    'tools:spool-extender:act3': [1686.7, 552.1],
+    'tools:ascendants-grip:act3': [1686.7, 552.1],
+    'tools:spider-strings:act3': [1686.7, 552.1],
+    'extra:10:act3': [1686.7, 552.1],
     'task:0': [2189.6, 1411.6],
     'task:1': [1926.7, 1531],
     'task:3': [378.4, 795],
