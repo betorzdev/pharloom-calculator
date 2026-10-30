@@ -9,7 +9,11 @@
              or dead; at, [field, value, scene]…, the first that holds says where they are now;
              unsure 'always', no saying where; act3, the spots only Act 3 has (the Map's Act
              filter); here, { scene: check }, a spot shown only while its check holds
-             (js/savefile.js has(), peopleHere)
+             (js/savefile.js has(), peopleHere); notes, { scene: [{ es, en, key }] }, the game's
+             lines on that spot's card (the Second Sentinel inert in Cog_10)
+     STEP    { quest: '<id>:<scene>' }: the spot that is that wish's first step (waking the Second
+             Sentinel for Final Audience): the Map's way to the wish goes to it while the save
+             shows it there (peopleHere)
      TRADE   [{ id, name, note, spots }]: who buys or sells outside the game's ShopOwners
      HERE    { vendor id: { scene: check } }: the same for who's drawn under another layer
              (js/spots.js VENDORS: shakra, her 17 spots; jubilana, her 3; pebb, mort,
@@ -792,6 +796,7 @@
         ['hang_07', 1288.7, 537.6],
         ['song_07', 1202.6, 688.9],
         ['song_24', 1462.6, 716.5],
+        ['cog_10', 1340, 563.5],
       ],
       met: ['songChevalierRestingMet', 'encounteredSongChevalierBoss', 'songChevalierEncounters'],
       here: {
@@ -817,9 +822,21 @@
           ['not', ['flag', 'songChevalierQuestReady']],
         ],
         hang_07: ['all', ['is', 'songChevalierPosition', 1], ['not', ['flag', 'blackThreadWorld']]],
+        cog_10: ['not', ['flag', 'wokeSongChevalier']],
+      },
+      notes: {
+        cog_10: [
+          {
+            es: '¿Introducir corazón mecánico?',
+            en: 'Insert Cogwork Heart?',
+            key: 'SONG_KNIGHT_TUBE_PROMPT',
+          },
+        ],
       },
     },
   ];
+
+  const STEP = { 'Song Knight': 'song-knight:cog_10' };
 
   const TRADE = [
     {
@@ -1132,6 +1149,6 @@
     'soulSnareReady',
   ];
 
-  SS.people = { PEOPLE, TRADE, HERE, GIVERS, VARS };
+  SS.people = { PEOPLE, STEP, TRADE, HERE, GIVERS, VARS };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.people;
 })();

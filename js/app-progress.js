@@ -349,15 +349,44 @@
         : `<span class="pg-bar">${h ? `<i style="width:${(100 * h / a.n).toFixed(1)}%"></i>` : ''}</span>`;
       return `<span class="pg-meter"><span${NT}>${esc(a.name)}</span><span class="pg-meter-n"><b>${num(h)}</b>/${num(a.n)}</span>${meter}</span>`; }).join('')}</span>` : '';
   }
+  /* A wish not on its Wishwall yet (wishNext; design/117, 1 A, 2 A, 3 A): its picture dimmed and,
+     with a save, its next step alone on one line, a way to it on the Map (the row's pin goes there
+     too); a wish it waits for, «after» it, a jump to its row lit up. In Free mode, «Posted later»
+     with the steps folded under «Why». */
+  /* Its count: with a save, how many of how many; in Free mode how many it takes, unless its words
+     say it (the Groal step's «2 melodies»). */
+  const stepCount = (s, live) => (!s.of ? '' : live ? `<span class="pg-step-n"><b>${num(Math.min(s.n || 0, s.of))}</b>/${num(s.of)}</span>`
+    : s.said ? '' : `<span class="pg-step-n">${num(s.of)}</span>`);
+  function stepHtml(s, x, live, k) {
+    const pic = `<img class="pg-step-ic" src="${s.icon}" alt="" loading="lazy">`;
+    if (s.wish != null) {
+      const focus = x.rows.has(s.wish) ? null : x.wishFocus(s.wish);
+      const inner = `${pic}<span${NT}>${esc(s.text)}</span>`;
+      return `<span class="pg-step-w">${esc(t('pgAfter'))}</span> ${x.rows.has(s.wish) || focus ? `<button type="button" class="pg-step" data-act="pgJump" data-value="${s.wish}"${focus ? ` data-focus="${esc(focus)}"` : ''}>${inner}</button>` : `<span class="pg-step is-plain">${inner}</span>`}`;
+    }
+    const id = s.keys && s.keys.length ? x.stepFocus(s, k) : null;
+    const inner = `${pic}<span>${esc(s.text)}</span>`;
+    return (id ? `<button type="button" class="pg-step" data-act="pgFocus" data-value="${esc(id)}" title="${esc(t('mapOnMap'))}">${inner}</button>` : `<span class="pg-step is-plain">${inner}</span>`) + stepCount(s, live);
+  }
+  function nextHtml(x) {
+    const n = x.next;
+    if (n.free) {
+      const id = 'pg-fold-' + (++howN);
+      return `<span class="pg-how">${esc(t('pgPostedLater'))} · <button type="button" class="text-btn pg-fold-btn" data-act="pgFold" data-label="pgWhy" aria-expanded="false" aria-controls="${id}">${esc(t('pgWhy'))}${App.chevron(false)}</button></span>
+        <span class="pg-fold pg-steps" id="${id}" hidden>${n.steps.map((s, k) => `<span class="pg-step-li">${stepHtml(s, x, false, k)}</span>`).join('')}</span>`;
+    }
+    return `<span class="pg-how pg-next">${stepHtml(n.steps[n.next], x, true, n.next)}</span>`;
+  }
   /* A task left: its mark (a promised one the game's diamond), its picture, its name, who asks or
      what's carried, its pin. What posts it (wishPosts) folds under who asks, as on the road; a save
      that says it isn't on its Wishwall yet says so instead (Final Audience). */
   function taskRow(x) {
-    const posts = !x.promise && x.posts && x.posts.lines.length ? x.posts : null;
-    const how = posts ? foldHtml(posts.posted === false ? t('pgNotPosted') : x.loc, posts.lines) : x.loc ? `<span class="pg-how">${esc(x.loc)}</span>` : '';
-    return `<li class="pg-item pg-task${x.promise ? ' is-promised' : ''}"><span class="pg-mark" aria-hidden="true">${x.promise ? `<span class="pg-promise${x.promise.done ? ' is-ready' : ''}"></span>` : ''}</span>
-        <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-        <span class="pg-main"><span class="pg-name"${NT}>${esc(x.name)}</span>${x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishMeter(x.promise)}` : how}</span>
+    const posts = !x.promise && !x.next && x.posts && x.posts.lines.length ? x.posts : null;
+    const locked = !!x.next && !x.next.posted;
+    const how = locked ? nextHtml(x) : posts ? foldHtml(x.loc, posts.lines) : x.loc ? `<span class="pg-how">${esc(x.loc)}</span>` : '';
+    return `<li class="pg-item pg-task${x.promise ? ' is-promised' : ''}${locked ? ' is-locked' : ''}" data-wish="${x.i}"><span class="pg-mark" aria-hidden="true">${x.promise ? `<span class="pg-promise${x.promise.done ? ' is-ready' : ''}"></span>` : ''}</span>
+        <span class="pg-art"${locked ? ` title="${esc(t('pgNotPosted'))}"` : ''}><img src="${x.icon}" alt="" loading="lazy"></span>
+        <span class="pg-main"><span class="pg-name"${NT}>${esc(x.name)}</span>${locked ? `<span class="sr-only">${esc(t('pgNotPosted'))}</span>` : ''}${x.promise ? `<span class="sr-only">${esc(t('pgPromised'))}</span>${wishMeter(x.promise)}` : how}</span>
         ${x.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(x.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
       </li>`;
   }
@@ -396,17 +425,33 @@
        mode has none: it shows both, as the Journal and the Map do. */
     const m = App.gameMeta();
     const mode = !g || !App.game() ? null : m && m.steel ? 'steel' : 'classic';
-    const pin = taskPin(g), taken = new Set(g ? g.taken || [] : []);
+    const pin = taskPin(g), taken = new Set(g ? g.taken || [] : []), own = App.game();
+    const onMap = new Map((App.mapApi ? App.mapApi.list() : []).map((m) => [m.key, m]));
     const all = CO.WISHES.map((w, i) => ({ w, i })).filter(({ w }) => !mode || !w[5] || w[5] === mode).map(({ w, i }) => {
       const main = w[0] === 'main-objectives', q = wishQuest(w) || TASK_QUEST[w[2][1]], e = (q && QU.CHAIN[q]) || {};
       const got = !!g && g.wishes.includes(i);
-      return { name: pick(w[4]), got, act: w[1], icon: taskIcon(w), main, src: main || !q ? {} : wishSource(q), loc: q ? wishLoc(q) : '',
+      return { i, name: pick(w[4]), got, act: w[1], icon: taskIcon(w), main, src: main || !q ? {} : wishSource(q), loc: q ? wishLoc(q) : '',
+        next: got || main || !q ? null : wishNext(q, g, own, onMap),
         desc: e.desc ? pick(e.desc).split('\n')[0] : '', later: !!g && !got && w[1] > g.act,
         focus: got ? null : pin(w, i), promise: !g || got || main ? null : wishState(w, taken, g),
         posts: got || main || !q ? { lines: [] } : wishPosts(q, g) };
     });
     // A promised wish is under way whatever its Act.
     for (const x of all) if (x.promise) x.later = false;
+    /* What a row not posted yet needs (nextHtml): the wishes that are rows, to jump to; a wish's pin
+       for one that isn't; its step's marks as a focus of their own, the row's pin too. */
+    const asRows = new Set(all.filter((x) => !x.main && !x.got && !x.later).map((x) => x.i));
+    const wishFocus = (j) => { const y = all.find((z) => z.i === j); return y && !y.got && y.focus ? y.focus : null; };
+    for (const x of all) {
+      x.rows = asRows; x.wishFocus = wishFocus;
+      x.stepFocus = (s, k) => stepFocusOf(x.i, s, k, onMap);
+      const n = x.next;
+      if (n && !n.posted && !n.free) {
+        const s = n.steps[n.next];
+        if (s.wish == null && s.keys && s.keys.length) x.focus = x.stepFocus(s, n.next);
+        else if (s.wish != null && !asRows.has(s.wish) && wishFocus(s.wish)) x.focus = wishFocus(s.wish);
+      }
+    }
     const mains = all.filter((x) => x.main);
     const walls = WALLS.map(([scene, id, area]) => {
       const list = all.filter((x) => x.src.wall === scene);
@@ -557,11 +602,10 @@
     const i = SS.spots ? SS.spots.TASKS.findIndex((k) => k[0] === 'qitem' && JSON.stringify(k[2]).includes(held)) : -1;
     return i >= 0 ? 'task:' + i : null;
   }
-  // What the Caretaker says of each piece once the wish is taken (CARETAKER_SNARE_REPEAT_*).
-  const SNARE_SAYS = { 'Snare Soul Churchkeeper': 'roadSays_churchkeeper', 'Snare Soul Bell Hermit': 'roadSays_hermit',
-    'Snare Soul Swamp Bug': 'roadSays_swamp', 'Silk Snare': 'roadSays_snare' };
+  /* A piece's row: who gives it or what to beat, and where. The Caretaker's lines on each
+     (CARETAKER_SNARE_REPEAT_*) said it in his voice, and went (design/118, 11 A: a guide, not lore). */
   const snareRow = (x) => ({ name: pick(x.name), got: x.ok, act: 2, area: SNARE_AREA[x.save] || null,
-    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x), says: SNARE_SAYS[x.save] ? says('caretaker', t(SNARE_SAYS[x.save])) : null });
+    how: SNARE_HOW[x.save] ? SNARE_HOW[x.save]() : '', mark: snareMark(x) });
   /* Where a wish is taken (js/quests.js FROM, the game's): its Wishwall, or else the NPC who offers
      it, as a room and as the Map's mark there (js/app-map.js: board:, giver:). A wish after another
      (prev) is taken where the first one not done yet is: the board's Pre, then, once it's taken, the
@@ -651,14 +695,147 @@
     lines.push(t('roadRestAny'));
     return lines;
   }
-  /* What posts a wish (OPENS), for the Tasks tab's rows and the Map's cards: [] for a wish with no
-     such rule, or done or taken. posted: false when the save says it isn't on its Wishwall yet. */
+  /* The wishes a wish waits for before it's offered (js/how.js: a reward's wish way, after; the
+     generator's WAITS), by WISHES index, those the game hasn't done: Infestation Operation waits for
+     Rite of Rebirth, as Yarnaby opens her door only to a cursed Hornet. */
+  const WAITS_FOR = new Map();
+  for (const ways of Object.values(HW.HOW).flatMap((m) => (Array.isArray(m) ? [m] : Object.values(m)))) {
+    for (const w of ways) if (w.kind === 'wish' && w.after) WAITS_FOR.set(w.wish, w.after);
+  }
+  App.wishWaits = (i, g) => (WAITS_FOR.get(i) || []).filter((j) => !(g && (g.wishes || []).includes(j)));
+  /* What posts a wish (OPENS, and the wishes it waits for), for the Tasks tab's rows and the Map's
+     cards: [] for a wish with no such rule, or done or taken. posted: false when the save says it
+     isn't on its Wishwall yet. */
   const wishPosts = (q, g) => {
-    if (!OPENS[q] || (g && ((g.quests || []).includes(q) || (g.taken || []).includes(q)))) return { lines: [], posted: null };
-    const lines = OPENS[q](g).filter(Boolean), s = g && g.sentinel;
+    if (g && ((g.quests || []).includes(q) || (g.taken || []).includes(q))) return { lines: [], posted: null };
+    const waits = App.wishWaits(CO.WISHES.findIndex((w) => wishQuest(w) === q), g);
+    const before = waits.length ? t('roadBefore', { name: waits.map((j) => pick(CO.WISHES[j][4])).join(', ') }) : '';
+    const first = before && before[0].toUpperCase() + before.slice(1);   // a line of its own
+    if (!OPENS[q]) return { lines: first ? [first] : [], posted: null };
+    const lines = [first, ...OPENS[q](g)].filter(Boolean), s = g && g.sentinel;
     return { lines, posted: q === 'Song Knight' && s && s.read ? !lines.length : null };
   };
   App.wishPosts = wishPosts;
+  /* Why a wish isn't on its Wishwall yet, as steps (design/117-tasks-why-variants.html: 1 A, 2 A,
+     3 A; Albert: a guide, not lore). Each late wish's rule is its quest asset's playerDataTest and
+     what GameManager.TimePasses sets at a rest (read 31-Oct-2026, patch 1.0.30000; js/savefile.js
+     posting and sentinel, checked against the 87 saves):
+       Restoration      nailUpgrades > 0, BelltownRelicDealerGaveRelic, BelltownGreeterMetTimePassed
+                        (Pavo talked to, BelltownGreeterConvo > 0, then a rest outside Bellhart)
+       Trail's End      ShakraFinalQuestAppear (above, OPENS) and hasDoubleJump
+       Bellhart's Glory BelltownHouseState 1 (Restoration done, then a rest outside Bellhart) and
+                        citadelHalfwayComplete (the Cogwork Dancers, the Clawline or Songclave entered)
+       Balm             shermaQuestActive: metShermaEnclave and visitedWard, then a rest in another area
+       Strengthening    enclaveLevel 2 (Building Up Songclave done) and enclaveDonation2_Available
+                        (4 of Songclave's board done, then a rest outside it)
+       Final Audience   songChevalierQuestReady (above, knightPosts)
+     and the wishes another waits for (App.wishWaits). Each step: { icon, text, n, of, done, keys
+     (its marks on the Map, nearest first when the pin opens it), wish (a wish step: that wish's
+     WISHES index) }. With a save that read these, { posted: true } once its wall shows it, else
+     { steps, next } (the first step not done); in Free mode or an older slot, { steps, free: true }.
+     null: a wish with no such rule, or done or taken. The Map's Wishwall cards could take it too. */
+  const STEP_IC = { bench: 'assets/map/pins/pin_bench.webp', needle: 'assets/icons/items/needle.webp', scrounge: 'assets/map/people/bellhart-relicdealer.webp',
+    pavo: 'assets/map/people/bellhart-greeter.webp', maps: 'assets/map/icons/i_map.webp', cloak: 'assets/icons/arts/faydown-cloak.webp',
+    groal: 'assets/icons/journal/groal-the-great.webp', dancers: 'assets/icons/journal/cogwork-dancers.webp', sherma: 'assets/map/people/sherma.webp',
+    ward: 'assets/map/icons/i_key_whiteward.webp', board: 'assets/icons/wishes/board.webp', cog: 'assets/map/icons/cog_heart_pieces.webp',
+    sentinel: 'assets/icons/journal/second-sentinel.webp', melody: 'assets/icons/pieces/melody-conductor.webp' };
+  // Where the Second Sentinel walks once woken (js/people.js song-knight's spots, its Cog_10 one aside).
+  const KNIGHT_SPOTS = ['npc:song-knight:hang_02', 'npc:song-knight:hang_07', 'npc:song-knight:song_07', 'npc:song-knight:song_24'];
+  const CLAVE_BOARD =Object.keys(QU.FROM || {}).filter((q) => QU.FROM[q].board === 'Song_Enclave');
+  const wishAt = (q) => CO.WISHES.findIndex((w) => wishQuest(w) === q);
+  /* The marks a step points at on the Map, of those there now and not had: by key, by a key's start
+     (someone's spots, Shakra's), or the extras of one name (the Cogheart Pieces). */
+  function stepKeys(marks, want) {
+    const out = [];
+    for (const k of want) {
+      if (k.startsWith('name:')) { SS.spots.EXTRAS.forEach((x, i) => { if (x[4] && x[4].key === k.slice(5)) out.push('extra:' + i); }); continue; }
+      if (k.endsWith(':')) { for (const m of marks.keys()) if (m.startsWith(k)) out.push(m); continue; }
+      out.push(k);
+    }
+    return out.filter((k) => marks.has(k) && !marks.get(k).got);
+  }
+  const STEPS = {
+    'Belltown House Start': (g, p) => [
+      { icon: STEP_IC.needle, text: pick(D.NEEDLES[1].name), done: g.needle > 0, keys: ['person:plinney'] },
+      { icon: STEP_IC.scrounge, text: t('pgStepRelic', { npc: t('mapScrounge') }), done: p.relic, keys: ['person:scrounge'] },
+      { icon: STEP_IC.pavo, text: t('pgStepTalk', { npc: personName('bellhart-greeter') }), done: p.pavo || p.greeter, keys: ['npc:bellhart-greeter:'] },
+      { icon: STEP_IC.bench, text: t('pgStepRestOut', { area: areaName('BELLHART') }), done: p.greeter }],
+    'Shakra Final Quest': (g, p) => {
+      const bought = SHAKRA_MAPS.filter((m) => (g.maps || []).includes(m)).length;
+      return [
+        { icon: STEP_IC.maps, text: t('pgStepMaps', { npc: pick(HW.NPCS.shakra) }), n: bought, of: SHAKRA_MAPS.length, done: p.shakra || bought >= SHAKRA_MAPS.length, keys: ['shakra:'] },
+        { icon: STEP_IC.groal, text: t('pgStepGroal', { foe: foeName('groal-the-great') }), n: Math.min(2, melodies(g)), of: 2, said: true, done: p.shakra || p.groal || melodies(g) >= 2, keys: ['boss:groal-the-great'] },
+        { icon: STEP_IC.cloak, text: artName('faydown-cloak'), done: !!g.doubleJump, keys: ['arts:faydown-cloak'] },
+        { icon: STEP_IC.bench, text: t('pgStepRestOut', { area: areaName('BELLHART') }), done: p.shakra }];
+    },
+    'Belltown House Mid': (g, p) => [
+      { wish: wishAt('Belltown House Start'), done: (g.quests || []).includes('Belltown House Start') },
+      { icon: STEP_IC.dancers, text: t('pgStepGlory', { foe: foeName('cogwork-dancers'), art: artName('clawline'), clave: areaName('ENCLAVE') }),
+        done: p.halfway || p.dancers || p.clawline || p.enclave, keys: ['boss:cogwork-dancers', 'arts:clawline'] },
+      { icon: STEP_IC.bench, text: t('pgStepRestOut', { area: areaName('BELLHART') }), done: p.house >= 1 && p.halfway }],
+    'Save Sherma': (g, p) => [
+      { icon: STEP_IC.sherma, text: t('pgStepMeet', { npc: personName('sherma'), area: areaName('ENCLAVE') }), done: p.sherma || p.balm, keys: ['npc:sherma:'] },
+      { icon: STEP_IC.ward, text: t('pgStepEnter', { area: areaName('WARD') }), done: p.ward || p.balm, keys: ['name:INV_NAME_WARD_KEY'] },
+      { icon: STEP_IC.bench, text: t('pgStepRestAway'), done: p.balm }],
+    'Songclave Donation 2': (g, p) => {
+      const n = CLAVE_BOARD.filter((q) => (g.quests || []).includes(q)).length;
+      return [
+        { wish: wishAt('Songclave Donation 1'), done: (g.quests || []).includes('Songclave Donation 1') },
+        { icon: STEP_IC.board, text: t('pgStepWishes', { area: areaName('ENCLAVE') }), n, of: 4, done: p.clave2 || n >= 4, keys: ['board:song_enclave'] },
+        { icon: STEP_IC.bench, text: t('pgStepRestOut', { area: areaName('ENCLAVE') }), done: p.clave2 }];
+    },
+    'Song Knight': (g, p, s) => {
+      const flower = !!g.everbloom, knight = personName('song-knight'), board = CLAVE_BOARD.filter((q) => (g.quests || []).includes(q)).length;
+      const free = !s.read, pieces = s.woke ? 3 : Math.min(3, s.pieces || 0);
+      return [
+        { icon: STEP_IC.cog, text: t('roadCogPieces'), n: pieces, of: 3, done: !!s.woke || pieces >= 3, keys: ['name:INV_NAME_COG_HEART_PIECE'] },
+        { icon: STEP_IC.sentinel, text: t('pgStepWake', { npc: knight }), done: !!s.woke, keys: ['npc:song-knight:cog_10'] },
+        ...(flower && !free ? [] : [
+          { icon: STEP_IC.melody, text: pick(CO.PIECES[CONDUCTOR][4]), done: g.pieces.includes(CONDUCTOR), keys: ['piece:' + CONDUCTOR] },
+          { wish: wishAt('Songclave Donation 1'), done: (g.quests || []).includes('Songclave Donation 1') },
+          { icon: STEP_IC.board, text: t('pgStepWishes', { area: areaName('ENCLAVE') }), n: Math.min(2, board), of: 2, done: (s.clave || 0) >= 2, keys: ['board:song_enclave'] }]),
+        free ? { icon: STEP_IC.sentinel, text: t('pgStepFindOr', { npc: knight, flower: pick(item('everbloom').name) }), keys: KNIGHT_SPOTS }
+          : { icon: STEP_IC.sentinel, text: t('pgStepFind', { npc: knight }), n: Math.min(s.met, flower ? 1 : 2), of: flower ? 1 : 2, done: s.met >= (flower ? 1 : 2),
+            keys: KNIGHT_SPOTS },
+        { icon: STEP_IC.bench, text: t('pgStepRest'), done: !!s.ready }];
+    },
+  };
+  // Whether its wall shows it now, by the quest's own test (above).
+  const POSTED = {
+    'Belltown House Start': (g, p) => g.needle > 0 && p.relic && p.greeter,
+    'Shakra Final Quest': (g, p) => p.shakra && !!g.doubleJump,
+    'Belltown House Mid': (g, p) => p.house === 1 && p.halfway,
+    'Save Sherma': (g, p) => p.balm,
+    'Songclave Donation 2': (g, p, s) => (s.clave || 0) >= 2 && p.clave2,
+    'Song Knight': (g, p, s) => !!s.ready,
+  };
+  // The Map's marks now, by key, for the steps' ways (wishNext keeps those there and not had).
+  const onMapNow = () => new Map((App.mapApi ? App.mapApi.list() : []).map((m) => [m.key, m]));
+  // A step's marks as a focus of their own, nearest first (pgFocus): a wish's row's, on Tasks or the road.
+  function stepFocusOf(i, s, k, onMap = onMapNow()) {
+    const id = 'step:' + i + ':' + k;
+    FOCUS.set(id, { keys: s.keys.map((key, n) => ({ k: key, n, d: onMap.get(key) && onMap.get(key).scene ? away(onMap.get(key).scene) : null }))
+      .sort((a, b) => (a.d ?? Infinity) - (b.d ?? Infinity) || a.n - b.n).map((e) => e.k), name: s.text });
+    return id;
+  }
+  function wishNext(q, g, own, marks = new Map()) {
+    if (own && ((own.quests || []).includes(q) || (own.taken || []).includes(q))) return null;
+    const waits = App.wishWaits(wishAt(q), own);
+    if (!STEPS[q] && !waits.length) return null;
+    const p = own && own.posting && own.posting.read ? own.posting : null;
+    const s = (own && own.sentinel && own.sentinel.read ? own.sentinel : null) || {};
+    const read = q === 'Song Knight' ? !!s.read : !!p;
+    if (own && read && STEPS[q] && POSTED[q](own, p || {}, s)) return { posted: true };
+    const base = own && read ? own : { quests: [], pieces: [], maps: [], needle: 0 };
+    const steps = [...waits.map((j) => ({ wish: j, done: false })), ...(STEPS[q] ? STEPS[q](base, p || {}, own && read ? s : {}) : [])].map((x) => {
+      if (x.wish != null) return { ...x, icon: taskIcon(CO.WISHES[x.wish]), text: pick(CO.WISHES[x.wish][4]) };
+      return { ...x, done: !!x.done, keys: stepKeys(marks, x.keys || []) };
+    });
+    if (!own || !read) return { steps, free: true };
+    const next = steps.findIndex((x) => !x.done);
+    return { steps, next: next < 0 ? steps.length - 1 : next };
+  }
+  App.wishNext = (q, g) => wishNext(q, g, g, new Map((App.mapApi ? App.mapApi.list() : []).map((m) => [m.key, m])));
   // A wish's quest (js/collectibles.js WISHES check): its own, or the first of several.
   const wishQuest = (w) => (w[2][0] === 'quest' ? w[2][1] : w[2][0] === 'any' ? (w[2].slice(1).find((c) => c[0] === 'quest') || [])[1] : null);
   // The three melodies the Cradle's way asks for (the pieces of kind 'melody').
@@ -667,27 +844,26 @@
   /* ── Each step and row in the game's own words (design/28-progress-steps-variants.html, 1 A to
      5 A) ─────────────────────────────────────────────────────────────────────────────
      What the pane «Tareas» says of it (js/quests.js CHAIN desc, or ready once its targets are
-     met), its Wishwall before it's taken (wall), the Inventory's line, the Journal's, or the
-     Caretaker's directions; each tagged with where the game says it. A step the game has no word
-     for (unlocking Silk and Soul, the caravan) has none: nothing is written by hand. */
+     met), tagged as the game's. Only that: what to do and where. The Wishwalls' pleas, the
+     Inventory's and the Journal's descriptions and the Caretaker's lines were quoted too, and went
+     (design/118, 9 A and 11 A: a guide, not lore). A step the game has no word for (unlocking Silk
+     and Soul, the caravan) has none: nothing is written by hand. */
   /* Act 3's road (js/acts.js end()): each step is a main objective, titled as «Tareas» titles it.
      A road's key tells it from the road to Act 3 in the guide, where both are drawn. */
   const END_IDS = ['fall', 'chapel', 'bell-eater', 'dark-below', 'escape', 'shamans', 'hearts', 'last-dive'];
   const objName = (s) => pick(QU.CHAIN[s.stages ? s.stages[0].quest : s.quest].name);
   const roadKey = (r) => (r.end ? 'end' : r.act);
-  const TAG = { tasks: () => t('pgTasks'), wall: () => t('mapLayer_wishwall1'), inv: () => t('navGame'), journal: () => t('navJournal'),
-    caretaker: () => t('roadCaretaker') };
+  const TAG = { tasks: () => t('pgTasks') };
   const says = (tag, text, name, loc) => (text ? { tag, text, name, loc } : null);
   const sayText = (v) => (typeof v === 'string' ? v : pick(v));
-  /* A wish as the game shows it now: its first stage not done (a board's Pre, then the wish); taken
-     (the save's IsAccepted, js/savefile.js taken), what «Tareas» says; else what its Wishwall says,
-     when it's posted on one. */
+  /* A wish as the game has it now: its first stage not done (a board's Pre, then the wish), in the
+     words «Tareas» gives it, what to do and where. Never its Wishwall's: the poster's plea, lore
+     (design/118, 9 A). */
   function wishSays(quest, g) {
-    const done = new Set(g ? g.quests : []), taken = new Set((g && g.taken) || []);
+    const done = new Set(g ? g.quests : []);
     let q = quest;
     while (QU.CHAIN[q] && QU.CHAIN[q].prev && !done.has(QU.CHAIN[q].prev)) q = QU.CHAIN[q].prev;
-    const e = QU.CHAIN[q] || {};
-    return !taken.has(q) && e.wall ? says('wall', e.wall) : says('tasks', e.desc);
+    return says('tasks', (QU.CHAIN[q] || {}).desc);
   }
   /* Lace atop the Cradle's tower: the objective Pharloom's Crown at its stage (its melodies, all
      three learned, the lift, Silk), as «Tareas» says it. */
@@ -718,9 +894,8 @@
     ...Object.fromEntries(END_IDS.map((id) => [id, (s) => questSays(s.quest, s.held >= s.need ? 'ready' : 'desc')])),
   };
 
-  // The other way in (design/90c): no objective names the Phantom, so its Journal entry says who it is.
-  const journalSays = (id) => { const e = SS.journal && SS.journal.BOOK.find((x) => x.id === id); return e ? says('journal', e.desc, e.name) : null; };
-  const ALT_SAYS = { phantom: () => journalSays('phantom') };
+  /* The other way in (design/90c) quoted the Phantom's Journal entry, who it is: lore, and gone
+     (design/118, 11 A); its card keeps the way to it on the Map. */
 
   /* Where a step is on the Map (design/28, 3 A): the marks still to do, in the order to go. The
      objectives' are the game's own map pins, found by their quest (js/spots.js TASKS 'goal'). */
@@ -774,7 +949,7 @@
   }
   // A step's card (1 A): under its heading, what the game says of it and its way onto the Map.
   function stepCard(r, s, g, cls = '') {
-    const say = s.alt ? ALT_SAYS[s.id] : STEP_SAYS[s.id];
+    const say = s.alt ? null : STEP_SAYS[s.id];
     const x = say ? say(s) : null, map = mapLink(r, s, stepMarks(r, s, g));
     return x || map ? `<div class="pg-says${x && x.text ? '' : ' is-line'}${cls}">${x ? saysHtml(x) : ''}${map}</div>` : '';
   }
@@ -799,9 +974,20 @@
       !got && runt && x.quest === runt.counts ? t('roadRunt') : ''];
     // Who asks and what it asks lead; what posts it follows (folded on a phone, design/41, 2 B).
     const how = got ? '' : [wishLoc(x.quest), wishAsks(x.quest)].filter(Boolean).join(' · ');
-    const more = got ? [] : (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
-    return { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
-      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more, wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+    const row = { name: x.name ? pick(x.name) : w ? pick(w[4]) : x.quest, got, act: w ? w[1] : 0, area: (w && w[3]) || (from.scene && R.areaOf(from.scene)) || null,
+      scene: from.scene, mark: from.mark, focus: !got && w && pin ? pin(w, x.wish) : null, sub, how, more: [], wish: x.wish, value: x.value, says: got ? null : wishSays(x.quest, g) };
+    /* Not on its Wishwall yet: its next step on the same line, a way to it, as the Tasks tab's row
+       (wishNext, stepHtml; design/118, 10 A); in Free mode its steps under «More». A wish with no
+       such rule keeps what posts it there. */
+    const n = got || !x.quest ? null : wishNext(x.quest, g, App.game(), onMapNow());
+    if (n && !n.posted && n.steps.length) {
+      const ctx = { rows: new Set(), wishFocus: (j) => (pin && CO.WISHES[j] ? pin(CO.WISHES[j], j) : null), stepFocus: (s, k) => stepFocusOf(x.wish, s, k) };
+      // The wishes it waits for are steps of it: no «first:» beside them as well.
+      sub[1] = '';
+      if (n.free) row.more = n.steps.map((s) => (s.wish != null ? `${t('pgAfter')} ${s.text}` : s.of && !s.said ? `${s.text} ${num(s.of)}` : s.text));
+      else row.lead = stepHtml(n.steps[n.next], ctx, true, n.next);
+    } else if (!got && !n) row.more = (OPENS[x.quest] ? OPENS[x.quest](g) : []).filter(Boolean);
+    return row;
   }
   function groupRows(name, g, required) {
     // cur: the game the Tasks tab reads (a save, Free mode's marks or none), so the pins agree.
@@ -847,13 +1033,12 @@
     const fay = CO.WHERE.arts['faydown-cloak'] || [];
     return [
       { test: 'caravan', name: t('roadCaravan'), got: test('caravan').ok, icon: 'assets/benches/caravan.png', ...(test('caravan').ok ? {} : caravanHow(test('caravan').caravan, g)) },
-      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak',
-        says: says('inv', D.ARTS.find((x) => x.id === 'faydown-cloak').desc) },
+      { test: 'doubleJump', name: artName('faydown-cloak'), got: test('doubleJump').ok, act: fay[0], area: fay[1], icon: 'assets/icons/arts/faydown-cloak.webp', mark: 'arts:faydown-cloak' },
       { test: 'laceTower', name: t('roadLace'), got: test('laceTower').ok, act: 2, area: 'CRADLE', icon: PORTRAIT('lace'), mark: 'boss:lace-the-cradle',
         how: test('laceTower').ok ? '' : t('roadMelodies', { n: num(melodies(g)) }), says: laceSays(g) },
       { test: 'bellhomeKey', ready: key.ready && !key.cursed, name: t('roadKey'), got: test('bellhomeKey').ok, act: 2, area: 'BELLHART', icon: 'assets/benches/bellhome.png', mark: PAVO,
         how: test('bellhomeKey').ok ? '' : key.ready ? t(key.cursed ? 'roadKeyCursed' : 'roadPavo', { pavo: personName('bellhart-greeter') }) : t('roadKeyRule', { glory: wishName('Belltown House Mid'), n: num(key.need) }),
-        more: test('bellhomeKey').ok ? [] : [t('roadKeyRest', { glory: wishName('Belltown House Mid'), town: areaName('BELLHART'), pavo: personName('bellhart-greeter') })], says: says('inv', t('roadKeyDesc')) },
+        more: test('bellhomeKey').ok ? [] : [t('roadKeyRest', { glory: wishName('Belltown House Mid'), town: areaName('BELLHART'), pavo: personName('bellhart-greeter') })] },
     ].map((x) => ({ act: 0, area: null, ...x }));
   }
 
@@ -1004,8 +1189,7 @@
     const needs = done ? '' : `<span class="pg-rt-needs"><span class="pg-rt-pk">${esc(t('roadNeeds'))}</span>${w.needs.map((x) => `<span class="${guide || x.ok ? 'is-on' : 'is-off'}"><img src="assets/icons/arts/${x.id}.webp" alt="" loading="lazy"><span${NT}>${esc(artName(x.id))}</span>${!guide && x.ok
       ? `<span class="pg-mark">${App.tick}</span><span class="sr-only">${esc(t('pgGot'))}</span>` : ''}</span>`).join('')}</span>`;
     const x = { ...w, alt: true };
-    const says = done && ALT_SAYS[w.id] ? ALT_SAYS[w.id](x) : null;
-    const body = open ? `<div class="pg-rt-body">${done ? (says ? `<div class="pg-says">${saysHtml(says)}</div>` : '') : stepCard(r, x, g)}</div>` : '';
+    const body = open && !done ? `<div class="pg-rt-body">${stepCard(r, x, g)}</div>` : '';
     return `<li class="pg-rt-st is-alt${done ? ' is-done' : guide ? '' : ' is-later'}">
           <h3 class="pg-rt-h"><span class="pg-rt-dia" aria-hidden="true"></span><span class="pg-rt-or" aria-hidden="true">${esc(t('roadOr'))}</span><button type="button" class="pg-rt-open" data-act="pgRoute" data-value="${key}" aria-expanded="${open}">
             <img class="pg-rt-art" src="${STEP_ART[w.id] || BOARD}" alt="" loading="lazy">
@@ -1088,11 +1272,12 @@
   }
   /* A row's how (design/103, 1 A): its lead on one line, «More» at its end unfolding what it waits
      for and what the game says of it (pgFold). */
-  function foldHtml(how, more = [], says = null) {
+  function foldHtml(how, more = [], says = null, lead = '') {
     const q = says && says.text ? says : null;
-    if (!more.length && !q) return how ? `<span class="pg-how">${esc(how)}</span>` : '';
+    const head = [how ? esc(how) : '', lead].filter(Boolean).join(' · ');
+    if (!more.length && !q) return head ? `<span class="pg-how">${head}</span>` : '';
     const id = 'pg-fold-' + (++howN);
-    return `<span class="pg-how">${how ? esc(how) + ' · ' : ''}<button type="button" class="text-btn pg-fold-btn" data-act="pgFold" aria-expanded="false" aria-controls="${id}">${esc(t('pgFold'))}${App.chevron(false)}</button></span>
+    return `<span class="pg-how">${head ? head + ' · ' : ''}<button type="button" class="text-btn pg-fold-btn" data-act="pgFold" aria-expanded="false" aria-controls="${id}">${esc(t('pgFold'))}${App.chevron(false)}</button></span>
         <span class="pg-fold" id="${id}" hidden>${more.map((m) => `<span>${esc(m)}</span>`).join('')}${q
           ? `<span class="pg-says-q"><span class="pg-says-tag">${esc(TAG[q.tag]())}</span> <span${NT}>${esc(sayText(q.text))}</span></span>` : ''}</span>`;
   }
@@ -1112,7 +1297,7 @@
       return `<li class="${i >= OPTS ? 'is-extra' : ''}${on ? ' is-open' : ''}"><button type="button" class="pg-opt" data-act="pgOpt" data-value="${o.wish}" aria-expanded="${on}" aria-controls="${hid}-card-${o.wish}"><img src="${o.icon}" alt="" loading="lazy"><span><span${NT}>${esc(o.name)}</span>${o.value === 0.5 ? ` · ${esc(t('roadHalf'))}` : ''}</span>${App.chevron(on)}</button></li>`; };
     const card = (o) => `<li class="pg-opt-li" id="${hid}-card-${o.wish}" data-wish="${o.wish}"${o.wish === optOpen ? '' : ' hidden'}><div class="pg-item pg-opt-card" role="group" aria-label="${esc(o.name)}">
           <span class="pg-art"><img src="${o.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says)}</span>
+          <span class="pg-main"><span class="pg-name"${NT}>${esc(o.name)}</span>${foldHtml(o.how, o.more, o.says, o.lead)}</span>
           <span class="pg-place"><span class="pg-where">${o.area ? `<span${NT}>${esc(areaName(o.area))}</span>` : ''}</span></span>
           ${o.focus ? `<button type="button" class="pg-onmap" data-act="pgFocus" data-value="${esc(o.focus)}" aria-label="${esc(t('mapOnMap') + ': ' + o.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
         </div></li>`;
@@ -1138,7 +1323,7 @@
       const more = x.opts ? x.opts.length - OPTS : 0;
       return `<li class="pg-item"><span class="pg-num" aria-hidden="true"><b>${num(++n)}</b></span>
           <span class="pg-art"><img src="${x.icon}" alt="" loading="lazy"></span>
-          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says)}
+          <span class="pg-main"><span class="pg-name">${esc(x.name)}</span>${foldHtml(x.how, x.more, x.says, x.lead)}
             ${x.opts ? `<ul class="pg-opts" id="${hid}-opts">${x.opts.map(opt).join('')}${x.had.map(had).join('')}${more > 0 ? `<li class="is-more"><button type="button" class="text-btn" data-act="pgOpts" aria-expanded="false" aria-controls="${hid}-opts">${esc(t('pgTodoMore', { n: num(more) }))}</button></li>` : ''}</ul>` : ''}</span>
           <span class="pg-place"><span class="pg-where">${x.area ? `<span${NT}>${esc(areaName(x.area))}</span>` : ''}</span></span>
           ${onMap ? `<button type="button" class="pg-onmap" data-act="${x.focus ? 'pgFocus' : 'mapShow'}" data-value="${esc(x.focus || x.mark)}" aria-label="${esc(t('mapOnMap') + ': ' + x.name)}" title="${esc(t('mapOnMap'))}">${App.pin}</button>` : '<span class="pg-onmap is-none" aria-hidden="true"></span>'}
@@ -1388,7 +1573,20 @@
       if (!f) return;
       f.hidden = !f.hidden;
       node.setAttribute('aria-expanded', String(!f.hidden));
-      node.innerHTML = esc(t(f.hidden ? 'pgFold' : 'pgSaysHide')) + App.chevron(!f.hidden);
+      node.innerHTML = esc(t(f.hidden ? node.dataset.label || 'pgFold' : 'pgSaysHide')) + App.chevron(!f.hidden);
+    },
+    /* A step that is another wish (design/117, 2 A): its row, brought into view and lit for a moment;
+       a wish with no row here (one for later), its pin on the Map. */
+    pgJump(node) {
+      const li = document.querySelector(`.pg-task[data-wish="${CSS.escape(node.dataset.value)}"]`);
+      if (!li) { if (node.dataset.focus) actions.pgFocus({ dataset: { value: node.dataset.focus } }); return; }
+      const still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      li.scrollIntoView({ block: 'center', behavior: still ? 'auto' : 'smooth' });
+      li.classList.remove('is-flash');
+      void li.offsetWidth;
+      li.classList.add('is-flash');
+      li.setAttribute('tabindex', '-1');
+      li.focus({ preventScroll: true });
     },
     pgMore(node) {
       const how = document.getElementById(node.getAttribute('aria-controls'));

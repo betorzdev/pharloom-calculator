@@ -408,7 +408,7 @@ the same button leave it; where the browser can't, it fills the window). On it: 
 The search finds any area and anything on the map by name (a piece, a Tool, a boss, a shop, an
 NPC, a Journal entry), each with its layer and area under it: pick one and the map shows only
 that thing, as a focus of one (its name and area in the search's place, «Return to the map» back
-to the whole map, with its layer switched on), centred on its mark as drawn, its card open and a ring pulsing on it
+to the whole map as you had it, its layers untouched), centred on its mark as drawn, its card open and a ring pulsing on it
 three times. An area's name centres the map on it with its ring. With the whole map in view, an
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
@@ -456,7 +456,12 @@ What counts for the 100% is in the first two groups and the Everbloom, each thin
 it's had: lying there, at the shop that sells it, with whoever hands over a wish's reward (Shakra
 in Bilewater for Trail's End's Throwing Ring, the Pinstress atop Mount Fay, Sherma in the Whiteward:
 the card says who gives it and where the wish is taken), else at the Wishwall or with whoever gives
-the wish, in its boss's arena, with the person who gives it. All of it on at first, and what leads to it too
+the wish, in its boss's arena, with the person who gives it. A thing in a room whose every door the game
+keeps shut until a wish is taken says so on its card in one line, with a save whether yours has
+it, and a button to your next step for that wish: the Wishwall or whoever asks for it, whose card
+says each wish's next step, or, for Final Audience before the Second Sentinel is woken, the Sentinel itself,
+lying inert in the Cogwork Core ("Insert Cogwork Heart?", the game's own prompt, in quotes) until you bring it the Cogheart: the Reserve Bind, in the Second Sentinel's arena past a wall in the High Halls
+(Final Audience), and Sherma's Spool Fragment in the Whiteward (Balm for the Wounded). All of it on at first, and what leads to it too
 (Memory Lockets, Lost Fleas, Old Hearts, Melodies, Craftmetal, Pale Oil), though «Only the 100%»
 leaves those off.
 
@@ -467,7 +472,9 @@ leaves those off.
   save, both places), and the **Abilities**, one switch whose round caret opens the seven of the 100% and,
   apart, the four **outside the 100%** (on at first too): Drifter's Cloak and Faydown Cloak, and the
   two Needolin melodies of Act 3 (the Beastling Call, under Bellhart once the Bell Eater is beaten;
-  the Elegy of the Deep, from the Snail Shamans), each card saying it doesn't count.
+  the Elegy of the Deep, from the Snail Shamans), each card saying «Outside the 100%» as its state, as
+  the switch names them (the Tools outside it too, with one short line: what it upgrades, or that a
+  wish lends it).
 - **Crest** (the game's pane where they're equipped): the **Tools**, one switch whose round caret
   opens them by the colour of their slot (red, blue, yellow) and, apart, the five **outside the
   100%** (off at first): the upgrades of three Tools (Curvesickle, Druid's Eyes, Claw Mirrors),
@@ -551,7 +558,8 @@ leaves those off.
   arena the map has no room for, the Bell Eater's or Lost Lace's, goes to the room that leads
   there), its card saying how many rosaries it holds. Jubilana goes by the game's rules too: with a save, her Songclave
   stall once The Wandering Merchant is done (not while The Lost Merchant is posted and not done:
-  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it;
+  she's out at the Memorium), and in Act 3 at the room's east corner, where the game moves it,
+  with what she sells there (not left by the Wishwall, at her Act 2 stall);
   her scavenging spots in the Grand Forum and by the Whispering Vaults only once met in the
   Songclave (the Forum's after its battle), not while The Lost Merchant is taken, never in Act 3.
   Where the two wishes find her is those wishes' place. The shops are the
@@ -607,7 +615,10 @@ leaves those off.
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
   your save names. A fight the game only puts there once something holds says so on its card, and
-  with a save whether yours has it: the wish that brings it (the Broodmother, the Far Fields Savage
+  with a save whether yours has it (a wish not yet taken or granted, with a button to where it's
+  taken, unless the card has one there already: a Wishwall's card gives each wish on it not posted
+  yet its next step; the card names the wish once, and gives one way to it, the step your save shows
+  first, as the dormant Second Sentinel): the wish that brings it (the Broodmother, the Far Fields Savage
   Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel, the Pinstress atop Mount
   Fay), the wish granted first
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
@@ -629,7 +640,9 @@ leaves those off.
   the mark still says they give a thing of the 100% (Eva, with no figure, is the herald alone). **Everyone else** (off at first): every
   other person the game's scenes place, 44 of them, each in one switch only, with their own figure
   from the game's sprites (tools/extract-people.py; the Last Conductor, whom the game draws only as
-  a black shadow, keeps the herald), named as their title card names them. With a
+  a black shadow, keeps the herald), named as their title card names them; their card says who and
+  where, nothing more (whether you've met, or in how many places they turn up, says nothing of what
+  to do: a guide, not lore). With a
   save, those you haven't met yet are dimmed, but only when the save has a flag for it: the ones it
   says nothing about are never dimmed by guess. Who moves shows only where the save says they are
   now, each spot by the switches the game turns it on with (the flea troupe at its camp, Kratt
@@ -637,7 +650,7 @@ leaves those off.
   resting where he's sent until you meet him there, Pilby, the Chapel Maid, Ballow from the forge to
   the sauna and the diving bell, Gilly, Sherma, the Songclave's pilgrims by its level, Seth at the
   Flea Festival); who has left, died or isn't there in Act 3 is gone. Where only a script of theirs
-  decides, the spot stays (Garmond comes and goes, and his card says so; Mister Mushroom, Seth's
+  decides, the spot stays (Garmond comes and goes; Mister Mushroom, Seth's
   other rooms, the Green Prince caged). In Free mode, everyone everywhere.
   Each person once in a room: where another mark already stands for them (who makes a wish, a
   boss, the Herald's spots), Everyone else doesn't draw them again; Jubilana is her shop.
@@ -686,7 +699,7 @@ while the wish is on, as the game shows him one at a time; the rescues and
   one-way ones are among the shortcuts; Bone_12's two cell doors, struck open with no key, among
   them; each wall its own mark, even where breaking one breaks the next, as three in the Sands of
   Karak do) and the **Hidden corners** (what
-  covers part of a room until you walk in, one mark per room, gone once all of it is uncovered: a
+  covers part of a room until you walk in, one mark per room, its card saying how many are in it, gone once all of it is uncovered: a
   cover inside a breakable wall counts once the wall is broken, one the game takes away once it's
   gone, and one only the other mode has isn't asked for), so many
   that they're drawn one by one only close up; from afar, one mark per room and kind, with how
@@ -728,14 +741,22 @@ when above it would cover the search or the zoom): what
 it is, where (its area, and the first Act it can be had in there; what only Act 3 has says Act 3:
 the Abyss, Verdania, the destroyed Cradle and Cogwork Core, the Border Caves and the Nameless Town,
 and what lies only in a room's Act 3 state, as the rosaries in Mort's room once he's gone; a cache,
-a wall or a door with no Act of its own says none), how it's had, and what it says of your game. A
-shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
-wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
+a wall or a door with no Act of its own says none), how it's had, and what it says of your game:
+only what helps play, never flavour text (a guide, not lore), and a count as one state, «Defeated
+9/25», «Slots open 12/12», «Pilgrim Shawl 3/10», as Progress reads them. A
+shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack,
+and once nothing is left there, «Nothing left here» alone; a Wishwall's the wishes still open, and
+under them each one not on it yet with its next step, a way to it on the Map, as the Tasks tab says
+it (Balm for the Wounded: «Meet Sherma in Songclave»; Trail's End: «Shakra's maps 12/14»; in Free
+mode the first step); a wish giver's the wishes still open (each with the wish to do first, if it waits for one: Yarnaby
+opens her door for «Infestation Operation» only once «Rite of Rebirth» has cursed Hornet), a thing
+a wish gives, that wish and the one to do before it, with a button to who asks for that one, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
-«See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
+«See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills; a
+map the Citadel's machines sell, «Map machine: 70 rosaries». In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
-and what's left there of the 100%, the Journal and the gauntlets. The map names the areas of
+and what's left there of the 100%, the Journal and the gauntlets (a count of zero left out). The map names the areas of
 more than three rooms, and a smaller one that holds something of the 100% (the Songclave), so the
 cards' «For 100%» add up to what «Only the 100%» shows.
 
@@ -864,11 +885,10 @@ Lace, the Bellhome Key, or «Talk to Pavo for the Bellhome Key» once he has it 
 piece of the snare. A step of one thing (walking into the Citadel) doesn't repeat itself as a list.
 Each row is its name and one short line, how to get it, the number or the thing first («Pavo of
 Bellhart · 250 rosaries», «9 of 12 fleas rescued; then talk to Mooshka at Greymoor»), ended by
-«More» when there's more to say: it unfolds what the thing waits for (what posts the wish, when it shows up, the wish to do first) and
+«More» when there's more to say: it unfolds what the thing waits for (when it shows up, the wish to do first) and
 what the game says
-of it: a wish as the game shows it now (what its Wishwall says until you take it, what «Tasks» says
-once you have: the save's own record of each wish taken), the Caretaker's directions to each soul
-and the Snare Setter, the Inventory's line for the Faydown Cloak and the Bellhome Key, and for Lace
+of it, only where it says what to do: a wish in the words «Tasks» gives it (never its Wishwall's
+plea), and for Lace
 the objective that leads to her (learn the Threefold Melody, then play it at the Citadel's heart, then
 rise above the Citadel). The Flea Caravan has no game text. Lace's row and the key's (Pavo) have
 their pin too, as the Bellshrines' do. «What's missing · Everything» on the right over the list (the
@@ -877,7 +897,9 @@ diamond ticked and dimmed, and the wishes that already gave points ticked among 
 
 How to get each thing leads with what it is and what it costs (who asks for a wish and what it asks
 to be brought, the shop and its price), then what it waits for (what posts the wish, the wish to do
-first, the Act it comes in, the keys or abilities it needs). On the road «More» holds the rest; in the
+first, the Act it comes in, the keys or abilities it needs). A wish the game posts later leads, on the
+same line, with its next step, a way to it on the Map, as the Tasks tab says it («Shakra · Shakra's
+maps 12/14»; in Free mode its steps under «More»). On the road «More» holds the rest; in the
 100% tab's lists it follows the lead, and on a phone «+n more» opens it.
 
 In Act 3 the tab is **«The road to the end»**, drawn as the roads to the Acts: a station per main
@@ -1049,15 +1071,26 @@ title over its filigree, with how many are done.
 On each wall and in each person's row, what's left as lines: the picture the game's pane draws by
 it (a wish its type's emblem), the game's own name, who asks for it (the line the pane writes under
 its title: «Frey of Bellhart»; in a person's row it goes when it only names that person and their
-area) and the lists' round pin to the Map. A wish the game posts only once something holds has
-«More» after that line, which unfolds what posts it, as on the road (Trail's End, Balm for the
-Wounded, Strengthening Songclave, Restoration of Bellhart, Bellhart's Glory, Pinmaster's Oil, Final
-Audience). Final Audience is posted on Songclave's Wishwall after you wake the Second Sentinel in
-the Cogwork Core with the three Cogheart Pieces and then meet it twice with the Conductor's Melody
-and two of Songclave's wishes done, Building Up Songclave among them, or once with the Everbloom,
-and rest at a bench; with a save it says «Not on its Wishwall yet» instead of who asks, and under
-«More» how many pieces you have or how often you've met it and what's still missing. Its fight's
-card on the Map says the same until you take it. A wish you've promised has the game's hollow
+area) and the lists' round pin to the Map. A wish the game posts only once something holds
+(Restoration of Bellhart, Trail's End, Bellhart's Glory, Balm for the Wounded, Strengthening
+Songclave, Final Audience, and one that waits for another, as Infestation Operation for Rite of
+Rebirth) says, with a save, why it isn't on its wall yet: its picture dimmed, and in place of who
+asks only the next thing to do, with its picture and its count («Shakra's maps 10/14», «Wake the
+Second Sentinel»), a link that opens the Map on it (the row's pin goes there too). One that waits
+for another wish says «after» that wish, with its picture: a tap brings its row into view and lights
+it a moment (or, when it has no row here, opens its pin on the Map). The steps are each wish's own
+test in the game's files and the flags a rest sets: Restoration, a Needle upgrade, a relic sold to
+Scrounge, Pavo talked to and a rest outside Bellhart; Trail's End, all of Shakra's maps, Groal or two
+melodies, the Faydown Cloak and a rest outside Bellhart; Bellhart's Glory, Restoration done, then
+the Cogwork Dancers beaten, the Clawline or Songclave entered, and a rest outside Bellhart; Balm,
+Sherma met in Songclave, the Whiteward entered and a rest in another area; Strengthening, Building
+Up Songclave and 4 of Songclave's wishes, then a rest outside it; Final Audience, the three
+Cogheart Pieces, the Second Sentinel woken in the Cogwork Core, then found twice with the
+Conductor's Melody and two of Songclave's wishes (Building Up Songclave among them) or once with the
+Everbloom, and a rest. Once the save says it's on its wall, the row says only who asks. In Free mode
+(or a slot kept before the site read these) it says «Posted later · Why», and «Why» unfolds its
+steps, each with its picture and its link. Pinmaster's Oil keeps «More» for its other way (Plinney's
+second Needle upgrade). A wish you've promised has the game's hollow
 diamond by it, with no box behind. On a wall, what comes in a later Act than yours, faded, and what's done
 («Completed», as the pane says) follow, each as a row of pictures (a picture's name shows on
 hovering it). Every wish is on its wall, the ten Act 3 requires too, though

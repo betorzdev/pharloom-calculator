@@ -1437,7 +1437,13 @@ fix from the game's files and a save field):
   the 9 before the Widow, Pebb in the 4 Act 2 ones where he'd sold out and left and in every Act 3
   one, Mort in Act 3, the Skarr in the 79 where he's dead, the Couriers' shop in the 40 before
   both are found; none caught mid-invasion or mid-funeral. A shop's card lists its wares by the way the game takes now (wayOf), so
-  Grindle's gets Pebb's and Mort's only in Act 3.)
+  Grindle's gets Pebb's and Mort's only in Act 3. The same day, from Albert's save 4: what
+  Jubilana sells in the Songclave (her Spool Fragment, Mask Shard, Craftmetal, Spool Extender,
+  Ascendant's Grip, Spider Strings, and the Seal Chit she hands over) goes with her to the east
+  corner in Act 3, not left at her Act 2 stall by the Wishwall: tools/gen-spots.js gives every
+  point placed at a vendor SHOP_ACT3 moves a '<key>:act3' twin. Read again in every vendor's and
+  trader's scenes, each object with their NpcDialogueTitle: she is the only one the game moves
+  within a room in Act 3.)
 
 **What opens a way** (11 October). Against mapgenie's categories the Map lacked levers, locked
 doors, shortcuts, Needolin doors and silk walls, and Albert's rule was that each must come from the
@@ -2009,6 +2015,16 @@ corroboration, never a web guide:
   Game state; dying and quitting to the menu run it too). Balm for the Wounded's shermaQuestActive
   is set in TimePassesElsewhere, which runs only when the map zone differs from the last time's.
   Each of those rows now says the rest.
+- **What posts a wish is its quest asset's own test** (read 31-Oct-2026 in
+  `questsystem/quests.bundle`, each quest's `playerDataTest`): Restoration of Bellhart wants
+  nailUpgrades > 0, BelltownRelicDealerGaveRelic and BelltownGreeterMetTimePassed (which TimePasses
+  sets once BelltownGreeterConvo > 0, outside Bellhart's zone: Pavo's FSM has no other gate); Trail's
+  End ShakraFinalQuestAppear and hasDoubleJump; Bellhart's Glory BelltownHouseState 1 and
+  citadelHalfwayComplete; Balm shermaQuestActive (TimePassesElsewhere: metShermaEnclave and
+  visitedWard, not metSherma); Strengthening Songclave enclaveLevel 2 and enclaveDonation2_Available;
+  Final Audience songChevalierQuestReady. The save keeps them all (js/savefile.js `posting`, checked
+  on the 87 saves: no game sets a flag without its conditions), so the Tasks tab says, per game,
+  whether each is on its wall and the next step if not (design/03-redesign.md, step 5, 31 October).
 - **The Bell Hermit** gives his soul only once BelltownHermitMet is set (his FSM, Do Snare Convo?):
   never met, the first talk is his meeting.
 Checked: npm test, the text audit, check-pack on the 77 saves (nothing changes in its counts), and
@@ -2433,6 +2449,54 @@ meetings of how many and what's missing; shown on the road's points, under «Mor
 folds its rule there too) and on the Second Sentinel's card on the Map (App.wishPosts), gone once
 posted. Left out: the battle encounters and the Cog_10 body aren't Map marks (the people layer has
 only its Act 3 resting spots).
+
+**Rooms a wish shuts** (30 October 2026, Albert: «si voy a la ubicación de Reserve Bind, no puedo
+acceder a ese pasillo», with user4). The mark was in the right room and spot: Hang_17b, the Second
+Sentinel's arena, where it hands the Reserve Bind over. But that room's only door (entrances.json)
+is Hang_08's right1, and Hang_08's «Song_Knight_Wall» (a TestGameObjectActivator testing Song Knight
+IsAccepted) keeps «closed» there until Final Audience is taken; user4 hasn't even woken the Sentinel.
+The card said «Wish: Final Audience» and nothing of the wall. tools/extract-gating.py now writes
+gating.json `doors`: each door a quest-tested wall (one quest, no playerData, a wall that doesn't
+save its own state) stands within 3 units of, → [quest, accepted | completable | completed]. Over
+the game's 589 scenes: Hang_08 → Hang_17b and Ward_03 → Ward_09 (Balm for the Wounded) shut a room
+outright; Song_05 ↔ Song_27 (The Wandering Merchant) is one door of three; Bonegrave → Bone_Steel_Servant
+opens once Steel Sentinel can be handed in, which the save doesn't keep (left out). tools/gen-spots.js
+gives every mark in a room all of whose doors one wish shuts that wish's opening (OPENS { wish, room,
+check }: the Reserve Bind and Sherma's Spool Fragment), not the wish's own place there, and stops if a
+fight there lacks it or another room's mark lands there. The card adds «Its room opens once the wish
+"…" is taken» (yours: not yet / Wish Promised / Wish Granted) while it isn't had. Albert on the PR:
+«no me gusta tanto texto (la gente no se va a parar a leerlo). ¿no sería mejor poner enlace hacia el
+wish?». So no card with an OPENS line carries what posts the wish any more (the bosses' neither): a
+«See who asks for "…"» button (mapToFirst, as the Witch Crest's) goes to the wish's mark (App.wishFrom,
+its Wishwall), unless the card has a way there already (the Second Sentinel's «See the Wishwall»), and
+a Wishwall's or a giver's card says what posts each of its wishes not yet taken (App.wishPosts). Then
+Albert's «Marca + botón al paso»: the button goes to the next step. For Final Audience before the
+Sentinel is woken, that's the Sentinel itself, now a mark of its own in Cog_10 (tools/gen-people.js
+DORMANT: the «Song Knight Sleeping» FSM that takes the Cogheart, its point where pickups.json items
+gives the Cogheart Pieces; shown while wokeSongChevalier isn't set, through peopleHere; its card the
+game's SONG_KNIGHT_TUBE_PROMPT and the pieces held as a count, no met state: Albert, «una guía, no lore»). js/people.js STEP names it
+as the wish's first step; the Wishwall's card has the same button while it's shown. Woken, the button
+goes to the Wishwall, which counts the meetings. In all 94 saves neither room is entered before its
+wish is taken.
+test/journal-acts.test.js.
+
+**A guide, not lore** (31 October 2026, Albert: «La gente que entra en nuestra web lo que busca es
+una guía, no lore»). Every kind of Map card and every Progress row that quotes the game, swept in
+es and en over Free mode and seven saves (Act 1 and Act 2 restore points, user2, user3, user4,
+user1 at 100%), each card's text dumped through cardHtml. The Map had almost no lore left (the
+dormant Sentinel's flavour line went in PR #212); what it had were states that don't help, long
+sentences and repeats. The lore was in Progress's quotes: the Wishwalls' pleas (35 wishes have
+one), the Faydown Cloak's and the Bellhome Key's descriptions, the Phantom's Journal entry and the
+Caretaker's four lines. Decided in design/03-redesign.md, step 6, «A guide, not lore»; the rule
+now: cards and rows say what it is, where, what to do, the game's prompt when it names the action
+(quoted), what's missing, the save's state as a count («Defeated 9/25»), a way to the next step;
+never flavour text, never a state that doesn't help. test/guide-not-lore.test.js keeps it. Counts
+before → after (en; es the same, but for its own words): the met state 40 → 0 (Act 1 save), place
+notes 95 → 0 (Free mode), prose counts 1,341 → 0 (100%, as many states now), sentences of nothing
+left 33 → 0 (user3; 26 «Nothing left here» states), areas with a zero 31 → 0, the hidden corners'
+long note 216 → 0, the Citadel's machines 8, «Had in this room.» 8, «Makes a wish» 13, the bosses'
+repeated wish 4, «first» twice 2, Creige's drinks 1 → 0 each; on Progress, quotes in the 51% save
+{Tasks 13, Wishwall 7, Inventory 1} → {Tasks 20}, the road's posting paragraphs 8 → 0.
 
 **The Flea Caravan on the Map** (24 October). Albert asked for the caravan itself on the Map, only
 at the stop the save has it at. The game has a pin for it: "Flea Caravan Pin" (sprite pin_flea,

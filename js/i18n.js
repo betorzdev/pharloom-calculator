@@ -308,12 +308,11 @@
     mapHideAll:     { es: 'Esconder todo', en: 'Hide all' },
     mapOnlyHundred: { es: 'Solo el 100 %', en: 'Only the 100%' },
     mapToolsOut:    { es: 'Fuera del 100 %', en: 'Outside the 100%' },
-    mapToolUpgrade: { es: 'Mejora de {tool}: no suma aparte al 100 %', en: 'Upgrades {tool}: it doesn\'t add to the 100% on its own' },
-    mapArtOut:      { es: 'No cuenta para el 100 %', en: 'It doesn\'t count for the 100%' },
+    mapToolUpgrade: { es: 'Mejora de {tool}', en: 'Upgrades {tool}' },
     mapArtsIn:      { es: 'Del 100 %', en: 'Of the 100%' },
-    mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo: no cuenta para el 100 %', en: 'A wish lends it and takes it back once done: it doesn\'t count for the 100%' },
+    mapToolLent:    { es: 'Te la presta un deseo y te la quita al cumplirlo', en: 'Lent by a wish, taken back once done' },
     // A Tool found and then handed over for good (the Snare Setter, for the wish Silk and Soul).
-    mapToolGivenUp: { es: 'Está aquí; se entrega para {wish} y ya no vuelve: no cuenta para el 100 %', en: 'It lies here; it\'s given up for {wish} and doesn\'t come back: it doesn\'t count for the 100%' },
+    mapToolGivenUp: { es: 'Se entrega para {wish} y ya no vuelve', en: 'Given up for {wish}; it doesn\'t come back' },
     // A Tool another lies in place of in Steel Soul (the Shell Satchel for the Dead Bug's Purse), in Free mode.
     // A boss that may come back to a place (the Skull Tyrant to Bone Bottom), its card in Free mode.
     mapBossBack:    { es: 'Puede volver a {area}', en: 'It may come back to {area}' },
@@ -408,9 +407,8 @@
     // Inside the Rosaries' and Shell Shards' sets, the strings and bundles by the game's item for them.
     mapLayer_strings:  { es: 'Ristra de rosarios', en: 'Rosary String' },   // INV_NAME_COIN_SET_S
     mapLayer_bundles:  { es: 'Manojo de fragmentos', en: 'Shard Bundle' },   // INV_NAME_SHARD_POUCH
-    mapMapFound:    { es: 'Se consigue en esta sala.', en: 'Had in this room.' },
     mapMapShakra:   { es: '{npc} lo vende por {price} rosarios desde que la ves en esta zona.', en: '{npc} sells it for {price} rosaries once you\'ve seen her in this area.' },   // {npc}: MAPPER_MAIN
-    mapMapMachine:  { es: 'Una máquina que muestra una maqueta de la Ciudadela lo vende por {price} rosarios.', en: 'A machine displaying a model of the Citadel sells it for {price} rosaries.' },   // the machine's words: CITADEL_MAP_PROMPT
+    mapMapMachine:  { es: 'Máquina de mapas: {price} rosarios', en: 'Map machine: {price} rosaries' },   // the machine's own prompt, CITADEL_MAP_PROMPT, says what it is; written for context (design/118, 8 A)
     // The keys, key items, lifts, loose rosaries, small cocoons and hidden corners: the game names
     // none of these groups, so written for context (each key and item carries its own game name).
     mapLayer_keys:     { es: 'Llaves', en: 'Keys' },
@@ -423,25 +421,21 @@
     mapCocoon:      { es: 'Capullo de seda', en: 'Silk cocoon' },
     mapBead:        { es: 'Rosarios sueltos', en: 'Loose rosaries' },
     mapHidden:      { es: 'Rincón oculto', en: 'Hidden corner' },
-    mapHiddenNote:  { es: 'Lo que tapa partes de esta sala hasta que entras: {n}.', en: 'What covers parts of this room until you walk in: {n}.' },
+    mapHiddenNote:  { es: '{n} en esta sala', en: '{n} in this room' },
     // Eva's rewards: {npc} CREST_UPG_SHRINE_MAIN, {crest} CREST_HUNTER_NAME, {vest} UI_MSG_TITLE_EXTRASLOT_NAME.
     mapExtra_eva:   { es: 'Lo que da {npc}', en: 'What {npc} gives' },
     mapEvaHunter:   { es: '{crest}, evolución {n}', en: '{crest}, evolution {n}' },
     mapEvaYellow:   { es: '{vest}: ranura amarilla', en: '{vest}: yellow slot' },
     mapEvaBlue:     { es: '{vest}: ranura azul', en: '{vest}: blue slot' },
     mapEvaMeet:     { es: '{npc} la da al conocerla.', en: '{npc} gives it on meeting her.' },
-    mapEvaSlots:    { es: '{npc} lo da con {n} ranuras abiertas en tus blasones, sin contar el de {crest}.', en: '{npc} gives it at {n} slots open across your Crests, the {crest} Crest aside.' },
-    mapEvaHave:     { es: 'Tienes {n}.', en: 'You have {n}.' },
+    mapEvaSlots:    { es: '{npc} lo da con {n} ranuras abiertas, sin contar las de {crest}.', en: '{npc} gives it at {n} slots open, the {crest} Crest aside.' },
+    mapEvaOpen:     { es: 'Ranuras abiertas', en: 'Slots open' },   // with a save, a count: «Ranuras abiertas 12/12» (design/118, 3 A)
     mapScrounge:    { es: 'Scrounge', en: 'Scrounge' },   // BELLHART_RELICDEALER_MAIN
     mapScroungeNote:{ es: 'Compra las reliquias.', en: 'Buys the relics.' },
     mapLayer_npc:   { es: 'El resto de la gente', en: 'Everyone else' },
-    mapMet:         { es: 'Ya os habéis visto', en: 'You\'ve met' },
     mapNotMet:      { es: 'Aún no os habéis visto', en: 'Not met yet' },
-    mapNpcSpots:    { es: 'Aparece en {n} sitios, según el acto y lo que hayas hecho.', en: 'Turns up in {n} places, by act and by what you\'ve done.' },
-    mapNpcUnsure:   { es: 'Va y viene por Telalejana: tu archivo guardado no dice dónde está ahora.', en: 'Comes and goes around Pharloom: your save file doesn\'t say where now.' },
     mapTrade_couriers: { es: 'Ofrecen deseos de entrega.', en: 'Offer delivery wishes.' },   // the wish type: TYPE_COURIER_TITLE
     mapTrade_druid:    { es: 'Cambia bayas musgosas por rosarios.', en: 'Trades Mossberries for rosaries.' },
-    mapTrade_creige:   { es: 'Vende bebidas.', en: 'Sells drinks.' },
     mapCocoonNote:  { es: 'Donde caíste por última vez: tus rosarios te esperan ahí.', en: 'Where you last fell: your rosaries wait there.' },
     mapUnmapped:    { es: 'Aún no tienes su mapa', en: 'You don\'t have its map yet' },
     mapAreaRooms:   { es: '{n} de {m} salas visitadas', en: '{n} of {m} rooms visited' },
@@ -454,17 +448,18 @@
     mapToJournal:   { es: 'Ver en el Diario', en: 'See in the Journal' },
     mapRung:        { es: 'Ya suena', en: 'Rung' },
     mapNotRung:     { es: 'Aún sin tocar', en: 'Not rung yet' },
-    mapShakraNote:  { es: 'Vende {n} mapas de zona y se mueve por Telalejana; los otros {m} se encuentran.', en: 'Sells {n} area maps and moves around Pharloom; the other {m} are found.' },
+    mapShakraNote:  { es: 'Vende {n} mapas de zona', en: 'Sells {n} area maps' },
     mapShakraLeft:  { es: 'Te faltan los mapas de: {list}', en: 'Maps you don\'t have: {list}' },
-    mapShakraAll:   { es: 'Tienes todos sus mapas.', en: 'You have all her maps.' },
     mapSells:       { es: 'Del 100 %: {list}', en: 'For 100%: {list}' },
     mapSellsLeft:   { es: 'Te falta de aquí: {list}', en: 'Still here for you: {list}' },
-    mapSellsNone:   { es: 'Ya tienes todo lo que da del 100 %.', en: 'You have everything of the 100% it gives.' },
     mapWishes:      { es: 'Deseos: {list}', en: 'Wishes: {list}' },
     mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
-    mapWishesNone:  { es: 'No quedan deseos por cumplir.', en: 'No wishes left open.' },
-    mapKills:       { es: '{n} de {m} derrotados', en: '{n} of {m} defeated' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
+    // A card's counts in its state row (design/118, 3 A: «Derrotados 9/25»), and a place with nothing
+    // left for you (6 A), the site's words; the game's own prompt on a card, quoted as its (4 A).
+    mapDefeated:    { es: 'Derrotados', en: 'Defeated' },
+    mapNothingLeft: { es: 'Aquí ya no queda nada', en: 'Nothing left here' },
+    mapPrompt:      { es: '«{text}»', en: '"{text}"' },
     // Where an entry's enemies only come in a gauntlet's waves (js/spots.js JOURNAL; the site's words).
     mapBeastWaves:  { es: 'Solo en las oleadas de {fight}', en: 'Only in the waves of {fight}' },
     mapBeastWavesAny: { es: 'Solo en las oleadas de un combate', en: 'Only in a fight\'s waves' },
@@ -474,6 +469,8 @@
     mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
     mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
     mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
+    // A thing in a room whose only way in the game shuts until a wish is taken (js/spots.js OPENS room).
+    mapOpensRoom:   { es: 'Su sala se abre al aceptar el deseo «{wish}»', en: 'Its room opens once the wish "{wish}" is taken' },
     mapOpenYes:     { es: 'ya está', en: 'done' },
     mapOpenNo:      { es: 'aún no', en: 'not yet' },
     // What Frey's furnishings wait for (js/shop.js needs), and the names in them.
@@ -495,7 +492,6 @@
     mapHuntGo:      { es: 'Dónde cazar: {wish}', en: 'Where to hunt: {wish}' },
     mapHuntFocus:   { es: '{wish}: dónde cazar', en: '{wish}: where to hunt' },
     mapHuntDrops:   { es: 'Para el deseo «{wish}», una vez tomado: {item}.', en: 'For the wish "{wish}", once taken: {item}.' },
-    mapHuntHave:    { es: 'Llevas {n} de {m}.', en: 'You have {n} of {m}.' },
     // One enemy, two places (js/spots.js TASKS alt, by the shortcut): the Flintbeetle's.
     mapAltShortcutShut: { es: 'Este {foe} cambia de sitio: está aquí hasta que se abre el atajo de la trampilla, y luego en otra sala.', en: 'This {foe} moves: it\'s here until the trapdoor shortcut is opened, then in another room.' },
     mapAltShortcutOpen: { es: 'Este {foe} cambia de sitio: está aquí una vez abierto el atajo de la trampilla; hasta entonces, en otra sala.', en: 'This {foe} moves: it\'s here once the trapdoor shortcut is opened; until then, in another room.' },
@@ -512,6 +508,9 @@
     mapRewardOf:    { es: 'Lo suelta {fight} al ganarlo.', en: 'Dropped by {fight} once won.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
+    mapToFirst:     { es: 'Ver quién pide «{wish}»', en: 'See who asks for "{wish}"' },
+    // A wish's first step on the Map (js/people.js STEP): {npc} the game's name (SONG_KNIGHT_SUPER+_MAIN), written for the context.
+    mapToWake:      { es: 'Ver dónde despertar al {npc}', en: 'See where to wake the {npc}' },
     // The Sacred Cylinder and the melody it leads to, each card pointing at the other: {npc} Cardinius, {melody} SQ_MELODY_LIBRARIAN_NAME.
     mapCylinderFor: { es: 'Llévaselo a {npc} para aprender la {melody}.', en: 'Bring it to {npc} to learn the {melody}.' },
     mapToMelody:    { es: 'Ver la melodía', en: 'See the melody' },
@@ -932,15 +931,6 @@
     pgRouteEnd:     { es: 'Llegas al', en: 'You reach' },
     // Act 3's road ends at its ending, named under it.
     pgRouteEnding:  { es: 'El final', en: 'The ending' },
-    roadKeyDesc:    { es: 'Llave para acceder a una campana restaurada sobre Campanilla.', en: 'Key to a restored bell above Bellhart.' },   // INV_DESC_BELL_HOUSE_KEY
-    roadSays_churchkeeper: { es: 'Abajo, en las tierras musgosas, aferrada aún a su capilla fallida, mi hermana se desprenderá de su poder, si se lo pides amablemente.',
-                      en: 'Down in the mosslands, still clinging to her failed chapel, my sister\'ll part with her power, if asked kind enough.' },   // CARETAKER_SNARE_REPEAT_CHURCHKEEPER
-    roadSays_hermit: { es: 'Enterrado en la madriguera de campanas, en el núcleo de Telalejana, busca a mi hosco tío. Tiene poder de sobra.',
-                      en: 'Buried in the warren of bells, at Pharloom\'s core, seek my sullen uncle. That one has power to spare.' },   // CARETAKER_SNARE_REPEAT_BELLHERMIT
-    roadSays_swamp: { es: 'Encuentra la cáscara de mi primo, reclamada por los furiosos bichos de los pantanos. Fue un necio descuidado por dejarse atrapar, y por muy muerto que esté, aún se intuye algún atisbo de su alma.',
-                      en: 'Find the husk of my cousin, claimed by the scorned bugs of the swamps. A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed.' },   // CARETAKER_SNARE_REPEAT_SWAMP
-    roadSays_snare: { es: 'Y como base, necesitaremos un arma del pasado de las Tejedoras. Busca abajo, a un lado de los caminos de hueso, dentro de su nido más grande. Es un dispositivo de trampa, uno que pone una runa de seda abrasadora.',
-                      en: 'For the base, we\'ll be needin\' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest. S\'a snare device, one to set a rune\'o searing Silk.' },   // CARETAKER_SNARE_REPEAT_SNARE
     /* The Map's focus (js/app-map.js App.mapFocus): a step's marks at once, one by one. */
     mapFocusOf:     { es: '{i} de {n}', en: '{i} of {n}' },
     mapFocusPrev:   { es: 'La anterior', en: 'Previous' },
@@ -966,6 +956,27 @@
     roadKnightLacks:{ es: 'falta: {list}', en: 'missing: {list}' },
     roadKnightOneMore:{ es: 'otro deseo de {clave}', en: 'another of {clave}\'s wishes' },
     pgNotPosted:    { es: 'Aún no está en su muro', en: 'Not on its Wishwall yet' },
+    /* What posts a late wish, as steps (js/app-progress.js wishNext; design/117): short, to act on.
+       The names are the game's: {npc} BELLHART_RELICDEALER_MAIN, BELLHART_GREETER_MAIN, SHERMA,
+       SONG_KNIGHT_SUPER+_MAIN; {foe} the Journal's; {area} the areas'; «reliquia» as
+       COLLECTION_HEADING_RELICDEALER. With no source for the verbs, written for the context. */
+    pgAfter:        { es: 'tras', en: 'after' },
+    pgPostedLater:  { es: 'Sale más tarde', en: 'Posted later' },
+    pgWhy:          { es: 'Por qué', en: 'Why' },
+    pgStepRelic:    { es: 'Vende una reliquia a {npc}', en: 'Sell a relic to {npc}' },
+    pgStepTalk:     { es: 'Habla con {npc}', en: 'Talk to {npc}' },
+    pgStepRestOut:  { es: 'Descansa en un banco fuera de {area}', en: 'Rest at a bench outside {area}' },
+    pgStepRestAway: { es: 'Descansa en un banco de otra zona', en: 'Rest at a bench in another area' },
+    pgStepRest:     { es: 'Descansa en un banco', en: 'Rest at a bench' },
+    pgStepMaps:     { es: 'Mapas de {npc}', en: '{npc}\'s maps' },
+    pgStepGroal:    { es: '{foe} o 2 melodías', en: '{foe} or 2 melodies' },
+    pgStepGlory:    { es: 'Vence a los {foe}, consigue {art} o entra en {clave}', en: 'Beat the {foe}, get the {art} or enter {clave}' },
+    pgStepMeet:     { es: 'Encuentra a {npc} en {area}', en: 'Meet {npc} in {area}' },
+    pgStepEnter:    { es: 'Entra en {area}', en: 'Enter {area}' },
+    pgStepWishes:   { es: 'Deseos de {area}', en: '{area} wishes' },
+    pgStepWake:     { es: 'Despierta al {npc}', en: 'Wake the {npc}' },
+    pgStepFind:     { es: 'Encuentra al {npc}', en: 'Find the {npc}' },
+    pgStepFindOr:   { es: 'Encuentra al {npc} 2 veces, o 1 con la {flower}', en: 'Find the {npc} twice, or once with the {flower}' },
     roadMapsBought: { es: '{n} de {of} comprados', en: '{n} of {of} bought' },
     roadPinOil:     { es: 'cuenta también con la segunda mejora de aguja de {npc}', en: 'also counts with {npc}\'s second Needle upgrade' },
     // What a wish asks to be brought (js/quests.js CHAIN asks): a donation's sum, the Journal's entries, its things.

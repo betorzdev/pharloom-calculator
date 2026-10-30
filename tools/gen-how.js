@@ -29,9 +29,10 @@
                  price in rosaries; item the game's ShopItem (js/shop.js SHOP); craftmetal and
                  paleOil what it also takes; act 3 when sold only then; after: the wishes (WISHES
                  indices) to be done first; needs: playerData flags for it to show
-               { kind: 'wish', wish, quest, act?, by? }  wish a js/collectibles.js WISHES index, quest
+               { kind: 'wish', wish, quest, act?, by?, after? }  wish a js/collectibles.js WISHES index, quest
                  its save name (Broodfeast has two: the Runt's is Act 3's); by the NPCS id of who
-                 hands the reward over when the game ends the wish in person in another room
+                 hands the reward over when the game ends the wish in person in another room;
+                 after the wishes (WISHES indices) to be done before it's offered (WAITS)
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on, when act is given)
                  when: the save check that says it lies there now (its owner dead), which
@@ -256,10 +257,28 @@ const endBy = (quest) => {
   return id || fail(`${quest} ends with ${obj} in ${scene} (${who || 'nobody'}): name them in NPC_KEYS`);
 };
 const wishIndex = (quest) => (wishOf.has(quest) ? wishOf.get(quest) : fail(`the wish ${quest} isn't in js/collectibles.js WISHES`));
-// A wish as the way a thing is had: its reward, and who hands it over when it isn't where it's taken.
+/* The wishes a wish waits for, done before it's offered (Albert's save 4, 30-Oct-2026: the Map sent
+   him to Yarnaby for the Witch Crest, and she didn't open). The game's own (js/quests.js CHAIN
+   needs: Dark Hearts after the Shamans' objective), and by hand those whose giver's script waits
+   for another wish, which the quest's data doesn't say:
+     Infestation Operation  Yarnaby's door (Wisp_03, «Doctor Door Inspect», read 30-Oct-2026) only
+                            opens while Hornet IsAnyCursed: else DOCTOR_CLOSED (or _ACT3), «Leave
+                            the great Yarnaby in peace!». The curse is Rite of Rebirth's end (the
+                            Twisted Bud bound at the Wood Witch's): in all of Albert's saves and
+                            restore points, Doctor Curse Cure is never taken before Wood Witch Curse
+                            is complete; the wiki's prerequisite, «Complete Rite of Rebirth».
+   A stage before it (prev) is the same wish: not here. */
+const WAITS = { 'Doctor Curse Cure': ['Wood Witch Curse'] };
+for (const [q, after] of Object.entries(WAITS)) {
+  if (!(WI.offers[q] || []).length) fail(`WAITS: nobody offers ${q} in the game's scenes any more (wishes.json offers): read its giver again`);
+  after.forEach((a) => Q.CHAIN[a] || fail(`WAITS: ${q} waits for ${a}, which isn't a quest`));
+}
+const waitsFor = (quest) => [...new Set([...((Q.CHAIN[quest] || {}).needs || []).filter((q) => wishOf.has(q)), ...(WAITS[quest] || [])])];
+// A wish as the way a thing is had: its reward, who hands it over when it isn't where it's taken,
+// and the wishes it waits for.
 const wish = (quest, act) => {
-  const i = wishIndex(quest), by = endBy(quest);
-  return { kind: 'wish', wish: i, quest, ...(act ? { act } : {}), ...(by ? { by } : {}) };
+  const i = wishIndex(quest), by = endBy(quest), after = waitsFor(quest).map(wishIndex);
+  return { kind: 'wish', wish: i, quest, ...(act ? { act } : {}), ...(by ? { by } : {}), ...(after.length ? { after } : {}) };
 };
 const wishByTitle = new Map(CO.WISHES.map((w, i) => [norm(w[4].en), i]));
 const foe = (page) => {
@@ -526,8 +545,9 @@ write(OUT, `js/how.js: how to get each thing of the 100%, as data (no prose): it
                  price in rosaries; item the ShopItem in js/shop.js SHOP (Plinney's Needle: its
                  cost's name); craftmetal, paleOil what it also takes; act 3 sold only then;
                  after the WISHES indices to be done first; needs the playerData flags it waits on
-               { kind: 'wish', wish, quest, act?, by? }  wish a WISHES index, quest its save name, by
-                 who hands it over in person in another room than the wish is taken in
+               { kind: 'wish', wish, quest, act?, by?, after? }  wish a WISHES index, quest its save name, by
+                 who hands it over in person in another room than the wish is taken in; after
+                 the WISHES indices to be done before it's offered
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on)
                  when: the save check that says it lies there now (its owner dead), which

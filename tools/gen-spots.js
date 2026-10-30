@@ -1547,7 +1547,13 @@ const personAt = (key, scene) => {
   for (const [, , x, y] of spots) { const p = typeof x === 'number' ? toMap(scene, x, y) : null; if (p) return p; }
   return null;
 };
-const whoAt = (npc, scene) => (WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`));
+// Each point whoAt gives → [who, scene], so what's placed at a vendor follows them in Act 3 (SHOP_ACT3, below).
+const AT_WHO = new WeakMap();
+const whoAt = (npc, scene) => {
+  const p = WHO[npc] ? personAt(WHO[npc], scene) : fail(`no person for ${npc} in WHO`);
+  if (p) AT_WHO.set(p, [npc, lower(scene)]);
+  return p;
+};
 /* Where a wish nobody offers in person is taken: the object whose FSM offers a wish of that room
    (tools/extract-wishes.py offers), or the generator stops: there's always one, or a patch moved it. */
 const OFFERS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'wishes.json'), 'utf8')).offers
@@ -1644,13 +1650,19 @@ for (const [v, scenes] of Object.entries(VENDORS)) scenes.forEach((sc, i) => put
    vendor and scene: the object (pickups.json npcs) and its point in the scene, read in the game's
    files on 30-Oct-2026. Jubilana's Songclave stall moves to the room's east corner (the Black
    Thread World «City Merchant Enclave»; the Normal World one, at 78.99, 8.14, is people.json's).
-   XY key + ':act3': the Map takes it in a game in Act 3. */
+   XY key + ':act3': the Map takes it in a game in Act 3. Her shop's mark, and everything placed at
+   her there (what she sells, the Seal Chit she hands over: whoAt's points, AT_WHO), below, once
+   every point is in: not at her Act 2 stall, by the Songclave's Wishwall, while she stands at the
+   east corner (Albert's save 4, 30-Oct-2026). Read again in every vendor's and trader's scenes
+   (each object with their NpcDialogueTitle, 30-Oct-2026): she is the only one the game moves within
+   a room in Act 3; the others are switched on or off where they stand (tools/gen-people.js SHOPS). */
 const SHOP_ACT3 = { jubilana: { song_enclave: ['City Merchant Enclave', 101.47, 7.59] } };
+const ACT3_AT = new Map();   // 'vendor:scene' → their Act 3 point on the map
 for (const [v, at] of Object.entries(SHOP_ACT3)) for (const [sc, [obj, x, y]] of Object.entries(at)) {
   const i = (VENDORS[v] || []).indexOf(sc);
   if (i < 0) fail(`SHOP_ACT3: ${v} doesn't sell in ${sc}`);
   if (!(P.npcs[obj] || []).some((e) => lower(e[0]) === sc && Math.abs(e[2] - x) < 0.01 && Math.abs(e[3] - y) < 0.01)) fail(`SHOP_ACT3: no ${obj} at ${x}, ${y} in ${sc} (pickups.json): read it again`);
-  put2('shop:' + v + ':' + i + ':act3', toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
+  ACT3_AT.set(v + ':' + sc, toMap(sc, x, y) || fail(`SHOP_ACT3: ${v}'s point in ${sc} is off the scene`));
 }
 // A thing's other room when a vendor sells it there (ALSO): at the vendor, as what it sells there already.
 for (const [key, also] of Object.entries(ALSO)) if (also[2] && also[2].kind === 'shop') put2(alsoKey(key, also), whoAt(also[2].vendor, also[0]) || fail(`${key}: no point for ${also[2].vendor} in ${also[0]}`));
@@ -1733,6 +1745,18 @@ for (const g of SS.gauntlets.GAUNTLETS) {
   const named = flat(g.done).map((c) => all.find((b) => (c[0] === 'bool' && lower(c[1]) === lower(g.scene) && b[0] === c[2]) || (c[0] === 'flag' && b[3] === c[1]))).find(Boolean);
   const b = named || (all.length === 1 ? all[0] : null);
   put2('gaunt:' + g.id, b && inScene(g.scene, b[1], b[2]) ? toMap(g.scene, b[1], b[2]) : null);
+}
+// Whatever stands at a vendor who moves in Act 3 (SHOP_ACT3): its ':act3' point, theirs there.
+{
+  let moved = 0;
+  for (const [key, p] of Object.entries(XY)) {
+    const who = AT_WHO.get(p), p3 = who && ACT3_AT.get(who.join(':'));
+    if (p3) { put2(key + ':act3', p3); moved++; }
+  }
+  for (const [v, at] of Object.entries(SHOP_ACT3)) for (const sc of Object.keys(at)) {
+    if (!XY['shop:' + v + ':' + VENDORS[v].indexOf(sc) + ':act3']) fail(`SHOP_ACT3: ${v}'s shop in ${sc} has no Act 3 point`);
+  }
+  console.log(`at a vendor who moves in Act 3, with their point there: ${moved}`);
 }
 console.log(`${Object.keys(XY).length} things with their own point in their room`);
 
@@ -2188,6 +2212,45 @@ const OPENS = {};
     OPENS[key] = { ...(o.wish ? { wish: o.wish } : o.after ? { after: o.after } : o.art ? { art: o.art } : { freed: o.freed }), check };
   }
 }
+/* What lies in a room every door into which a wish shuts (kb/data/game/gating.json doors,
+   tools/extract-gating.py; the doors into each room, entrances.json) takes that wish's opening, said
+   of its room: OPENS key → { wish, room: true, check } (js/app-map.js). Read on 30-Oct-2026: Hang_17b,
+   the Second Sentinel's arena, behind Hang_08's wall until Final Audience is taken (the Reserve Bind it
+   gives there: with game 4, Albert followed the Map to a wall), and Ward_09 behind Ward_03's door
+   until Balm for the Wounded is (the Spool Fragment Sherma gives there). Neither room was entered
+   before its wish was taken in any of the author's saves. A door that opens only once its wish can be
+   handed in (Bonegrave's, to the Summoned Saviour, Steel Sentinel's) has no check in the save: left
+   out. What is the wish's own there (where it's done) keeps its own card; a fight there must have that
+   wish's opening already (above), and another room's mark (ALSO, PLACES, VARIANTS) in a shut room
+   stops the run, as does a shut room the scan no longer finds. */
+{
+  const E = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'kb', 'data', 'game', 'entrances.json'), 'utf8'));
+  if (E.patch !== P.patch) fail(`entrances.json is of patch ${E.patch}, pickups.json of ${P.patch}: run tools/extract-entrances.py again`);
+  const DOORS = GATING.doors || fail('gating.json has no doors: run tools/extract-gating.py again');
+  const SHUT = new Map();   // a room (lower case) → the wish whose taking opens its every door
+  for (const [room, ins] of Object.entries(E.doors)) {
+    const by = ins.map(([sc, door]) => DOORS[`${sc}|${door}`.toLowerCase()]);
+    if (by.length && by.every((x) => x && x[1] === 'accepted' && x[0] === by[0][0])) SHUT.set(room, by[0][0]);
+  }
+  if (SHUT.get('hang_17b') !== 'Song Knight') fail('SHUT: Hang_17b is no longer shut by Final Audience alone: read gating.json doors again');
+  let n = 0;
+  const shut = (scene, key, own) => {
+    const q = SHUT.get(lower(scene));
+    if (!q || q === own) return;
+    if (!Q.CHAIN[q]) fail(`SHUT: ${scene}'s wish ${q} isn't one of js/quests.js`);
+    if (OPENS[key]) { if (OPENS[key].wish !== q) fail(`SHUT: ${key} opens with ${OPENS[key].wish || '?'}, its room with ${q}`); return; }
+    OPENS[key] = { wish: q, room: true, check: ['accepted', q] };
+    n++;
+  };
+  for (const cat of ['pieces', 'tools', 'crests', 'skills', 'arts']) for (const [id, sc] of Object.entries(AT[cat])) shut(sc, (cat === 'pieces' ? 'piece' : cat) + ':' + id);
+  EXTRAS.forEach((x, i) => shut(x[3], 'extra:' + i));
+  TASKS.forEach((x, i) => shut(x[3], 'task:' + i, x[1]));
+  for (const b of BOSSES) if (SHUT.has(lower(b[1])) && !OPENS['boss:' + b[0]]) fail(`SHUT: ${b[0]}'s arena ${b[1]} is shut by ${SHUT.get(lower(b[1]))}, but OPENS has no word of it`);
+  const elsewhere = [...Object.entries(ALSO).map(([k, v]) => [k, v[0]]), ...Object.entries(PLACES).flatMap(([k, v]) => v.at.map((a) => [k, a[0]])),
+    ...Object.entries(VARIANTS).flatMap(([k, v]) => v.at.map((a) => [k, a[2]]))];
+  for (const [k, sc] of elsewhere) if (SHUT.has(lower(sc))) fail(`SHUT: ${k} has a place in ${sc}, which a wish shuts: give it its opening`);
+  console.log(`rooms a wish shuts: ${[...SHUT].map(([r, q]) => `${r} (${q})`).join(', ')}; ${n} marks in them take its opening`);
+}
 
 /* A boss fought in a scene the Map can't place, which only its room loads, with no door into it
    (SS.sceneHosts): where the game pins the main objective its beating ends, in that room (a goal
@@ -2449,7 +2512,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
               'everbloom') → its point on the map, in the image's pixels: where
               the game has it in its room (the object's place in the scene, or whoever stands for it,
               placed as the game places a point: js/rooms.js mapPoint); in an interior, the door
-              it's entered by (tools/map-point.js)
+              it's entered by (tools/map-point.js); '<key>:act3', where a thing at a vendor
+              is in a game in Act 3, when the game moves that vendor within the room then
+              (SHOP_ACT3: Jubilana in the Songclave, her shop and what she sells there)
      SEATS    scene (lower case) → { respawn marker's name → its point on the map }: where the game
               wakes Hornet when a save names that marker (respawnScene, respawnMarkerName: a bench's
               RestBench, a room's Death Respawn Marker), her feet on the ground under it (a bench's
@@ -2466,7 +2531,9 @@ const size = write(OUT, `js/spots.js — where the Map draws each thing, and wha
      JOURNAL_ACT3  the entries no room has before Act 3
      OPENS    'boss:<foe>' or 'gaunt:<id>' → { wish | after | art | freed, check }: what the game waits
               for before it puts that fight there (a wish taken, a wish granted, an ability, a Journal
-              entry's enemies freed), and the save's check that it holds
+              entry's enemies freed), and the save's check that it holds; also 'tools:<id>',
+              'piece:<i>', 'extra:<i>' or 'task:<i>' → { wish, room: true, check }: a thing in a room
+              every door into which that wish shuts until it's taken (the Reserve Bind, in Hang_17b)
      STEPS    [[TASKS index, …]]: a main objective's steps the game pins on one point, in its order
      GOAL_ACT TASKS index → the first Act each objective pin can be on (its chain, or its wish's)
      ROOM_ACT a room's scene (lower case) → its first Act, 2 or 3 (a room not in it is Act 1): the

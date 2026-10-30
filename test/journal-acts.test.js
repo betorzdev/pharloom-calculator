@@ -63,7 +63,8 @@ test('a fight the game puts there only once something holds says what, and the s
   assert.deepEqual(SP.OPENS['boss:shakra'].check, ['quest', 'Shakra Final Quest']);
   assert.deepEqual(SP.OPENS['boss:fourth-chorus'].check, ['flag', 'hasBrolly']);
   assert.deepEqual(SP.OPENS['gaunt:whispering-vaults-2'].check, ['flag', 'scholarAcolytesReleased']);
-  for (const k of Object.keys(SP.OPENS)) {
+  for (const [k, o] of Object.entries(SP.OPENS)) {
+    if (o.room) continue;   // a thing in a room a wish shuts (below)
     const [kind, id] = k.split(':');
     assert.ok(kind === 'boss' ? SP.BOSSES.some((b) => b[0] === id) : G.GAUNTLETS.some((x) => x.id === id), k);
   }
@@ -71,6 +72,32 @@ test('a fight the game puts there only once something holds says what, and the s
   assert.ok(g.opens.includes('boss:fourth-chorus') && !g.opens.includes('gaunt:whispering-vaults-2') && g.opensRead);
   // A slot kept before says nothing of it.
   assert.strictEqual(F.gameOf({}).opensRead, false);
+});
+
+/* With game 4, Albert followed the Map to the Reserve Bind and found a wall: Hang_17b, where the
+   Second Sentinel gives it, is entered only through Hang_08's Song_Knight_Wall, which the game opens
+   once Final Audience is taken (kb/data/game/gating.json doors). Every mark in a room every door into
+   which a wish shuts says so, and the save says whether it's open: Sherma's Spool Fragment in Ward_09
+   too (Balm for the Wounded). */
+test('a thing in a room a wish shuts says which, and the save says whether it\'s open', () => {
+  const GD = require('../kb/data/game/gating.json').doors;
+  assert.deepEqual(GD['hang_08|right1'], ['Song Knight', 'accepted']);
+  assert.deepEqual(GD['ward_03|door1'], ['Save Sherma', 'accepted']);
+  assert.strictEqual(SP.AT.tools['reserve-bind'].toLowerCase(), 'hang_17b');
+  assert.deepEqual(SP.OPENS['tools:reserve-bind'], { wish: 'Song Knight', room: true, check: ['accepted', 'Song Knight'] });
+  const sherma = Object.keys(SP.AT.pieces).find((i) => SP.AT.pieces[i].toLowerCase() === 'ward_09');
+  assert.deepEqual(SP.OPENS['piece:' + sherma], { wish: 'Save Sherma', room: true, check: ['accepted', 'Save Sherma'] });
+  // The wish's own place there keeps its own card; the fight there had its opening already.
+  for (const [k, o] of Object.entries(SP.OPENS)) {
+    if (!o.room) continue;
+    assert.ok(Q.CHAIN[o.wish] && /^(tools|crests|skills|arts|piece|extra|task):/.test(k), k);
+    if (k.startsWith('task:')) assert.notStrictEqual(SP.TASKS[+k.slice(5)][1], o.wish, k);
+  }
+  assert.strictEqual(SP.OPENS['boss:second-sentinel'].wish, 'Song Knight');
+  const quests = (...q) => ({ QuestCompletionData: { savedData: q.map((Name) => ({ Name, Data: { IsAccepted: true, IsCompleted: false } })) } });
+  assert.ok(!F.game({}).opens.includes('tools:reserve-bind'));
+  assert.ok(F.game(quests('Song Knight')).opens.includes('tools:reserve-bind'));
+  assert.ok(F.gameOf(F.toSnapshot(quests('Song Knight'))).opens.includes('tools:reserve-bind'));
 });
 
 test('an extra\'s card says how it\'s had: who sells it, the fight, the person or the challenge', () => {

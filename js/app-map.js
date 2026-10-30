@@ -542,7 +542,15 @@
   const closed = (m, g) => !!g && (m.got || !!m.lost);
   function things(g, own) {
     const out = [];
-    const add = (m) => { if (m.got || !own) m.lost = null; if (m.scene && R.roomOf(m.scene)) out.push(m); };
+    /* A mark at a vendor the game moves within the room in Act 3 (js/spots.js XY key + ':act3':
+       Jubilana's Songclave stall, her shop and what she sells there) is at their Act 3 point in a
+       game in Act 3, with them, not where they stood before. */
+    const add = (m) => {
+      if (m.got || !own) m.lost = null;
+      const xy3 = own && own.act === 3 && !m.at && SP.XY[m.key + ':act3'];
+      if (xy3) m.at = { x: xy3[0], y: xy3[1] };
+      if (m.scene && R.roomOf(m.scene)) out.push(m);
+    };
     // The 100%.
     CO.PIECES.forEach((p, i) => {
       const scene = SP.AT.pieces[i];
@@ -571,7 +579,7 @@
       // One a wish lent and took back, or one given up, was found: it shows found (savefile gaveBack).
       const up = GIVEN_UP[id] && QU.CHAIN[GIVEN_UP[id]];
       add({ key: 'tools:' + id, layer: 'tools-other', scene: SP.AT.tools[id], act: w[0], area: w[1], got: !!g && (g.tools.includes(id) || (!of && g.gaveBack.includes(id))),
-        name: pick(tool.name), note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : up ? t('mapToolGivenUp', { wish: pick(up.name) }) : t('mapToolLent'),
+        name: pick(tool.name), out: true, note: of ? t('mapToolUpgrade', { tool: pick(D.TOOLS.find((x) => x.id === of[0]).name) }) : up ? t('mapToolGivenUp', { wish: pick(up.name) }) : t('mapToolLent'),
         draw: (s, ti, k, c) => dot('tools', `assets/icons/tools/${id}.webp`, s, ti, k, c) });
     }
     // An ability outside the 100% (the two cloaks; js/completion.js ARTS) is in a layer of its own.
@@ -580,14 +588,14 @@
       for (const [id, w] of Object.entries(CO.WHERE[cat])) {
         const x = list.find((y) => y.id === id), out1 = artOut(cat, id);
         add({ key: cat + ':' + id, layer: out1 ? 'arts-other' : cat, scene: SP.AT[cat][id], act: w[0], area: w[1], got: !!g && g[cat].includes(id),
-          name: x ? pick(x.name) : id, note: out1 ? t('mapArtOut') : undefined, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
+          name: x ? pick(x.name) : id, out: out1 || undefined, draw: (s, ti, k, c) => dot(cat, `assets/icons/${cat}/${id}.webp`, s, ti, k, c) });
       }
     }
     // The abilities the completionist doesn't list (the two Needolin melodies), with their Act from js/spots.js.
     for (const x of D.ARTS) {
       if (CO.WHERE.arts[x.id]) continue;
       add({ key: 'arts:' + x.id, layer: 'arts-other', scene: SP.AT.arts[x.id], act: SP.AT.act['arts:' + x.id], got: !!g && g.arts.includes(x.id),
-        name: pick(x.name), note: t('mapArtOut'), draw: (s, ti, k, c) => dot('arts', `assets/icons/arts/${x.id}.webp`, s, ti, k, c) });
+        name: pick(x.name), out: true, draw: (s, ti, k, c) => dot('arts', `assets/icons/arts/${x.id}.webp`, s, ti, k, c) });
     }
     add({ key: 'everbloom', layer: 'everbloom', scene: SP.AT.everbloom, act: (CO.WHERE.everbloom || [])[0], got: !!g && g.everbloom,
       name: t('cat_items'), draw: (s, ti, k, c) => dot('everbloom', 'assets/icons/items/everbloom.webp', s, ti, k, c) });
@@ -645,12 +653,9 @@
         draw: (s, ti, k, c) => badge('shakra', portrait('shakra'), s, ti, k, c) })); continue; }
       /* The others too where the game decides it (js/people.js HERE: Jubilana out scavenging or at
          the Memorium, Pebb and Mort gone in Act 3, the Mottled Skarr once killed, Frey from the
-         Widow's fall), at their Act 3 point in a game in Act 3 (js/spots.js XY key + ':act3'). */
-      scenes.forEach((scene, i) => {
-        const key = 'shop:' + v + ':' + i, xy3 = own && own.act === 3 && SP.XY[key + ':act3'];
-        if (hereNow(own, v, scene)) add({ key, layer: 'shop', scene, at: xy3 ? { x: xy3[0], y: xy3[1] } : undefined, got: false, name: pick(HW.NPCS[v]), npc: v,
-          draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) });
-      });
+         Widow's fall), at their Act 3 point in a game in Act 3 (add, above). */
+      scenes.forEach((scene, i) => hereNow(own, v, scene) && add({ key: 'shop:' + v + ':' + i, layer: 'shop', scene, got: false, name: pick(HW.NPCS[v]), npc: v,
+        draw: (s, ti, k, c) => pin('shop', 'pin_shop', s, ti, k, c) }));
     }
     // Who buys or sells outside the game's shops (js/people.js TRADE): the Couriers (once both found: HERE), the Moss Druid, Creige.
     for (const x of PE.TRADE) x.spots.forEach(([scene, px, py], i) => hereNow(own, x.id, scene) && add({ key: 'shop:' + x.id + ':' + i, layer: 'shop', scene,
@@ -782,7 +787,7 @@
       }
       withAlso(add, { key: 'extra:' + i, layer, scene, act, got: !!g && g.extras.includes(i), lost, chk: JSON.stringify(check),
         name: name ? pick(name) : kind === 'eva' ? evaName(more.reward) : ONE[kind] ? t(ONE[kind]) : LAYER.get(layer).name(), eva: kind === 'eva' ? more : null, melody: more.melody,
-        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop && kind === 'map' ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.shop ? soldNote(more) : more.vendor ? t('howShop', { vendor: pick(HW.NPCS[more.vendor]), price: num(more.price) }) : more.how ? howExtra(more.how) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.found ? t('mapMapFound') : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
+        note: kind === 'masked' ? t('mapHiddenNote', { n: num(check[0] === 'all' ? check.length - 1 : 1) }) : more.shop && kind === 'map' ? t('mapMapShakra', { npc: pick(HW.NPCS[more.shop]), price: num(more.price) }) : more.shop ? soldNote(more) : more.vendor ? t('howShop', { vendor: pick(HW.NPCS[more.vendor]), price: num(more.price) }) : more.how ? howExtra(more.how) : more.machine ? t('mapMapMachine', { price: num(more.price) }) : more.fight ? t('mapRewardOf', { fight: App.gauntletName(more.fight) }) : '',
         draw: (s, ti, k, c) => (kind === 'spawn' ? badge(layer, portrait(spawn && spawn.id) || GLYPH.spawn, s, ti, k, c)
           : kind === 'bellhome' ? pin('bellhome', 'pin_bench_bell', s, ti, k, c)
             : icon ? dot(layer, icon, s, ti, k, c) : badge(layer, GLYPH[layer] || GLYPH.wall, s, ti, k, c)) }, own);
@@ -1391,14 +1396,12 @@
   }
   /* Another screen's "on the map" (Progress, the Journal) and the search's result: the Map shows
      only that thing, as a search would (a focus of one: its name in the search's place and its ×
-     back to the whole map), its layer switched on for when you go back, centred on it, its card
-     open and its ring. */
+     back to the whole map), centred on it, its card open and its ring. The layers stay as they
+     were: going back is the map as you had it, that thing's layer off if it was (switching it on
+     left «Only the 100%» showing every wish giver after one look at a wish). */
   App.mapShow = (key) => {
     const m = all().list.find((x) => x.key === key);
     if (!m) return;
-    const on = layersOn();
-    if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
-    savePrefs();
     focusMarks([key], m.name, areaName(R.areaOf(m.scene) || m.area));
   };
   // The Map on these marks alone, whatever its layers and filters: one centred with its card, several fitted.
@@ -1714,6 +1717,8 @@
   }
   // The pieces Free mode takes from the Inventory's ladders (js/app-progress.js freeView, LADDER).
   const LADDER_KINDS = ['mask-shard', 'spool-fragment', 'silk-heart', 'needle', 'crafting-kit', 'tool-pouch'];
+  // Who trades outside the shops (js/people.js TRADE) whose trade is a way to something: their card says it.
+  const TRADE_NOTE = ['couriers', 'druid'];
   const listOf = (names, more) => names.slice(0, 6).join(', ') + (names.length > 6 ? ' ' + t('mapMore', { n: num(names.length - 6) }) : '') + (more || '');
   function cardHtml(key) {
     const c = cardCtx || {};
@@ -1722,10 +1727,47 @@
     const line = (xs) => xs.filter(Boolean).map((x) => `<span${NT}>${esc(x)}</span>`).join('');
     const state = (x) => `<span class="mp-card-state">${esc(x)}</span>`;
     const btn = (act, value, label) => `<button type="button" class="text-btn" data-act="${act}" data-value="${esc(value)}">${esc(label)}</button>`;
-    // The wishes still open of those asked here. One name per wish: Broodfeast's two quests, a wish's Pre stage and its own are the same wish.
-    const wishesNote = (quests) => {
-      const open = [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))].map((i) => pick(CO.WISHES[i][4]));
-      return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : t('mapWishesNone');
+    /* The wishes still open of those asked here, '' when none is (the card's state then says there's
+       nothing left: design/118, 6 A). One name per wish: Broodfeast's two quests, a wish's Pre stage
+       and its own are the same wish. Each with the wishes it waits for that aren't done
+       (App.wishWaits: Infestation Operation, «first: Rite of Rebirth»), unless its step line says
+       so (steps: a Wishwall's, wishSteps). */
+    const openWishes = (quests) => [...new Set(quests.filter((q) => !wishDone(g, q)).map((q) => wishOf(q)))];
+    const wishesNote = (quests, steps = false) => {
+      const first = (i) => { const xs = !steps && App.wishWaits ? App.wishWaits(i, g) : [];
+        return xs.length ? ` (${t('roadBefore', { name: xs.map((j) => pick(CO.WISHES[j][4])).join(', ') })})` : ''; };
+      const open = openWishes(quests).map((i) => pick(CO.WISHES[i][4]) + first(i));
+      return open.length ? t(g ? 'mapWishesLeft' : 'mapWishes', { list: listOf(open) }) : '';
+    };
+    /* A wish's quest, by its WISHES index (its check's own, or the first of several). */
+    const questOf = (i) => { const c = CO.WISHES[i][2]; return c[0] === 'quest' ? c[1] : (c.slice(1).find((x) => x[0] === 'quest') || [])[1]; };
+    /* A step as the Tasks tab draws it (js/app-progress.js stepHtml; design/118, 2 A): its picture,
+       its words a way to its marks on the Map (one shown, several as a focus; a wish, to where it's
+       taken), its count with a save, how many it takes in Free mode. */
+    const stepLine = (s, live) => {
+      const pic = `<img class="pg-step-ic" src="${s.icon}" alt="" loading="lazy">`;
+      let to = null;
+      if (s.wish != null) {
+        const q = questOf(s.wish), f = q && App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+        to = f && f.mark && list.some((x) => x.key === f.mark) ? { act: 'mapShow', value: f.mark } : null;
+      } else if (s.keys && s.keys.length) to = s.keys.length === 1 ? { act: 'mapShow', value: s.keys[0] } : { act: 'mapShotSee', value: s.keys.join(',') };
+      const words = `${pic}<span${s.wish != null ? NT : ''}>${esc(s.text)}</span>`;
+      const count = !s.of ? '' : live ? `<span class="pg-step-n"><b>${num(Math.min(s.n || 0, s.of))}</b>/${num(s.of)}</span>` : s.said ? '' : `<span class="pg-step-n">${num(s.of)}</span>`;
+      return (s.wish != null ? `<span class="pg-step-w">${esc(t('pgAfter'))}</span> ` : '')
+        + (to ? `<button type="button" class="pg-step" data-act="${to.act}" data-value="${esc(to.value)}">${words}</button>` : `<span class="pg-step is-plain">${words}</span>`) + count;
+    };
+    /* Each wish here not on its Wishwall yet, its next step (App.wishNext, as the Tasks tab's rows:
+       design/117, design/118 2 A); in Free mode, its first. */
+    const wishSteps = (quests) => {
+      if (!App.wishNext) return '';
+      const out = [];
+      for (const i of openWishes(quests)) {
+        const q = questOf(i), n = q && App.wishNext(q, own || null);
+        if (!n || n.posted || !n.steps.length) continue;
+        const k = n.free ? 0 : n.next;
+        out.push(`<span><span${NT}>${esc(pick(CO.WISHES[i][4]))}:</span> ${stepLine(n.steps[k], !n.free)}</span>`);
+      }
+      return out.length ? `<span class="mp-card-steps">${out.join('')}</span>` : '';
     };
     /* Where a wish is taken, as a way to its mark (App.wishFrom): the part of it still to take (a
        «Pre» at the board, then, once taken, who it sends you to; Steel Sentinel's first part, then
@@ -1737,22 +1779,46 @@
     // The hunts still open among the wishes asked here: a way to each one's grounds (design/103, 1 A).
     const huntBtns = (quests) => [...new Set(quests)].filter((q) => HUNTS[q] && !wishDone(g, q) && App.mapHuntKeys(q).length)
       .map((q) => btn('mapHunt', q, t('mapHuntGo', { wish: pick(QU.CHAIN[q].name) }))).join('');
+    // A count in the state row, as the Progress meters and the Cogheart Pieces read it: «Ragpelt 3/25» (design/118, 3 A).
+    const count = (what, n, of) => `${what} ${num(Math.min(n, of))}/${num(of)}`;
+    // An entry's state with a save: not encountered, its kills of those the Journal asks, or encountered.
+    const killsState = (e, k) => (!own ? '' : state(k === undefined ? t('hjState_unseen') : e.kills != null ? count(t('mapDefeated'), k, e.kills) : t('hjState_seen')));
     // Two sentences of a card's note, one after the other.
     const then = (a, b) => (a && b ? a + (/[.!?)]$/.test(a) ? ' ' : '. ') + b : a || b);
     /* What the game waits for before it puts this fight there (js/spots.js OPENS: a wish taken, a
-       wish granted, an ability, the enemies freed), and with a save whether this game has it (D27). */
+       wish granted, an ability, the enemies freed), and with a save whether this game has it (D27).
+       A thing in a room whose only door that wish opens (OPENS room: the Reserve Bind, past the
+       Second Sentinel's wall in Hang_08), the same, said of its room. One short line: what posts
+       the wish is on its own card, a button away (opensBtn; Albert, PR #212: less text). */
     const opensNote = (k) => {
       const o = (SP.OPENS || {})[k];
       if (!o) return '';
-      const what = o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
+      const what = o.room ? t('mapOpensRoom', { wish: pick(QU.CHAIN[o.wish].name) }) : o.wish ? t('mapOpensWish', { wish: pick(QU.CHAIN[o.wish].name) }) : o.after ? t('mapOpensAfter', { wish: pick(QU.CHAIN[o.after].name) })
         : o.art ? t('howNeeds', { keys: pick(D.ARTS.find((x) => x.id === o.art).name) }) : t('mapOpensFreed', { foe: pick(BOOK_KEY.get(o.freed).name) });
-      // What posts its wish, while it isn't taken (js/app-progress.js OPENS: Final Audience's Second Sentinel).
-      const posts = o.wish && App.wishPosts ? App.wishPosts(o.wish, own || g).lines : [];
-      const post = (a) => (posts.length ? `${a}. ${posts[0][0].toUpperCase()}${posts.join(' · ').slice(1)}` : a);
-      if (!own || !own.opensRead) return post(what);
+      if (!own || !own.opensRead) return what;
       const yes = own.opens.includes(k), q = o.wish || o.after;
       const state = !yes ? t('mapOpenNo') : q ? t((own.quests || []).includes(q) ? 'mapWishGranted' : 'pgPromised') : o.art ? t('pgGot') : t('mapOpenYes');
-      return post(`${what} (${state})`);
+      return `${what} (${state})`;
+    };
+    /* A wish's first step, while the save shows it there (js/people.js STEP, peopleHere: the Second
+       Sentinel inert in Cog_10 until it's woken, Final Audience's): the way to it, or ''. */
+    const stepBtn = (q) => {
+      const st = (PE.STEP || {})[q], mark = st && 'npc:' + st;
+      if (!st || !own || !own.peopleHere || own.peopleHere[st] !== true || !list.some((x) => x.key === mark)) return '';
+      const who = PE.PEOPLE.find((x) => x.id === st.split(':')[0]);
+      return btn('mapShow', mark, t('mapToWake', { npc: pick(who.name) }));
+    };
+    /* The way to that wish (Albert's choice on PR #212, «Marca + botón al paso»), while this game
+       hasn't opened it yet: to its first step while the save shows it (stepBtn), else to its mark
+       (App.wishFrom: its Wishwall or who asks for it, whose card says what posts it), as the Witch
+       Crest's «See who asks for». */
+    const opensBtn = (k) => {
+      const o = (SP.OPENS || {})[k], q = o && (o.wish || o.after);
+      if (!q || (own && own.opensRead && own.opens.includes(k))) return '';
+      const step = stepBtn(q);
+      if (step) return step;
+      const f = App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+      return f.mark && list.some((x) => x.key === f.mark) ? btn('mapShow', f.mark, t('mapToFirst', { wish: pick(QU.CHAIN[q].name) })) : '';
     };
     // Only in a gauntlet's waves (js/spots.js JOURNAL): which ones, and whether this game has won them all.
     const wavesNote = (ids) => {
@@ -1762,7 +1828,7 @@
       return t('mapBeastWaves', { fight: listOf(named.map((id) => App.gauntletName(id))) })
         + (g && named.every((id) => g.gauntlets.includes(id)) ? ` (${t('mapDone')})` : '');
     };
-    let art = '', name = '', where = '', note = '', acts = '';
+    let art = '', name = '', where = '', note = '', acts = '', steps = '';
     if (key.startsWith('area:')) {
       const id = key.slice(5), a = AREA_NAMES().find((x) => x.id === id);
       if (!a) return '';
@@ -1773,9 +1839,11 @@
       const visited = own ? a.rooms.filter((s) => own.visited.some((v) => lower(v) === lower(s))).length : null;
       where = line([visited != null ? t('mapAreaRooms', { n: num(visited), m: num(a.rooms.length) }) : t('mapAreaRoomsAll', { m: num(a.rooms.length) }),
         own && MAPPABLE.has(id) && !mapped(own).has(id) ? t('mapUnmapped') : '']);
-      note = [t('mapAreaHundred', { n: num(hundred) }),
-        own ? t('mapAreaJournal', { n: num(inArea.filter((m) => m.layer === 'journal' && !m.got).length) }) : '',
-        t('mapAreaGauntlets', { n: num(inArea.filter((m) => m.layer === 'gauntlet' && !closed(m, g)).length) })].filter(Boolean).join(' · ');
+      // Its counts, a zero left out (design/118, 7 A).
+      const journal = own ? inArea.filter((m) => m.layer === 'journal' && !m.got).length : 0;
+      const gauntlets = inArea.filter((m) => m.layer === 'gauntlet' && !closed(m, g)).length;
+      note = [hundred ? t('mapAreaHundred', { n: num(hundred) }) : '', journal ? t('mapAreaJournal', { n: num(journal) }) : '',
+        gauntlets ? t('mapAreaGauntlets', { n: num(gauntlets) }) : ''].filter(Boolean).join(' · ');
       return cardShell(art, name, where, note, acts);
     }
     const m = list.find((x) => x.key === key);
@@ -1784,11 +1852,12 @@
     name = m.name;
     // The area of the room the mark is in, as the area cards count it (the Progress tab keeps its own, js/collectibles.js WHERE).
     const area = R.areaOf(m.scene) || m.area;
-    where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', m.sub]);
     const kind = key.split(':')[0];
+    // Under the name, where; a giver's «Makes a wish» goes, their wishes saying it (design/118's fixes).
+    where = line([areaName(area), m.act ? t('saveAct', { n: m.act }) : '', kind === 'giver' ? '' : m.sub]);
     if (kind === 'piece') {
       const i = Number(key.split(':')[1]);   // its other room's too ('piece:<i>:<vendor>')
-      note = m.note || (App.howPiece ? App.howPiece(i) : '');
+      note = then(m.note || (App.howPiece ? App.howPiece(i) : ''), !g || !m.got ? opensNote(key) : '');
       /* In Free mode a piece is marked here, but those of a ladder (masks, silk, the Silk Hearts, the
          Needle, the Kit, the Pouch) follow the Inventory's levels, as on Progress: the way there. */
       acts = own ? state(t(m.got ? 'pgGot' : 'invMissing'))
@@ -1799,8 +1868,20 @@
       if (cyl) acts += btn('mapShow', cyl.key, t('mapToCylinder'));
     } else if (['tools', 'crests', 'skills', 'arts', 'everbloom'].includes(kind)) {
       // A variant's place (js/spots.js VARIANTS): its own way, then what it takes.
-      note = m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · ');
+      note = then(m.note || [App.howOf ? App.howOf(key, m.howWays) : '', m.noteAfter].filter(Boolean).join(' · '), !g || !m.got ? opensNote(key) : '');
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      // Outside the 100% (an upgrade, a lent or given-up Tool, the abilities it doesn't list): a state (design/118, 5 A).
+      if (m.out) acts += state(t('mapToolsOut'));
+      /* A wish's reward whose wish waits for another not done yet (js/how.js after; the card says
+         «first:», as App.howOf): a way to who asks for that one. The Witch Crest: Yarnaby opens her
+         door only once Rite of Rebirth has cursed Hornet, and that's Greyroot's, in Shellwood. */
+      if (!m.got) {
+        const w = SS.completion.wayOf(m.howWays || waysOf(key), own, SS.savefile.ART_PD, key);
+        const c = w.way && w.way.kind === 'wish' && w.first.length ? CO.WISHES[w.first[0]][2] : null;
+        const q = c && (c[0] === 'quest' ? c[1] : (c.slice(1).find((x) => x[0] === 'quest') || [])[1]);
+        const f = q && App.wishFrom(q, new Set(g ? g.quests : []), new Set((own && own.taken) || []));
+        if (f && f.mark && list.some((x) => x.key === f.mark)) acts += btn('mapShow', f.mark, t('mapToFirst', { wish: pick(CO.WISHES[w.first[0]][4]) }));
+      }
     } else if (kind === 'pin') {
       if (m.off) acts = state(m.shut);
       where = line([areaName(area), m.layer === 'ventrica' ? t('mapPlace_ventrica') : '']);
@@ -1821,47 +1902,72 @@
       acts += fight + (m.entry ? btn('mapJournal', m.entry, t('mapToJournal')) : '');
       /* The wish whose place is this fight (Fatal Resolve, A Vassal Lost, Hero's Call... WISH_FIGHT),
          and while it's open, where it's taken: Fatal Resolve's challenge, accepted at the Pinstress's home. */
+      /* Its wishes still open, unless the line of what brings the fight names the wish already
+         (OPENS: Final Audience's Second Sentinel); none open, nothing said (design/118's fixes). */
+      const opens = (SP.OPENS || {})[key], said = opens && (opens.wish || opens.after);
       if (m.quests) {
-        note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + wishesNote(m.quests) : wishesNote(m.quests);
+        note = then(note, said && m.quests.every((q) => wishOf(q) === wishOf(said)) ? '' : wishesNote(m.quests));
         // One wish's stages (Steel Sentinel's two parts) are one wish: its last stage, from which takenAt walks back.
         const depth = (q) => { let n = 0; for (let x = q; QU.CHAIN[x] && QU.CHAIN[x].prev; x = QU.CHAIN[x].prev) n++; return n; };
         const open = [...new Set(m.quests)].filter((q) => !wishDone(g, q)).sort((a, b) => depth(b) - depth(a));
-        if (open.length && new Set(open.map(wishOf)).size === 1) acts += takenAt(open[0]);
+        // One way to the wish: the step the save shows (the Sentinel to wake, opensBtn below) before where it's taken.
+        if (open.length && new Set(open.map(wishOf)).size === 1 && !stepBtn(open[0])) acts += takenAt(open[0]);
       }
       note = then(note, opensNote(key));
     } else if (kind === 'bell') {
       if (g) acts = state(t(m.got ? 'mapRung' : 'mapNotRung'));
     } else if (kind === 'npc') {
-      const x = m.person, s = m.now;
-      if (s.met != null) acts = state(t(s.met ? 'mapMet' : 'mapNotMet'));
-      // Every spot of theirs by the save (js/people.js here): where they are now, no "turns up in n places".
-      const placed = !!own && !!x.here && x.spots.every(([sc]) => (x.id + ':' + lower(sc)) in (own.peopleHere || {}));
-      note = s.unsure ? t('mapNpcUnsure') : !s.where && !placed && x.spots.length > 1 ? t('mapNpcSpots', { n: num(x.spots.length) }) : '';
+      /* Everyone else: their name and where. Whether you've met, and in how many places they turn
+         up, say nothing of what to do (design/118, 1 A: a guide, not lore). The game's own prompt
+         on a spot (js/people.js notes: the Second Sentinel inert in Cog_10, «Insert Cogwork
+         Heart?») in quotes, as the game's (4 A), and there, with a save, the Cogheart Pieces held. */
+      const x = m.person;
+      const lines = (x.notes || {})[lower(m.scene)];
+      if (lines) {
+        const sn = own && own.sentinel;
+        note = lines.map((l) => t('mapPrompt', { text: pick(l) })).join(' ');
+        acts = x.id === 'song-knight' && sn && sn.read && !sn.woke ? state(`${t('roadCogPieces')} ${num(Math.min(3, sn.pieces))}/3`) : '';
+      }
     } else if (kind === 'shop' || kind === 'person' || kind === 'shakra') {
       const id = m.npc;
+      /* What's left here for you; with a save, nothing left (all its things had, its wishes done)
+         is one state, not two sentences (design/118, 6 A). What they trade says what they're for
+         when it's a way (TRADE_NOTE: the Couriers' wishes, the Druid's Mossberries; Creige's drinks
+         are no thing of the 100% or of a wish). */
+      let left = false;
       if (m.trade) {
-        note = t('mapTrade_' + m.trade);
+        note = TRADE_NOTE.includes(m.trade) ? t('mapTrade_' + m.trade) : '';
       } else if (id === 'shakra') {
         // Her maps (js/spots.js EXTRAS: the maps with a price), by their areas.
         const bought = new Set(own ? own.maps : []), hers = SHAKRA_MAPS.map((x) => x[2][1].slice(3, -3));
-        const left = hers.filter((f) => !bought.has(f)).map((f) => areaName(SP.MAPS[f])).filter(Boolean);
-        note = own ? (left.length ? t('mapShakraLeft', { list: listOf(left) }) : t('mapShakraAll'))
-          : t('mapShakraNote', { n: num(hers.length), m: num(Object.keys(SP.MAPS).length - hers.length) });
+        const maps = hers.filter((f) => !bought.has(f)).map((f) => areaName(SP.MAPS[f])).filter(Boolean);
+        note = own ? (maps.length ? t('mapShakraLeft', { list: listOf(maps) }) : '') : t('mapShakraNote', { n: num(hers.length) });
+        left = !own || maps.length > 0;
       } else if (id === 'scrounge') {
         note = t('mapScroungeNote');
+        left = true;
       } else {
         const things = givenBy(id, own).map((k) => list.find((x) => x.key === k)).filter((x) => x && (!g || !x.got));
-        note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : g ? t('mapSellsNone') : '';
+        note = things.length ? t(g ? 'mapSellsLeft' : 'mapSells', { list: listOf(things.map((x) => x.name)) }) : '';
+        left = things.length > 0;
       }
       // Where they are now (js/spots.js ALSO: Plinney, gone from Bellhart in Act 3).
       if (m.note) note = note ? m.note + '. ' + note : m.note;
-      if (m.quests) { note = then(note, wishesNote(m.quests)); acts += huntBtns(m.quests); }
+      if (m.quests) { const w = wishesNote(m.quests); note = then(note, w); left = left || !!w; acts += huntBtns(m.quests); }
+      if (g && !left && !m.trade) acts = state(t('mapNothingLeft')) + acts;
     } else if (kind === 'board' || kind === 'giver') {
-      note = wishesNote(m.quests);
+      /* A Wishwall: the wishes still open, and each one not on it yet with its next step, a way to
+         it (wishSteps, where the other cards' «See who asks for» leads: design/118, 2 A). Who asks
+         in person: their wishes, the one each waits for in brackets. None left: a state. */
+      const wall = kind === 'board';
+      note = wishesNote(m.quests, wall);
+      if (wall) steps = wishSteps(m.quests);
+      if (g && !note) acts = state(t('mapNothingLeft'));
       acts += huntBtns(m.quests);
     } else if (kind === 'task') {
       // What it's for, whether it's done, and where its wish is taken (the Wishwall, or who asks).
       if (m.layer === 'qitem') note = t('mapTaskFor', { wish: m.sub });
+      if (!g || !m.got) note = then(note, opensNote(key));   // in a room another wish shuts (js/spots.js OPENS room)
       if (m.alt && ALT_BY[m.alt.by]) note += ' ' + t(ALT_BY[m.alt.by][+m.alt.open], { foe: pick(m.alt.foe) });
       /* An objective's steps on this point, in order: each objective once (two steps of one share its
          name), with a save done or the one this game is on. */
@@ -1879,12 +1985,13 @@
       if (g) acts = state(t(m.layer === 'qitem' ? (m.got ? 'pgGot' : 'invMissing') : m.got ? (m.layer === 'wspot' ? 'mapWishGranted' : 'mapDone') : 'mapNotDone'));
       acts += takenAt(m.quest);
     } else if (kind === 'extra') {
-      note = m.note || '';
+      note = then(m.note || '', !g || !m.got ? opensNote(key) : '');
 
       // Eva's: the slots it needs, and with a save how many are open.
-      if (m.eva) note = (m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) }))
-        + (own && m.eva.slots ? ' ' + t('mapEvaHave', { n: num(own.evaSlots || 0) }) : '');
+      if (m.eva) note = m.eva.slots ? t('mapEvaSlots', { npc: pick(HW.NPCS.eva), n: num(m.eva.slots), crest: pick(D.CRESTS.find((c) => c.id === 'hunter').name) }) : t('mapEvaMeet', { npc: pick(HW.NPCS.eva) });
       if (g) acts = state(t(m.got ? 'pgGot' : 'invMissing'));
+      // With a save, the slots open as a count, as the others (design/118, 3 A).
+      if (own && m.eva && m.eva.slots && !m.got) acts += state(count(t('mapEvaOpen'), own.evaSlots || 0, m.eva.slots));
       // The Sacred Cylinder: who takes it and the melody it teaches, that melody's mark.
       if (m.melody != null) {
         note = then(note, t('mapCylinderFor', { npc: pick(HW.NPCS.cardinius), melody: pick(CO.PIECES[m.melody][4]) }));
@@ -1895,21 +2002,21 @@
       if (ks.length > 1) acts += btn('mapShotSee', ks.join(','), t('mapShotSee'));
     } else if (kind === 'beast') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
-      note = [t('mapBeastHere', { n: num(m.n) }), m.before3 ? t('mapLostAct3') : '', wavesNote(m.waves),
-        own ? (k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')) : ''].filter(Boolean).join(' · ');
+      note = [t('mapBeastHere', { n: num(m.n) }), m.before3 ? t('mapLostAct3') : '', wavesNote(m.waves)].filter(Boolean).join(' · ');
       /* What it gives here for a hunt still open (js/spots.js HUNTS), and with the wish taken how
          many Hornet has of how many (js/savefile.js carried: the quest's count, the thing held). */
       for (const [q, [item, at]] of Object.entries(HUNTS)) {
         const a = ((QU.CHAIN[q] || {}).asks || []).find((x) => x.save === item);
         if (!a || wishDone(g, q) || !at.some(([k2, s]) => k2 === e.key && lower(s) === lower(m.scene))) continue;
-        note = then(note, t('mapHuntDrops', { wish: pick(QU.CHAIN[q].name), item: pick(a.name) })
-          + (own && (own.taken || []).includes(q) ? ' ' + t('mapHuntHave', { n: num(Math.min((own.carried || {})[item] || 0, a.n)), m: num(a.n) }) : ''));
+        note = then(note, t('mapHuntDrops', { wish: pick(QU.CHAIN[q].name), item: pick(a.name) }));
+        // With the wish taken, how many Hornet has, as a count (design/118, 3 A).
+        if (own && (own.taken || []).includes(q)) acts += state(count(pick(a.name), (own.carried || {})[item] || 0, a.n));
       }
-      acts = btn('mapJournal', e.id, t('mapToJournal'));
+      acts = killsState(e, k) + acts + btn('mapJournal', e.id, t('mapToJournal'));
     } else if (kind === 'journal') {
       const e = BOOK.get(m.entry), k = own && own.journal[e.id];
-      note = [wavesNote(m.waves), k === undefined ? t('hjState_unseen') : e.kills != null ? t('mapKills', { n: num(k), m: num(e.kills) }) : t('hjState_seen')].filter(Boolean).join(' · ');
-      acts = btn('mapJournal', e.id, t('mapToJournal'));
+      note = wavesNote(m.waves);
+      acts = killsState(e, k) + btn('mapJournal', e.id, t('mapToJournal'));
     } else if (kind === 'cocoon') {
       note = m.note || '';
     }
@@ -1920,11 +2027,16 @@
       note = note ? note + (/[.!?]$/.test(note) ? ' ' : '. ') + why : why;
       acts = state(t('mapLost')) + (kind === 'gaunt' ? acts : '');
     }
-    return cardShell(art, name, where, note, acts);
+    // What opens it still to do (OPENS): a way to its wish, unless the card has one to that mark already.
+    if (!(g && m.got) && !(own && m.lost)) {
+      const b = opensBtn(key), to = b && /data-value="([^"]*)"/.exec(b)[1];
+      if (b && !acts.includes(`data-value="${to}"`)) acts += b;
+    }
+    return cardShell(art, name, where, note, acts, steps);
   }
-  const cardShell = (art, name, where, note, acts) => `<div class="mp-card" role="dialog" aria-label="${esc(name)}">
+  const cardShell = (art, name, where, note, acts, steps = '') => `<div class="mp-card" role="dialog" aria-label="${esc(name)}">
         <span class="mp-card-art">${art}</span>
-        <span class="mp-card-t"><b${NT}>${esc(name)}</b>${where}${note ? `<span class="mp-card-note">${esc(note)}</span>` : ''}</span>
+        <span class="mp-card-t"><b${NT}>${esc(name)}</b>${where}${note ? `<span class="mp-card-note">${esc(note)}</span>` : ''}${steps}</span>
         ${acts ? `<span class="mp-card-acts">${acts}</span>` : ''}
         <button type="button" class="icon-btn mp-card-x" data-act="mapPick" data-value="" aria-label="${esc(t('mapCardClose'))}" title="${esc(t('mapCardClose'))}">${App.cross}</button>
       </div>`;

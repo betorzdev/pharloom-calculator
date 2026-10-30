@@ -1576,6 +1576,22 @@ kbd {
 .pg-tasks .pg-art img { max-width: 42px; max-height: 42px; }
 .pg-tasks .pg-name { white-space: normal; }
 .pg-tasks .pg-how { line-height: 1.4; }
+/* A wish not on its Wishwall yet (design/117): its picture dimmed as «Later»'s, its next step a link
+   with the step's picture, its count after; «after» another wish, a jump to that row, lit a moment. */
+.pg-task.is-locked .pg-art img { opacity: 0.4; filter: grayscale(0.6); }
+.pg-step { display: inline-flex; align-items: center; gap: var(--sp-1); min-height: 0; padding: 0; border: 0; background: none; font: inherit; color: var(--ink); text-align: left; }
+button.pg-step { cursor: pointer; }
+button.pg-step > span { text-decoration: underline; text-decoration-color: var(--line-ctl); text-underline-offset: 3px; transition: text-decoration-color var(--dur) var(--ease); }
+button.pg-step:is(:hover, :focus-visible) > span { text-decoration-color: currentColor; }
+.pg-step.is-plain { color: var(--ink-2); }
+.pg-step-ic { flex: none; width: 18px; height: 18px; object-fit: contain; }
+.pg-step-w { color: var(--muted); }
+.pg-step-n { margin-left: var(--sp-1); font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
+.pg-step-n b { font-weight: 600; color: var(--ink-strong); }
+.pg-steps .pg-step-li { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1); }
+.pg-task.is-flash { animation: pg-flash var(--dur-flash) var(--ease-fade) 2; }
+@keyframes pg-flash { 0%, 40% { background: var(--veil); box-shadow: inset 0 0 0 1px var(--line-ctl); } 100% { background: transparent; box-shadow: none; } }
+@media (prefers-reduced-motion: reduce) { .pg-task.is-flash { animation: none; background: var(--veil); } }
 .pg-meters { display: grid; gap: var(--sp-1); margin-top: var(--sp-half); }
 .pg-meter { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--ink-2); }
 .pg-meter-n { font-family: var(--font-num); font-variant-numeric: tabular-nums; color: var(--muted); }
@@ -2781,6 +2797,12 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-card-t { display: flex; flex-direction: column; gap: var(--sp-half); min-width: 0; font-size: var(--fs-xs); color: var(--muted); }
 .mp-card-t b { font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
 .mp-card-note { color: var(--ink-2); text-wrap: pretty; }
+/* A Wishwall's wishes not on it yet, a line each with its next step (design/118, 2 A), drawn as the
+   Tasks tab's (.pg-step); the count's figure at the line's size, not the card's name's. */
+.mp-card-steps { display: grid; gap: var(--sp-half); color: var(--ink-2); }
+.mp-card-steps > span { display: block; }
+.mp-card-steps .pg-step { vertical-align: bottom; }
+.mp-card-t .pg-step-n b { font-size: inherit; }
 .mp-card > .text-btn, .mp-card-state { grid-column: 2; justify-self: start; font-size: var(--fs-sm); }
 .mp-card-state { color: var(--muted); }
 .mp-card-x { grid-column: 3; grid-row: 1; align-self: start; }
