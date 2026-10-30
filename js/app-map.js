@@ -1396,14 +1396,12 @@
   }
   /* Another screen's "on the map" (Progress, the Journal) and the search's result: the Map shows
      only that thing, as a search would (a focus of one: its name in the search's place and its ×
-     back to the whole map), its layer switched on for when you go back, centred on it, its card
-     open and its ring. */
+     back to the whole map), centred on it, its card open and its ring. The layers stay as they
+     were: going back is the map as you had it, that thing's layer off if it was (switching it on
+     left «Only the 100%» showing every wish giver after one look at a wish). */
   App.mapShow = (key) => {
     const m = all().list.find((x) => x.key === key);
     if (!m) return;
-    const on = layersOn();
-    if (!on.includes(m.layer)) { prefs.mapLayers = [...on, m.layer]; }
-    savePrefs();
     focusMarks([key], m.name, areaName(R.areaOf(m.scene) || m.area));
   };
   // The Map on these marks alone, whatever its layers and filters: one centred with its card, several fitted.
