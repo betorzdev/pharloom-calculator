@@ -730,7 +730,9 @@ the Abyss, Verdania, the destroyed Cradle and Cogwork Core, the Border Caves and
 and what lies only in a room's Act 3 state, as the rosaries in Mort's room once he's gone; a cache,
 a wall or a door with no Act of its own says none), how it's had, and what it says of your game. A
 shop's says what of the 100% it still has for you (and the wishes it asks, if it does), Shakra's which maps you lack, a Wishwall's or a
-wish giver's the wishes still open, a wish's place or thing which wish it's for, whether it's done
+wish giver's the wishes still open (each with the wish to do first, if it waits for one: Yarnaby
+opens her door for «Infestation Operation» only once «Rite of Rebirth» has cursed Hornet), a thing
+a wish gives, that wish and the one to do before it, with a button to who asks for that one, a wish's place or thing which wish it's for, whether it's done
 and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
 «See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills. In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit

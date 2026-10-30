@@ -651,11 +651,24 @@
     lines.push(t('roadRestAny'));
     return lines;
   }
-  /* What posts a wish (OPENS), for the Tasks tab's rows and the Map's cards: [] for a wish with no
-     such rule, or done or taken. posted: false when the save says it isn't on its Wishwall yet. */
+  /* The wishes a wish waits for before it's offered (js/how.js: a reward's wish way, after; the
+     generator's WAITS), by WISHES index, those the game hasn't done: Infestation Operation waits for
+     Rite of Rebirth, as Yarnaby opens her door only to a cursed Hornet. */
+  const WAITS_FOR = new Map();
+  for (const ways of Object.values(HW.HOW).flatMap((m) => (Array.isArray(m) ? [m] : Object.values(m)))) {
+    for (const w of ways) if (w.kind === 'wish' && w.after) WAITS_FOR.set(w.wish, w.after);
+  }
+  App.wishWaits = (i, g) => (WAITS_FOR.get(i) || []).filter((j) => !(g && (g.wishes || []).includes(j)));
+  /* What posts a wish (OPENS, and the wishes it waits for), for the Tasks tab's rows and the Map's
+     cards: [] for a wish with no such rule, or done or taken. posted: false when the save says it
+     isn't on its Wishwall yet. */
   const wishPosts = (q, g) => {
-    if (!OPENS[q] || (g && ((g.quests || []).includes(q) || (g.taken || []).includes(q)))) return { lines: [], posted: null };
-    const lines = OPENS[q](g).filter(Boolean), s = g && g.sentinel;
+    if (g && ((g.quests || []).includes(q) || (g.taken || []).includes(q))) return { lines: [], posted: null };
+    const waits = App.wishWaits(CO.WISHES.findIndex((w) => wishQuest(w) === q), g);
+    const before = waits.length ? t('roadBefore', { name: waits.map((j) => pick(CO.WISHES[j][4])).join(', ') }) : '';
+    const first = before && before[0].toUpperCase() + before.slice(1);   // a line of its own
+    if (!OPENS[q]) return { lines: first ? [first] : [], posted: null };
+    const lines = [first, ...OPENS[q](g)].filter(Boolean), s = g && g.sentinel;
     return { lines, posted: q === 'Song Knight' && s && s.read ? !lines.length : null };
   };
   App.wishPosts = wishPosts;

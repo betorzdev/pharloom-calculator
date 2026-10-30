@@ -512,6 +512,7 @@
     mapRewardOf:    { es: 'Lo suelta {fight} al ganarlo.', en: 'Dropped by {fight} once won.' },
     mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
     mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
+    mapToFirst:     { es: 'Ver quién pide «{wish}»', en: 'See who asks for "{wish}"' },
     // The Sacred Cylinder and the melody it leads to, each card pointing at the other: {npc} Cardinius, {melody} SQ_MELODY_LIBRARIAN_NAME.
     mapCylinderFor: { es: 'Llévaselo a {npc} para aprender la {melody}.', en: 'Bring it to {npc} to learn the {melody}.' },
     mapToMelody:    { es: 'Ver la melodía', en: 'See the melody' },

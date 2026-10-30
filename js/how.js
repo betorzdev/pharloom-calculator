@@ -14,8 +14,9 @@
                  price in rosaries; item the ShopItem in js/shop.js SHOP (Plinney's Needle: its
                  cost's name); craftmetal, paleOil what it also takes; act 3 sold only then;
                  after the WISHES indices to be done first; needs the playerData flags it waits on
-               { kind: 'wish', wish, quest, act?, by? }  wish a WISHES index, quest its save name, by
-                 who hands it over in person in another room than the wish is taken in
+               { kind: 'wish', wish, quest, act?, by?, after? }  wish a WISHES index, quest its save name, by
+                 who hands it over in person in another room than the wish is taken in; after
+                 the WISHES indices to be done before it's offered
                { kind: 'boss', foe }  a js/enemies.js FOES id
                { kind: 'found', act?, when? }  lying in a room (from that Act on)
                  when: the save check that says it lies there now (its owner dead), which
@@ -241,7 +242,7 @@
       reaper: [{ kind: 'found' }],
       wanderer: [{ kind: 'found' }],
       beast: [{ kind: 'boss', foe: 'savage-beastfly-chapel-of-the-beast' }],
-      witch: [{ kind: 'wish', wish: 27, quest: 'Doctor Curse Cure' }],
+      witch: [{ kind: 'wish', wish: 27, quest: 'Doctor Curse Cure', after: [25] }],
       architect: [{ kind: 'found' }],
       shaman: [{ kind: 'found' }],
     },
@@ -284,7 +285,7 @@
       '15': [{ kind: 'found' }],
       '16': [{ kind: 'wish', wish: 71, quest: 'Sprintmaster Race' }],
       '17': [{ kind: 'wish', wish: 61, quest: 'Ant Trapper' }],
-      '18': [{ kind: 'wish', wish: 60, quest: 'Destroy Thread Cores' }],
+      '18': [{ kind: 'wish', wish: 60, quest: 'Destroy Thread Cores', after: [12] }],
       '19': [{ kind: 'found' }],
       '20': [{ kind: 'found' }],
       '21': [{ kind: 'found' }],

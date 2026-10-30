@@ -211,3 +211,27 @@ test('Pebb\'s, Mort\'s and Lumble\'s wares are Grindle\'s once the game is in Ac
     assert.equal(seller(ways, null, key), before, `${key} with no game: the first way`);
   }
 });
+
+test("the Witch Crest's wish waits for Rite of Rebirth: Yarnaby opens her door only to a cursed Hornet", () => {
+  // Albert's save 4 (30-Oct-2026): Act 3, never cursed, sent to Yarnaby, who didn't open (tools/gen-how.js WAITS).
+  const H = require('../js/how.js');
+  const Q = require('../js/quests.js');
+  const base = { silk: 0, silkMax: 9, maxHealth: 5, act2Started: true, blackThreadWorld: true };
+  const idx = (q) => CO.WISHES.findIndex((w) => w[2][0] === 'quest' && w[2][1] === q);
+  const rite = idx('Wood Witch Curse'), cure = idx('Doctor Curse Cure');
+  const witch = H.HOW.crests.witch;
+  assert.deepEqual(witch, [{ kind: 'wish', wish: cure, quest: 'Doctor Curse Cure', after: [rite] }]);
+  const quest = (Name) => ({ Name, Data: { HasBeenSeen: true, IsAccepted: true, CompletedCount: 0, IsCompleted: true, WasEverCompleted: true } });
+  const first = (pd) => CP.wayOf(witch, F.game({ ...base, ...pd }), F.ART_PD, 'crests:witch').first;
+  assert.deepEqual(first({}), [rite]);   // save 4: the Wood Witch met, the bud never bound
+  assert.deepEqual(first({ gainedCurse: true, QuestCompletionData: { savedData: [quest('Wood Witch Curse')] } }), []);
+  assert.deepEqual(CP.wayOf(witch, null).first, [rite]);   // no game: said too
+  // Every wish way says the wishes its quest waits for in the game's data (CHAIN needs): Dark Hearts, the Shamans' objective.
+  for (const ws of Object.values(H.HOW).flatMap((m) => (Array.isArray(m) ? [m] : Object.values(m)))) {
+    for (const w of ws) {
+      if (w.kind !== 'wish') continue;
+      for (const q of (Q.CHAIN[w.quest] || {}).needs || []) if (idx(q) >= 0) assert.ok((w.after || []).includes(idx(q)), `${w.quest} waits for ${q}`);
+    }
+  }
+  assert.deepEqual(H.HOW.pieces[CO.PIECES.findIndex((p) => p[2][1] === 'Destroy Thread Cores')][0].after, [idx('Black Thread Pt1 Shamans')]);
+});
