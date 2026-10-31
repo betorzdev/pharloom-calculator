@@ -11,6 +11,8 @@
      MARKS   Map mark key → [req]: the thing's own (its room, its route); a card adds its area's
      WISHES  quest save name (js/quests.js CHAIN) → [req]: before the game offers that wish (a
              giver's or a Wishwall's card shows it for each wish still open there)
+     ASKS    quest save name → [req]: the things the wish asks to be brought that lie at a Map
+             mark (its wish items); the card of who offers it shows them while it's open
      CHECKS  [save check]: every distinct check, by index; js/savefile.js game() keeps those met
              (needs, needsRead)
      req = { kind, name: { es, en, key }, to, check, alt, n? }
@@ -8933,6 +8935,122 @@
     ],
   };
 
+  const ASKS = {
+    'Ant Trapper': [
+      {
+        kind: 'item',
+        name: { es: 'Muñeca de hierba', en: 'Grass Doll', key: 'INV_NAME_ANT_TRAPPER_ITEM' },
+        to: 'task:0',
+        check: 269,
+        alt: null,
+      },
+    ],
+    'Beastfly Hunt': [
+      {
+        kind: 'item',
+        name: { es: 'Fragmento de cuerno', en: 'Horn Fragment', key: 'INV_NAME_BEASTFLY_REMAINS' },
+        to: 'task:1',
+        check: 270,
+        alt: null,
+      },
+    ],
+    'Broodmother Hunt': [
+      {
+        kind: 'item',
+        name: {
+          es: 'Ojo de la Madre Ponedora',
+          en: 'Broodmother\'s Eye',
+          key: 'INV_NAME_BROODMOTHER_REMAINS',
+        },
+        to: 'task:2',
+        check: 271,
+        alt: null,
+      },
+    ],
+    'Doctor Curse Cure': [
+      {
+        kind: 'item',
+        name: { es: 'Púas de acero', en: 'Steel Spines', key: 'ITEM_EXTRACTOR_PINS_NAME' },
+        to: 'task:5',
+        check: 272,
+        alt: null,
+      },
+    ],
+    'Great Gourmand': [
+      {
+        kind: 'item',
+        name: {
+          es: 'Guiso de bayas musgosas',
+          en: 'Mossberry Stew',
+          key: 'INV_NAME_GOURMAND_MOSSBERRY_STEW',
+        },
+        to: 'task:6',
+        check: 273,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Néctar añejo', en: 'Vintage Nectar', key: 'INV_NAME_GOURMAND_VINTAGE_NECTAR' },
+        to: 'task:39',
+        check: 208,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Loncha de mensajero', en: 'Courier\'s Rasher', key: 'COURIER_SUPPLIES_MEAT_NAME' },
+        to: 'task:4',
+        check: 156,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Nuez de corteza', en: 'Crustnut', key: 'INV_NAME_GOURMAND_CORAL_INGREDIENT' },
+        to: 'task:3',
+        check: 274,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Gusasucio en escabeche', en: 'Pickled Muckmaggot', key: 'INV_NAME_PICKLEDEGG' },
+        to: 'task:7',
+        check: 275,
+        alt: null,
+      },
+    ],
+    'Skull King': [
+      {
+        kind: 'item',
+        name: { es: 'Fragmento de corona', en: 'Crown Fragment', key: 'INV_NAME_SK_FRAGMENT' },
+        to: 'task:35',
+        check: 276,
+        alt: null,
+      },
+    ],
+    'Soul Snare': [
+      {
+        kind: 'item',
+        name: { es: 'Alma de la Doncella', en: 'Maiden\'s Soul', key: 'INV_NAME_SNARE_SOUL_CHURCHKEEPER' },
+        to: 'task:37',
+        check: 277,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Alma del Ermitaño', en: 'Hermit\'s Soul', key: 'INV_NAME_SNARE_SOUL_BELLHERMIT' },
+        to: 'task:36',
+        check: 278,
+        alt: null,
+      },
+      {
+        kind: 'item',
+        name: { es: 'Alma del buscador', en: 'Seeker\'s Soul', key: 'INV_NAME_SNARE_SOUL_SWAMP' },
+        to: 'task:38',
+        check: 279,
+        alt: null,
+      },
+    ],
+  };
+
   const CHECKS = [
     ['flag', 'hasNeedleThrow'],
     ['flag', 'defeatedBellBeast'],
@@ -9432,8 +9550,47 @@
     ['crest', 'Hunter_v2'],
     ['flag', 'UnlockedExtraYellowSlot'],
     ['flag', 'UnlockedExtraBlueSlot'],
+    [
+      'any',
+      ['bool', 'Bone_East_18b', 'Collectable Item Pickup'],
+      ['held', 'Ant Trapper Item'],
+      ['quest', 'Ant Trapper'],
+    ],
+    ['any', ['held', 'Beastfly Remains'], ['quest', 'Beastfly Hunt']],
+    ['any', ['held', 'Broodmother Remains'], ['quest', 'Broodmother Hunt']],
+    ['any', ['held', 'Extractor Machine Pins'], ['quest', 'Doctor Curse Cure']],
+    ['any', ['flag', 'GourmandGivenStew'], ['held', 'Mossberry Stew'], ['quest', 'Great Gourmand']],
+    [
+      'any',
+      ['bool', 'Coral_41', 'Collectable Item Pickup'],
+      ['flag', 'GourmandGivenCoral'],
+      ['held', 'Coral Ingredient'],
+      ['quest', 'Great Gourmand'],
+    ],
+    [
+      'any',
+      ['bool', 'Dust_Chef', 'Return Pickup'],
+      ['flag', 'gotPickledRoachEgg'],
+      ['flag', 'GourmandGivenEgg'],
+      ['held', 'Pickled Roach Egg'],
+      ['quest', 'Great Gourmand'],
+    ],
+    [
+      'any',
+      ['bool', 'Bone_15', 'Collectable Item Pickup'],
+      ['held', 'Skull King Fragment'],
+      ['quest', 'Skull King'],
+    ],
+    ['any', ['held', 'Snare Soul Churchkeeper'], ['quest', 'Soul Snare']],
+    ['any', ['held', 'Snare Soul Bell Hermit'], ['quest', 'Soul Snare']],
+    [
+      'any',
+      ['bool', 'Shadow_Bilehaven_Room', 'Collectable Item Pickup (1)'],
+      ['held', 'Snare Soul Swamp Bug'],
+      ['quest', 'Soul Snare'],
+    ],
   ];
 
-  SS.requires = { AREAS, MARKS, WISHES, CHECKS };
+  SS.requires = { AREAS, MARKS, WISHES, ASKS, CHECKS };
   if (typeof module !== 'undefined' && module.exports) module.exports = SS.requires;
 })();

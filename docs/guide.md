@@ -424,7 +424,9 @@ Craftmetal or Pale Oil it takes), the wish's emblem, the boss that drops it, a g
 a vendor's wares still for you (each its picture). Then **Needs**, under a hairline: a chip per
 thing it waits for, its picture and name, a way to where that's had: a wish to do first, a wish to
 take (the one that brings a fight), the keys it lies behind (several marks: a focus on them), an
-ability, a thing to bring, what a shop waits for, the Act it's sold from. A chip with nothing to
+ability, a thing to bring, what a shop waits for, the Act it's sold from. On the card of whoever
+offers a wish (and a Wishwall's), each open wish's things to bring that lie somewhere on the Map
+(«bring Steel Spines» at Yarnaby for Infestation Operation, the Gourmand's five dishes) are chips too. A chip with nothing to
 lead to (an Act, the Vaultkeepers freed, a main objective) is dashed. Two ways to the same thing
 sit side by side, «or» before the second, a bracket on their left (the Flintslate: a Simple Key or
 the Clawline). With a save the block lists only what you still lack (an «or» one of whose ways you
