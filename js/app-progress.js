@@ -291,6 +291,8 @@
     const ty = TASK_TYPE[q] || (w[0] === 'main-objectives' ? null : w[0]);
     return ty ? `assets/icons/tasks/${ty}.webp` : q ? `assets/icons/tasks/main-${slug(q)}.webp` : null;
   }
+  // The same by its WISHES index, for the Map's cards (a wish in how it's had or in Needs: design/119).
+  App.wishIcon = (i) => taskIcon(CO.WISHES[i]) || 'assets/icons/wishes/board.webp';
   /* A wish promised and not done (design/81-task-states-variants.html, all A): what it asks with
      how much of each Hornet carries (js/savefile.js carried; the rosaries, the shell shards, the
      Journal's entries), and once she has it all the game's line for handing it in (CHAIN ready).

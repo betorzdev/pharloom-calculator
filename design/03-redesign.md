@@ -42,7 +42,7 @@ the work up reads it first, then the step it's on.
 | 3 | Your game (`home`) and Saves (`saves`) | **Built** (28 Sep; the lists, 11 Oct; the calm round, its light and its map, 14 Oct; the summary, 16 Oct) | [`06-home-variants.html`](06-home-variants.html), `26-game-lists-variants.html`, `71-your-game-variants.html`, `73-your-game-light-variants.html`, `76-your-game-map-variants.html`, `89-your-game-summary-variants.html` |
 | 4 | Inventory (`game`) | **Built** (28 Sep; purse, masks and silk 11 Oct; Free mode's start 13 Oct; third round 13 Oct; the materials and the lent Tools 14 Oct; the review's round 14 Oct; the Silkeater 18 Oct) | [`07-inventory-variants.html`](07-inventory-variants.html), `29-inventory-variants.html`, `42-free-mode-start-variants.html`, `43-inventory-round3-variants.html`, `49-inventory-materials-variants.html`, `51-lent-tools-variants.html`, `62-inventory-variants.html`, `91-silkeater-variants.html` |
 | 5 | Progress (`progress`) | **Built** (28 Sep; two tabs 11 Oct; at first sight, the leftovers and the steps in the game's words 13 Oct; the 100%'s look and a Tasks tab 14 Oct; the task's picture on the road, Tasks' pins to the Map and the main objectives' head 15 Oct; each wish's state from the save 15 Oct; the road's one list 15 Oct; the road to Act 2 as the whole route 16 Oct; Act 3's too 16 Oct; the guide's too 16 Oct; the road to Act 2 fixed, with the Phantom's way beside it, 16 Oct; the Silk and Soul step lighter, 21 Oct; Tasks as the three Wishwalls 21 Oct; every closed row's pictures 22 Oct; a pin per group, here and on the Inventory and the Journal, 22 Oct; the wishes for points open in place, 24 Oct; Tasks' people as rows, 24 Oct; Act 3's road to the end, 25 Oct; why a wish isn't posted yet, 31 Oct; a guide, not lore, 31 Oct; the bar's second round open) | [`10-progress-variants.html`](10-progress-variants.html), `75-progress-100-variants.html`, `78-task-pins-variants.html`, `79-road-task-variants.html`, `80-main-objectives-emblem-variants.html`, `81-task-states-variants.html`, `82-road-list-variants.html`, `83-road-route-variants.html`, `84-road-route-act3-variants.html`, `90c-act2-road-variants.html`, `103-silk-soul-step-variants.html`, `104-tasks-variants.html`, `104b-tasks-look-variants.html`, `105-progress-strip-variants.html`, `106-group-pins-variants.html`, `97-road-points-links-variants.html`, `110-tasks-givers-variants.html`, `111-act3-road-variants.html`, `117-tasks-why-variants.html`, `118-guide-not-lore-variants.html` |
-| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct; a guide, not lore, 31 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html`, `118-guide-not-lore-variants.html` |
+| 6 | Map (`map`) | **Built** (28 Sep; the selector 11 Oct; Passages, the wishes and objectives 11 Oct; the groups 12 Oct; its ground 14 Oct; counts, names and the card 14 Oct; the marks' size 14 Oct; a room's parts not mapped 14 Oct; what you already have 15 Oct; the Journal's enemies, every room 16 Oct; the switches' contents 16 Oct; the save checks 16 Oct; their leftovers 16 Oct; the way out of a pin's focus 24 Oct; the Act filter 24 Oct; the focus's long name 24 Oct; the switches off 24 Oct; the givers' figures 25 Oct; the Act filter's «All» 25 Oct; the legend's groups 30 Oct; a guide, not lore, 31 Oct; the card, 31 Oct) | [`12-map-variants.html`](12-map-variants.html), `50-map-ground-variants.html`, `64-map-variants.html`, `70-mark-size-variants.html`, `74-map-parts-variants.html`, `77-map-had-variants.html`, `87-map-contents-variants.html`, `86-map-save-checks-variants.html`, `89-map-leftovers-variants.html`, `96-map-pin-exit-variants.html`, `98-map-act-filter-variants.html`, `107-focus-name-variants.html`, `109-legend-contrast-variants.html`, `108-giver-figures-variants.html`, `112-act-filter-variants.html`, `113-map-legend-groups-variants.html`, `118-guide-not-lore-variants.html`, `119-map-card-variants.html` |
 | 7 | Journal (`journal`) | **Built** (28 Sep, three rounds; the controls 13 Oct; the pin to the Map 14 Oct; every room of an entry 16 Oct) | [`15-journal-variants.html`](15-journal-variants.html), `48-journal-controls-variants.html`, `69-map-button-variants.html` |
 | 8 | Crest (`tools`) | **Built** (28 Sep; the slots as the game draws them, 13 Oct; middle widths 14 Oct) | [`18-crest-variants.html`](18-crest-variants.html), `43-crest-review-variants.html`, `52-crest-hud-variants.html` (kept out of the repo) |
 | 9 | Combat (`fight`) | **Built** (28 Sep) | [`21-combat-variants.html`](21-combat-variants.html) |
@@ -2114,6 +2114,62 @@ descriptions), `js/i18n.js` (gone: `mapMet`, `mapNpcSpots`, `mapNpcUnsure`, `map
 `mapPrompt`; shorter: `mapToolUpgrade`, `mapToolLent`, `mapToolGivenUp`, `mapEvaSlots`,
 `mapMapMachine`, `mapHiddenNote`, `mapShakraNote`), `css/app.css` `.mp-card-steps` and the count's
 figure inside a card, test/guide-not-lore.test.js.
+
+### The card (31 October 2026)
+
+The card a mark opens, as a whole, and one standard place on it for what a thing still waits for:
+until now each requirement was a sentence in the note or a loose button of its own («See who asks
+for "Rite of Rebirth"», «See where to wake the Second Sentinel», «See the cylinder»), and on a
+phone the card (312 px at most) ran past the Map's box. `119-map-card-variants.html` (kept out of
+the repo): thirteen real cards of every kind, over the real Map, with Restore_Points1's
+NODELrestoreData12 (Act 2, 31%, the Witch Crest missing) and Free mode, 1440 and 390: 1 the head
+(**A** the picture left at 48 px, a light of its area's tint behind it, under the name one line of
+where; B the picture on top, centred; C as it was), 2 how it's had (**A** pictures and names, who
+sells it, the wish's emblem, the boss, each a way to its mark, the price as the rosary and the
+figure; B the sentence; C pictures with a label), 3 had or not with a save (**A** a white tick on
+the picture, the state in words for a screen reader; B a tag on the where line; C words), 4 the
+actions (**A** a picture and one word, the full words as the name and tooltip; B the picture alone;
+C words), 5 the Needs' look (**A** a «Needs» label and a chip each, picture and name, a way to its
+mark, one with no mark dashed; B a line each, as Tasks' steps; C links in a sentence), 6 an «or»
+(**A** side by side, «or» before the second, bracketed; B the other on its own line; C «(or X)»),
+7 where the block goes (A above how it's had, **B** under it with a hairline above, the actions
+under it; C in the foot). **Decision: all recommended, A A A A A A B** (Albert, 31 October 2026).
+Built: `js/app-map.js`
+
+- **needsOf(key, own)** gathers every requirement the site has into [{ kind, name, icon, to, alt,
+  grp, met }]: js/how.js (the way's wishes first and the abilities a shop asks for, through
+  `SS.completion.wayOf`; its Act; what to bring; NEEDS' keys, abilities and «or»), js/spots.js
+  (OPENS: a wish to take, one granted, an ability, the enemies freed; EXTRAS more: a shop's wishes
+  first and Frey's conditions; VARIANTS: the Ruined Tool; ALSO: the Act a vendor sells it from;
+  the key a lock takes, the Silkspear a silk wall), the wishes a wish on the card waits for
+  (App.wishWaits; a Wishwall's step lines say them). When `js/requires.js` is there (another
+  branch: `SS.requires` AREAS, MARKS, WISHES), its requirements of the mark's area, of the mark and
+  of each wish still open on the card join them, each once, met by `own.needsRead` and
+  `own.needs`; absent, nothing breaks. A key is met once one of its marks is picked up; a wish chip
+  leads where `wishTo` says (the step the save shows first, as the dormant Second Sentinel, else
+  App.wishFrom). In `App.mapApi`.
+- The head, how it's had (`wayHtml`, the vendors' figures `VENDOR_FIG`: Grindle the shop's pin),
+  the tick (`.mp-card-seal`), the Needs (`needsHtml`, `chipHtml`, `.mp-card-needs`), the actions
+  (`.mp-ab`: Fight, Journal, Hunt, Inventory, Got). With a save the Needs lists only what's
+  missing (an «or» met by any way), none: no block; Free mode, all. A wish how it's had names
+  isn't a chip again.
+- Gone: `opensNote`, `opensBtn`, `stepBtn`, `takenAt`, the tools' «See who asks for», the melody's
+  «See the cylinder» and the cylinder's «See the melody» (its card pictures Cardinius and the
+  melody), the Ruined Tool's «See the three» (its card pictures the three places), `soldNote` and
+  `NEED_WORDS` (strings `mapOpens*`, `mapOpenYes/No`, `mapToFirst`, `mapToWake`, `mapToCylinder`,
+  `mapToMelody`, `mapToWall`, `mapToGiver`, `mapTaskFor`, `mapCylinderFor`, `mapRewardOf`,
+  `mapShotNeeds`, `mapShotSee`, `mapWishes*`, `mapSells*`); new: `mapNeeds`, `mapOr`,
+  `mapNeedTake`, `mapNeedBring`, `mapNeedFree`, `mapOnMapOf`, `mapFightShort`, `mapHuntShort`,
+  `mapSetInInv`, `mapShotFirst`, `mapSellsL`, `mapSellsLeftL`; shorter: `mapShotRuined`,
+  `mapAlsoSoldIf/Now` (who and the price are the pictures). `js/app-progress.js` App.wishIcon.
+- On a phone (under 600 px) the card lies along the map's foot, its width, up to 55% of the map's
+  height and scrolling inside, and the map pans its mark into the room above it (`keepClear`);
+  wider, it sits by its mark, no taller than the room on that side (`--card-max`).
+
+Checked in headless Chrome over file:// (port 9471): NODELrestoreData12 (Act 2), user1 (Act 3)
+and Free mode, 1440 and 390, es and en, every card kind (pieces, Tools, Crests, Silk Skills,
+bosses, gauntlets, shops, givers, Wishwalls, wish items, relics, furnishings, keys, locks, silk
+walls, pins, Bellshrines, people, the Journal, an area), no console errors; test/map-card.test.js.
 
 ## Step 7 · Journal
 

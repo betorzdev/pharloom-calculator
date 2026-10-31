@@ -413,6 +413,26 @@ three times. An area's name centres the map on it with its ring. With the whole 
 area name that would fall on another waits for the zoom (the larger area's stays, by its rooms);
 on a phone the area names show only zoomed in.
 
+A mark's **card** opens over the map, above its mark (below it when there's no room), and as the
+game shows a thing it says it with pictures more than words. At the top, the mark's own picture,
+large, with a soft light of its area's colour behind it, and with a save a white tick on it once you
+have it (nothing when you don't: the rest of the card says what's left); beside it the name, and
+one line of where: a small diamond in the area's map colour, the area, the Act, a gauntlet's waves.
+Under it, how it's had, as pictures and names, each a way to its mark: who sells it (their figure;
+Grindle, with none found yet, the shop's pin) and the price as the rosary and the figure (and the
+Craftmetal or Pale Oil it takes), the wish's emblem, the boss that drops it, a gauntlet's reward,
+a vendor's wares still for you (each its picture). Then **Needs**, under a hairline: a chip per
+thing it waits for, its picture and name, a way to where that's had: a wish to do first, a wish to
+take (the one that brings a fight), the keys it lies behind (several marks: a focus on them), an
+ability, a thing to bring, what a shop waits for, the Act it's sold from. A chip with nothing to
+lead to (an Act, the Vaultkeepers freed, a main objective) is dashed. Two ways to the same thing
+sit side by side, «or» before the second, a bracket on their left (the Flintslate: a Simple Key or
+the Clawline). With a save the block lists only what you still lack (an «or» one of whose ways you
+have is met), and goes when nothing is; in Free mode it lists everything. Last, the card's
+actions, each a picture and one word (Journal, Fight, Hunt, Inventory, Got), the whole words on
+hover and for a screen reader. On a phone the card lies along the map's foot, its width, scrolling
+inside when it's long, and the map moves its mark into the room above it.
+
 Under the map, **What the map shows**, as the Hollow Knight site has it: «Show all · Hide all» on
 its right, and «Only the 100%», which turns on just the layers that count for completion (the ten
 categories the game counts: Mask Shards, Spool Fragments, Silk Hearts, the Needle, Tool Pouch and
@@ -457,8 +477,8 @@ it's had: lying there, at the shop that sells it, with whoever hands over a wish
 in Bilewater for Trail's End's Throwing Ring, the Pinstress atop Mount Fay, Sherma in the Whiteward:
 the card says who gives it and where the wish is taken), else at the Wishwall or with whoever gives
 the wish, in its boss's arena, with the person who gives it. A thing in a room whose every door the game
-keeps shut until a wish is taken says so on its card in one line, with a save whether yours has
-it, and a button to your next step for that wish: the Wishwall or whoever asks for it, whose card
+keeps shut until a wish is taken has that wish in its Needs, while your save hasn't taken it,
+a way to your next step for that wish: the Wishwall or whoever asks for it, whose card
 says each wish's next step, or, for Final Audience before the Second Sentinel is woken, the Sentinel itself,
 lying inert in the Cogwork Core ("Insert Cogwork Heart?", the game's own prompt, in quotes) until you bring it the Cogheart: the Reserve Bind, in the Second Sentinel's arena past a wall in the High Halls
 (Final Audience), and Sherma's Spool Fragment in the Whiteward (Balm for the Wounded). All of it on at first, and what leads to it too
@@ -482,7 +502,7 @@ leaves those off.
   Setter, found in Weavenest Atla and given up for Silk and Soul, both found once had even after
   handing them over. The Dead Bug's Purse is the Shell Satchel in a Steel Soul game (the game lays
   one or the other in the Wormways): one mark, named and drawn as your mode's, the purse's card in
-  Free mode saying Steel Soul has the satchel there. A card says what a thing waits on that your game
+  Free mode saying Steel Soul has the satchel there. A card's Needs says what a thing waits on that your game
   lacks: a key, or an ability (the Threefold Pin lies where the Needolin's memory in Greymoor
   brings it). A card's area is the one its mark's room is in. Two Tools a
   shop sells lie in another room once the seller dies before you buy them: the Curveclaw in the
@@ -493,11 +513,11 @@ leaves those off.
   Craftmetal and Magnetite Brooch, Mort's Memory Locket and Tool Pouch, Lumble's Magnetite Dice):
   Act 3 empties those three rooms, so it also has a mark at Grindle's in the Blasted Steps. With a
   save in Act 3 it's there alone while you don't have it; before Act 3, or once had, where it was;
-  with none, at both, counted once, Grindle's saying Act 3 and his price. The Silkshot is repaired
+  with none, at both, counted once, Grindle's with his figure and price, and Act 3 in its Needs. The Silkshot is repaired
   from the Ruined Tool at one of three places, and the first repair closes the other two: the rune
   in Mount Fay (the Original), the Twelfth Architect and the Forge Daughter, each a mark with its
-  version's picture and its own way, and the Ruined Tool itself where it lies in Bilewater, its
-  card naming the three («See the three»), all counted as one Tool. With a save that repaired it,
+  version's picture and its own way and the Ruined Tool in its Needs, and the Ruined Tool itself where
+  it lies in Bilewater, its card picturing the three places, each a way to it, all counted as one Tool. With a save that repaired it,
   only the place it was repaired at, had; before that, every place, the Architect's crossed once
   he has left for good (and his shop with him); with none, all four. The Flea Brew is Grishkin's,
   the troupe's, given at the Flea Caravan's stops after the Marrow: with a save, at the stop your
@@ -513,15 +533,15 @@ leaves those off.
   Heart The Old Hearts doesn't take, so it has no mark) and the Bellhome's furnishings (the five
   bought at Frey, and the Materium, Farsight and Crawbell built there once found, at the
   Bellhome's door: their Key items marks are where each lies). Their cards say how each is had: who
-  sells it and for how much, and what the shop waits for (Jubilana's Choral Commandment after The
+  sells it and for how much, and in their Needs what the shop waits for (Jubilana's Choral Commandment after The
   Lost Merchant, Grindle's Psalm Cylinder, Frey's furnishings: the Bellhome entered, a relic sold
   to Scrounge, the Vaultkeeper's collection, the Desk), the fight that drops it (the Grey, Hero's
   and Craw Mementos), who gives it (Nuu, the Hunter's), the challenge that awards it (Seth's,
   Sprintmaster Swift's, the Far Fields Rune Harp's speed challenge), and the Shellwood Weaver
   Effigy, through the Chapel of the Witch after Rite of Rebirth. The Vaultkeeper's Melody is with
   Cardinius, who plays it once you bring him the Sacred Cylinder of the Whispering Vaults; the
-  cylinder has its own mark where it lies, among the Psalm Cylinders, with its own name and icon,
-  and each card has a button to the other. Two
+  cylinder has its own mark where it lies, among the Psalm Cylinders, with its own name and icon;
+  the melody's Needs has «bring Sacred Cylinder», the cylinder's card Cardinius and the melody. Two
   things move in Act 3 if you don't have them yet, and have a second
   mark there saying Act 3 and why: the Memory Locket of «Volatile Flintbeetles» lies in Survivor's
   Camp while the wish isn't granted, and the Aknid carrying Mossberry no. 3 moves one room east.
@@ -570,7 +590,7 @@ leaves those off.
   Skull Tyrant has invaded Bone Bottom, during its funeral, once he's sold everything and left,
   or in Act 3; Mort not in Act 3 (Grindle sells what they had left then); the Mottled Skarr only
   while he's alive; Frey from the Widow's fall; the Couriers' shop once both are found; the
-  Twelfth Architect not once he's gone. In Free mode, every one. A shop's card lists what it
+  Twelfth Architect not once he's gone. In Free mode, every one. A shop's card pictures what it
   sells still missing, as your game has it sell now (Pebb's and Mort's wares on Grindle's card
   in Act 3, not before).
   Places is the game's own map legend, its switches named as it names them, one thing each (Bench,
@@ -614,11 +634,10 @@ leaves those off.
   you enter Bellhart without beating it, waits by the Greymoor Bellway from Act 2: with a save that
   says so, its mark is there; with none, at both. The Bell Eater is beaten when you win its fight
   (the Beastling Call), not when it first shows; while it waits for you, its mark is at the Bellway
-  your save names. A fight the game only puts there once something holds says so on its card, and
-  with a save whether yours has it (a wish not yet taken or granted, with a button to where it's
-  taken, unless the card has one there already: a Wishwall's card gives each wish on it not posted
-  yet its next step; the card names the wish once, and gives one way to it, the step your save shows
-  first, as the dormant Second Sentinel): the wish that brings it (the Broodmother, the Far Fields Savage
+  your save names. A fight the game only puts there once something holds has it in its card's Needs
+  while your save hasn't it (a wish to take or to be granted, a way to where it's taken: a Wishwall's
+  card gives each wish on it not posted yet its next step; the card names the wish once, and gives
+  one way to it, the step your save shows first, as the dormant Second Sentinel): the wish that brings it (the Broodmother, the Far Fields Savage
   Beastfly, Gurr, Lost Garmond, Tormented Trobbio, the Second Sentinel, the Pinstress atop Mount
   Fay), the wish granted first
   (Shakra's duel, after Trail's End), the Drifter's Cloak (the Fourth Chorus), the Vaultkeepers
@@ -748,11 +767,11 @@ shop's says what of the 100% it still has for you (and the wishes it asks, if it
 and once nothing is left there, «Nothing left here» alone; a Wishwall's the wishes still open, and
 under them each one not on it yet with its next step, a way to it on the Map, as the Tasks tab says
 it (Balm for the Wounded: «Meet Sherma in Songclave»; Trail's End: «Shakra's maps 12/14»; in Free
-mode the first step); a wish giver's the wishes still open (each with the wish to do first, if it waits for one: Yarnaby
+mode the first step); a wish giver's the wishes still open (the wish to do first in Needs, if one waits for it: Yarnaby
 opens her door for «Infestation Operation» only once «Rite of Rebirth» has cursed Hornet), a thing
-a wish gives, that wish and the one to do before it, with a button to who asks for that one, a wish's place or thing which wish it's for, whether it's done
-and a button to its Wishwall or to who asks for it, a boss's whether it's beaten, with «Fight it in Combat» and
-«See in the Journal» (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills; a
+a wish gives, that wish, a way to where it's taken, and the one to do before it in Needs, a way to who asks for that one, a wish's place or thing which wish it's for
+(a way to its Wishwall or to who asks for it) and whether it's done, a boss's whether it's beaten, with Fight and
+Journal (and its gauntlet's waves and reward, if its fight is one); a gauntlet's its waves and reward; a Journal entry's its kills; a
 map the Citadel's machines sell, «Map machine: 70 rosaries». In Free mode
 a piece's card marks it had; a Mask Shard, Spool Fragment, Silk Heart or upgrade of the Needle, Kit
 or Pouch follows the Inventory's levels instead, as on Progress, and its card leads there. Tap an area's name for its card: the rooms of it you've visited,
