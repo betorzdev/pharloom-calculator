@@ -1,0 +1,138 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Mottled Skarr.png |Alive
+Mottled Skarr Corpse.png |Dead
+</gallery>
+| area = [[Hunter's March]]
+| role = Merchant
+| affiliation = [[Skarr]]
+| singnum = 2
+}}
+
+{{Quote|Hr=SS
+|Rkraha. Uohk kha!<br>Kha... kha mauak. Noku... gri?
+|Mottled Skarr
+}}
+
+<b>Mottled Skarr</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He sells wares at his shop in [[Hunter's March]] in exchange for [[Rosaries]].
+
+== Background ==
+Mottled Skarr's skin is marked with grey spots, a trait shared by [[Skarr#The Mottled Skarr|several of his kin]] but viewed as a curse by the rest of the [[Skarr]].<ref>Unnamed Skarr [[Needolin]] dialogue: <i>"Our mark is no curse..."</i></ref> Unaffected by the [[Haunting]], he remains loyal to [[Skarrsinger Karmelita]], lamenting the tribe's decline.<ref>Mottled Skarr Needolin dialogue: <i>"Strength... faded... All for her... The last, loyal... loved... Why this way?"</i></ref>
+
+== In-Game Events ==
+During their first encounter, Hornet is unable to understand Mottled Skarr's words despite her knowledge of various bug languages.<ref>Hornet and Mottled Skarr dialogue: <br><i>Mottled Skarr: "Rkraha. Uohk kha!"<br>Hornet: "My apologies, sir. Though I can grasp the language of many bugs, your words are unfamiliar even to me."</i></ref> Even with this barrier, they quickly find common ground and agree to trade.<ref>Hornet and Mottled Skarr dialogue: <br><i>Hornet: "These items you have collected. These are the wares of a warrior. Do you wish to trade?"<br>Mottled Skarr: "Noku... noku!"</i></ref>
+
+By default, Mottled Skarr stays in a resting pose with his hand on the ground. When [[Hornet (Silksong)|Hornet]] approaches or speaks to him, he wakes and lifts his hand. Mottled Skarr sings in response to the [[Needolin]] only while in this awakened, idle state. He reverts to the resting pose after a few seconds without interaction.
+
+Hornet can startle Mottled Skarr, causing him to burrow and hide, in several ways:
+* Attacking him, the ground nearby, or any hanging items.
+* Using the [[Challenge]] ability.
+* Running into the wall behind him.
+* Using loud [[Tools]], such as the [[Pimpillo]]. 
+
+He resurfaces once Hornet moves far enough away, roughly to the middle of the platform to the right of the camp. After reappearing, he remains in his awakened state until Hornet leaves for the main [[Hunter's March]] area.
+
+Mottled Skarr is killed, seemingly by other Skarr, after Hornet achieves one of the following conditions and rests at a [[Bench (Silksong)|bench]] outside Hunter's March:
+* Defeating the [[Cogwork Dancers]].
+* Ringing the bell in [[First Shrine]].
+* Acquiring the [[Clawline]] ability.
+
+If not already purchased, the [[Fractured Mask]] can be found near his corpse, and the [[Curveclaw]] in a room above, past the [[Enemy Gauntlets (Silksong)/Hunter's March 5|enemy gauntlet]].
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Mottled Skarr's Description
+|-
+! [[File:Curveclaw.png|center|link=Curveclaw|72x72px]]
+[[Curveclaw]]
+| align="center" | {{R|140}}
+| <i>Auakh khe. Rnka. Uakht rk.</i>
+|-
+! [[File:Fractured Mask.png|center|link=Fractured Mask|72x72px]]
+[[Fractured Mask]]
+| align="center" | {{R|260}}
+| <i>Kha uokn. Krka tih.</i>
+|-
+! [[File:Shard Bundle.png|center|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| align="center" | {{R|50}}
+| <i>Rkraha. Tnk uokn.</i>
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 =
+Rkraha. Uohk kha!<br>
+{{HTalk|My apologies, sir. Though I can grasp the language of many bugs, your words are unfamiliar even to me.}}<br>
+Kha... kha mauak. Noku... gri?<br>
+{{HTalk|These items you have collected. These are the wares of a warrior. Do you wish to trade?}}<br>
+Noku... noku!
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = Kha mauak. Noku gri?
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 = 
+[n]Strength... faded...<br>
+All for her...<br>
+The last, loyal... loved...<br>
+Why this way?
+}}
+
+== Location ==
+Mottled Skarr can be found in [[Hunter's March]], at the end of a hazardous, trap-filled tunnel, hidden behind the west wall in the room directly north of the area [[Bench (Silksong)|bench]]. The [[Swift Step]] ability is required to cross the tunnel.
+
+{{Gallery
+|Image1=Mapshot SS Mottled Skarr.png!Location in Hunter's March
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Mottled Skarr 01.png ! Resting
+|Image2 = Screenshot SS Mottled Skarr 02.png ! Idle
+|Image3 = Screenshot SS Mottled Skarr 03.png ! Singing
+|Image4 = Screenshot SS Mottled Skarr 05.png ! Attacked
+|Image5 = Screenshot SS Mottled Skarr 04.png ! Burrowing
+|Image6 = Screenshot SS Hunter's March 06.png ! Dead
+}}
+
+== Trivia ==
+* Mottled Skarr was originally planned to be located in a different room, as shown in the February 2021 issue of <i>EDGE Magazine</i>.<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 54.</ref> This room still exists in-game within the [[Far Fields]] but has since been reused for a [[Skarr Stalker]] camp.
+{{Gallery
+|Image1 = Screenshot SS EDGE 01.png ! Pre-release screenshot
+|Image2 = Mottled Skarr Old Location.png ! In-game room
+}}
+
+{{Localisation
+|DEname = Gefleckter Skarr
+|DEmeaning = Spotted Skarr
+|ESname = Skarr Moteado
+|ESmeaning = Mottled Skarr
+|FRname = Skarr Tacheté
+|FRmeaning = Spotted Skarr
+|ITname = Skarr Chiazzato
+|ITmeaning = Spotted Skarr
+|JAname = まだらのスカール
+|JAromanised = Madara no sukāru
+|JAmeaning = Mottled Skarr
+|KOname = 얼룩덜룩한 스카르
+|KOromanised = Eollukdeollukan seukareu
+|KOmeaning = Mottled Skarr
+|PTname = Skarr Manchado
+|PTmeaning = Mottled Skarr
+|RUname = Пятнистый скарр
+|RUromanised = Pjatnistyj skarr
+|RUmeaning = Spotted Skarr
+|ZHname = 白斑斯卡尔
+|ZHromanised = Báibān sīkǎ'ěr
+|ZHmeaning = Vitiligo Skarr or White-Spotted Skarr
+|CODEname = ANT_MERCHANT
+}}
+
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
+
+[[fr:Skarr Tacheté]]

@@ -1,0 +1,425 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Grindle Idle.png|Idle
+Grindle Shop.png|In Shop
+</gallery>
+| area = Various
+| role = Merchant
+| affiliation = [[Snitchbugs]]
+| singnum = 2
+}}
+
+{{Quote
+| Since when's a little light thievery worth a lifelong sentence?
+|Grindle
+|Hr=SS
+}}
+
+<b>Grindle</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He is a thieving [[Snitchbugs|Snitchbug]] who can be found in multiple locations. He eventually settles in the [[Blasted Steps]] and exchanges various goods for [[Rosaries]].
+
+== Background ==
+Grindle is a member of the [[Snitchbugs]], a group of thieves that pilfer and scavenge goods from [[Pharloom]]'s citizens and ruins.<ref>[[Snitchfly]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Pernicious looter found all over Pharloom."</i></ref> This is indicated by the [[Thief's Mark]], which identifies the wearer as a member.<ref>Thief's Mark description: <i>"Symbol worn to identify oneself to fellow thieves."</i></ref>
+
+Grindle was eventually locked up in a jail cell in [[the Marrow]] for something he calls "light thievery".<ref>Grindle: <i>"Hoy! Hoyyyy! You there! Get us out of here! Since when's a little light thievery worth a lifelong sentence?"</i></ref>
+
+== In-game Events ==
+Grindle is first encountered in a jail cell in the Marrow, located below the entrance to [[Hunter's March]]. [[Hornet (Silksong)|Hornet]] can free him by repeatedly attacking the bars. If he is not freed, he later escapes by himself once Hornet reaches the [[Far Fields]] or [[Shellwood]].
+
+If Hornet returns to Grindle's prison after freeing him but before entering the Far Fields or Shellwood, he can be found at the bottom of the room looting bags on the floor. He offers to sell secrets to Hornet in exchange for [[Rosaries]].<ref>Grindle: <i>"O-hoho! Share some of your little clicky-clackies with us, help us fill our pockets. If you do, we'll share a sneaky secret with you!"</i></ref>
+
+He can later be found in the north-west area of the [[Choral Chambers]], where he is hiding inside a container while being harassed by a [[Reed]]. After saving Grindle and resting on a [[Bench (Silksong)|bench]], he can be found looting a chest in one of three possible places in the Choral Chambers and the [[High Halls]]. This prevents Hornet from collecting the contents herself. Grindle only loots one of the chests and ignores the others.
+
+If Hornet has been taken to [[the Slab]] by a [[Wardenfly]], Grindle can be found in the central east. He is first seen behind a door locked by [[Key of Indolent]], and later found next to the bench in the room on the opposite side. He leaves once Hornet retrieves her belongings.
+
+Later, he can be found in the [[Blasted Steps]], along with several other Snitchbugs in his hideout, which can be reached using the [[Faydown Cloak]]. He opens a shop here and sells goods. 
+
+In [[Act 3]], Grindle sells various unique goods if the merchants who originally sold them have died, as long as those items are not found near those merchants' corpses.
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Grindle's Description
+! Requires
+|-
+! [[File:Thief's Mark.png|center|72x72px|link=Thief's Mark]]
+[[Thief's Mark]]
+| align="center" | {{R|350}}
+| <i>Sign yourself as a snitch! And scoop up more rosaries from your bested foes. Just watch it when you're snitchin' that you don't lose sum'a your own...</i>
+| -
+|-
+! [[File:Snitch Pick.png|center|72x72px|link=Snitch Pick]]
+[[Snitch Pick]]
+| align="center" | {{R|740}}
+| <i>Basic tool'o the job, here. Throw your big needle and scratch shinies straight off your target's shell!</i>
+| [[Clawline]]
+|-
+! [[File:Spool Fragment.png|center|72x72px|link=Spool Fragment]]
+[[Spool Fragment]]
+| align="center" | {{R|680}}
+| <i>Beautiful this, a glowy little piece of somethin'. Stinks of them horrid crawling whisperers a bit, so might be dangerous. You should take it! Give us your rosaries and lighten my claws of it!</i>
+| -
+|-
+! [[File:Psalm_Cylinder.png|center|72x72px|link=Psalm Cylinder]]
+[[Psalm Cylinder]]
+| align="center" | {{R|240}}
+| <i>You like this gleaming spinner I snitched from the big Sitty-dell? There's a way to make it sing to you, or so they says!</i>
+| -
+|-
+! [[File:Crafting Kit.png|center|72x72px|link=Tool Pouch & Crafting Kit|Crafting Kit]]
+[[Tool Pouch & Crafting Kit|Crafting Kit]]
+| align="center" | {{R|700}}
+| <i>You're in the habit of craftin' all kinds'a nasty tools'n traps, aint'cha? This kit'll let you build 'em even nastier, heh heh...</i>
+| -
+|-
+! [[File:Rosary String.png|center|72x72px|link=Rosary String]]
+[[Rosary String]]
+| align="center" | {{R|80}}
+| <i>Want yer clicky-clackies threaded nice and tight? Old Grindle will do it gladly, if you let 'im snitch a few for hisself...</i>
+| -
+|-
+! colspan=4 | Available in [[Act 3]]
+|-
+! [[File:Magnetite Brooch.png|center|72x72px|link=Magnetite Brooch]]
+[[Magnetite Brooch]]
+| align="center" | {{R|220}}
+| <i>Very, very lucky little trinket we got 'ere! Pulls 'em little clickie-clackies right into yer waitin' claws!</i>
+| Starting Act 3 before buying it from [[Pebb]]
+|-
+! [[File:Mask Shard (Silksong).png|center|72x72px|link=Mask Shard (Silksong)|Mask Shard]]
+[[Mask Shard (Silksong)|Mask Shard]]
+| align="center" | {{R|320}}
+| <i>Just a piece of a mask, innit? Don't ask us where the other bits are... you'll have to sniff 'em out for yourself!</i>
+| Starting Act 3 before buying it from Pebb
+|-
+! [[File:Craftmetal.png|center|72x72px|link=Craftmetal]]
+[[Craftmetal]]
+| align="center" | {{R|120}}
+| <i>This lump here is well heavy, and shiny too, so it's surely worth somethin'!</i>
+| Starting Act 3 before buying it from Pebb
+|-
+! [[File:Simple Key (Silksong).png|center|72x72px|link=Simple Key (Silksong)|Simple Key]]
+[[Simple Key (Silksong)|Simple Key]]
+| align="center" | {{R|600}}
+| <i>Us snitchbugs can wriggle into any place we want, but with this key even a big oafy bug like you can get through a locked door!</i>
+| Starting Act 3 before buying it from Pebb
+|-
+! [[File:Tool Pouch Upgrade.png|center|72x72px|link=Tool Pouch & Crafting Kit|Tool Pouch]]
+[[Tool Pouch & Crafting Kit|Tool Pouch]]
+| align="center" | {{R|220}}
+| <i>We could add a little pocket to yer tool pouch for you. You could pack even more goodies in there! All your shards’n sharp things!</i>
+| Starting Act 3 before buying it from [[Mort]]
+|-
+! [[File:Memory Locket.png|center|72x72px|link=Memory Locket]]
+[[Memory Locket]]
+| align="center" | {{R|250}}
+| <i>This is a fine shiny-shiny, ain't it? Those dirty old raggedies like to carry these around, and we like to snitch 'em away when we can! O-ho-ho!</i>
+| Starting Act 3 before buying it from Mort
+|-
+! [[File:Magnetite Dice.png|center|72x72px|link=Magnetite Dice]]
+[[Magnetite Dice]]
+| align="center" | {{R|300}}
+| <i>Nice little pair of rolly-rollies we got 'ere. Sure to bring luck to any snitchin' expedition...</i>
+| Starting Act 3 before winning them from [[Lumble the Lucky]] or taking them from his corpse
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]What you got is mine, my love!<br>
+What I got is mine, my love!<br>
+What they got I'll take, my love!<br>
+What I take is what I got!
+
+| Title2 = The Marrow
+| Title2_Event1 = First encounter, while Grindle is still locked up
+| Title2_Dialogue1 = Hoy! Hoyyyy! You there! Get us out of here! Since when's a little light thievery worth a lifelong sentence?
+| Title2_Event2 = Exhausted dialogue before freeing Grindle
+| Title2_Dialogue2 = Hurry it up, let us out quickly then! We got places to go, bugs to see, trinkets to pilfer!
+| Title2_Event3 = Speaking after freeing Grindle
+| Title2_Dialogue3 = Hoho, free at last! Locked up in here much too long, we was. Nasty place to keep a poor little snitchbug like Grindle.<br>
+Hoy, you're smellin' fancy! You got some pockets under your cloak? Hidin' away some goodies for us to pilfer?<br>
+{{HTalk| Beware your greed, thief. You'd be dead before your claw reached my cloak.}}<br>
+O-hoho! Never mind then, bully. Plenty of tasties lying around for us down here. We smells 'em!
+| Title2_Event4 = Exhausted dialogue after freeing Grindle
+| Title2_Dialogue4 = Lockin' us up in a place like this... what a shameful act!
+| Title2_Event5 = Returning to the prison after freeing Grindle
+| Title2_Dialogue5 = Hoy, you're still hanging around then? Quiet in here. Good for hidin' out.<br>
+You gots the li'l clicky-clackies on you then, eh? The rolly-roundies? What the shops like to swap for?
+| Title2_Event6 = Getting offered to buy secrets
+| Title2_Dialogue6 = O-hoho! Share some of your little clicky-clackies with us, help us fill our pockets. If you do, we'll share a sneaky secret with you!
+| Title2_Event7 = Refusing to buy
+| Title2_Dialogue7 = Oooh! Greedy are you? Mean to poor li'l snitchbugs like us? Won't survive out there without our secrets, oh no no!
+| Title2_Event8 = Accepting to buy
+| Title2_Dialogue8 = <b>Buying the first secret for {{R|10}}:</b><br>
+O-hoho! Into Grindle's pockets they go! And for you, a secret to remember us by...<br>
+Beneath here and further on, the burly bellheads have a big, hot, gleaming hive! Full of all sorts of tasty snitchables!<br>
+But there's this big gate they got down in its belly... shut tight, locked up. If you could wriggle through, you'd get your claws on all kindsa goodies!
+<hr/>
+<b>Buying the second secret for {{R|15}}:</b><br>
+O-hoho! Into Grindle's pockets they go! And for you, a secret to remember us by...<br>
+You know where all them dreary raggedies are camping? Back near the ol' chapel? Well, beyond that chapel is a dirty great grave!<br>
+Not much in there but husks, right? But but! My sniffer tells me there's something worth the trouble buried down at the bottom!
+<hr/>
+<b>Buying the third secret for {{R|30}}:</b><br>
+O-hoho! Into Grindle's pockets they go! And for you, a secret to remember us by...<br>
+There's lots of pickings round here, right? Well, it's all nothing compared to what they got hidden up, up above us. The great big Sitty-del they calls it!<br>
+A golden place, groaning with goodies! Could never steal it all in a thousand snitch-bug lifetimes they reckon!<br>
+Oh yes, that's where ol' Grindle is headin'. Don't you dare follow us, though! We want it all for us-selves!
+| Title2_Event9 = Exhausted dialogue after buying all secrets
+| Title2_Dialogue9 = Eugh. Is it gettin' hotter down here? Mustier? Grindle's been down here too long. Reckon it's time to climb back up soon, to where all the serious treasures is!
+
+| Title3 = The Slab
+| Title3_Event1 = First conversation, near the door locked by [[Key of Indolent]]
+| Title3_Dialogue1 = <b>If Hornet does not release him from [[the Marrow]]'s cell prior:</b><br>
+O-hoho! You're lookin' a little stuck there! What a pity!<br>
+{{HTalk|Are you too a prisoner here, small bug? If we ally our efforts, escape could be made that much easier.}}<br>
+Hoho, you jestin'? There ain't no allies in prison! Just throw yourself against the walls in there while I go sniffin' for goodies!
+<hr/>
+<b>If Hornet releases him from the Marrow's cell prior:</b><br>
+O-hoho! You're lookin' a little stuck there! What a pity!<br>
+{{HTalk|We meet again, little thief. Are you familiar with this place?}}<br>
+{{HTalk|If we ally our efforts, our escape could be made that much easier.}}<br>
+Hoho, you jestin'? There ain't no allies in prison! You can just throw yourself against the walls in there while I go sniffin' for goodies!
+| Title3_Event2 = Speaking, near the [[Bench (Silksong)|bench]] in the opposite room
+| Title3_Dialogue2 = Hoy! We thought one of them buzzing bullies was sneakin' up on us, but it's just a mangy jailbug!<br>
+Why you in here, then? Caught thievin' were you? Greedy, greedy!<br>
+{{HTalk|I've stolen nothing. Rather, I suspect the wardens are servants of the Citadel. The cage used in my capture bore similar runes to the one that first brought me to this land.}}<br>
+{{HTalk|Bound in that cage, I'd have proved a fine gift were they to deliver me to their masters.}}<br>
+Pah, there ain't nothin' fine about you, jailbug. We recognised a fellow thief soon as we saw you!<br>
+Now, don't be lingerin' around here. Those guards'll be wanting to pop you back in your cage quick quick!<br>
+{{HTalk|They'll not get the chance. I will reclaim my belongings and leave this grim place with haste.}}
+| Title3_Event3 = Speaking again
+| Title3_Dialogue3 = {{HTalk|You seem to have some familiarity with this prison and its guards. Do you know a path to escape?}}<br>
+Escape! A little jailbug like you ain't ever escapin' anything! Get out of here, will you? Stop bothering us! You got nothing to steal, so we got nothing to talk about!
+| Title3_Event4 = Exhausted dialogue
+| Title3_Dialogue4 = Lots of good stuff tucked away in this old prison... lovely place to bring a lucky little snitchbug like Grindle! What a favour those lugs did us! O-hoho!
+
+| Title4 = Choral Chambers
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = Well, well! See what happens to nasty bully-bugs when they come after poor old Grindle? That's a well-deserved end, we reckon.<br>
+We heard this old Sitty-dell was nice and quiet and burstin' with goodies. So what's happened, eh? Why's it crawlin' with bullies and busybodies?<br>
+{{HTalk|The creature that haunts this place is stirring, little thief. The Citadel's caste now roam the halls. You would do well to leave soon, if you mean to survive.}}<br>
+What what? You bein' mirthful? We're stayin' here 'til we're done pilfering! You should be the one leavin' if you're so afeared!
+| Title4_Event2 = Speaking again
+| Title4_Dialogue2 = Hoy, you been creepin' around this dusty old place for while then, eh? You must be carryin' a lot of goodies with you! Let a poor old snitchfly 'ave a quick look! <br>
+Owoww, what a rotten turn! Keep your nasty junk to yourself, then!
+| Title4_Event3 = Exhausted dialogue after saving Grindle
+| Title4_Dialogue3 = We ain't leavin' 'til we're done pilfering! You be off, if you're so scared!
+| Title4_Event4 = Speaking after leaving and re-entering the room
+| Title4_Dialogue4 = Hoy! You again? This place used to be nice and quiet, but now we can't get a moment's peace!
+| Title4_Event5 = Speaking after leaving and re-entering the room, and if Hornet has entered [[Songclave]]
+| Title4_Dialogue5 = {{HTalk|Some pilgrims have made an encampment in a safer place than this, high on the other side of the Citadel.}}<br>
+{{HTalk|They would surely allow you to stay there, if you could resist causing them mischief.}}<br>
+An en-camp-ment, eh? Sounds like a jolly place for old Grindle! Mayhaps we'll have a sniff around later.<br>
+That's a good tip, that. And you've just done given it to us for free! O-hoho, head fulla muck you got!
+| Title4_Event6 = Exhausted dialogue while Grindle is rummaging
+| Title4_Dialogue6 = Don't be lingerin' here too long! We got snitchin' to do and we ain't keen on company!
+
+| Title5 = Blasted Steps
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = <b>Before Act 3:</b><br>
+Hoy then, what's a fancy-prancy bug like you creepin' into Grindle's cosy little nook for?<br>
+Heard we had some nice stuff, did ya? O-hoho! All kinds of tasty goodies find their way here, that's for sure.<br>
+{{HTalk|I care little for how you procured your goods, thief. If you have something worth trading, I may part with my rosaries.}}<br>
+Well, we never say no to a fair swap, heh heh! Now take a look at what we's got...
+<hr/>
+<b>In Act 3:</b><br>
+Hoy there, fancy bug! How you farin', now that the 'ole world's creakin' and crackin' around us? Desperately needin' some supplies, I'll wager! Heh heh!<br>
+{{HTalk|You seem in good spirits, thief. Are you not disturbed by the great rending of the kingdom?}}<br>
+Heh, end of the world don't bother ol' Grindle none. We'll just go find another one to plunder, won't we?
+| Title5_Event2 = Opening the shop
+| Title5_Dialogue2 = <b>Before Act 3:</b><br>
+After some tasty goodies? We never say no to a fair trade, heh heh! Take a look at what we's got...
+<hr/>
+<b>In Act 3:</b><br>
+Desperate times make for desperate customers, heh heh! So let's get to tradin', eh?
+}}
+
+== Location ==
+Grindle can first be found in the eastern portion of [[the Marrow]], within a jail cell. He can also be found later in [[the Slab]] if [[Hornet (Silksong)|Hornet]] has been taken there by a [[Wardenfly]]. Grindle can be found inside a container, hiding from a [[Reed]] within the western section of the [[Choral Chambers]], and once saved there, he can appear looting a chest in either the Choral Chambers or the [[High Halls]]. Grindle's shop can be found in the northern [[Blasted Steps]], which requires the [[Faydown Cloak]] to reach.
+
+{{Gallery
+| Image1 = Mapshot SS Marrow Prison.png!Location in the Marrow
+| Image2 = Mapshot SS Grindle 02.png!Locations in the Slab
+| Image3 = Mapshot SS Grindle 01.png!Location in the Blasted Steps
+| Image4 = Mapshot SS Grindle 03.png!First location in the Choral Chambers
+| Image5 = Mapshot SS Grindle 04.png!Possible looting locations in the Choral Chambers
+| Image6 = Mapshot SS Grindle 05.png!Possible looting location in the High Halls
+}}
+
+== Creation and Development ==
+[[File:Grindle.gif|thumb|250px|Grindle's 2020 riddle gif]]
+Grindle is the second of a series of NPCs teased using riddles provided by [https://twitter.com/griffinmatta Matthew "Leth" Griffin] that lasted throughout June to July of 2020. The others being [[Huntress]], the [[Flea Caravan]], and [[Shrine Guardian Seth]]. 
+The following description was provided upon the riddles being solved, alongside the promotional art and a gif:
+
+: <i>"Hoho, free at last! Locked up in here much too long, we was! Nasty place to keep a poor little snitchbug! You're smellin' fancy though... Bet you got some nice shinies hidden in that cloak!"</i>
+
+: <i>A common snitchbug, fixated on thievery. Though he has travelled the lengths of [[Pharloom]], he's seen most of it through the iron bars of cages and cells. Free at last, he's taking full advantage of the kingdom's ailing state.</i>
+
+: <i>This sneaky thief will gladly take [[rosaries]] in exchange for snippets of information he has gathered, though his gossip is often of questionable value.</i><ref>Description in the [https://discordapp.com/channels/283467363729408000/586931790208434203/724730813887021158 file] where Grindle was revealed.</ref>
+
+The riddle solved to reveal this character featured clues that hinted at different characters from the [[Hollow Knight|first game]]. The riddle and solution are outlined below:
+
+<table class="cquote" cellpadding="0" cellspacing="0" border="0" style="width:{{{width|70%}}}; margin-bottom:3px; margin-top:3px;margin-left:auto;margin-right:auto;"><tr><td style="background:transparent;"><div style="overflow:auto; height:{{{height|230px}}}; width:{{{width|99.9%}}}; -moz-border-radius-topleft:0.5em; border:1px solid #AAAAAA; padding-left:0.5em; background:transparent;">
+"I am a fly of little fame
+But here's your chance to know my name 
+I dwell in land of silk and song
+And I don't feel that thieving's wrong"
+
+"I hope that you won't think me rude
+But I am in a riddling mood 
+So now I speak a clue or two
+To recall names of Things you knew"
+
+"The first of Things has known no peer
+You find him in a realm of tears
+He wields a hammer but needs a nail
+And seeks a trinket, metallic and pale"
+
+<i>Answer: [[Nailsmith]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"Another Thing with friendly face
+And you can find them any place
+They may be found both near and far
+And freely if not for a jar"
+
+<i>Answer: [[Grubs|Grub]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"The next Thing you find everywhere
+But few are sure it's really there
+Corrupt yet "does it have a mind?"
+It's in their eyes but are they blind?"
+
+<i>Answer: [[The Infection|Infection]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"The first of letters in his name
+And the sixth of mine are same
+But if you have nothing to buy
+His speech may begin with a sigh"
+
+<i>Answer: [[Relic Seeker Lemm|Lemm]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"The fifth character of this game
+Are capital letters in his name
+And if you face him you will find
+He guards what exits from behind"
+
+<i>Answer: [[Dung Defender]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"The next Thing is a simple one
+And angry once her rest is done
+She'll fly while bouncing to and fro
+And inside her the babies grow"
+
+<i>Answer: [[Gruz Mother]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"And now the last Thing finally
+Confessed to her regretfully
+Rarely would you see its eyes
+For inside of you this Thing lies"
+
+<i>Answer: [[Shade]]</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"Three seers from the tube of you
+Shared wisdom June of one and two
+Revealing my name is no small feat
+Three key rules were theirs to tweet"
+
+<i>Answer: Three YouTubers who posted the next three clues on Twitter (mossbag <ref>{{Cite tweet|author=mossbag|user=mossbag69|number=1275171707087720450|title=These Things are much more than words(...)|access-date=22 June 2020}}</ref>, Relyea <ref>{{Cite tweet|author=Relyea|user=helyearelyea|number=1275171703035838465|title=The first two letters of my name(...)|access-date=22 June 2020}}</ref>, and Rusty <ref>{{Cite tweet|author=Rusty|user=TSF_Rusty|number=1275171787358306307|title=The third and fourth letters of mine(...)|access-date=22 June 2020}}</ref>)</i>
+
+{{Hr|small|margin=0 0 24px}}
+
+"These Things are much more than words
+The last of Things defeats the third
+Though with the third I share the first letter
+The other's last letter suits me better"
+<i>Answer: Letter "E" (From Shade)</i>
+
+"The first two letters of my name
+Are definitely not the same
+But two of the Things from this rhyme
+Share the first two letters of mine"
+<i>Answer: Letters "GR" (From Grub and Gruz Mother)</i>
+
+"The third and fourth letters of mine
+Are first in two Things equally wide
+To know these two Things we need the width
+Subtract three from the count of the fifth"
+<i>Answer: Letters "IN" (From Infection and Nailsmith)</i>
+<i>DL" (From Dung Defender and Lemm)</i>
+
+<i>Final result: GR IN DL E (Grindle)</i>
+</div></td><td style="width:8px;"></td></tr></table>
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Grindle 01.png!In the Marrow
+| Image2 = Screenshot SS Grindle 10.png!Waving to get Hornet's attention
+| Image3 = Screenshot SS Grindle 11.png!Released
+| Image4 = Screenshot SS Grindle 02.png!In the Marrow after being freed
+| Image5 = Screenshot SS Grindle 12.png!Turning around
+| Image6 = Screenshot SS Grindle 07.png!In the Slab behind a locked door
+| Image7 = Screenshot SS Grindle 13.png!Running away
+| Image8 = Screenshot SS Grindle 08.png!In the Slab near the bench
+| Image9 = Screenshot SS Grindle 14.png!Harassed by a Reed in the Choral chambers
+| Image10 = Screenshot SS Grindle 15.png!Jumping out of the container
+| Image11 = Screenshot SS Grindle 03.png!Idle
+| Image12 = Screenshot SS Grindle 16.png!Trying to steal from Hornet
+| Image13 = Screenshot SS Grindle 17.png!Slapped
+| Image14 = Screenshot SS Grindle 04.png!Looting in the lower section of the Choral Chambers
+| Image15 = Screenshot SS Grindle 05.png!Looting in the upper section of the Choral Chambers
+| Image16 = Screenshot SS Grindle 06.png!Looting in the High Halls
+| Image17 = Screenshot SS BlastedSteps 06.png!In the Blasted Steps
+| Image18 = Screenshot SS Grindle 09.png!Singing
+| Image19 = Grindle.png!Promotional art
+}}
+
+== Trivia ==
+* Grindle commonly refers to himself as "we" or "us", even when no other Snitchbugs are around. He also commonly refers to himself in the third person.
+
+{{Localisation
+|DEname = Grindle
+|DEmeaning = —
+|ESname = Grindle
+|ESmeaning = —
+|FRname = Grindle
+|FRmeaning = —
+|ITname = Grindle
+|ITmeaning = —
+|JAname = グリンドル
+|JAromanised = Gurindoru
+|JAkatakana = foreign
+|JAmeaning = Grindle
+|KOname = 그린들
+|KOromanised = Geurindeul
+|KOmeaning = Grindle
+|PTname = Grindle
+|PTmeaning = —
+|RUname = Гриндл
+|RUromanised = Grindl
+|RUmeaning = Grindle
+|TWname = 格林德爾
+|TWromanised = Gélíndé'ěr
+|TWmeaning = same
+|ZHname = 格林德尔
+|ZHromanised = Gélíndé'ěr
+|ZHmeaning = Grindle
+|CODEname=GRINDLE
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[fr:Grindle]]

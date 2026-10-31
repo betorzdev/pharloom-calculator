@@ -1,0 +1,79 @@
+{{SS Infobox NPC
+| image1 = Broodling.png
+| area = [[The Slab]]
+| affiliation = [[Broodmother]] (Mother)<br>
+[[The Slab]] [[Slab Penitents|jailers]] (Member)
+| role = Lore
+|singnum = 2
+}}
+{{Quote|Hr=SS|Tr=SS|Eggy, eggy! I want to lay a lot of pretty eggies! So tell the big ones, bring me more food!|Broodling}}
+
+The <b>Broodling</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is the spawn of the [[Broodmother]] that reveals herself once she has been defeated.
+
+== Background ==
+The Broodling is a juvenile form of Broodmother, being fed by the older flies in order to grow to full maturity and produce more eggs, restarting the cycle of torture those imprisoned as sinful in [[the Slab]] face.
+
+== In-game Events ==
+Broodling appears in a pile of muck in the [[Broodmother]] arena a short while after defeating her.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First meeting
+|Title1_Dialogue1 = Yummy, yummy... oh! Are you here to serve me?<br>
+{{HTalk|I am merely a visitor here, little one. Have you made this place your home, then?}}<br>
+My home? Oh yes! Lovely and warm. The big ones, they bring me food whenever I'm hungry. And I'm hungry now!
+|Title1_Event2 = Talking again
+|Title1_Dialogue2 = Eggy, eggy, hee hee! I'll eat a lot, grow big and fat. Then I'll lay a lot of eggies!<br>
+They bring me plenty of food, so they must want plenty of eggies.<br>
+And plenty they shall have, if they're nice to me! Hee hee!
+|Title1_Event3 = Repeat dialogue
+|Title1_Dialogue3 = Eggy, eggy! I want to lay a lot of pretty eggies! So tell the big ones, bring me more food!
+|Title1_Event4 = [[Needolin]] dialogue
+|Title1_Dialogue4 = [n]Eggy, eggy, big and warm...<br>
+When you're hungry, eat and eat!<br>
+Grow bigger, bigger, oh so big...<br>
+Fill your belly with lovely eggs!
+}}
+
+== Location ==
+Broodling can be found in the northwest end of [[the Slab]], after defeating the [[Broodmother]] and returning to her arena later.<gallery>
+File:Mapshot SS Broodmother 01.png|Location of Broodling in the Slab
+</gallery>
+
+== Gallery ==
+{{Gallery
+|Image1= Screenshot SS Broodling 01.png!Broodling hiding
+|Image2= Screenshot SS Broodling 02.png!Broodling appearing
+|Image3= Screenshot SS Broodling 03.png!Broodling singing
+}}
+{{Localisation
+|DEname = Brutling
+|DEmeaning = Broodling
+|ESname = Cría
+|ESmeaning = Young animal
+|FRname = Mouchette
+|FRmeaning = From <i>mouche</i> (fly) and <i>-ette</i> (diminutive suffix)
+|ITname = Larvide
+|ITmeaning = Larvae
+|JAname= ハエの子
+|JAromanised = Hae no ko 
+|JAmeaning = Child of the Fly
+|KOname = 무리벌레
+|KOromanised = Muribeolle
+|KOmeaning = Swarm Bug
+|PTname = Larvídeo
+|PTmeaning = Larvae
+|RUname = Кроха
+|RUromanised = Kroxa
+|RUmeaning = Child
+|TWname = 育母幼蟲
+|TWromanised = Yù mǔ yòuchóng
+|TWmeaning = same
+|ZHname = 育母幼虫
+|ZHromanised = Yù mǔ yòuchóng
+|ZHmeaning = Broodmother Larva or Nurser Mother Larva
+|CODEname = BROODMOTHER_TINY</code> <br> <code>TINY_BROODMOTHER</CODE> <BR> <CODE>BROOD_MOTHER_TINY
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

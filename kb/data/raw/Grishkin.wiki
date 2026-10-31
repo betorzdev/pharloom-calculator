@@ -1,0 +1,160 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Grishkin.png|Idle
+Grishkin Festival.png|Festival
+</gallery>
+| area = [[The Marrow]]<br>
+[[Greymoor]]<br>
+[[Blasted Steps]]<br>
+[[Fleatopia]]
+| affiliation = [[Fleas]]<br>
+[[Flea Caravan]]
+|role = Merchant
+|singnum=2
+}}
+
+{{Quote
+|I'm wonder at this land... Something heavy hangs above, like shadow. I'm hope the little fleas have not much danger here... 
+|Grishkin
+|Hr=SS}}
+
+Grishkin is a [[NPCs (Silksong)|Merchant]] in [[Hollow Knight: Silksong]]. They are a member of the [[Flea Caravan]] and provide [[Hornet (Silksong)|Hornet]] the [[Flea Brew]].
+
+== In-game Events ==
+Grishkin can initially be found in [[the Marrow]] with the rest of the Flea Caravan. After the [[Flea Caravan]] moves to [[Greymoor]], Grishkin gives Hornet the [[Flea Brew]] as a reward, which can be refilled by interacting with the pot nearby for {{R|30}}. They provide this service to the [[Blasted Steps]] and [[Fleatopia]]
+
+After the [[Festival of the Flea]] has commenced, Grishkin no longer charges Rosaries for refills, saying there is no reason to waste any brew when their future is decided.<ref>Grishkin: <i>"No charge for you if needing more. Why waste when future is final?"</i></ref> While they do not host any games, they can appear during [[Flea Juggle]]. 
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Interacting with the pot next to Grishkin when [[Flea Brew]] is full
+| Title1_Dialogue1 = Miss Hornet, your bottle is full of Flea Brew. You know what such means! You must have drink! Har har!<br>
+When you have finish drinking, return and we will fill flask again! I'm is always brewing!
+| Title1_Event2 = Playing the [[Needolin]]
+| Title1_Dialogue2 = [n]Hear our voices! Hear our plea! <br>
+Join our company, moving free! <br>
+All fleas must find us... <br>
+All fleas must come... <br>
+The ritual beckons... the road is long... <br>
+We live and die and roam as one!
+
+| Title2 = The Marrow
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = Dodeshna, dodeshna! I am saying, welcome to our caravan, stranger!<br>
+You are a very funny, very strange flea, isn't it? No fur at all, and your wings fall off!<br>
+Har, har har har! Is just jest, of course. Us fleas famous for giving jokes!
+| Title2_Event2 = Exhausted dialogue
+| Title2_Dialogue2 = <b>First encounter:</b><br>
+My fellows give much worry for the other fleas, but I'm not give at all. They will find their way to us, and if not, who keep count of them anyway? Har har!
+<hr/>
+<b>Revisiting:</b><br>
+Some beasts here, I see them eat through the bony ground. Is very smart! Bone is everywhere much abundant! If only I had such stomach, har har!
+
+| Title3 = Greymoor
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Dodeshna! Miss Hornet, is it? Welcome to our new camp! The travelling is done, and so we drink!<br>
+Is no better way to revive spirit than to drink the famous Flea Brew! I'm have just finished a batch, bubbling and warm!<br>
+You are friend, finder of lost, little fleas, hmm? Here, take bottle of Flea Brew with you! Will keep you warm while you travel.<br>
+I am always brewing here, so have no fear to drink plenty, and return whenever you are wanting more!
+| Title3_Event2 = Exhausted dialogue
+| Title3_Dialogue2 = I'm wonder at this land... Something heavy hangs above, like shadow. I'm hope the little fleas have not much danger here...
+
+| Title4 = Blasted Steps
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = The bellowing sandy land was full of much danger. We was almost lost poor Varga to hungry worms as we travel up!<br>
+Sadly, he is finding way here after all. Har! Is only jest. Grishkin and Varga is great friends, just like all fleas is being.<br>
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = You are have luck, Miss Hornet, to lack the fur of we fleas. All the blowy sand of that place is getting very stuck inside!
+
+| Title5 = Pale Lake/Fleatopia
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = At longest last, have our flea roamings ended! Every sandy grain and stinky squelchy maggot was worth to endure, to claim such a home!<br>
+Is time for rest and celebrate, and none have earned such more than you, Miss Hornet! Raise your flask and drink most heartily with us!
+| Title5_Event2 = Exhausted dialogue
+| Title5_Dialogue2 = The little fleas like this place most of all. They are as much happy as I ever hear them!
+| Title5_Event3 = Playing the [[Needolin]]
+| Title5_Dialogue3 = [n]Safe together, home at last...<br>
+The road behind us, all dangers passed...<br>
+Swim and sing, ease stiffened shells...<br>
+We fleas together... Till final bells...<br>
+Rejoice! Remember! Those long gone...<br>
+Soon... the ritual, bold, loud, strong!
+
+| Title6 = Act 3
+| Title6_Event1 = First conversation & Exhausted dialogue
+| Title6_Dialogue1 = Our travels have end, and now soon the world will also have end! At such bitter of times, brew with friends is most sweet.
+
+| Title7 = Ecstasy of the End
+| Title7_Event1 = First conversation
+| Title7_Dialogue1 = Good friend of fleas is you, Miss Hornet. Now must join and drink much. Be merry before all ends. Brew is made, enough for all!<br>
+No charge for you if needing more. Why waste when future is final?
+| Title7_Event2 = After [[Shrine Guardian Seth|Seth]] joins the Caravan
+| Title7_Dialogue2 = Say you dodeshna to the new flea sitting there? Is quiet one, but is very good at games!<br>
+Have no worry for him, Grishkin will look after. Will fill him with brew and meet him to all the other fleas.
+| Title7_Event3 = Exhausted dialogue
+| Title7_Dialogue3 = Drink to full, Miss Hornet! Why waste? Be merry with us fleas before it all ends!
+| Title7_Event4 = Playing the [[Needolin]]
+| Title7_Dialogue4 = [n]Face the darkness, sing dear friends...<br>
+Joy and merry till it all ends...<br>
+Our ritual, needed more than ever...<br>
+This time of fleas spent warm, together...<br>
+Dance and play, as all fleas past...<br>
+This world may fall, but we stand till the last...
+}}
+
+== Location ==
+Grishkin can be encountered alongside the [[Flea Caravan]] at [[the Marrow]], [[Greymoor]], [[Blasted Steps]] and [[Fleatopia]], as the caravan moves as [[Fleas]] are found.
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in Blasted Steps
+|Image4 = Mapshot SS Flea Caravan 04.png!Location in Putrified Ducts
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1=Screenshot SS Flea Caravan 01.png!Initial appearance in the Marrow
+|Image2 = Screenshot SS Flea Caravan 02.png!Before leaving the Marrow
+|Image3 = Screenshot SS Flea Caravan 03.png!In Greymoor
+|Image4 = Screenshot SS Flea Caravan 04.png!In the Blasted Steps
+|Image5 = Screenshot SS Flea Caravan 05.png!In the Putrified Ducts
+|Image6 = Screenshot SS Putrified Ducts 08.png!At the Festival of the Flea
+|Image7 = Screenshot SS Flea Juggle 03.png!Appearing during Flea Juggle
+|Image8 = Screenshot SS Festival of the Flea 03.png!Celebrating at the Festival of the Flea
+|Image9 = Screenshot SS Grishkin 01.png!Grishkin reacting to Needolin
+|Image10 = Caravan.png!Flea Caravan promotional art containing Grishkin
+}}
+
+== Trivia ==
+* Grishkin and [[Forge Daughter]] share the same singing voice.
+{{Localisation
+|DEname = Grishkin
+|DEmeaning = —
+|ESname = Grishkin
+|ESmeaning = —
+|FRname = Grishkin
+|FRmeaning = —
+|ITname = Grishkin
+|ITmeaning = —
+|JAname = グリシュキン
+|JAromanised = Gurishukin
+|JAkatakana = foreign
+|JAmeaning = Grishkin
+|KOname = 그리슈킨
+|KOromanised = Geurisyukin
+|KOmeaning = Grishkin
+|PTname = Grishkin
+|PTmeaning = —
+|RUname = Грискин
+|RUromanised = Griskin
+|RUmeaning = Grishkin
+|TWname = 格里什琴
+|TWromanised = Gélǐshénqín
+|TWmeaning = same
+|ZHname = 格里什琴
+|ZHromanised = Gélǐshénqín
+|ZHmeaning = Grishkin
+|CODEname = FLEAMEMBER_SHORT</code><br><code>TROUPE_MEMBER_SHORT
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

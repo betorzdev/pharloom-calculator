@@ -1,0 +1,438 @@
+{{SS Infobox NPC
+|label1 = Tipp and Pill
+|image1 = <gallery>
+Tipp_&_Pill.png|Idle
+Tipp & Pill Sleeping.png|Sleeping
+</gallery>
+| area = [[Bellhart]]
+| role = Quest
+| quest = [[My Missing Courier]]<br>[[My Missing Brother]]<br>[[Delivery Wishes]]
+| aka = Courier Tipp<br>Courier Pill
+| sing= Tipp & Pill
+| singnum = 2
+| s1 = Pill
+| s2 = Tipp
+
+|label2 = Tipp
+|title2 = Courier Tipp
+|image2 = <gallery>
+Courier Tipp.png|Idle
+Tipp Hiding.png|Hiding
+Tipp Flying.png|Flying
+</gallery>
+| area2 = [[Bone Bottom]]<br>[[Bellhart]]
+| role2 = Quest
+| quest2 = [[My Missing Courier]]<br>[[My Missing Brother]]<br>[[Delivery Wishes]]
+| sing2= Tipp
+| singnum2 = 1
+| g2 = Courier Tipp
+
+|label3 = Pill
+|title3 = Courier Pill
+|image3 = <gallery>
+Courier Pill.png|Idle
+Pill Hiding.png|Hiding
+Pill Flying.png|Flying
+</gallery>
+| area3 = [[Sinner's Road]]<br>[[Bellhart]]
+| role3 = Quest
+| quest3 = [[My Missing Brother]]<br>[[Delivery Wishes]]
+| sing3= Pill
+| singnum3 = 1
+| g3 = Courier Pill
+}}
+
+{{Quote
+|Miss saving! We are together, at last! My brother and myself, both returned to safety's safe.<hr/>
+We cannot be leaving this home of bells. No more! Heres we will remain, for shells to survive.
+| Couriers Tipp & Pill
+|Hr=SS
+}}
+
+<b>Couriers Tipp & Pill</b> are [[NPCs (Silksong)#Merchants|Merchants]] in <i>[[Hollow Knight: Silksong]]</i>. They are brothers that offer [[Delivery Wishes|deliveries]] in [[Bellhart]] in exchange for [[Rosaries]]. Tipp is the round one and Pill is the tall one.
+
+== Background ==
+Tipp & Pill are two brothers who work as couriers for the citizens of Pharloom.<ref>Tipp: <i>"Miss courier! Pharloom's bugs are wishing, waiting, sad and scared. The deliverings are needed, now more than more!"</i></ref> Tipp works as [[Frey]]'s supplier,<ref>[[Frey]]: <i>"Oh yes, even my supplier is back to work, so I have plenty of goods to show you!"</i></ref> and is the first brother that Hornet rescues. Pill is implied to be an older brother, as he refers to Tipp as "Young Tipp" in one of his dialogues.<ref>Pill: <i>"Young Tipp! How he worries always. Blessed I am for the care, him and you Miss Hornet! A lucky bug is me!"</i></ref> After being rescued, they reside at [[Bellhart]].
+
+== In-game Events ==
+After completing the Main Objective [[SAVE: The Threadspun Town]], the [[My Missing Courier]] wish becomes available. After promising the wish, Tipp can be found in the area above [[Bone Bottom]]. After he returns to [[Bellhart]], [[Frey]] has additional goods for sale.
+
+After completing the wish [[My Missing Courier]], accepting the wish [[Great Taste of Pharloom]], and talking to the [[Caretaker]] of [[Songclave]], the wish [[My Missing Brother]] becomes available. After promising the wish, Pill can be found in [[Sinner's Road]]. After he returns to Bellhart, Tipp & Pill offer [[Delivery Wishes]]. They also offer the [[Courier's Rasher]] for the completion of the [[Great Taste of Pharloom]] quest.
+
+Delivery Wishes involve accepting a delivery from Tipp & Pill to another [[NPCs (Silksong)|NPC]] somewhere else in Pharloom. Deliveries are fragile and take damage when Hornet does. Making a heavy landing, hitting a ceiling while using [[Silk Soar]], and running into a wall while using [[Swift Step]] also damages the item. If the item takes too much damage (denoted below Hornet's health bar), it breaks and another one must be acquired from Tipp & Pill to re-attempt the delivery. Using [[Bellways]], [[Ventrica]], travelling with the [[Flea Caravan]], or using the [[Beastling Call]] immediately destroys the item.
+
+== Wishes ==
+Deliveries of any "Supplies" can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row. In addition, only the first completion of a Delivery contributes towards <i>[[Silk and Soul]]</i>.
+
+{{TaskEntry
+| top = true
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Bone Bottom Supplies
+| title = [[Bone Bottom Supplies]]
+| description = "Goods for the camp at base, where pilgrims' journey starts. We muchly hope this delivering goes well!"
+| objective = Deliver supplies to the fixer Flick in Bone Bottom.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|150}}
+}}
+{{TaskEntry
+| id = Pilgrim's Rest Supplies
+| title = [[Pilgrim's Rest Supplies]]
+| description = "Supplies for the rest-stop in the fields. We is used to like this delivering, when we was young and muchly brave."
+| objective = Deliver supplies to Mort in Pilgrim's Rest.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|180}}
+}}
+{{TaskEntry
+| id = Queen's Egg
+| title = [[Queen's Egg (Wish)|Queen's Egg]]
+| description = <i>"We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!"</i>
+Deliver the Queen's Egg to Styx of Sinner's Road.
+| objective = Deliver a fragile [[Queen's Egg]] to [[Sinner's Road]].
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|260}} (Act 2)<br>{{R|290}} (Act 3)<br>[[Styx]] expands his nest, allowing for the generation of more [[Silkeater]]s.
+}}
+{{TaskEntry
+| id = Songclave Supplies
+| title = [[Songclave Supplies]]
+| description = "Good-goods for the pilgrims up high! Thems brave ones, settled up on that big-big Citadel. These deliverings they will muchly need, miss courier. Carry them safe-safe, for us!"
+| objective = Deliver supplies to the Caretaker in Songclave.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|360}} (Act 2)<br>{{R|410}} (Act 3)
+}}
+{{TaskEntry
+| id = Fleatopia Supplies
+| title = [[Fleatopia Supplies]]
+| description = "Those good-goods, all packed fresh for the clever fleas. Take thems up for us, miss courier. Maybe new friends you might be making with your service? Yes-yes?"
+| objective = Deliver supplies to the Fleamaster Mooshka in Fleatopia.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|410}} (Act 2)<br>{{R|480}} (Act 3)
+}}
+{{TaskEntry
+| id = Liquid Lacquer
+| title = [[Liquid Lacquer (Wish)|Liquid Lacquer]]
+| description = "A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back. And great test for you, miss courier! Most challenging-challenge this. The lacquer to bring is sloshy-slosh. A hard carry even for the best."
+| objective = Deliver Liquid Lacquer to the Mask Maker upon Mount Fay.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|560}} (Act 2)<br>{{R|650}} (Act 3)
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Survivor's Camp Supplies
+| title = [[Survivor's Camp Supplies]]
+| description = "A new destination this-this! And desperate these supplies are asked. Deliverings for them-them escaped from the crumbled camp beside the bone, those few still living. Hurting and hungry, those few must be."
+| objective = Deliver supplies to Flick at the Survivor's Camp.
+| location = <b><i>[[Bellhart]] NPCs</i></b>
+[[Couriers Tipp & Pill|Tipp & Pill]]
+| reward = {{R|180}}<br><i>Replaces [[Bone Bottom Supplies]] and [[Pilgrim's Rest Supplies]]</i>
+}}
+
+{{TabbedDialogue
+| Title1 = Tipp, Shellwood
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Oh! Those horrible beasty-beasts are gone! Much and many thanks for you, mighty warrior!<br>
+{{HTalk| It was a simple thing, small bug. I assume you are Tipp, the courier?}}<br>
+{{HTalk| Frey, the Bellhart trader, seemed concerned for your safety... and for the cargo you carry.}}<br>
+She sent you?! Bah! She needs to learny-learn a little patience! I'm is barely been away! But still... is lucky-lucky for me you came.
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = Well, I'm is be off now. That old grubly-grub in the bell will come after me herself if she not get her goods!
+
+| Title2 = Tipp, Bellhart
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = Miss saving! Thanks again for you and your big-big blade! I'm is made it back, and grumpy grub-grub got her goods. She seemed happy, even!<br>
+I'm won't be travelling out for a while-while methinks. Too many beasties! All about theys are. Even those pilgrims! All now going angry, a bit like old grub-grub.<br>
+{{HTalk| This town remains safe for the moment, Tipp. You're a smart bug to stay within its walls.}}
+| Title2_Event2 = Speaking again
+| Title2_Dialogue2 = This town feel safe, just, but I'm is worries for others. Is Pharloom needing its good-goods?<br>
+Many bugs helped by us couriers, me and brother Pill. Special now when danger grows big-big.
+| Title2_Event3 = Exhausted dialogue when [[Great Taste of Pharloom]] is active
+| Title2_Dialogue3 = {{HTalk| Tipp, I have promised a wish to an old bug of the Citadel, ingredients for a dish to stir a gourmand's stomach.}}<br>
+{{HTalk| Do you hold in your belongings a Courier's Rasher? It seems a key element.}}<br>
+Courier's Rasher! Not me, miss savings! Smelly, fatty foods, good for most. Not good for my sensitive stomach!<br>
+You want-want my brother, Pill! Pill is big. Pill loves rashers! Can prepare them fresh for you, but first, Pill must be found, saved, safe-safe!
+| Title2_Event4 = When [[My Missing Brother]] is available
+| Title2_Dialogue4 = My brother, Pill, still out there. Help-help others he must be, taking good-goods all across. I'm is only hope he stay safe-safe, but gone long is Pill. Too long!<br>
+On the wishwall, I'm placed my wish-wish, that my brother returns to me, and these bells of safety's safe.<br>
+{{HTalk| I shall check the wall, Tipp. If your wish aligns with my journey, I may track him down.}}
+| Title2_Event5 = Exhausted dialogue when [[My Missing Brother]] is active
+| Title2_Dialogue5 = {{HTalk| I have taken your wish, Tipp. If I find your brother safe, I'll be sure to send him back this way.}}<br>
+My many thanks, miss saving! You are brave-brave. Same as brother! My faith goes all with you!
+
+| Title3 = Pill, Sinner's Road
+| Title3_Event1 = First encounter
+| Title3_Dialogue1 = Safely-saved is Pill! But who is this rare carer for the shell of another? Name yourself, good bug!<br>
+{{HTalk| I am Hornet, Pill. Your brother wished for your return to Bellhart, where he waits now. I'm sure he will be eager to see you alive.}}<br>
+Young Tipp! How he worries always. Blessed I am for the care, him and you Miss Hornet! A lucky bug is me!<br>
+| Title3_Event2 = Speaking again
+| Title3_Dialogue2 = {{HTalk| Head fast for Bellhart, Pill. These lands are not for travelling without a sharp blade in claw.}}<br>
+Aye! Yes! To Bellhart, and my brother, I shall fly quickly-quick. If you pass that way again, stop and give greeting!
+
+| Title4 = Tipp & Pill, Bellhart
+| Title4_Event1 = First encounter
+| Title4_Dialogue1 = <b>Tipp:</b> Miss saving! We are together, at last! My brother and myself, both returned to safety's safe.<br>
+{{HTalk| I am pleased you have found one another. If you are planning to venture out again, I would urge you reconsider for the sake of your shells.}}<br>
+<b>Tipp:</b> We know it! Muchly-much! We cannot be leaving this home of bells. No more! Heres we will remain, for shells to survive. <br>
+<b>Pill:</b> But we instead did plan, together, clever! Yes-yes. Those pilgrims, them that pass, maybes they will help? For small reward as we have?<br>
+<b>Pill:</b> Even you, miss saving! Yes-yes! Saving is done. Our wishes now we ask. Now is time for miss courier!<br>
+| Title4_Event2 = Picking up the first delivery
+| Title4_Dialogue2 = <b>Pill:</b> But hold, miss courier! Before depart you mustly know, all deliverings are in needing of great-great care!<br>
+<b>Tipp:</b> No bump! No shake! No taking funny transport! Only leg, claw, wing must be used to see them where they need be going.<br>
+<b>Tipp:</b> Carry the deliverings safe-safe, miss courier! Cared for like your own shell.
+| Title4_Event3 = Shop dialogue
+| Title4_Dialogue3 = <b>Tipp:</b> Many deliverings still need making, miss courier! We is much needing your help, when you is ready for the giving of it-it!
+| Title4_Event4 = Refusing delivery
+| Title4_Dialogue4 = <b>The first time:</b><br>
+{{HTalk| I can not aid you, couriers. Not now. My own tasks are too pressing to consider taking on your deliveries. }}<br>
+{{HTalk| With luck, some pilgrims may pass with sound mind and strength remaining. They may choose to promise your wishes.}}<br>
+<b>Pill:</b> Then we shall pray they come, miss saving! Our thanks go muchly with you, still.
+<hr/>
+<b>On subsequent deliveries:</b><br>
+{{HTalk| For the moment, I can not aid you, couriers. My own tasks are too pressing.}}<br>
+<b>Pill:</b> Then we shall hope you see them soon achieved! If the deliverings are not made, Pharloom's bugs will suffer muchly-much!
+| Title4_Event5 = When a delivery is in progress
+| Title4_Dialogue5 = <b>Version 1:</b><br>
+<b>Tipp:</b> Keep safe, miss courier! You and your deliverings, fragile both can be!
+<hr/>
+<b>Version 2:</b><br>
+<b>Tipp:</b> You have the good-goods, miss courier! Now only the deliverings needs doing. Don't wait here-here!
+<hr/>
+<b>Version 3</b><br>
+<b>Pill:</b> Do not wait, miss courier! You hold the deliverings, so nows you must away! A quick-quick bug, you must become yourself.
+| Title4_Event6 = When a delivery is broken
+| Title4_Dialogue6 = <b>The first time:</b><br>
+<b>Pill:</b> The deliverings! They are broken-broke! Gone and spilled!<br>
+<b>Tipp:</b> Do not lose hearty-heart, miss courier! This is Pharloom! Danger, deadly. In times as these, is a rarer thing for goods to get to their goings.<br>
+<b>Tipp:</b> Would you try-try again? For the bugs so much in need of their deliverings?
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> The deliverings, all broken-broke? Would you try-try again, miss courier? Pharloom's bugs are so much in need of your help!
+| Title4_Event7 = Accepting delivery to [[Bone Bottom]]
+| Title4_Dialogue7 = <b>The first time:</b><br>
+<b>Tipp:</b> Once was common, this delivery, for the bugs in their camp beside the bone. Now even this is-is challenge.<br>
+<b>Pill:</b> Down there at base, where many pilgrims' journey start. To ready for their climb, these deliverings will give much value.
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> Goods for the camp at base, where pilgrims' journey starts. We muchly hope this delivering goes well!
+| Title4_Event8 = Accepting delivery to [[Pilgrim's Rest]]
+| Title4_Dialogue8 = <b>The first time:</b><br>
+<b>Tipp:</b> Deliverings for the waystation in the fields at Pharloom's edge, a small rest-stop, still serving.<br>
+<b>Tipp:</b> This journey is maybe not so very hard for you, miss courier? We think you is perfect for this wish!
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> Supplies for the rest-stop in the fields. We is used to like this delivering, when we was young and muchly brave.
+| Title4_Event9 = Accepting delivery to [[Songclave]]
+| Title4_Dialogue9 = <b>The first time:</b><br>
+<b>Tipp:</b> Up-up, in the big Citadel, a new place we heard is now claimed safety-safe! Theys too needing our deliverings, we is sure!<br>
+<b>Pill:</b> That Citadel. We knows its truths! Not so nicely-nice as pilgrims tells! Even if brave bugs would settle, danger still is close!<br>
+<b>Tipp:</b> They would need deliverings, for food, for healings, for protection. Please takes them, miss courier!
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> Good-goods for the pilgrims up high! Thems brave ones, settled up on that big-big Citadel.<br>
+<b>Tipp:</b> These deliverings they will muchly need, miss courier. Carry them safe-safe, for us!
+| Title4_Event10 = Accepting delivery to [[Fleatopia]]
+| Title4_Dialogue10 = <b>The first time:</b><br>
+<b>Pill:</b> We's heard the word! Many fleas together, settled high in Pharloom, calling out their wants of us!<br>
+<b>Pill:</b> Clever grubbers, fleas, but theys too need-need our deliverings. See them served, miss courier! Always goodly-good to gain the thanks of fleas.
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> Those good-goods, all packed fresh for the clever fleas. Take thems up for us, miss courier. Maybe new friends you might be making with your service? Yes-yes? 
+| Title4_Event11 = Accepting [[Queen's Egg]]
+| Title4_Dialogue11 = <b>The first time:</b><br>
+<b>Tipp:</b> We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!<br>
+{{HTalk| The creature, I have met them, a timid, fawning sort. Nonetheless, their tending of Silkeaters can be a benefit for me.}}<br>
+{{HTalk| If a queen delivered could improve their harvest, I too would gain from the trade.}}<br>
+<b>Tipp:</b> Miss courier, and big, sticky creature? Both are like to liking things so grossly-gross? We think yous are muchly strange...
+<hr/>
+<b>On retries:</b><br>
+<b>Tipp:</b> Another egg. Another grossy eater queen. Delivery for the big-big creature beyond the roaches. Maybe this one travels safer than last?
+| Title4_Event12 = Accepting [[Liquid Lacquer]]
+| Title4_Dialogue12 = <b>The first time:</b><br>
+<b>Tipp:</b> A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back.<br>
+<b>Pill:</b> And great test for you, miss courier! Most challenging-challenge this. The lacquer to bring is sloshy-slosh. A hard carry even for the best.<br>
+{{HTalk| I have met this maker. His is a long service, worthy of respect. I will be glad to aid his efforts.}}
+<hr/>
+<b>On retries:</b><br>
+<b>Pill:</b> More for you, miss courier! Lacquer, filled fresh, for the maker on the mount. We have much, so don't worry for our supply. <br>
+<b>Pill:</b> To climb the frozen peak, it is a journey most difficult! Our thanks go full with you that tries again!
+| Title4_Event13 = Speaking when [[Great Taste of Pharloom]] quest is active
+| Title4_Dialogue13 = {{HTalk| Couriers, I require a rasher of meat, for an old bug in the Citadel. Can you prepare it for me?}}<br>
+<b>Pill:</b> A bug up-up? Theys knows our finest food? If theys appreciate, we can prepare it most prompt! Miss courier has only to ask.
+| Title4_Event14 = Accepting [[Courier's Rasher]]
+| Title4_Dialogue14 = <b>The first time:</b><br>
+<b>Pill:</b> It is yours, miss courier! Meats prepared fresh as fresh, in our special way.<br>
+<b>Pill:</b> Miss courier must know! Our rasher is delicious, strong, fatty food, but is not long to last. If not stored quick, it-it is flavour fast turns foul.<br>
+{{HTalk|If the rasher is likely to spoil, then I shall make fast for the Citadel. I've no desire to see your efforts, or your scant supplies wasted.}}
+<hr/>
+<b>On retries:</b><br>
+<b>Pill:</b> More meats for you, miss courier! Best you be delivering it swiftly quick! If left not stored, our rasher's flavour fast turns foul.
+| Title4_Event15 = While [[Cursed Crest|Cursed]]
+| Title4_Dialogue15 = <b>Tipp:</b> Ughhh! What-what is this? Your body is all twisting, creaking! Horrid fiend inside!<br>
+{{HTalk| A parasite has lodged deep inside my shell. It has taken some strength of will to keep its thrashing at bay.}} <br>
+<b>Pill:</b> With a shell like such, you cannot be taking no deliverings! Infect the goods you would-would!<br>
+{{HTalk| Very well, couriers. If I somehow manage to remove the parasite, I may return to offer aid.}}
+| Title4_Event16 = Speaking again while cursed
+| Title4_Dialogue16 = <b>Pill:</b> With your shell all a'wriggle, you can't be taking no deliverings! Infect the goods you would!<br>
+{{HTalk|Very well, couriers. If I somehow manage to remove the parasite, I may return to offer aid.}}
+| Title4_Event17 = Needolin dialogue
+| Title4_Dialogue17 = [n]
+Bring it now, bring it now!<br>
+Carefully, careful now!<br>
+Not too slowly, now!<br>
+Not too hasty, now!
+
+| Title5 = Tipp & Pill, Act 3
+| Title5_Event1 = First conversation 
+| Title5_Dialogue1 = <b>If Hornet hasn't talked to them in Act 2:</b><br>
+<b>Pill:</b> Miss saving! We thought us safe, brothers together at last, but what horror even here! The caves shake-shake, crying pain of hurt most savage.<br>
+<b>Pill:</b> And see all our poor friends below, newly found, crowded inside this home of bells, hearts fast for fear.<br>
+<b>Tipp:</b> But what-what for you? You are here to help, yes-yes? The deliverings, they are needed now at most! Alas, for our shells to survive we cannot now leave this home of bells. No more. Heres we must remain.<br>
+<b>Pill:</b> But we instead did plan, together, clever! Yes-yes. Those strong ones, like yourselfs, maybes they will help? For small reward as we have?<br>
+<b>Tipp:</b> Our savings is done, and the caves turn dark. Now the deliverings are needed, desperate. Now is time for miss courier! 
+<hr/>
+<b>If Hornet has talked to them in Act 2:</b><br>
+<b>Pill:</b> Miss courier! What horror here! The caves shake-shake, crying pain of hurt most savage.<br>
+<b>Pill:</b> And see all our poor friends below, newly found, crowded inside this home of bells, hearts fast for fear.<br>
+<b>Tipp:</b> But what-what for you? You are here to help, yes-yes? The deliverings, they are needed now at most! When caves turn dark, the deliverings are essential, more than more.
+| Title5_Event2 = Shop dialogue
+| Title5_Dialogue2 = <b>Tipp:</b> Miss courier! Pharloom's bugs are wishing, waiting, sad and scared. The deliverings are needed, now more than more!
+| Title5_Event3 = Accepting delivery to [[Survivor's Camp]]
+| Title5_Dialogue3 = <b>The first time:</b><br>
+<b>Tipp:</b> A new destination this-this! And desperate these supplies are asked.<br>
+<b>Pill:</b> Deliverings for them-them escaped from the crumbled camp beside the bone, those few still living.<br>
+<b>Pill:</b> Hurting and hungry, those few must be. 
+<hr/>
+<b>On subsequent deliveries:</b><br>
+<b>Pill:</b> More deliverings for those sad survivors in their cave below.<br>
+<b>Tipp:</b> Deliver them quick-quick, miss courier! They will help much.
+
+| Title6 = Tipp, Written
+| Title6_Event1 = <i>[[My Missing Brother]]</i> wish
+| Title6_Dialogue1 = Need help-help quick! Me brother Pill is gone missing, vanished somewhere in Greymoor! Please, to help me find-find him!
+}}
+
+==Locations==
+After promising the [[wish]] <i>[[My Missing Courier]]</i>, Tipp can be found in northern [[Bone Bottom]] surrounded by [[Caranid]]s. After saving him, Tipp can be found alone in Bellhart. After promising the wish <i>[[My Missing Brother]]</i>, Pill can be found in central [[Sinner's Road]]. After saving him, he can be found reunited with his brother back in Bellhart.
+{{Gallery
+|Image1 = Mapshot SS Tipp & Pill 01.png!Location in Bellhart
+|Image2 = Mapshot SS Tipp My Missing Courier.png!Tipp location in Bone Bottom during <i>My Missing Courier</i>
+|Image3 = Mapshot SS Pill My Missing Brother.png!Pill location in Sinner's Road during <i>My Missing Brother</i>
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Tipp & Pill 01.png!Tipp at his rescue location
+|Image2=Screenshot SS Tipp & Pill 02.png!Tipp at Bellhart alone
+|Image3=Screenshot SS Tipp & Pill 03.png!Pill at his rescue location
+|Image4=Screenshot SS Tipp & Pill 04.png!Tipp & Pill at Bellhart together
+|Image5=Screenshot SS Tipp & Pill 05.png!Tipp reacting to Needolin
+|Image6=Screenshot SS Tipp & Pill 06.png!Tipp reacting to Needolin in Bellhart
+|Image7=Screenshot SS Tipp & Pill 07.png!Pill reacting to Needolin
+|Image8=Screenshot SS Tipp & Pill 08.png!Tipp & Pill reacting to Needolin
+}}
+
+==Trivia==
+*The sign for Tipp & Pill's courier service (placed near them after rescuing both) is made from half of the sign for [[Frey]]'s shop.
+*Tipp & Pill can be hit with the [[Needle]], hitting them while they're asleep will wake them up.
+*Early in development, Tipp was planned to appear in the later-cut [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] area.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed courier deliveries sometimes being inaccessible in the late game.
+|1.0.29242 (Patch 4): Fixed couriers incorrectly offering the same delivery immediately after completing it.
+}}
+{{Localisation
+|DEname = Tipp & Pill Die Kuriere
+|DEmeaning = Tipp & Pill the Couriers
+|ESname = Mensajeros Tipp y Pill
+|ESmeaning = Couriers Tipp and Pill
+|FRname = Coursiers Tipp & Pill
+|FRmeaning = Couriers Tipp & Pill
+|ITname = Corrieri Tipp e Pill
+|ITmeaning = Couriers Tipp and Pill
+|JAname= 運び屋ティップ&ピル
+|JAromanised = Hakobiya tippu & piru
+|JAmeaning = Couriers Tipp & Pill
+|KOname = 배달부들 티프 & 필
+|KOromanised = Baedalbudeul tipeu & pil
+|KOmeaning = Deliverers Tipp & Pill
+|PTname =  Entregadores Tipp e Pill
+|PTmeaning = Deliverers Tipp and Pill
+|RUname = Курьеры Типп и Пилл
+|RUromanised = Kur'ery Tipp i Pill
+|RUmeaning = Couriers Tipp and Pill
+|TWname = 送貨員蒂普 & 皮爾
+|TWromanised =  Sònghuòyuán dìpǔ & pí'ěr
+|TWmeaning = same
+|ZHname = 送货员蒂普 & 皮尔
+|ZHromanised = Sònghuòyuán dìpǔ & pí'ěr
+|ZHmeaning = Couriers Tipp & Pill
+|CODEname = COURIERS_SHOP</code><br><code>COURIER_SHOP
+}}
+=== Courier Tipp ===
+{{Localisation
+|hr=false
+|DEname = Tipp Der Kurier
+|DEmeaning = Tipp the Courier
+|ESname = Mensajero Tipp
+|ESmeaning = Courier Tipp
+|FRname = Coursier Tipp
+|FRmeaning = Courier Tipp
+|ITname = Corriere Tipp
+|ITmeaning = Courier Tipp
+|JAname= 運び屋ティップ
+|JAromanised= Hakobiya Tippu
+|JAmeaning = Courier Tipp
+|KOname = 배달부 티프
+|KOromanised = Baedalbu tipeu
+|KOmeaning = Deliverer Tipp
+|PTname =  Entregador Tipp
+|PTmeaning = Deliverer Tipp
+|RUname = Курьер Типп
+|RUromanised = Kur'er Tipp
+|RUmeaning = Courier Tipp
+|TWname = 送貨員蒂普
+|TWromanised = Sònghuòyuán dìpǔ 
+|TWmeaning = same
+|ZHname = 送货员蒂普
+|ZHromanised = Sònghuòyuán dìpǔ 
+|ZHmeaning = Courier Tipp
+|CODEname = COURIER_SHORT
+}}
+
+=== Courier Pill ===
+{{Localisation
+|hr=false
+|DEname = Pill Der Kurier
+|DEmeaning = Pill the Courier
+|ESname = Mensajero Pill
+|ESmeaning = Courier Pill
+|FRname = Coursier Pill
+|FRmeaning = Courier Pill
+|ITname = Corriere Pill
+|ITmeaning = Courier Pill
+|JAname= 運び屋ピル
+|JAromanised= Hakobiya Piru
+|JAmeaning = Courier Pill
+|KOname = 배달부 필
+|KOromanised = Baedalbu pil
+|KOmeaning = Deliverer Pill
+|PTname =  Entregador Pill
+|PTmeaning = Deliverer Pill
+|RUname = Курьер Пилл
+|RUromanised = Kur'er Pill
+|RUmeaning = Courier Pill
+|TWname = 送貨員皮爾
+|TWromanised = Sònghuòyuán pí'ěr
+|TWmeaning = same
+|ZHname = 送货员皮尔
+|ZHromanised = Sònghuòyuán pí'ěr
+|ZHmeaning = Courier Pill
+|CODEname = COURIER_TALL
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

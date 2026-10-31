@@ -1,0 +1,63 @@
+{{Disclaimer|These NPCs have no proper name stated anywhere and only goes by "Cog Statue" in game files.}}
+{{SS Infobox NPC
+|image1 = <gallery>
+Cog_Architect.png|Architect
+Cog_Vaultkeeper.png|Vaultkeeper
+Cog_Conductor.png|Conductor
+</gallery>
+|area = [[Cogwork Core]]
+|role = Quest
+|hidegender=true
+|quest = [[ASCEND: Pharloom's Crown]]<br>[[LEARN: Conductor's Melody]]<br/>[[LEARN: Architect's Melody]]<br/>[[LEARN: Vaultkeeper's Melody]]
+}}
+
+{{Quote
+|Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end.|Cogwork Statues
+|Hr=SS
+}}
+
+The <b>Cogwork Statues</b> are a trio of [[NPCs (Silksong)#Quest NPCs|quest NPCs]] in <i>[[Hollow Knight: Silksong]]</i>. They stand at the centre of the [[Cogwork Core]] giving the final task to any pilgrims who wish to pass the final threshold to [[the Cradle]].<ref name=pilgrim/> They give the <i>[[ASCEND: Pharloom's Crown]]</i> [[Acts#Act 2: Citadel of Song|objective]].
+
+== Background ==
+The Cogwork Statues stand by the lift to [[the Cradle]], dictating the final requirements of learning the [[Threefold Melody]] to anyone who listens.<ref name="pilgrim">Cogwork Statues: <i>"Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end."</i></ref> If any pilgrim managed to provid the statues the Threefold Melody, they would grant them access to the lift to the Cradle above.<ref>Cogwork Statues: <i>"Pilgrim who would hold our song within your shell, rise above. Offer your most devout self unto our sacred heart."</i></ref>
+
+== In-game Events ==
+The Cogwork Statues appear upon defeating the [[Cogwork Dancers]], rotating into view as a large mechanism spins the room. Inspecting the placard in front of the lift triggers the statues to speak, and on first inspection, they begin the Threefold Melody objective.
+
+After returning to play the Threefold Melody, the statues sing along with the song. Following this, they open the lift to the Cradle and rotate back down into the floor.
+
+In [[Act 3]], the destroyed remains of the statues can be seen when returning to their room.
+
+{{TabbedDialogue
+| Title1 = Cogwork Core
+| Title1_Event1 = Inspecting
+| Title1_Dialogue1 = <b>All:</b> Pilgrim of Pharloom eternal, you rare chosen who hath ascended to this final threshold, listen to our wish, deliver it, that you may rise above and see your pilgrimage end.<br/>
+<b>Architect:</b> We would hear the song of the Architects, at the core of our Citadel.<br/>
+They who sustain our realm, its walls, its floors and its voice, even as others fall silent.<br/>
+<b>Vaultkeeper:</b> We would hear the voice of the Keepers, within their grand vaults.<br/>
+They who guard our history, our prayers and our secrets, across the ages.<br/>
+<b>Conductor:</b> We would hear the melody of the Conductors, high in their gleaming towers.<br/>
+They bearing the heaviest mantle, who would guide our land ever on to greatness.<br/>
+<b>All:</b> Pilgrim of Pharloom eternal, regale us with our Threefold song, that you may rise above and worship before our kingdom's divine heart.
+| Title1_Event2 = After playing the Threefold melody
+| Title1_Dialogue2 = <b>All:</b> Pilgrim who would hold our song within your shell, rise above.<br/>
+Offer your most devout self unto our sacred heart. 
+}}
+
+== Location ==
+The Cogwork Statues are in the centre of the [[Cogwork Core]] after defeating the [[Cogwork Dancers]].
+{{Gallery
+|Image1 = Mapshot_SS_Cogwork_Dancers.png!Location in Cogwork Core
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1= Screenshot SS Cogwork Core 17.png!Unactivated statues
+|Image2= Screenshot SS Cogwork Statues 01.png!Activated statues
+|Image3 = Screenshot SS Cogwork Core 03.png!Destroyed in Act 3
+}}
+
+== Trivia ==
+* The full Threefold Melody's order is backwards from how it is presented by the statues, but they still light up in the same order when it is played. This results in the Architect statue playing the Conductor's Melody and the Conductor statue the Architect's Melody.
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

@@ -577,6 +577,51 @@ Silksong (two sheets), so the wiki is the source, as it was.
 Unchanged. New intents (§7): save analyzer, 100% checklist, tools and crests calculator, map,
 Journal, boss damage; Spanish slugs with the game's names («blasones», «herramientas»).
 
+### 4.10 The Map's requirements: `tools/gen-requires.js`
+
+What each Map mark asks before its thing can be had (or its person met, its boss fought), as
+`js/requires.js`: `AREAS` (to enter an area, only what every way in asks: Sands of Karak the
+Clawline, the Citadel's areas Act 2), `MARKS` (the thing's own: its room, its route; a card adds its
+area's), `WISHES` (before the game offers a wish: a giver's or a Wishwall's card shows them for each
+wish still open there, so Greyroot's two wishes keep theirs apart) and `CHECKS` (the save checks, by
+index). Each requirement is `{ kind, name, to, check, alt, n? }`: kind wish, item, key, ability,
+boss, event or act; the game's name with its key; the mark where it's had; either all its `'a'` or
+all its `'b'`. The marks' keys are worked out in Node by `tools/mark-keys.js`, as `js/app-map.js`
+builds them, and checked against the live list (every `to` is on the Map).
+
+The sources, best first: the game's data the site carries (each wish's playerData test, the wishes
+and groups it waits for, the stage before it: `js/quests.js` CHAIN and GROUPS; a reward's way and
+what it lies behind: `js/how.js` HOW and NEEDS; what a fight or a room waits for: `js/spots.js`
+OPENS; a wish item's or wish place's mark shows while its wish is taken; the marks' Acts against
+their areas'), then the wiki (the areas' "How to Access", the wishes' prerequisites, the things'
+location tables), then a hand table, one row per mark with its sources: the audit of 31 October,
+five research passes over pieces, Tools, bosses, wishes and people. The wiki pages it needed that
+`kb/` lacked (the wishes and the NPCs, 143 pages) are in `kb/data/pages.txt` now.
+
+Where the sources disagree, the game's data wins and the other is noted in the generator: the
+Hidden Hunter (the wiki adds the Silk Soar), Liquid Lacquer (a talk with the Mask Maker), Queen's
+Egg (another delivery), Bone Bottom Supplies (the Bell Beast) and Silk and Soul (the wiki's Bellhome
+Key; the game's group asks Bellhart's Glory and the key's own flag, both kept). Sharpdart's two
+routes (the Clawline, or the Drifter's Cloak and Swift Step) are alternatives; Rune Rage takes the
+three Slab keys (`js/how.js` and the Slab's page; Rune Rage's own page names two); the Spool
+Extender, Ascendant's Grip and the Songclave stall's Mask Shard wait for The Wandering Merchant
+(Jubilana stands in Songclave only after it: `js/people.js` HERE, and the wiki agrees).
+
+Left out on purpose: what the save can't say (the Hunter's March lever before Fastest in Pharloom,
+a talk no flag records, the Mist crossed, a shortcut with no name, the First Shrine bell's own
+flag), prices (rosaries, Craftmetal, the stations' tolls), conditions against (before Act 3, not
+bought from someone, the other mode), counts no check can say (Eva's Crest slots, Silk and Soul's 17
+wish points, the Journal's 230), what the game picks at random (Bellhart's crowds, Jubilana's
+visits) and the audit's low rows (one weak source, or only the completionist): Sister Splinter
+before a Lost Flea in Shellwood (piece:81), the Key of Indolent for another (piece:83), the Cling
+Grip for Pimpillo, the Skull Tyrant and the Psalm Cylinder on the Vaults' roof (the Clawline, the
+completionist alone), the Silk Soar for Shrine Guardian Seth, the Forebrothers before two Deep Docks
+extras, The Wailing Mother before the second Key of Apostate, the Mask Maker's talk before Liquid
+Lacquer's place, the Great Conchflies before the Pinstress's house, the Skarrgard gauntlet before
+the Hunter's March entrance pilgrims, and how the Old Penitent's cell is reached. Areas whose ways in ask different things (Greymoor, Bellhart,
+Shellwood, the Wormways, Bilewater, the Underworks, the Far Fields from Greymoor's side, the Cogwork
+Core's rooms before the Dancers) have no area requirement; their marks keep their own.
+
 ## 5. What carries over from the code
 
 From the inventory of this repository (27.2k lines of JS, tools, tests and CSS):
@@ -1903,6 +1948,20 @@ card names it; Bone_12's two cell doors are breakable walls with no key, and Gri
 his cell, unbroken, once Shellwood or Far Fields is reached or Widow beaten (broken in 32 saves,
 gone in 38, crossed «Ya no está»); Coral_41's three chained crust walls stay three marks, each
 break setting that wall's own bool. `check-pack` still matches all 77.
+
+**The Map's requirements, the data** (31 October 2026, Albert's design: every mark's card says
+what the player still needs before its thing, each requirement a chip that is a button to the mark
+where it's had; with a save only the missing ones, Free mode all). `js/requires.js` is generated
+(`tools/gen-requires.js`, last in `npm run data`): 20 areas, 561 marks and 57 wishes with
+requirements, 269 save checks; `js/savefile.js` game() keeps the checks met (`needs`, `needsRead`).
+Its sources and what was left out are in §4.10. Read over the 94 files of the author's saves: what
+a game still misses (of the 870 mark requirements) falls as it goes on: all at 0%, about 560 at 15%,
+330 to 360 at 60%, 22 to 44 at 100% (optional deliveries, Steel Soul's wish, an unbought Bellhome
+piece); `check-pack` still matches all 94.
+Found on the way: Songclave's giver mark was named «Doncella de la Capilla» (people.json files the
+«Enclave Caretaker» object under the Chapel Maid's title); the wish it offers names the Caretaker,
+and so does the mark now (tools/gen-spots.js GIVER_NAME). The card that shows them is the next step
+(design/119), then the wiring.
 
 In the order that gets something publishable soonest, with the days this site's history
 suggests (it went from the first commit to the live tracker, the map and the Journal in about

@@ -1,0 +1,82 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+fayforn.png|Idle
+Fayforn wings.png|Roaring
+</gallery>
+|area = [[Mount Fay]]
+|affiliation = [[Weavers]] (Former companions)<ref name=weavers/>
+|role = Lore
+|singnum=1
+}}
+
+{{Quote
+|Sister, spider, if seeking commune with the creature atop this mount, take the climb above as test, a challenge beyond even our setting. Upon that summit gained, and creature hailed, know it shall choose what gift to grant, with death as likely as insight.
+|[[Lore Tablets (Silksong)#Mount Fay|Lore Tablet]]
+|Hr=SS}}
+
+The <b>Fayforn</b><ref>[[Faydown Cloak]] description: <i>"Protective garb lined with the soft down of a Fayforn and sewn through with flexible spines."</i></ref> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She grants [[Hornet (Silksong)|Hornet]] the [[Faydown Cloak]].
+
+== Background ==
+The Fayforn is described as the "fell heart of frost" who soars the heights above [[Mount Fay]].<ref><i>[[Passing of the Age (Wish)|Passing of the Age]]</i> wish description: <i>"Fell heart of frost, who soars on high,"</i></ref> She is known for her fabled and precious feather down, which is considered an exceptionally rare and mighty gift to receive.<ref>Receiving the Faydown Cloak: <i>"Fabled feather down, layered within the cloak."</i></ref><ref name = feather /> In the past, the [[Weavers]] built their chambers and a calling device at the peak of the mountain for the purpose of communing with the Fayforn.<ref name=weavers>[[Mask Maker (Silksong)|Mask Maker]]: <i>"Did you treat with the creature upon the summit? Your legged ancestors once found her company compelling, enough to build their chambers and their calling device at the height of this perilous peak."</i></ref> Weavers were challenged to make the difficult climb to the top, though hailing the Fayforn was dangerous, as she could equally grant insight or death.<ref>Mount Fay [[Lore Tablets (Silksong)#Mount Fay|Lore Tablet]]: <i>"Sister, spider, if seeking commune with the creature atop this mount, take the climb above as test, a challenge beyond even our setting. Upon that summit gained, and creature hailed, know it shall choose what gift to grant, with death as likely as insight."</i></ref>
+
+== In-Game Events ==
+Once [[Hornet (Silksong)|Hornet]] reaches the peak of Mount Fay, she finds a tuning mechanism.<ref>Inspecting the mechanism: <i>"An ancient tuning mechanism."</i></ref> When she starts playing the [[Needolin]], the device amplifies the sound, drawing the Fayforn's attention. Upon descending, the creature grants Hornet her down to create the [[Faydown Cloak]]. 
+
+If Hornet visits the [[Mask Maker (Silksong)|Mask Maker]] afterwards, he is impressed by this gift, suggesting that by granting it, the Fayforn has chosen to oppose [[Grand Mother Silk]].<ref name = feather>Hornet and [[Mask Maker (Silksong)|Mask Maker]] dialogue: <br><i>Hornet: "I have paid my respects, and been granted her favour. Her down now fills my cloak, and does much to ward against the frost of these heights."<br>Mask Maker: "To pass something so precious... That’s a mighty gift you’ve been given. Seems she’s thrown her lot in with you."</i></ref><ref>Mask Maker: <i>"I’d not have guessed her so opposed to our threaded monarch, but then she too must have sensed the wretched state of things, and the harsher change to come."</i></ref>
+
+In [[Act 3]], during the <i>[[Passing of the Age (Wish)|Passing of the Age]]</i> [[wish]], [[Mister Mushroom (Silksong)|Mister Mushroom]] visits the peak to speak with the Fayforn.
+
+== Location ==
+The Fayforn can be found at the peak of [[Mount Fay]].
+{{Gallery
+|Image1 = Mapshot SS Fayforn.png!Location in Mount Fay
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Fayforn 03.png!Soaring in the background
+|Image2=Screenshot SS Fayforn 04.png!Landing
+|Image3=Screenshot SS Fayforn 01.png!Roaring
+|Image4=Screenshot SS Mount Fay 09.png!Idle
+|Image5=Screenshot SS Fayforn 02.png!Singing
+|Image6=Screenshot SS Mister Mushroom 01.png!Talking with Mister Mushroom
+|Image7=Ari_SS_Sketch_28.jpg!Concept sketches
+}}
+
+== Trivia ==
+* The Fayforn has no Needolin dialogue, although she coos when the [[Needolin]] is played.
+* [[Driftlin]]s are likely related to the Fayforn due to visual similarities and their Needolin dialogue.<ref>[[Driftlin]] [[Needolin]] dialogue: <i>"Lightly, lightly, oh so lightly... Drifty, drifty, oh so nicely... Mother, mother, gleam so brightly... Glidey! Glidey! Glidey!"</i></ref>
+* The Fayforn is constantly shedding small feathers, similar to those that appear when Hornet performs a double jump using the [[Faydown Cloak]].
+* The Fayforn has a [[Cut Content (Silksong)/Graphics#Sprites|cut]] animation of appearing in the distance.
+
+{{Localisation
+|DEname = Feiforn
+|DEmeaning = Fayforn
+|ESname = Fayforno 
+|ESmeaning = —
+|FRname = Fayneille 
+|FRmeaning = From Fay and <i>-eille</i> (feminine suffix).
+|ITname = Piumagico
+|ITmeaning = Combination of <i>piuma</i> (feather) and <i>magico</i> (magic). 
+|JAname = フェイフォルン
+|JAromanised = Feiforun
+|JAmeaning = Fayforn
+|KOname = 페이폰
+|KOromanised = Peipon
+|KOmeaning = Fayforn
+|PTname = Plumídio 
+|PTmeaning = From <i>pluma</i> (feather) and <i>-ídio</i> (taxonomic suffix).
+|RUname = фейфорн
+|RUromanised = Fejforn
+|RUmeaning = Fayforn<br><small>While фей <i>fej</i> is the transliteration of Fay, it may also reference фея <i>feja</i> (fairy).</small>
+|TWname = 雪靈
+|TWromanised = Xuě líng
+|TWmeaning = Snow Fairy
+|ZHname = 雪灵之祖
+|ZHromanised = Xuě líng zhī zǔ
+|ZHmeaning = Ancestor of Snow Fairies
+|CODEname = FAYFORN
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

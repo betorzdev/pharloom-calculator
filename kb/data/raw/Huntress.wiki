@@ -1,0 +1,209 @@
+{{SS Infobox NPC
+| area = [[Putrified Ducts]]
+| image1 = <gallery>
+Huntress Idle.png|Alive
+Huntress Corpse.png|Dead
+</gallery>
+| quest = [[Broodfeast]]
+| role = Quest
+| affiliation = [[Runt]] (Child)
+| singnum = 2
+}}
+
+{{Quote
+| Is that shameful? A mother who would not sacrifice herself for her children to grow sssstttrong? Is it wrong to want? To witnesss their first flight, their first hunt. To see them kill, and grow?
+| Huntress
+| Hr = SS
+}}
+
+<b>Huntress</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is a tall hunter and mother awaiting the birth of her brood.<ref>Huntress: <i>"Yesss... I kill, gladly, but only to feed my ssshhhell, and my brood to come."</i></ref> She gives the <i>[[Broodfeast]]</i> [[wish]].
+
+== Background ==
+Huntress belongs to a flying predatory species whose young are born ravenous and, driven by a birth-craze, devour their own mothers.<ref>Huntress [[Needolin]] dialogue: <i>"Stalk, and smell, and seek... Soar the caverns high... Chase the prey fled in fear..."</i></ref><ref name = complete >[[Hornet (Silksong)|Hornet]] dialogue with Huntress: <i>"A child of one like you, many times I've seen it similar. They will be born hungry, with sharp tooth and claw. In their birth-craze, your own meat would delight as much as another bug's. This feast is distraction, in hope to save your shell."</i></ref> Wishing to avoid this fate and see her children grow, Huntress gathers meat for a feast that will sate the newborns upon hatching.<ref>Huntress Needolin dialogue: <i>"All must feed... That I may see your claws sharp... That I may know your masks bold..."</i></ref><ref name = "meat">Huntress: <i>"You stay, ssppidderrr? My brood needsss meat, much.. the organsss of othersss, or would you instead offer your own? Gift a sshhell's warm insidess as sweet feast for my brood'sss birth-meal?"</i></ref> She is convinced that other bugs should be proud to feed her offspring, even at the cost of their lives, and views anyone who refuses as cruel.<ref>Huntress: <i>"All those gooey bugssss, all so reluctant to share their organs. Sssooo much coaxing and gnawing, and prodding. They should be proud! Their ssmall sssacrifice would become much sssustenance for my ferocious young."</i></ref><ref>Huntress: <i>"You would deny my brood their strength, ssspiidderr? A cruel creature you are. Surely your sssmall shell needs hardly so much?"</i></ref> At the same time, Huntress hides her reluctance to sacrifice herself, feeling some shame for it.<ref>Hornet and Huntress dialogue: <br><i>Huntress: "You've done well, sspppidderrr. Upon these fine meats my children will gorge and grow."<br>Hornet: "And better the organs of others than they feed upon your own, yes?"<br>Huntress: "Sssssskkkk... One should not be surprised, for the sssspppider to perceive the truth of my requests."</i></ref><ref>Huntress: <i>"Is that shameful? A mother who would not sacrifice herself for her children to grow sssstttrong? Is it wrong to want? To witnesss their first flight, their first hunt. To see them kill, and grow?"</i></ref>
+
+== In-game Events ==
+During their first encounter, Huntress senses [[Hornet (Silksong)|Hornet]]'s tension and notes that her meat would grant much sustenance, but refrains from attacking, deeming the prey too dangerous.<ref>Huntress: <i>"Ssssppiidderr... Your ssstench is strange... yet similar. Your tension isss smelt strong. Do I ssseem a threat to you? (...) Your meat... much ssssustenance it could grant... but too hard to pry... Your long, false claw would ssslash back ssswift."</i></ref> Pleased that they can sense each other's skill, Hornet suggests a truce.<ref>Hornet dialogue with Huntress: <i>"Good, so you can sense my skill, as I yours. A truce then, that we both shall live beyond our meeting."</i></ref>
+
+When spoken to again, Huntress asks Hornet to voluntarily offer up her own organs.<ref name = "meat" /> Hornet may instead agree to bring those of bugs she slays, initiating the <i>[[Broodfeast]]</i> [[wish]].<ref>Hornet dialogue with Huntress: <i>"I will not offer my own organs, hunter, though I may bring the meat of others slain."</i></ref>
+
+After gathering enough organs and delivering them, Hornet reveals to Huntress that she has seen the birth of broods like hers many times before.<ref name = complete /> She knows that Huntress wants to save her own shell from the hungry newborns using the meat of others, yet refuses to judge, having seen enough sacrifice and holding no love for the act.<ref>Hornet dialogue with Huntress: <i>"Your choice is your own, tall mother. You won't be judged by me. I've seen enough sacrifice. I've no love for the act."</i></ref>
+
+As a reward for completing the wish, Hornet receives the [[Longclaw]] tool. If she returns in [[Act 3]], Huntress is missing and all her eggs are cracked open.
+
+If the <i>Broodfeast</i> wish is not completed by the start of Act 3, Huntress can be found dead in her hut, having been devoured by her brood. One of her broodlings, [[Runt]], takes her place and gives Hornet the <i>[[Runtfeast]]</i> wish, which replaces <i>Broodfeast</i>.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Broodfeast
+| title = [[Broodfeast]]
+| description = "Would you gift organs for my brood, sssppiidderr? Upon first waking my children will be consumed with craving."
+| objective = Use tools to acquire organs of various types so Huntress may feed her brood.
+* Seared Organ
+* Shredded Organ
+* Skewered Organ
+| location = <b><i>[[Putrified Ducts]] NPC</i></b>
+Huntress
+| reward = [[Longclaw]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1= Ssssppiidderr... Your ssstench is strange... yet similar. Your tension isss smelt strong. Do I ssseem a threat to you?<br>
+{{HTalk|This whole land keeps me cautious, tall one, and your claws look to have seen much sharp use.}}<br>
+Yesss... I kill, gladly, but only to feed my ssshhhell, and my brood to come.<br>
+Your meat... much ssssustenance it could grant... but too hard to pry... Your long, false claw would ssslash back ssswift.<br>
+{{HTalk|Good, so you can sense my skill, as I yours. A truce then, that we both shall live beyond our meeting.}}
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2= You stay, ssppidderrr? My brood needsss meat, much.. the organsss of othersss, or would you instead offer your own?<br>
+Gift a sshhell's warm insidess as sweet feast for my brood'sss birth-meal?
+| Title1_Event3 = Declining the wish
+| Title1_Dialogue3 = Very well, ssspiidderr. Keep your organsss, for now.
+| Title1_Event4 = Speaking after declining
+| Title1_Dialogue4 = Would you gift organs for my brood, sssppiidderr? Upon first waking my children will be consumed with craving.
+| Title1_Event5 = Accepting the wish
+| Title1_Dialogue5 = <b>If Hornet does not have the necessary tools:</b><br>
+{{HTalk|I will not offer my own organs, tall one, though I may bring the meat of others slain.}}<br>
+Good ssspidderr! Ssskewered. Ssshredded. Ssseared! Bring it all. Much will be needed, enough to sssate my brood to come.<br>
+{{HTalk|Your demand is extensive. First, I must acquire tools appropriate to the task. My current arsenal will not grant your wish in full.}}<br>
+My brood has not long till hatching, ssssspiddderrr. Find your tools. Do your duty ssswift, and you shall ssee reward for the sssslaughterrr.
+<hr/>
+<b>If Hornet has the necessary tools:</b><br>
+{{HTalk|I will not offer my own organs, hunter, though I may bring the meat of others slain.}}<br>
+Good ssspidderr! Ssskewered. Ssshredded. Ssseared! Bring it all. Much will be needed, enough to sate my brood to come.<br>
+{{HTalk|Several of my tools can prepare the meats as you request. I have been fortunate to find so varied an arsenal within your lands.}}<br>
+My brood has not long till hatching, ssssspiddderrr. Do your duty ssswift, and you shall sssee reward for the sssslaughter.
+| Title1_Event6 = Speaking before acquiring all the organs 
+| Title1_Dialogue6 = I await the meat, sspiidder. Bring me much. Enough to sate my brood to come.
+| Title1_Event7 = Speaking after acquiring all the organs
+| Title1_Dialogue7 = You have them, sspiiddderrr! The smell is upon you, all those organs, rich prepared for feasssting.
+| Title1_Event8 = Declining to give the organs
+| Title1_Dialogue8 = You would deny my brood their strength, ssspiidderr? A cruel creature you are. Surely your sssmall shell needs hardly so much?
+| Title1_Event9 = Agreeing to give the organs
+| Title1_Dialogue9 = You've done well, sspppidderrr. Upon these fine meats my children will gorge and grow.<br>
+{{HTalk|And better the organs of others than they feed upon your own, yes?}}<br>
+Sssssskkkk... One should not be surprised, for the sssspppider to perceive the truth of my requests.<br>
+{{HTalk|A child of one like you, many times I've seen it similar. They will be born hungry, with sharp tooth and claw.}}<br>
+{{HTalk|In their birth-craze, your own meat would delight as much as another bug's. This feast is distraction, in hope to save your shell.}}<br>
+Is that shameful? A mother who would not sacrifice herself for her children to grow sssstttrong? Is it wrong to want? To witnesss their first flight, their first hunt. To see them kill, and grow?<br>
+{{HTalk|Your choice is your own, tall mother. You won't be judged by me. I've seen enough sacrifice. I've no love for the act.}}
+| Title1_Event10 = Exhausted dialogue
+| Title1_Dialogue10 = All those gooey bugssss, all so reluctant to share their organs. Sssooo much coaxing and gnawing, and prodding.<br>
+They should be proud! Their ssmall sssacrifice would become much sssustenance for my ferocious young.
+| Title1_Event11 = Playing the [[Needolin]]
+| Title1_Dialogue11 = [n]Stalk, and smell, and seek...<br>
+Soar the caverns high...<br>
+Chase the prey fled in fear...<br>
+All must feed...<br>
+That I may see your claws sharp...<br>
+That I may know your masks bold...
+}}
+
+== Location ==
+Huntress can be found in a hut in the southwestern part of the [[Putrified Ducts]].
+
+{{Gallery
+| Image1 = Mapshot SS Huntress 01.png!Location in the Putrified Ducts
+}}
+
+== Creation and Development ==
+[[File:Huntress.gif|thumb|250px|Huntress' 2020 riddle gif]]
+Prior to April 2022, Huntress was located in the [[Far Fields]].<ref>[[Cut Content (Silksong)#Gallery|Early <i>Silksong</i> development maps]]</ref> When she was located there, her room had an entirely different appearance and was entered from the left, instead of through a door entrance. There is [[Cut Content (Silksong)/Text#Huntress|cut]] "Talk Citadel" dialogue from the Huntress, likely used when she was in this former location, where she states "''Have you seen it... small sspidderrr.... that cruel Citadel, weighing heavy atop tthissss land? My hunger may seem great, but that place... that is consumption unending...''".
+
+Huntress is the first of a series of NPCs teased using riddles provided by [https://twitter.com/griffinmatta Matthew "Leth" Griffin] that lasted throughout June to July of 2020, the others being [[Grindle]], the [[Flea Caravan]], and [[Shrine Guardian Seth]]. 
+The following quote and description was provided upon the riddles being solved, alongside the promotional art and a gif:
+: <i>"Ssssppiiiderr, Your ssstench is strange yet similar... Have you come bearing the organs of others? Or would you offer your own? Gift your sshell's warm insidess as ssweet feast for my brood'sss birth-meal?"
+
+: A towering old predator, awaiting her children to come. Though her attention is fixed on her task, she seems to know much about the waning state of Pharloom, scorning the Citadel above and the hapless pilgrims that make their ascent towards it.</i><ref>The [https://discordapp.com/channels/283467363729408000/586931790208434203/722196291592912906 file] where Huntress was revealed</ref>
+The riddle solved to reveal this character required looking at dialogue shown in one of the trailers for <i>Hollow Knight</i>. The riddle and its solution are outlined below:
+<table class="cquote" cellpadding="0" cellspacing="0" border="0" style="width:{{{width|70%}}}; margin-bottom:3px; margin-top:3px;margin-left:auto;margin-right:auto;"><tr><td style="background:transparent;"><div style="overflow:auto; height:{{{height|230px}}}; width:{{{width|99.9%}}}; -moz-border-radius-topleft:0.5em; border:1px solid #AAAAAA; padding-left:0.5em; background:transparent;">
+
+: "wyR xCI xUS wxyz >> CODE"
+: <i>Answer: fe(R) o(CI) o(US) foes. [https://youtu.be/0GXyV9EvB_g Ferocious Foes] trailer. See below for explanation.</i>
+
+: "wxyz >> FRAGMENT"
+: <i>Answer: foes. See below for explanation.</i>
+
+: "T.C.H.S.O:12.13.19:SDP.2P.3S.6W >> KEY"
+: <i>Answer: This part of the riddle explains where to find the key. 
+: T.C.H.S = [https://www.teamcherry.com.au/blog/11xf7azcuebhybgossfhdc0mphiqbs/ Team Cherry Holiday Signoff]
+: 12.13.19 = December 13, 2019.
+: SDP = Silksong Development Progress
+: 2P.3S.6W = 2nd paragraph, 3rd sentence, 6th word. 
+: The word mentioned here is "Foes".
+: Key = Foes.</i>
+
+: "KEY=FRAGMENT>CODE"
+: <i>Answer: Since the Key is "Foes", the Fragment "wxyz" means "foes". That means that: w = f, x = o, y = e, z = s. 
+: Replacing the letters in "wyR xCI xUS wxyz" gives "feR oCI oUS foes" meaning Ferocious Foes.</i>
+
+: ""I can't help..." >> SPEAKER"
+: <i>Answer: A line said by [[Quirrel]] in the Ferocious Foes trailer at 1:05.
+: Speaker = Quirrel.</i>
+
+: "SPEAKER >> ENUM 1234456"
+: <i>Answer: Enumerate Quirrel (Speaker). This means to replace the letters in Quirrel's name with the numbers shown. 
+: Q = 1, U = 2, I = 3, R = 4, E = 5, L = 6</i>
+
+: "S123B >> REPLACE"
+: <i>Answer: Replace the numbers in "S123B" with the numbers used for Quirrel. 1 = Q, 2 = U, 3 = I.
+: S + Q + U + I + B = Squib.</i>
+
+: "WHO SPEAKS? >> FEMALE?"
+: <i>Answer: "Squib" is a term used by [[the Hunter]]. A female hunter is a huntress.</i>
+
+: <i>Final result: Huntress</i>
+</div></td><td style="width:8px;"></td></tr></table>
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Putrified Ducts 01.png!The outside of Huntress' hut
+| Image2 = Screenshot SS Putrified Ducts 02.png!Huntress in her hut
+| Image3 = Screenshot SS Huntress 01.png!Singing
+| Image4 = Screenshot SS Huntress 02.png!Left in Act 3 if <i>Broodfeast</i> was completed
+| Image5 = Screenshot SS Runt 02.png!Dead in Act 3 if <i>Broodfeast</i> was not completed
+| Image6 = Huntress.png!Promotional art
+}}
+
+== Trivia ==
+* While in the English version of her Needolin dialogue Huntress says that she wants to see the bold masks of her children, in most translations of the game she speaks about faces.<ref>Italian translation: <i>"Che possa conoscere i vostri volti..."</i> (That I may know your faces...)</ref><ref>Spanish translation: <i>"Que pueda conocer esos rostros..."</i> (That I may know those faces...)</ref> This line was changed to match the English original in the Chinese and German translations after they were updated, suggesting it is a remnant of an earlier version of the game's text.
+* In a Bloomberg interview, [[Team Cherry]] stated that Huntress has some relation to [[Styx]].<ref>[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] ([[:File:Reference Styx Huntress Relation.png|Archive]])</ref>
+
+{{Localisation
+|DEname = Jägerin
+|DEmeaning = Huntress
+|ESname = Cazadora
+|ESmeaning = Huntress
+|FRname = Chasseresse
+|FRmeaning = Huntress
+|ITname = Cacciatrice
+|ITmeaning = Huntress
+|JAname= ハントレス
+|JAromanised= Hantoresu
+|JAkatakana = foreign
+|JAmeaning = Huntress
+|KOname = 여사냥꾼
+|KOromanised = Yeosanyangkkun
+|KOmeaning = Huntress
+|PTname =  Caçadora
+|PTmeaning = Huntress
+|RUname = Охотница
+|RUromanised = Oxotnica
+|RUmeaning = Huntress
+|ZHname = 女猎手
+|ZHromanised = Nǚlièshǒu
+|ZHmeaning = Huntress
+|TWname = 女獵手
+|TWromanised = Nǚlièshǒu
+|TWmeaning = same
+|CODEname = HUNTRESS
+}}
+{{Refs|hr=SS}}
+
+[[es:Cazadora]]
+
+[[Category:NPCs (Silksong)]]
+{{SS Nav NPCs}}
+[[fr:Chasseresse]]

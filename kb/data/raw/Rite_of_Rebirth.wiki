@@ -1,0 +1,88 @@
+{{Navbar
+| page1 = Rite of Rebirth
+| page2 = Infestation Operation
+}}
+
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Bind the Twisted Bud.
+| location = [[Shellwood]]
+| npc = [[Greyroot]]
+| prerequisite =
+* Complete <i>[[Rite of the Pollip]]</i><br>
+* Acquire the [[Twisted Bud]]
+| reward = [[Cursed Crest]]<br>Connection between [[Shellwood]] and [[the Marrow]]
+}}
+
+{{Quote
+| White shell. Red cloak. Bug strong and old. The time of birth is near. Aid now the final rite.
+| [[Greyroot]]
+| Hr = SS
+}}
+
+<b>Rite of Rebirth</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>, which involves [[Greyroot]] forcing [[Hornet (Silksong)|Hornet's]] shell to host the [[Twisted Bud]].
+
+== How to Start ==
+Before the Wish proper can be acquired, the Twisted Bud must be obtained. It can be found in [[Bilewater]], in a room accessible via a passage in the [[Whispering Vaults]], while Greyroot is found in [[Shellwood]].
+
+{{Gallery
+| Image1 = Mapshot SS Twisted Bud.png!The Twisted Bud's location in Bilewater
+| Image2 = Screenshot SS Twisted Bud 01.png!The Twisted Bud's in its crib in Bilewater
+}}
+
+== Wish ==
+[[File:Twisted Bud.png|link=Twisted Bud|left|thumb|100x100px]]
+
+To start the wish, Hornet must speak to Greyroot while in possession of the Twisted Bud, and after having completed [[Rite of the Pollip]]. However, once this happens, Greyroot seizes Hornet's shell, and implants into her the [[Cursed Crest]], another form of the Twisted Bud. After that, the wish is completed.
+
+{{Gallery
+|Image1 = Mapshot SS Greyroot.png!Greyroot's location in Shellwood
+|Image2 = Screenshot SS Greyroot 02.png!Greyroot in Shellwood
+|Image3 = Screenshot SS Greyroot 01.png!Greyroot seizing Hornet
+}}
+
+== Reward ==
+[[File:Cursed Crest Inventory.png|link=Cursed Crest|left|thumb|150x150px]]
+
+Hornet wakes up some time after the quest was completed, trapped within ashen vines inside the [[Chapel of the Witch]]. These vines can be broken out of with a few hits from the [[Needle]].
+
+From here, the Cursed Crest is bound to Hornet, unable to be changed on a Bench as normal. For more information about removing the Cursed Crest or otherwise, see its [[Cursed Crest|main page]], or <i>[[Infestation Operation]]</i>.
+
+{{Gallery
+| Image1 = Mapshot SS Chapel of the Witch.png!The Chapel of the Witch in Shellwood
+| Image2 = Screenshot SS Rite of Rebirth 01.png!Hornet trapped in vines
+}}
+
+{{Localisation
+|DEname = Ritual der Wiedergeburt
+|DEmeaning = Ritual of Rebirth
+|ESname = Rito de renacimiento
+|ESmeaning = Rite of Rebirth
+|FRname = Rite de réincarnation
+|FRmeaning = Rite of Reincarnation
+|ITname = Rito di rinascita
+|ITmeaning = Rite of Rebirth
+|JAname = 再誕の儀式
+|JAromanised = Saidan no gishiki
+|JAmeaning = Rite of Rebirth
+|KOname = 부활의 의식
+|KOromanised = Buhwarui uisik
+|KOmeaning = Rite of Resurrection 
+|PTname = Rito de Renascimento
+|PTmeaning = Rite of Rebirth
+|RUname = Ритуал возрождения
+|RUromanised = Ritual vozroždenija
+|RUmeaning = Ritual of Rebirth
+|ZHname = 重生仪式
+|ZHromanised = Chóngshēng yíshì
+|ZHmeaning = Rebirth Rite
+|TWname = 重生儀式
+|TWromanised = Chóngshēng yíshì
+|TWmeaning = same
+|CODEname = QUEST_WITCH_CURSE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

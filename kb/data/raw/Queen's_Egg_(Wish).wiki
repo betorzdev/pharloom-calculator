@@ -1,0 +1,78 @@
+{{For|the [[Items (Silksong)#Deliverables|deliverable item]]|Queen's Egg}}
+{{SS Infobox Wish
+| header1 = Delivery
+| title1 = Queen's Egg
+| description = Deliver the Queen's Egg to Styx of Sinner's Road.
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]]
+| prerequisite = Obtain a [[Silkeater]] from [[Styx]]
+| reward = {{R|260}} ([[Acts|Acts 1/2]])<br>{{R|290}} ([[Act 3]])<br>Styx expands his nest, allowing for the generation of more Silkeaters.
+}}
+
+{{Quote
+| We is got requested times a'many for this, a queeny egg of those eaters of Silk. Wish from big, sticky creature, near many roaches caged. Wants it muchly!
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Queen's Egg</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]] after obtaining a [[Silkeater]] from [[Styx]]. It is not available during {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]]. 
+__NOTOC__
+
+== Delivery Item ==
+[[File:Queen's_Egg.png|link=Queen's Egg|left|thumb|100x100px]]
+The [[Queen's Egg]] has a total of 4 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Queen's Egg by Tipp & Pill to carefully deliver to Styx in [[Sinner's Road]]. Once the wish is completed, it cannot be accepted again.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill's location in Bellhart
+| Image2 = Mapshot SS Styx.png!Styx's location in Sinner's Road
+}}
+
+== Possible Routes ==
+The most optimal route goes through [[Greymoor]] and an unlocked shortcut to end up at Styx. The shortcut needs to be unlocked by breaking a wall on the Greymoor side.
+{{Gallery
+|Image1 = Mapshot SS Queen's Egg (Wish) 01.png!Route through Greymoor
+}}
+
+== Reward ==
+[[File:Silkeater.png|link=Silkeater|left|thumb|100x100px]]
+
+By turning in the egg to Styx, he expands his nest, allowing for the generation of up to 2 [[Silkeater]]s at a time instead of 1. He also rewards {{R|260}} if in [[Act 1]] or [[Act 2|2]] or {{R|290}} in [[Act 3]].
+
+{{Clear}}
+
+{{Localisation
+| DEname = Ei der Königin
+| DEmeaning = Queen's Egg
+| ESname = Huevo de la reina
+| ESmeaning = Queen's Egg
+| FRname = Œuf de la reine
+| FRmeaning = Queen's Egg
+| ITname = Uovo della regina
+| ITmeaning = Queen's Egg
+| JAname=女王の卵
+| JAromanised= Joō no tamago
+| JAmeaning = Queen's Egg
+| KOname = 여왕의 알
+| KOromanised = Yeowang-ui al
+| KOmeaning = Queen's Egg
+| PTname = Ovo da Rainha
+| PTmeaning = Queen's Egg
+| RUname = Яйцо Королевы
+| RUromanised = Jajco Korolevy
+| RUmeaning = Queen's Egg
+| ZHname = 女王之卵
+| ZHromanised = Nǚwáng zhī luǎn
+| ZHmeaning = Queen's Egg
+|TWname = 女王之卵
+|TWromanised = Nǚwáng zhī luǎn
+|TWmeaning = same
+| CODEname = QUEST_COURIER_SLAVE
+| CODEmeaning = Styx refers to himself as Hornet's slave
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

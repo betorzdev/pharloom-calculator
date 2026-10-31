@@ -49,8 +49,8 @@ test("a Wishwall's card says each wish's next step from App.wishNext, never what
   const steps = CARD.slice(CARD.indexOf('const wishSteps'), CARD.indexOf('const wavesNote'));
   assert.match(steps, /App\.wishNext\(q, own \|\| null\)/);
   assert.match(steps, /stepLine\(n\.steps\[k\]/);
-  // Its «(first: …)» only where no step line says it: a Wishwall's names leave it out.
-  assert.match(board, /wishesNote\(m\.quests, wall\)/);
+  // What a wish waits for is the Needs' (design/119), but a Wishwall's step lines say it: its card leaves it out.
+  assert.match(MAP, /if \(App\.wishWaits && m\.layer !== 'wishwall'\)/);
 });
 
 test('a count reads «what n/m» in the state row, as the Progress meters', () => {
@@ -77,17 +77,20 @@ test('a place with nothing left for you says so once, as a state', () => {
 test("the lines that said nothing are gone: «Had in this room.», Creige's drinks, «Makes a wish» under a giver's name", () => {
   for (const k of ['mapMapFound', 'mapTrade_creige']) assert.ok(!(k in STR), `${k} is gone`);
   assert.ok(!MAP.includes("'mapMapFound'"));
-  assert.match(CARD, /kind === 'giver' \? '' : m\.sub/);
+  assert.match(CARD, /kind === 'giver' \|\|[^?]*\? '' : m\.sub/);
   // Outside the 100%, a state as the layer's switch names it, not a sentence.
   assert.ok(!('mapArtOut' in STR));
   for (const k of ['mapToolUpgrade', 'mapToolLent', 'mapToolGivenUp']) assert.ok(!/100/.test(STR[k].en + STR[k].es), `${k} still speaks of the 100%`);
-  assert.match(CARD, /if \(m\.out\) acts \+= state\(t\('mapToolsOut'\)\)/);
+  assert.match(CARD, /if \(m\.out\) card\.states \+= state\(t\('mapToolsOut'\)\)/);
 });
 
 test("a boss's card names its wish once, and gives one way to it", () => {
   const boss = branch("} else if (kind === 'boss')");
-  assert.match(boss, /said && m\.quests\.every\(\(q\) => wishOf\(q\) === wishOf\(said\)\) \? ''/);
-  assert.match(boss, /!stepBtn\(open\[0\]\)\) acts \+= takenAt/);
+  // Its wish named in how it's had unless what brings the fight is that wish (OPENS: the Needs' chip says it).
+  assert.match(boss, /!\(said && m\.quests\.every\(\(q\) => wishOf\(q\) === wishOf\(said\)\)\) \? wishItems\(m\.quests, true\)/);
+  // One way to it (wishTo): the step the save shows (the Sentinel to wake) before where it's taken.
+  const to = MAP.slice(MAP.indexOf('function wishTo'), MAP.indexOf('const keyMarks'));
+  assert.ok(to.indexOf('PE.STEP') >= 0 && to.indexOf('PE.STEP') < to.indexOf('App.wishFrom'));
 });
 
 test('Progress quotes «Tareas» alone: never a Wishwall, a description, the Journal or the Caretaker', () => {

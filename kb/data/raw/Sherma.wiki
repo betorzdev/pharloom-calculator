@@ -1,0 +1,413 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Sherma Idle.png|Idle
+Sherma Singing.png|Singing
+Sherma Asleep.png|Asleep
+Sherma Caretaker.png|Caretaker
+Sherma Caretaker Singing.png|Singing
+</gallery>
+|area = Various
+|va = Juni Beau/Shalulu<ref>{{Cite tweet |author=[[Matthew Griffin]]|user=griffinmatta |number=1964112797807108414 |title=You did a great job as Sherma XD}}</ref><ref>[https://x.com/junibeau Juni (@junibeau)] bio on Twitter</ref>
+|role = Wanderer
+|affiliation = Pilgrims<br>
+Songclave (Resident/Caretaker)
+|quest=[[Balm for the Wounded]]
+|singnum = 2
+|s1=Default
+|s2=Whiteward
+}}
+{{Quote
+|I am Sherma, a pilgrim just like you. I hear the call of the great Citadel just like every other devout soul.
+|Sherma
+|Hr=SS
+}}
+
+<b>Sherma</b> is a [[NPCs (Silksong)#Wanderers|wandering NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a bright and cheerful pilgrim on his way to [[the Citadel]], his path crossing with [[Hornet (Silksong)|Hornet's]] along his journey.
+
+== Background ==
+Sherma is an optimistic pilgrim on the path to the Citadel. He wields a chime, which he uses while singing. He is occasionally seen near [[Bench (Silksong)|Benches]] or certain settlements, accompanying [[Hornet (Silksong)|Hornet]] on her journey to the Citadel during [[Act 1]], and aiding fellow pilgrims at [[Choral Chambers|Songclave]] for the majority of [[Act 2]] and [[Act 3]].
+
+Sherma is always very positive and likes to sing. He is also very friendly towards both bugs and inanimate objects, and he and Hornet develop a friendship over the course of the story, as Sherma's naive views about the Citadel are tested.
+
+== In-game Events ==
+Sherma is first seen in [[the Marrow]], where he is singing to a door in an attempt to open it. If Hornet talks with [[Shakra]] before interacting with Sherma, he disappears from the area.
+
+If Hornet has seen the [[Bell Beast]] but has not acquired the skill [[Silkspear]] yet, then after resting on a [[Bench (Silksong)|Bench]] and returning to the Bell Beast, Sherma is there singing to her.
+
+Sherma appears at [[Pilgrim's Rest]], singing and calming the [[Weary Pilgrim]], if the following conditions are satisfied:<ref group=Source>FSM <code>Pilgrim NPC Scene Control</code> in <code>bone_east_10.bundle</code>.</ref>
+* The [[Drifter's Cloak]] has been obtained
+* The [[Rhinogrund]] to the east of Pilgrim's Rest hasn't been released yet
+* Hornet hasn't entered [[Greymoor]], [[Shellwood]] or the [[Blasted Steps]]
+
+If [[Widow]] is defeated, and if Hornet hasn't entered [[the Citadel]] or seen Sherma in [[Blasted Steps]], then upon resting on a Bench outside of [[Bellhart]] and returning, Sherma can be seen next to the Bell leading down to the [[Bellway]].
+
+Sherma can be found resting next to the Bench at the top of Blasted Steps if the following conditions are satisfied:<ref group=Source><code>GameManager.TimePasses()</code> sets flag <code>shermaAtSteps</code>, which is checked along with the flag <code>visistedCitadel</code> in <code>bellway_08.bundle</code></ref>
+* Widow is defeated
+* Hornet hasn't entered the Citadel yet
+* Any one of these is true:
+** Hornet has fought with the [[Last Judge]] at least once
+** The Bench at the top of the Blasted Steps has been activated and the [[Great Conchflies]] in Blasted Steps have been defeated
+** Hornet has rested at a bench in  [[Sinner's Road]] after visiting the Blasted Steps
+** Hornet has rested at a bench in [[Bilewater]]
+
+Sherma can be seen next in the long walkway at [[Grand Gate]] if Hornet rests at a bench when:<ref group=Source><code>GameManager.TimePasses()</code> sets flags <code>shermaCitadelEntrance_Visiting</code> and <code>shermaCitadelEntrance_Left</code>, which are checked with other flags in <code>coral_10.bundle</code></ref>
+* [[Last Judge]] has been defeated and the Gate is opened
+* Hornet has been to both the long walkway in Grand Gate, and the main hall of Grand Gate where multiple platforming scales are
+* Hornet has met [[Lace]] in the Citadel
+* Hornet hasn't met Sherma in [[Songclave]] or [[Choral Chambers#Sub-area: Citadel Spa|Citadel Spa]] yet
+* Hornet hasn't defeated [[Cogwork Dancers]] yet, and also hasn't acquired [[Clawline]] either
+
+Sherma can be found in Citadel Spa if he hasn't moved to Songclave yet.
+
+Finally, if Hornet has completed at least 2 Wishes on the Songclave [[Wishwall]], including <i>[[Building Up Songclave]]</i>, then Sherma moves to and settles in Songclave.
+
+After meeting Sherma in Songclave, if Hornet has been to [[Whiteward]], upon resting on a bench outside of Songclave, the Wish <i>[[Balm for the Wounded]]</i> becomes active on the Songclave Wishwall. According to it, Sherma travels to Whiteward, where he hopes to find healing supplies to aid his fellow pilgrims in Songclave. He becomes trapped when the way back collapses, and must be rescued by Hornet. After his rescue, he gives Hornet a [[Spool Fragment]] before making his own way back to Songclave. 
+
+In [[Act 3]], he becomes the new Caretaker of Songclave and the [[First Shrine]], replacing the [[Caretaker|old one]] and donning his attire.
+
+{{TabbedDialogue
+| Title1 = The Marrow
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If the gate hasn't been opened:</b><br>
+Oh hear me pray, please hear me sing, My path's ahead, but here's the thing, I can't squeeze past, o gate of bone, So please wake up, and help...oh?<br>
+{{HTalk|Why do you sing, little one? This bony gate seems like a poor audience.}}<br>
+Oh, but of course I sing! I am Sherma, a pilgrim just like you. I hear the call of the great Citadel just like every other devout soul.<br>
+But look here! As soon as our sacred journey begins, we are tested. This huge gate stands between us and the way forward.<br>
+Only holy prayer and song will open the way! In this kingdom, even mighty bone is moved by music!<br>
+Join your voice with mine, red maiden! You, me, and my lucky chime will sing together until the great gate opens!
+<hr/>
+<b>If the gate has been opened:</b><br>
+Hoy! Did you see it, red maiden? The great gate heard my song and, in its infinite and ancient kindness, opened the way forward for us!<br>
+What luck for us to meet at this moment! We can set off on the great road together!<br>
+Or p'raps I'll tarry here just a little longer. I want to sing a song of gratitude to this noble gate!<br>
+I'm Sherma, by the way. Just another humble pilgrim like yourself. If you ever need assistance on the road ahead, sing out my name and I'll be sure to find you. Me and my lucky chime are at your service!
+| Title1_Event2 = After opening gate, if met before opening
+| Title1_Dialogue2 = Hoy! Did you see it, red maiden? The great gate heard my song and, in its infinite and ancient kindness, has opened the way forward for us!<br>
+Gate, gate, gate! Nicest gate I've met! Gate, gate, gate! Greatest miracle yet! Ha ha ha!
+| Title1_Event3 = Exhausted dialogue
+| Title1_Dialogue3 = <b>If the gate hasn't been opened:</b><br>
+Sturdy gaaaaa-aaate, I don't ask you break or beee-eeend, Just open a little for me, and my tall maiden frieeee-eeend!
+<hr/>
+<b>If the gate has been opened:</b><br>
+Gate, gate, gate! Nicest gate I've met! Gate, gate, gate! Greatest miracle yet! Ha ha ha!
+| Title1_Event4 = In front of [[Bell Beast]]
+| Title1_Dialogue4 = Beasty, beastly, big fat beast! Strong as a boulder, or a rock at least! Let's sing together 'til you're released!<br>
+Oh! Look here red maiden, this poor creature is all tangled up in white bindings! Surely you know a song for unsticking such stickiness?<br>
+{{HTalk|It will take a power greater than song to break these bindings, little one. In my current diminished state even I can not cut through them.}}<br>
+Well, worry not! If something is needed, the road will bring it to us!
+| Title1_Event5= Exhausted dialogue
+| Title1_Dialogue5 = Come now beast, let us hear your voice! Sing with me, sing with me, sing sing sing! Make caverns echo and great roads ring!
+
+| Title2 = Far Fields
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Don't despair, pilgrim frieeeee-eeend,<br>
+Lift your sight and raise your voice!<br>
+Have no fear, pilgrim truuuuu-uuuuue,<br>
+Believing is a happy choice!<br>
+Hoy there! Aren't these fields marvellous? And above us are the bountiful moors, where every pilgrim can fill their belly!<br>
+{{HTalk|These hot fields are a wonder indeed, but hunters prowl the long grass. Playing your instrument will only alert them to your presence.}}<br>
+Well then, alert them I shall! For where many gather, great songs are sung!
+| Title2_Event2 = Speaking again
+| Title2_Dialogue2 = This poor traveller finds her resolve waning. When I first greeted her, her voice was so hoarse I scarcely heard it!<br>
+'Tis no cause for worry, though. My song will lift her from her torpor! Join your voice with mine, red maiden, and together we shall rouse our fellow pilgrim!
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = Sister, sister, tired and glum, <br>
+We will sing, and you can hum, <br>
+Together we shall overcome!
+
+| Title3 = Bellhart
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Oh, hoy there! Why, I must have dropped off to sleep as soon as I arrived!<br>
+Certainly, the pilgrim's way is exhausting, but a good rest is a reward unto itself!<br>
+| Title3_Event2 = Speaking again
+| Title3_Dialogue2 = Now, isn't this a wondrous place! Golden bells, for weary shells! Ha ha ha!<br>
+{{HTalk|This settlement offers safety now, little pilgrim. Perhaps you should make a home here?}}<br>
+{{HTalk|You've done well to make it this far, and the roads ahead will only be more dangerous.}}<br>
+Oh, dangerous they surely are! But I will gladly tread any path that holds wonders as magnificent as this, red maiden!
+| Title3_Event3 = Exhausted dialogue
+| Title3_Dialogue3 = I'll be off soon, once I'm good and rested. Beyond the wood lies the final climb, and then at last we shall reach the Citadel!<br>
+Which of us will reach the Grand Gate first? If it's me, I shall wait for you so we can enter together!
+
+| Title4 = Blasted Steps
+| Title4_Event1 = Waking up Sherma the first time
+| Title4_Dialogue1 = {{HTalk|Little pilgrim, do you sleep?}}<br>
+Hrm? Hoy there! I was looking for somewhere to rest my weary shell and found this cosy station!<br>
+{{HTalk|These lands are dangerous. I had thought perhaps some harm had come to you.}}<br>
+Harm? O red maiden, have faith! No harm can come to us on this holy ascent! We only need to keep our gaze upwards.<br>
+Isn't this all so terribly grand? The great stone steps, the winds lifting us up like the voices of a choir, and just beyond it all is our pilgrimage's end. The great Citadel at last!
+| Title4_Event2 = Waking up Sherma again
+| Title4_Dialogue2 = Mm, mrm? Oh, hoy again!<br> I hadn't meant to drop off like that. It's hard to stay awake in such a cosy place, isn't it?
+| Title4_Event3 = Speaking, before activating the Bench
+| Title4_Dialogue3 = <b>If Hornet has paid Rosaries to use a Bench before:</b>
+You see this idol before us, red maiden? I have passed its like before. They mark our pilgrimage well.<br>
+If we sing to it, a miraculous shrine will rise from the ground, and we will have a place to rest! Such a wonder!<br>
+{{HTalk|It is not song that rouses this shrine, but payment in rosaries.}}<br>
+{{HTalk|Without rosaries, the shrine remains hidden. I have encountered similar constructs on Pharloom's paths. This kingdom does not grant rest lightly.}}
+<hr/>
+<b>If Hornet hasn't paid Rosaries to use a Bench before:</b><br>
+You see this idol before us, red maiden? I have passed its like before, they mark our pilgrimage well.<br>
+If we sing to it, a miraculous shrine will rise from the ground, and we will have a place to rest! Such a wonder!<br>
+{{HTalk|I suspect it is not song that rouses this shrine, but payment in rosaries.}}<br>
+{{HTalk|I have encountered similar constructs on Pharloom's paths. It seems this kingdom does not grant rest lightly.}}
+| Title4_Event4 = Speaking, after activating the Bench
+| Title4_Dialogue4 = Ahh, the shining bench has risen for us! Pharloom's kindness to we pilgrims is inexhaustible!<br>
+Please rest, red maiden, and fear not. Our kingdom watches over us all!
+| Title4_Event5 = Speaking again
+| Title4_Dialogue5 = Aren't those solemn judge-bugs nice? They do not speak or sing, but I sense great wisdom behind their gleaming gazes!<br>
+{{HTalk|Beware them, little one. Wise or not, their judgements are often followed by violence. Many of your fellow pilgrims have fallen to them on these great steps.}}<br>
+Oh...? But even the fallen will sometimes stand again, and all pilgrimages will be completed, yes? That's how I've heard it!
+| Title4_Event6 = Exhausted dialogue
+| Title4_Dialogue6 = <b>Before activating the Bench:</b><br>
+Fear not, red maiden! This shrine will surely rise for us, we only need to patiently wish for it!
+<hr/>
+<b>After activating the Bench:</b><br>
+The great Citadel is so close, I can hear the voices of our brother and sister pilgrims calling out to us!
+
+| Title5 = Grand Gate
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = Red maiden! Dear sister! At last, our great pilgrimage is at its end!<br>
+Our faith never wavered, and now here awaits our glorious reward, the shining Citadel! Where all sing as one!<br>
+{{HTalk|I will not tell you to turn back, for I know you will not, but I urge you at least to be cautious. Terrible things lurk within this Citadel, little pilgrim.}}<br
+>Oh, sister! There is no need for caution, and no need for fear. Let us step forward under guidance of our faith!
+| Title5_Event2 = Exhausted dialogue
+| Title5_Dialogue2 = Let us head on, sister! Together we shall step forward under guidance of our faith!
+
+| Title6 = Citadel Spa
+| Title6_Event1 = First conversation
+| Title6_Dialogue1 = Ahh, the caress of this warm water on my weary limbs is welcome indeed. As soothing as a psalm, haha!<br>
+Will you splishy-splash in the holy bath with me, red maiden? We can sing together to aid in our rejuvenation!
+| Title6_Event2 = Speaking again
+| Title6_Dialogue2 = <b>If Hornet hasn't visited [[Songclave]]:</b>
+{{HTalk|Little pilgrim, these baths provide some respite from the dangers without, but even so you should not let down your guard.}}<br>
+{{HTalk|You must have seen now that the bugs of this Citadel are long fallen to the Haunting.}}<br>
+Ahh... some of my brothers and sisters have seemed... lost somehow, yes. But to be lost is to be sometime found, is it not sung?<br>
+Yes... The Citadel will provide for them. It is a holy place indeed, that holds wonders such as this lovely warm bath!
+<hr/>
+<b>If Hornet has already visited Songclave:</b><br>
+{{HTalk|Little pilgrim, these baths provide some respite from the dangers without, but there is a still safer place high on the other side of the Citadel.}}<br>
+{{HTalk|A settlement has formed around the old shrine there. The bell housed within seems to provide some sanctuary from the dangers of the Haunting.}}<br>
+{{HTalk|Your brother and sister pilgrims who now huddle around it would be glad of your company, I am sure.}}<br>
+Oh, how wonderful! Yes, I will make my way over there with haste... after I have bathed a little longer. I want to arrive fresh and clean to such a holy place!
+| Title6_Event3 = Exhausted dialogue
+| Title6_Dialogue3 = Holy water, nice and hot,<br>
+Makes a perfect swimming spot,<br>
+Heals your worries in a flash,<br>
+So jump on in... splash splash splash! Ha ha ha!
+
+| Title7 = Songclave - Act 2
+| Title7_Event1 = First conversation
+| Title7_Dialogue1 = <b>If Hornet has never spoken to Sherma:</b>
+Hrm...? Oh, hoy there! 'Tis a pleasure to meet you here at the end of our long journey, sister.<br>
+I am Sherma, a simple pilgrim like yourself. What a wonder to find ourselves finally here, eh?<br>
+Rising at last to the heights of the Citadel and being amongst so many of our brothers and sisters... it is a blessing indeed. Yes, a blessing.<br>
+{{HTalk|Your voice belies some hesitation in that belief, little pilgrim. To have travelled this far is to have seen the reality of this broken place. What do you make of it, truly?}}<br>
+D-do not judge me a doubter! The Citadel is a holy place indeed, resplendent and vast beyond my wildest hopes!<br>
+But yet... the grand halls ache with silence, and I see suffering in the shadows wherever I peer too deeply.<br>
+Fear, and pain... why were these things allowed into our paradise? Have my brothers and sisters not yet earned their holy reward?
+<hr/>
+<b>If Hornet has spoken to Sherma before:</b><br>
+Hrm...? Oh, hoy there! I was hoping we would meet here, red maiden.<br>
+Rising at last to the heights of the Citadel and being amongst so many of my brothers and sisters... it is a blessing indeed. Yes, a blessing.<br>
+{{HTalk|Your voice belies some hesitation in that belief, little pilgrim. You have seen now the reality of this broken place. What do you make of it, truly?}}<br>
+D-do not judge me a doubter! The Citadel is a holy place indeed, resplendent and vast beyond my wildest hopes!<br>
+But yet... the grand halls ache with silence, and I see suffering in the shadows wherever I peer too deeply.<br>
+Fear, and pain... why were these things allowed into our paradise? Have my brothers and sisters not yet earned their holy reward?
+| Title7_Event2 = Speaking again
+| Title7_Dialogue2 = This place is holy, yes... but I worry at the suffering of our fellow pilgrims. So many are hurt or exhausted!<br>
+{{HTalk|Your doubts and worries will not heal them, little one.}}<br>
+{{HTalk|If you would aid your fellows, you can start by dressing their wounds. The simple rags found around the settlement will do for bandages.}}<br>
+Oh, that's an excellent idea, red maiden! Normally I'd think a song would suffice, but... yes, more direct action is certainly needed.<br>
+And the Citadel itself shall provide the materials! Praise be to this holiest of holy places!
+| Title7_Event3 = After [[Whiteward]] encounter
+| Title7_Dialogue3 = Welcome back red maiden, and thank you again for coming to my aid.<br>
+I'm no healer, but with the supplies we found in the ward below even my unlearned claws can ease the suffering of our brothers and sisters.<br>
+That such darkness could creep into this most holy of places, even though we pilgrims kept our promise to ascend...<br>
+I confess, I wonder at the meaning of it all. But enlightenment does not come easily, or all at once... I should just continue my task in the meantime.
+| Title7_Event4 = Exhausted dialogue
+| Title7_Dialogue4 = <b>Before Whiteward encounter:</b><br>
+Fear not, brothers and sisters! If we work hard and keep our faith, the Citadel will provide for us... I have no doubt!
+<hr/>
+<b>After Whiteward encounter:</b><br>
+All of these marvellous healing supplies... Surely they, at least, are some proof of the Citadel's holy nature?
+
+| Title8 = Whiteward
+| Title8_Event1 = First conversation
+| Title8_Dialogue1 = H-hoy red m-maiden! Have no f-fear, 'tis only I, Sherma!<br>
+I found healing supplies, b-but then the way back collapsed... and I heard moaning from the dark... oh, how thankful I am to see you!<br>
+{{HTalk|Hold your gratitude, little one. The dead are stirring.}}
+| Title8_Event2 = After dealing with the short gauntlet
+| Title8_Dialogue2 = Oh red maiden, sorry to have lured you into such danger!<br>
+And those poor bugs, bewitched by the thread. No sin could possibly warrant such a fate...<br>
+{{HTalk|Your pity is not misplaced, but better suited for another time. For now, you should look to your own care.}}<br>
+Ah... yes. I should get these healing supplies back to the pilgrims' settlement above. My brothers and sisters have waited long enough.<br>
+{{HTalk|Can you safely make your way back to the settlement, little one? I could escort you if need be.}}<br>
+Oh no, I'll lay no more of my troubles upon you, red maiden. With the way cleared I can return under my own guidance.<br>
+After all, what's another pilgrimage, eh? Ha ha!<br>
+Oh! And I have something for you as well. I found it buried amongst the broken relics down here in the darkness, glowing with a pale light.<br>
+'Tis an odd-looking thing... not exactly holy-seeming... but I would be honoured if you accepted it all the same!<br>
+| Title8_Event3 = Exhausted dialogue
+| Title8_Dialogue3 = I'll bring the healing supplies to the settlement with all haste, red maiden.<br>
+Fear not on my behalf. My fellow pilgrims are all praying for me, and thereby no harm will befall me!<br>
+
+| Title9 = Songclave - Act 3
+| Title9_Event1 = First conversation
+| Title9_Dialogue1 = Hoy, red maiden. 'Tis a prayer answered to see you safely wake.<br>
+{{HTalk|Little Sherma? What has happened here?}}<br>
+To our safe haven? Our home... This is what's left of it after the great breaking began.<br>
+There was that terrible noise from above. Everything shook and fell apart, and the black threads sprung up from beneath. Many a poor pilgrim has already been lost to the destruction.<br>
+You might have been too, if not for some fleeing pilgrims who found you fallen and carried you back to us.<br>
+{{HTalk|The black threads... I may understand their source.}}<br>
+{{HTalk|I must speak with the old Caretaker. Do you know what has become of him? I see he has left you his garb.}}<br>
+Oh, yes. He charged me with looking after those remaining here, said he had to confer with his family down below.<br>
+{{HTalk|Down below... Then they have slunk away to hide in their ruined chapel.}}<br>
+{{HTalk|I must pay them a visit. Thank you, Sherma. Stay safe, and take care of your fellow pilgrims.}}
+| Title9_Event2 = Delivering [[Songclave Supplies]]
+| Title9_Dialogue2 = {{HTalk|Sherma, I bring supplies from the town of bells below. Since you are now caretaker here, I entrust them to you.}} <br>
+Oh, what a blessing! This will surely raise the hopes of our poor brothers and sisters. <br>
+Please take some rosaries in exchange, red maiden! <br>
+Though in these dark times their promise of holy reward may never be met, still they carry with them our fondest well-wishes.
+| Title9_Event3 = After obtaining [[Elegy of the Deep]]
+| Title9_Dialogue3 = Our great Citadel has lost its voice, and now the black threads rise up to tear its shell apart. I fear holy Pharloom is truly dying... <br>
+But I still have hope, red maiden! Though kingdoms may fall, life endures still, and we bugs can build our lands anew! <br>
+{{HTalk|I share your hope, Sherma. Remember though that whatever is built next belongs not to the past, but to you.}} <br>
+{{HTalk|Your instincts are strong. Let it be those that guide you, rather than any reverence toward a kingdom's corpse.}} <br>
+Oho, you flatter me so! But it is my fellows who shall guide me, those whose voices sing out still, even in these ruined times... <br>
+| Title9_Event4 = After obtaining [[Everbloom]]
+| Title9_Dialogue4 = Red maiden, you have some great task ahead of you, do you not? If so, then I fear the time of our final parting draws near.<br>
+{{HTalk|You sense it true, Sherma. I shall soon descend to the darkness below the kingdom and quell the source of Pharloom's rending.}}<br>
+{{HTalk|If that task is achieved, my future may take me far from Pharloom, but know I have faith that you will hold these bugs together, and see them prosper.}}<br>
+Ah! In truth, I'm still only a fool, but I'll hold dearly to your faith in me. That warmth will help me to endure whatever challenges lie ahead!<br>
+Now let me pray for you, dear friend, and may my hopes follow you into the deepest darkness and beyond!
+| Title9_Event5 = Repeated dialogue right after previous conversation
+| Title9_Dialogue5 = Maiden, strong, wreathed in red,<br>
+Shield her shell, bless her thread!<br>
+She fights for us until the end,<br>
+Please protect my dearest friee-end!
+| Title9_Event6 = Exhausted dialogue
+| Title9_Dialogue6 = <b>Before obtaining Everbloom:</b><br>
+'Tis now my charge to care for those who stay here, including yourself. If I can aid you in any way, please let me know!
+<hr/>
+<b>After obtaining Everbloom:</b><br>
+My hopes go with you, red maiden. They will follow you into the deepest darkness, and beyond!
+
+| Title10 = Needolin
+| Title10_Event1 = At various locations before Act 3
+| Title10_Dialogue1 = [n]In song's embrace...<br>
+We find our way!<br>
+Together we climb...<br>
+Together we pray!<br>
+We pilgrims, blessed...<br>
+To the world's shining peak!
+| Title10_Event2 = At [[Songclave]]
+| Title10_Dialogue2 = [n]Brothers... sisters...<br>
+You shall have your reward...<br>
+I know it! I swear it!<br>
+Let us keep our faith!
+| Title10_Event3 = At [[Whiteward]]
+| Title10_Dialogue3 = [n]All this suffering...<br>
+How did it escape the Citadel's sight?<br>
+Am I not holy enough?<br>
+This place... hidden from holy light...
+| Title10_Event4 = At Songclave in Act 3
+| Title10_Dialogue4 = [n]Huddle together...<br>
+Let's keep our spirits strong...<br>
+Brothers... sisters...<br>
+We still have our voices!<br>
+Our strength is shared...<br>
+Our bond is unbroken...
+| Title11 = Written
+| Title11_Event1 = <i>[[Balm for the Wounded]]</i> wish
+| Title11_Dialogue1 = For the sake of our ailing brothers and sisters, I will descend into the holy Whiteward and search for healing supplies. If you are able, please join me! Company will make the work much merrier.
+}}
+
+== Locations ==
+* [[The Marrow]] (Near the entrance from Bone Bottom, just before the bench near a stone gate.)
+* [[The Marrow]] (Near the Bell Beast.)
+* [[Far Fields]] (At [[Pilgrim's Rest]].)
+* [[Bellhart]] (Near the entrance of the Bellway.)
+* [[Blasted Steps]] (Right next to the bench nearby the Bellway.)
+* [[Grand Gate]] (In the centre of the long walkway in Grand Gate)
+* [[Choral Chambers]] (At the Citadel Spa.)
+* [[Choral Chambers]] (At [[Songclave]], for the majority of Act 2 and 3.)
+* [[Whiteward]] (Part of the wish [[Balm for the Wounded]], hiding behind several breakable walls.)
+
+{{Gallery
+| Image1 = Mapshot SS Sherma 01.png!First location in the Marrow
+| Image2 = Mapshot SS Sherma 02.png!Second location in the Marrow
+| Image3 = Mapshot SS Weary Pilgrim.png!Location in the Far Fields
+| Image4 = Mapshot SS Sherma 03.png!Location in Bellhart
+| Image5 = Mapshot SS Sherma 04.png!Location in the<br>Blasted Steps
+| Image6 = Mapshot SS Sherma 05.png!Location in the<br>Grand Gate
+| Image7 = Mapshot SS Sherma 06.png!First location in the<br>Choral Chambers
+| Image8 = Mapshot SS Sherma 07.png!Second location in the<br>Choral Chambers
+| Image9 = Mapshot SS Sherma 08.png!Location in the Whiteward
+}}
+
+== Creation and Development ==
+[[File:Sherma reveal trailer door.png|thumb|250px|Sherma in the reveal trailer]]
+Sherma was designed by [[William Pellen]].<ref>[https://www.reddit.com/r/HollowKnight/comments/1o3rtet/met_ari_william_and_matt_trobbiani_at_pax/ Met Ari, William and Matt Trobbiani at PAX] on Reddit.</ref> He was first showcased in the February 2019 <i>Silksong</i> reveal trailer, with two appearances. In the first, he is seen in the Marrow, behind the gate and near the lever, instead of infront of it as in the current game.<ref>{{cite|revealtrailer|time=63}} (1:03)</ref> In the clip, his voice is drastically different and much deeper than his current one, likely not being voiced by his current voice actor, Shalulu. In the second, he is seen resting in Songclave, where he still rests currently.<ref>{{cite|revealtrailer|time=71}} (1:11)</ref> In March 2019, he was formally revealed in a blog post as <i>"an optimistic pilgrim on a spiritual journey. Sherma's path may often cross with Hornet's own, but his lack of combat and acrobatic prowess can land him in desperate need of aid."</i><ref>{{cite|tc|link=hk-physical-late-anniversary-celebration-silksong-mini-update#block-yui_3_17_2_1_1617785519678_42501|time=19 March 2019}}</ref>
+
+In the release build of <i>Silksong</i>, an unused variant of Sherma's chanting song can be found in the game files; it features different lyrics but appears to be voiced by the same voice actor as the final chanting song.<ref>[https://www.reddit.com/r/Silksong/comments/1rlgcir/fun_fact_theres_an_unused_alternative_sherma_song/ Fun fact: there's an unused alternative Sherma song in the game files] on Reddit.</ref><ref><code>Sherma-Song-Lyrics.wav</code></ref> A press kit promotional screenshot of Bellhart released in August 2025 features Sherma resting to the left of the Bellway building instead of to the right; this may imply that his location was changed very late into development, or that Team Cherry moved him for the sake of the promotional screenshot.<ref>[https://drive.google.com/drive/folders/1VE_YoUA36IwZRHnZhvEGUhqgU2GIEm4y Hollow Knight: Silksong Press Kit]</ref>
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Sherma 02.png!At the door in the Marrow
+| Image2 = Screenshot SS Sherma 12.png!At the Bell Beast
+| Image3 = Screenshot SS Sherma 08.png!With Weary Pilgrim
+| Image4 = Screenshot SS Sherma 13.png!Sleeping in Bellhart
+| Image5 = Screenshot SS Sherma 14.png!Awake in Bellhart
+| Image6 = Screenshot SS Sherma 04.png!Sleeping in the Blasted Steps
+| Image7 = Screenshot SS Sherma 03.png!Awake in the Blasted Steps
+| Image8 = Screenshot SS Sherma 09.png!At the Grand Gate
+| Image9 = Screenshot SS Sherma 06.png!Bathing in Citadel Spa
+| Image10 = Screenshot SS Sherma 10.png!Sleeping in Songclave
+| Image11 = Screenshot SS Sherma 11.png!Awake in Songclave before the <i>Balm for the Wounded</i> wish
+| Image12 = Screenshot SS Sherma 05.png!Scared in the Whiteward
+| Image13 = Screenshot SS Sherma 01.png!In Songclave after <i>Balm for the Wounded</i>
+| Image14 = Screenshot SS Sherma 15.png!Sleeping in Songclave in Act 3
+| Image15 = Screenshot SS Sherma 07.png!Awake in Songclave in Act 3
+| Image16 = Sherma Credits.png!Credits art
+| Image17 = Sherma.png!Promotional art
+}}
+
+== Trivia ==
+* Sherma's hat resembles the [[Smokerock Sifter]]'s cymbal.
+
+{{Localisation
+|DEname = Sherma
+|DEmeaning = —
+|ESname = Sherma
+|ESmeaning = —
+|FRname = Sherma
+|FRmeaning = —
+|ITname = Sherma
+|ITmeaning = —
+|JAname = シェルマ
+|JAromanised = Sheruma
+|JAmeaning = Sherma
+|KOname = 셰르마
+|KOromanised = Syereuma
+|KOmeaning = Sherma
+|PTname = Sherma
+|PTmeaning = —
+|RUname = Шерма
+|RUromanised= Šerma
+|RUmeaning = Sherma
+|TWname = 謝爾瑪
+|TWromanised = Xièěrmǎ
+|TWmeaning = same
+|ZHname = 谢尔玛
+|ZHromanised = Xièěrmǎ
+|ZHmeaning = Sherma
+|CODEname=SHERMA
+}}
+
+{{Refs|hr=ss}}
+
+{{Refs|hr=false|type=code}}
+
+[[es:Sherma]]
+[[fr:Sherma]]
+[[pt:Sherma]]
+[[uk:Шерма]]
+{{SS Nav NPCs}}

@@ -1,0 +1,150 @@
+{{Nav Games Header}}
+
+== Merchants ==
+NPCs who provide services and goods to [[Hornet (Silksong)|Hornet]] in exchange for [[Rosaries]] or other items.
+
+{| style="padding:5px; text-align:center;" width="100%"
+|-
+| [[File:Creige Icon.png|link=Creige|center|thumb|150x150px]] [[Creige]]
+| [[File:Forge Daughter Icon.png|link=Forge Daughter|center|thumb|150x150px]] [[Forge Daughter]]
+| [[File:Frey Icon.png|link=Frey|center|thumb|150x150px]] [[Frey]]
+| [[File:Grindle Icon.png|link=Grindle|center|thumb|150x150px]] [[Grindle]]
+|-
+| [[File:Grishkin Icon.png|link=Grishkin|center|thumb|150x150px]] [[Grishkin]]
+| [[File:Jubilana Icon.png|link=Jubilana|center|thumb|150x150px]] [[Jubilana]]
+| [[File:Kratt Icon.png|link=Kratt|center|thumb|150x150px]] [[Kratt]]
+| [[File:Loddie Icon.png|link=Loddie|center|thumb|150x150px]] [[Loddie]]
+|-
+| [[File:Lumble the Lucky Icon.png|link=Lumble the Lucky|center|thumb|150x150px]] [[Lumble the Lucky]]
+| [[File:Mort Icon.png|link=Mort|center|thumb|150x150px]] [[Mort]]
+| [[File:Mottled Skarr Icon.png|link=Mottled Skarr|center|thumb|150x150px]] [[Mottled Skarr]]
+| [[File:Pebb Icon.png|link=Pebb|center|thumb|150x150px]] [[Pebb]]
+|-
+| [[File:Pinmaster Plinney Icon.png|link=Pinmaster Plinney|center|thumb|150x150px]] [[Pinmaster Plinney]]
+| [[File:Relic Seeker Scrounge Icon.png|link=Relic Seeker Scrounge|center|thumb|150x150px]] [[Relic Seeker Scrounge]]
+| [[File:Shakra NPC Icon.png|link=Shakra|center|thumb|150x150px]] [[Shakra]]
+| [[File:Skynx Icon.png|link=Skynx|center|thumb|150x150px]] {{Steel Soul Icon Mini|SS}} [[Skynx]]
+|-
+| [[File:Twelfth Architect Icon.png|link=Twelfth Architect|center|thumb|150x150px]] [[Twelfth Architect]]
+| [[File:Vaultkeeper Cardinius Icon.png|link=Vaultkeeper Cardinius|center|thumb|150x150px]] [[Vaultkeeper Cardinius]]
+| [[File:Vog Icon.png|link=Vog|center|thumb|150x150px]] [[Vog]]
+|}
+
+{{Hr|SS}}
+
+== Wanderers ==
+NPCs that are encountered in several locations and wander around [[Pharloom]].
+
+{| style="padding:5px; text-align:center;" width="100%"
+|-
+| [[File:Garmond and Zaza NPC Icon.png|link=Garmond and Zaza|center|thumb|150x150px]] [[Garmond and Zaza]]
+| [[File:Gilly Icon.png|link=Gilly|center|thumb|150x150px]] [[Gilly]]
+| [[File:Green Prince Icon.png|link=Green Prince|center|thumb|150x150px]] [[Green Prince]]
+| [[File:Lace NPC_Icon.png|link=Lace|center|thumb|150x150px]] [[Lace]]
+|-
+| [[File:Second Sentinel NPC Icon.png|link=Second Sentinel|center|thumb|150x150px]] [[Second Sentinel]]
+| [[File:Sherma Icon.png|link=Sherma|center|thumb|150x150px]] [[Sherma]]
+| [[File:Seth Icon.png|link=Shrine Guardian Seth|center|thumb|150x150px]] [[Shrine Guardian Seth|Seth]]
+| [[File:Varga Icon.png|link=Varga|center|thumb|150x150px]] [[Varga]]
+|}
+
+{{Hr|SS}}
+
+== Quest NPCs ==
+NPCs that require Hornet to seek them out or do [[Wishes]] for them.
+
+{| style="padding:5px; text-align:center;" width="100%"
+|-
+| [[File:Alchemist Zylotol Icon.png|link=Alchemist Zylotol|center|thumb|150x150px]] [[Alchemist Zylotol]]
+| [[File:Caretaker Icon.png|link=Caretaker|center|thumb|150x150px]] [[Caretaker]]
+| [[File:Cogwork Statues Icon.png|link=Cogwork Statues|center|thumb|150x150px]] [[Cogwork Statues]]
+| [[File:Couriers Tipp and Pill Icon.png|link=Couriers Tipp & Pill|center|thumb|150x150px]] [[Couriers Tipp & Pill]]
+|-
+| [[File:Crull and Benjin Icon.png|link=Crull and Benjin|center|thumb|150x150px]] [[Crull and Benjin]]
+| [[File:Fleamaster Mooshka Icon.png|link=Fleamaster Mooshka|center|thumb|150x150px]] [[Fleamaster Mooshka]]
+| [[File:Flick the Fixer Icon.png|link=Flick the Fixer|center|thumb|150x150px]] [[Flick the Fixer]]
+| [[File:Greyroot Icon.png|link=Greyroot|center|thumb|150x150px]] [[Greyroot]]
+|-
+| [[File:Huntress Icon.png|link=Huntress|center|thumb|150x150px]] [[Huntress]]
+| [[File:Loyal Mergwin Icon.png|link=Loyal Mergwin|center|thumb|150x150px]] [[Loyal Mergwin]]
+| [[File:Mister Mushroom Icon.png|link=Mister Mushroom (Silksong)|center|thumb|150x150px]] [[Mister Mushroom (Silksong)|Mister Mushroom]]
+| [[File:Moss Druid Icon.png|link=Moss Druid|center|thumb|150x150px]] [[Moss Druid]]
+|-
+| [[File:Nuu Icon.png|link=Nuu|center|thumb|150x150px]] [[Nuu]]
+| [[File:Pavo Icon.png|link=Pavo|center|thumb|150x150px]] [[Pavo]]
+| [[File:Pinstress NPC Icon.png|link=Pinstress|center|thumb|150x150px]] [[Pinstress]]
+| [[File:Runt Icon.png|link=Runt|center|thumb|150x150px]] [[Runt]]
+|-
+| [[File:Seamstress Icon.png|link=Seamstress|center|thumb|150x150px]] [[Seamstress]]
+| [[File:Snail Shamans Icon.png|link=Snail Shamans (Silksong)|center|thumb|150x150px]] [[Snail Shamans (Silksong)|Snail Shamans]]
+| [[File:Sprintmaster Swift Icon.png|link=Sprintmaster Swift|center|thumb|150x150px]] [[Sprintmaster Swift]]
+| [[File:Steel Seer Zi Icon.png|link=Steel Seer Zi|center|thumb|150x150px]] {{Steel Soul Icon Mini|SS}} [[Steel Seer Zi]]
+|-
+| [[File:Tormented Trobbio NPC Icon.png|link=Tormented_Trobbio|center|thumb|150x150px]] [[Tormented Trobbio]]
+| [[File:Yarnaby Icon.png|link=Yarnaby|center|thumb|150x150px]] [[Yarnaby]]
+|}
+
+{{Hr|SS}}
+
+== Miscellaneous ==
+NPCs who mainly provide lore or any forms of aid to Hornet.
+
+{| style="padding:5px; text-align:center;" width="100%"
+|-
+| [[File:Ballow Icon.png|link=Ballow|center|thumb|150x150px]] [[Ballow]]
+| [[File:Beastling Icon.png|link=Beastlings|center|thumb|150x150px]] [[Beastlings]]
+| [[File:Bell Beast NPC Icon.png|link=Bell Beast|center|thumb|150x150px]] [[Bell Beast]]
+| [[File:Bell Hermit Icon.png|link=Bell Hermit|center|thumb|150x150px]] [[Bell Hermit]]
+|-
+| [[File:Broodling Icon.png|link=Broodling|center|thumb|150x150px]] [[Broodling]]
+| [[File:Chapel Maid Icon.png|link=Chapel Maid|center|thumb|150x150px]] [[Chapel Maid]]
+| [[File:Conductor Ballador Icon.png|link=Conductor Ballador|center|thumb|150x150px]] [[Conductor Ballador]]
+| [[File:Eva Icon.png|link=Eva|center|thumb|150x150px]] [[Eva]]
+|-
+| [[File:Fayforn Icon.png|link=Fayforn|center|thumb|150x150px]] [[Fayforn]]
+| [[File:Great Gourmand Icon.png|link=Great Gourmand|center|thumb|150x150px]] [[Great Gourmand]]
+| [[File:Loam Icon.png|link=Loam|center|thumb|150x150px]] [[Loam]]
+| [[File:Mask Maker Silksong Icon.png|link=Mask Maker (Silksong)|center|thumb|150x150px]] [[Mask Maker (Silksong)|Mask Maker]]
+|-
+| [[File:Old Penitent Icon.png|link=Old Penitent|center|thumb|150x150px]] [[Old Penitent]]
+| [[File:Pilby Icon.png|link=Pilby|center|thumb|150x150px]] [[Pilby]]
+| [[File:Pious Isamor Icon.png|link=Pious Isamor|center|thumb|150x150px]] [[Pious Isamor]]
+| [[File:Pondcatcher Reed Icon.png|link=Pondcatcher Reed|center|thumb|150x150px]] [[Pondcatcher Reed]]
+|-
+| [[File:Red Memory Icon.png|link=Red Memory|center|thumb|150x150px]] [[Red Memory|Red Memory NPCs]]
+| [[File:Skarrsinger Karmelita NPC Icon.png|link=Skarrsinger Karmelita|center|thumb|150x150px]] [[Skarrsinger Karmelita]]
+| [[File:Styx Icon.png|link=Styx|center|thumb|150x150px]] [[Styx]]
+| [[File:Sula Icon.png|link=Sula|center|thumb|150x150px]] {{Steel Soul Icon Mini|SS}} [[Sula]]
+|-
+| [[File:Unnamed Skarr Icon.png|link=Unnamed Skarr|center|thumb|150x150px]] [[Unnamed Skarr]]
+|}
+{{Hr|SS}}
+
+== Pilgrims ==
+Miscellaneous Pilgrim NPCs that only appear in one area to give dialogue.
+
+{| style="padding:5px; text-align:center;" width="100%"
+|-
+| [[File:Aged Pilgrim.png|link=Aged Pilgrim|center|thumb|150x150px]] [[Aged Pilgrim]]
+| [[File:Dejected Pilgrim.png|link=Dejected Pilgrim|center|thumb|150x150px]] [[Dejected Pilgrim]]
+| [[File:Exhausted Pilgrim.png|link=Exhausted Pilgrim|center|thumb|150x150px]] [[Exhausted Pilgrim]]
+| [[File:Fearful Pilgrim.png|link=Fearful Pilgrim|center|thumb|150x150px]] [[Fearful Pilgrim]]
+|-
+| [[File:Horned Pilgrim.png|link=Horned Pilgrim|center|thumb|150x150px]] [[Horned Pilgrim]]
+| [[File:Humble Pilgrim.png|link=Humble Pilgrim|center|thumb|150x150px]] [[Humble Pilgrim]]
+| [[File:Pilgrim Preacher.png|link=Pilgrim Preacher|center|thumb|150x150px]] [[Pilgrim Preacher]]
+| [[File:Quiet Pilgrim.png|link=Quiet Pilgrim|center|thumb|150x150px]] [[Quiet Pilgrim]]
+|-
+| [[File:Scared Pilgrim.png|link=Scared Pilgrim|center|thumb|150x150px]] [[Scared Pilgrim]]
+| [[File:Solemn Pilgrim.png|link=Solemn Pilgrim|center|thumb|150x150px]] [[Solemn Pilgrim]]
+| [[File:Tall Pilgrim.png|link=Tall Pilgrim|center|thumb|150x150px]] [[Tall Pilgrim]]
+| [[File:Weary Pilgrim.png|link=Weary Pilgrim|center|thumb|150x150px]] [[Weary Pilgrim]]
+|-
+| [[File:Worried Pilgrim.png|link=Worried Pilgrim|center|thumb|150x150px]] [[Worried Pilgrim]]
+|}
+
+{{Hr|SS}}
+
+[[Category:NPCs (Silksong)| ]]
+
+[[fr:Personnages non jouables (Silksong)]]

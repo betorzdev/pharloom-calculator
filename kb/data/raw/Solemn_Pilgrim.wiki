@@ -1,0 +1,92 @@
+{{SS Infobox NPC
+| area = [[Bone Bottom]]
+| role = Pilgrim
+| affiliation = Pilgrims
+| singnum = 2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Solemn Pilgrim's audio files.</ref>
+}}
+{{Quote
+|Hr=SS
+|Sing, brothers and sisters! Sing, and drown out this burdensome sorrow! Sing out the name of this poor pilgrim, whose journey had nary begun!
+|Solemn Pilgrim
+}}
+
+<b>Solemn Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They carry out [[Pilby]]'s funeral in [[Bone Bottom]].
+
+== In-game Events ==
+The Solemn Pilgrim can be found next to the pit in Bone Bottom, conducting Pilby's funeral, if he was killed by the [[Skull Tyrant]] in [[Act 1]]. [[Hornet (Silksong)|Hornet]] asks what has drawn pilgrims together, and the Solemn Pilgrim explains that they are there to sing their fellow pilgrim a farewell and mourn their loss.<ref>Hornet and Solemn Pilgrim dialogue: <br><i>Hornet: "What ritual calls you all together, pilgrim?" <br>Solemn Pilgrim: "Our brother, this poor wretch in my arms, has walked his last aching step. We gather here to sing him farewell, and to mourn our great loss."</i></ref>
+
+If Hornet had learned Pilby's name prior to his death, she shares it with the Solemn Pilgrim, who thanks her for sharing it.<ref>Hornet and Solemn Pilgrim dialogue: <br><i>Solemn Pilgrim: "...Hm. Who here knows the name of this little pilgrim?" <br>Hornet: "Pilby. This pilgrim's name was Pilby."<br>Solemn Pilgrim: "Ah, thank you for sharing, sister. For the honourable and steadfast Pilby, we will sing."</i></ref> Otherwise, the funeral is concluded without his name being known.<ref>Solemn Pilgrim: <i>"Well. Though this pilgrim's name has been lost, still we sing."</i></ref>
+
+After the funeral, the Solemn Pilgrim leaves the location and is absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = {{HTalk|What ritual calls you all together, pilgrim?}}<br>
+Our brother, this poor wretch in my arms, has walked his last aching step. We gather here to sing him farewell, and to mourn our great loss.<br>
+For though, as pilgrims, we aim our sights high and never waver from our path, the loss of a brother or sister still stops our trembling limbs in place.<br>
+Sing, brothers and sisters! Sing, and drown out this burdensome sorrow! Sing out the name of this poor pilgrim, whose journey had nary begun!<br>
+...Hm. Who here knows the name of this little pilgrim?
+|Title1_Event2 = First encounter (Cont.)
+|Title1_Dialogue2 = <b>If Hornet learned Pilby's name before his death:</b><br>
+{{HTalk|Pilby. This pilgrim's name was Pilby.}}<br>
+Ah, thank you for sharing, sister. For the honourable and steadfast Pilby, we will sing.<br>
+Sing for our brother, who has died a devout death! All his pains and torments left behind, like the dust shrugged from a traveller's shawl.<br>
+Farewell, brother Pilby. May your shell harden the path for others to tread.
+<hr/>
+<b>If Hornet never learned Pilby's name:</b><br>
+Well. Though this pilgrim's name has been lost, still we sing.<br>
+Sing for our brother, who has died a devout death! All his pains and torments left behind, like the dust shrugged from a traveller's shawl.<br>
+Farewell, little pilgrim. May your shell harden the path for others to tread.
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Fallen brother...<br>
+Your journey ends...<br>
+We carry your memory...<br>
+Fellow pilgrim...
+}}
+
+== Location ==
+The Solemn Pilgrim can be found near the pit west of [[Bone Bottom]] during [[Pilby]]'s funeral.
+{{Gallery
+|Image1 = Mapshot SS Solemn Pilgrim.png!Location in Bone Bottom
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Solemn Pilgrim 01.png!Holding Pilby's body during the funeral
+|Image2 = Screenshot SS Solemn Pilgrim 02.png!Throwing Pilby's body in the chasm
+|Image3 = Screenshot SS Solemn Pilgrim 03.png!Singing afterwards
+}}
+
+{{Localisation
+|DEname = Würdevolle Pilgerin
+|DEmeaning = Dignified Pilgrim
+|ESname = Peregrina Solemne
+|ESmeaning = Solemn Pilgrim
+|FRname = Pèlerine Solennelle
+|FRmeaning = Solemn Pilgrim
+|ITname = Pellegrina Solenne
+|ITmeaning = Solemn Pilgrim
+|JAname = 厳かな巡礼者
+|JAromanised = Ogosoka na junreisha
+|JAmeaning = Solemn Pilgrim
+|KOname = 근엄한 순례자
+|KOromanised = Geuneomhan sullyeja 
+|KOmeaning = Solemn Pilgrim
+|PTname = Peregrina Solene
+|PTmeaning = Solemn Pilgrim
+|RUname = Мрачная пилигримка
+|RUromanised = Mračnaya piligrimka
+|RUmeaning = Gloomy Pilgrim
+|TWname = 嚴肅的朝聖者
+|TWromanised = Yánsù de cháoshèng zhě
+|TWmeaning = same
+|ZHname = 严肃的朝圣者
+|ZHromanised = Yánsù de cháoshèng zhě
+|ZHmeaning = Solemn Pilgrim
+|CODEname = BONETOWN_FUNERAL_LEADER
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

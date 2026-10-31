@@ -1,0 +1,191 @@
+{{SS Infobox NPC
+|area = [[Deep Docks]]
+|image1 = <gallery>
+Ballow.png|Idle
+B_Smelt_Shoveller.png|Working
+Ballow Sauna.png|At Sauna
+Ballow Diving Bell.png|At Diving Bell
+</gallery>
+|role = Lore
+|affiliation = [[Forge Daughter]] (Boss)<ref name=busy>Ballow: <i>"If you need something, talk to the boss. I'm busy."</i></ref>
+|quest = [[Acts#Act_3:_Abyss|SEEK: The Dark Below]]
+|singnum = 2
+|s1 = Default
+|s2 = When Hornet is in the diving bell
+}}
+{{Quote|Hr=SS
+|If you need something, talk to the boss. I'm busy.
+|Ballow
+}}
+<b>Ballow</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a [[Dock Workers|Dock Worker]] who is [[Forge Daughter]]'s assistant, and is involved in the <i>[[SEEK: The Dark Below]]</i> [[Objectives|objective]].<ref name=fg>[[Forge Daughter]]: <i>"We hope Ballow serves you well, pointy bug. In our long time serving these docks, he's the finest assistant we've found."</i></ref>
+
+== Background ==
+Ballow is a young [[Smelt Shoveller]] who is the assistant of Forge Daughter.<ref name=fg/><ref name=sense>[[Forge Daughter]]: <i>"It's only ourselves and young Ballow with any sense left."</i></ref> He can be found shovelling smelt into a metal carapace beside her shop. He and Forge Daughter are the only workers in the [[Deep Docks]] who still have their senses.<ref name=sense/> Ballow is mostly concerned with his work, and dislikes interruptions.<ref name=busy/><ref>Ballow: <i>"Can't you see I'm busy, miss? Ain't got time for naught else while the shovelling needs doing."</i></ref>
+
+== In-Game Events ==
+When Ballow is working next to Forge Daughter, [[Hornet (Silksong)|Hornet]] can needle-bounce on him, which deals no damage to him but makes Forge Daughter laugh if done enough times.
+
+If the Bench in the sauna room in the lower area of the Deep Docks is unlocked and then Hornet rests elsewhere, upon revisiting it, Ballow can be found there enjoying the sauna. After speaking to him and resting elsewhere, he can be found working next to Forge Daughter again.
+
+During the <i>SEEK: The Dark Below</i> objective in [[Act 3]], after speaking with Ballow, he agrees to fix the [[Diving Bell|diving bell]]. He moves to the diving bell's control panel, accessible through an opened floor gate in the upper right corner of the diving bell's room. After speaking to him there, he gives Hornet the [[Diving Bell Key]], allowing her to enter the diving bell and descend into [[The Abyss (Silksong)|the Abyss]].
+
+After Hornet's first escape from the Abyss, Ballow retrieves the diving bell and starts repairing it with additional reinforcements. Once Hornet obtains the [[Everbloom]], the bell is ready, allowing Hornet to safely descend into and return from the Abyss at any time.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter & Repeated dialogue
+| Title1_Dialogue1 = If you need something, talk to the boss. I'm busy.
+| Title1_Event2 = Speaking in the sauna
+| Title1_Dialogue2 = 
+Here to sweat away your sorrows, miss? The steam does wonders for a mind set sullen, or a shell gone stiff.<br>
+{{HTalk|I've found these lowlands hot enough already, and mine is a shell more resilient than most.}}<br>
+{{HTalk|To challenge that further seems a unique sort of madness.}}<br>
+Aye, well, this is Pharloom, miss! Madness is catching. I'd say this here's the smallest form of it.
+| Title1_Event3 = Repeated dialogue in the sauna
+| Title1_Dialogue3 = Ahhh... Can you feel it yet? All your troubles dripping away...
+| Title1_Event4 = Playing the [[Needolin]]
+| Title1_Dialogue4 = [n]
+Heat it... Shape it...<br>
+The work endures...<br>
+Forged by holy duty...<br>
+Tempered... moulded...<br>
+For Pharloom everlasting...<br>
+We continue the task...
+
+| Title2 = Act 3
+| Title2_Event1 = First encounter & Repeated dialogue
+| Title2_Dialogue1 = Oi! What's with all these tremors? This smelt still need{{Sic}} shovelling, and the shakes're only making it harder.
+| Title2_Event2 = Speaking after beginning the Main Objective <i>[[Acts#The Dark Below|SEEK: The Dark Below]]</i>
+| Title2_Dialogue2 = <b>If Hornet hasn't seen the Diving Bell yet</b><br>
+{{HTalk|Sir, I have need to head below the lakes of flame. Can you aid me in this task?}}<br>
+Hmmm... Well if you head down below to the very base of the docks, there's an old diving bell built for just what you're askin'.<br>
+Thing is, you can ride it, but it takes an operator stood dockside to send it. I might be capable, but I ain't got time for naught else while the shovelling still needs doing.<br>
+{{HTalk|Choose to aid me, sir, or all your efforts will soon be wasted. This kingdom crumbles. If you wish for your work and your life to continue, you must help me, now.}}<br>
+<hr/>
+<b>If Hornet has seen the Diving Bell</b><br>
+{{HTalk|Sir, I have need to head below the lakes of flame.}}<br>
+{{HTalk|There is a diving bell at the base of this structure that seemed fit for the task. I require it opened, and an operator to send it deep.}}<br>
+{{HTalk|As one of few upon these docks with mind still sound, that role must fall to you.}}<br>
+Can't you see I'm busy, miss? Ain't got time for naught else while the shovelling needs doing.<br>
+{{HTalk|Choose to aid me, or all your efforts will soon be wasted. This kingdom crumbles. Its collapse is inevitable. If you wish for your work and your life to continue, you must help me, now.}}<br>
+<hr/>
+Grfff... So it's gotten that bad, aye? I guess... If that's how it is, I'll be your bug.<br>
+Meet me below, at the diving bell. We'll see if I can get you ready for the drop.
+| Title2_Event3 = Speaking at the Diving Bell
+| Title2_Dialogue3 = Ho, miss! How's all this then? Lotta dials to be trackin', but at least the controls seem in good order.<br>
+From here, I can guide your bell down, best as any bug.<br>
+{{HTalk|Then you've no prior experience with this type of transport?}}<br>
+No one does, miss! Them's who used to dive're all long dead, or cursed ta half life. An' there ain't no bug left alive's been brave or stupid enough to try... 'til now, at least.<br>
+I'll work it best's I can. Can't do much more, I'm afraid. At least the forgings of these docks were built to last. Now we's only gotta pray they hold for you.<br>
+Here's the key that'll see you inside its metal belly. Pop in there once you're feelin' good and ready. In the meantime, I'll get to seeing things set up here.<br>
+| Title2_Event4 = Repeated dialogue after handing over the Diving Bell Key
+| Title2_Dialogue4 = Pop inside the diving bell once you're feelin' good and ready. In the meantime, I'll get to seeing things set up here.
+| Title2_Event5 = Speaking through the gramophone inside the Diving Bell
+| Title2_Dialogue5 = {{HTalk|Sir, I wish to depart. Please ready the bell for travel.}}<br>
+Sure thing, miss. Sit on the bench, and I'll send you down.
+| Title2_Event6 = Speaking again before sitting on the Bench
+| Title2_Dialogue6 = {{HTalk|I need a moment, sir. Please unlock the bell that I may exit.}}<br>
+Seein' some sense? Can't blame ya if you're thinkin' on backin' out. It's a mad hope that old bell'd even survive the trip.
+| Title2_Event7 = Using gramophone after Bell failure
+| Title2_Dialogue7 = {{HTalk|Sir, if you can hear me, there has been an accident during the descent.}}<br>
+{{HTalk|In this broken state, the bell is unfit for travel. Retrieve it if you may, but I shall not return within.}}<br>
+...iss...istake...erwhelm...retrie...a...ssible...
+| Title2_Event8 = Repeated dialogue 
+| Title2_Dialogue8 = ...tract...annot...ap...en...epair...orry..iss...
+| Title2_Event9 = Speaking after returning from the [[The Abyss (Silksong)|the Abyss]]
+| Title2_Dialogue9 = Miss! Errr... Ullo... I see you've survived... somehow... Thought that drop must'a been your end. <br>
+{{HTalk|It was not. I survived the fall, and managed a treacherous return.}}<br>
+{{HTalk|For the diving bell's failure, the risks were clear to me. The fault lies not with you.}}<br>
+Aye! As you say! This bell's old. And time has a way of breaking things even as fine forged as this.<br>
+And you can see here, for its failure I'd already been workin' at improving the design! Ended up being a useful test... ahem.<br>
+{{HTalk|Good. That return path is now closed to me, and your bell may still be needed if I choose to descend again.}}<br>
+Again? Well, if you're game enough to try a second time...Once this new shield-shell is fitted, it'll surely withstand the drop!.. Surely!
+| Title2_Event10 = Repeated dialogue after returning from the Abyss
+| Title2_Dialogue10 = The diving bell'll be ready again soon, miss. Once this new shield-shell is fitted, it'll surely withstand the drop!.. Surely!
+
+| Title3 = Bell repaired
+| Title3_Event1 = Speaking inside Diving Bell without talking him prior
+| Title3_Dialogue1 = Oi! Who'sat? Whoever's down there, if you're feelin' mad enough to try and travel, best meet me up at the controls, and we can chat.
+| Title3_Event2 = Speaking after acquiring the [[Everbloom]]
+| Title3_Dialogue2 = <b>If Hornet did not speak with him after escaping The Abyss</b><br>
+Miss! Errr... Ullo... I see you've survived... somehow... Thought that last plunge must'a been your end. <br>
+{{HTalk|It was not. I survived the fall, and managed a treacherous return.}}<br>
+{{HTalk|For the diving bell's failure, the risks were clear to me. The fault lies not with you.}}<br>
+Aye! As you say! This bell's old. And time has a way of breaking things even as fine forged as this.<br>
+And see below, for its failure I've been workin' hard at improving the design! Your last journey ended up being a valuable test... ahem.<br>
+{{HTalk|Good. That return path is long closed to me, and your bell is now needed again.}}<br>
+Again? Well if you're game enough to try a second time... A shell-shield's been fitted, and the bell's like new. Better'n new! <br>
+If you're planning another descent, head down, holler, and I'll get you goin'.
+<hr/>
+<b>If Hornet spoke to him before</b><br>
+It's done, miss! I've fitted the shell-shield. Bell's like new. Better'n new even!<br>
+If you're planning another descent, head down, holler, and I'll get you goin'.<br>
+{{HTalk|Your work is appreciated, sir. Know that, with luck, the threat from below might soon be quelled, and your lands shall rest calm.}}<br>
+Well... Good! I'm only really wishin' to return to the forge, and my regular duties... A little purpose, routine...<br>
+Frankly, miss, all this action's more'n a bit overwhelming for bugs like me. I'll be glad when it's all over... Providing we survive, of course.
+| Title3_Event3 = Repeated dialogue after the bell is repaired
+| Title3_Dialogue3 = The new shell-shield's all bolted on tight, miss. If you're planning another descent, head down, holler, and I'll get you where you're goin'.
+| Title3_Event4 = Asking to use the Diving Bell for the first time
+| Title3_Dialogue4 = Holler when you're ready, miss. The upgrades are done. That bell's as ready as it'll ever be.
+| Title3_Event5 = Asking to open the door in either place
+| Title3_Dialogue5 = {{HTalk|Sir, I require a moment. Please unlock the bell for me.}}<br>
+Aye. Can do, miss. Hail me again when you're ready to travel.
+| Title3_Event6 = Asking to use the Diving Bell in The Abyss
+| Title3_Dialogue6 = {{HTalk|Sir, I need to return above. Please ready the bell for me.}}<br>
+Aye, miss. Sit on the bench, and let's get you hauled up.
+}}
+
+== Location ==
+Ballow is located in the same room as Forge Daughter in Deep Docks. He can be found in the Deep Docks sauna after it's opened; after the encounter, he moves back to his usual location next to Forge Daughter.
+
+After talking to him during the <i>[[SEEK: The Dark Below]]</i> [[Objectives|objective]], he moves to the diving bell's control panel.
+
+{{Gallery
+|Image1 = Mapshot SS Forge Daughter 01.png!Initial location in the Deep Docks
+|Image2 = Mapshot SS Ballow 02.png!Location in the Deep Docks sauna
+|Image3 = Mapshot SS Ballow 01.png!Later location in the Deep Docks}}
+
+{{Gallery
+|Title = Gallery
+|Image1=Screenshot SS Deep Docks 03.png!Ballow with Forge Daughter
+|Image2=Screenshot SS Ballow 02.png!Ballow resting in the Deep Docks sauna
+|Image3=Screenshot SS Ballow 01.png!Ballow at Diving Bell controls
+|Image4=Screenshot SS Diving Bell 03.png!Ballow repairing the Diving Bell
+|Image5=Screenshot SS Ballow 03.png!Ballow reacting to the Needolin
+}}
+
+== Trivia ==
+* Within the intact diving bell, Ballow can be heard singing through the speaker if the [[Needolin]] is played. However, his Needolin dialogue does not appear.
+* When Needle-bouncing on Ballow, he makes the same sound when Needle-bouncing on a [[Flintstone Flyer]], even though he resembles a Smelt Shoveller.
+{{Localisation
+|DEname = Ballow
+|DEmeaning = —
+|ESname = Ballow
+|ESmeaning = —
+|ITname = Ballow
+|ITmeaning = —
+|FRname = Ballow
+|FRmeaning = —
+|JAname = バロウ
+|JAromanised = Barou
+|JAkatakana = foreign
+|JAmeaning = Ballow
+|KOname = 발로우
+|KOromanised = Ballou
+|KOmeaning = Ballow
+|PTname = Ballow
+|PTmeaning = —
+|RUname = Боллоу
+|RUromanised = Bollow
+|RUmeaning = Ballow
+|TWname = 巴洛
+|TWromanised = Bāluò
+|TWmeaning = same
+|ZHname = 巴洛
+|ZHromanised = Bāluò
+|ZHmeaning = Ballow
+|CODEname= BALLOW </code><br><code>FORGE_FRIEND</code>
+}}
+{{Refs|hr=ss}}
+[[fr:Ballow]]
+{{SS Nav NPCs}}

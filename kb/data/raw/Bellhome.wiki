@@ -1,0 +1,136 @@
+__NOTOC__
+[[File:Bellhome sprite.png|thumb|150px]]
+{{Quote
+|A place to reflect. A bed to lay in. It's hanging up there at the top, beside our good pinmaster.
+|[[Pavo]]
+|Hr = SS
+}}
+
+The <b>Bellhome</b> is a building within the town of [[Bellhart]] restored after the completion of the <i>[[Bellhart's Glory]]</i> [[Wishes|wish]]. After completing the wish and at least [[Bellhome_Key#How_to_Acquire|two other wishes in Bellhart]], speaking to [[Pavo]] will reward [[Hornet (Silksong)|Hornet]] with the [[Bellhome Key]] as a reward for her good deeds.
+
+== Use ==
+Available by default is a bed that functions as a [[Bench (Silksong)|Bench]], which Hornet lies down on if no input is made for 4 seconds while resting, or when loading the [[Save Data (Silksong)|save profile]] after resting on the bed. Also available by default is a shelf that at first serves a purely decorative purpose, however once Hornet begins acquiring [[Mementos]] in [[Act 3]], they are displayed on the shelf and can be inspected at any time by interacting with it. This function is later combined with the Desk and the Materium once they are acquired.<br>
+Additional functions can be acquired for the bellhome by purchasing the furniture from [[Frey]] and finding certain items around Pharloom that are installed within the bellhome once Hornet returns to it.
+
+== Location ==
+The bellhome is located at the top of Bellhart, only appearing and able to be interacted with once the <i>Bellhart's Glory</i> wish is completed.
+{{Gallery
+|Image1 = Mapshot SS Bellhome.png!Bellhome location in Bellhart
+}}
+
+== Bellhome Furniture ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+!  Source
+! style="width: 18rem;" | Description
+! style="width: 32rem;" | Function
+|-
+! [[File:Desk.png|Desk|center|72x72px]]
+Desk
+| align="center" | Bought from [[Frey]] for {{R|380}}
+| <i>A sturdy desk is the heart of any bellhome! Use it to take stock of your situation or organise your artefacts.</i>
+| Allows Hornet to review her collections of [[Items (Silksong)#Tradables|Relics]] and [[Psalm Cylinder]]s without needing to visit [[Relic Seeker Scrounge]] or [[Vaultkeeper Cardinius]]. Combines with the Materium if both are owned, as well as the Memento shelf.
+|-
+! [[File:Gleamlights.png|Gleamlights|center|72x72px]]
+Gleamlights
+| align="center" | Bought from [[Frey]] for {{R|320}}
+| <i>Twine-strung globes filled with gleamflies. These'll brighten up even the darkest bell.</i>
+| Adds decorative lighting to the bellhome.
+|-
+! [[File:Bell Lacquer.png|Bell Lacquer|center|72x72px]]
+Bell Lacquer
+| align="center" | Bought from [[Frey]] for {{R|520}}<br><i>See [[#Bell Lacquer Colors|below]] for colors</i>
+| <i>You've a good, solid bell up there, though its surface is showing its age. Why not have us paint it fresh? A protective coat and a little flair!</i>
+| Lets Hornet select a colour to repaint her bellhome: Red, White (replaced by {{Steel Soul Icon Mini|SS}} Chrome in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]), Black, Bronze or Blue.<ref group="Note">Color names are taken from internal file names and are not referenced in-game.</ref> The selected color is permanent.
+|-
+! [[File:Personal Spa.png|Personal Spa|center|72x72px]]
+Personal Spa
+| align="center" | Bought from [[Frey]] for {{R|1100}} after buying two other Bellhome items
+| <i>Care to refresh yourself in a steaming spa? Given your hard labours, I'm sure your shell would thank you for it.</i>
+| Installs a spa in the upper area of the bellhome, letting Hornet regenerate Health and Silk. Also adds a platform above the bed to help Hornet get into the spa without the [[Faydown Cloak]], as well as decorative chimneys on the exterior of the bellhome.
+|-
+! [[File:Gramophone.png|Gramophone|center|72x72px]]
+Gramophone
+| align="center" | Bought from [[Frey]] for {{R|490}} after buying the Desk and giving all [[Psalm Cylinder]]s to [[Vaultkeeper Cardinius]]
+| <i>The Citadel crafted some marvellous machines, and this looks to be one of its finest! Apparently sent by some creepy slitherer hidden away up there, for sale only to you!</i>
+| Allows Hornet to listen to Psalms Cylinders within her bellhome. The music continues to play even outside of the menu and can also be heard from nearby while outside. When listening to the [[Psalm Cylinder|Sacred Cylinder]], Hornet will play the [[Threefold Melody|Vaultkeeper's Melody]] when using the [[Needolin]]. Audio distorts briefly if the gramophone is struck.
+|-
+! [[File:Materium.png|link=Materium|center|72x72px]]
+[[Materium]]
+| align="center" | Found in the [[Memorium]]
+| <i>Tubes and receptacles built for the storing, recording and research of various materials.</i>
+| Allows Hornet to review the collection of materials she has seen and acquired on her journey. Combines with the Desk if both are owned but does not require it, as well as the Memento shelf.
+|-
+! [[File:Farsight.png|link=Farsight|center|72x72px]]
+[[Farsight]]
+| align="center" | Found in [[Weavenest Absolom]]
+| <i>Retracted Weaver surveillance instrument. Once assembled, the device will allow observation over vast distances.</i>
+| Allows Hornet to see any empty spots in her collection menus (i.e. missing [[Tools]], [[Skills_and_Abilities_(Silksong)#Silk Skills|Silk Skills]], [[Items (Silksong)#Tradables|Relics]], [[Psalm Cylinder]]s, and [[Materium]] entries), as well as view her [[Completion (Silksong)|Completion]] percentage.
+|-
+! [[File:Crawbell.png|link=Crawbell|center|72x72px]]
+[[Crawbell]]
+| align="center" | Found in [[Craw Lake]] after defeating the [[Crawfather]]
+| <i>Nest fashioned from an old bell. Once set up, young Craws will occasionally roost within, filling the bell with shell shards and rosaries.</i>
+| Installed outside of the bellhome's entrance, and enables passive accumulation of [[Shell Shards]] and [[Rosaries]] while Hornet spends time traversing Pharloom.
+|}
+
+{{Gallery
+|Title = Bell Lacquer Colors
+|Image1 = Bellhome.png!Unpainted
+|Image2 = Bellhome Red.png![[File:Bell Lacquer Red.png|Red Lacquer|40px]]<br>Red
+|Image3 = Bellhome White.png![[File:Bell Lacquer White.png|White Lacquer|40px]]<br>White
+|Image4 = Bellhome Chrome.png![[File:Bell Lacquer Chrome.png|Chrome Lacquer|40px]]<br>{{Steel Soul Icon Mini|SS}} Chrome
+|Image5 = Bellhome Black.png![[File:Bell Lacquer Black.png|Black Lacquer|40px]]<br>Black
+|Image6 = Bellhome Bronze.png![[File:Bell Lacquer Bronze.png|Bronze Lacquer|40px]]<br>Bronze
+|Image7 = Bellhome Blue.png![[File:Bell Lacquer Blue.png|Blue Lacquer|40px]]<br>Blue
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Bellhome 05.png!The bellhome while it is still under construction
+|Image2 = Screenshot SS Bellhome 01.png!Initial appearance of the bellhome
+|Image3 = Screenshot SS Bellhome 02.png!The bellhome being painted with bell lacquer
+|Image4 = Screenshot SS Bellhome 03.png!The bellhome with all upgrades
+|Image5 = Screenshot SS Bellhome 04.png!Initial appearance of the bellhome's interior
+|Image6 = Screenshot SS Bellhart 09.png!The bellhome's interior with all upgrades
+|Image7 = Screenshot SS Hornet 18.png! Hornet sleeping in her bed
+}}
+
+== Achievements ==
+{{Achievements|allgames=silksong|Resident}}
+
+{{Localisation
+|DEname = Glockenheim
+|DEmeaning = Bellhome
+|ESname = Hogar campana
+|ESmeaning = Bell Home
+|FRname = Clochetoit
+|FRmeaning = Bellhome
+|ITname = Casacampana
+|ITmeaning = Bellhome
+|JAname = 鐘の家
+|JAromanised = Kane no ie
+|JAmeaning = Bell Home
+|KOname = 종의 집
+|KOromanised = Jong-ui jip
+|KOmeaning = Bell Home
+|PTname = Campalar
+|PTmeaning = Bellhome<br><small>Portmanteau of <i>campânula</i> (bell or bellflower) and <i>lar</i> (home)</small>
+|RUname = Звонкий дом
+|RUromanised = Zvonkij dom
+|RUmeaning = Bell Home<br><small>{{lang|ru|Звонкий <i>Zvonkij</i>}} means "ringing" but can also be interpreted as the relational of {{lang|ru|звон <i>zvon</i>}} (chime).</small>
+|TWname = 鐘屋
+|TWromanised = Zhōng wū
+|TWmeaning = same
+|ZHname = 钟居
+|ZHromanised = Zhōng jū
+|ZHmeaning = Bell House
+|CODEname = BELLHOME
+|CODEmeaning = 
+}}
+
+{{Hr|SS}}
+== Notes ==
+<references group="Note"/>
+[[Category:Points of Interest (Silksong)]]
+[[fr:Clochetoit]]

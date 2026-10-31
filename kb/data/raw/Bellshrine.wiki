@@ -1,0 +1,202 @@
+{{Nav Games Header}}
+{{Quote
+| Hr = SS
+| Ahh, the shining bench has risen for us! Pharloom's kindness to we pilgrims is inexhaustible! Please rest, red maiden, and fear not. Our kingdom watches over us all!
+| [[Sherma]]
+}}
+
+<b>Benches</b> are [[Save Data (Silksong)/Save Points|save points]] throughout [[Pharloom]] that [[Hornet (Silksong)|Hornet]] can rest on to automatically:
+* Save the game
+* Respawn on the Bench after quitting the game or dying
+* Replenish all health
+* Replenish [[Silk]] slowly if [[Sylphsong]] has been acquired
+* Replenish equipped {{CrestSlot|Red|s}} by spending [[Shell Shards]]<ref group="Note">Red Tools which don't require Shell Shards:
+* [[Rosary Cannon]] (uses [[Rosaries]])
+* [[Flea Brew]] (uses [[File:Icon SS Flea Brew Reserve.png|20x20px]] reserve)
+* [[Plasmium Phial]] (uses [[File:Icon SS Plasmium Reserve.png|20x20px]] reserve)
+* [[Needle Phial]] (must be used on enemies)
+Note: Flea Brew costs {{S|10}} to repair a broken bottle.</ref>
+* Replenish equipped {{CrestSlot|Blue|s}}<ref group="Note">Only affects [[Fractured Mask]], [[Reserve Bind]] and [[Wreath of Purity]].</ref>
+* Remove [[Muckmaggot]] infestation, [[Plasmium Phial|Plasmium Masks]] and [[Plasmium Phial#Plasmification|plasmification]]
+* Update the [[Map and Quill (Silksong)|Map]] with newly-explored rooms (if a [[Map and Quill (Silksong)|Quill]] has been acquired)
+* Respawn defeated enemies (excluding enemies in the current room)
+* Respawn broken [[Plasmium Cocoon]]s
+* Refill depleted [[Silk#Silk Spindles|Silk Spindles]]
+* Have a 30% chance of triggering the [[Skull Tyrant]] in [[Bone Bottom]]<ref group="Note">Can only occur after Hornet:
+* Defeats the first [[Skull Tyrant]] in [[the Marrow]]
+* Reaches either [[Blasted Steps]], [[Sinner's Road]] or [[the Citadel]], then rests at a Bench outside of [[Bone Bottom]] and the Marrow
+* Finally rests on the Bench in Bone Bottom</ref>
+* Have a 20–50% chance of triggering the [[Craw Summons]] during [[Act 3]]<ref group="Note">Can only occur after Hornet:
+* Hits the lever inside the house on [[Craw Lake]]
+* Completes the <i>[[SEEK: Awaiting the End]]</i> [[Objectives|objective]]
+* Finally rests on a Bench in [[Bellhart]], [[Bilewater]], [[Far Fields]], [[Shellwood]], [[Sinner's Road]] or [[Wisp Thicket]]
+The chance is initially 20%, increasing by 5% whenever Hornet acquires [[Silk Soar]], one of the four [[Old Hearts]] or the [[Everbloom]].</ref>
+
+Hornet can also perform special actions in the [[Controls (Silksong)|INVENTORY]] menu while resting on a Bench:
+* Change [[Crests]]
+* Equip or unequip [[Tools]]
+* Reload the [[Rosary Cannon]] by spending [[Rosaries]]
+* Toggle the [[Voltvessels]] between Spear and Bola forms
+
+== Locations and Prices ==
+[[File:Mapshot SS Benches.png|thumb|Locations of all Benches in Pharloom]]
+
+There are 84<ref group="Note">Special considerations:
+* The double/triple Toll Benches in [[Underworks]] are counted as one Bench per room, as only one map marker appears for each.
+* The rotten Bell Bench in Bilewater is not counted, as the Bench is not functional.
+* On the map below, the two Benches at [[the Marrow]]'s [[Flea Caravan]] and [[Survivor's Camp]] overlap due to sharing the same spot in different [[Acts]].</ref> Benches across Pharloom, including temporary Benches like [[Shakra]]'s. Hornet can purchase a set of [[File:Icon SS Bench Pin.png|20x20px]] [[Map and Quill (Silksong)#Map Pins|Bench Pins]] from Shakra for {{R|60}}, which marks the locations of all discovered Benches on any acquired Maps.
+
+=== Paid Benches ===
+Many Benches require Rosaries to use.<ref><i>"A machine with a symbol of a bench."<br>"Insert Rosaries?"</i></ref> Bell Benches outside of [[Bellshrine]]s are permanently unlocked after a one-time fee, while the Toll Benches in [[Underworks]] charge a toll for every visit. If a Bench has a toll that has not been paid, or is unusable due to a trap, its [[File:Icon SS Bench Pin Grey.png|20x20px]] Bench Pin is greyed out.
+
+{| class="article-table"
+! Location
+! Price
+|-
+| [[Underworks]]
+| align="center" | {{R|15}} <i>per use</i>
+|-
+| [[The Marrow]]
+| align="center" rowspan="3" | {{R|30}}
+|-
+| [[Deep Docks]]
+|-
+| [[Far Fields]]
+|-
+| [[Shellwood]]
+| align="center" rowspan="3" | {{R|40}}
+|-
+| [[Blasted Steps]] ([[Bellway]])
+|-
+| [[Sinner's Road]]
+|-
+| [[Blasted Steps]] (Entrance)
+| align="center" rowspan="4" | {{R|60}}
+|-
+| [[Mount Fay]]
+|-
+| [[Bilewater]]
+|-
+| [[Putrified Ducts]]
+|}
+
+== Bellshrines ==
+There are six <b>Bellshrines</b> scattered across Pharloom. When activated by hitting a lever on the floor, a large mechanism swings the bell, ringing it four times before unlocking a permanent Bench. Activating the first five Bellshrines is necessary to complete the <i>[[Acts#Grand Gate|OPEN: Grand Gate]]</i> objective and fight the [[Last Judge]], as an entry point to [[Act 2]].
+
+The first five Bellshrines are found in [[the Marrow]], [[Deep Docks]], [[Greymoor]], [[Bellhart]], [[Shellwood]]; the sixth is at [[Songclave]], called the "First Shrine", where it is used to summon [[Pilgrims]].
+
+{{Gallery
+| Image1 = Mapshot SS Bell Shrine 01.png!Bellshrine in the Marrow
+| Image2 = Mapshot SS Bell Shrine 02.png!Bellshrine in Deep Docks
+| Image3 = Mapshot SS Bell Shrine 03.png!Bellshrine in Greymoor
+| Image4 = Mapshot SS Bell Shrine 04.png!Bellshrine in Bellhart
+| Image5 = Mapshot SS Bell Shrine 05.png!Bellshrine in Shellwood
+| Image6 = Mapshot SS Bell Shrine 06.png!Bellshrine in Songclave
+}}
+
+== Gallery ==
+=== Sprites ===
+<div class="mw-collapsible mw-collapsed" style="width:100%;">
+{{Gallery
+| Image1 = Bench SS Ruined Chapel.png!By the [[Ruined Chapel]]
+| Image2 = Bench SS Bone Bottom.png!In [[Bone Bottom]] and [[the Marrow]]
+| Image3 = Bench SS Bone Bottom Repaired.png!Repaired Bench in [[Bone Bottom]]
+| Image4 = Bench SS Toll.png!Toll Bench found across [[Pharloom]]
+| Image5 = Bench SS Caravan.png!At the [[Flea Caravan]]
+| Image6 = Bench SS Sprintmaster.png!Nearby [[Sprintmaster Swift]]
+| Image7 = Bench SS Zylotol.png!Nearby [[Alchemist Zylotol]]
+| Image8 = Bench SS Mosshome.png!In [[Mosshome]]
+| Image9 = Bench SS Jail.png!Jail Bench in [[the Marrow]] and [[The Slab]]
+| Image10 = Bench SS Jail Snow.png!Snowy Bench in [[The Slab]]
+| Image11 = Bench SS Jail Ladybug.png!Nearby [[Loddie]]
+| Image12 = Bench SS Ant.png![[Skarr]] Bench in [[Hunter's March]] and [[Far Fields]]
+| Image13 = Bench SS Deep Docks.png!In [[Deep Docks]]
+| Image14 = Bench SS Sauna.png!In the [[Deep Docks]] sauna
+| Image15 = Bench SS Umbrella.png!Inside [[Seamstress]] Hut
+| Image16 = Bench SS Pilgrim's Rest.png!Inside [[Pilgrim's Rest]]
+| Image17 = Bench SS Halfway Home.png!Inside [[Halfway Home]]
+| Image18 = Bench SS Bellhart.png!Bench in [[Bellhart]]
+| Image19 = Bench SS Bellhome.png!Bed inside Hornet's [[Bellhome]]
+| Image20 = Bench SS Shellwood.png!In [[Shellwood]]
+}}
+{{Gallery
+| Image1 = Bench SS Weavenest.png!Inside various [[Weavenest]] areas
+| Image2 = Bench SS Weavenest Moss.png!Mossy Bench in [[Weavenest Atla]]
+| Image3 = Bench SS Styx.png!Nearby [[Styx]]
+| Image4 = Bench SS Toll Underworks.png!Toll Bench throughout the [[Underworks]]
+| Image5 = Bench SS Architect.png!Near the [[Twelfth Architect]]
+| Image6 = Bench SS Terminus.png!In the [[Terminus]]
+| Image7 = Bench SS Choral Chambers.png!Throughout [[Choral Chambers]]
+| Image8 = Bench SS Choral Chambers Cloth.png!Covered Bench in [[Choral Chambers]]
+| Image9 = Bench SS Songclave.png!Outside [[Songclave]]
+| Image10 = Bench SS Songclave Broken.png!Outside [[Songclave]] in [[Act 3]]
+| Image11 = Bench SS Whispering Vaults.png!Throughout [[Whispering Vaults]]
+| Image12 = Bench SS High Halls.png!Southwest [[Choral Chambers]]
+| Image13 = Bench SS High Halls Cloth.png!In [[High Halls]]
+| Image14 = Bench SS Memorium.png!In the [[Memorium]]
+| Image15 = Bench SS Cog Retractor.png!Retractable Bench in [[Cogwork Core]]
+| Image16 = Bench SS Whiteward.png!In [[Whiteward]]
+| Image17 = Bench SS Tent Greymoor.png!Next to [[Shakra]] in [[Greymoor]]
+| Image18 = Bench SS Tent Mount Fay.png!Next to [[Shakra]] in [[Mount Fay]]
+| Image19 = Bench SS Mount Fay.png!In [[Mount Fay]]
+| Image20 = Bench SS Wisp Thicket.png!In the [[Wisp Thicket]]
+}}
+{{Gallery
+| Image1 = Bench SS Organ.png!In the [[Exhaust Organ]]
+| Image2 = Bench SS Bilewater.png!In [[Bilewater]]
+| Image3 = Bench SS Bilehaven.png!In [[Bilehaven]]
+| Image4 = Bench SS Huntress.png!Next to the [[Huntress]]
+| Image5 = Bench SS Huntress Broken.png!By [[Huntress]]'s corpse in [[Act 3]]
+| Image6 = File:Bench SS Pale Lake.png ! At the [[Pale Lake]]
+| Image7 = Bench SS Pinstress.png!Next to the [[Pinstress]]
+| Image8 = Bench SS Coral.png!In [[Sands of Karak]]
+| Image9 = Bench SS Coral Tower.png!Inside the [[Coral Tower]]
+| Image10 = Bench SS Cradle.png!In the [[Cradle]]
+| Image11 = Bench SS Diving Bell.png!In the [[Diving Bell]]
+| Image12 = Bench SS Diving Bell Broken.png!In the ruined [[Diving Bell]]
+| Image13 = Bench SS Verdania.png!In [[Verdania]]
+| Image14 = Bench SS Shaman.png!In the [[Ruined Chapel]]
+}}
+</div>
+
+=== Screenshots ===
+{{Gallery
+| Image1 = Screenshot SS The Marrow 01.png!Bellshrine in the Marrow
+| Image2 = Screenshot SS Deep Docks 06.png!Bellshrine in Deep Docks
+| Image3 = Screenshot SS Greymoor 04.png!Bellshrine in Greymoor
+| Image4 = Screenshot SS Bellhart 07.png!Bellshrine in Bellhart
+| Image5 = Screenshot SS Shellwood 02.png!Bellshrine in Shellwood
+| Image6 = Screenshot SS Choral Chambers 24.png!First Shrine in Songclave
+}}
+
+== Trivia ==
+* Some Benches in [[Pharloom]] are primed with a trap, or require additional steps to be made functional:
+** A Bench in northern [[Hunter's March]] has a pressure plate beneath it, activating a spike trap when Hornet sits on it. The trap can be deactivated by striking a hidden lever to the left, allowing the Bench to function normally.<ref>[[Gilly]]: <i>Ho, what clever traps the red-shells lay in defence of their lands! I've narrowly avoided a few nasty ends myself. It certainly adds a thrill to my investigations...</i></ref>
+** A Bench in western [[Sinner's Road]] jams and fails to emerge fully after the Rosary toll is paid. It must be repaired by destroying the vines jamming the mechanism in a hidden room to the left.<ref>[[Shakra]]: <i>Do you see? How crass and frail that Citadel's machines! This one groans in pain at its very existence.</i></ref>
+** A Bench in northern [[Bilewater]] collapses into a pit of [[muckmaggot]]-infested water when Hornet sits on it. This Bench cannot be made functional, and is no longer marked on the [[Map and Quill (Silksong)|Map]] after being broken.
+* The tune that is played by the bells when activating a Bellshrine is the <i>Dies irae</i> melody, used extensively throughout the game's [[Soundtrack (Silksong)#Trivia|soundtrack]].
+* The Bellshrine in [[Bellhart]] is the largest of all the Bellshrines, and is the only one with the bell set in a background layer, where Hornet is unable to hit it.
+* Without skips, it is impossible to reach the <i>[[Acts#Grand Gate|OPEN: Grand Gate]]</i> objective without having rung any Bellshrines; even without the Needolin, the Marrow Bellshrine is still required to be rung in order to access [[Swift Step]], which is otherwise required to progress.
+* While sitting at a bench, time does not pass for such purposes as the [[Crawbell]], or [[Styx]].
+* In early pre-release footage of <i>Hollow Knight: Silksong</i>, bells in the Bellshrines would have a [[Seals|rune]] appear on them while ringing.<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref> This is very likely connected to the cut [[Strung to Serve]] ending.
+* The paid bench in southwest [[Mount Fay]] produces a unique sound when its bells are rung, resembling sleigh bells.
+
+{{Gallery
+|Image1 = Silksong Early 031.png ! <i>Silksong</i> reveal trailer
+|Image2 = File:B shrine weaver rune 0003 s2.webp ! Unused rune image
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Slight reduction in some Bench prices:
+*[[Shellwood]], [[Blasted Steps]] (bellway), [[Sinner's Road]]: 60 to 40.
+*[[Mount Fay]], [[Bilewater]], [[Putrified Ducts]]: 90 to 60.
+*Blasted Steps (entry): 80 to 60.
+}}{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+
+[[fr:Banc (Silksong)]]
+[[Category:Exploration (Silksong)]]
+{{DISPLAYTITLE:Bench (''Silksong'')}}

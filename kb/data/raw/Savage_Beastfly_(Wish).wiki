@@ -1,0 +1,72 @@
+__NOTOC__
+{{For|the [[Bosses (Silksong)|boss]]|Savage Beastfly}}
+{{SS Infobox Wish
+| header1 = Grand Hunt
+| title1 = Savage Beastfly
+| description = Track down the [[Savage Beastfly]] in the [[Far Fields]] and defeat it. The Beastfly can be tracked by its shell sheddings and claw marks.
+| npc = Residents of [[Bellhart]]
+| location = [[Bellhart]] Wishwall
+| prerequisite = * Defeat the [[Savage Beastfly]] in [[Hunter's March]]
+* Defeat [[Fourth Chorus]] or be in [[Act 3]]
+* Discover [[Songclave]]
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+
+{{Quote
+| O Beastfly, raging through the scorching wildlands below! May you hinder good pilgrims no longer! May you be struck down by a holy fury!
+| Residents of [[Bellhart]]
+| Hr = SS
+}}
+
+<b>Savage Beastfly</b> is a [[Grand Hunt Wishes|Grand Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i> started from the Wishwall in [[Bellhart]].
+
+== Wish ==
+[[File:Horn Fragment.png|link=Horn Fragment|left|thumb|100x100px]]
+
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must locate and defeat the [[Savage Beastfly]], which is located in [[Far Fields]], in the arena where [[Fourth Chorus]] was previously defeated. Its location can be tracked by interacting with the objects it leaves behind. After slaying the Savage Beastly, Hornet can break off the [[Horn Fragment]] from its corpse.
+
+{{Gallery
+| Image1 = File:Mapshot SS Bellhart Wishwall.png!Location of Wishwall in Bellhart
+| Image2 = File:Mapshot SS Savage Beastfly 02.png!Location of Savage Beastfly in Far Fields
+}}
+
+== Reward ==
+[[File:Mask Shard (Silksong).png|link=Mask Shard (Silksong)|left|thumb|100x100px]]
+
+After defeating Savage Beastfly and turning in the [[Horn Fragment]] to Bellhart's Wishwall, Hornet is rewarded with a [[Mask Shard (Silksong)|Mask Shard]].
+
+{{Clear}}
+
+{{Localisation
+|DEname = Wilde Biestfliege
+|DEmeaning = Wild Beastfly
+|ESname = Moscabestia salvaje
+|ESmeaning = Savage Beastfly 
+|FRname = Volpeste Enragée
+|FRmeaning = Enranged Beastfly
+|ITname = Moscabestia Brutale
+|ITmeaning = Brutal Beastfly
+|JAname = オオケモノバエ
+|JAromanised= Oo kemono bae
+|JAkatakana = enemy
+|JAmeaning = Combination of {{lang|ja|大}} <i>ō</i> (large) {{lang|ja|獣}} <i>kemono</i> (beast) and {{lang|ja|蠅}} <i>hae</i> (fly).
+|KOname = 흉포한 야수파리
+|KOromanised = Hyungpohan yasupali
+|KOmeaning = Ferocious Beastfly
+|PTname = Besta-alada Selvagem
+|PTmeaning = Savage Winged Beast or Savage Beastfly
+|RUname = Дикая зверомуха
+|RUromanised = Dikaya zveromukha
+|RUmeaning = Wild Beastfly
+|TWname = 殘暴的獸虻
+|TWromanised = Cánbào de shòu méng
+|TWmeaning = Brutal Beast Horsefly
+|ZHname = 残暴的兽蝇
+|ZHromanised = Cánbào de shòu yíng
+|ZHmeaning = Brutal Beast Fly
+|CODEname = QUEST_BEASTFLY
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

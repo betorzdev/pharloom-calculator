@@ -1,0 +1,64 @@
+{{Navbar
+| page1 = Restoration of Bellhart
+| page2 = Bellhart's Glory
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate rosaries to aid the rebuilding of [[Bellhart]].
+| npc = [[Pavo]] of Bellhart
+| location = Bellhart Wishwall
+| prerequisite = * Upgrade the [[Needle]] at least once
+* Sell at least one [[Items (Silksong)#Tradables|Relic]] to [[Relic Seeker Scrounge]]
+* Speak with [[Pavo]] beforehand
+}}
+
+{{Quote
+| Harken, ye holy! Our home has been cleansed of evil, but now we are tasked with restoring its former glory! Share your rosaries with us, that the work may begin.
+| [[Pavo]]
+| Hr = SS
+}}
+
+<b>Restoration of Bellhart</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on the Wishwall of [[Bellhart]] after upgrading the [[Needle]] once, selling at least one [[Items (Silksong)#Tradables|Relic]] to [[Relic Seeker Scrounge]], speaking with Pavo and returning after benching outside Bellhart. 
+
+== Wish ==
+To complete the Wish, donate {{R|250}} to the Bellhart Wishwall. <i>Restoration of Bellhart</i> is a prerequisite Wish required to unlock the <i>[[Bellhart's Glory]]</i> Wish.
+
+{{Gallery
+| Image1 = File:Mapshot SS Bellhart Wishwall.png!Location of Wishwall in Bellhart
+}}
+
+{{Localisation
+|DEname = Wiederherstellung von Glockenherz
+|DEmeaning = Restoration of Bell Heart
+|ESname = Restauración de Campanilla
+|ESmeaning = Restoration of Bellhart
+|FRname = Rénovation de Clochelle
+|FRmeaning = Renovation of Bellhart
+|ITname = Ricostruzione di Cuorcampana
+|ITmeaning = Reconstruction of Bell Heart
+|JAname = 町の復興
+|JAromanised = Machi no fukkō
+|JAmeaning = Restoration of the Town
+|KOname = 종의 심장부 복원
+|KOromanised = Jongui simjangbu bogwon
+|KOmeaning = Bell Heart Restoration 
+|PTname = Restauração da Campânula
+|PTmeaning = Restoration of Bell or Restoration of Bellflower
+|RUname = Восстановление Звонвилля
+|RUromanised = Vosstanovlenie Zvonvillja
+|RUmeaning = Restoration of Bellhart
+|ZHname = 重振钟心镇
+|ZHromanised = Chóngzhèn zhōng xīn zhèn
+|ZHmeaning = Revitalise Bell Heart Town
+|TWname = 重振鐘心鎮
+|TWromanised = Chóngzhèn zhōng xīn zhèn
+|TWmeaning = same
+|CODEname = QUEST_BELL_HOUSE_START
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Rénovation de Clochelle]]

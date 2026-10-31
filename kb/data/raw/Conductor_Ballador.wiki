@@ -1,0 +1,103 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+ConductorBallador_Composited.png|Alive
+Conductor Ballador Corpse.png|Dead
+</gallery>
+| role = Lore
+| quest = [[LEARN: Conductor's Melody]]
+| affiliation = [[Weavers]] (Former superiors)<ref>Conductor Ballador: <i>"The mantle of rule, claimed greedily from Pharloom's fading first children, those bitter Weavers..."</i></ref><br>
+[[Conductors]] (Member)
+[[The Choir]] (Leader)
+|singnum = 2
+|s1 = Default
+|s2 = Teaching Conductor's Melody
+}}
+{{Quote|Hr=SS|Tr=SS|The mantle of conductor weighs heavy. Had I known the cost before its bearing, would I have accepted the duty?|Conductor Ballador}}
+
+<b>Conductor Ballador</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He gives the [[Conductor's Melody]] required for the <i>[[ASCEND: Pharloom's Crown]]</i> objective.
+
+== Background == 
+Ballador is the last living [[Conductors|Conductor]] of [[the Citadel]]. Having spent an age sickly, he is unable to lift himself from his bedchamber, where he is sustained by a spool of [[Silk]] connected to him.<ref>Conductor Ballador: <i>"I must apologise for not rising to greet you. After an age spent sickly, I find myself unable to lift from this bedchamber."</i></ref> Ballador is aware of the Citadel's fall and wonders whether he and his fellow devouts have failed to prevent it.<ref>Conductor Ballador [[Needolin]] dialogue: <i>"Dear devout... have we failed? Remember their voices... Now only silence... Only our sickness... Only our song..."</i></ref> The mantle of Conductor weighs heavily on him, and he sees it as a burden, even questioning whether he would have accepted the duty had he known the cost.<ref>Conductor Ballador: <i>"The mantle of conductor weighs heavy. Had I known the cost before its bearing, would I have accepted the duty?"</i></ref>
+
+== In-game Events ==
+[[Hornet (Silksong)|Hornet]] encounters Conductor Ballador after fighting the [[Enemy Gauntlets (Silksong)/High Halls 1|enemy gauntlet]] in [[the Forum]]. Surprised by the rare visit, he politely welcomes her and expresses his hope that the Citadel has shown her proper hospitality.<ref>Conductor Ballador: <i>"A visitor? Now this is rare. (...) I hope, good pilgrim, our Citadel has shown you the courtesy deserved of a bug devout."</i></ref> Upon hearing her sarcastic reply, Ballador apologises and acknowledges how far the Citadel has fallen, offering his melody as a small comfort.<ref>Hornet and Conductor Ballador dialogue: <br><i>Hornet: "I've borne its hospitality well enough, aged one..."<br>Conductor Ballador: "Ahhh... My sympathies, pilgrim... We have fallen so far. And now, sadly, if you've come seeking aid or understanding, I fear I too shall disappoint. Whatever you would ask, I have only my melody left to offer. It is a simple thing, the smallest of gifts, but perhaps more special now, for it has been rarely heard in these quietened times."</i></ref> If the <i>[[ASCEND: Pharloom's Crown]]</i> objective is active, Hornet learns the [[Conductor's Melody]] by playing the [[Needolin]] alongside him singing. Ballador finds Hornet's playing beautiful and tells her to keep the melody safe, as she might be the last to receive it.<ref>Conductor Ballador: <i>"Our song upon a silken thread.... Such beautiful sound, so long absent from our halls. Keep safe our melody, good pilgrim. You shall likely be the last to receive it."</i></ref>
+
+Upon returning after resting on a [[Bench (Silksong)|bench]] outside the [[High Halls]], Hornet notices that, despite the grandeur of Ballador's chambers, it is plain to see he is no sovereign here.<ref>Hornet dialogue with Conductor Ballador: <i>"Your chambers are surely grand, sir bug, but it is plain to see you are no sovereign here."</i></ref> In response, he recounts that the Conductors claimed rule over the Citadel from the [[Weavers]], and, reflecting on the Citadel's fall, he now understands that their authority was never a crown but a yoke, burdening them with keeping [[Grand Mother Silk]], the only true ruler of [[Pharloom]], asleep.<ref>Conductor Ballador: <i>"Is our state so bare, pilgrim?... "By the will of the Conductors," we once boomed, and this Citadel shook at our decree. But the words... How hollow they echoed. The mantle of rule, claimed greedily from Pharloom's fading first children, those bitter Weavers... it was yoke, not crown. Now, in our Citadel's silence, we share their truth. Only one monarch's claws ever clutched this kingdom, though we raised our voices to cry otherwise."</i></ref> He asks Hornet if she plans to ascend and see the monarch, to which she replies that she will.<ref>Hornet and Conductor Ballador dialogue: <br><i>Conductor Ballador: "Would you see her, pilgrim? Up there at our Citadel's crown? Reach those heights we'd hoped to hide and bow before this land's true ruler."<br>Hornet: "In time near, sir bug, I shall indeed climb to meet your monarch..."</i></ref>
+
+In [[Act 3]], Conductor Ballador dies in the Citadel's collapse. A [[Rune Harp]] with the last words of the Weavers, in which they speak of passing their burden to others, can be found on his corpse.<ref>[[Rune Harp]]: <i>"Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence."</i></ref>
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = A visitor? Now this is rare.<br>
+I must apologise for not rising to greet you. After an age spent sickly, I find myself unable to lift from this bedchamber.<br>
+I hope, good pilgrim, our Citadel has shown you the courtesy deserved of a bug devout.<br>
+{{HTalk|I've borne its hospitality well enough, aged one...}}<br>
+Ahhh... My sympathies, pilgrim... We have fallen so far. And now, sadly, if you've come seeking aid or understanding, I fear I too shall disappoint.<br>
+Whatever you would ask, I have only my melody left to offer. It is a simple thing, the smallest of gifts, but perhaps more special now, for it has been rarely heard in these quietened times.
+|Title1_Event2 = Returning once the <i>[[ASCEND: Pharloom's Crown]]</i> objective is active, if met before
+|Title1_Dialogue2 = {{HTalk|I return, bug, and ask to hear your melody again, that I may lock it clear in my mind.}}<br>
+Very well, good pilgrim. For one so fiercely devout as yourself, gladly will I give this gift.
+|Title1_Event3 = After learning the [[Conductor's Melody]]
+|Title1_Dialogue3 = Our song upon a silken thread.... Such beautiful sound, so long absent from our halls.<br>Keep safe our melody, good pilgrim. You shall likely be the last to receive it.
+|Title1_Event4 = Revisiting after learning the Conductor's Melody
+|Title1_Dialogue4 = {{HTalk|Your chambers are surely grand, sir bug, but it is plain to see you are no sovereign here.}}<br>
+Is our state so bare, pilgrim?... "By the will of the Conductors," we once boomed, and this Citadel shook at our decree.<br>
+But the words... How hollow they echoed. The mantle of rule, claimed greedily from Pharloom's fading first children, those bitter Weavers... it was yoke, not crown.<br>
+Now, in our Citadel's silence, we share their truth. Only one monarch's claws ever clutched this kingdom, though we raised our voices to cry otherwise.<br>
+Would you see her, pilgrim? Up there at our Citadel's crown? Reach those heights we'd hoped to hide and bow before this land's true ruler.<br>
+{{HTalk|In time near, sir bug, I shall indeed climb to meet your monarch...}}
+|Title1_Event5 = Exhausted dialogue
+|Title1_Dialogue5 = The mantle of conductor weighs heavy. Had I known the cost before its bearing, would I have accepted the duty?
+|Title1_Event6 = Playing the [[Needolin]]
+|Title1_Dialogue6 = [n]Dear devout... have we failed?<br>
+Remember their voices...<br>
+Now only silence...<br>
+Only our sickness...<br>
+Only our song...
+}}
+
+== Location ==
+Conductor Ballador can be found near [[the Forum]], in the south-west end of the [[High Halls]].
+{{Gallery
+|Image1 = Mapshot_SS_Conductor's_Melody.png!Location in the High Halls
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS High Halls 09.png!Conductor Ballador in Act 2
+|Image2 = Screenshot SS High Halls 10.png!Conductor Ballador in Act 3
+}}
+
+== Trivia ==
+* While Conductor Ballador's full form is never clearly seen, [[the Unravelled]] boss uses the mantle of a Conductor as a part of its form, giving an idea of what Ballador himself may look like.
+* If Ballador is spoken to before defeating the Cogwork Dancers, he will sing his melody for Hornet, but she cannot play along to learn it.
+
+{{Localisation
+|DEname = Dirigent Ballador
+|DEmeaning = Conductor Ballador
+|ESname = Director Ballador
+|ESmeaning = Conductor Ballador
+|FRname = Maestrel Ballador
+|FRmeaning = 
+|ITname = Direttore Ballador
+|ITmeaning = Conductor Ballador
+|JAname = 指揮者バラドール
+|JAromanised = Shikisha baradōru
+|JAmeaning = Conductor Ballador
+|KOname = 지휘자 발라도어
+|KOromanised = Jihwija balladoeo
+|KOmeaning = Conductor Ballador
+|PTname = Condutor Ballador
+|PTmeaning = Conductor Ballador
+|RUname = Дирижёр Балладор
+|RUromanised = Dirižër Ballador
+|RUmeaning = Conductor Ballador
+|ZHname = 指挥家巴拉多尔
+|ZHromanised = Zhǐhuījiā bālāduōěr
+|ZHmeaning = Conductor Ballador
+|CODEname = LAST_CONDUCTOR
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

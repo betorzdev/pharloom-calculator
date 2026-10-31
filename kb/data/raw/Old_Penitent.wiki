@@ -1,0 +1,117 @@
+{{SS Infobox NPC
+| area = [[The Slab]]
+| role = Lore
+| affiliation = The Slab ([[Slab Penitents#The Penitents|Penitent]])
+| singnum = 2
+| va = Matthew Fitzgerald<ref>{{Cite tweet|author=Matthew Fitzgerald|user=toborprime|number=2019272549956194762|title=Sure - Old Penitent, Kratt, and a handful (something like 4-5) of the "Pilgrim" category NPCs/enemies. Also a ton of little insect and enemy noises, not sure on what/where they used those.|access-date=5 February 2026}}</ref>
+}}
+
+{{Quote
+| By the grace of the Citadel, I am here as a penitent. Here, I can hide from the shame of my sins until they are withered away by time.
+| Old Penitent
+| Hr=SS
+}}
+
+<b>Old Penitent</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He provides lore on [[the Slab]] and its [[Slab Penitents#The Penitents|penitents]] and [[Slab Penitents#The Jailers|jailers]].
+
+== Background ==
+Old Penitent is a [[Slab Penitents#The Penitents|penitent]] of [[the Slab]], sent there for committing what he describes as a grave transgression that caused pain to many.<ref name=sin /> He considers the prison a holy place of forgiveness and wishes to remain there until his sins wither away with time.<ref>Old Penitent: <i>"P... prisoner? I understand you not. There is no prison here. This is a holy place of forgiveness. Please, speak with reverence."</i></ref><ref name=blasphemy /> Despite his long, silent isolation, he retains a profound appreciation for music.<ref name=song /> However, he feels unworthy of its beauty and fears that time has made his hearing unrefined and his voice brutish.<ref>Old Penitent: <i>"Ahh... you have brought song again, though perhaps it is wasted on one as unworthy as I."</i></ref><ref name=brutish />
+
+Old Penitent's [[Needolin]] dialogue suggests that he came to [[Pharloom]] from the [[Wasteland]], possibly from the [[Nameless Town]] whose residents were lured down by the [[Weavers]].<ref>Old Penitent [[Needolin]] dialogue: <i>"From wastes, from darkness... Silence above... Drawn down... blessed call... Sisters... accord... Voices... pleading... The sin... the sin!"</i></ref><ref>Nameless Town [[Needolin_Locations#Nameless_Town|Needolin dialogue]]: <i>"The weaving ones beckon... Sweet promises whispered... From depths below... Friends seduced... Now only the wind..."</i></ref>
+
+== In-Game Events ==
+When [[Hornet (Silksong)|Hornet]] enters his cell, Old Penitent is hidden in the darkness and can only be heard praying, emerging once Hornet plays the [[Needolin]]. At first, he assumes she is from [[the Citadel]], but she quickly denies it.<ref>Hornet and Old Penitent dialogue: <br><i>Old Penitent: "S... song, is it? You have brought song? You are of the Citadel, then? How... how many of you?"<br>Hornet: "I am alone, sir. You needn't fear, I am no servant of the Citadel. Are you a prisoner of theirs?"</i></ref>
+
+As Hornet offers to free him, Old Penitent is terrified by the very thought of leaving the Slab.<ref>Hornet and Old Penitent dialogue: <br><i>Hornet: "If you wish, I can free you. You can descend through the caverns below until you find a settlement."<br>Old Penitent: "You... are asking me to leave this place? Wh-what a strange, fearful thought! Such a sin would never... no."</i></ref> Insisting that it is a holy place of forgiveness rather than a prison, he begs her never to say such blasphemy again.<ref name=blasphemy>Old Penitent: <i>"By the grace of the Citadel, I am here as a penitent. Here, I can hide from the shame of my sins until they are withered away by time. Leave this place...? Please! Strike me down dead before you speak such blasphemy again!"</i></ref>
+
+If Hornet speaks to him after playing the Needolin once more, Old Penitent praises her music. She accepts the compliment but explains that she is new to the art and her skill is limited.<ref name=song>Hornet and Old Penitent dialogue: <br><i>Old Penitent: "Ah.... your s-song. So long I've sat in silence. Tell me... are all songs played now as exquisite as this? Or has time made my hearing unrefined?"<br>Hornet: "This art is new to me, and my skill is limited, but your appreciation is not unwelcome."</i></ref> Old Penitent asks her to play again so he can join in, and from then on sings along every time the Needolin is played.<ref name=brutish>Old Penitent: <i>"Play on, will you? I would join your tune. Just forgive me if my voice has become brutish."</i></ref>
+
+When Hornet asks about the [[Slab Penitents#The Jailers|guards]], thinking they are servants of the Citadel, Old Penitent corrects her. He explains that they are penitents just like him and that serving there is their only hope for absolution.<ref>Hornet and Old Penitent dialogue: <br><i>Hornet: "Will you tell me of those who guard this structure? They are servants of the Citadel, are they not?"<br>Old Penitent: "Servants...? They too are penitents. In a past age, that caste committed their own sacrilege against the Citadel. A sin long forgotten, but so grave that their offspring and the offspring of their offspring carry the guilt with them still. To serve here is their only hope of absolution."</i></ref>
+
+At their next meeting, Hornet asks what crime he was imprisoned for. Old Penitent refuses to answer in detail, sharing only that it was a grave transgression, one he does not wish to invite back by speaking of it.<ref name=sin>Hornet and Old Penitent dialogue: <br><i>Hornet: "You needn't satisfy my curiosity if it pains you, sir, but I must ask, for what crime or sin did the Citadel imprison you?"<br>Old Penitent: "My sin? A grave transgression, the cause of much pain for many. But to speak of a sin... is to invite its return. I will say no more."</i></ref>
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = S... song, is it? You have brought song? You are of the Citadel, then? How... how many of you?<br>
+{{HTalk|I am alone, sir. You needn't fear, I am no servant of the Citadel. Are you a prisoner of theirs?}}<br>
+P... prisoner? I understand you not. There is no prison here.<br>
+This is a holy place of forgiveness. Please, speak with reverence.
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = {{HTalk|If this place was holy once, no evidence remains. Even as a prison, it has been neglected.}}<br>
+{{HTalk|If you wish, I can free you. You can descend through the caverns below until you find a settlement.}}<br>
+You... are asking me to leave this place? Wh-what a strange, fearful thought! Such a sin would never... no.<br>
+By the grace of the Citadel, I am here as a penitent. Here, I can hide from the shame of my sins until they are withered away by time.<br>
+Leave this place...? Please! Strike me down dead before you speak such blasphemy again!
+| Title1_Event3 = Speaking again
+| Title1_Dialogue3 = {{HTalk|Will you tell me of those who guard this structure? They are servants of the Citadel, are they not?}}<br>
+Servants...? They too are penitents. In a past age, that caste committed their own sacrilege against the Citadel.<br>
+A sin long forgotten, but so grave that their offspring and the offspring of their offspring carry the guilt with them still. To serve here is their only hope of absolution.
+| Title1_Event4 = Speaking after playing the Needolin again
+| Title1_Dialogue4 = Ah.... your s-song. So long I've sat in silence. Tell me... are all songs played now as exquisite as this? Or has time made my hearing unrefined?<br>
+{{HTalk|This art is new to me, and my skill is limited, but your appreciation is not unwelcome.}}<br>
+Ahh. The beauty of it. It is almost painful to my weary senses. Perhaps though, this pain is merely part of my penitence.<br>
+Play on, will you? I would join your tune. Just forgive me if my voice has become brutish.
+| Title1_Event5 = Speaking again after revisiting
+| Title1_Dialogue5 = Ahh... you have brought song again, though perhaps it is wasted on one as unworthy as I.<br>
+{{HTalk|You needn't satisfy my curiosity if it pains you, sir, but I must ask, for what crime or sin did the Citadel imprison you?}}<br>
+My sin? A grave transgression, the cause of much pain for many. But to speak of a sin... is to invite its return. I will say no more.
+| Title1_Event6 = Exhausted dialogue
+| Title1_Dialogue6 = If the weight of your sins bear down upon you, you may remain here with me in penitence, sister.
+| Title1_Event7 = Playing the [[Needolin]]
+| Title1_Dialogue7 = [n]From wastes, from darkness...<br>
+Silence above...<br>
+Drawn down... blessed call...<br>
+Sisters... accord...<br>
+Voices... pleading...<br>
+The sin... the sin!
+}}
+
+== Location ==
+Old Penitent can be found in [[the Slab]], inside a cell below the central [[Bench (Silksong)|bench]].
+
+{{Gallery
+|Image1 = Mapshot SS Old Penitent.png!Location in the Slab
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Old Penitent 02.png!Old Penitent's cell
+|Image2 = Screenshot SS Old Penitent.png!Idle
+|Image3 = Screenshot SS Old Penitent 01.png!Singing
+}}
+
+== Trivia ==
+* Old Penitent's singing causes the surroundings to quake.
+
+{{Localisation
+|DEname = Alter Büßer
+|DEmeaning = Old Penitent
+|ESname = Viejo Penitente
+|ESmeaning = Old Penitent
+|FRname = Vieux Pénitent
+|FRmeaning = Old Penitent
+|ITname = Vecchio Penitente
+|ITmeaning = Old Penitent
+|JAname = 老いた悔悟者
+|JAromanised = Oita kaigosha
+|JAmeaning = Old Penitent
+|KOname = 늙은 회개자
+|KOromanised = Neulgeun hoegaeja
+|KOmeaning = Aged Penitent
+|PTname = O Velho Penitente
+|PTmeaning = The Old Penitent
+|RUname = Старый покаянник
+|RUromanised = Staryj pokajannik
+|RUmeaning = Old Penitent
+|ZHname = 忏悔老者
+|ZHromanised = Chànhuǐ lǎozhě
+|ZHmeaning = Old Penitent
+|CODEname = SLAB_PRISONER
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
+
+[[fr:Vieux Pénitent]]

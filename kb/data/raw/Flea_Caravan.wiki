@@ -1,0 +1,172 @@
+{{Infobox Lore
+|image1 = <gallery>
+Fleamaster Mooshka.png|Mooshka
+Varga.png|Varga
+Grishkin.png|Grishkin
+Kratt.png|Kratt
+Vog.png|Vog
+Seth NPC.png|Seth
+</gallery>
+|area = 
+* [[The Marrow]]
+* [[Greymoor]]
+* [[Blasted Steps]]
+* [[Putrified Ducts]]
+|hidegender = true
+}}
+
+{{Quote
+|Oh, yes! The time has come for us fleas to find each other and travel together, as has happened through generations before. The many fleas of this kingdom should be flocking to our caravan, but times have become dangerous.
+|Hr=SS
+|[[Fleamaster Mooshka]]
+}}
+
+The <b>Flea Caravan</b> is a group of [[NPCs (Silksong)|NPCs]] in <i>[[Hollow Knight: Silksong]]</i>.
+== Fleas ==
+[[File:Flea.png|thumb|right|90px]]
+{{Main|Flea}}
+Fleas are creatures found sleeping or trapped throughout [[Pharloom]]. When [[Hornet (Silksong)|Hornet]] saves a Flea, it lets out a characteristic "awoo", and then flies off into the foreground - presumably to be taken in by the Flea Caravan. By the start of Hornet's journey, they have become lost around Pharloom.
+
+If the [[The Lost Fleas]] [[Wish]] is completed before [[Moorwing]] is defeated, the fight is skipped as the Caravan occupies the boss arena. However, it can be fought later in front of the [[Greymoor]] [[Bellways|Bellway]] in [[Acts|Act 2]]. This is not the case for the [[Last Judge]], as they must be defeated before the Caravan can move.
+	
+==Locations==
+The Flea Caravan is initially located in [[the Marrow]]. After 5 Fleas are saved, they move to [[Greymoor]]. After 12 total Fleas are saved and the Grand Gate is open, they move to the [[Blasted Steps]]. After 22 total Fleas are saved, and the [[Putrified_Ducts#Sub-area:_Pale_Lake|Pale Lake]] is visited, they form Fleatopia in Pale Lake.
+
+Note that both Kratt and Vog count towards the total Flea count, but do not need to be found in order for Fleatopia to be created.
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+|Image4 = Mapshot SS Flea Caravan 04.png!Location in the Putrified Ducts
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Flea Caravan 01.png!Initial appearance in the Marrow
+|Image2 = Screenshot SS Flea Caravan 02.png!Before leaving the Marrow
+|Image3 = Screenshot SS Flea Caravan 03.png!In Greymoor
+|Image4 = Screenshot SS Flea Caravan 04.png!In the Blasted Steps
+|Image5 = Screenshot SS Flea Caravan 05.png!In the Putrified Ducts
+|Image6 = Screenshot SS Putrified Ducts 08.png!Festival of the Flea
+|Image7 = Screenshot SS Flea Caravan 06.png!Travelling with the Caravan from the Marrow to Greymoor
+|Image8 = Screenshot SS Flea Caravan 07.png!Travelling with the Caravan from Greymoor to the Blasted Steps
+|Image9 = Screenshot SS Flea Caravan 08.png!Travelling with the Caravan from the Blasted Steps to Putrified Ducts
+|Image10 = Caravan.gif!Pre-release riddle gif
+|Image11 = Caravan.png!Promotional art
+|Image12 = File:Flea Caravan Draft Beast.png ! One of the Caravan's beasts of burden
+}}
+
+
+== Members ==
+* [[Fleamaster Mooshka]]
+** Mooshka gives both of the Flea Caravan Wishes, and speaking to him is required to make the Flea Caravan move to the next location. During the [[Festival of the Flea]], speaking to him can start Flea Juggle. 
+* [[Grishkin]]
+** After the Caravan moves into Greymoor, Grishkin gives Hornet the [[Flea Brew]] and maintains a cauldron of it that can be used to replenish the Tool's reserve at a cost of {{R|30}}. In Act 3, Refilling the Flea Brew becomes free.
+* [[Varga]]
+** Varga can only be interacted with in the Marrow, Greymoor (inside one of the carts), and Fleatopia if the Festival of the Flea is not happening. He can not be interacted with either when the Flea Caravan is in the Blasted Steps or during the Festival of the Flea. 
+* [[Kratt]]
+** Kratt is found ensnared in Silk in a hidden area behind a breakable wall above the Halfway Home in [[Greymoor]].
+** He maintains a spa but charges Hornet {{R|10}} for each use. If caught peeking and punished, he instead lets Hornet use the spa for free. During the Festival of the Flea, speaking to him can start Flea Bounce.
+* [[Vog]]
+** Vog is found in a secret area in the upper reaches of the [[Putrified Ducts]], and Hornet needs to be intentionally caught by the [[Barnak]]s to be able to reach there.
+** Vog can mark down the locations of fleas that Hornet has yet to find, at the cost of some Rosaries. During the Festival of the Flea, speaking to her can start Flea Dodge.
+* [[Seth]]
+** After defeating [[Shrine Guardian Seth]] in [[Shellwood]], he moves to different locations throughout Pharloom and eventually ends up in Fleatopia (once [[Ecstasy of the End]] has been completed), where he accepts an invitation from the Fleas to join them.
+
+== Creation and Development ==
+[[File:Caravan.gif|thumb|250px|Flea Caravan's 2020 riddle gif]]
+The Flea Caravan is the third of a series of NPCs teased using riddles provided by [https://twitter.com/griffinmatta Matthew "Leth" Griffin] that lasted throughout June and July of 2020, the others being [[Huntress]], [[Grindle]], and [[Shrine Guardian Seth]]. 
+The following description was provided upon the riddles being solved, alongside the promotional art and a gif:
+: <i>"You're a traveller? A kindred spirit! We hear it's good luck for wanderers to meet on an unfamiliar path. It's luck we need too, for these roads are haunted and danger snarls at us from every dark corner. Our caravan has only a single, humble wish, but it seems now as though it will never be granted..."</i>
+
+: <i>A friendly band of travellers trekking the dangerous roads of Pharloom in search of something precious. Masters of the journey, their caravan boasts a bounty of flavourful food, powerful drinks and some surprising amenities. They wish to gather the playful young fleas scattered across the kingdom, but this land is far more dangerous than they thought.</i><ref>The [https://discord.com/channels/283467363729408000/586931790208434203/727297949201334282 file] where the Flea Caravan was revealed</ref>
+
+The riddle solved to reveal these characters featured words that contained some matching letters with the solution. The riddle and solution are outlined below:
+<table class="cquote" cellpadding="0" cellspacing="0" border="0" style="width:{{{width|70%}}}; margin-bottom:3px; margin-top:3px;margin-left:auto;margin-right:auto;"><tr><td style="background:transparent;"><div style="overflow:auto; height:{{{height|230px}}}; width:{{{width|99.9%}}};  -moz-border-radius-topleft:0.5em; border:1px solid #AAAAAA; padding-left:0.5em; background:transparent;">
+: PREPARE THE METHOD
+: THE METHOD IS A WORD
+: THE WORD HAS 7 LETTERS, OF WHICH:
+
+: CLOTH SHARES 1
+: <i>Answer: Letter "C" (<b>C</b>loth)</i>
+
+: FIREBORN SHARES 3, ONE TWICE<ref group="Note">The riddle originally stated "FIREBORN SHARES 2, ONE TWICE", which [[:File:Discord_Caravan.png|Leth confirmed to be a mistake]].</ref>
+:<i>Answer: Letters "R" and "N" (fi<b>R</b>ebo<b>RN</b>)</i>
+
+: HIVE SHARES 1
+: <i>Answer: Letter "V" (hi<b>V</b>e)</i>
+
+: HORNET SHARES 2
+: <i>Answer: Letters "R" and "N" (ho<b>RN</b>et)</i>
+
+: ISELDA SHARES 1
+: <i>Answer: Letter "A" (iseld<b>A</b>)</i>
+
+: PALE ORE SHARES 2
+: <i>Answer: Letters "A" and "R" (p<b>A</b>le o<b>R</b>e)</i>
+
+: ROYAL WATERWAYS SHARES 5, ONE TWICE
+: <i>Answer: Letters "R" and "A" (<b>R</b>oy<b>A</b>l w<b>A</b>te<b>R</b>w<b>A</b>ys)</i>
+
+: VESPA SHARES 2
+: <i>Answer: Letters "V" and "A" (<b>V</b>esp<b>A</b>)</i>
+
+: ZOTE DOES NOT SHARE
+: <i>Answer: None</i>
+
+: <i>Final Result: CARAVAN</i>
+</div></td><td style="width:8px;"></td></tr></table>
+
+More information on them was revealed in <i>EDGE Magazine</i> by [[Ari Gibson]], where he stated "<i>It travels around the world and expands, so it's a real troupe. And it's almost like – I probably hadn't really put it together until now – but it really does act like a travelling town, like a Dirtmouth that's on wheels. So yeah, you'll see them at different places throughout your journey, and obviously, the town will evolve as it gets more flea companions.</i>"<ref name="edge59">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition] p. 59.</ref>
+
+There are unused sprites of Mooshka, Grishkin, and Varga being scared and cowering in fear. These likely were used for a cut event where Pilgrims would invade the Caravan, known via an unused save file flag.<ref><code>CaravanPilgrimAttackComplete</code></ref> Two tracks related to the Caravan are based off cut [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] content. The area's main theme was rearranged for the Fleatopia theme, and Pinstress' original Coral Gorge boss theme was reused for the Flea Minigames.
+
+== Achievements ==
+{{Achievements|allgames=silksong|Flea Finder|Fleafriend}}
+
+== Trivia ==
+* The [[Needolin]] can be played when travelling with the Flea Caravan, and the fleas in the carriage will react accordingly.
+* [[Matt Trobbiani]] voices a member of the Flea Caravan.<ref>[https://www.youtube.com/watch?v=3p5A7mQDlLg Interview with Matt Trobbiani] (6:52)</ref>
+
+{{Localisation
+|DEname = Flohkarawane
+|DEmeaning = Flea Caravan
+|ESname = Caravana de las pulgas
+|ESmeaning = Caravan of the Fleas
+|FRname = Caravane des puces
+|FRmeaning = Caravan of the Fleas
+|ITname = Carovana di Pulci
+|ITmeaning = Caravan of Fleas
+|JAname = ノミのキャラバン
+|JAromanised = Nomi no kyaraban
+|JAmeaning = Flea's Caravan
+|KOname = 벼룩 극단
+|KOromanised = Byeoruk geukdan
+|KOmeaning = Flea Troupe
+|PTname = Caravana das Pulgas
+|PTmeaning = Caravan of Fleas
+|RUname = Блошиный караван
+|RUromanised = Blošinyj karavan
+|RUmeaning = Flea Caravan
+|TWname = 跳蚤旅團
+|TWromanised = Tiàozǎo lǚtuán
+|TWmeaning = same
+|ZHname = 跳蚤旅团
+|ZHromanised = Tiàozǎo lǚtuán
+|ZHmeaning = Flea Travelling Troupe
+|CODEname = KEY_CARAVAN
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+== Notes ==
+<references group="Note"/>
+
+[[es:Caravana]]
+[[fr:Caravane des puces]]
+
+[[Category:NPCs (Silksong)]] [[Category:Lore]] 
+{{SS Nav NPCs}}
+{{Lore Nav}}

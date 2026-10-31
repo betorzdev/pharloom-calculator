@@ -1,0 +1,180 @@
+{{SS Infobox NPC
+|image1 = Flick the Fixer.png
+|area = [[Bone Bottom]]<br>
+[[Survivor's Camp]]
+|role = Quest
+|quest = [[Bone Bottom Repairs]]<br>[[A Lifesaving Bridge]]<br>[[An Icon of Hope]]<br>[[Bone Bottom Supplies]]<br>[[Survivor's Camp Supplies]]
+|aka = The Fixer
+|affiliation = Bone Bottom (resident)
+|singnum = 2
+}}
+{{Quote|Hr=SS
+|A wishwall. It's past time this old camp had one. As the resident fixer, I've taken it upon myself to sort it out.
+|Flick the Fixer
+}}
+<b>Flick the Fixer</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a resident of [[Bone Bottom]] who specialises in construction and repairs.<ref name="fixer" />
+
+== Background ==
+Flick is one of the many pilgrims who arrived in [[Bone Bottom]] to start his pilgrimage to [[the Citadel]], but eventually ended up as the settlement fixer, despite knowing that it is shameful for a pilgrim to tarry so long in one place.<ref name = "fixer" >Flick the Fixer: <i>"Aye, aye. You're a sharp bug! A wishwall. It's past time this old camp had one. As the resident fixer, I've taken it upon myself to sort it out."</i></ref><ref>Flick the Fixer: <i>"Don't go thinkin' fear's keepin' me from my own pilgrimage! S'just there's a lotta work still to do here and few bugs able to do it."</i></ref> He cares for the other pilgrims and is ready to use his building skills to aid them.<ref>Flick the Fixer: <i>"And another poor pilgrim lost, eh? Just the thought of it makes me weary. Better to put my head down and work 'til the job's done..."</i></ref><ref><i>[[A Lifesaving Bridge]]</i> [[wish]] description: <i>"I've heard tell pilgrims sometimes fall down that big hole beside the settlement. Nasty way to end your journey, before it even begins. I could build a bridge, if I only had the materials!"</i></ref><ref><i>[[An Icon of Hope]]</i> wish description: <i>"The road is hard for we pilgrims. I want to build a beautiful symbol of hope, to stand beside Bone Bottom and welcome all those who are about to begin their long journey."</i></ref> In his craft, he often uses [[Shell Shards]].<ref>Flick the Fixer: <i>"Common stuff, shell shards, but very practical. I can use 'em to patch almost anything up, and this camp's always in need of some mending."</i></ref>
+
+== In-Game Events ==
+Flick the Fixer can first be found building a [[wishwall]] in [[Bone Bottom]], believing that the settlement needs a place for prayers and wishes so that they are not left unanswered.<ref>Flick the Fixer: <i>"They're a popular thing about Pharloom, wishwalls. Useful too. So many prayers left unanswered. Gives 'em a place to go."</i></ref>
+
+He finishes building the wishwall after [[Hornet (Silksong)|Hornet]] defeats the [[Bell Beast]], and places his own <i>[[Bone Bottom Repairs]]</i> wish on it. When Hornet grants this wish by donating the required amount of [[Shell Shards]], he tells Hornet that such kindness is not something one sees much of in this weary place, to which Hornet responds that she is doing it for her own purposes.<ref>Hornet and Flick the Fixer dialogue: <br><i>Flick the Fixer: "Those shards are valuable, alright. Brilliant for crafting and fixing, very versatile. More than that, though... it was a warm thing you did, the sort of kindness you don't see much in this weary place." <br>Hornet: "Was this kindness? I must take care to learn of this land and claim what advantage I can from it. Answering requests like yours can often fit those ends."</i></ref> Flick is surprised, but still thanks her and wishes her luck in her travels.<ref>Flick the Fixer: <i>"Oh, it's like that, is it? Well, even still, the help's well appreciated, miss. Best of luck in your travels, and may every wish of yours be granted!"</i></ref>
+
+After the <i>Bone Bottom Repairs</i> wish is completed, upon re-entering Bone Bottom, Flick is no longer at the wishwall. He can be seen working in the background, and is present on a few occasions afterwards:<ref group=code>FSM<code>Fixer NPC Standing - Conversation</code> in <code>bonetown.bundle</code> checks various flags.</ref>
+* Upon completion of the <i>[[An Icon of Hope]]</i> wish, Flick appears to express his gratitude. He gifts Hornet the [[Hornet Statuette]] and assures her she is always welcome in the settlement.<ref>Flick the Fixer: <i>"I'd been thinkin' on all your efforts, and set to making a little something to repay 'em. S'only a token, really! But I've put all me talent into it, much as I've got! Something to keep you company on the lonely roads above. Hold onto it on your travels, and remember that you're always welcome down here with us."</i></ref>
+* After the [[Skull Tyrant]] attack, he can be found fixing the destroyed bench. Flick is glad that Hornet is unharmed after the battle and apologises for leaving her in danger, admitting that he is no warrior. Hornet, however, reassures him that he did the right thing, as the settlement needs a fixer, not a warrior.<ref>Hornet and Flick the Fixer dialogue: <br><i>Flick the Fixer: "Ah! Here she is, safe after all! I was worried your battle with that enormous beast had left you badly wounded. Shames me to have left you in danger there, missy, but I'm no warrior, and my tools ain't no match for a creature like that." <br>Hornet: "It is well that you kept yourself safe. This settlement needs a fixer now, not a warrior."</i></ref>
+* If [[Pilby]] dies when the [[Skull Tyrant]] attacks Bone Bottom, Flick appears during the funeral held by [[Solemn Pilgrim]].
+
+When Hornet delivers the [[Bone Bottom Supplies]] from [[Tipp & Pill]], Flick is there to receive the package. He mentions that pilgrims often arrive at the settlement with nothing, and that the supplies will make things easier for them.<ref>Flick the Fixer: <i>"Ah! Mighty thankful these folks'll be. Most arrive here with nothin' but their shell. Your delivery there'll make things a little easier on 'em."</i></ref> After receiving the package for the first time, he no longer leaves the area.
+
+After the destruction of Bone Bottom in [[Act 3]], Flick and the other surviving residents relocate to [[the Marrow]] and set up the [[Survivor's Camp]]. When Hornet visits them, he remarks that it is no surprise she survived, considering her skill, and tells her about the fate of their settlement.<ref>Flick the Fixer: <i>"Ah, miss! Course you'd be one to survive through all this! Capable as you seem and all. It's a sad thing, but I can't say most folk down here've fared so fortunate. And our once fine camp below ain't no longer safe for any bug, all crushed and consumed by this black calamity."</i></ref> When Hornet lets him know that she intends to fix the black calamity, he expresses doubt that any one bug could do it, but is still heartened to know that she has fire enough to feel different.<ref>Flick the Fixer: <i>"Calming our raging world? That's a lofty goal, miss. I'm not thinkin' any one bug'd be able to stop these happenings, but it's heartenin' knowing you've still got fire enough to feel different."</i></ref> Hornet can deliver the [[Survivor's Camp Supplies]] from Tipp & Pill to Flick, to much appreciation from him.<ref>Flick the Fixer: <i>"Eh? What fortune is this? Our wish answered, even in a moment so dark! You've proved quite the saviour, miss, and you've certainly earned the appreciation of this whole sorry lot."</i></ref>
+
+{{TabbedDialogue
+| Title1 = Bone Bottom
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = {{HTalk|What's this you're building, sir? A sign of some kind?}}<br>
+Aye, aye. You're a sharp bug! A wishwall. It's past time this old camp had one. As the resident fixer, I've taken it upon myself to sort it out.<br>
+They're a popular thing about Pharloom, wishwalls. Useful too. So many prayers left unanswered. Gives 'em a place to go.
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = Once this wishwall is up, bugs'll be able to seek help from any able shell around. You could even try granting a couple of wishes yourself, missy!
+| Title1_Event3 = After the [[wishwall]] is built, but before completing the <i>[[Bone Bottom Repairs]]</i> [[wish]]
+| Title1_Dialogue3 = Oh! Back again? The wishwall is up! Ready for all the poor souls who've been left behind down here.<br>
+In Pharloom, wishes are granted to those truly devout, or so they say. And there ain't no harm in us dregs having wishes too.<br>
+Why, I even went and added a little wish of my own to the wishwall! Fair's fair. I did build the thing. Seems like the kingdom should be granting my wish before anyone else's.
+| Title1_Event4 = Exhausted dialogue before completing the <i>Bone Bottom Repairs</i> wish
+| Title1_Dialogue4 = Did you take a look at the wishwall? You might've noticed I added a cheeky little wish of my own.<br>
+Fair's fair, I did build the thing. Seems like the kingdom should be granting my wish before anyone else's.
+| Title1_Event5 = Speaking right after completing the <i>Bone Bottom Repairs</i> wish
+| Title1_Dialogue5 = Well, look at that! You've gone and donated all those shell shards, just like I wished for! I can scarcely believe it!<br>
+Those shards are valuable, alright. Brilliant for crafting and fixing, very versatile.<br>
+More than that, though... it was a warm thing you did, the sort of kindness you don't see much in this weary place.<br>
+{{HTalk|Was this kindness? I must take care to learn of this land and claim what advantage I can from it. Answering requests like yours can often fit those ends.}}<br>
+Oh, it's like that, is it? Well, even still, the help's well appreciated, miss. Best of luck in your travels, and may every wish of yours be granted!
+| Title1_Event6 = Exhausted dialogue, right after completing the <i>Bone Bottom Repairs</i> wish
+| Title1_Dialogue6 = Common stuff, shell shards, but very practical. I can use 'em to patch almost anything up, and this camp's always in need of some mending.
+| Title1_Event7 = Speaking while he fixes the bench after the [[Skull Tyrant]] attack
+| Title1_Dialogue7 = Ah! Here she is, safe after all! I was worried your battle with that enormous beast had left you badly wounded.<br>
+Shames me to have left you in danger there, missy, but I'm no warrior, and my tools ain't no match for a creature like that.<br>
+{{HTalk|It is well that you kept yourself safe. This settlement needs a fixer now, not a warrior.}}<br>
+Heh, maybe that's true. Times like these all we can do is put our heads down and try to rebuild.
+| Title1_Event8 = Exhausted dialogue while he fixes the bench, if [[Pilby]] has not died during the Skull Tyrant attack
+| Title1_Dialogue8 = Times like this, all we can do is put our heads down and try to rebuild.
+| Title1_Event9 = Exhausted dialogue while he fixes the bench, if Pilby has died during the Skull Tyrant attack
+| Title1_Dialogue9 = And another poor pilgrim lost, eh? Just the thought of it makes me weary. Better to put my head down and work 'til the job's done...
+| Title1_Event10 = After completing the <i>[[An Icon of Hope]]</i> wish
+| Title1_Dialogue10 = Ah! Glad I caught you for a moment, miss. You've done a fair service to this camp, given much more'n most.<br>
+I'd been thinkin' on all your efforts, and set to making a little something to repay 'em.<br>
+S'only a token, really! But I've put all me talent into it, much as I've got! Something to keep you company on the lonely roads above.<br>
+Hold onto it on your travels, and remember that you're always welcome down here with us.
+| Title1_Event11 = Exhausted dialogue, right after being given the [[Hornet Statuette]]
+| Title1_Dialogue11 = Don't go thinkin' fear's keepin' me from my own pilgrimage! S'just there's a lotta work still to do here and few bugs able to do it.
+| Title1_Event12 = Delivering [[Bone Bottom Supplies]]
+| Title1_Dialogue12 = {{HTalk|Sir, I bring supplies from the town of bells up above, to aid your camp and its residents.}}<br>
+Ah! Mighty thankful these folks'll be. Most arrive here with nothin' but their shell. Your delivery there'll make things a little easier on 'em.<br>
+For comin' all this way, take a few beads. You've well earned 'em.
+| Title1_Event13 = Exhausted dialogue
+| Title1_Dialogue13 = Times are hard, so fresh supplies are always welcome! Bugs arrive here with nothin' and often leave without much more.
+| Title1_Event14 = Playing the [[Needolin]]
+| Title1_Dialogue14 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...
+| Title1_Event15 = Playing the Needolin during Pilby's funeral
+| Title1_Dialogue15 = [n]Fallen brother...<br>
+Your journey ends...<br>
+We carry your memory...<br>
+Fellow pilgrim...
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Ah, miss! Course you'd be one to survive through all this! Capable as you seem and all.<br>
+It's a sad thing, but I can't say most folk down here've fared so fortunate. And our once fine camp below ain't no longer safe for any bug, all crushed and consumed by this black calamity.<br>
+{{HTalk|Nowhere is safe, sir, but I am glad you few remain. Know I shall work to fix this, as best I'm able.}}<br>
+Calming our raging world? That's a lofty goal, miss. I'm not thinkin' any one bug'd be able to stop these happenings, but it's heartenin' knowing you've still got fire enough to feel different.<br>
+Rest here with us, long as you like. A little company's about the best thing we few're wishin' for now.
+| Title2_Event2 = Delivering [[Survivor's Camp Supplies]]
+| Title2_Dialogue2 = Eh? What fortune is this? Our wish answered, even in a moment so dark!<br>
+You've proved quite the saviour, miss, and you've certainly earned the appreciation of this whole sorry lot.<br>
+{{HTalk|You are welcome, sir. For you few, I hope these supplies may aid.}}<br>
+Oh! And you can't be leavin' without some reward for your work. Take these beads for labour.<br>
+Rosaries ain't provin' much use to us lot anymore, but hopefully you in all your journeyin' can still put 'em to use.
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = Rest here with us, long as you like. Mightn't be much time left, but at least we few won't have to face that fate alone.
+| Title2_Event4 = Playing the [[Needolin]]
+| Title2_Dialogue4 = [n]...Live...<br>
+...To climb...<br>
+...Dark... Afraid...<br>
+...Help us...<br>
+...Save us...<br>
+...Glory...<br>
+...Dear Pharloom...
+|Title3 = Written
+|Title3_Event1 = <i>[[Bone Bottom Repairs]]</i> wish
+|Title3_Dialogue1 = A lotta repairs to be done around here, but I need more materials! All I wish for is some shell shards so I can get to work. Not asking too much, am I?
+|Title3_Event2 = <i>[[A Lifesaving Bridge]]</i> wish
+|Title3_Dialogue2 = I've heard tell pilgrims sometimes fall down that big hole beside the settlement. Nasty way to end your journey, before it even begins. I could build a bridge, if I only had the materials!
+|Title3_Event3 = <i>[[An Icon of Hope]]</i> wish
+|Title3_Dialogue3 = The road is hard for we pilgrims. I want to build a beautiful symbol of hope, to stand beside Bone Bottom and welcome all those who are about to begin their long journey.
+}}
+
+== Location ==
+Flick the Fixer can first be found in [[Bone Bottom]]. In [[Act 3]], he and the other survivors move to [[the Marrow]] and set up the [[Survivor's Camp]].
+{{Gallery
+|Image1 = Mapshot SS Bone Bottom Wishwall.png!Location in Bone Bottom
+|Image2 = Mapshot_SS_Flea_Caravan_01.png!Location in the Marrow in Act 3
+}}
+
+== Gallery ==
+{{MissingImage}}
+{{Gallery
+|Image1 = Screenshot SS Flick the Fixer 01.png!Building the wishwall in Bone Bottom
+|Image2 = Screenshot SS Flick the Fixer 02.png!At the completed wishwall
+|Image3 = Screenshot SS Flick the Fixer 03.png!Working in the background of Bone Bottom
+|Image4 = Screenshot SS Flick the Fixer 04.png!Repairing the bench after the Skull Tyrant attack
+|Image5 = Screenshot SS Solemn Pilgrim 01.png!Attending Pilby's funeral
+|Image6 = Screenshot SS Flick the Fixer 06.png!Waving to Hornet to get her attention
+|Image7 = Screenshot_SS_The_Marrow_13.png!At the Survivor's Camp in Act 3
+|Image8 = Screenshot SS Flick the Fixer 05.png!Singing
+|Image9 = Pre-Release Flick.png!Pre-release screenshot
+}}
+
+{{Localisation
+|DEname = Flick Der Reparateur
+|DEmeaning = Flick the Repairman
+|ESname = Flick El arreglador
+|ESmeaning = Flick the Fixer
+|FRname = Flick Le Réparateur
+|FRmeaning = Flick the Repairman
+|ITname = Flick il Riparatore
+|ITmeaning = Flick the Repairman
+|JAname = 修理屋フリック
+|JAromanised = Shūriya furikku
+|JAmeaning = Repairman Flick
+|KOname = 해결사 플릭
+|KOromanised = Haegyeolsa peullik
+|KOmeaning = Problem Solver Flick
+|PTname = Flick O Reparador
+|PTmeaning = Flick the Repairman
+|RUname = Флик мастер по ремонту
+|RUromanised = Flik master po remontu
+|RUmeaning = Flick Master of Repair
+|ZHname = 维修师弗利克
+|ZHromanised = Wéixiū shī fúlìkè
+|ZHmeaning = Repairman Flick
+|CODEname = BB_FIXER</code><br><code>FIXER
+|CODEmeaning = <code>BB</code> stands for [[Bone Bottom]].
+}}
+
+{{Refs|hr=ss}}
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code"/>
+</div>
+{{SS Nav NPCs}}

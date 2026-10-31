@@ -11365,11 +11365,7 @@
       null,
     ],
     Room_Witch: ['SHELLWOOD_WITCH', { es: 'Raíz Gris', en: 'Greyroot', key: 'SHELLWOOD_WITCH_MAIN' }, null],
-    Song_Enclave: [
-      'CHURCHKEEPER',
-      { es: 'Doncella de la Capilla', en: 'Chapel Maid', key: 'CHURCHKEEPER_MAIN' },
-      null,
-    ],
+    Song_Enclave: ['CHURCHKEEPER', { es: 'Cuidador', en: 'Caretaker', key: 'CARETAKER_MAIN' }, null],
     Sprintmaster_Cave: [
       'SPEEDMASTER',
       {

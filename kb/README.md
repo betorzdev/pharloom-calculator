@@ -10,7 +10,7 @@ plan (`design/00-study.md` §9).
 |---|---|
 | `pages.txt` | The pages `kb/` is built from: the Silksong categories (Tools, Crests, bosses, enemies, skills, areas, items), the gauntlets' subpages, the damage page, the Journal, Completion, Save Data and the rest. `Category:` and `Prefix:` lines expand |
 | `fetch-wiki.py` | Downloads the raw wikitext into `raw/`: `npm run kb` (every page in `pages.txt`), or `python3 kb/data/fetch-wiki.py "Page name"`. Redirects are saved under the title asked for |
-| `raw/` | 522 pages of wikitext, `<Title>.wiki` with `/` and spaces as `_`. Committed, so the generators run offline and a re-fetch after a patch shows up as a diff |
+| `raw/` | 665 pages of wikitext, `<Title>.wiki` with `/` and spaces as `_`. Committed, so the generators run offline and a re-fetch after a patch shows up as a diff. The last 143 (31 October 2026: `Category:Wishes`, `Category:NPCs (Silksong)` and the places the Map's requirements cite, Bellway, Songclave, Ventrica, Wishwall…) are what `tools/gen-requires.js` reads and cites |
 | `completionist/` | Br3zzly/silksong-completionist's dictionary (MIT, its `LICENSE` beside it), at the commit in `SOURCE`: `npm run collectibles`. Only its facts are used (each thing's save field and Act), not its prose |
 | `game/pickups.json` | Where the game has each item picked up or given, which scenes' scripts name an ability's flag, where each NPC stands, each of those objects' place in its scene, each scene's size and each bench: `tools/extract-pickups.py` from the game's own scene bundles (needs the game installed; committed, so `npm run data` runs offline). `tools/gen-spots.js` reads it |
 | `game/gating.json` | What decides whether each thing the save keeps per room can be had: the flags a way's own components set instead of its bool, the other lock of a door, what the game takes away (Act 3, a flag), what only Steel Soul or the normal game has, what only the demo has or the scenes never switch on, and the doors a key opens: `tools/extract-gating.py` from the same scene bundles (needs the game installed; committed). `tools/gen-spots.js` and `tools/gen-gauntlets.js` read it |
@@ -21,7 +21,7 @@ plan (`design/00-study.md` §9).
 
 ## From here to the site
 
-`npm run data` runs the four generators in `tools/`, which read `raw/` and the dump and write
+`npm run data` runs the generators in `tools/`, which read `raw/` and the dump and write
 the site's data files. None is edited by hand:
 
 | Generator | Writes | From |
@@ -31,6 +31,7 @@ the site's data files. None is edited by hand:
 | `tools/gen-journal.js` | `js/journal.js` | The *Hunter's Journal (Silksong)* table (order, kills, notes) and the game's `NAME_`, `DESC_`, `NOTE_` texts |
 | `tools/gen-collectibles.js` | `js/collectibles.js` | `completionist/`, joined to `js/data.js` and `js/journal.js` by the game's English name: the save's names for the Tools, Crests and Journal entries, and the loose pieces with their checks |
 | `tools/gen-spots.js` | `js/spots.js` | `game/pickups.json`, `completionist/` and the site's generated data: the room where the Map draws each thing, the extras beyond the 100% with their checks, the bosses, vendors, people, Bellshrines and maps |
+| `tools/gen-requires.js` | `js/requires.js` | The site's generated data (each wish's test and what it waits for, each thing's way and keys, what a fight waits for, the Acts), the areas' "How to Access", the wishes' prerequisites and the things' location tables, and its hand table with each row's page: what each Map mark, area and wish asks first (`design/00-study.md` §4.10) |
 
 Shared by them: `tools/wiki.js` (pages, templates, `{{Localisation}}`, tables with rowspans),
 `tools/names.js` (the game's names by key, by English, and a page's Journal key),

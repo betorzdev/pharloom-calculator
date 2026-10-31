@@ -1,0 +1,302 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Alchemist Zylotol.png|Normal
+Alchemist Zylotol Infected.png|Plasmified
+Zylotol Corpse.png|Catatonic
+</gallery>
+| area = [[Wormways]]
+| role = Quest
+| quest = [[Alchemist's Assistant]]<br>
+[[Advanced Alchemy]]
+| singnum = 2
+|affiliation = [[Plasmified Zango|Zango]] (Assistant)<ref>Alchemist Zylotol: <i>"You haven't met Zango, my assistant, by chance? An indolent sort? Short, slovenly, rather unreliable-seeming?"</i></ref> <br>
+Unseen Master<ref name = master>Alchemist Zylotol: <i>"Plasmium was discovered by my master at the farthest edge of Pharloom, hidden deep in salt-stricken waters. I brought it to these caves under her direction, to study how it flourishes in a foreign place."</i></ref>
+}}
+
+{{Quote
+|Those who hesitate learn nothing, you know! The wondrous bright glow of Plasmium makes all things clear! 
+|Alchemist Zylotol
+|Hr=SS}}
+
+<b>Alchemist Zylotol</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a scientist found within the [[Wormways]], where he researches [[Lifeblood|Plasmium]]. He gives the <i>[[Alchemist's Assistant]]</i> and <i>[[Advanced Alchemy]]</i> [[wishes]].
+
+== Background ==
+Alchemist Zylotol is a scientist dedicated to experimenting with [[Lifeblood|Plasmium]], a substance he views as a natural miracle with wondrous properties and immense potential.<ref>Alchemist Zylotol: <i>"Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow?"</i></ref><ref>Alchemist Zylotol: <i>"Ahh yes! So this miraculous substance intrigues you too! A wonder beyond wonders, miracle made material! Plasmium! A naturally occurring elixir with no equal! It heals wounds and strengthens shells! I suspect it can even defy death itself!"</i></ref><ref>Alchemist Zylotol [[Needolin]] dialogue: <i>"Heal all wounds... Escape even death... All secrets, all knowledge... Plasmium, potent, pure!"</i></ref> His master originally discovered Plasmium deep beneath salt-stricken waters at the furthest edge of [[Pharloom]], and Zylotol believes the barren soil of the mainland could never produce such a substance on its own.<ref>Hornet and Alchemist Zylotol dialogue: <br><i>Hornet: "Plasmium, you call it? I have encountered its like before, or else a substance of remarkable similarity..." <br>Alchemist Zylotol: "Highly unlikely! The grey and barren soil of the mainland could never produce something as singular as this, and that is indisputable fact."</i></ref> She then sent him to the [[Wormways]] to observe how a foreign environment affects its development.<ref>Alchemist Zylotol: <i>"Plasmium was first discovered by my master at the farthest edge of Pharloom, hidden deep in salt-stricken waters. I brought it to these caves under her direction, to study how it flourishes in a foreign place."</i></ref>  Accompanied by his assistant, [[Zango]], they injected the local flora and fauna with the substance and seeded the warrens with [[Plasmium Bud|Plasmium buds]].<ref>Alchemist Zylotol: <i>"My assistant and I have been injecting Plasmium into the local flora and fauna since we arrived. No ill effects have been observed, and so we can conclude that the process is utterly, completely safe."</i></ref><ref>Alchemist Zylotol: <i>"Now! Before he went and died, my previous assistant seeded the warrens below with Plasmium buds."</i></ref>
+
+Alchemist Zylotol is deeply consumed by his work and resents any prolonged distractions.<ref>Alchemist Zylotol: <i>"Oho? A new face! Not here to bother, I hope? I’ve critical studies underway in these twisting tunnels and can afford no distractions!"</i></ref><ref>Alchemist Zylotol: <i>"Now, pop down into those worm warrens and extract it for me! What could possibly be more important?"</i></ref> He is dismissive of anyone he deems less intelligent than himself, including Zango, and is only bothered by his assistant's death because of the difficulty of working without the help.<ref>Alchemist Zylotol: <i>"Are you so enchanted by the Plasmium that you will not part with it? You are more like that dolt Zango than I first thought! Its enlightenings are beyond your meagre mind! Give me the phial, assistant, or the deeper secrets of this substance will never be revealed!"</i></ref><ref>Alchemist Zylotol: <i>"Ah ha! That careless buffoon. No surprises then. That lump never shone with the talent for true discovery. Now! To my work I must return! With my assistant so rudely dying on me, I've tasks enough for two bugs."</i></ref>
+
+== In-game Events ==
+Alchemist Zylotol can be found at the top of the Wormways, experimenting with Plasmium in a makeshift lab accessible with [[Cling Grip]]. He can be talked to and with notice [[Hornet (Silksong)|Hornet]]'s interest in his studies, and asks her to be his new assistant as his former one, Zango, has gone missing. Accepting this offer starts the <i>[[Alchemist's Assistant]]</i> [[wish]].<ref>Alchemist Zylotol: <i>"Oho? You linger here still? Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? Then join me, you must! A new assistant is needed. Together we shall unlock the secrets of this wondrous substance!"</i></ref> He provides a [[Needle Phial]] and tasks her with harvesting nectar from ripening buds before they reach maturity, believing this stage will reveal more about the substance's properties.<ref>Alchemist Zylotol: <i>"The buds should be ripening as we speak, and the nectar within must be extracted before they reach maturity. (...) With the right nectar, and the right testing, Plasmium can reveal even more of its wondrous properties!"</i></ref> Upon completion, he rewards Hornet with the [[Plasmium Phial]], encouraging her to use it to experience its wondrous effects.<ref>Hornet: Your tool certainly looks sharp enough to pierce my shell, sir, but why should I want to do so?<br>Alchemist Zylotol: <i>"Because filling your body with Plasmium is so beneficial! It protects you from harm! And it feels so exquisitely good!"</i></ref> He invites Hornet to return for refills whenever her Plasmium reserve run dry, promising that every [[Rosaries|bead]] will go towards his vital research.<ref>Alchemist Zylotol: <i>"Keep using the Plasmium Phial, and enjoy all the wonderful effects it has on your body. If you ever run out of Plasmium, visit me again. I'll charge a few rosaries for refills, but you can be confident that every bead goes towards our vital studies!"</i></ref>
+
+In [[Act 3]], Alchemist Zylotol's lab has been destroyed by the encroaching Plasmium overgrowth, which has also begun sprouting from his own shell. As the substance overtakes his mind, he starts rambling about "becoming a source" and mistaking Hornet for [[Zango]], now treating his former assistant as a loyal friend.<ref>Alchemist Zylotol if first met during Act 3: <i>"Ohhhhh... Assistant? Is that you?... You return at last, my friend? (...) The research must continue. Soon... I shall become a source."</i></ref><ref>Alchemist Zylotol: <i>"If more is needed... If the Plasmium runs dry... return. Visit me again... That you may live, long... my loyal assistant."</i></ref> Despite this, Zylotol retains some of his former self, dismissing Hornet's warnings about his worsening state and going on about the progress he has made in his research. He does not view the overtaking of his shell as distressing, instead viewing the transfiguration of himself and his surroundings as a beautiful blossoming.<ref>Hornet: Sir, you are in a disturbing state. This substance sprouts from within your shell. Time will see it consume you entirely. Would you seek aid?<br>Alchemist Zylotol: <i>"No... No... Assistant... you are confused. A wonderful thing, we become. The Plasmium, our great research... We have progressed."</i></ref> <ref>Alchemist Zylotol: <i>"These lands have taken the Plasmium well... the soil has drunk it deep, and the creatures bloom so beautifully... have you seen them?"</i></ref> Alchemist Zylotol remains obsessed with the substance, offering the <i>Alchemist's Assistant</i> wish if not yet completed, but his focus has shifted from studying it to consuming it to achieve his transformation into a "source".<ref>Alchemist Zylotol: <i>"You decline, Assistant? You cannot. The buds... The harvest. It must occur... For the source, and your saving..."</i></ref><ref>Alchemist Zylotol: <i>"Bring the Pure Plasmium. It must be tested... ingested."</i></ref> He has also developed the ability to scent out Plasmium.<ref>Alchemist Zylotol: <i>"The Pure Plasmium... you have it. I can... smell it on you."</i></ref><ref>Alchemist Zylotol: <i>"Assistant, that odour... aahhh... you have the Plasmified Blood..."</i></ref>
+
+After <i>Alchemist's Assistant</i> wish is completed, Alchemist Zylotol offers the <i>[[Advanced Alchemy]]</i> wish, tasking Hornet with collecting [[Plasmified Blood]] from [[Lifeblood#Mutations|plasmified]] creatures.<ref>Alchemist Zylotol: <i>"Assistant... to learn more of Plasmium's wonders... I know what we must do...
+The bugs below... who have imbibed the substance... and evolved... their bodies are full with Plasmified Blood... You must use the Needle Phial and extract this precious nectar... only by scrutinising it... can we attain higher knowledge..."</i></ref> Upon receiving the samples, he claims that he now understands true knowledge comes only from faith in the Plasmium.<ref>Alchemist Zylotol: <i>"Have faith, dear assistant... After all this I understand... the greatest knowledge comes only from faith... faith in Plasmium. This blood you have collected... sparkles... I see it! A glorious form... a glorious future, shimmering back at us... Through consumption of the blood... we shall at last attain enlightenment..."</i></ref> As a reward, he grants Hornet the [[Plasmium Gland]] from his own shell, which provides an unlimited supply for the [[Plasmium Phial]].<ref>Alchemist Zylotol: <i>"For your reward... take the gland from within my shell... my gift to you.
+I have no more need of it... and it shall grant you... unending reserves of Plasmium..."</i></ref> After resting at a bench elsewhere and returning, Hornet finds Alchemist Zylotol collapsed and unresponsive to anything but the [[Needolin]].
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| id = Alchemist's Assistant
+| title = [[Alchemist's Assistant]]
+| description = "Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? Then join me, you must! A new assistant is needed. Together we shall unlock the secrets of this wondrous substance!"
+| objective = Collect Plasmium from Plasmium buds in the lower Wormways.
+Plasmium can be extracted from buds using a fully charged stab from the Needle Phial tool.
+
+<i>After collecting sufficient Plasmium:</i> Give the collected Plasmium to the Alchemist at the top of the Wormways.
+| location = <b><i>[[Wormways]] NPC</i></b>
+Alchemist Zylotol
+| reward = [[Plasmium Phial]]
+}}
+{{TaskEntry
+| bottom = true
+| header = <b><i>Accessible in [[Act 3]]</i></b>
+| id = Advanced Alchemy
+| title = [[Advanced Alchemy]]
+| description = "Assistant... to learn more of Plasmium's wonders... I know what we must do..."
+| objective = Collect Plasmified Blood from infected creatures in the Wormways.
+Plasmified Blood can be extracted with a fully charged stab from the Needle Phial tool.
+
+<i>After collecting sufficient Plasmified Blood:</i> Give the Plasmified Blood to the Alchemist at the top of the Wormways.
+| location = <b><i>[[Wormways]] NPC</i></b>
+Alchemist Zylotol
+| reward = [[Plasmium Gland]]
+}}
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If Hornet has not found [[Zango]]:</b><br>
+Oho? A new face! Not here to bother, I hope? I've critical studies underway in these twisting tunnels and can afford no distractions!<br>
+You haven't met Zango, my assistant, by chance? An indolent sort? Short, slovenly, rather unreliable-seeming?<br>
+{{HTalk|I have not, sir. I am curious though, about the equipment you have here, and the blue liquid contained within. What study consumes you?}}<br>
+Ahh yes! So this miraculous substance intrigues you too! A wonder beyond wonders, miracle made material!<br>
+Plasmium! A naturally occurring elixir with no equal! It heals wounds and strengthens shells! I suspect it can even defy death itself!<br>
+{{HTalk|Plasmium, you call it? I have encountered its like before, or else a substance of remarkable similarity...}}<br>
+Highly unlikely! The grey and barren soil of the mainland could never produce something as singular as this, and that is indisputable fact.<br>
+Plasmium was first discovered by my master at the farthest edge of Pharloom, hidden deep in salt-stricken waters. I brought it to these caves under her direction, to study how it flourishes in a foreign place.<br>
+Now! To my work I must return! Unless you have further interest in my precious Plasmium, or chance upon my truant assistant, kindly leave me in peace!
+<hr/>
+<b>If Hornet has found Zango:</b><br>
+Oho? A new face! Not here to bother, I hope? I've critical studies underway in these twisting tunnels and can afford no distractions!<br>
+You haven't met Zango, my assistant, by chance? An indolent sort? Short, slovenly, rather unreliable-seeming?<br>
+{{HTalk|In a dark cave below here, I encountered a shell not dissimilar from your own. I suspect your assistant may have met an unfortunate end.}}<br>
+Ah ha! That careless buffoon. No surprises then. That lump never shone with the talent for true discovery.<br>
+Now! To my work I must return! With my assistant so rudely dying on me, I've tasks enough for two bugs.<br>
+Unless you have further interest in my precious Plasmium, kindly leave me in peace!
+| Title1_Event2 = Speaking while having a used [[Plasmium Phial]]
+| Title1_Dialogue2 = Assistant! Have you come to refill your reserve of Plasmium?
+| Title1_Event3 = Declining the refill
+| Title1_Dialogue3 = Oh? Those who hesitate learn nothing, you know! The wondrous bright glow of Plasmium makes all things clear!
+| Title1_Event4 = Accepting the refill
+| Title1_Dialogue4 = There, you are replete with wonderful Plasmium once more! You can begin injecting it at once. Now, off with you!
+| Title1_Event5 = Exhausted dialogue while the Plasmium Phial is full
+| Title1_Dialogue5 = Keep using the Plasmium Phial, and enjoy all the wonderful effects it has on your body. Once your Plasmium reserve runs dry, visit me again.<br>
+I'll charge a few rosaries for refills, but you can be confident that every bead goes towards our vital studies!
+| Title1_Event6 = Playing the [[Needolin]]
+| Title1_Dialogue6 = [n]Heal all wounds...<br>
+Escape even death...<br>
+All secrets, all knowledge...<br>
+Plasmium, potent, pure!
+
+| Title2 = Alchemist's Assistant
+| Title2_Event1 = Getting offered the wish
+| Title2_Dialogue1 = <b>If Hornet has not found [[Zango]]:</b><br>
+Oho? You linger here still? Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? <br>
+Then join me, you must! A new assistant is needed. Together we shall unlock the secrets of this wondrous substance!
+<hr/>
+<b>If Hornet has found Zango:</b><br>
+{{HTalk|I am curious about the equipment you have here, and the blue liquid contained within. What study consumes you?}}<br>
+Ahh yes! So this miraculous substance intrigues you too! A wonder beyond wonders, miracle made material!<br>
+Plasmium! A naturally occurring elixir with no equal! It heals wounds and strengthens shells! I suspect it can even defy death itself!<br>
+{{HTalk|Plasmium, you call it? I have encountered its like before, or else a substance of remarkable similarity...}}<br>
+Highly unlikely! The grey and barren soil of the mainland could never produce something as singular as this, and that is undisputable fact!<br>
+Plasmium was discovered by my master at the farthest edge of Pharloom, hidden deep in salt-stricken waters. I brought it to these caves under her direction, to study how it flourishes in a foreign place.<br>
+Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? Would you assent then, to assisting me in my studies?
+<hr/>
+<b>In Act 3:</b><br>
+Assistant... You will help, yes? The buds have ripened... The Plasmium harvest can begin...
+| Title2_Event2 = Declining the wish
+| Title2_Dialogue2 = <b>Before Act 3:</b><br>
+You would refuse?! There is much work to be done, and it is all so achingly slow when I have no aid!
+<hr/>
+<b>In Act 3:</b><br>
+You decline, Assistant? You cannot. The buds... The harvest. It must occur... For the source, and your saving...
+| Title2_Event3 = Speaking after declining
+| Title2_Dialogue3 = <b>Before Act 3:</b><br>
+Plasmium is a marvel of nature! And a new assistant is sorely needed. Together, let us unlock its secrets!
+<hr/>
+<b>In Act 3:</b><br>
+Assistant... You will help, yes? The buds have ripened... The Plasmium harvest can begin...
+| Title2_Event4 = Accepting the wish
+| Title2_Dialogue4 = <b>If Hornet has not found Zango:</b><br>
+Excellent! With two bugs at the task, the rate of discovery shall greatly increase!<br>
+Now! Before he up and vanished, my previous assistant seeded the warrens below with Plasmium buds.<br>
+The buds should be ripening as we speak, and the nectar within must be extracted before they reach maturity.<br>
+With the right tool in claw, collecting the nectar is an easy process. I'll even lend you my own Needle Phial for the job.<br>
+Once you locate a bud, simply charge the Phial until readied, then release its needle into a bud's core. Do it right, and it'll suck out the nectar in one clean pop!<br>
+Return them to me when you've retrieved the necessary samples. With the right nectar, and the right testing, Plasmium can reveal even more of its wondrous properties!
+<hr/>
+<b>If Hornet has found Zango:</b><br>
+Excellent! With two bugs at the task, the rate of discovery shall greatly increase!<br>
+Now! Before he went and died, my previous assistant seeded the warrens below with Plasmium buds.<br>
+The buds should be ripening as we speak, and the nectar within must be extracted before they reach maturity.<br>
+With the right tool in claw, collecting the nectar is an easy process. I'll even lend you my own Needle Phial for the job.<br>
+Once you locate a bud, simply charge the Phial until readied, then release its needle into a bud's core. Do it right, and it'll suck out the nectar in one clean pop!<br>
+Return them to me when you've retrieved the necessary samples. With the right nectar, and the right testing, Plasmium can reveal even more of its wondrous properties!
+<hr/>
+<b>In Act 3:</b><br>
+Ahhhh. Yes... Assistant. So loyal... Take the Needle Phial... find the buds below. They are ripe...<br>
+Charge the Phial to full strength... Pierce them deep... Extract that Pure Plasmium.<br>
+This shell shall become what you need it to be... Plasmium can cure all.
+| Title2_Event5 = Speaking before acquiring all the [[Plasmium]] samples
+| Title2_Dialogue5 = <b>Before Act 3:</b><br>
+Assistant! You're still dallying about here? I've an eager need for pure Plasmium, fresh from the bud.<br>
+Just one fully charged stab of my Needle Phial straight into a ripe bud! You'll suck the Plasmium right up!<br>
+Now, pop down into those worm warrens and extract it for me! What could possibly be more important?
+<hr/>
+<b>In Act 3:</b><br>
+Bring the Pure Plasmium. It must be tested... ingested.<br>
+Ready the Needle Phial to full charge... Strike deep the ripened buds. Return that precious liquid life to me... Assistant.
+| Title2_Event6 = Speaking after acquiring all the samples
+| Title2_Dialogue6 = <b>Before Act 3:</b><br>
+Assistant! How goes your work? Have you extracted a sufficient amount of Plasmium for me?
+<hr/>
+<b>In Act 3:</b><br>
+The Pure Plasmium... you have it. I can... smell it on you.
+| Title2_Event7 = Declining to hand over the samples and the Needle Phial
+| Title2_Dialogue7 = <b>Before Act 3:</b><br>
+Are you so enchanted by the Plasmium that you will not part with it? You are more like that dolt Zango than I first thought!<br>
+Its enlightenings are beyond your meagre mind! Give me the phial, assistant, or the deeper secrets of this substance will never be revealed!
+<hr/>
+<b>In Act 3:</b><br>
+Ahhhh... Assistant... greed was ever your greatest failing. Do not guard your discoveries so jealously...
+| Title2_Event8 = Accepting to hand over the samples and the Needle Phial
+| Title2_Dialogue8 = <b>Before Act 3:</b><br>
+Ahh, and exactly the required amount! A satisfactory effort, assistant!<br>
+With this pure Plasmium extract, I may finally come to understand this wondrous substance.<br>
+Since you have proven yourself a capable assistant, take this delightful implement of my own invention, a Plasmium Phial.<br>
+With it, you can inject precious Plasmium straight into your body. Almost painlessly!<br>
+{{HTalk|Your tool certainly looks sharp enough to pierce my shell, sir, but why should I want to do so?}}<br>
+Because filling your body with Plasmium is so beneficial! It protects you from harm! And it feels so exquisitely good!<br>
+My assistant and I have been injecting Plasmium into the local flora and fauna since we arrived. No ill effects have been observed, and so we can conclude that the process is utterly, completely safe.<br>
+Keep using the Plasmium Phial, and enjoy all the wonderful effects it has on your body. If you ever run out of Plasmium, visit me again.<br>
+I'll charge a few rosaries for refills, but you can be confident that every bead goes towards our vital studies!
+<hr/>
+<b>In Act 3:</b><br>
+{{HTalk|I have retrieved the Pure Plasmium, as requested. Know that, in your current state, I feel some reservation passing it to you.}}<br>
+{{HTalk|This path your research takes... The final result may not be pleasant.}}<br>
+Pure Plasmium? No... Assistant... You must not doubt... It is precious. Perfect. It was needed... You have done well. As always...<br>
+Now. Share the discovery... Take this Plasmium Phial... Plunge it deep. Feel its vigour soak your shell...<br>
+If more is needed... If the Plasmium runs dry... return. Visit me again... That you may live, long... my loyal assistant.
+
+| Title3 = Act 3
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Ohhhhh... Assistant? Is that you?... You return at last, my friend?<br>
+{{HTalk|Sir, you are in a disturbing state. This substance sprouts from within your shell. Time will see it consume you entirely. Would you seek aid?}}<br>
+No... No... Assistant... you are confused. A wonderful thing, we become. The Plasmium, our great research... We have progressed.<br>
+The research must continue. Soon... I shall become a source.
+| Title3_Event2 = Before offering the <i>[[Advanced Alchemy]]</i> wish
+| Title3_Dialogue2 = These lands have taken the Plasmium well... the soil has drunk it deep, and the creatures bloom so beautifully... have you seen them?<br>
+{{HTalk|The effect of your Plasmium on the beasts here is all too evident. Great change has been inflicted upon them.}}<br>
+{{HTalk|There is an echo also of other infections I have witnessed. I wonder at the meaning of it all... or if I am perhaps imagining similarities where there are none.}}<br>
+Assistant, ahhh... you grow more inquisitive... We both seek deeper insight...<br>
+Could we... peer deeper inside somehow...? Let us think on it...
+| Title3_Event3 = Speaking while having a used [[Plasmium Phial]]
+| Title3_Dialogue3 = Aahhh... and you have been using your Plasmium... good. Let me replenish your reserve...
+| Title3_Event4 = Declining the refill
+| Title3_Dialogue4 = Do you fear the Plasmium, even now? Ahhh... Assistant... open your mind to the possibilities...
+| Title3_Event5 = Accepting the refill
+| Title3_Dialogue5 = There... more. Let it seep deep into your shell... do not begrudge the pain...
+| Title3_Event6 = Exhausted dialogue while the Plasmium Phial is full
+| Title3_Dialogue6 = For you... dear assistant... drink deep my liquid life...
+| Title3_Event7 = Playing the [[Needolin]] for Zylotol's remains
+| Title3_Dialogue7 = [n]...Life for all...<br>
+...Life for you...<br>
+...A source...<br>
+...Dear one...
+
+| Title4 = Advanced Alchemy
+| Title4_Event1 = Getting offered the wish
+| Title4_Dialogue1 = Assistant... to learn more of Plasmium's wonders... I know what we must do... <br>
+The bugs below... who have imbibed the substance... and evolved... their bodies are full with Plasmified Blood...<br>
+You must use the Needle Phial and extract this precious nectar... only by scrutinising it... can we attain higher knowledge...
+| Title4_Event2 = Declining the wish
+| Title4_Dialogue2 = What fear arrests you...? This must be done... or we will never learn the deeper truth... Never become what is needed...
+| Title4_Event3 = Speaking after declining
+| Title4_Dialogue3 = The bugs below who have imbibed the substance and evolved... their bodies are filled with Plasmified Blood...<br>
+You must use the Needle Phial and extract this precious nectar... only by scrutinising it... can we attain higher knowledge...
+| Title4_Event4 = Accepting the wish
+| Title4_Dialogue4 = Ahhhh. Yes... Assistant. So loyal... Take the Needle Phial... find the plasmified bugs below...<br>
+Charge the Phial to full strength... Pierce them deep... Extract their Plasmified Blood.<br>
+Once we have it... we can peer deeper... learn more... enlighten ourselves fully...
+| Title4_Event5 = Speaking before acquiring all the [[Plasmified Blood]]
+| Title4_Dialogue5 = Ready the Needle Phial... find the plasmified bugs below...<br>
+Charge the Phial to full strength... Pierce them deep... Extract the Plasmified Blood...
+| Title4_Event6 = Speaking after acquiring all the Plasmified Blood
+| Title4_Dialogue6 = Assistant, that odour... aahhh... you have the Plasmified Blood...
+| Title4_Event7 = Refusing to hand over the Plasmified Blood and the [[Plasmium Phial]]
+| Title4_Dialogue7 = Leave your fear behind... Cast it off like an old shell. Give me what I need...
+| Title4_Event8 = Accepting to hand over the Plasmified Blood and the Plasmium Phial
+| Title4_Dialogue8 = {{HTalk|Take it, sir, though what insight it will grant you I cannot say.}}<br>
+Have faith, dear assistant... After all this I understand... the greatest knowledge comes only from faith... faith in Plasmium.<br>
+This blood you have collected... sparkles... I see it! A glorious form... a glorious future, shimmering back at us...<br>
+Through consumption of the blood... we shall at last attain enlightenment...<br>
+For your reward... take the gland from within my shell... my gift to you.<br>
+I have no more need of it... and it shall grant you... unending reserves of Plasmium...<br>
+Yes... Plasmium. Pure... beautiful... Plasmium...
+}}
+
+== Location ==
+Alchemist Zylotol is found in a room within the upper [[Wormways]], requiring [[Cling Grip]] to access.
+
+{{Gallery
+|Image1 = Mapshot SS Alchemist Zylotol 01.png!Location in the Wormways
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Wormways 04.png!Idle
+|Image2 = Screenshot SS Alchemist Zylotol 01.png!Singing
+|Image3 = Screenshot SS Wormways 08.png!Plasmified
+|Image4 = Screenshot SS Alchemist Zylotol 03.png!Speaking with Hornet
+|Image5 = Screenshot SS Alchemist Zylotol 04.png!Hornet taking Plasmium Gland
+|Image6 = Screenshot SS Alchemist Zylotol 02.png!Without the gland
+|Image7 = Screenshot SS Wormways 05.png!Catatonic
+}}
+
+== Trivia ==
+* In [[Act 3]], Alchemist Zylotol does not respond to the [[Needolin]] before or during the <i>Advanced Alchemy</i> wish. He only reacts after collapsing once the wish is fully completed.
+** He also does not react when Hornet hits the ground near him or taunts like other NPCs do.
+* Alchemist Zylotol originally had two additional wishes, with their [[Cut Content (Silksong)/Text#Alchemist Zylotol|dialogue still in the files]], that required the collection of "mossblood" from [[Moss Grotto]] and "muckblood" from [[Bilewater]].
+
+{{Localisation
+|DEname = Alchemist Zylotol
+|DEmeaning = —
+|ESname = Alquimista Zylotol
+|ESmeaning = Alchemist Zylotol
+|FRname = Alchimiste Zylotol
+|FRmeaning = Alchemist Zylotol
+|ITname = Alchimista Zylotol
+|ITmeaning = Alchemist Zylotol
+|JAname = 錬金術師ジロトル
+|JAromanised = Renkinjutsushi jirotoru
+|JAmeaning = Alchemist Zylotol
+|KOname = 연금술사 지로톨
+|KOromanised = Yeongeumsulsa jirotol
+|KOmeaning = Alchemist Zylotol
+|PTname = Alquimista Zylotol
+|PTmeaning = Alchemist Zylotol
+|RUname = Алхимик Зилотол
+|RUromanised = Alximik Zilotol
+|RUmeaning = Alchemist Zylotol
+|TWname = 鍊金術士奇洛托
+|TWromanised = Liànjīn shùshì qíluòtuō
+|TWmeaning = same
+|ZHname = 炼金术士奇洛托
+|ZHromanised = Liànjīn shùshì qíluòtuō
+|ZHmeaning = Alchemist Zylotol
+|CODEname = BLUE_SCIENTIST
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

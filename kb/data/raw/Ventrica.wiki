@@ -1,0 +1,169 @@
+{{Nav Games Header}}
+<b>Fast Travel</b> refers to methods of instantly travelling directly from one [[Areas (Silksong)|area]] to another. Throughout the game, [[Hornet (Silksong)|Hornet]] encounters three main methods of fast travel: Bellways, Ventrica, and the Beastling Call.
+
+== Bellways ==
+The Bellways are an interconnected system of tunnels throughout [[Pharloom]] that link different areas together via stations. Hornet can traverse the Bellways with the help of the [[Bell Beast]] after freeing and defeating her in [[the Marrow]].
+
+Most stations require activating a toll machine with [[Rosaries]].
+
+A set of Bellway Pins may be purchased from [[Shakra]] for {{R|60}}, which mark the location of every discovered Bellway station on any maps.
+
+{{Gallery
+|Image1 = Bellways.png!Travel menu map
+|Image2 = Mapshot SS Bell Beast 02.png!All Bellways in Pharloom
+}}
+
+{| class="article-table" width="50%"
+! colspan="2" | {{Typography|tag=p|style=margin-top: .5rem;|type=h3|text=Locations and Prices}}
+|-
+! Name
+! Cost
+|-
+! [[Bone Bottom]]
+| align="center" | N/A<ref name=a>Becomes available when the Bell Beast is defeated.</ref>
+|-
+! [[The Marrow]]
+| align="center" | N/A<ref name=a />
+|-
+! [[Deep Docks]]
+| align="center" | {{R|40}}
+|-
+! [[Far Fields]]
+| align="center" | {{R|40}}
+|-
+! [[Greymoor]]
+| align="center" | {{R|60}}
+|-
+! [[Bellhart]]
+| align="center" | {{R|60}}
+|-
+! [[Shellwood]]
+| align="center" | {{R|40}}
+|-
+! [[Blasted Steps]]
+| align="center" | {{R|60}}
+|-
+! [[The Slab]]
+| align="center" | {{R|40}}
+|-
+! [[Grand Bellway]]
+| align="center" | {{R|80}}
+|-
+! [[Bilewater]]
+| align="center" | {{R|80}}
+|-
+! [[Putrified Ducts]]
+| align="center" | {{R|80}}
+|-
+| colspan="2" | <references />
+|}
+
+== Ventrica ==
+The Ventrica are a system of tubes that run throughout [[the Citadel]] and the [[Underworks]], which Hornet can use to travel, similar to the Bellways. The [[Grand Bellway]] station connects the two systems of travel.
+
+Most stations require activating a toll machine with [[Rosaries]].
+
+After unlocking the first Ventrica Station and speaking to [[Shakra]], a set of Ventrica Pins may be purchased for {{R|80}}, which marks the location of every discovered Ventrica Station on any maps.
+
+[[File:Ventrica Map.png|right|300x300px]]
+{| class="article-table" width="50%"
+! colspan="2" | {{Typography|tag=p|style=margin-top: .5rem;|type=h3|text=Locations and Prices}}
+|-
+! Name
+! Cost
+|-
+! [[The Cradle#Sub-area: Terminus|Terminus]]
+| align="center" | N/A<ref>Becomes available when any other Ventrica Station is unlocked, or free to access if it is the first station encountered.</ref>
+|-
+! [[Memorium]]
+| align="center" | {{R|80}}
+|-
+! [[High Halls]]
+| align="center" | {{R|80}}
+|-
+! [[Songclave|First Shrine]]
+| align="center" | {{R|80}}
+|-
+! [[Choral Chambers]]
+| align="center" | {{R|80}}
+|-
+! [[Choral Chambers#Sub-area: Grand Bellway|Grand Bellway]]
+| align="center" | {{R|80}}
+|-
+! [[Underworks]]
+| align="center" | {{R|80}}
+|-
+| colspan="2" | <references />
+|}
+
+== Beastling Call ==
+{{Main|Beastling Call}}
+The Beastling Call is a [[Needolin]] [[Abilities (Silksong)|ability]] gained from the Bell Beast after defeating [[Bell Eater]]. It allows Hornet to quickly warp to her most recently used Bellway station.
+
+== Achievements ==
+{{Achievement|game=silksong|Liberated}}
+{{Achievement|game=silksong|Connected}}
+{{Achievement|game=silksong|Transported}}
+{{Achievement|game=silksong|Bonded}}
+
+== Gallery ==
+=== Bellways ===
+{{Gallery
+| Image1 = Screenshot SS Bell Beast 05.jpeg!Bell Beast
+|Image2=Bellway Bonebottom.png!Station in [[Bone Bottom]]
+|Image3=Bellway Marrow.png!Station in [[the Marrow]]
+|Image4=Bellway, Deep Docks.png!Station in the [[Deep Docks]]
+|Image5=Screenshot SS Far Fields 01.png!Station in the [[Far Fields]]
+|Image6=Bellway Greymoor.png!Station in [[Greymoor]]
+|Image7=Screenshot SS Bellhart 03.png!Station in [[Bellhart]]
+|Image8=Screenshot SS Shellwood 03.png!Station in [[Shellwood]]
+|Image9=Bellway BlastedSteps.png !Station in the [[Blasted Steps]]
+|Image10=Bellway Slab.png!Station in [[the Slab]]
+|Image11=Screenshot SS Choral Chambers 01.png!Grand Bellway in the [[Choral Chambers]]
+|Image12=Bellway Bilewater.png!Station in [[Bilewater]]
+|Image13=Bellway PutrifiedDucts.png!Station in the [[Putrified Ducts]]
+|Image14=Screenshot SS Bell Eater 18.png!Modded screenshot of [[Bell Eater]]'s arena
+|Image15 = Screenshot SS Fast Travel 01.png!Bellway sign
+|Image16=Bellway Unlock Melody.ogg!Bellway unlock melody
+}}
+
+===Ventrica===
+{{Gallery
+|Image1 = Screenshot SS Fast Travel 02.png![[Terminus]] Ventrica
+|Image2 = Screenshot SS Fast Travel 03.png![[Memorium]] Ventrica
+|Image3 = Screenshot SS Fast Travel 04.png![[High Halls]] Ventrica
+|Image4 = Screenshot SS Fast Travel 05.png![[First Shrine]] Ventrica
+|Image5 = Screenshot SS Fast Travel 06.png![[Choral Chambers]] Ventrica
+|Image6 = Screenshot SS Fast Travel 07.png!Grand Bellway Ventrica
+|Image7 = Screenshot SS Fast Travel 08.png![[Underworks]] Ventrica
+|Image8 = Screenshot SS Fast Travel 09.png!Ventrica sign
+}}
+
+==Trivia==
+* While [[Mount Fay]] lacks a Bellway, the western building with the [[Bench (Silksong)|bench]] is internally referred to as one.
+* There are many [[Cut Content (Silksong)/Graphics|unused graphics]] still in the game related to both Bellways and Ventrica, including unused map segments.
+* If the First Shrine Ventrica is not locked at the start of Act 3, it becomes blocked off, but can be opened again from the inside by destroying the rubble. However, the Terminus Ventrica is permanently disconnected from the rest of [[the Cradle]].
+
+{{Gallery
+|Image1= Screenshot SS Fast Travel 10.png!Blocked First Shrine Ventrica from the inside
+|Image2= Screenshot SS Fast Travel 11.png!Blocked First Shrine Ventrica from the outside
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Slight reduction in mid-game Bellway prices:
+*[[Deep Docks]]: 50 to 40.
+*[[Far Fields]]: 50 to 40.
+*[[Greymoor]]: 80 to 60.
+*[[Bellhart]]: 80 to 60.
+*[[Shellwood]]: 60 to 40.
+*[[Blasted Steps]]: 80 to 60.
+*[[The Slab]]: 50 to 40.
+*[[Choral Chambers]]: 120 to 80.
+*[[Putrified Ducts]]: 120 to 80.
+}}
+{{Refs|hr=ss}}
+
+[[fr:Voyage Rapide (Silksong)]]
+[[pt:Viagem Rápida (Silksong)]]
+
+[[Category:Exploration (Silksong)]]

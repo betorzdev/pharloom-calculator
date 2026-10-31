@@ -1,0 +1,108 @@
+{{SS Infobox NPC
+| area = [[Bellhart]]
+| affiliation = Bellhart (Resident)
+| role = Lore
+| singnum = 2
+}}
+{{Quote
+|Shellwood's grown more dangerous in recent times, but I'm a lifelong catcher, right down to my core. Ain't nothing that'll change that. 
+|Pondcatcher Reed
+|Hr=SS}}
+
+<b>Pondcatcher Reed</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They provide information on [[Bellhart]] and [[Shellwood]].
+
+== Background ==
+<b>Pondcatcher Reed</b> is a Bellhart resident and the last [[Pondcatcher]] that has not fallen to the [[Haunting]].<ref>Pondcatcher Reed: <i>"I'm a pondcatcher around these parts. The last remaining, in fact!"</i></ref> They venture out into Shellwood to hunt food for the other Bellhart residents.<ref>{{HTalk|"Are you a hunter, of a sort?"}}<br>Pondcatcher Reed: <i>"Of a simple sort, aye ... Us few Bellharters are badly needing for fresh food, so my lone shell's carrying quite the responsibility."</i></ref>
+
+Pondcatcher Reed can be found either wandering the streets of Bellhart, or making their way to or from Shellwood.
+
+== In-game Events ==
+When [[Hornet (Silksong)|Hornet]] first arrives in Bellhart, Pondcatcher Reed is seen suspended in the air by silk threads, alongside several other residents. After [[Widow]] is defeated, Pondcatcher Reed is freed and becomes an NPC in town.
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter (in either Bellhart or Shellwood)
+| Title1_Dialogue1 = {{HTalk|You seem hard at work, good bug. Are you a hunter, of a sort?}}<br>
+Of a simple sort, aye. I'm a pondcatcher around these parts. The last remaining, in fact!<br>
+Us few Bellharters are badly needing for fresh food, so my lone shell's carrying quite the responsibility.<br>
+At least Shellwood Pond's still full of good meat, 'specially if your aim with a longpin's as good as mine.<br>
+| Title1_Event2 = Exhausted dialogue in Bellhart
+| Title1_Dialogue2 = <b>Line 1:</b><br>
+You've met Frey, miss? She's usually stocking useful items for travellers such as yourself.
+<hr/>
+<b>Line 2:</b><br>
+Bellhart's lost much of its lustre, but we still offer some comfort to the pilgrims who climb this high.
+<hr/>
+<b>Line 3:</b><br>
+If you're heading out across the pond, be wary of the other catchers. They're all long lost to Pharloom's Haunting.<br>
+Weak minds, the lotta them. Still, their longpins remain sharp enough.
+| Title1_Event3 = Exhausted dialogue in Shellwood
+| Title1_Dialogue3 = <b>Line 1:</b><br>
+Just passing through these lands, are you, miss? I'd warn you not to stray far from Bellhart, but you've the look of one who can manage themself.
+<hr/>
+<b>Line 2:</b><br>
+Shellwood's grown more dangerous in recent times, but I'm a lifelong catcher, right down to my core. Ain't nothing that'll change that.
+| Title1_Event4 = Playing the [[Needolin]]
+| Title1_Dialogue4 =
+[n]Gleaming rest...<br>
+Almost there...<br>
+Still alive...<br>
+For the pilgrims, many...<br>
+We serve, selfless...<br>
+We serve, safe...
+}}
+
+== Location ==
+After [[Widow]] is defeated, Pondcatcher Reed can occasionally be seen in [[Bellhart]]. They can also occasionally be found in [[Shellwood]], travelling to and from Bellhart's western entrance.
+
+After reaching Act 3, Pondcatcher Reed will no longer appear.
+
+==Creation and Development==
+{{Main|Cut Content (Silksong)/NPCs#Pondcatcher Reed}}
+Despite being a minor character in the final release build of <i>Silksong</i>, Pondcatcher Reed went through numerous reworks throughout development. When first seen in the February 2019 <i>Silksong</i> reveal trailer, they wore a grey cloak and had no nostrils, and another screenshot released by ''IGN'' in May 2025 showcases them wearing a brown cloak. Pondcatcher Reed also was planned to appear to the left of the bench in Bellhart in [[Act 3]], but this appearance was removed. They also have numerous cut animations with the internal label of <code>in_house</code>, implying that they had a house earlier in development.
+
+==Gallery==
+{{Gallery
+|Image1= Screenshot SS Pondcatcher Reed 01.png!Pondcatcher Reed in Haunted Bellhart
+|Image2= Screenshot SS Pondcatcher Reed 02.png!Pondcatcher Reed outside Frey's store
+|Image3= Screenshot SS Pondcatcher Reed 03.png!Pondcatcher Reed flying off into Bellhart
+|Image4= Screenshot SS Pondcatcher Reed 04.png!Pondcatcher Reed coming down in Bellhart
+|Image5= Screenshot SS Pondcatcher Reed 05.png!Pondcatcher Reed on the path between Shellwood and Bellhart
+|Image6= Screenshot SS Pondcatcher Reed 06.png!Pondcatcher Reed flying off into Shellwood
+|Image7= Screenshot SS Pondcatcher Reed 07.png!Pondcatcher Reed singing
+}}
+
+==Trivia==
+* [[Pavo]], [[Frey]] and Pondcatcher Reed share the same Needolin dialogue.
+* Pondcatcher Reed can occasionally be spotted flying away in the distant background of Shellwood.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Fixed Pondcatcher Reed not being able to fly away after singing.
+}}
+{{Localisation
+|DEname = Teichfänger Schilf
+|DEmeaning = Pond Catcher Reed
+|ESname = Cazadora de los Estanques Junco
+|ESmeaning = Huntress of the Ponds Reed
+|FRname = Pêcheur d'étang Reed
+|FRmeaning = Pond Fisher Reed (masucline)
+|ITname = Fiocinante Carice
+|ITmeaning = Harpooner Carex<br><small><i>[[wikipedia:Carex|Carex]]</i> is a genus of plants commonly found around ponds and wetlands.</small>
+|JAname = 池釣り師リード
+|JAromanised = Ike tsurishi rīdo 
+|JAmeaning = Pond Fisher Reed
+|KOname = 연못의 낚시꾼 리드
+|KOromanised = Yeonmosui naksikkun rideu
+|KOmeaning = Fisher of the Pond Reed
+|PTname =  Pescadora-do-lago
+|PTmeaning = Fisher of the Lake (feminine)
+|RUname = Тростинка-прудоловка
+|RUromanised = Trostinka-prudolovka
+|RUmeaning = Pond Catcher Reed
+|ZHname = 渔夫 里德
+|ZHromanised = Yúfū lǐdé
+|ZHmeaning = Fisher Reed
+|CODEname = FISHER_NPC
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

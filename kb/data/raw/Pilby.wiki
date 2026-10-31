@@ -1,0 +1,213 @@
+{{SS Infobox NPC
+| area = [[Bone Bottom]] <br> [[Pilgrim's Rest]]
+| role = Lore
+| affiliation = Pilgrims
+| aka = Little Pilgrim
+|singnum = 1
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Pilby's audio files.</ref>
+}}{{Quote|Hr=SS|Tr=SS|Rest here with me as long as you like. I'm not ready to leave yet, and a little company is always nice.|Pilby}}
+
+<b>Pilby</b> (initially known as <b>Little Pilgrim</b>) is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. 
+
+== Background ==
+Pilby is one of the many pilgrims who arrived in [[Bone Bottom]] to start his pilgrimage to [[the Citadel]], found resting before setting out on his journey.<ref>Pilby: <i>"Guided by faith, we climb through flaming fields, across rolling moors, and up great gilded steps. All to reach that eternal, shining Citadel. Once I'm good and ready, I'll make the climb myself..."</i></ref><ref>Pilby: <i>"Rest here with me as long as you like. I'm not ready to leave yet, and a little company is always nice."</i></ref>
+
+== In-Game Events ==
+Pilby can first be found in [[Bone Bottom]] and is initially known as Little Pilgrim. After meeting [[Shakra]] for the first time, [[Hornet (Silksong)|Hornet]] can warn Pilby about the camp's poor condition as the lands around turn deadly, and ask why pilgrims undertake such a dangerous journey at all.<ref>Hornet and Pilby dialogue: <br><i>Hornet: "This camp seems in poor condition, good bug. With the lands around turning deadly, I'd worry for its safety."<br>Pilby: "Aye. We surely aren't seeing its finest moment, but this place has been serving us passing bugs for as long as any can remember. It's faith, you see! All those pilgrims, now and past. Our devotion holds it together. The camp'll remain, and provide, no matter the troubles."</i></ref><ref>Hornet and Pilby dialogue: <br><i>Hornet: "I wonder, little pilgrim. What calls you and your fellows up to the Citadel? If the way is dangerous, why take the journey at all?"<br>Pilby: "Strange question to be asking of a pilgrim. Our holy land calls on us. To journey up is our greatest task. Who are we to refuse? Guided by faith, we climb through flaming fields, across rolling moors, and up great gilded steps. All to reach that eternal, shining Citadel. Once I'm good and ready, I'll make the climb myself..."</i></ref> Pilby acknowledges the camp's troubles but insists that faith and devotion hold it together, and that journeying up to [[the Citadel]] is the pilgrims' greatest task, one they are not to refuse.
+
+As Hornet progresses further, Pilby notices that she keeps returning to Bone Bottom, unusual behaviour for a pilgrim.<ref>Pilby: <i>"Hm? I recognise you. You've returned to the camp, then? Are you a pilgrim, or just a wanderer?"</i></ref> He uses these visits as an opportunity to ask about the world beyond the camp, confirming rumours he has heard.<ref>Pilby: <i>"Must be terrifying out there, beyond the settlement. Nothing but monsters and madness lurking in the darkness. I've heard tales of a safe place, though. Just up above here, where the moss paints the stones green, there's an old village. Bit of a holy place, apparently, well protected."</i></ref><ref>Pilby: <i>"Been hearing awful whispers in camp, about pilgrims driven mad by the hardships of the climb, crying out and attacking their fellows. You've been out there. Tell me, is it really so?"</i></ref> After Hornet visits saved [[Bellhart]], Pilby remarks that her travels have taken her far and admits he feels ashamed for tarrying so long in one place.<ref>Hornet and Pilby dialogue: <br><i>Pilby: "Your travels have taken you far, haven't they? While I'm yet to even start my journey. Shameful behaviour for a pilgrim, really, to tarry here so long." <br>Hornet: "I see no shame in it, sir. Your life is your own, and need not be squandered at the ghostly call of the Citadel. Journey out for your own sake, or not at all."<br>Pilby: "Heh... you truly aren't a pilgrim, that's for certain. That's blasphemy, spoken with friendly intentions or not. And yet... I don't recoil from what you say. Perhaps I'm not much of a pilgrim either."</i></ref> Hornet disagrees, telling him that his life is his own and need not be squandered at the ghostly call of the Citadel, and that he should journey for his own sake, or not at all. Pilby notes that while her words border on blasphemy, he does not recoil from them, and wonders whether he is truly much of a pilgrim after all.
+
+If Hornet has had all five prior conversations with him, Pilby shares his name upon speaking again and says it has been nice spending time with her.<ref>Hornet and Pilby dialogue: <br><i>Pilby: "Never shared my name with you, did I? Awfully remiss of me. It's Pilby. Been nice spending time with you, miss." <br>Hornet: "Likewise, sir. It's been some time since I had such ample opportunity for friendly conversation. My name is Hornet. It is good to be properly acquainted at last."<br>Pilby: "Hornet, eh? Strong name, that. It certainly suits you, miss. Heh heh..."</i></ref> Hornet reciprocates, introducing herself and noting that it has been some time since she had such ample opportunity for friendly conversation. His name card, previously reading "Little Pilgrim", changes to "Pilby."
+
+After slaying the first [[Skull Tyrant]], sitting on the [[Bench (Silksong)|bench]] in Bone Bottom can cause a Skull Tyrant to attack the settlement if certain conditions are met. If this occurs during [[Act 1]], Pilby is killed by the Skull Tyrant, and a funeral for him is held after the Bone Bottom bench is repaired. The [[Solemn Pilgrim]] leads the funeral, with differing dialogue depending on whether Hornet learned Pilby's name or not. If the Skull Tyrant attack does not occur before the start of [[Act 2]], Pilby leaves Bone Bottom. If Hornet had never spoken with him by that point, Pilby does not appear for the rest of the game.
+
+Pilby arrives at [[Pilgrim's Rest]] if the following conditions are met:<ref group=code><code>GameManager.TimePasses()</code> checks various flags and sets <code>pilbyInsidePilgrimsRest</code>.</ref>
+* Hornet has talked with Pilby in Bone Bottom.
+* Hornet has either learned the [[Threefold Melody]] and unlocked the lift to [[the Cradle]] (without having to ascend it), or received the [[Faydown Cloak]].
+* The [[Rhinogrund]] behind the gate to the east of Pilgrim's Rest is either still locked behind the gate, has been killed before the gate is opened, or the door mechanism to Pilgrim's Rest is intact.
+
+Pilby is glad to see Hornet and eagerly tells her about everything he saw on the way,<ref>Hornet and Pilby dialogue: <br><i>Pilby: "Ah, hello again! What a blessing to see a familiar face on this treacherous climb." <br>Hornet: "Greetings, sir. I see you have begun your pilgrimage, or else set out for your own sake. Either way, I am glad to see you here unharmed."<br>Pilby: "Not quite unharmed... I've suffered my share of scrapes and burns. That's just the nature of the journey, I suppose. But I've seen so much! Great metal structures and vast scorched fields! The grandeur of it all is humbling indeed, even for one like me who was so humble to begin with."</i></ref> also sharing his name if Hornet has not learned it previously. He mentions that he will continue his pilgrimage after resting, and looks forward to what else lies ahead.<ref>Pilby: <i>"I've a long way to go, and much more to see. For now though, let's just rest a little while, eh?"</i></ref>
+
+If the mechanism for the door to Pilgrim's Rest is broken, Pilby is found inside the building, so long as the Rhinogrund has not been released.
+
+If Pilby is inside Pilgrim's Rest and Hornet opens the gate to release the Rhinogrund, but leaves the room before it exits, both Pilby and the Rhinogrund appear inside the building upon returning after resting on a bench in another area. The Rhinogrund can kill Pilby on contact, but since the Rhinogrund attacks the counter [[Mort]] is cowering behind until provoked by Hornet, it is possible to prevent Pilby's death and interact with him as usual.
+
+Once seen, Pilby departs Pilgrim's Rest after Hornet rests on a bench outside the [[Far Fields]].
+
+{{TabbedDialogue
+|Title1 = Bone Bottom
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = <b> If Hornet has not met [[Shakra]]:</b><br>
+Hm? A fellow pilgrim, are you? About to start your great journey to the holy Citadel up top?<br>
+{{HTalk|I am no pilgrim, sir, though it seems we will be travelling a similar path.}}<br>
+Not a pilgrim? Well, it makes no difference, I suppose. We all must walk the roads, up and up, though most of us will fall long before we see the grand gates.<br>
+If you're wise, you'll stop here and rest a while before heading out into that dangerous world...
+<hr/>
+<b>If Hornet has met Shakra:</b><br>
+Hm? I recognise you. You've returned to the camp, then? Are you a pilgrim, or just a wanderer?<br>
+{{HTalk|I am no pilgrim, sir, though I have travelled their paths.}}<br>Not a pilgrim? Well, it makes no difference, I suppose. We all must walk the roads, up and up, though most of us will fall long before we see the grand gates.<br>
+If you're wise, you'll stop here and rest a while before heading back out into that dangerous world...<br>
+
+|Title1_Event2 = Speaking again if Shakra has been met<b>*</b>
+|Title1_Dialogue2 = {{HTalk|This camp seems in poor condition, good bug. With the lands around turning deadly, I'd worry for its safety.}}<br>
+Aye. We surely aren't seeing its finest moment, but this place has been serving us passing bugs for as long as any can remember.<br>It's faith, you see! All those pilgrims, now and past. Our devotion holds it together. The camp'll remain, and provide, no matter the troubles.
+
+|Title1_Event3 = Speaking again before obtaining the [[Silkspear]]<b>*</b>
+|Title1_Dialogue3 = {{HTalk|I wonder, little pilgrim. What calls you and your fellows up to the Citadel? If the way is dangerous, why take the journey at all?}}<br>
+Strange question to be asking of a pilgrim. Our holy land calls on us. To journey up is our greatest task. Who are we to refuse?<br>Guided by faith, we climb through flaming fields, across rolling moors, and up great gilded steps. All to reach that eternal, shining Citadel.<br>Once I'm good and ready, I'll make the climb myself...
+
+|Title1_Event4 = Speaking again after getting the Silkspear and before getting [[Swift Step]]<b>*</b>
+|Title1_Dialogue4 = Must be terrifying out there, beyond the settlement. Nothing but monsters and madness lurking in the darkness.<br>
+I've heard tales of a safe place, though. Just up above here, where the moss paints the stones green, there's an old village. Bit of a holy place, apparently, well protected.<br>
+{{HTalk|I've visited the settlement you speak of. It was built around a burial spire, corpse-home to an ancient Weaver.}}<br>
+{{HTalk|It is hardly safe though. The terrain is treacherous, and predators prowl its commons. I advise you avoid that place.}}<br>
+Oh... I see. Of course. Nowhere is really free of danger, is it? That's just the way for us pilgrims...<br>
+
+|Title1_Event5 = Speaking again after getting Swift Step and before visiting saved [[Bellhart]]<b>*</b>
+|Title1_Dialogue5 = Been hearing awful whispers in camp, about pilgrims driven mad by the hardships of the climb, crying out and attacking their fellows.<br>
+You've been out there. Tell me, is it really so?<br>
+{{HTalk|You've heard it true, sir. On the roads, both pilgrims and beasts alike are consumed, driven to violence by a haunted thread, the source of which I have yet to discover.}}<br>
+Ah... I'd feared it was so. I won't be able to trust a single face out on the path, then.<br>
+The risk of death was daunting enough, but the loneliness of such a journey, that seems almost too much to bear... Ah well. Just another test of our devotion, I suppose.<br>
+
+|Title1_Event6 = Speaking again after visiting saved Bellhart<b>*</b>
+|Title1_Dialogue6 = Your travels have taken you far, haven't they? While I'm yet to even start my journey. Shameful behaviour for a pilgrim, really, to tarry here so long.<br>
+{{HTalk|I see no shame in it, sir. Your life is your own, and need not be squandered at the ghostly call of the Citadel. Journey out for your own sake, or not at all.}}<br>
+Heh... you truly aren't a pilgrim, that's for certain. That's blasphemy, spoken with friendly intentions or not.<br>
+And yet... I don't recoil from what you say. Perhaps I'm not much of a pilgrim either.<br>
+
+|Title1_Event7 = Speaking again after having had all five conversations marked with a <b>*</b>
+|Title1_Dialogue7 = Never shared my name with you, did I? Awfully remiss of me.<br>
+It's Pilby. Been nice spending time with you, miss.<br>
+{{HTalk|Likewise, sir. It's been some time since I had such ample opportunity for friendly conversation.}}<br>
+{{HTalk|My name is Hornet. It is good to be properly acquainted at last.}}<br>
+Hornet, eh? Strong name, that. It certainly suits you, miss. Heh heh...<br>
+
+|Title1_Event8 = Exhausted dialogue
+|Title1_Dialogue8 = Rest here with me as long as you like. I'm not ready to leave yet, and a little company is always nice.
+
+|Title1_Event9 = Playing the [[Needolin]]
+|Title1_Dialogue9 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...<br>
+|Title1_Event10 = Playing the Needolin near his corpse at the bottom of [[Moss Grotto]]
+|Title1_Dialogue10 = [n]Sacred... path... <br> 
+Holy... reward...<br>
+Pilgrimage...<br>
+Citadel...<br>
+
+|Title2 = Pilgrim's Rest
+|Title2_Event1 = First encounter
+|Title2_Dialogue1 = Ah, hello again! What a blessing to see a familiar face on this treacherous climb.<br>
+{{HTalk|Greetings, sir. I see you have begun your pilgrimage, or else set out for your own sake. Either way, I am glad to see you here unharmed.}}<br>
+Not quite unharmed... I've suffered my share of scrapes and burns. That's just the nature of the journey, I suppose.<br>
+But I've seen so much! Great metal structures and vast scorched fields! The grandeur of it all is humbling indeed, even for one like me who was so humble to begin with.<br>
+I'll rest here just a little longer before resuming my climb.<br>
+
+|Title2_Event2 = Speaking again if Pilby hasn't said his name
+|Title2_Dialogue2 = Never shared my name with you, did I? Awfully remiss of me.<br>
+It's Pilby. Been nice spending time with you, miss.<br>
+{{HTalk|Likewise, sir. It's been some time since I had such ample opportunity for friendly conversation.<br>
+My name is Hornet. It is good to be properly acquainted at last.}}<br>
+Hornet, eh? Strong name, that. It certainly suits you, miss. Heh heh...<br>
+
+|Title2_Event3 = Exhausted dialogue
+|Title2_Dialogue3 = I've a long way to go, and much more to see. For now though, let's just rest a little while, eh?<br>
+}}
+
+== Location ==
+Pilby can first be found in [[Bone Bottom]], to the right of the [[Bench (Silksong)|bench]]. If he is not killed by the [[Skull Tyrant]], he leaves the settlement in [[Act 2]] and can be found in [[Pilgrim's Rest]] if certain conditions are met.
+{{Gallery
+|Image1 = Mapshot SS Pilby.png! Location in Bone Bottom
+|Image2 = Mapshot SS Pilgrim's Rest.png!Location in the Far Fields
+}}
+
+== Gallery ==
+{{Gallery 
+|Image1=Screenshot SS Bone Bottom 01.png!In Bone Bottom
+|Image2=Screenshot SS Pilby 04.png!Singing
+|Image3=Screenshot SS Pilby 01.png!Killed by the Skull Tyrant
+|Image4=Screenshot SS Pilby 02.png!Pilby's body after the fight
+|Image5=Screenshot SS Solemn Pilgrim 01.png!The Solemn Pilgrim holding Pilby's body during the funeral
+|Image6=Screenshot SS Solemn Pilgrim 02.png!Pilby's body thrown into the chasm
+|Image7=Screenshot SS Pilby 03.png!Pilby's body in the chasm
+|Image8=Screenshot SS Pilby 05.png!Outside Pilgrim's Rest
+|Image9=Screenshot SS Far Fields 07.png!Inside Pilgrim's Rest
+|Image10=Screenshot SS Pilby 06.png!Killed by the Rhinogrund
+}}
+
+== Trivia ==
+* Pilby shares a design with the [[Winged Pilgrim]]s (both [[Haunting|haunted]] and not haunted) found in other areas of the game, such as the one sometimes found in front of the [[Bellway]] station in [[Bellhart]].<ref group=code>Flag <code>belltownCrowd</code> is randomised in <code>GameManager.TimePasses()</code> and controls the GameObject <code>Pilgrim Crowds</code> in <code>belltown.bundle</code>.</ref>
+*According to the internal file name <code>pilgrim-cries-william.m4a</code>, Pilby was voiced by [[William Pellen]] in the <i>Silksong</i> reveal trailer.<ref group=code>[https://docs.google.com/document/d/1FJfFokRdBz2BnjZ-nWcCsaUnlQWSZGH_J9oPgmdkNio/edit?usp=sharing <i>Silksong</i> reveal trailer full metadata]</ref> 
+*Pilby can only take damage from the hurtbox of an enemy, as opposed to its hitbox. (For example, the Rhinogrund's debris cannot hit Pilby, but its body can.)
+{{Gallery
+|Image1=Screenshot SS Pilby double.png!A pilgrim with a similar appearance
+}}
+{{Localisation
+|DEname = Pilby
+|DEmeaning = —
+|ESname = Pilby
+|ESmeaning = —
+|FRname = Pilby
+|FRmeaning = —
+|ITname = Pilby
+|ITmeaning = —
+|JAname = ピルビィ
+|JAromanised = Pirubyi
+|JAmeaning = Pilby
+|KOname = 필비
+|KOromanised = Pilbi
+|KOmeaning = Pilby
+|PTname = Pilby
+|PTmeaning = —
+|RUname = Пилби
+|RUromanised = Pilbi
+|RUmeaning = Pilby
+|ZHname = 皮尔比
+|ZHromanised = Pí'ěrbǐ
+|ZHmeaning = Pilby
+|CODEname=LITTLE_PILGRIM_N</code><br><code>BB_RESIDENT
+|CODEmeaning = <code>BB</code> stands for [[Bone Bottom]].
+}}
+===Little Pilgrim===
+{{Localisation
+|hr=false
+|DEname = Kleiner Pilger
+|DEmeaning = Little Pilgrim
+|ESname = Peregrino Pequeño
+|ESmeaning = Little Pilgrim
+|FRname = Petit Pèlerin
+|FRmeaning = Little Pilgrim
+|ITname = Piccolo Pellegrino
+|ITmeaning = Little Pilgrim
+|JAname = 小さな巡礼者
+|JAromanised = Chīsana junreisha
+|JAmeaning = Small Pilgrim
+|KOname = 작은 순례자
+|KOromanised = Jageun sullyeja
+|KOmeaning = Small Pilgrim
+|PTname = Pequeno Peregrino
+|PTmeaning = Little Pilgrim
+|RUname = Маленький пилигрим
+|RUromanised = Malen'kij piligrim
+|RUmeaning = Little Pilgrim
+|ZHname = 小朝圣者
+|ZHromanised = Xiǎo cháoshèng zhě
+|ZHmeaning = Little Pilgrim
+|CODEname=LITTLE_PILGRIM</code><br><code>BB_RESIDENT
+|CODEmeaning = <code>BB</code> stands for [[Bone Bottom]].
+}}
+
+{{Refs|hr=ss}}
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code" />
+</div>
+{{SS Nav NPCs}}
+[[pt:Pequeno Peregrino]]

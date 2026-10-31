@@ -1,0 +1,232 @@
+{{SS Infobox NPC
+| area = [[Bellhart]]
+| role = Merchant
+| affiliation = [[Courier Tipp]] (supplier)<ref><i>My Missing Courier</i> wish description: <i>"My dear little courier was last seen in Shellwood. Please someone, find Tipp and send him home, along with all of his precious stock!"</i></ref><br>Bellhart (resident)
+| quest = [[My Missing Courier]]
+|singnum = 2
+}}
+
+{{Quote
+| Hello again! Fancy buying something special before your tasks whisk you away?
+| Frey
+||Hr=SS
+}}
+
+<b>Frey</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She sells wares at her shop in [[Bellhart]] in exchange for [[Rosaries]].
+
+== Background ==
+Frey is Bellhart's shopkeeper. She was able to avoid being ensnared during Bellhart's [[Haunting]] by shutting herself in her bellhome. She sustained herself off her store's supplies while she waited for the Haunting to pass.<ref>Frey: <i>"When that strange thread struck down from above, I shut up tight and huddled in my bellhome. Might've been a problem for the others about here, but my store was flush with supplies, so no fear I'd go hungry."</i></ref>
+
+== In-game Events ==
+After [[Hornet (Silksong)|Hornet]] defeats [[Widow]] and frees Bellhart from the Haunting, Frey sells her wares to Hornet in exchange for [[Rosaries]]. 
+
+Frey also offers the <i>[[My Missing Courier]]</i> [[wish]] from Bellhart's wishwall, and after completion, she expands her stock.
+
+She begins selling furniture for Hornet's [[Bellhome]] after [[Bellhome Key]] has been used.
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Frey's Description
+! Requires
+|-
+! [[File:Multibinder.png|center|link=Multibinder|72x72px]]
+[[Multibinder]]
+| align="center" | {{R|880}}
+| <i>I rarely sell objects as intriguing as this. Supposed to improve a bug's natural ability to heal! Can't say I've felt its effects myself, but then I keep more healthy than most.
+| Completing the <i>[[My Missing Courier]]</i> [[wish]]
+|-
+! [[File:Spool Fragment.png|center|link=Spool Fragment|72x72px]]
+[[Spool Fragment]]
+| align="center" | {{R|270}}
+| <i>For a spool bearing no Silk, it's surprisingly heavy. Do you think perhaps it could be a gift left behind by the old creeping ones?
+| Completing the <i>My Missing Courier</i> wish
+|-
+! [[File:Memory Locket.png|center|link=Memory Locket|72x72px]]
+[[Memory Locket]]
+| align="center" | {{R|330}}
+| <i>An exquisite item, containing a cherished memory. I have an excellent memory myself, but I'm sure you can make good use of it.
+|
+|-
+! [[File:Desk.png|center|link=Desk|72x72px]]
+[[Bellhome#Bellhome Furniture|Desk]]
+| align="center" | {{R|380}}
+| <i>A sturdy desk is the heart of any bellhome! Use it to take stock of your situation or organise your artefacts.
+| Using [[Bellhome Key]]
+|-
+! [[File:Gleamlights.png|center|link=Gleamlights|72x72px]]
+[[Bellhome#Bellhome Furniture|Gleamlights]]
+| align="center" | {{R|320}}
+| <i>Twine-strung globes filled with gleamflies. These'll brighten up even the darkest bell.
+| Using Bellhome Key
+|-
+! [[File:Bell Lacquer.png|center|link=Bell Lacquer|72x72px]]
+[[Bellhome#Bellhome Furniture|Bell Lacquer]]
+| align="center" | {{R|520}}
+| <i>You've a good, solid bell up there, though its surface is showing its age. Why not have us paint it fresh? A protective coat and a little flair!
+| Using Bellhome Key
+|-
+! [[File:Personal Spa.png|center|link=Personal Spa|72x72px]]
+[[Bellhome#Bellhome Furniture|Personal Spa]]
+| align="center" | {{R|1100}}
+| <i>Care to refresh yourself in a steaming spa? Given your hard labours, I'm sure your shell would thank you for it.
+| Buying two other [[Bellhome]] items
+|-
+! [[File:Gramophone.png|center|link=Gramophone|72x72px]]
+[[Bellhome#Bellhome Furniture|Gramophone]]
+| align="center" | {{R|490}}
+| <i>The Citadel crafted some marvellous machines, and this looks to be one of its finest! Apparently sent by some creepy slitherer hidden away up there, for sale only to you!
+| Buying [[Desk]] and giving all [[Psalm Cylinder]]s to [[Vaultkeeper Cardinius]]
+|-
+! [[File:Shard Bundle.png|center|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| align="center" | {{R|50}}
+| <i>Travellers should always keep spare shards close by. We Bellharters were once praised for our fine claw-work. An art lost on most modern pilgrims... excepting yourself I'm sure.
+| Completing the <i>My Missing Courier</i> wish
+|-
+! [[File:Rosary Necklace.png|center|link=Rosary Necklace|72x72px]]
+[[Rosary Necklace]]
+| align="center" | {{R|140}}
+| <i>Loose rosaries will escape your pockets at the worst of times, and I'm a deft claw at stringing them tight! I can string you a whole necklace, safe and stylish.
+|
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If the <i>[[My Missing Courier]]</i> wish is already completed, and [[Widow]] is defeated before Hornet has ever visited Bellhart:</b><br>
+{{HTalk|Greetings, shopkeeper. Given the hardships of the lands beyond these bells, your store seems in remarkable order.}}<br>
+Aye, well, we've had our tough times too! Of once bustling Bellhart, only a few residents now remain.<br>
+But things are turned around for old Frey! Ho, yes! The town at least feels briefly at peace, and my courier has returned with fresh goods to trade.<br>
+Whether pilgrim or traveller, mine is the finest store you'll have the fortune to visit throughout our blighted lands.<br>
+<hr/>
+<b>If the <i>My Missing Courier</i> wish is already completed, and Widow is defeated after Hornet has visited Bellhart:</b><br>
+{{HTalk|Greetings, shopkeeper. It seems you've recovered well from that silken affliction.}}<br>
+Ah! Well, I'm a clever bug. When that strange thread struck down from above, I shut up tight and huddled in my bellhome.<br>
+Might've been a problem for the others about here, but my store was flush with supplies, so no fear I'd go hungry.<br>
+{{HTalk|Your preparedness served you well then, and it seems your store is still well-stocked.}}<br>
+Oh yes, even my supplier is back to work, so I have plenty of goods to show you!<br>
+| Title1_Event2 = First encounter (if 1. the <i>My Missing Courier</i> wish is not completed, and 2. if Widow is defeated before Hornet has ever visited Bellhart, or if Hornet has talked to [[Lace]] in the [[Choral Chambers]])
+| Title1_Dialogue2 = {{HTalk|Greetings, shopkeeper. I'd ask to trade, but your store seems a little bare.}}<br>
+Ahem! Well, yes. Our little town's seen some dire times, and now my courier's gone and got themself lost.<br>
+But don't worry! I've a few small things, still! And if that courier ever makes it safely back, we'll have plenty more treasures to haggle over.<br>
+<hr/>
+<b>If the <i>My Missing Courier</i> wish is accepted:</b><br>
+{{HTalk|He would have been wise to do so. If, on my travels, I happen upon the errant bug, I'll make sure to send him your way.}}
+
+| Title1_Event3 = First encounter (if 1. the <i>My Missing Courier</i> wish is not completed, and 2. if Widow is defeated after Hornet has visited Bellhart, and Hornet hasn't talked to Lace in the Choral Chambers) 
+| Title1_Dialogue3 = {{HTalk|Greetings, shopkeeper. It seems you've recovered well from that silken affliction.}}<br>
+Ah! Well, I'm a clever bug. When that strange thread struck down from above, I shut up tight and huddled in my bellhome.<br>
+Might've been a problem for the others about here, but my store was flush with supplies, so no fear I'd go hungry.<br>
+{{HTalk|Your preparedness served you well then. Although... your store now seems quite bare.}}<br>
+Ahem. Yes. I'll admit, the wait was longer than I'd anticipated, and a bug has to eat...<br>
+I'll have more to offer you once my courier turns up. No doubt he's been avoiding Bellhart since the curse set its sights on us.<br>
+<hr/>
+<b>If the <i>My Missing Courier</i> wish is accepted:</b><br>
+{{HTalk|He would have been wise to do so. If, on my travels, I happen upon the errant bug, I'll make sure to send him your way.}}
+
+| Title1_Event4 = After the <i>My Missing Courier</i> wish is accepted
+| Title1_Dialogue4 = I saw it! Took my wish off the board, you did! Heading out after my stray courier, then?<br>
+{{HTalk|My own tasks see me travel far, shopkeeper. If, on my journey, I happen upon the errant bug, I'll make sure to send them your way.}}<br>
+Then you'll have my thanks and more! It's a rare bug who'd brave the wilds to aid a fellow.
+| Title1_Event5 = After the wish is completed
+| Title1_Dialogue5 = {{HTalk|Greetings again, shopkeeper. Your shelves are looking better stocked. I see the courier made their way back to you safely.}}<br>
+Oh yes, the cheeky little so-and-so came by and dropped his cargo off at last.<br>
+Poor dear was so shaken by his misadventures, I almost didn't have the heart to dock his earnings.<br>
+All's well now, though! Take a look at the lovely new goods I have available!
+| Title1_Event6 = Exhausted dialogue
+| Title1_Dialogue6 = Hello again! Fancy buying something special before your tasks whisk you away?
+| Title1_Event7 = Speaking while being [[Cursed Crest|cursed]]
+| Title1_Dialogue7 = Oh my, what a state you're in! You look like you're one breath away from keeling over dead! <br>
+{{HTalk|I will continue to live, madam, but I am indeed afflicted. A parasite has taken root within my shell... Perhaps you have something that could help me? A medicine?}} <br>
+Mmm, not so sure I stock anything like that. You should ask Pavo there. It's his job to give directions and such, so he may have some useful advice. <br>
+In the meantime... shopping itself is a type of medicine, isn't it? You should buy something now. Given your condition, this might be your last chance!
+| Title1_Event8 = After receiving [[Bellhome Key]] from the <i>[[Bellhart's Glory]]</i> wish 
+| Title1_Dialogue8 = Well, well! Welcome to you, our newest resident! I hope you're finding your new home to your taste.<br>
+{{HTalk|It is a finely forged bell, madam. I am fortunate to have a safe space to rest, even if my stay here may be short.}}<br>
+However long you're with us, I've been holding onto some fine goods that'll cosy up your home. This stuff ain't for the riff-raff winding through, but a fellow Bellharter deserves the finest!
+| Title1_Event9 = After purchasing one of these items: [[Desk]], [[Gleamlights]], [[Personal Spa]], [[Gramophone]]
+| Title1_Dialogue9 = A fine purchase you've made! Allow us a moment and we'll get it set up in your bellhome.
+| Title1_Event10 = After purchasing [[Bell Lacquer]]
+| Title1_Dialogue10 = The perfect choice! Your bell's about to be looking the finest in town. We'll get the work started straight away.<br>
+We've made a good start on the painting, resident! Give us a little more time and your bell'll be shining like new.
+| Title1_Event11 = Exhausted dialogue after receiving [[Bellhome Key]]
+| Title1_Dialogue11 = Welcome, fellow resident! Can I interest you in something special before you're away again on your travels?
+| Title1_Event12 = Playing the [[Needolin]]
+| Title1_Dialogue12 = [n]Gleaming rest...<br>
+Almost there...<br>
+Still alive...<br>
+For the pilgrims, many...<br>
+We serve, selfless...<br>
+We serve, safe...
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Fellow resident, welcome home! The world may quake and crumble, and threaten its end, but while my shell stays safe my shop stays open.
+| Title2_Event2 = Exhausted dialogue
+| Title2_Dialogue2 = Fellow resident! The world quakes and crumbles, but while my shell stays safe, my shop stays open.
+
+| Title3 = Written
+| Title3_Event1 = <i>[[My Missing Courier]]</i> wish
+| Title3_Dialogue1 = My dear little courier was last seen in Shellwood. Please someone, find Tipp and send him home, along with all of his precious stock!
+}}
+
+== Location ==
+Frey can be found in [[Bellhart]] west to its [[Bench (Silksong)|bench]] after [[Widow]] has been defeated.
+
+{{Gallery
+|Image1=Mapshot SS Frey 01.png!Location in Bellhart
+}}
+
+== Gallery ==
+{{Gallery
+|Image1=Screenshot SS Frey 03.png!Closed shop in Haunted Bellhart
+|Image2=Screenshot SS Frey 01.png!In Bellhart
+|Image3=Screenshot SS Frey 02.png!In Bellhart during Act 3
+|Image4=Screenshot SS Frey 05.png!Sleeping
+|Image5=Screenshot SS Frey 04.png!Singing
+|Image6=Screenshot SS Frey 06.png!Looking the other way
+|Image7=Frey Shop.png!Sprite of Frey in her shop
+}}
+
+== Trivia ==
+* Frey startles if Hornet heavy falls onto the signs above her shop.
+* Frey first appeared in the <i>Silksong</i> reveal trailer,<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer] on YouTube</ref> where she had an entirely different design.
+
+{{Gallery
+| Image1 = Frey Old.png ! Frey's pre-release design
+}}
+
+{{Localisation
+|DEname = Frey
+|DEmeaning = —
+|ESname = Frey
+|ESmeaning = —
+|FRname = Frey
+|FRmeaning = —
+|ITname = Frey
+|ITmeaning = —
+|JAname = フレイ
+|JAromanised = Furei
+|JAkatakana = foreign
+|JAmeaning = Frey
+|KOname = 프레이
+|KOromanised = Peurei
+|KOmeaning = Frey
+|PTname = Frey
+|PTmeaning = —
+|RUname = Фрея
+|RUromanised = Freja
+|RUmeaning = Frey
+|TWname = 芙蕾
+|TWromanised = Fúlěi
+|TWmeaning = same
+|ZHname = 芙蕾
+|ZHromanised = Fúlěi
+|ZHmeaning = Frey
+|CODEname = BELLHART_SHOPKEEP
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

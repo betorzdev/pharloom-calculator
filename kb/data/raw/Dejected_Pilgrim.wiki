@@ -1,0 +1,82 @@
+{{SS Infobox NPC
+|area = [[Songclave]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|singnum = 2
+}}
+
+{{Quote
+| Hr = SS
+|Is this fresh punishment for our sins, or yet another test to prove our faith?
+| Dejected Pilgrim
+}}
+<b>Dejected Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of the few hardy pilgrims to have reached [[the Citadel]], found resting near the [[Bench (Silksong)|Bench]] in [[Songclave]] in [[Act 3]].
+
+== In-game Events ==
+Hornet can meet the Dejected Pilgrim in Songclave once [[Act 3]] has begun. They express fear about the new disaster that affects Pharloom, asking whether it is a punishment, or a test of faith. Hornet assuages them that it is neither, letting them know that she seeks to put an end to their plight.
+
+Once their dialogue has been exhausted, they have a 25% chance of being gone the next time Hornet reenters the room after resting elsewhere. Once they have left, they remain absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Ooohh... What new horror now besets us?<br>
+Is this fresh punishment for our sins, or yet another test to prove our faith?<br>
+{{HTalk|It is neither, good bug. In this disaster you bear no blame.}}<br>
+{{HTalk|Hold close to your companions, and I will work swift to see this madness stilled.}}
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = Ooohh... If we're no longer pilgrims... What are we?
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]What new test?<br>
+Crushed... Consumed?<br>
+What new sin?<br>
+Why must we suffer?<br>
+Pharloom, we failed...<br>
+Our path...
+
+}}
+
+== Location ==
+Dejected Pilgrim can be found sitting in Songclave near the bench after the start of Act 3.
+{{Gallery
+|Image1 = Mapshot SS Dejected Pilgrim.png!Location in Songclave
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Dejected Pilgrim 01.png!Dejected Pilgrim resting
+|Image2 = Screenshot SS Dejected Pilgrim 02.png!Dejected Pilgrim alert 
+|Image3 = Screenshot SS Dejected Pilgrim 03.png!Dejected Pilgrim singing
+}}
+
+{{Localisation
+|DEname = Bedrückte Pilgerin
+|DEmeaning = Dejected Pilgrim (feminine)
+|ESname = Peregrina Alicaída
+|ESmeaning = Dejected Pilgrim (feminine)
+|FRname = Pèlerine Découragée
+|FRmeaning = Discourged Pilgrim (feminine)
+|ITname = Pellegrina Avvilita
+|ITmeaning = Dejected Pilgrim (feminine)
+|JAname = 落胆した巡礼者
+|JAromanised = Rakutan shita junreisha
+|JAmeaning = Dejected Pilgrim
+|KOname = 낙담한 순례자
+|KOromanised = Nakdamhan sullyeja
+|KOmeaning = Discourged Pilgrim
+|PTname = Peregrina Abatida
+|PTmeaning = Dejected Pilgrim (feminine)
+|RUname = Понурая пилигримка
+|RUromanised = Ponuraja piligrimka
+|RUmeaning = Dejected Pilgrim
+|TWname = 沮喪的朝聖者
+|TWromanised = Jǔsàng de cháoshèng zhě
+|TWmeaning = same
+|ZHname = 沮丧的朝圣者
+|ZHromanised = Jǔsàng de cháoshèng zhě
+|ZHmeaning = Dejected Pilgrim
+|CODEname = ENCLAVE_PILGRIM_ACT3
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

@@ -1,0 +1,189 @@
+{{For|the <i>[[Hollow Knight]]</i> character|Mask Maker (Hollow Knight)}}
+{{SS Infobox NPC
+|title1 = Mask Maker
+| image1=<gallery>
+SS Mask Maker.png|Masked
+SS Mask Maker Unmasked.png|Unmasked
+</gallery>
+| area = [[Mount Fay]]
+| role = Lore
+| singnum=2
+| s1 = Masked
+| s2 = Unmasked
+| quest = [[Liquid Lacquer (Wish)|Liquid Lacquer]]
+}}
+{{Quote
+| No matter the state of these lands, you should well know the necessity of my service.
+| Mask Maker
+|Hr=SS
+}}
+
+The <b>Mask Maker</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He provides lore on masks and on [[Pharloom|Pharloom's]] history.
+
+== Background ==
+The Mask Maker provides masks for the bugs of [[Pharloom]], claiming their importance in giving an identity to those who do not have it.<ref>Mask Maker: "All deserve a face. A chance to be! Until I wither, for the faceless I shall provide."</ref><ref>Mask Maker: "To exist, a face is needed. It is the essential thing."</ref><ref>Mask Maker Needolin dialogue: "A mask to hide... A mask to be... Fresh faces for all... A land defined... What greater gift?"</ref> Although he is a mortal bug,<ref>Mask Maker: "Your ancient kind, vying for dominion, and us mortal bugs squashed unseen underneath."</ref>  he is aware of the history and current condition of Pharloom. He is implied to be well respected by Pharloom's bugs due to his profession as a mask maker, which bears a heavy mantle.<ref>Tipp: "A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back."</ref>
+
+== In-game Events ==
+[[Hornet (Hollow Knight)|Hornet]] encounters the Mask Maker on Mount Fay, humming to himself as he works in a secluded hut. While masked, he repeats a set of mantra-like lines talking about the importance of needing a face.
+
+The Mask Maker can be unmasked with [[Heavy Damage]]. Once unmasked, the Mask Maker comments on the rudeness of such an action, but acknowledges Hornet's status as being related to the [[Higher Beings]], or "Old Ones," asking if Hornet plans to take on the ruler of Pharloom. When she answers in the positive, he does not seem surprised, mentioning that Hornet may have more growth yet despite having lived for countless lives.
+
+Liquid Lacquer must be delivered to the Mask Maker for the delivery wish [[Liquid Lacquer (Wish)|Liquid Lacquer]].
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]A mask to hide...<br>
+A mask to be...<br>
+Fresh faces for all...<br>
+A land defined...<br>
+What greater gift?
+
+
+| Title2 = Masked
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = A visitor! Grand you are. But you have already a mask. Already a face. It is for those without that I must carve.
+| Title2_Event2 = Revisiting, after having had masked encounter
+| Title2_Dialogue2 = A fine face, yours. Not of my work. Not of this kingdom's craft. Not now at least.<br>
+But the deeper form. Distant relationship. Some form of Pharloom and our old, legged, stewards.<br>
+Now! To work. To work! The masks are needed.
+| Title2_Event3 = Delivering the [[Liquid Lacquer]]
+| Title2_Dialogue3 = {{HTalk|Maker, I bring a delivery from Bellhart below, lacquer for your long work.}}<br>
+Good! Good! To seal. To protect. May Pharloom's fresh faces gleam bright.<br>
+Take reward for service made, visitor! Gift for you, to spend or treasure!
+| Title2_Event4 = Exhausted dialogue
+| Title2_Dialogue4 = <b>Line 1:</b><br>
+All deserve a face. A chance to be! Until I wither, for the faceless I shall provide.
+<hr/>
+<b>Line 2:</b><br>
+To exist, a face is needed. It is the essential thing.
+<hr/>
+<b>Line 3:</b><br>
+To work! To work! The masks must be carved.
+
+
+| Title3 = Unmasked
+| Title3_Event1 = After knocking off mask
+| Title3_Dialogue1 = Ahh. Old One. Your kind should know it's rude to expose me such. Unmasked, the task becomes heavy.<br>
+{{HTalk|I had the desire to hear you lucid, Maker, though you may protest.}}<br>
+Aye. Well it's no great shock to have you visit. I've felt the stirrings of our monarch, even all the way out here, the tremors of her kin brought close.<br>
+You're planning a confrontation with her then? The one atop? Our great, frayed god?<br>
+{{HTalk|Our meeting seems inevitable, though first I seek the strength to ensure a favourable outcome.}}<br>
+Ha! As I'd have guessed! Your ancient kind aren't told to abide one another peaceably.<br>
+Well, assuming you prevail, I'll ask only that my labour may continue. No matter the state of these lands, you should well know the necessity of my service.
+| Title3_Event2 = Speaking again
+| Title3_Dialogue2 = {{HTalk|You have the sight, Maker. Tell me what you see in me?}}<br>
+Your mask... It reads clear enough, Old One. Watcher, hunter, monarch even, though you may reject that station.<br>
+A complex visage, perhaps, yet still to my sight it looks unresolved.<br>
+{{HTalk|If you see a transitional state, it is one I have accepted. My mask has remained defined through lifetimes uncounted.}}<br>
+Aye. Rigid I'm sure, but your kind rarely develop evenly, and the lifetime of bugs are poor measure for one like you.<br>
+Could be there's more growth awaiting you yet...
+| Title3_Event3 = Revisiting, after playing the [[Threefold Melody]] to unlock the lift to [[The Cradle]] and having had the conversation above
+| Title3_Dialogue3 = {{HTalk|The bugs of your land, I have watched them, climbing towards their absolution without the flicker of a thought to what it means.}}<br>
+Aye. But isn't it always such for those snared to serve your higher caste?<br>
+Our mortal mob did once act some defiance, unawares maybe, but successful in part, goaded towards it by Weavers' will'n all.<br>
+{{HTalk|You speak of the Citadel? Its former function has failed, but I can still sense its purpose, some. It is church and cage both.}}<br>
+Aye. Devised by your ancestors that monstrosity, and their wicked, clever minds. A system, or a web they'd likely call it, a way to keep their mother sealed in slumber, and themselves free to lavish in their false rule.
+| Title3_Event4 = Speaking after acquiring [[Faydown Cloak]]
+| Title3_Dialogue4 = Did you treat with the creature upon the summit?<br>
+Your legged ancestors once found her company compelling, enough to build their chambers and their calling device at the height of this perilous peak.<br>
+{{HTalk|I have paid my respects, and been granted her favour. Her down now fills my cloak, and does much to ward against the frost of these heights.}}<br>
+To pass something so precious... That's a mighty gift you've been given. Seems she's thrown her lot in with you.<br>
+I'd not have guessed her so opposed to our threaded monarch, but then she too must have sensed the wretched state of things, and the harsher change to come. 
+| Title3_Event5 = Delivering the [[Liquid Lacquer]]
+| Title3_Dialogue5 = {{HTalk|Maker, I bring a delivery from Bellhart below, lacquer for your long work.}}<br>
+Ahh. Know you distort the order of things, Old One. It is a rare want of your caste to serve us mortal bugs.<br>
+{{HTalk|I am not my kin, Maker. I have seen enough pain born of their dominion. As much as I may, I choose to stand apart.}}<br>
+If your blood allows it so... And my thanks still for the lacquer. Pharloom's fresh faces will welcome its sheen.<br>
+Have some small reward for your troubles, Old One. It's no small thing to deliver that sloshing stuff safe, 'specially all the way up here.
+| Title3_Event6 = Exhausted dialogue
+| Title3_Dialogue6 = Enough talk, Old One. Mine is a calling that scant allows rest.<br>
+{{HTalk|Very well, Maker. I shall take my leave.}}
+
+| Title4 = Masked, Act 3
+| Title4_Event1 = If first encounter is in Act 3
+| Title4_Dialogue1 = Late! Late you are! And already a mask. Already a face. It is for those without that I must carve.
+| Title4_Event2 = Exhausted dialogue 
+| Title4_Dialogue2 = <b>Line 1:</b>
+Until cavern's collapse, the masks must be made!
+<hr/>
+<b>Line 2:</b><br>
+To exist, to die, a face is needed. It is the essential thing.
+<hr/>
+<b>Line 3:</b><br>
+Our world cries its end! But the masks must still be carved.
+
+| Title5 = Unmasked, Act 3
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = <b>If having not spoken to the unmasked Mask Maker before Act 3:</b>
+Ahh. Old One. Your kind should know it's rude to expose me such. Unmasked, the task becomes heavy.<br>
+{{HTalk|I had the desire to hear you lucid, Maker, though you may protest.}}<br>
+Aye. Well it's no great shock to have you visit. I've felt, and heard, the effects of your... altercation with the pale mother... The fate for these caverns seems grim.<br>
+I'll take it things have taken a turn more complicated? Or was this the aftermath anticipated all along?<br>
+{{HTalk|In our meeting, a mortal blow was dealt, but the monarch's desperate death throes now threaten to take this whole kingdom with her.}}<br>
+Ha! I'm not surprised! It's always the way, aye? Your ancient kind, vying for dominion, and us mortal bugs squashed unseen underneath.<br>
+{{HTalk|It was freedom I sought, Maker, for myself and for you mortal few. Naive perhaps, but this is not the fate I wished to come.}}
+<hr/>
+<b>If having previously spoken to the unmasked Mask Maker before Act 3:</b><br>
+Back again, Old One? The effects of your... altercation with the pale mother... those are plainly sensed. The fate for these caverns feels grim.<br>
+I'll take it things have taken a turn more complicated? Or was this the aftermath anticipated all along?<br>
+{{HTalk|In our meeting, a mortal blow was dealt, but the monarch's desperate death throes now threaten to take this whole kingdom with her.}}<br>
+Ha! I'm not surprised! It's always the way, aye? Your ancient kind, vying for dominion, and us mortal bugs squashed unseen underneath.<br>
+{{HTalk|It was freedom I sought, Maker. Naive perhaps, but this is not the fate I wished to come.}}
+| Title5_Event2 = Exhausted dialogue
+| Title5_Dialogue2 = Enough talk, Old One. My contract remains. I'll work till caverns' collapse.<br>
+{{HTalk|Very well, Maker. If it is within my power to do so, I shall see your lands saved.}}
+
+}}
+
+== Location ==
+Mask Maker is found in the northwest part of [[Mount Fay]], accessible after acquiring the [[Faydown Cloak]].
+{{Gallery
+| Image1 = Mapshot SS Mask Maker 01.png
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Mount Fay 10.png!Outside of his hut
+|Image2 = Screenshot SS Mount Fay 11.png!Mask Maker in his hut, masked
+|Image3 = Screenshot SS Mask Maker 01.png!Mask Maker in his hut, unmasked
+|Image4 = Screenshot SS Mask Maker 02.png!Mask Maker talking, masked
+|Image5 = Screenshot SS Mask Maker 03.png!Mask Maker talking, unmasked
+|Image6 = Screenshot SS Mask Maker 04.png!Mask Maker singing, masked
+|Image7 = Screenshot SS Mask Maker 05.png!Mask Maker singing, unmasked
+}}
+
+== Trivia ==
+* Mask Maker shares his name with [[Mask Maker (Hollow Knight)|a similar NPC]] from Hollow Knight. They both seem to have the same role within their respective kingdoms, and can be unmasked to reveal similar spiraling eyes.
+* Though Mask Maker's Needolin dialogue does not change when unmasked, his tune and singing voice do.
+* [[Mask Shard (Silksong)|Mask Shards]] in [[Wormways]], [[Blasted Steps]], and [[Bilewater]] are found with background outcrops which resemble the exterior of his hut.
+{{Localisation
+|DEname = Maskenmacher
+|DEmeaning = Mask Maker
+|ESname = Fabricante de máscaras
+|ESmeaning = Mask Maker or Mask Producer
+|FRname = Faiseur De Masque
+|FRmeaning = Mask Maker<br><small>This is slightly inconsistent with the [[Mask Maker (Hollow Knight)|Hollow Knight NPC]], where they are <i>Faiseur De Masques</i> (Maker of Mask<b>s</b>).</small>
+|ITname = Mascheraio
+|ITmeaning = Mask Maker
+|JAname= 仮面を作る者
+|JAromanised= Kamen o tsukuru mono
+|JAmeaning = Mask Maker or Mask Creator
+|KOname = 가면 제작자
+|KOromanised = Gamyeon jejakja 
+|KOmeaning = Mask Maker
+|PTname =  Fabricante de Máscaras
+|PTmeaning = Mask Maker or Mask Producer<br><small>This is inconsistent with the [[Mask Maker (Hollow Knight)|Hollow Knight NPC]], where they are <i>Criador de Máscaras</i> (Mask Creator).</small>
+|RUname = Мастер масок
+|RUromanised = Master masok
+|RUmeaning = Mask Master
+|TWname = 面具師
+|TWromanised = Miànjù shī
+|TWmeaning = Mask Master<br><small>This is bizarrely inconsistent with the [[Mask Maker (Hollow Knight)|Hollow Knight NPC]], where they are {{lang|zh-Hant|面具製作師}} <i>miànjù zhìzuò shī</i> which would match the Simplified Chinese translation.
+|ZHname = 面具制作师
+|ZHromanised = Miànjù zhìzuò shī
+|ZHmeaning = Mask Maker
+|CODEname = MASK_MAKER
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

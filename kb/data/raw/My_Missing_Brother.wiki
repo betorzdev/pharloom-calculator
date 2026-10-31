@@ -1,0 +1,78 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for traces of the courier, Pill, and track his location.<br>
+Pill was last seen in lower Greymoor.
+| npc = [[Tipp]]
+| location = [[Bellhart]] Wishwall
+| prerequisite = 
+* Complete [[My Missing Courier]]
+* Either accept [[Great Taste of Pharloom]] or speak to the [[Caretaker]]
+| reward = Unlocks [[Delivery Wishes]]
+}}
+
+{{Quote
+| Need help-help quick! Me brother Pill is gone missing, vanished somewhere in Greymoor! Please, to help me find-find him!
+| [[Tipp]]
+| Hr = SS
+}}
+
+<b>My Missing Brother</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired from [[Bellhart|Bellhart's]] [[Wishwall]] after completing the <i>[[My Missing Courier]]</i> Wish and either accepting the <i>[[Great Taste of Pharloom]]</i> Wish or speaking to the [[Caretaker]].
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Wishwall location in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Wishwall in Bellhart
+}}
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must find [[Pill]]'s location within the central part of [[Sinner's Road]]. Parts of Pill's cargo are scattered around [[Greymoor]] and Sinner's Road, which can be interacted with to track his pathway.
+
+At this location, Pill is hiding from a [[Roachfeeder]] and a [[Roachcatcher]], who have to be defeated to save him and return him to Bellhart.
+
+{{Gallery
+|Image1 = Mapshot SS Pill My Missing Brother.png!Pill's location in Sinner's Road
+|Image2 = Screenshot SS Tipp & Pill 03.png!Pill in Sinner's Road
+}}
+
+== Reward ==
+After completing the Wish, Tipp and Pill are reunited in Bellhart and start giving out [[Delivery Wishes]].
+
+{{Gallery
+|Image1 = Mapshot SS Tipp & Pill 01.png!Location of Couriers Tipp & Pill in Bellhart
+|Image2 = Screenshot SS Tipp & Pill 04.png!Couriers Tipp & Pill in Bellhart
+}}
+
+{{Localisation
+|DEname = Mein vermisster Bruder
+|DEmeaning = My Missing Brother
+|ESname = Mi hermano desparecido
+|ESmeaning = My Missing Brother
+|FRname = Mon frère disparu
+|FRmeaning = My Missing Brother
+|ITname = Il mio fratello scomparso
+|ITmeaning = My Missing Brother
+|JAname = 行方不明の兄
+|JAromanised = Yukue fumei no ani
+|JAmeaning = Missing Elder Brother
+|KOname = 나의 실종된 형제
+|KOromanised = Naui siljongdoen hyeongje
+|KOmeaning = My Disappeared Brother
+|PTname = Meu Irmão Desaparecido
+|PTmeaning = My Missing Brother
+|RUname = Мой пропавший брат
+|RUromanised = Moj propavšij brat
+|RUmeaning = My Missing Brother
+|ZHname = 寻虫启事
+|ZHromanised = Xún chóng qǐshì
+|ZHmeaning = Missing Bug Notice or Bug Search Notice<br><small>The name is a modifcation of {{lang|zh-Hans|寻人启事}} <i>xún rén qǐshì</i> (missing person notice; lit. person search notice) with {{lang|zh-hans|人}} <i>rén</i> (person) replaced with {{lang|zh-hans|虫}} <i>chóng</i> (bug).</small>
+|TWname = 失蹤兄弟
+|TWromanised = Shīzōng xiōngdì
+|TWmeaning = Missing Brother
+|CODEname = QUEST_SAVE_COURIER_TALL
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

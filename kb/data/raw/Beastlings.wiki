@@ -1,0 +1,67 @@
+{{SS Infobox NPC
+| image1 = Beastling.png
+| area = [[Bellways]] ([[Act 3]])
+| affiliation = [[Bell Beast]] (Mother)<br>
+[[Hornet (Silksong)|Hornet]] (Bonded)
+| role = Lore
+| singnum = 2
+}}
+
+{{Quote
+|Mimic the song of the Bell Beast. Summon the Beastlings and return together to their mother.
+|[[Beastling Call]] description
+|Hr=SS
+}}
+
+The [[Beastlings]] are supporting [[NPCs (Silksong)|NPCs]] in <i>[[Hollow Knight: Silksong]]</i>. They are the young offspring of the [[Bell Beast]].
+
+== In-Game Events ==
+In [[Act 3]], after defeating the [[Bell Eater]], the Bell Beast lets out a long call to teach [[Hornet (Silksong)|Hornet]] the [[Beastling Call]]. This causes four Beastlings to emerge and start singing alongside their mother. 
+When playing the Call, depending on how much room there is, one or two Beastlings will emerge from the ground and bring Hornet to the [[Bellway]] which currently houses the Bell Beast.
+
+After obtaining the call, two to three Beastlings will emerge alongside their mother in any Bellway Hornet travels to.
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Bell Beast 08.png!First appearance
+|Image2=Screenshot SS Beastlings 01.png!Running with their mother
+|Image3=Screenshot SS Beastlings 02.png!After being called by Hornet
+|Image4=Screenshot SS Beastlings 03.png!At a Bellway
+}}
+
+== Trivia ==
+* There is [[Cut_Content_(Silksong)/Text#Bell Beast|cut Needolin dialogue]] for the Bell Beast fight referencing the Beastlings. Without this reference in the final game, it is unclear whether the Beastlings were born before the fight or not.
+* The Beastlings can be attacked like their mother, causing her to purr. However, unlike their mother, they take actual knockback from Hornet's swings.
+** In some Bellways, like the one in [[Shellwood]], this knockback can be used to push them into environmental hazards or water. This causes them to safely emerge from the ground.
+{{Localisation
+|DEname = Biestling 
+|DEmeaning = Beastlings
+|ESname = Bestezuela
+|ESmeaning = From <i>bestia</i> (beast) and <i>-zuela</i>(feminine diminutive suffix).
+|FRname = Bestiot
+|FRmeaning = From <i>bestiau</i> (beast) and <i>-ot</i> (diminutive suffix).
+|ITname = Bestiole 
+|ITmeaning = Little Beast (feminine)
+|JAname= 獣の子たち
+|JAromanised= Kemono no kotachi
+|JAmeaning = Beast's Children
+|KOname = 비스틀링
+|KOromanised = Biseuteulling
+|KOmeaning = Beastling
+|PTname = Bestiote
+|PTmeaning = Portmanteau of <i>besta</i> (beast) and <i>filhote</i> (cub or offspring).
+|RUname = Зверёныши
+|RUromanised = Zverënyši
+|RUmeaning = Beast's Young
+|TWname = 小鐘道獸群
+|TWromanised = Xiǎo zhōngdào shòu qún
+|TWmeaning = same
+|ZHname = 小钟道兽群
+|ZHromanised = Xiǎo zhōngdào shòu qún
+|ZHmeaning = Little Bellways Beast Herd<br><small>{{lang|zh-Hans|钟道兽}} / {{lang|zh-Hant|鐘道獸}} <i>zhōngdào shòu</i> (Bellways Beast) is the name of the [[Bell Beast]] in Chinese.</small>
+|CODEname = BELLBEAST_CHILDREN
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[fr:Bestiots]]

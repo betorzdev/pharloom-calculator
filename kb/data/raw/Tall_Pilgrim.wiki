@@ -1,0 +1,121 @@
+{{SS Infobox NPC
+| area = [[Blasted Steps]]
+| role = Pilgrim
+| affiliation = Pilgrims
+| singnum = 1
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Tall Pilgrim's audio files.</ref>
+}}
+{{Quote
+|Hr=SS
+|The gate... the gate! O, the Grand Gate to the Citadel stands before us! We are so close! O mighty ones beyond the gate, we beg you! Open the way and let we poor, insignificant little pilgrims crawl into the light...
+|Tall Pilgrim
+}}
+
+<b>Tall Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of many pilgrims travelling to [[the Citadel]], having made it to the final threshold, the [[Grand Gate]].
+
+== In-game Events ==
+[[Hornet (Silksong)|Hornet]] meets the Tall Pilgrim standing before the Grand Gate in [[Blasted Steps]]. They beg the "mighty ones beyond the gate" to open it and allow them through into the Citadel. Hornet asks if they have heard of a means to open the gate. The Tall Pilgrim informs her of "the holy bells along the path", that when rung, open the way.
+
+If Hornet has yet to ring all 5 bells at the [[Bellshrine]]s throughout Pharloom, she asks about their locations. The Tall Pilgrim then tells of where they can be found, starting a new [[Acts|Objective]] to ring them all and marking her map.
+
+If Hornet has already rung all 5 bells, she informs them of this and asks what else must be done. The Tall Pilgrim tells her that the final task is to play music before the gate. They ask Hornet to play or sing, and they will follow.
+
+Hornet then plays the [[Needolin]], and the Tall Pilgrim and their companion sing along. However, before the gate descends, the [[Last Judge]] drops from above and attacks the group, killing the Tall Pilgrim.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If Hornet has not entered [[The Citadel]]:</b><br>
+The gate... the gate! O, the Grand Gate to the Citadel stands before us!<br>
+We are so close! O mighty ones beyond the gate, we beg you! Open the way and let we poor, insignificant little pilgrims crawl into the light...<br>
+{{HTalk|I see no gatekeepers to heed your plea, pilgrim, though I too seek entry to the Citadel. Have you heard of a means to open this gateway?}}<br>
+Ahh... Weapons blunt it not. No holes for keys. 'Tis the bells, they say! The holy bells upon the path that open the way!
+<hr/>
+<b>If Hornet has entered The Citadel:</b><br>
+The gate... the gate! O, the Grand Gate to the Citadel stands before us!<br>
+We are so close! O mighty ones beyond the gate, we beg you! Open the way and let we poor, insignificant little pilgrims crawl into the light...<br>
+{{HTalk|I see no gatekeepers to heed your plea, pilgrim, though I too would benefit from its opening. Have you heard of a means to pass through?}}<br>
+Ahh... Weapons blunt it not. No holes for keys. 'Tis the bells, they say! The holy bells upon the path that open the way!
+| Title1_Event2 = First encounter (Cont.)
+| Title1_Dialogue2 = <b>If Hornet has activated fewer than 5 [[Bellshrine]]s:</b><br>
+{{HTalk|I have passed several such bells, pilgrim. I know how to see them woken. Tell me what you know of their locations, and I shall seek those that still remain silent.}}<br>
+Sister? This is a mighty service you willingly perform! What a marvellous gift you would grant to your fellows.<br>
+Eagerly, I shall tell you of the shrines and their locations, as we have heard them spoken...
+<hr/>
+<b>If Hornet has activated 5 Bellshrines:</b><br>
+{{HTalk|On my journey up, I passed many large bells housed in old shrines. Each I have struck awake, yet still this gate stays closed. What other task must be done to see us pass beyond?}}<br>
+The bells are rung? Then this sacred threshold may now be crossed, for the final task is simple! Only music, played fair and true. Music shall attune the bells, and see the gate descend.<br>
+It must be you to lead us, sister! You, who brought this blessing! Play or sing, and we shall follow.
+| Title1_Event3 = Revisiting
+| Title1_Dialogue3 = <b>If Hornet has activated fewer than 5 Bellshrines:</b><br>
+The Citadel is calling us, sister! We stand so close. We need only the blessing of those bells to see the Grand Gate open.<br>
+{{HTalk|I will awaken the bells, pilgrim. With luck, you will not be waiting long.}}
+<hr/>
+<b>If Hornet has activated 5 Bellshrines:</b><br>
+Ahhh... the gate! The bells have awoken! All along the path. Now we need only music to see them attuned!<br>
+{{HTalk|I have recently learnt the art of producing song by strumming Silk, though I confess it is a skill deserving of more practice.}}<br>
+Oh! Ohh! Have no doubt, sister! Play sincerely. Any music is sweet enough! Play for us, and surely the bells will resound! Play, and we will sing!
+<hr/>
+<b>Returning, after leaving when getting the prompt to play the [[Needolin]]:</b><br>
+Ahhh... the Grand Gate! The bells have awoken!<br>
+We beg you, sister. Play or sing, and we shall follow. Call out to the bells of the path and see the gate open!
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = <b>If Hornet has not activated any Bellshrines:</b><br>
+Only the holy bells of the great path shall open the way!<br>
+We beg you, traveller, see the bells awoken, that we may cross this final threshold.
+<hr/>
+<b>If Hornet has activated fewer than 5 Bellshrines:</b><br>
+We beg you, sister. Delay no further! Play for us. Call out to the bells of the path and see the Grand Gate open!
+| Title1_Event5 = Playing the [[Needolin]]
+| Title1_Dialogue5 = Have mercy! Have pity!<br>
+O great gate...<br>
+We have followed the path...<br>
+Open! Open!
+}}
+
+== Location ==
+Tall Pilgrim can be found standing in front of the Grand Gate in [[Blasted Steps]] before the Last Judge appears.
+{{Gallery
+|Image1 = Mapshot SS Tall Pilgrim.png!Location in Blasted Steps
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Tall Pilgrim 01.png!Tall Pilgrim standing before the Grand Gate
+|Image2 = Screenshot SS Tall Pilgrim 02.png!Tall Pilgrim singing
+|Image3 = Screenshot SS Tall Pilgrim 03.png!Tall Pilgrim killed by the Last Judge
+}}
+
+== Trivia ==
+* Tall Pilgrim shares the same voice with [[Loyal Mergwin]].
+{{Localisation
+|DEname = Großer Pilger
+|DEmeaning = Great Pilgrim
+|ESname = Peregrino Alto
+|ESmeaning = Tall Pilgrim
+|FRname = Grand Pèlerin
+|FRmeaning = Grand Pilgrim
+|ITname = Pellegrino Alto
+|ITmeaning = Tall Pilgrim
+|JAname = 背の高い巡礼者
+|JAromanised = Senotakai junrei-sha
+|JAmeaning = Tall Pilgrim
+|KOname = 키가 큰 순례자
+|KOromanised = Kiga keun sullyeja
+|KOmeaning = Tall Pilgrim
+|PTname = Peregrino Alto
+|PTmeaning = Tall Pilgrim
+|RUname = Высокий пилигрим
+|RUromanised = Vysokij piligrim
+|RUmeaning = Tall Pilgrim
+|TWname = 高個子朝聖者
+|TWromanised = Gāo gèzi cháoshèng zhě
+|TWmeaning = same
+|ZHname = 高个朝圣者
+|ZHromanised = Gāo gè cháoshèng zhě
+|ZHmeaning = Tall Pilgrim
+|CODEname= JUDGE_GATE_PILGRIM
+|CODEmeaning= 
+}}
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

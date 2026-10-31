@@ -1,0 +1,141 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| title1 = Silk and Soul
+| description = Acquire the necessary components to build a powerful trap.
+| prerequisite = See {{Section link|#Requirements}}
+| npc = [[Caretaker]]
+| location = [[Songclave]]
+| reward =
+An [[Endings (Silksong)#Ending 2: Snared Silk|ending]]
+Access to [[Act 3]]
+| achievement = <i>[[Achievements (Silksong)|Snared Silk]]</i>
+}}{{Quote|Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...|[[Caretaker]]
+| Hr = SS
+| Tr = SS
+}}
+
+<b>Silk and Soul</b> is a [[Wayfarer Wishes|Wayfarer Wish]] from the [[Caretaker]] for assistance in the creation of a powerful trap with which to ensnare the [[Grand Mother Silk|monarch]] of [[Pharloom]].
+
+== Requirements ==
+In order to unlock the quest, [[Hornet (Silksong)|Hornet]] must first complete the following:<ref><code>Soul Snare</code> in <code>dataassets/questsystem/completetotalgroups.bundle</code>.</ref>
+
+<i>Note: This list only shows the final Wish or Item required. Requirements to unlock each Wish or Item are listed on their individual pages.</i>
+
+=== Wishes ===
+* <i>[[Flexile Spines]]</i>
+* <i>[[A Lifesaving Bridge]]</i>
+* <i>[[Crawbug Clearing]]</i>
+* <i>[[Strengthening Songclave]]</i>
+* <i>[[Trail's End]]</i>
+* <i>[[Balm for the Wounded]]</i>
+
+=== Items ===
+* [[Faydown Cloak]]
+* [[Bellhome Key]]
+
+=== Miscellaneous ===
+* Move the [[Flea Caravan]] to [[Fleatopia]].
+* Defeat [[Lace]] in [[the Cradle]].
+
+=== Quest Points ===
+A minimum of <b>17 "Quest Points"</b> is required to unlock <i>Silk and Soul</i>. There are 25 possible Quest Points: 22 points from normal Wishes and 3 points from 6 delivery Wishes, which only give points the first time they are completed.
+{| class="wikitable" style="text-align:top;"
+|-
+! 1 Point
+! 0.5 Points
+|-
+|<i>
+* [[Berry Picking]]
+* [[An Icon of Hope]]
+* [[Rite of the Pollip]]
+* [[Volatile Flintbeetles]]
+* [[My Missing Courier]]
+* [[My Missing Brother]]
+* [[Pinmaster's Oil]]<ref group="Note">The Quest Point is earned upon receiving the second Needle Upgrade, even if the Wish itself was missed.</ref>
+* [[The Terrible Tyrant]]
+* [[Fine Pins]]
+* [[Roach Guts (Wish)|Roach Guts]]
+* [[Great Taste of Pharloom]]
+* [[Alchemist's Assistant]]
+* [[Bugs of Pharloom]]
+* [[Silver Bells]]
+* [[Savage Beastfly (Wish)|Savage Beastfly]]
+* [[Broodfeast]]
+* [[Garb of the Pilgrims]]
+* [[The Wandering Merchant]]
+* [[The Lost Merchant]]
+* [[Final Audience]]
+* [[Cloaks of the Choir]]
+* [[The Wailing Mother]]
+</i>
+| style="vertical-align: top;"|<i>
+* [[Bone Bottom Supplies]]
+* [[Pilgrim's Rest Supplies]]
+* [[Songclave Supplies]]
+* [[Fleatopia Supplies]]
+* [[Queen's Egg (Wish)|Queen's Egg]]
+* [[Liquid Lacquer (Wish)|Liquid Lacquer]]
+</i>
+|}<div style="font-size: smaller;"><references group="Note" /></div>
+
+Once Hornet completes all the requirements, she may then take up the Wish from the [[Wishwalls|Wishwall]] in [[Bellhart]] or by speaking to the [[Caretaker]] in [[Songclave]].
+
+== The Soul Snare ==
+Hornet must collect the following items:
+* [[Maiden's Soul]], given by [[Chapel Maid]] in [[Bone Bottom]].
+* [[Hermit's Soul]], given by [[Bell Hermit]] in [[Bellhart]].
+* [[Seeker's Soul]], found on a Snail Shaman's corpse after defeating [[Groal the Great]] in [[Bilewater]].
+* [[Snare Setter]], found in [[Weavenest Atla]] in a hidden workshop.
+
+{{Gallery
+| Image1 = Mapshot SS Chapel Maid 01.png!Maiden's Soul location in Bone Bottom
+| Image2 = Mapshot SS Bell Hermit 01.png!Hermit's Soul location in Bellhart
+| Image3 = Mapshot SS Seeker's Soul.png!Seeker's Soul location in Bilewater
+| Image4 = Mapshot SS Snare Setter 01.png!Snare Setter location in Weavenest Atla
+}}
+
+Once the items have been gathered and given to the Caretaker, the <i>[[DESTROY: Soul Snare]]</i> [[Objectives|objective]] begins, and Hornet must ascend the Cradle once more to fight [[Grand Mother Silk]]. The boss fight is identical during this wish, but while delivering the final blow, Hornet is given the option to play the [[Needolin]] instead of binding the boss. Doing so entraps Grand Mother Silk with the Soul Snare, granting the <i>Snared Silk</i> [[Achievements (Silksong)|achievement]] and triggering its [[Endings (Silksong)#Ending 2: Snared Silk|ending]].
+
+{{Disclaimer|Triggering the <i>Snared Silk</i> ending permanently locks out the <i>[[Endings (Silksong)#Ending 1: Weaver Queen|Weaver Queen]]</i> and the <i>[[Endings (Silksong)#Ending 3: Twisted Child|Twisted Child]]</i> endings on that [[Save Data (Silksong)|save profile]].}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Cradle 11.png!The Soul Snare in the Cradle
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Snared Silk}}
+
+{{Localisation
+|DEname = Seide und Seele
+|DEmeaning = Silk and Soul
+|ESname = Seda y alma
+|ESmeaning = Silk and Soul
+|FRname = Soie et âme
+|FRmeaning = Silk and Soul
+|ITname = Seta ed anima
+|ITmeaning = Silk and Soul
+|JAname = シルクとソウル
+|JAromanised = Shiruku to souru
+|JAmeaning = Silk and Soul
+|JAkatakana = foreign
+|KOname = 실크와 영혼
+|KOromanised = Silkeuwa yeonghon
+|KOmeaning = Silk and Soul
+|PTname = Seda e Alma
+|PTmeaning = Silk and Soul
+|RUname = Шёлк и душа
+|RUromanised = Šëlk i duša
+|RUmeaning = Silk and Soul
+|ZHname = 灵丝与灵魂
+|ZHromanised = Líng sī yǔ línghún
+|ZHmeaning = Soul Silk and Soul
+|TWname = 靈絲與靈魂
+|TWromanised = Líng sī yǔ línghún
+|TWmeaning = same
+|CODEname = SOUL_SNARE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
