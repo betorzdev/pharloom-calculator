@@ -1,0 +1,89 @@
+{{SS Infobox NPC
+|area = [[Pilgrim's Rest]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|singnum=2
+}}
+
+{{Quote
+| Hr = SS
+| Sister, my aching shell's close to breaking. My voice weakens... I can hardly sing a word.
+| Weary Pilgrim
+}}
+
+<b>Weary Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is one of many pilgrims travelling to [[the Citadel]], found resting at [[Pilgrim's Rest]] in [[Far Fields]].
+
+== In-game Events ==
+Hornet meets the Weary Pilgrim resting just outside Pilgrim's Rest. If it is before Hornet has obtained the [[Drifter's Cloak]], the Weary Pilgrim complains about her aching shell and weakened voice. Hornet advises her to rest, but she is wary about idling too long.
+
+After the Drifter's Cloak has been obtained, [[Sherma]] is found at Pilgrim's Rest, singing to the Weary Pilgrim. He notes on her waning resolve and hoarse voice and attempts to lift her spirits. If spoken to at this point, she only responds with moans.
+
+If Pilgrim's Rest is returned to after Sherma leaves, she can be found [[Haunting|entranced]] by Silk from above, and if approached she attacks Hornet. She shares a moveset with [[Pilgrim Hulk]]s.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter, before Sherma arrives
+| Title1_Dialogue1 = Uoohhh... Sister, my aching shell's close to breaking. My voice weakens... I can hardly sing a word.<br>
+{{HTalk|I fear the path ahead will be no easier for you, ma'am. If you can not abandon your pilgrimage, you should at least rest well before continuing.}}<br>
+Ahh... but impurities stalk our every step, sister. If we rest too long, they shall catch us. So... so it is sung...
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = Ahhh... I am so tired. But to tarry long would be sacrilege...
+| Title1_Event3 = Speaking when Sherma is present
+| Title1_Dialogue3 = Uohhhhh.... Ahhh.....
+| Title1_Event4 = Playing the [[Needolin]]
+| Title1_Dialogue4 = [n]Forget... your pain...<br>
+Climb... the climb...<br>
+Sing...<br>
+Have... faith...
+}}
+
+== Location ==
+
+Weary Pilgrim is found at the entrance of [[Pilgrim's Rest]] in [[Far Fields]] during [[Act 1]].<br>
+She remains in this location through the duration of [[Act 2]], though has been taken by the Haunting.
+{{Gallery
+|Image1 = Mapshot SS Weary Pilgrim.png!Location in Far Fields
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Weary Pilgrim 01.png!The Weary Pilgrim outside Pilgrim's Rest
+|Image2 = Screenshot SS Weary Pilgrim 03.png!The Weary Pilgrim alert
+|Image3 = Screenshot SS Weary Pilgrim 04.png!The Weary Pilgrim singing
+|Image4 = Screenshot SS Sherma 08.png!Sherma and the Weary Pilgrim
+|Image5 = Screenshot SS Weary Pilgrim 02.png!The Weary Pilgrim, now haunted
+}}
+
+== Trivia ==
+
+* Weary Pilgrim is missing from the room if the [[Rhinogrund]] is rampaging within the building after being let out.
+
+{{Localisation
+|DEname = Müde Pilgerin
+|DEmeaning = Weary Pilgrim
+|ESname = Peregrina Cansada
+|ESmeaning = Tired Pilgrim
+|FRname = Pèlerine Fatiguée
+|FRmeaning = Tired Pilgrim
+|ITname = Pellegrina Stanca
+|ITmeaning = Weary Pilgrim
+|JAname = やつれた巡礼者
+|JAromanised = Yatsureta junreisha
+|JAmeaning = Weary Pilgrim
+|KOname = 지친 순례자
+|KOromanised = Jichin sullyeja 
+|KOmeaning = Tired Pilgrim
+|PTname = Peregrina Cansada
+|PTmeaning = Tired Pilgrim
+|RUname = Усталая пилигримка
+|RUromanised = Ustalaya piligrimka
+|RUmeaning = Weary Pilgrim
+|ZHname = 疲倦的朝圣者
+|ZHromanised = Píjuàn de cháoshèng zhě
+|ZHmeaning = Weary Pilgrim
+|CODEname = SHERMA_PILGRIM
+|CODEmeaning =
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

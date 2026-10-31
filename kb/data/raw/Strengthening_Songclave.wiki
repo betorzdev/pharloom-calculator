@@ -1,0 +1,60 @@
+{{Navbar
+| page1 = Building Up Songclave
+| page2 = Strengthening Songclave
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate rosaries to aid the growing [[Songclave]].
+| npc = [[Caretaker]] of Songclave
+| location = Songclave [[Wishwall]]
+| prerequisite = Complete [[Building Up Songclave]] and at least 3 other wishes from the Songclave Wishwall
+}}
+
+{{Quote
+| How do all of these wretched, lost bugs keep finding their way here?! Each hungry and sqyalling for shelter! We need more rosaries, so empty your pockets.
+| Residents of [[Songclave]]
+| Hr = SS
+}}
+
+<b>Strengthening Songclave</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on the Wishwall of [[Songclave]]. 
+
+== Wish ==
+To complete the Wish, donate {{R|500}} to the Songclave Wishwall. <i>Strengthening Songclave</i> is a prerequisite Wish required to unlock <i>[[The Lost Merchant]]</i> and <i>[[Silk and Soul]]</i> Wishes.
+
+{{Gallery
+| Image1 = File:Mapshot SS Songclave Wishwall.png!Location of the Wishwall in Songclave
+}}
+
+{{Localisation
+|DEname = Stärkung der Sangesloge
+|DEmeaning = Reinforcement of Song Lodge
+|ESname = Fortalecimiento de Enclave Cancioneril
+|ESmeaning = Strengthening of Songbook Enclave
+|FRname = Fortifier Chantsoir
+|FRmeaning = Fortifying Songclave
+|ITname = Potenziamento di Suonclave
+|ITmeaning = Upgrade of Songclave
+|JAname = さらなる改善
+|JAromanised = Saranaru kaizen
+|JAmeaning = Further Improvements
+|KOname = 노래 부르는 자들 보강하기
+|KOromanised = Norae bureuneun jadeul boganghagi
+|KOmeaning = Song Singing People Reinforcement
+|PTname = Fortalecendo Cantoclave
+|PTmeaning = Strengthening Songclave
+|RUname = Поддержка Уголка Песни
+|RUromanised = Podderžka Ugolka Pesni
+|RUmeaning = Support of Song Corner
+|ZHname = 巩固圣歌盟地
+|ZHromanised = Gǒnggù shènggē méngdì
+|ZHmeaning = Strengthen Hymn Alliance Land
+|TWname = 鞏固聖歌飛地
+|TWromanised = Gǒnggù shènggē fēidì
+|TWmeaning = Strengthen Hymn Enclave
+|CODEname = QUEST_SONGCLAVE_DONATE_2
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

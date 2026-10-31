@@ -1,0 +1,86 @@
+{{SS Infobox NPC
+|area = [[Halfway Home]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|singnum = 1
+}}
+
+{{Quote
+|Hr=SS
+|Might have taken me a beat to build the courage, but I can feel it, closer now... the Citadel calling me up.
+|Aged Pilgrim
+}}
+
+<b>Aged Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of many pilgrims travelling to [[the Citadel]], and can be found resting at the [[Halfway Home]] in [[Greymoor]] before continuing their journey.
+
+== In-game Events ==
+[[Hornet (Silksong)|Hornet]] can meet Aged Pilgrim resting at a table in the Halfway Home. The traveller mentions how lucky they both are to have found this place and complains about the unexpected difficulty of the climb.<ref>Aged Pilgrim: <i>"Tis a blessed bit of luck to find this place, eh, sister? The climb's proved harder than even my best guessin', but there's still some vigour left in these old limbs. Doubly so, now I have a belly full of nectar!"</i></ref> However, with their vigour renewed by a belly full of nectar, they can sense the Citadel calling them upwards.<ref>Aged Pilgrim: <i>"Might have taken me a beat to build the courage, but I can feel it, closer now... the Citadel calling me up."</i></ref>
+
+Once seen, Aged Pilgrim departs the Halfway Home after Hornet rests at a [[Bench (Silksong)|bench]] elsewhere.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Tis a blessed bit of luck to find this place, eh, sister?<br>
+The climb's proved harder than even my best guessin', but there's still some vigour left in these old limbs. Doubly so, now I have a belly full of nectar!
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = Might have taken me a beat to build the courage, but I can feel it, closer now... the Citadel calling me up.
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]A hearth stoked hot...<br>
+Nectar from the teat...<br>
+To sit, to rest... to stop...<br>
+Pharloom's warmth...
+}}
+
+== Location ==
+Aged Pilgrim can be found at the [[Halfway Home]] in [[Greymoor]] during [[Act 2]], after Hornet speaks with [[Creige]] at least once and meets [[Lace]] in the [[Choral Chambers]].
+{{Gallery
+|Image1 = Mapshot SS Creige 01.png!Location in Greymoor
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Aged Pilgrim 01.png!Resting
+|Image2 = Screenshot SS Aged Pilgrim 02.png!Alert
+|Image3 = Screenshot SS Aged Pilgrim 03.png!Singing
+}}
+
+== Trivia ==
+* Aged Pilgrim was originally planned to sit alongside [[Exhausted Pilgrim]].<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition] p. 60.</ref> 
+
+{{Gallery
+|Image1 = Screenshot SS EDGE 07.png!Pre-release screenshot
+}}
+
+{{Localisation
+|DEname = Alter Pilger
+|DEmeaning = Old Pilgrim
+|ESname = Peregrino Anciano
+|ESmeaning = Old Pilgrim
+|FRname = Vieux Pèlerin
+|FRmeaning = Old Pilgrim
+|ITname = Pellegrino Invecchiato
+|ITmeaning = Aged Pilgrim
+|JAname = 年老いた巡礼者
+|JAromanised = Toshioita junrei-sha
+|JAmeaning = Aged Pilgrim
+|KOname = 나이 든 순례자
+|KOromanised = Nai deun sullyeja
+|KOmeaning = Aged Pilgrim
+|PTname = Peregrino Velho
+|PTmeaning = Old Pilgrim
+|RUname = Старый пилигрим
+|RUromanised = Staryj piligrim
+|RUmeaning = Old Pilgrim (masculine)
+|TWname = 年邁的朝聖者
+|TWromanised = Niánmài de cháoshèng zhě
+|TWmeaning = same
+|ZHname = 年迈的朝圣者
+|ZHromanised = Niánmài de cháoshèng zhě
+|ZHmeaning = Aged Pilgrim
+|CODEname =HH_PATRON_LEFT
+|CODEmeaning = <code>HH</code> stands for the Halfway Home.
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

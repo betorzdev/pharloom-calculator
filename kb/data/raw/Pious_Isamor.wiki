@@ -1,0 +1,109 @@
+{{SS Infobox NPC
+|area = [[Whispering Vaults]]
+|role = Lore
+|affiliation = [[The Citadel]] (Former pilgrim greeter)
+|singnum = 2
+}}
+
+{{Quote
+| ...ilgrim!... ast aside those many sinful hopes for rest ...d reward... remain pure... within our midst... sk for nothing!|Pious Isamor
+| Hr=SS
+}}
+
+<b>Pious Isamor</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. It is a large rusted statue found abandoned deep within the [[Whispering Vaults]].
+
+== Background ==
+Pious Isamor is a large metal statue of a pilgrim,<ref>Inspecting Pious Isamor: <i>"A rusted statue of a pilgrim."</i></ref> which originally served to greet those who had newly arrived at [[the Citadel]] and to motivate them to join [[the Choir]].<ref name = stone>Pious Isamor restored dialogue: <i>"Hark! {{Red|P}}ilgrim! You {{Red|who}} climb{{Red|ed to}} our eternal embrace... who stand stru{{Red|ggling/struck at}} the threshold {{Red|of}} our stark Citadel of stone... kno{{Red|w that/your}} true service may now commence.<br>Forget... your weary shell. Forgo {{Red|the}} urge to still... {{Red|Ph}}arloom commands... give {{Red|the}} greatest gift! Join our chor{{Red|us}}... Raise {{Red|your}} shell... {{Red|your}} voice... and sing!"</i></ref> Its dialogue implies that it dates back to a time when the [[Weavers]] had already bequeathed the Citadel to the [[Conductors]], but before it became gilded, opulent, and hierarchical.<ref name = salvation>Pious Isamor restored dialogue: <i>"Give {{Red|all}} of yourself... for great Pharloom, for {{Red|the}} first-children who bequeath it to us... for our salva{{Red|tion}}... sure to come!"</i></ref><ref>Pious Isamor restored dialogue: <i>"See {{Red|our/the}} Citadel's simple stone, bare an{{Red|d una}}dorned. See h{{Red|ow pl}}ain our garb, how sparse o{{Red|ur}} meal. Know that... excess is sin!"</i></ref><ref>Pious Isamor [[Needolin]] dialogue: <i>"Pilgrims... all... Siblings... serving... Devout... unwavering... All... are equal..."</i></ref>
+
+Pious Isamor originally stood in the western part of the [[Choral Chambers]], directly outside the entrance to the [[Whiteward]].<ref>[[:File:Screenshot_SS_Choral_Chambers_11.png|Screenshot]] of the oxidised statue base in the Choral Chambers.</ref> At an unknown point, it was decommissioned and left deep within the [[Whispering Vaults]].
+
+== In-game Events ==
+Pious Isamor initially appears to be an inactive, rusted statue with three [[Silk Flies]] resting on it. After playing the [[Needolin]] or inspecting the statue and attempting to leave, it awakens and recites a fragmented greeting, welcoming a "pilgrim" to the Citadel of stone and urging them to join the chorus.<ref name = stone /> If listened to again, it describes the Citadel's humble, unadorned state and warns against seeking rest or reward, demanding purity and vigilance against sin.<ref>Pious Isamor restored dialogue: <i>"{{Red|P}}ilgrim!... {{Red|C}}ast aside those many sinful hopes for rest {{Red|an}}d reward... remain pure... within our midst... {{Red|a}}sk for nothing! See {{Red|our/the}} Citadel's simple stone, bare an{{Red|d una}}dorned. See h{{Red|ow pl}}ain our garb, how sparse o{{Red|ur}} meal. Know that... excess is sin!<br>Stay vigil{{Red|ant alwa}}ys, for tho{{Red|se}} wretched pilgrims {{Red|who}} dare relen{{Red|t to}} their base desi{{Red|res}}... Left unpunish{{Red|ed (within/they thin)}} our pure chorus... {{Red|th}}eir seductive sin... {{Red|s}}pread like flame..."</i></ref> It concludes its speech by calling for total devotion to [[Pharloom]] and the first-children in the name of a promised salvation.<ref name = salvation />
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Inspecting
+| Title1_Dialogue1 = A rusted statue of a pilgrim.
+| Title1_Event2 = After waking Pious Isamor
+| Title1_Dialogue2 = Hark! ...ilgrim! You... climb... our eternal embrace... who stand stru... the threshold... our stark Citadel of stone... kno... true service may now commence.<br>
+Forget... your weary shell. Forgo... urge to still... arloom commands... give... greatest gift! Join our chor... Raise... shell... voice... and sing!<br>
+| Title1_Event3 = Listening again
+| Title1_Dialogue3 = ...ilgrim!... ast aside those many sinful hopes for rest ...d reward... remain pure... within our midst... sk for nothing! <br>
+See... Citadel's simple stone, bare an... dorned. See h...ain our garb, how sparse o... meal. Know that... excess is sin!<br>
+Stay vigil... ys, for tho... wretched pilgrims... dare relen... their base desi... Left unpunish... thin our pure chorus... eir seductive sin... pread like flame...<br>
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = ...Dear... grim... Dark it seems now... et these word... become your guide...<br>
+Hear our voice... Let it... your own! Give... of yourself... for great Pharloom, for... first-children who bequeath it to us... for our salva... sure to come!<br>
+| Title1_Event5 = Playing the [[Needolin]]
+| Title1_Dialogue5 = [n]Pilgrims... all...<br>
+Siblings... serving... <br>
+Devout... unwavering...<br>
+All... are equal...
+}}
+
+=== Restored Dialogue ===
+It is possible to piece together most of the statue's original dialogue using the game translations, although the localisations differ in certain places. In the dialogue box below, the restored parts of the dialogue are marked in red.
+{{TabbedDialogue
+|header=false
+|Title1 = Potential dialogue restoration
+|Title1_Event1 = After waking Pious Isamor
+|Title1_Dialogue1 = Hark! {{Red|P}}ilgrim! You {{Red|who}} climb{{Red|ed to}} our eternal embrace... who stand stru{{Red|ggling/struck at}} the threshold {{Red|of}} our stark Citadel of stone... kno{{Red|w that/your}} true service may now commence.<br>Forget... your weary shell. Forgo {{Red|the}} urge to still... {{Red|Ph}}arloom commands... give {{Red|the}} greatest gift! Join our chor{{Red|us}}... Raise {{Red|your}} shell... {{Red|your}} voice... and sing!
+|Title1_Event2 = Listening again
+|Title1_Dialogue2 = {{Red|P}}ilgrim!... {{Red|C}}ast aside those many sinful hopes for rest {{Red|an}}d reward... remain pure... within our midst... {{Red|a}}sk for nothing! See {{Red|our/the}} Citadel's simple stone, bare an{{Red|d una}}dorned. See h{{Red|ow pl}}ain our garb, how sparse o{{Red|ur}} meal. Know that... excess is sin!<br>Stay vigil{{Red|ant alwa}}ys, for tho{{Red|se}} wretched pilgrims {{Red|who}} dare relen{{Red|t to}} their base desi{{Red|res}}... Left unpunish{{Red|ed (within/they thin)}} our pure chorus... {{Red|th}}eir seductive sin... {{Red|s}}pread like flame...
+|Title1_Event3 = Exhausted dialogue
+|Title1_Dialogue3=...Dear {{Red|pil}}grim... Dark it seems now... {{Red|l}}et these word{{Red|s}}... become your guide...<br>Hear our voice... Let it {{Red|become}} your own! Give {{Red|all}} of yourself... for great Pharloom, for {{Red|the}} first-children who bequeath it to us... for our salva{{Red|tion}}... sure to come!
+}}
+
+== Location ==
+Pious Isamor is located behind a breakable ceiling above the lower bench in the [[Whispering Vaults]].
+{{Gallery
+|Image1= Mapshot SS Pious Isamor.png!Location in the Whispering Vaults
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Pious Isamor 02.png!With Silk Flies before being activated
+|Image2 = Screenshot SS Whispering Vaults 08.png!Idle
+|Image3 = Screenshot SS Pious Isamor 01.png!Activated
+|Image4 = Screenshot SS Pious Isamor 03.png!With lone Silk Fly on subsequent visits
+|Image5 = Screenshot SS Choral Chambers 11.png!Original location of Pious Isamor in the Choral Chambers
+|Image6 = Pious Isamor Base.png!Sprite of the statue base
+}}
+
+== Trivia ==
+* It is possible to [[Needle#Needle-bouncing|Needle-bounce]] on Pious Isamor.
+* The large statue in the background of [[Bone Bottom]] resembles Pious Isamor.
+
+{{Localisation
+|DEname = Frommer Isamor
+|DEmeaning = Pious Isamor
+|ESname = Isamor el Devoto
+|ESmeaning = Isamor the Devout
+|FRname = Isamor Le Dévot
+|FRmeaning = Isamor the Devout
+|ITname = Isamor il Devoto
+|ITmeaning = Isamor the Devout
+|JAname = 敬虔なるイサモル
+|JAromanised = Keikennaru isamoru
+|JAmeaning = Pious Isamor
+|KOname = 경건한 이사모르
+|KOromanised = Gyeonggeonhan isamoreu
+|KOmeaning = Pious Isamor
+|PTname = Isamor Devoto
+|PTmeaning = Devout Isamor
+|RUname = Набожный Исамор
+|RUromanised = Nabožnyj Isamor
+|RUmeaning = Pious Isamor
+|TWname = 虔誠的伊薩莫爾
+|TWromanised = Qiánchéng de yīsàmò'ěr
+|TWmeaning = same
+|ZHname = 虔诚的伊萨莫尔
+|ZHromanised = Qiánchéng de yīsàmò'ěr
+|ZHmeaning = Pious Isamor
+|CODEname = OLD_STATUE</code><br><code>LIBRARY_STATUE
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[fr:Isamor le Dévot]]

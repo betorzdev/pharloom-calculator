@@ -1,0 +1,66 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Achieve the high score in all Flea Games and become the Grand Champion.
+| npc = [[Fleamaster Mooshka]]
+| location = [[Bellhart]] Wishwall<br>[[Putrified Ducts#Sub-area: Fleatopia|Fleatopia]]
+| prerequisite = Rescue every [[Flea]], receive the [[Egg of Flealia]], leave [[Putrified Ducts]], and either obtain [[Silk Soar]] or talk to Fleamaster Mooshka after receiving the Egg of Flealia
+| reward = [[Rosaries]]<br>[[Pale Oil]]
+}}
+
+{{Quote
+| As was warned long ago, the black times have come. There is one last act to perform. Meet us at what was once called Fleatopia.
+| [[Fleamaster Mooshka]]
+| Hr = SS
+}}
+
+<b>Ecstasy of the End</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i> which can be acquired from [[Bellhart|Bellhart's]] Wishwall or from [[Fleamaster Mooshka]] in [[Act 3]]. The wish is offered on the Wishwall after the [[Egg of Flealia]] is received and [[Silk Soar]] has been obtained,<ref group=Source><code>dataassets_assets_assets/dataassets/questsystem/quests.bundle</code> has <code>Flea Games Pre</code> and checks for <code>hasSuperJump</code> and <code>FleaGamesCanStart</code>. <code>FleaGamesCanStart</code> is set in code inside <code>GameManager.cs</code>.</ref> or offered by talking to Fleamaster Mooshka once the Egg of Flealia has been received.<ref group=Source><code>aqueduct_05_festival.bundle</code> includes a FSM called <code>Caravan Troupe Leader Festival Intro - Dialogue</code> which gives the option to start the wish and only loads when <code>FleaGamesCanStart</code> is set to true.</ref> <b>This wish does not appear if the last [[Bench (Silksong)|Bench]] that was rested on was in [[Fleatopia]], nor if Hornet has not left the [[Putrified Ducts]] since acquiring the Egg of Flealia.</b><ref group=Source><code>FleaGamesCanStart</code> is set using <code>if (!playerData.FleaGamesCanStart && playerData.blackThreadWorld && playerData.CaravanTroupeLocation == CaravanTroupeLocations.Aqueduct && Gameplay.FleaCharmTool.IsUnlocked && currentMapZoneEnum != MapZone.AQUEDUCT && playerData.respawnScene != "Aqueduct_05")</code>.</ref>
+
+== Wish ==
+{{Main|Festival of the Flea}}
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must first meet Fleamaster Mooshka in [[Fleatopia]] in the [[Putrified Ducts]], who starts the [[Festival of the Flea]]. 
+
+{{Gallery
+| Image1 = Mapshot SS Ecstasy of the End.png!Fleamaster Mooshka's location in the Putrified Ducts
+}}
+
+Hornet can participate in 3 minigames of Flea Juggle, Flea Dodge, and Flea Bounce, and must achieve a high score on all 3 to complete the Wish. The high scores of each game are 30 held by [[Grishkin]] for Flea Juggle, 65 held by [[Vog]] for Flea Dodge, and 42 held by Vog for Flea Bounce. Getting a high score in all 3 and talking to Fleamaster Mooshka concludes the festival and completes the Wish.
+
+== Reward ==
+[[File:Pale Oil.png|link=Pale Oil|left|thumb|100x100px]]
+
+After beating the high score on all 3 Flea games, Hornet can talk to Fleamaster Mooshka to conclude the festival. Hornet is put on stage with a large Flea-shaped piñata that drops large amounts of [[Rosaries]] and [[Shell Shards]] upon being struck, and drops a [[Pale Oil]] when it is broken apart. Picking up the Pale Oil completes the Wish.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Verzückung des Endes
+|DEmeaning = Rapture of the End
+|ESname = Éxtasis del fin
+|ESmeaning = Ecstasy of the End
+|FRname = Réjouissements de la fin
+|FRmeaning = Rejoicings of the End
+|ITname = Estasi finale
+|ITmeaning = Final Ecstasy
+|JAname = 終末の恍惚
+|JAromanised = Shūmatsu no kōkotsu
+|JAmeaning = Ecstasy of the End
+|KOname = 종말의 황홀경
+|KOromanised = Jongmarui hwangholgyeong
+|KOmeaning = Ecstasy of the End
+|PTname = Êxtase do Fim
+|PTmeaning = Ecstasy of the End
+|RUname = Ликование перед концом
+|RUromanised = Likovanie pered koncom
+|RUmeaning = Triumph Before the End
+|ZHname = 终幕狂欢
+|ZHromanised = Zhōng mù kuánghuān
+|ZHmeaning = Finale's Ecstasy
+|TWname = 末日狂歡
+|TWromanised = Mòrì kuánghuān
+|TWmeaning = Doomsday Ecstasy
+|CODEname = QUEST_FLEAGAMES
+}}
+
+{{Refs|hr=SS|type=code}}
+
+{{SS Nav Wishes}}

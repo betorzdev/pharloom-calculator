@@ -1,0 +1,101 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox NPC
+|area = [[Sinner's Road]]
+|role = Merchant
+|singnum = 1
+}}
+
+{{Quote
+|The morsselssssss. Give them. Take. 
+|Skynx
+|Hr=SS}}
+
+<b>Skynx</b> is a [[NPCs (Silksong)#Merchants|Merchant]] who appears only in [[Steel Soul Mode (Silksong)|Steel Soul Mode]] in <i>[[Hollow Knight: Silksong]]</i>. They replace [[Styx]] in this mode, and provide [[Rosaries]] in exchange for [[Silkeater]]s.
+
+== In-game Events ==
+Hornet encounters Skynx behind a breakable wall east of Styx's original [[Bench (Silksong)|Bench]], in the easternmost room of [[Sinner's Road]]. They are originally shrouded by darkness, but emerge when Hornet notices them.
+
+They request Silkeaters from Hornet, providing {{R|46–154}} in exchange.<ref group="Note">Skynx gives either {{R|50}}, {{R|100}}, or {{R|150}}, with a variation of up to {{R|4}}.</ref>
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = {{HTalk|I can sense you there, hidden in the darkness. Show yourself.}}<br>
+I can sense you. Hidden.<br>
+| Title1_Event2 = Greeting on subsequent interactions
+| Title1_Dialogue2 = {{HTalk|I would speak again. Show yourself.}}<br>
+Show again. Speak yourself.
+| Title1_Event3 = Speaking while having no [[Silkeater]]s
+| Title1_Dialogue3 = Not right. Nothing. Go.
+| Title1_Event4 = Speaking while having Silkeaters
+| Title1_Dialogue4 = The morsselssssss. Give them. Take.
+| Title1_Event5 = Declining to give the Silkeaters
+| Title1_Dialogue5 = Give them. Take wrong. Ssssomeone, ssssave me.
+| Title1_Event6 = Accepting to give the Silkeaters
+| Title1_Dialogue6 = Take. Ahhh, my reward. Give them.
+}}
+
+== Location ==
+Skynx is found behind a breakable wall next to the bench in the easternmost room in [[Sinner's Road]].
+
+{{Gallery
+|Image1 = Mapshot SS Skynx.png ! Location in Sinner's Road
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Skynx 01.png!Skynx's room
+| Image2 = Screenshot SS Skynx 02.png!Skynx appearing
+}}
+
+== Trivia ==
+* Though Skynx has no [[Needolin]] dialogue, they do 'sing' along with it. The audio files used for it are a combination of [[Muckroach]] singing and the sound of [[Pendragor]] wings.
+** [[Cut Content (Silksong)/Text|Cut Needolin dialogue]] for Skynx exists in the game's files:
+{{SS Needolin|columns=2|
+* I shall not be?...
+* No more me?...
+* Sweet little thingssss...
+* To feed... To swell...
+* To cleanssse...
+}}
+* If Hornet rams into the wall near their lair's door using [[Swift Step]] or hits the wall near them with the [[Needle]], Skynx roars in response. The same audio is also used for a [[Marrowmaw]]'s roar.
+* Skynx appears to possibly be mimicking [[Styx]]'s final words as a part of their declining Silkeater dialogue: <i>"Ssssomeone, ssssave me"</i>. This includes Styx's drawn-out S sounds, in contrast to the lines copied from Hornet which pronounce the letter S normally.
+** In the Japanese translation of the game, Styx has a different speech quirk more akin to stuttering, and also does not use <i>kanji</i>. Skynx copies both of these behaviours, futher lending credence to this theory.
+* Skynx's mask is most likely Styx's stolen mask upside-down.
+
+{{Localisation
+|DEname = Skynx
+|DEmeaning = —
+|ESname = Skynx
+|ESmeaning = —
+|FRname = Skynx
+|FRmeaning = —
+|ITname = Skynx
+|ITmeaning = —
+|JAname= スキンクス
+|JAromanised= Sukinkusu
+|JAmeaning = Skynx
+|KOname = 스킨크스
+|KOromanised = Seukinkeuseu
+|KOmeaning = Skynx
+|PTname =  Skynx
+|PTmeaning = —
+|RUname = Скинкс
+|RUromanised = Skinks
+|RUmeaning = Skynx
+|ZHname = 斯金克思
+|ZHromanised = Sījīnkèsī
+|ZHmeaning = Skynx
+|CODEname = GRUBFARMER_MIMIC
+|CODEmeaning = <code>GRUBFARMER</code> is [[Styx]]'s internal name.
+}}
+
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav NPCs}}
+[[Category:Steel Soul Mode (Silksong)]]
+
+[[fr:Skynx]]

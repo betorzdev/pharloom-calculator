@@ -1,0 +1,75 @@
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver supplies to the Flick at the Survivor's Camp.
+| npc = [[Couriers Tipp & Pill|Tipp & Pill]]
+| location = [[Bellhart]]
+| prerequisite = Enter [[Act 3]]
+| reward = {{R|180}}
+}}
+
+{{Quote
+| A new destination this-this! And desperate these supplies are asked. Deliverings for them-them escaped from the crumbled camp beside the bone, those few still living. Hurting and hungry, those few must be.
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Survivor's Camp Supplies</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]] in [[Act 3]].
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a [[Delivery Wishes|fragile]] [[Courier's Swag]] with 5 health points by Tipp & Pill to carefully deliver it to [[Flick the Fixer]] in the [[Survivor's Camp]].
+
+This Delivery can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill location in Bellhart
+| Image2 = Mapshot SS Flea Caravan 01.png!Flick the Fixer location in Survivor's Camp
+}}
+
+== Route ==
+The most optimal route goes through the hidden path in the [[Bellhart]] [[Bellway]] leading to the Marrow to reach the Survivor's Camp.
+{{Gallery
+|Image1 = Mapshot SS Survivor's Camp Supplies 01.png!Route through the Marrow
+}}
+
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the supplies to Flick the Fixer, he rewards Hornet with {{R|180}}.
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 80 rosaries to 180.
+}}
+{{Localisation
+|DEname = Überlebendenlager-Vorräte
+|DEmeaning = Survivor's Camp Supplies
+|ESname = Suministros del Campamento de Supervivientes
+|ESmeaning = Survivors' Camp Supplies
+|FRname = Matériaux pour le campement des survivants
+|FRmeaning = Materials for the Campsite of Survivors
+|ITname = Risorse dell'Accampamento dei Superstiti
+|ITmeaning = Survivors' Camp Resources
+|JAname = 生存者の物資
+|JAromanised = Seizonsha no busshi
+|JAmeaning = Survivor's Supplies
+|KOname = 생존자의 야영지 보급품
+|KOromanised = Saengjonjaui yayeongji bogeuppum
+|KOmeaning = Survivor's Camp Supply
+|PTname = Suprimentos do Acampamento dos Sobreviventes
+|PTmeaning = Survivors' Camp Supplies
+|RUname = Припасы для лагеря выживших
+|RUromanised = Pripasy dlja lagerja vyživšix
+|RUmeaning = Supplies for Survivor's Camp
+|ZHname = 幸存者营地补给
+|ZHromanised = Xìngcúnzhě yíngdì bǔjǐ
+|ZHmeaning = Survivor's Camp Supplies
+|TWname = 倖存者營地補給
+|TWromanised = Xìngcúnzhě yíngdì bǔjǐ
+|TWmeaning = same
+|CODEname = QUEST_COURIER_FIXER
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

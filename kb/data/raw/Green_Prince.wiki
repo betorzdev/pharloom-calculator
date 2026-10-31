@@ -1,0 +1,233 @@
+{{Navbar|page1=Green Prince|page2=Clover Dancers}}
+{{SS Infobox NPC
+| image1 = <gallery>
+Green Prince.png|Standing
+Green Prince Sitting.png|Sitting
+Green Prince Dead.png|Dead
+</gallery>
+| area = [[Sinner's Road]]<br>[[Choral Chambers]]<br>[[Cogwork Core]]<br>[[Verdania]]
+| role = Wanderer
+| affiliation = [[Cogwork Dancers]] (partner)<br>
+[[Verdania]] (prince)
+|singnum = 2
+}}
+
+{{Quote
+|Pharloom's end approaches, but my caves, these caves, fell to fate long before. Of that fair land, I am the last... Now to remain till the end, and remember the splendour that was...
+|Green Prince
+|Hr=SS
+}}
+
+The <b>Green Prince</b> is a [[NPCs (Silksong)#Wanderers|wandering NPC]] in <i>[[Hollow Knight: Silksong]]</i>. A [[Verdanians|Verdanian]] former prince of [[Verdania]], he has been locked away.
+
+== Background ==
+The Green Prince is the former ruler of [[Verdania]], which he ruled alongside his partner.<ref>[[Clover Dancers]] [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Dual princes of old Verdania, beloved by their subjects for their grace and for the ballet of death they delivered upon outsiders."</i></ref> His partner gave his life to become the model for the [[Cogwork Dancers]] in an attempt to save Verdania from ruin.<ref>Green Prince: <i>"The dancers... they were the last free act of my partner... Always hopeful. Always naive. His whole he gave, in desperate trade to see our own caves left safe. His shell and soul became the mould."</i></ref> He is the only surviving Verdanian.<ref>Green Prince: <i>"Pharloom's end approaches, but my caves, these caves, fell to fate long before. Of that fair land, I am the last..."</i></ref>
+
+== In-game Events ==
+The Green Prince is first encountered in a locked cage in [[Sinner's Road]]. The lock can be opened with a [[Simple Key (Silksong)|Simple Key]].
+
+After he is freed, the Green Prince moves to a long hallway west of [[Citadel Spa]], only if [[Hornet (Silksong)|Hornet]] has first completed the [[Enemy Gauntlets (Silksong)/Choral Chambers|enemy gauntlet]] there.
+
+After the [[Cogwork Dancers]] in the [[Cogwork Core]] are defeated, the Green Prince moves to the short hallway to the left of the Cogwork Dancers' arena if Hornet has visited [[Songclave]] and has seen the Green Prince in the previous room west of Citadel Spa, or if [[Act 3]] has started.
+
+In Act 3, after speaking to the Green Prince in the Cogwork Dancers' arena,<ref group=Source><code>Clover Entry Gate (1)</code> in <code>greymoor_15b.bundle</code> checks flags <code>GreenPrinceLocation</code> and <code>blackThreadWorld</code>.</ref> he can be found in the caves of Verdania, which is accessible from the east of [[Craw Lake]] in [[Greymoor]]. He brings the shell of one of the Cogwork Dancers with him, and mourns at the image of his lover. Playing the [[Elegy of the Deep]] next to him sends Hornet to [[Lost Verdania]]. The Green Prince can be found at many different places throughout the area. After activating at least 12 memory orbs,<ref group=Source>FSM <code>palace_control - Control</code> in <code>clover_10.bundle</code> checks <code>CloverMemoryOrbsCollectedTarget</code>.</ref> the entrance to the palace appears in upper centre of Lost Verdania, in the place where the Green Prince used to sit. Inside the palace, the Green Prince can be found standing in front of the throne. Upon approaching, he challenges Hornet to a fight for trespassing his memory.
+
+After defeating him, Hornet leaves Lost Verdania and returns to the entrance of current Verdania. The Green Prince can be found lying deceased next to the shell of the Cogwork Dancer. Upon returning to this location with the [[Everbloom]], clovers can be seen growing around the two.<ref group=Source><code>GameManager.TimePasses()</code> sets flag <code>cloverDancerRegrowth</code></ref>
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1= [n]Together we danced...<br>
+Our claws clasped...<br>
+You and I... always...<br>
+Together we ruled...<br>
+Together... perfect...<br>
+Our gaze... as one...
+
+| Title2 = Sinner's Road
+| Title2_Event1 = Speaking when Hornet has no [[Simple Key (Silksong)|Simple Keys]]
+| Title2_Dialogue1 = <b>Before Act 3:</b><br>
+Leave me be, traveller. Better I accept this kingdom's cruelty than rage helpless against it.<br>
+To waste in a cell, forgotten. 'Tis no worse a fate than the Haunting that binds Pharloom's many fragile minds.<br>
+{{HTalk|As you wish, prisoner.}}
+<hr/>
+<b>In Act 3:</b><br>
+Leave me be. This kingdom's collapse has come. Better I stay here to accept it.<br>
+To die within a cage... A fitting finale for this shell, and a well deserved fate for these cursed lands.<br>
+{{HTalk|As you wish, prisoner.}}
+| Title2_Event2 = After unlocking the cage with a Simple Key
+| Title2_Dialogue2 = So I am freed, despite no request of mine for aid.<br>
+{{HTalk|And I do not ask gratitude. The key merely fit the lock. If you choose, stay in here and wait till your shell hardens to crust.}}<br>
+No. I shall depart shortly. With my way clear, my wish again propels me, though I tried to avoid it.<br>
+{{HTalk|Then safe journey, tall bug. I'll not pry further. Clearly you bear your own burden.}}
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = <b>Before unlocking the cage:</b><br>
+Leave it, bug. I accept my place.<br>
+{{HTalk|Very well, prisoner.}}
+<hr/>
+<b>After unlocking the cage:</b><br>
+{{HTalk|Safe journey, tall bug.}}<br>
+This is Pharloom, warrior. Safety is a myth.
+
+| Title3 = The Citadel
+| Title3_Event1 = In the hallway west of [[Citadel Spa]]
+| Title3_Dialogue1 = <b>First conversation:</b><br>
+I'd hoped to never step these hateful halls, yet here I stand, as all those hapless bugs before.<br>
+{{HTalk|You've journeyed far from that damp cell, tall bug. If you would oppose the minions of this Citadel, you have my respect.}}<br>
+Hmph. Then we share a rare stance, warrior. Few others seem possessed of will enough to resist.<br>
+So many weak minds, drawn up and strung, in love with the great golden leech atop their lands.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+{{HTalk|Farewell, tall bug, until we cross again.}}<br>
+Or until death calmly claims us both...
+| Title3_Event2 = In the [[Cogwork Dancers]]' arena
+| Title3_Dialogue2 = <b>First conversation:</b><br>
+You… So, it is done… My wish granted before ever I arrived…<br>
+{{HTalk|The bronze pair that danced this chamber, it is clear, tall bug, how closely they mimicked your shell. Was it you who provided their inspiration?}}<br>
+Not I, warrior. For this place, my heart holds only loathing…<br>
+The dancers… they were the last free act of my partner… Always hopeful. Always naive.<br>
+His whole he gave, in desperate trade to see our own caves left safe. His shell and soul became the mould.<br>
+So long, I dared not visit… Even as our lands fell to thread and ruin… Instead I wasted, a coward caged, too weak to witness his grace bound in parody so cruel.<br>
+{{HTalk|Take some solace, tall bug. His soul is now free from that shell of iron, and the fate that befell your lands, this Citadel too has been claimed full by it.}}<br>
+Aye… Slim consolation, warrior, now that everything I loved is lost…
+<hr/>
+<b>Exhausted dialogue:</b><br>
+My wish is granted… and now everything I love is lost…
+
+| Title4 = Verdania
+| Title4_Event1 = At the entrance of current Verdania
+| Title4_Dialogue1 = <b>When first approached:</b><br>
+Warrior... I heard your approach. Why do you come? Surely you've no desire to see these long collapsed caves?<br>
+{{HTalk|The way was open, sir. I merely followed the path through. Am I correct to guess you were once a resident of these borderlands?}}<br>
+Aye... and glorious they were, in their time. Pharloom's end approaches, but my caves, these caves, fell to fate long before.<br>
+Of that fair land, I am the last... Now to remain till the end, and remember the splendour that was...<br>
+No more talk, warrior. Permit me this final moment of memorial.<br>
+{{HTalk|As you wish, sir. I shall disturb you no longer.}}
+<hr/>
+<b>Exhausted dialogue:</b><br>
+No more talk, warrior. Permit me this final moment of memorial.<br>
+{{HTalk|As you wish, sir. I shall disturb you no longer.}}
+| Title4_Event2 = At the entrance of [[Lost Verdania]]
+| Title4_Dialogue2 = <b>First conversation:</b><br>
+The myth we made... by grace... by blade...<br>
+All bowed before we princes green...
+<hr/>
+<b>Exhausted dialogue:</b><br>
+All bowed before we princes green...
+| Title4_Event3 = On the lakeshore in the easternmost area of Lost Verdania
+| Title4_Dialogue3 = <b>First conversation:</b><br>
+These waters, at land's edge... and the shrine atop... our furtive escape... our brief retreat from rule...<br>
+So many moments spent simple... joyful... free...
+<hr/>
+<b>Exhausted dialogue:</b><br>
+So many moments spent simple... joyful... free...
+| Title4_Event4 = On the trail to [[Palestag]], in the long northernmost hallway of Lost Verdania
+| Title4_Dialogue4 = <b>First conversation:</b><br>
+Here, the trail of the stag touched pale... We hunted her, felled her, as none before were able...<br>
+Proof it became, of our majesty... mark of our divine right...
+<hr/>
+<b>Exhausted dialogue:</b><br>
+Here, the proof of our majesty... mark of our divine right...
+| Title4_Event5 = Outside the palace entrance, before activating enough memory orbs
+| Title4_Dialogue5 = <b>First conversation:</b><br>
+Our capital, built grand... The seat of our sovereignty... slipped from my mind...<br>
+Why does it fade? Why can I not recall that sacred place?
+<hr/>
+<b>Exhausted dialogue:</b><br>
+Why does it fade? Why can I not recall that sacred place?
+| Title4_Event6 = Upon first entering the throne room in the palace
+| Title4_Dialogue6 = Again... to see... this land abandoned... betrayed...<br>
+...And a throne I could not sit alone...<br>
+{{HTalk|You were mortal bugs, caught beneath a being pale... Devotion or destruction... these are the only fates my kind allow.}}<br>
+{{HTalk|Feel guilt at your absence, sir, but know the end was inexorable, the outcome set, whether you remained or not.}}<br>
+Do not seek to console me, warrior... This memory is mine alone... I'll not brook your brutish intrusion...<br>
+You who dare trespass this sacred chamber, ready yourself... to see us, and know us, Verdania's rulers, together in our finest form...
+|Title4_Event7 = After the fight against the [[Clover Dancers]]
+|Title4_Dialogue7 = ...To dance... And love... And end... Together...
+|Title4_Event8 = Playing the [[Needolin]]
+|Title4_Dialogue8 = [n]Teeming...thriving...<br>
+All born brave...<br>
+All born free...<br>
+Sprout tall... Spread far...<br>
+For shoot, and sheath, and blade...<br>
+Stones washed green...<br>
+Paths lost in shade...<br>
+Peace earned by claw...
+}}
+
+== Location ==
+The Green Prince can be first encountered in a locked cage in [[Sinner's Road]].
+
+After being freed from his cage, the Green Prince can be found in a long hallway west of [[Citadel Spa]], only if [[Hornet (Silksong)|Hornet]] has first completed the enemy gauntlet there.
+
+After the [[Cogwork Dancers]] in the [[Cogwork Core]] are defeated, the Green Prince moves to the short hallway to the left of the Cogwork Dancers' arena if Hornet has visited [[Songclave]] and has seen the Green Prince in the previous room west of Citadel Spa, or if Act 3 has started.
+
+In Act 3, after speaking to the Green Prince in the Cogwork Dancers' arena, he can be found in the caves of Verdania, which is accessible from the east of [[Craw Lake]] in [[Greymoor]].
+
+After playing the [[Elegy of the Deep]] and entering [[Lost Verdania]], the Green Prince can be found at many different places throughout the area. After activating at least 12 memory orbs, the entrance to the palace appears in upper centre of Lost Verdania. Inside the palace, the Green Prince can be found standing in front of the throne.
+
+After defeating him, the Green Prince can be found lying motionless next to the shell of the Cogwork Dancer at the entrance of current Verdania.
+
+{{Gallery
+| Image1 = Mapshot SS Green Prince 01.png!First location in Sinner's Road
+| Image2 = Mapshot SS Green Prince 02.png!Location in the Choral Chambers
+| Image3 = Mapshot SS Green Prince 03.png!Location in the Cogwork Core, after the Cogwork Dancers fight
+| Image4 = Mapshot SS Green Prince 04.png!Locations in Verdania and Lost Verdania, before activating enough memory orbs
+| Image5 = Mapshot SS Clover Dancers.png!Location in Lost Verdania, after activating enough memory orbs
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Simple Key 02.png!Caged in Sinner's Road
+| Image2 = Screenshot SS Green Prince 01.png!West of Citadel Spa
+| Image3 = Screenshot SS Green Prince 02.png!Near the Cogwork Dancer's corpse in the Cogwork Core
+| Image4 = Screenshot SS Verdania 01.png!Near the Cogwork Dancer's corpse at the entrance to Verdania
+| Image5 = Screenshot SS Green Prince 03.png!At the entrance to Lost Verdania
+| Image6 = Screenshot SS Lost Verdania 07.png!On the lakeshore near Sacred Shrine in Lost Verdania
+| Image7 = Screenshot SS Lost Verdania 13.png!On the Palestag trail
+| Image8 = Screenshot SS Lost Verdania 05.png!Outside the palace, before enough memory orbs are collected
+| Image9 = Screenshot SS Lost Verdania 21.png!In his throne room
+| Image10 = Screenshot SS Verdania 03.png!After obtaining his heart
+| Image11 = Screenshot SS Verdania 04.png!Returning after obtaining his heart
+| Image12 = Screenshot SS Green Prince 04.png!Singing
+| Image13 = Ari SS Sketch 17.jpg!Concept sketches
+}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Clover plants begin to regrow around the Green Prince after he dies.
+}}
+{{Localisation
+|DEname = Grüner Prinz
+|DEmeaning = Green Prince
+|ESname = Príncipe Verde
+|ESmeaning = Green Prince
+|FRname = Prince Vert
+|FRmeaning = Green Prince
+|ITname = Principe Verde
+|ITmeaning = Green Prince
+|JAname = 緑の王子
+|JAromanised = Midori no ōji
+|JAmeaning = Green Prince
+|KOname = 녹의 왕자
+|KOromanised = Nogui wangja  
+|KOmeaning = Green Prince
+|PTname = Príncipe Verde
+|PTmeaning = Green Prince
+|RUname = Зелёный принц
+|RUromanised = Zelënyj princ
+|RUmeaning = Green Prince
+|TWname = 綠王子
+|TWromanised = Lǜ wángzǐ
+|TWmeaning = same
+|ZHname = 绿王子
+|ZHromanised = Lǜ wángzǐ
+|ZHmeaning = Green Prince
+|CODEname = GREEN_PRINCE
+}}
+
+{{Refs|hr=SS}}
+
+{{Refs|hr=false|type=code}}
+{{SS Nav NPCs}}
+
+[[fr:Prince Vert]]

@@ -1,0 +1,79 @@
+__NOTOC__
+{{Navbar
+| page1 = Bone Bottom Repairs
+| page2 = A Lifesaving Bridge
+| page3 = An Icon of Hope
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate shell shards to aid the construction of an icon of hope.
+| npc = [[Flick the Fixer|Flick]] of Bone Bottom
+| location = [[Bone Bottom]] Wishwall
+| prerequisite = 
+* Enter [[The Citadel]]
+* Complete [[A Lifesaving Bridge]]
+| reward = [[Hornet Statuette]]<br>
+A destructible statue of Flick is erected in Bone Bottom.
+}}
+
+{{Quote
+| The road is hard for we pilgrims. I want to build a beautiful symbol of hope, to stand beside Bone Bottom and welcome all those who are about to begin their long journey.
+| [[Flick the Fixer]]
+| Hr = SS
+}}
+
+<b>An Icon of Hope</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on the Wishwall of [[Bone Bottom]] after entering [[The Citadel]] and completing [[A Lifesaving Bridge]].
+
+== Wish ==
+To complete the Wish, donate {{S|440}} to the Bone Bottom Wishwall.
+
+{{Gallery
+|Image1 = Mapshot SS Bone Bottom Wishwall.png!Location of Wishwall in Bone Bottom
+}}
+
+== Reward ==
+[[File:Hornet Statuette.png|link=Hornet Statuette|left|thumb|100x100px]]
+
+After completing the quest, [[Hornet (Silksong)|Hornet]] can speak to [[Flick the Fixer]] to receive the [[Hornet Statuette]]. A destructible statue of Flick is also erected beside the lift that leads to [[Mosshome]]. If the statue is destroyed, it is never rebuilt. The statue becomes permanently destroyed regardless in [[Act 3]]. 
+
+Flick's statue behaves like a cache of [[Shell Shards]]. It can be hit up to 6 times, dropping a small number of Shell Shards each time, and a larger quantity upon breaking. Unlike the bridge from <i>[[A Lifesaving Bridge]]</i>, any damage inflicted on the statue is permanent, so it does not recover from partial damage when Hornet moves to a different screen, or when the game is reloaded.
+
+{{Gallery
+|Image1 = Screenshot SS Bone Bottom 02.png!Statue of Flick
+}}
+
+{{Localisation
+|DEname = Ein Symbol der Hoffnung
+|DEmeaning = A Symbol of Hope
+|ESname = Un icono de esperanza
+|ESmeaning = An Icon of Hope
+|FRname = Symbole d'espoir
+|FRmeaning = Symbol of Hope
+|ITname = Un'icona di speranza
+|ITmeaning = An Icon of hope
+|JAname = 希望の象徴
+|JAromanised = Kibō no shōchō
+|JAmeaning = Symbol of Hope
+|KOname = 희망의 상징
+|KOromanised = Huimangui sangjing
+|KOmeaning = Symbol of Hope
+|PTname = Um Ícone de Esperança
+|PTmeaning = An Icon of Hope
+|RUname = Светоч надежды
+|RUromanised = Svetoč nadeždy
+|RUmeaning = Light of Hope
+|ZHname = 希望丰碑
+|ZHromanised = Xīwàng fēngbēi
+|ZHmeaning = Hope Monument
+|TWname = 希望之碑
+|TWromanised = Xīwàng zhī bēi
+|TWmeaning = same
+|CODEname = QUEST_FIXER2
+|CODEmeaning = 1 is <i>[[Bone Bottom Repairs]]</i>; 3 is <i>[[A Lifesaving Bridge]]</i>
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav Wishes}}
+
+[[fr:Symbole d’espoir]]

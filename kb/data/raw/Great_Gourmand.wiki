@@ -1,0 +1,81 @@
+{{SS Infobox NPC
+| area = [[Choral Chambers]]
+| role = Lore
+| affiliation = [[Loyal Mergwin]] (servant)
+}}
+
+{{Quote
+|Hr=SS
+|My master shall have the holy indulgence they deserve, even if I must douse my shell in oil and climb onto a dish myself!
+|[[Loyal Mergwin]]
+}}
+
+The <b>Great Gourmand</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Background ==
+The Great Gourmand is a connoisseur whose tastes transcend the ages.<ref>[[Loyal Mergwin]]: <i>"The Great Gourmand! The finest connoisseur who has ever lived, the one whose tastes transcend the ages! None are left now who venerate them as they deserve, save for the loyal, lonely bug who stands before you."</i></ref>
+
+{{MissingInfo}}
+
+== In-game Events ==
+Once Hornet fulfils the <i>[[Great Taste of Pharloom]]</i> [[wish]], the Great Gourmand feasts with haste upon the dish created by [[Loyal Mergwin]]. After eating, the Great Gourmand reflects upon his meal in silence.<ref>Loyal Mergwin: <i>"Leave us! My great master needs time to reflect, and I must ponder on flavours anew!"</i></ref>
+
+== [[Needolin]] Dialogue ==
+{{SS Needolin|columns=2|
+* ...EAT... EAT...
+* ...FOOD... MEAT... MUCH...
+* ...EAT... FEED...
+* ...MUCH... EAT... GOOD...
+}}
+
+== Location ==
+The Great Gourmand can be found in the dining chamber of the [[Choral Chambers]], once the <i>[[Great Taste of Pharloom]]</i> [[wish]] is completed.
+
+{{Gallery
+|Image1 = Mapshot SS Loyal Mergwin 01.png!Location in the Choral Chambers
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Choral Chambers 16.png!With Loyal Mergwin
+|Image2 = Screenshot SS Great Gourmand 01.png!Singing
+}}
+
+== Achievements ==
+{{Achievement|game=silksong
+|Glutton}}
+{{Localisation
+|DEname = Großen Vielfraß
+|DEmeaning = Great Glutton
+|ESname = Gran Gourmet
+|ESmeaning = Great Gourmet
+|FRname = Grand Gourmand
+|FRmeaning = —
+|ITname = Enorme Insaziabile
+|ITmeaning = Gigantic Insatiable One
+|JAname = 偉大なるグルマンド
+|JAromanised = Idainaru gurumando 
+|JAmeaning = Great Gourmand
+|KOname = 위대한 미식가
+|KOromanised = Widaehan misikga
+|KOmeaning = Great Gourmand
+|PTname =  Grande Gourmand
+|PTmeaning = Great Gourmand
+|RUname = Великому гурману
+|RUromanised = Velikomu gurmanu
+|RUmeaning = Great Gourmand
+|TWname = 偉大的貪食大王
+|TWromanised = Wěidà de tānshí dàwáng
+|TWmeaning = Great Glutton
+|ZHname = 伟大的大胃王
+|ZHromanised = Wěidà de dàwèiwáng
+|ZHmeaning = Great Gourmand
+|CODEname = GOURMAND</code><br><code>GREAT_GOURMAND
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+{{#seo:|keywords=gourmand, grand, grand gourmand}}
+
+[[fr:Grand Gourmand]]

@@ -1,0 +1,479 @@
+{{SS Infobox NPC
+| area = [[The Marrow]]<br>
+[[Greymoor]]<br>
+[[Blasted Steps]]<br>
+[[Fleatopia]]
+| affiliation = [[Flea Caravan]] (Leader)<ref>Fleamaster Mooshka: <i>"I am Fleamaster Mooshka, leader of this caravan!"</i></ref>
+| role = Quest
+|aka = Fleamaster
+|quest = [[The Lost Fleas]]<br>
+[[Ecstasy of the End]]
+|singnum = 3
+|s1= Default
+|s2 = Default alt
+|s3 = Festival of the Flea intro
+}}
+
+{{Quote
+|Oh. Oho! A kindred spirit! It's good luck for wanderers to meet on an unfamiliar path.
+|Fleamaster Mooshka
+|Hr=SS}}
+
+<b>Fleamaster Mooshka</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is the leader of the [[Flea Caravan]].
+
+== Background ==
+Fleamaster Mooshka is a stranger to [[Pharloom]],<ref><i>[[The Lost Fleas]]</i> [[Wishes|wish]]: <i>"I am Mooshka, humble stranger to this land and master of the Flea Caravan!"</i></ref> with his only desire being to travel across Pharloom with his caravan of [[Flea]]s, just as past generations of Fleas had done.<ref>Fleamaster Mooshka: <i>"The time has come for us fleas to find each other and travel together, as has happened through generations before."</i></ref><ref>Fleamaster Mooshka [[Needolin]] Dialogue: <i>"Join our company, moving free! All fleas must find us... All fleas must come..."</i></ref> As Fleamaster, it is his job to teach the fleas of his caravan to respect their superiors.<ref>[[Varga]]: <i>"Ugh... really, is Fleamaster's job to teach the fleas such."</i></ref> He cares very deeply about his fellow Fleas,<ref>Fleamaster Mooshka: <i>"Our poor cousins, out there, in hiding!"</i></ref> though he is suspicious of [[Kratt]].<ref>Fleamaster Mooshka: <i>"A strange flea has joined our troupe. All are welcome, but something about this one sets my fur to raise."</i>
+
+</ref> He believes that the world has gotten very dangerous for Fleas,<ref>Fleamaster Mooshka: <i>"The many fleas of this kingdom should be flocking to our caravan, but times have become dangerous."</i></ref> and rightly so, as one of his companions is nearly lost to the [[Sandcarver]]s on the way to the [[Grand Gate]].<ref> [[Grishkin]]: <i>"The bellowing sandy land was full of much danger. We was almost lost poor Varga to hungry worms as we travel up!"</i></ref> He dreams of finding a safe place with lots of room where he and his companions can stay permanently,<ref>Fleamaster Mooshka: <i>"If ever you come upon a cave both wide and free, return with haste and tell us."</i></ref> but he is hesitant to journey without such a place located ahead of time.<ref>Fleamaster Mooshka: <i>"But from here, as their leader, I am hesitant to order us so swiftly away."</i></ref> If he ever survives to the end of the world, he wishes to host the [[Festival of the Flea]], a grand celebration before they are all eventually consumed by the coming end.<ref>Fleamaster Mooshka Needolin Dialogue: <i>"The ritual beckons..."</i></ref><ref>Fleamaster Mooshka: <i>"It is time for the Festival of the Flea! One last, grand celebration before the black quakes pull us all down into the darkness!"</i></ref><ref>Fleamaster Mooshka: <i>"Though the world will soon end, and our paradise will crumble, the memories of friendship we all shared shall surely echo through the oncoming void for all eternity!"</i></ref>
+
+== In-game Events ==
+Meeting with Fleamaster Mooshka in [[the Marrow]] for the first time prompts him to ask [[Hornet (Silksong)|Hornet]] to fulfill his Wish <i>[[The Lost Fleas]]</i>. After Hornet finds at least 5 missing [[Fleas]] and talks with Fleamaster Mooshka, he asks Hornet to join the Caravan. If Hornet accepts, she travels with the Flea Caravan in a cutscene and arrives at [[Moorwing]]'s arena in [[Greymoor]]. Fleamaster Mooshka then suggests talking to Grishkin, who gives Hornet the [[Flea Brew]], which can be refilled by interacting with the pot next to them for {{R|30}}.
+
+If [[Moorwing]] has been defeated when the Flea Caravan moves to Greymoor, they tie its corpse to a carriage. If Moorwing has not been defeated, it will disappear and can be fought outside of the Greymoor [[Bellway]].
+
+While the Flea Caravan is at Greymoor, talking with Fleamaster Mooshka reveals that he is waiting for more fleas to join the Caravan before moving forward. After finding at least 12 Fleas in total, <ref group=code>FSM <code>Caravan Troupe Leader Greymoor NPC - Dialogue</code> in <code>greymoor_08_caravan.bundle</code>.</ref> if [[Last Judge]] has not been defeated yet, Fleamaster Mooshka continues to say that he is waiting for more fleas to join; however, if Last Judge is already defeated and the [[Grand Gate]] is opened, he then mentions that it is time for the Flea Caravan to move on, and once again asks Hornet to join them. If Hornet accepts, she travels with the Flea Caravan and arrives at the Last Judge's room at [[Blasted Steps]]. He then gifts Hornet a [[Spool Fragment]] for helping them thus far.
+
+Fleamaster Mooshka then waits for more fleas to join the Caravan. After at least 22 Fleas have returned <ref group=code>FSM <code>Caravan Troupe Leader Judge NPC - Dialogue</code> in <code>coral_judge_arena.bundle</code>.</ref> and the [[Pale Lake]] at the edge of [[Putrified Ducts]] has been discovered, Hornet can inform Fleamaster Mooshka of its location, prompting the Flea Caravan to move to it. Hornet can also choose to join them in this journey once again and receives a [[Tool Pouch]] upgrade when they arrive. This is the final resting stop of the Caravan and is called [[Fleatopia]]. 
+
+After finding all the lost Fleas, Fleamaster Mooshka gives Hornet the [[Egg of Flealia]] as a reward.
+
+In Act 3, Fleamaster Mooshka and the residents of Fleatopia prepare for the end of times by hosting the [[Festival of the Flea]] as a way to celebrate a final time before the world is consumed by Void. Upon getting the highest score in all 3 of the festival's minigames, thus completing the [[Ecstasy of the End]] wish, Hornet receives a [[Pale Oil]] as a reward.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| id = The Lost Fleas
+| title = [[The Lost Fleas]]
+| description = <i>I am Mooshka, humble stranger to this land and master of the Flea Caravan! I wish for aid, that all fleas may travel safely together!</i>
+| objective = Seek fleas across the lands of Pharloom and guide them to the Flea Caravan.
+| prerequisite = Complete one of the following:
+* Find the NPC.
+* Defeat the [[Bell Beast]].
+| location = <b><i>[[Bone Bottom]] Wishwall /<br> [[The Marrow]] NPC</i></b>
+Mooshka of the Flea Caravan
+| reward = [[Flea Brew]]
+}}
+
+{{TaskEntry
+| bottom = true
+| id = Ecstasy of the End
+| title = [[Ecstasy of the End]]
+| description = As was warned long ago, the black times have come. There is one last act to perform. Meet us at what was once called Fleatopia.
+| objective = Achieve the high score in all Flea Games and become the Grand Champion.
+* Juggle
+* Dodge
+* Bounce
+| location = <b><i>[[Bellhart]] Wishwall / [[Fleatopia]] NPC</i></b>
+Mooshka of Fleatopia
+| reward = [[Pale Oil]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = After [[Kratt]] joins the Caravan
+| Title1_Dialogue1 = A strange flea has joined our troupe. All are welcome, but something about this one sets my fur to raise.<br>
+His carriage offers a steaming service, but the charge in rosaries is stiff, especially for us fleas who carry few.<br>
+For the companionship we provide, and the safety of our numbers, surely some discount is deserved?
+| Title1_Event2 = After [[Vog]] joins the Caravan
+| Title1_Dialogue2 = Have you met her yet? Our burly new companion, Vog! Fresh returned from a long time spent tracking.<br>
+{{HTalk|We have met, Fleamaster. It gladdens me that so strong a flea exists as her.}}<br>
+{{HTalk|Yours was a caravan sorely lacking for protection, and I am too bound by my own tasks to provide it for you.}}<br>
+Why, we would never impose so! And now, no matter! Her scent may be strong, and her taste for brew bottomless, but her skill is sharp.<br>
+If predators draw close, her talents will provide much confidence to our caravan.
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 =
+[n]Hear our voices! Hear our plea!<br>
+Join our company, moving free!<br>
+All fleas must find us...<br>
+All fleas must come...<br>
+The ritual beckons... the road is long...<br>
+We live and die and roam as one!<br>
+
+| Title2 = The Marrow
+| Title2_Event1 = First Encounter
+| Title2_Dialogue1 = Ah! Aha! A native of these fiery lowlands approaches! Have no fear, my friend, we fleas are but humble travellers!<br>
+{{HTalk|Well met, sir, though like you I am not of these lands. I am merely journeying through.}}<br>
+Oh. Oho! A kindred spirit! It's good luck for wanderers to meet on an unfamiliar path.<br>
+And now that we have met, know that I am Fleamaster Mooshka, leader of this caravan!<br>
+Our own journey has barely begun, but you are most welcome to tarry here a while, stranger. Where ways are dark and winding, good bugs must stay close together!<br>
+| Title2_Event2 = If Hornet has accepted <i>[[The Lost Fleas]]</i> wish from [[Bone Bottom]] [[Wishwall]] before meeting
+| Title2_Dialogue2 = {{HTalk| Fleamaster, I took your request from the wishwall in the pilgrim camp. You are seeking fleas to join your caravan?}}<br>
+Oh, yes! The time has come for us fleas to find each other and travel together, as has happened through generations before.<br>
+The many fleas of this kingdom should be flocking to our caravan, but times have become dangerous. You feel it too, yes? Our poor cousins, out there, in hiding!<br>
+But... do I understand you rightly, stranger? You will help find the poor, lost fleas? Truly?<br>
+{{HTalk| I am travelling these lands for my own reasons, Fleamaster. However, if I happen upon any fleas on my travels, I will aid them as best I can.}}<br>
+Oh, oh, I could ask for nothing more! They must all be hiding or stuck in dangerous places, but if you rouse them they are sure to find their way here to us.<br>
+May the kingdom bless your travels and keep you safe, stranger! You are welcome to rest here with us whenever the roads bring you back!
+| Title2_Event3 = If Hornet hasn't accepted the Wish before meeting
+| Title2_Dialogue3 = Stranger, will you hear my worry? The time has come for us fleas to find each other and travel together, as has happened through generations before.<br>
+The many fleas of this kingdom should be flocking to our caravan, but times have become dangerous. You feel it too, yes? Our poor cousins, out there, in hiding!<br>
+Would you, could you, help us find these poor, lost fleas? We daren't continue our journey until some of the poor dears have found their way here to us!
+| Title2_Event4 = Accepting his request
+| Title2_Dialogue4 = Ahh! Do I understand you rightly, stranger? You will help gather the lonely fleas to our caravan? Truly?<br>
+{{HTalk|I am travelling these lands for my own reasons, Fleamaster. However, if I happen upon any fleas on my travels, I will aid them as best I can.}}<br>
+Oh, oh, I could ask for nothing more! They must all be hiding or stuck in dangerous places, but if you rouse them they are sure to find their way here to us.<br>
+May the kingdom bless your travels and keep you safe, stranger! You are welcome to rest here with us whenever the roads bring you back!
+| Title2_Event5 = Refusing his request
+| Title2_Dialogue5 = Ah... I understand, stranger. I presume too much of one who is not a flea.<br>
+I've heard the settlement below us is setting up a wishwall. Perhaps I'll send Grishkin down to hang up our wish...
+| Title2_Event6 = Speaking again after refusing request
+| Title2_Dialogue6 = Normally I would never burden a visitor with the caravan's worries. But! Isn't it the custom of this kingdom to share your deepest wishes with strangers?<br>
+Well, my wish is for the poor lost fleas of these lands to find their way to our caravan! Stranger, could you not help us?
+| Title2_Event7 = Exhausted dialogue if Hornet hasn't found any Fleas
+| Title2_Dialogue7 = There are many lost and lonely fleas still scattered across this kingdom. If only some more of them joined us, the caravan could continue its journey.<br>
+You'll find the little dears in all sorts of strange places, for they love to peek and pry and play, but if you rouse them they are sure to find their way here!
+| Title2_Event8 = Exhausted dialogue if Hornet has found fewer than 5 Fleas
+| Title2_Dialogue8 = Ahh, look! The poor fleas are starting to make their way to us! What a precious thing!<br>
+We have much to thank you for already! And I hope we will have even more to be thankful for very soon! Please, keep seeking out our lost fellows!
+| Title2_Event9 = After finding at least 5 Fleas
+| Title2_Dialogue9 = Look, look! So many fleas have joined the caravan! What a miracle! We can not thank you enough for honouring our humble wish!<br>
+There are still many fleas for us to be united with though, and we've rested long enough. The caravan must head higher!<br>
+Oh, but stranger, how remiss of me! I introduced myself earlier without ever asking for your own name. Forgive me! Please, what shall we call you?<br>
+{{HTalk|You may call me Hornet, Fleamaster. Know that I, like you, am glad to see your fellow fleas safe with your caravan. These are dangerous lands to travel alone.}}<br>
+{{HTalk|I still have a long journey ahead of me. If I come across any more fleas, I will assist where I am able.}}<br>
+Oh, vavenda! That is to say, incredible! What a beautiful thing for me to hear!<br>
+Dear friend... Miss Hornet. Our caravan must be away now, toward the wide moor high above. Would you travel with us, as our honoured guest?
+| Title2_Event10 = If Hornet has accepted <i>[[The Lost Fleas]]</i> wish before meeting and has already found at least 21 Fleas
+| Title2_Dialogue10 = {{HTalk|Fleamaster, I took your request from the wishwall in the pilgrim camp. You are seeking fleas to join your caravan? I have found and freed many throughout my travels.}}<br>
+Oh yes, indeed! And look here, they all have made their way to us! So many gathered, it seems a miracle. Our wishes granted before even your promise was known!<br>
+And now, with our caravan bursting, we've rested here long enough. We fleas must head higher!<br>
+Oh, but stranger, how remiss of me! First, please, what shall we call you?<br>
+{{HTalk|You may call me Hornet, Fleamaster. Know that I, like you, am glad to see your fellow fleas safe with your caravan. These are dangerous lands to travel alone.}}<br>
+Oh, vavenda! That is to say, incredible! What a beautiful thing it is! All of us together.<br>
+Dear friend... Miss Hornet. Our caravan prepares to depart toward the wide moor high above. Would you travel with us, as our honoured guest?
+| Title2_Event11 = If Hornet hasn't accepted the Wish before meeting and has already found at least 21 Fleas <!-- 21 is the number that is checked in the code, not 22, so unless the code changes then this number is correct -->
+| Title2_Dialogue11 = But stranger! While you're with us, you must hear of the miracle that has occurred!<br>
+See all these fleas gathered to our troupe? It seems so many! An impossible number, yet here they are, safely joined together. Our most cherished wishes answered!<br>
+{{HTalk|If you were seeking fleas to join your caravan, I have found and freed many throughout my travels.}}<br>
+Oh! Can it be? Then you here are our saviour, our dear fleafriend! For all have made their way right, straight to us!<br>
+And now, with our caravan full to bursting, we've rested long enough. We fleas must head higher!<br>
+Oh, but saviour, how remiss of me! First, please tell, what shall we call you?<br>
+{{HTalk|You may call me Hornet, Fleamaster. Know that I, like you, am glad to see your fellow fleas safe with your caravan. These are dangerous lands to travel alone.}}<br>
+Oh, vavenda! That is to say, incredible! What a beautiful thing it is! All of us together.<br>
+Dear friend... Miss Hornet. Our caravan prepares to depart toward the wide moor high above. Would you travel with us, as our honoured guest?
+| Title2_Event12 = Accepting to join
+| Title2_Dialogue12 = Excellent, excellent! Let us make preparations and be off without delay! Rouse yourself fleas, for the caravan roams once more!
+| Title2_Event13 = Refusing to join
+| Title2_Dialogue13 = Ahh, that is a shame, but I understand. I'm sure our roads will cross each other soon enough.<br>
+And now, we must be off! Rouse yourself, fleas. The caravan roams once more!
+
+| Title3 = Greymoor
+| Title3_Event1 = After travelling to Greymoor with the caravan
+| Title3_Dialogue1 = The journey here was long, but we didn't lose a single flea! I'm told it's good luck to bring a guest along when travelling, so we must have you to thank!<br>
+I trust the trip was agreeable for you. A pleasure perhaps? Nestled in with our dear little ones...<br>
+{{HTalk|They certainly make for energetic travel companions. I've not often had opportunity to socialise with such spirited sorts.}}<br>
+Splendid! And now, you must go and see Grishkin, sitting there by the bubbling cauldron. After long travel, we drink to revive our spirits!
+| Title3_Event2 = First encounter after refusing to join the trip to Greymoor
+| Title3_Dialogue2 = Ahh, Miss Hornet! Greetings, and well met, once again!<br>
+The journey here was long, but we didn't lose a single flea! And now fate has brought us back together again... what a marvel!<br>
+{{HTalk|It is good to see you safe, Fleamaster. The journey to this moor from the caverns below is long and dangerous.}}<br>
+Dangerous, certainly, but we fleas are born to roam!<br>
+And now, you must go and see Grishkin, sitting there by the bubbling cauldron. After long travel, we drink to revive our spirits!
+| Title3_Event3 = While waiting at camp for more fleas
+| Title3_Dialogue3 = We will camp here in these grey lands until more fleas find their way to the caravan. Please lend your aid to any of our fellows you find lost out on the roads!
+| Title3_Event4 = After seeing Haunted Bellhart
+| Title3_Dialogue4 = That great vein of bells there... some of the fleas wanted to shelter inside, but I was not so sure. The whole creaking mass seems unstable! It makes me tremble!<br>
+{{HTalk|You were wise not to head inside, Fleamaster. A silken curse has taken hold of the settlement within. Advise your fellows to avoid that place.}}<br>
+A curse, you say?! W-well then! Our thanks are owed again. I shall let all fleas know they must not venture closer.
+| Title3_Event5 = After finding at least 12 Fleas and before defeating [[Last Judge]]
+| Title3_Dialogue5 = We will camp here a time before moving onward. These moments of safety and calm must be treasured, rare as they are.
+| Title3_Event6 = After finding at least 12 Fleas and defeating [[Last Judge]]
+| Title3_Dialogue6 = Look here! All these lively fleas flocked to our caravan. Thanks to you and your hunting, our numbers grow grand. Mayhap, in time, we could grow to match even those caravans of our fabled past?<br>
+{{HTalk|To see so many safe is a welcome sight, Fleamaster. Their playful cheer suggests you are a fine steward for the swelling troupe.}}<br>
+Such kind words, Miss Hornet! How lucky we are to have found a friend so fair!<br>
+But now, we must away! These moors have been our host long enough. It is time to climb and hoist towards drier caves!<br>
+Good friend to fleas, would you join us on this next journey?<br>
+| Title3_Event7 = After finding at least 21 Fleas and defeating [[Last Judge]] <!-- 21 is the number that is checked in the code, not 22, so unless the code changes then this number is correct -->
+| Title3_Dialogue7 = Look, Miss Hornet! See the many lively fleas that form our caravan. Thanks to you and your hunting, so many are here! And all are eager again to travel!<br>
+We had once wished to match the numbers of our fabled past, yet now, we may even have exceeded them!<br>
+{{HTalk|It is a welcome sight, Fleamaster, and the playful cheer about the caravan suggests you are a fine steward to the troupe.}}<br>
+Such kind words, Miss Hornet! How lucky we are to have found a friend so fair!<br>
+But now, we must away! These moors have been our host long enough. It is time to climb and hoist towards drier caves!<br>
+Good friend to fleas, would you join us on this next journey?
+| Title3_Event8 = Accepting to join
+| Title3_Dialogue8 = Wonderful! Wonderful! The fleas will be overjoyed to share this next journey with our favoured companion! Let us away!
+| Title3_Event9 = Refusing to join
+| Title3_Dialogue9 = Alas, Miss Hornet! Until our paths cross again, our dearest wishes go with you.<br>
+{{HTalk|Safe travels to you and your troupe, Fleamaster.}}
+
+| Title4 = Blasted Steps
+| Title4_Event1 = After travelling with the Caravan
+| Title4_Dialogue1 = Another journey complete! And a new, high spot for our rest, upon the doorstep of that mighty Citadel, no less!<br>
+{{HTalk|It is fortunate that all of your companions survived the trek, Fleamaster. The howling rise beside, and the tangled wood before it, have both claimed the lives of countless bugs.}}<br>
+Indeed! A perilous ascent! Maybe it was your company that brought us luck, Miss Hornet? It surely put us fleas at ease to have you and your weapon riding close.<br>
+Ahh, and before the road steals you away from us again, allow me to offer you a humble gift!<br>
+One of the little ones found a pale artefact while digging about in the sands. A spiny, cold sort of thing.<br>
+I see no use in it for we fleas, so of course we are all too pleased, eager even, to bestow it upon our dear friend!<br>
+| Title4_Event2 = First encounter after refusing to join the trip to Blasted Steps
+| Title4_Dialogue2 = Welcome again, Miss Hornet! See how high our caravan has climbed, resting right on the doorstep of that mighty Citadel!<br>
+{{HTalk|It is fortunate that all of your companions survived the trek, Fleamaster. The howling rise beside, and the tangled wood before it, have both claimed the lives of countless bugs.}}<br>
+Indeed! A perilous ascent! We have seen the many husks in passing. A mighty luck must shine on us, to journey with such success.<br>
+Ahh, and before the road steals you away from us again, allow me to offer you a humble gift!<br>
+One of the little ones found a pale artefact while digging about in the sands. A spiny, cold sort of thing.<br>
+I see no use in it for we fleas, so of course we are all too pleased, eager even, to bestow it upon our dear friend!
+| Title4_Event3 = While waiting at camp for more fleas
+| Title4_Dialogue3 = 
+Here we shall remain, for a time, Miss Hornet, and pray that more lost fleas find their way to us.<br>
+{{HTalk|What others I encounter, I shall send your way, Fleamaster.}}
+| Title4_Event4 = After finding at least 22 Fleas
+| Title4_Dialogue4 = Oh, Miss Hornet! Wonder at how large our caravan has grown! So bold and boisterous! This gilded chamber can barely contain us all!<br>
+The many fleas are itching to journey once more, to find a space to stretch their wings. But from here, as their leader, I am hesitant to order us so swiftly away.<br>
+These heights hold too much danger to set forth without a safe goal held clear in mind.<br>
+What of you, Miss Hornet? Your tasks carry you throughout this kingdom. Have you ever encountered a place appropriate?<br>
+<hr/>
+<b>If [[Putrified_Ducts#Sub-area:_Pale_Lake|Pale Lake]] has been discovered:</b><br>
+{{HTalk|I have seen a place, Fleamaster, a cave beyond the Citadel, at the edge of some ancient ducts. That place may well suit your needs for safety.}}<br>
+{{HTalk|The trek would be long, but once reached, you will find a sandy shore, free of predators, beside a wide clear lake. It is as peaceful a place as I've seen throughout these fraught lands.}}<br>
+That's it! It must be! Our destination has been set. Our journey can continue!<br>
+True friend of fleas you are, Miss Hornet. That place shall welcome us, no doubt. Will you be joining the caravan on this journey?<br>
+<hr/>
+<b>If [[Putrified_Ducts#Sub-area:_Pale_Lake|Pale Lake]] has not been discovered:</b><br>
+{{HTalk|Unfortunately not, Fleamaster. I have visited many of this kingdom's caves, and none would offer the safety and space you require.}}<br>
+{{HTalk|If ever I come upon such a place, I will let you know.}}<br>
+| Title4_Event5 = Repeat dialogue, if Pale Lake has not been discovered
+| Title4_Dialogue5 = Dear friend of fleas, please! If ever you come upon a cave both wide and free, return with haste and tell us.<br>
+The fleas are oh so eager to journey, and I'm eager to see them to a destination safe!
+| Title4_Event6 = Returning, after discovering Pale Lake
+| Title4_Dialogue6 = {{HTalk|Fleamaster, if your troupe is still prepared to travel, I have discovered a cave beyond the Citadel, at the edge of some ancient aqueducts. That place may well suit your needs for safety.}}<br>
+{{HTalk|The trek would be long, but once reached, you will find a sandy shore, free of predators, beside a wide clear lake. It is as peaceful a place as I've seen throughout these fraught lands.}}<br>
+That's it! It must be! Our destination has at last been set. Our journey can continue!<br>
+True friend of fleas you are, Miss Hornet. That place shall welcome us, no doubt. Will you be joining for this new journey?
+| Title4_Event7 = Accepting to join
+| Title4_Dialogue7 = Marvellous! We fleas shall be overjoyed to have your company on the road.<br>
+Now! Our new home is calling. We must travel!
+| Title4_Event8 = Refusing to join
+| Title4_Dialogue8 = Ahhh! Alas. Then we shall pray your own path remains safe.<br>
+And now, our new home is calling. We venture again!<br>
+{{HTalk|Good travels, Fleamaster. May your journey ahead be safe and smooth.}}<br>
+
+| Title5 = Pale Lake/Fleatopia
+| Title5_Event1 = After travelling with the Caravan
+| Title5_Dialogue1 = What a beautiful spot you've gifted us, Miss Hornet! Safe apart from the dark and death of the lands beside. A place for fleas to grow smart and strong.<br>
+Here we shall see our travels end, for in Pharloom there could be no finer place to settle.<br>
+{{HTalk|I am glad the location suits, Fleamaster. It is a calming thing to know these many fleas may survive. Most bugs of Pharloom seem destined for far bleaker fates.}}<br>
+Indeed! A hopeful future awaits! And only because of yourself and your efforts. To commemorate our arrival, it would be my pleasure to perform a small service for you.<br>
+I have been learning to sew, and the little fleas have been gathering materials for me. I thought I could add an extra pocket to your tool pouch, to make your travels just a little easier.<br>
+A trifling favour, much less than you deserve, but still I hope it meets to your satisfaction!
+| Title5_Event2 = First encounter after refusing to join the trip to Pale Lake
+| Title5_Dialogue2 = Miss Hornet! Our saviour! How dearly we had hoped you would visit.<br>
+And just look! This beautiful spot you've gifted us, safe apart from the dark and death of the lands beside. A place for fleas to grow smart and strong.<br>
+Here we shall see our travels end, for in Pharloom there could be no finer place to settle.<br>
+{{HTalk|I am glad the location suits, Fleamaster. It is a calming thing to know these many fleas may survive. Most bugs of Pharloom seem destined for far bleaker fates.}}<br>
+Indeed! A hopeful future awaits! And only because of yourself and your efforts. To commemorate our arrival, it would be my pleasure to perform a small service for you.<br>
+I have been learning to sew, and the little fleas have been gathering materials for me. I thought I could add an extra pocket to your tool pouch, to make your travels just a little easier.<br>
+A trifling favour, much less than you deserve, but still I hope it meets to your satisfaction!
+| Title5_Event3 = If [[Vog]] hasn't joined yet
+| Title5_Dialogue3 = Miss Hornet, I must tell, we've seen evidence nearby of a hunter of our tribe, a flea that seeks fleas!<br>
+As pungent and gruff as their sort often are, they're still useful to have around a caravan.<br>
+A flea of their rare skill, settled among us, could offer defence and more.<br>
+If you're still to be helping grow our town, search them out, up atop the muck choked ducts.<br>
+| Title5_Event4 = Exhausted dialogue
+| Title5_Dialogue4 = So many lost fleas have made it here... Truly, I'd never dared to hope we could gather such a grand company!<br>But still there may be more out there in this wide world... What a wonder it would be if they too found their way to our fresh paradise!
+| Title5_Event5 = After all Fleas have been rescued
+| Title5_Dialogue5 = Oh, my dear friend, Miss Hornet, look at how many of the lost fleas have come! It seems even the last few stragglers are now with us.<br>
+{{HTalk|That is well, Fleamaster. My travels through this land have been far and deep, and yet at almost every reach I met the friendly, inquisitive presence of your kind.}}<br>
+{{HTalk|You fleas have an uncommon desire for adventure, which I find admirable, even if it is seldom matched by capability.}}<br>
+{{HTalk|Though I am long accustomed to travelling alone, following your journey, and sharing some part in its progress has been a warm thing.}}<br>
+Ahh, and so happy too have you made we fleas!<br>
+I would be honoured to bestow one final gift unto you, Miss Hornet, a treasure from fleakind's glorious past. May it mark you forever as a friend to us all.
+| Title5_Event6 = If the Flea Caravan arrives at Pale Lake with all Fleas having been rescued
+| Title5_Dialogue6 = Oh, and look, Miss Hornet, look at how many lost fleas have come! It seems even the last few stragglers are now with us.<br>
+{{HTalk|That is well, Fleamaster. My travels through this land have been far and deep, and yet at almost every reach I met the friendly, inquisitive presence of your kind.}}<br>
+{{HTalk|You fleas have an uncommon desire for adventure, which I find admirable, even if it is seldom matched by capability.}}<br>
+{{HTalk|Though I am long accustomed to travelling alone, following your journey, and sharing some part in its progress has been a warm thing.}}<br>
+Ahh, and so happy too have you made we fleas!<br>
+I would be honoured to bestow one final gift unto you, Miss Hornet, a treasure from fleakind's glorious past. May it mark you forever as a friend to us all.
+| Title5_Event7 = Exhausted dialogue after rescuing all Fleas
+| Title5_Dialogue7 = You are welcome here always, Miss Hornet, true friend of fleas!<br>
+Stay as long as you care. Rest and restore. We many fleas do so enjoy your company.
+| Title5_Event8 = Delivering a package from [[Tipp & Pill]]
+| Title5_Dialogue8 = {{HTalk|Fleamaster, I bring a delivery, supplies from the couriers of Bellhart to aid your settlement.}}<br>
+Such dedication you continue to show us, Miss Hornet!<br>
+While we may seem safe out here at range from danger, we cannot go far to forage, and the many fleas need much nurture!<br>
+Food and provisions, such as you bring, are crucial in these desperate times.<br>
+For your hard efforts and eternal friendship, please accept these meagre rosaries as reward.<br>
+Think of we fleas when you find chance to trade them!<br>
+| Title5_Event9 = Playing the [[Needolin]]
+| Title5_Dialogue9 =
+[n]Safe together, home at last...<br>
+The road behind us, all dangers passed...<br>
+Swim and sing, ease stiffened shells...<br>
+We fleas together... Till final bells...<br>
+Rejoice! Remember! Those long gone...<br>
+Soon... the ritual, bold, loud, strong!
+
+| Title6 = Act 3
+| Title6_Event1 = Exhausted dialogue
+| Title6_Dialogue1 = So many lost fleas have made it here... Truly, I'd never dared to hope we could gather such a grand company.<br>
+But, oh! The world has grown so dangerous, and there may be more lost fleas out there. I do so hope they can find their way to us!
+| Title6_Event2 = After all Fleas have been rescued
+| Title6_Dialogue2 = Oh, my dear friend, Miss Hornet, look at how many of the lost fleas have come! It seems even the last few stragglers are now with us.<br>
+{{HTalk|That is well, Fleamaster. My travels through this land have been far and deep, and yet at almost every reach I met the friendly, inquisitive presence of your kind.}}<br>
+{{HTalk|You fleas have an uncommon desire for adventure which I find admirable, even if it is seldom matched by capability.}}<br>
+{{HTalk|Though I am long accustomed to travelling alone, following your journey, and sharing some part in its progress has been a warm thing.}}<br>
+And so happy have you made we fleas! Even as the darkness comes to claim us, we would be honoured to bestow one final gift, a treasure from fleakind's glorious past.<br>
+May it mark you in Pharloom's final moment as a friend to us all.
+| Title6_Event3 = If the Flea Caravan arrives at [[Putrified Ducts#Pale Lake|Pale Lake]] with all Fleas having been rescued
+| Title6_Dialogue3 = Oh, and look, Miss Hornet, look at how many lost fleas have come! It seems even the last few stragglers are now with us.<br>
+{{HTalk|That is well, Fleamaster. My travels through this land have been far and deep, and yet at almost every reach I met the friendly, inquisitive presence of your kind.}}<br>
+{{HTalk|You fleas have an uncommon desire for adventure which I find admirable, even if it is seldom matched by capability.}}<br>
+{{HTalk|Though I am long accustomed to travelling alone, following your journey, and sharing some part in its progress has been a warm thing.}}<br>
+And so happy have you made we fleas! Even as the darkness comes to claim us, we would be honoured to bestow one final gift, a treasure from fleakind's glorious past.<br>
+May it mark you in Pharloom's final moment as a friend to us all.
+| Title6_Event4 = Exhausted dialogue after rescuing all Fleas
+| Title6_Dialogue4 = We fleas are all gathered, but now the world has loudly marked its ending! As great as our numbers grew, it seems our caravan will be the last.<br>
+There is only one thing left to do... but the preparations require time. If your travels wind their way back to us, dear friend, you yourself are welcome to participate...
+
+| Title7 = Ecstasy of the End
+| Title7_Event1 = First conversation in [[Act 3]]
+| Title7_Dialogue1 = The dirge I sing is for the end of our old lives...<br>
+Here at the end of times, our paradise crumbles beneath us. Flea and friend alike, all will soon be consumed...<br>
+Ohhhh! What other choice do we poor wretches have?! Cruel fate leaves us with only one last task...<br>
+Dear friend... Miss Hornet! Forgive us, but we beg one more favour from you. Will you accompany us in our final act...?<br>
+<hr/>
+<b>If Hornet has accepted the Wish from [[Bellhart]]:</b><br>
+{{HTalk|I saw your plea posted at Bellhart, sir flea, and accept your request.}}
+| Title7_Event2 = Denying the wish
+| Title7_Dialogue2 = {{HTalk|I know not what you plan, Fleamaster, and at this time I cannot participate.}}<br>
+Ahhhh. Ahhhhhhh! Wretches, wretches, all of us! How can we begin without you, dear friend?
+| Title7_Event3 = Speaking after denying the wish
+| Title7_Dialogue3 = Dear friend... Miss Hornet! Forgive us, but we beg one more favour from you. Will you accompany us in our final act...?
+| Title7_Event4 = Accepting the wish
+| Title7_Dialogue4 = The pact is made then. Fellows! Steel yourself! It is time, it is time!<br>It is time for the Festival of the Flea! One last, grand celebration before the black quakes pull us all down into the darkness!<br>
+Rouse yourself fleas, one last time! Let the games begin!
+| Title7_Event5 = Speaking after the Festival has begun
+| Title7_Dialogue5 = How do you like our festival, Miss Hornet? While the world crumbles around us, we will laugh and dance and frolick!<br>
+Make merry with us, and play some of the games of old!<br>
+{{HTalk|My time is slim, Fleamaster. If I am to join your games, know it will be only to hone my skills for the greater trial I must soon face below.}}<br>
+Of course! Of course! Joy or learnings! Any reason is fine by us, Miss Hornet!<br>
+And look here, we have Flea Juggle, where the challenge is to strike fleas upwards and keep them airborne for as long as possible.<br>
+To have our treasured guest challenge this humble game would be an honour for us, truly!
+| Title7_Event6 = Denying Flea Juggle
+| Title7_Dialogue6 = Ah, of course. Perhaps you will be trying one of the other games?
+| Title7_Event7 = Beginning Flea Juggle
+| Title7_Dialogue7 = Mamashka! I am saying, let the game begin! Flea Juggle!
+| Title7_Event8 = Completing Flea Juggle
+| Title7_Dialogue8 = <b>If High Score has not been beaten:</b><br>
+Vikna! The game is now ended, but you can play again, as much you wish... until the end of the world comes for us all!<br>
+<hr/>
+<b>If Hornet becomes Champion:</b><br>
+Vikna! The game is ended, and we have a new Flea Juggle champion! Incredible!<br>
+Miss Hornet, with your skill, I'm certain you could best all three of our games and become the grandest champion of them all!<br>
+<hr/>
+<b>If High Score has been beaten:</b><br>
+Vikna! The game is now ended, and the Flea Juggle champion has set an even higher score! Tremble in awe, dear fleas, at the might of our dear Miss Hornet!<br>
+<hr/>
+<b>If Hornet becomes Grand Champion:</b><br>
+Vikna! The game is ended, and we have a new Flea Juggle champion! Incredible!<br>
+You have proven yourself the champion at each of our flea games!<br>
+I am confident now that the grand champion of our festival has emerged. It is none other than yourself, of course!<br>
+And thusly, must our final ceremony begin. Fleas, prepare yourselves!
+| Title7_Event9 = Repeat attempts
+| Title7_Dialogue9 = <b>If Hornet is not the Champion:</b><br>
+Come, you revellers! Try the Flea Juggle game! Keep striking fleas upwards. Keep them airborne for as long as possible!<br>
+<hr/>
+<b>If Hornet is the Champion:</b><br>
+Miss Hornet, you are the greatest of us all in the Flea Juggle! But will you challenge yourself to ever higher achievements?<br>
+<hr/>
+<b>If Hornet is the Grand Champion:</b><br>
+The grand ceremony has ended, but still we play! Will you honour us with a display of Flea Juggle, Miss Grand Champion Hornet?
+| Title7_Event10 = Before the ceremony
+| Title7_Dialogue10 = Miss Hornet! You have proven yourself the champion at each of our flea games!<br>
+I am confident now that the grand champion of our festival has emerged. It is none other than yourself, of course!<br>
+And thusly, must our final ceremony begin. Fleas, prepare yourselves!
+| Title7_Event11 = Grand Champion Ceremony
+| Title7_Dialogue11 = Gathered here we are, to honour the grand champion of this very final of all festivals!<br>
+Now, Miss Hornet! Strike the great effigy with all your might!
+| Title7_Event12 = After the ceremony
+| Title7_Dialogue12 = And so the great ceremony has reached its climax and its grand champion has emerged!<br>
+Thank you for spending your last moments with us here, Miss Hornet.<br>
+Though the world will soon end, and our paradise will crumble, the memories of friendship we all shared shall surely echo through the oncoming void for all eternity!<br>
+{{HTalk|Fleamaster, your sentiment is kind, but this world will not end.}}<br>
+Oh? How good of you to speak words of hope for our benefit, but we have accepted our fate. Come, let us forget the past and revel together!<br>
+{{HTalk|It is not merely hope that I offer you, sir, but a promise. This kingdom's suffering has a singular cause, and by my own claw will it be cleansed.}}<br>
+{{HTalk|Perhaps not every flea will survive what is coming... but the world will not die, and your settlement may still see chance to prosper.}}<br>
+Ahh? You speak... with such conviction. But I cannot bring myself to hope such, I am sorry.<br>
+Come what may, we fleas will be here until the end. And the games will continue, of course! Celebrate with us for as long as you wish, dear friend.
+| Title7_Event13 = Receiving a delivery from [[Tipp & Pill]]
+| Title7_Dialogue13 = {{HTalk|Fleamaster, I bring a delivery, supplies from the couriers of Bellhart to aid your settlement.}}<br>
+Ahh, such a kindly gesture adds much warmth to our celebration!<br>
+These poor little fleas will never grow to roam the world as we have, so let us give them what happiness we can before the end.<br>
+For your hard efforts and eternal friendship, please accept these meagre rosaries as reward.<br>
+Think of we fleas when you find chance to trade them!
+| Title7_Event14 = Playing the [[Needolin]]
+| Title7_Dialogue14 = [n]Face the darkness, sing dear friends...<br>
+Joy and merry till it all ends...<br>
+Our ritual, needed more than ever...<br>
+This time of fleas spent warm, together...<br>
+Dance and play, as all fleas past...<br>
+This world may fall, but we stand till the last...
+| Title8 = Written
+| Title8_Event1 = <i>[[The Lost Fleas]]</i> wish
+| Title8_Dialogue1 = I am Mooshka, humble stranger to this land and master of the Flea Caravan! I wish for aid, that all fleas may travel safely together!
+}}
+
+== Location ==
+Fleamaster Mooshka can be first encountered along with the [[Flea Caravan]] in a long tunnel in the centre of [[the Marrow]].
+
+After finishing his first Wish, he and the Flea Caravan moves to [[Greymoor]] and camps right in the [[Moorwing]] boss area, completely removing Moorwing if it has not been defeated yet at that point.
+
+After finding at least 12 Fleas and having defeated [[Last Judge]], he and the Flea Caravan moves into the Last Judge's room at [[Blasted Steps]].
+
+After finding at least 22 Fleas, they move to the easternmost room in [[Putrified Ducts]].
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+|Image4 = Mapshot SS Flea Caravan 04.png!Location in the Putrified Ducts
+}}
+
+{{Gallery|
+|Title=Gallery
+|Image1 = Screenshot SS Flea Caravan 01.png!Initial appearance in the Marrow
+|Image2 = Screenshot SS Flea Caravan 02.png!Before leaving the Marrow
+|Image3 = Screenshot SS Flea Caravan 03.png!In Greymoor
+|Image4 = Screenshot SS Flea Caravan 04.png!In the Blasted Steps
+|Image5 = Screenshot SS Flea Caravan 05.png!In the Putrified Ducts
+|Image6 = Screenshot SS Fleamaster Mooshka 01.png!Singing before starting the Festival of the Flea
+|Image7 = Screenshot SS Fleamaster Mooshka 02.png!Starting the Festival of the Flea
+|Image8 = Screenshot SS Fleamaster Mooshka 03.png!At the Festival of the Flea before Hornet becomes champion
+|Image9 = Screenshot SS Festival of the Flea 03.png!Celebrating at the Festival of the Flea
+|Image10 = Screenshot SS Fleamaster Mooshka 04.png!At the Festival of the Flea after Hornet becomes champion
+|Image11 = Screenshot SS Fleamaster Mooshka 05.png!Fleamaster Mooshka reacting to Needolin
+|Image12 = Caravan.png!Flea Caravan promotional art containing Mooshka
+}}
+
+{{Localisation
+|DEname = Flohmeister Mooshka
+|DEmeaning = Flea Master Mooshka
+|ESname = Maestro de pulgas Mooshka
+|ESmeaning = Flea Master Mooshka
+|FRname = Maître Des Puces Mooshka
+|FRmeaning = Master of Fleas Mooshka
+|ITname = Mastro Pulce Mooshka
+|ITmeaning = Flea Master Mooshka
+|JAname = ノミ族の長 ムーシュカ
+|JAromanised = Nomi zoku no naga mūshuka
+|JAmeaning = Flea Tribe's Leader Mooshka
+|KOname = 단장 벼룩 무슈카
+|KOromanised = Danjang byeoruk musyuka
+|KOmeaning = Leader Flea Mooshka
+|PTname = Mestre das Pulgas Mooshka
+|PTmeaning = Master of Fleas Mooshka
+|RUname = Блошиный предводитель Мушка
+|RUromanised = Blošinyj predvoditel' Muška
+|RUmeaning = Flea Leader Mooshka
+|TWname = 跳蚤團長 穆什卡
+|TWromanised = Tiàozǎo tuánzhǎng Mùshénkǎ
+|TWmeaning = Flea Leader Mooshka
+|ZHname = 旅团团长 穆什卡
+|ZHromanised = Lǚtuán tuánzhǎng Mùshénkǎ
+|ZHmeaning = Travelling Troupe Leader Mooshka
+|CODEname= FLEAMASTER</code><br><code>TROUPE_LEADER</code>
+}}
+
+{{Refs|hr=ss}}
+<div class="mw-collapsible mw-collapsed" data-expandtext="Show Code References" data-collapsetext="Hide Code References">
+<references group="code" />
+</div>
+{{SS Nav NPCs}}

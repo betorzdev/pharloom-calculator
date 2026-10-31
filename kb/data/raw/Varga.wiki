@@ -1,0 +1,133 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Varga.png|Idle
+Varga Festival.png|Festival
+</gallery>
+| area = [[The Marrow]]<br>
+[[Greymoor]]<br>
+[[Blasted Steps]]<br>
+[[Fleatopia]]
+| affiliation = [[Fleas]]<br>
+[[Flea Caravan]]
+| role = Wanderer
+| singnum = 2
+}}
+
+Varga is an [[NPCs (Silksong)|NPC]] in [[Hollow Knight: Silksong]]. He is a member of the [[Flea Caravan]].
+
+== In-game Events ==
+Varga can initially be found in [[the Marrow]] with the rest of the Flea Caravan. He finds this location cozy and is reluctant to move on.
+
+After the Flea Caravan moves to [[Greymoor]], Varga can be found resting inside one of the carts, sheltering from the rain.
+
+According to [[Grishkin]], Varga is nearly eaten by [[Sandcarver|Sandcarvers]] during the move to the [[Blasted Steps]], but is ultimately able to make it there safely. At the Blasted Steps, Varga can be seen in the background near the pot of [[Flea Brew]], but cannot be interacted with at this location.
+
+When the Flea Caravan moves to [[Putrified Ducts]] and forms [[Fleatopia]], Varga stays at east side of the camp away from the fleas, and can be interacted with again.
+
+During the [[Festival of the Flea]] he can be seen sitting in the background with the other fleas. He can rarely appear during [[Flea Juggle]] donning a copper helmet, replacing a normal Flea.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]Hear our voices! Hear our plea! <br>
+Join our company, moving free! <br>
+All fleas must find us... <br>
+All fleas must come... <br>
+The ritual beckons... the road is long... <br>
+We live and die and roam as one!
+
+| Title2 = The Marrow
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = Dodeshna, stranger. You are looking a little... tired, is it? Unhealthy?<br>
+You can rest with us here, if wish. Is nice and dark, and warmth from below brings good health.<br>
+Still, you should make care not to stay much long. You are not flea, after all.
+| Title2_Event2 = Exhausted dialogue
+| Title2_Dialogue2 = <b>First encounter:</b><br>
+The beasts here are... much frightful, hm? Scary?<br>
+But if give them space, they leave alone. You respect beast, beast respect you.
+<hr/>
+<b>Revisiting:</b><br>
+Is warm here, you agree? Is very... what is say, cosy?<br>
+The Fleamaster though, is always want to move on. We will be drag away somewhere much worse soon, I think.
+
+| Title3 = Greymoor
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Dodeshna. Want for shelter from the thick, grey air? Is heavy, and wet. I'm worry for the little flea's health in this land.<br>
+And they make play in the filthy water. I say them stop, but they just laugh and splash on me. They are lack respect!<br>
+{{HTalk|Most bugs instinctively obey those with strength and will. Speak with authority, or your commands may go unheeded.}}<br>
+Ugh... really, is Fleamaster's job to teach the fleas such. I will just have rest here until is time to move on.
+| Title3_Event2 = Exhausted dialogue
+| Title3_Dialogue2 = Strange beasts prowl these grey lands. I hear them roar and shriek outside camp. Is best to stay inside and make quiet.
+
+| Title4 = Pale Lake/Fleatopia
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = So many awful places have us fleas travelled. Many times I almost die. But here is seems safe enough.<br>
+You will have rest too? Is space enough for us all now... friend
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = This long lake... Space is much more big here. Finally I have some quiet from the little fleas.
+| Title4_Event3 = Playing the [[Needolin]]
+| Title4_Dialogue3 = [n]Safe together, home at last...<br>
+The road behind us, all dangers passed...<br>
+Swim and sing, ease stiffened shells...<br>
+We fleas together... Till final bells...<br>
+Rejoice! Remember! Those long gone...<br>
+Soon... the ritual, bold, loud, strong!
+
+| Title5 = Act 3
+| Title5_Event1 = First conversation & Exhausted dialogue
+| Title5_Dialogue1 = Those great rumbles from beneath, they have sound similar to giant beast. Such beast is much sorrowful though, I am think.<br>
+Fleas and monsters alike have their troubles...
+}}
+
+== Location ==
+Varga can be encountered along with the [[Flea Caravan]] at either [[the Marrow]], [[Greymoor]], [[Blasted Steps]] or [[Fleatopia]], depending on the amount of Fleas found.
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+|Image4 = Mapshot SS Flea Caravan 04.png!Location in the Putrified Ducts
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Flea Caravan 01.png!Initial appearance in the Marrow
+|Image2 = Screenshot SS Flea Caravan 02.png!Before leaving the Marrow
+|Image3 = Screenshot SS Varga 03.png!Cart in Greymoor
+|Image4 = Screenshot SS Varga 01.png!Inside cart in Greymoor
+|Image5 = Screenshot SS Varga 04.png!Reacting to Needolin
+|Image6 = Screenshot SS Flea Caravan 04.png!In the background in the Blasted Steps
+|Image7 = Screenshot SS Varga 02.png!At the Putrified Ducts
+|Image8 = Screenshot SS Vog 05.png!In the background at the Festival of the Flea
+|Image9 = Screenshot SS Flea Juggle 04.png!Appearing in Flea Juggle
+|Image10 = Screenshot SS Festival of the Flea 03.png!Celebrating at the Festival of the Flea
+|Image11 = Caravan.png!Flea Caravan promotional art containing Varga
+}}
+
+{{Localisation
+|DEname = Varga
+|DEmeaning = —
+|ESname = Varga
+|ESmeaning = —
+|FRname = Varga
+|FRmeaning = —
+|ITname = Varga
+|ITmeaning = —
+|JAname = ヴァルガ
+|JAromanised = Varuga
+|JAkatakana = foreign
+|JAmeaning = Varga
+|KOname = 바르가
+|KOromanised = Bareuga
+|KOmeaning = Varga
+|PTname = Varga
+|PTmeaning = —
+|RUname = Варга
+|RUromanised = Varga
+|RUmeaning = Varga
+|ZHname = 瓦尔加
+|ZHromanised = Wǎ'ěrjiā
+|ZHmeaning = Varga
+|CODEname= FLEAMEMBER_TALL </code><br><code> TROUPE_MEMBER_TALL
+}}
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

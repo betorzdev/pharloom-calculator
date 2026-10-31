@@ -1,0 +1,70 @@
+{{SS Infobox Wish
+| header1 = Learn
+| description = Defeat 100 enemies of Pharloom, cataloguing them in the [[Hunter's Journal (Silksong)|Hunter's Journal]].
+| npc = [[Nuu]]
+| location = [[Halfway Home]]
+| prerequisite = None
+| reward = [[Tool Pouch]] expansion
+| achievement = [[Achievements (Silksong)#Challenges|Keen Hunter]]
+}}
+
+{{Quote
+| Would you help Nuu? Could you take her scroll, and fill its pages with the learnings of your cuts?
+| [[Nuu]]
+| Hr = SS
+}}
+
+<b>Bugs of Pharloom</b> is a [[Unique Wishes|Unique Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by talking to [[Nuu]] in the [[Halfway Home]].
+
+== Wish ==
+Nuu grants [[Hornet (Silksong)|Hornet]] the [[Hunter's Journal (Silksong)|Hunter's Journal]], and asks Hornet to defeat 100 enemies, recording information about them in the Journal. It is only required to defeat enemies once; the additional Notes after defeating enough of them are not necessary.
+
+{{Gallery
+| Image1 = Mapshot SS Hunter's Journal.png!Nuu's location in the Halfway Home
+}}
+
+== Reward ==
+[[File:Tool Pouch Upgrade.png|link=Tool Pouch|left|thumb|100x100px]]
+
+After completing the Wish, Nuu is overjoyed by the beastly "essences" lingering on Hornet and attempts to suck said “essences” from her, but is quickly rebuffed with a slap. Nuu then adds a pocket to the [[Tool Pouch]], allowing the storage of more {{S|[[Shell Shards]]}} and {{CrestSlot|Red|s}}.
+
+{{Gallery
+| Image1 = Nuu release trailer.png!"Such behaviour is unfriendly."
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Keen Hunter}}
+
+{{Localisation
+|DEname = Käfer von Pharloom
+|DEmeaning = Bugs from Pharloom
+|ESname = Bichos de Telalejana
+|ESmeaning = Bugs of Pharloom
+|FRname = Insectes de Pharloom
+|FRmeaning = Insects of Pharloom
+|ITname = Insetti di Lungitela
+|ITmeaning = Insects of Pharloom
+|JAname = 生態調査
+|JAromanised = Seitai chōsa
+|JAmeaning = Ecology Survey
+|KOname = 팔룸의 벌레들
+|KOromanised = Pallumui beolledeul
+|KOmeaning = Bugs of Pharloom
+|PTname = Insetos de Fiarlongo
+|PTmeaning = Insects of Pharloom
+|RUname = Жуки Фарлума
+|RUromanised = Žuki Farluma
+|RUmeaning = Bugs of Pharloom
+|ZHname = 纺络虫族图鉴
+|ZHromanised = Fǎngluò chóngzú tújiàn
+|ZHmeaning = Illustrated Guide to Pharloom Bugs
+|TWname = 紡絡蟲族圖鑑
+|TWromanised = Fǎngluò chóngzú tújiàn
+|TWmeaning = same
+|CODEname = QUEST_JOURNAL
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

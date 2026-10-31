@@ -1,0 +1,176 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Styx.png|Alive
+Styx dead.png|Dead
+</gallery>
+| area = [[Sinner's Road]]
+| role = Lore
+| singnum = 2
+| quest = [[Queen's Egg (Wish)|Queen's Egg]]
+}}
+
+{{Quote
+| 1 = A ss-sslave must feed his misstress-sss. Morsss-sels will I grow. While you hunt, I am working... alwaysss-sss...
+| 2 = Styx
+|Hr=SS
+}}
+
+<b>Styx</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. Once saved, he supplies [[Hornet (Silksong)|Hornet]] with [[Silkeater|Silkeaters]].
+
+== Background ==
+Styx lives in a secluded room in [[Sinner's Road]]. He believes the strong claim the weak, and that the weak must serve.<ref>Styx: <i>"No... the sss-strong claim the weak, and the weak must sss-ssserve!"</i></ref> As such, he is looking for somebody strong to protect him and eagerly wants to become their slave.<ref>Styx: <i>"You have come to claim me, and I am yourssss. I am your humble sss-ssslave! (...) I am yoursss, my mistress, and you muss-sst protect me!"</i></ref> He built a Silkeater nest to provide food for a powerful future master.<ref>Styx: <i>"Sss-ssee what I have built here! Prepared, for the coming of my mistressss. My powerful missssss-tress! (...) A ss-sslave must feed his misstress-sss. Morsss-sels will I grow."</i></ref> Above the nest, he has a room with different bug masks, including one identical to the one he is wearing. 
+
+== In-game Events ==
+Styx is located at the far east edge of the room at the lowest level of Sinner's Road. 
+
+Initially, there are 2 [[Muckroach|Muckroaches]] barking at the ceiling near Styx's location. After [[Hornet (Silksong)|Hornet]] defeats them, the room shakes, and a nearby bench becomes interactable. After Hornet sits down on the bench, Styx descends from the ceiling. He assigns Hornet as his mistress and vows to serve her as a slave.<ref><i>"Farewell...? No... the sss-strong claim the weak, and the weak must sss-ssserve! I am yoursss, my mistress, and you muss-sst protect me!"</i></ref>
+
+After this point, he grows one Silkeater per hour that can be collected after they have grown. Only one fully-grown Silkeater is available at a time. 30 minutes after taking the Silkeater he can be seen tending to a growing Silkeater cocoon.
+
+If Styx is not in his nest, Hornet can call him back by playing the [[Needolin]] or pressing the [[Controls (Silksong)|CHALLENGE]] button.
+
+A delivery of a [[Queen's Egg]] from [[Bellhart]] to Styx can be given by [[Tipp & Pill]]. When this delivery is completed, Styx's nest expands and allows him to hold up to 2 Silkeaters, and he gives Hornet {{R|260}}, or {{R|290}} if done in [[Act 3]]. This delivery cannot be repeated.
+
+In Act 3 Styx must be saved again from 2 [[Void Mass]]es which appear in his room and also temporarily disable the [[Bench (Silksong)|Bench]]. These Void Masses replace the Muckroaches if this is Hornet's first encounter with Styx. The Queen's Egg delivery Wish cannot be completed unless Styx has been rescued from the Void Masses.
+{{Steel Soul Header|SS}}
+In [[Steel Soul Mode (Silksong)|Steel Soul Mode]], Styx is found dead in the collapsed remains of his nest. He is replaced by [[Skynx]] who is found behind a breakable wall to the right of Styx's room.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 = 
+Sssss! I saw you. I sssss-saw what you did!<br>Strong you are, misstress! Sss-ssmall, but so so deadly. And your ssscent! Well-aged!<br>Ssss! You have come to claim me, and I am yourssss. I am your humble sss-ssslave!<br>
+{{HTalk|I've no interest in mastery over you, sir. If my slaying of these creatures aided you, it was merely by chance. Farewell.}} <br>
+Farewell...? No... the sss-strong claim the weak, and the weak must sss-ssserve! I am yoursss, my mistress, and you muss-sst protect me!<br>Sss-ssee what I have built here! Prepared, for the coming of my mistressss. My powerful missssss-tress!<br>While you are away hunting, I will grow you... ssss-something good. But the work takesss time. Return to me sssss-soon, and you may have what I grow...
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = A ss-sslave must feed his misstress-sss. Morsss-sels will I grow. While you hunt, I am working... alwaysss-sss...
+| Title1_Event3 = Speaking while Styx is tending to a growing Silkeater
+| Title1_Dialogue3 = Tending to the morss-ssels is a delicate tasssk, and requiresss much patience. Let me toil for you, missstresss, under your exquisite protection...
+| Title1_Event4 = After Styx finishes growing the first Silkeater
+| Title1_Dialogue4 =
+Ssss! Mistress, is the morsss-sssel I grew worthy? You must conss-sume... conssss-sume and become sss-stronger.<br>
+Thissss is how I will sss-sserve my misstress-ss. While you hunt, I will prepare morsssels. Alwaysss, preparing them for my mighty misssss-tresss...<br>
+{{HTalk|Continue this work if it pleases you sir, but do not call me your mistress, for I am not.}} <br>
+Sss... but you are... missstress. You are ssss-strong and I am weak.... a sss-sslave. Alwayss-sss, your ssss-slave...<br>
+| Title1_Event5 = Speaking after breaking a growing Silkeater
+| Title1_Dialogue5 =
+Sssss. Your hunger betrayssss-ss you, misstress. The morsel was not yet grown, but let it anger you not. I will grow you another... for I am your sss-ssslave. <br>
+| Title1_Event6 = Speaking when a Silkeater is ready
+| Title1_Dialogue6 = A ss-sslave must feed his misstress-sss. Morsss-sels will I grow. While you hunt, I am working... alwaysss-sss...
+| Title1_Event7 = Delivering the [[Queen's Egg]]
+| Title1_Dialogue7 =
+{{HTalk|Sir, I have brought a Queen's Egg, at request of Bellhart's couriers. It was a hazardous journey, but the creature inside has made it here alive.}}<br>
+Sssssss! How sss-ssublime! To think that my dear misss-stress would be the one to deliver the preciousss package! I had feared for the competence of those feeble couriersss...<br>
+{{HTalk|It surprises me to know you correspond with them. I must wonder where else you go and who else you speak to after you scurry back up into the darkness...}}<br>
+Ssss. My whispersss-ss travel far, misstressss. You need not worry yourssself with my comingsss and goingss-ss. All I do... is in your sssss-service.<br>
+And now, pleasssse... give her to me... the little queen!<br>
+With thissss... ssso caringly delivered by the misstresss... our nesssst can be expanded!<br>
+It is done. Our nessst is larger, and the little queen beginssss her toil.<br>
+More morsss-ssels can I grow for you now! Are you pleasss-sed with me, my missstress-ss?<br>
+{{HTalk|You are diligent at your work, and have raised no claw against me. If it remains so, I will have no reason to be displeased.}}<br>
+Ssss! Then my work will continue! For I am ever your devoted sss-ssslave!<br>
+| Title1_Event8 = After calling Styx back
+| Title1_Dialogue8 = Misstress, you called for your ssss-slave? I obey... for you are ssss-sstronger. My gatheringsss can wait.
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 =
+[n]The weak must serve...<br>
+The strong, provide...<br>
+Our nest, our haven...<br>
+Old laws, fresh wounds...<br>
+The precious, sweet life...<br>
+Seek... and hide...<br>
+| Title1_Event10 = First time speaking after playing the Needolin
+| Title1_Dialogue10 =
+Sssss! Such sssss-sounds, plucked from the air and caught in your Silk! A marvel, my misss-stress...<br>
+{{HTalk|It is a skill that any can learn. You could master this sound yourself, if you cared to.}}<br>
+No... a slave must grow morsels for his mistresssss. But the sssound... is so ssssss-soothing...<br>
+
+| Title2 = Act 3
+| Title2_Event1 = If First Encounter is in Act 3
+| Title2_Dialogue1 = 
+Sssss! I saw you. I sssss-saw what you did!<br>Strong you are, misstress! Sss-ssmall, but so so deadly. And your ssscent! Well-aged!<br> Ssss! You have come to claim me, and I am yourssss. I am your humble sss-ssslave!<br>
+{{HTalk|I've no interest in mastery over you, sir. If my cutting down of those black masses aided you, it was merely by chance. Farewell.<br>}}
+Farewell...? No... the sss-strong claim the weak, and the weak must sss-ssserve! I am yoursss, my mistress, and you muss-sst protect me!<br>Sss-ssee what I have built here! Prepared, for the coming of my mistressss. My powerful missssss-tress!<br> While you are away hunting, I will grow you... ssss-something good. But the work takesss time. Return to me sssss-soon, and you may have what I grow...
+| Title2_Event2 = First visit after meeting in Act 2
+| Title2_Dialogue2 =
+Ssss! My misstress hasss returned to me! Under her protection, I have no fear of the ssslithering black sssss-sstringss!<br>
+How the world trembles in their terrible grassssp! In such times, only the mighty sssurvive... and those who loyally ss-sserve them...<br>
+{{HTalk|I cannot remain here to protect you sir, but know that my aim is to cut this land free of the black threads. In the meantime, you should concern yourself with your own safety.}}<br>
+Ssss. I hear more than your words, misssstress. I hear your true dessiresss, pulsing within you. To see them met, I will continue to toil for you... alwaysssss.
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = While you sss-stalk through the black-ravaged world, morsss-ssels will I grow. For the promiss-sse of what my misss-tress will become... I will toil, alwayssss...
+| Title2_Event4 = Playing [[Needolin]] while inside the secret room above Styx
+| Title2_Dialogue4 = [n]Who to be?<br>
+Who is me?<br>
+The one who serves...<br>
+The one who breeds...<br>
+The one to fear...<br>
+My strength or theirs?<br>
+}}
+
+== Location ==
+Styx can be found at the far east edge of the room at the lowest level of [[Sinner's Road]].
+
+There is a secret room that can be found by using the Silk Soar ability underneath Styx.
+
+{{Gallery
+|Image1= Mapshot SS Styx.png!Styx location in Sinner's Road
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Styx 02.png!Muckroaches barking at a hidden Styx
+| Image2 = Screenshot SS Styx 03.png!Away from his farm
+| Image3 = Screenshot SS Sinner's Road 08.png!Styx in Sinner's Road
+| Image4 = Screenshot SS Styx 04.png!Preparing a Silkeater
+| Image5 = Screenshot SS Styx 05.png!With a Silkeater
+| Image6 = Screenshot SS Styx 01.png!Reacting to Needolin
+| Image7 = Screenshot SS Styx 06.png!Away from his upgraded farm
+| Image8 = Screenshot SS Styx 07.png!Preparing a Silkeater while another is ready
+| Image9 = Screenshot SS Styx 08.png!With two Silkeaters
+| Image10 = Screenshot SS Void Mass 21.png!Silkeater Void Masses in Act 3
+| Image11 = Screenshot SS Styx 09.png!Styx in Sinner's Road in Act 3
+| Image12 = Screenshot SS Sinner's Road 09.png!Styx's secret room
+| Image13 = Screenshot SS Needolinsinner 3.png!Silk memory in Styx's secret room
+| Image14 = Screenshot SS Sinner's Road 16.png!Styx's corpse in {{Steel Soul Icon Mini|SS}}[[Steel Soul Mode (Silksong)|Steel Soul Mode]]
+}}
+
+== Trivia ==
+* In a Bloomberg interview, [[Team Cherry]] stated that Styx has some relation to the [[Huntress]].<ref>[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet] ([[:File:Reference Styx Huntress Relation.png|Archive]])</ref>
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): Fixed Styx not giving rosaries when delivering the Queen's Egg.
+}}
+{{Localisation
+|DEname = Styx
+|DEmeaning = —
+|ESname = Styx
+|ESmeaning = —
+|FRname = Styx
+|FRmeaning = —
+|ITname = Stige
+|ITmeaning = Styx
+|JAname = スティクス
+|JAromanised = Sutikusu
+|JAmeaning = Styx
+|KOname = 스틱스
+|KOromanised = Seutikseu
+|KOmeaning = Styx
+|PTname = Styx
+|PTmeaning = —
+|RUname = Стикс
+|RUromanised = Stiks
+|RUmeaning = Styx
+|TWname = 斯堤克斯
+|TWromanised = Sīdīkèsī
+|TWmeaning = same
+|ZHname = 斯堤克斯
+|ZHromanised = Sīdīkèsī
+|ZHmeaning = Styx
+|CODEname=GRUBFARMER
+|CODEmeaning=<code>SILK_GRUB</code> are [[Silkeater]]s' internal name
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

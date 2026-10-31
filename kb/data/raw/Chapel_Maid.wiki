@@ -1,0 +1,162 @@
+{{Navbar|page1=Chapel Maid|page2=Snail Shamans (Silksong)|title2=Snail Shamans}}
+{{SS Infobox NPC
+|gender = Female<ref name="brother"/>
+|image1 = <gallery> 
+Chapel_Maid_Idle.png|Acts 1/2
+Chapel_Maid_Snail_Shaman.png|Act 3
+Chapel Maid Dead.png|Dead
+</gallery>
+|area = [[Bone Bottom]]<br>[[Moss Grotto]]
+|role = Quest
+|quest = [[Silk and Soul]]
+|affiliation = [[Caretaker]] (brother)<ref name="brother">[[Caretaker]]: <i>"Down in the mosslands, still clinging to her failed chapel, my sister'll part with her power, if asked kind enough."</i></ref><br>[[Bell Hermit]] (uncle)<ref name="uncle">Chapel Maid: <i>"Best you head quick over to that town of bells, at the core of our kingdom. I've an uncle hidden about there, an old hermit, and a horrid curmudgeon."</i></ref><br>[[Snail Shamans (Silksong)|Snail Shamans]]
+|singnum=2
+}}
+
+{{Quote
+|Welcome then, fierce traveller, to Pharloom! Our holy yet haunted land.
+Before you depart, permit an old bug a brief warning. Best keep that weapon drawn.
+|Chapel Maid
+|Hr=SS}}
+The <b>Chapel Maid</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is the maid of the [[Ruined Chapel]], and the very first character [[Hornet (Silksong)|Hornet]] meets in [[Pharloom]].
+
+==Background==
+The Chapel Maid is a disguised [[Snail Shamans (Silksong)|Snail Shaman]], as well as the [[Caretaker]]'s sister, and the [[Bell Hermit]]'s niece. She also has an unnamed cousin who had died at [[Bilewater]]. She has tasked herself with looking after the Shamans' old chapel after they disbanded and went into hiding.
+
+==In-game Events==
+[[Hornet (Silksong)|Hornet]] meets the Chapel Maid just as she makes it out of the [[Moss Grotto]] from the [[Ruined Chapel]] and collapses. She seems to recognise Hornet, and wonders what the [[Citadel]] wanted with her. She sends Hornet on her way with an ask to come back and visit.
+
+After the [[Caretaker]] has given Hornet the [[Silk and Soul]] Wish, she is glad to hear someone has rallied him, and states her desire to not sit idly by when [[Grand Mother Silk]] awakes. She acknowledges Hornet is [[Pale King|more than]] just a [[Weavers|Weaver]], and believes she'll be the one to bring about real change in Pharloom.
+
+{{TabbedDialogue
+| Title1 = Moss Grotto
+| Title1_Event1 = Initial encounter
+| Title1_Dialogue1 = 
+Up with you! Up! I won't have you dying on my floor!<br>Ahh, awake at last! You should mind your strength, traveller. There's no use wasting energy on an old nobody like me.<br>
+{{HTalk|I see that now, madam. My welcome to your land has not been kind. I had reason to be wary.}}<br>
+So you're another pilgrim then? Scuttled out of the darkness to climb the great path and bow at its gilded peak?<br>
+{{HTalk|I am no pilgrim. I am Hornet, and I arrive in your land by no choice of my own.}}<br>
+{{HTalk|I was brought to your kingdom by force, captured by strange bugs clad in veils.}}<br>
+Oho! How curious! The bugs of the Citadel, at the summit of our land. They veil themselves in service to their faith, or perhaps as slaves to something greater...<br>
+{{HTalk|Then I shall seek their Citadel. If the veiled bugs would go to such lengths to bring me here, I intend to find out why.}}<br>
+Oho! Ferocious! Intimidating! Yours is no pilgrim's spirit! You've the bearing of a hunter.<br>Welcome then, fierce traveller, to Pharloom! Our holy yet haunted land.<br>
+Before you depart, permit an old bug a brief warning. Best keep that weapon drawn.<br>
+Our kingdom is gripped by a curse. Its paths grow wild and dangerous, and though some still attempt the climb to the Citadel at its crest, none return to speak of what they see.<br>
+| Title1_Event2 = First conversation after initial encounter if several conditions<ref group="Note" name="dialogueConditions">[[Hornet (Silksong)|Hornet]] has acquired least 1 [[Silk Heart]], 1 [[Mask Shard (Silksong)|Mask]], or 1 [[Spool Fragment|Spool]]</ref> are not met
+| Title1_Dialogue2 = You bear your blade well, hunter, and you've skill, no doubt, so I don't mean any unkindness when I say you still seem a little frail.<br>
+{{HTalk|I was a long time spent captive, bound by seals strange to me. My strength is diminished, but recoverable.}}<br>
+{{HTalk|By the time I reach that Citadel, I'll be ready to face what waits.}}
+| Title1_Event3 = Second conversation after initial encounter if several conditions<ref group="Note" name="dialogueConditions"/> are not met
+| Title1_Dialogue3 = If the veiled bugs have an interest in you, enough to brave the wastes beyond our borders, then you must be rather special, yes?<br>
+{{HTalk|In my own lands, some may once have seen me so. In this place, with my strength sapped, I am just another traveller.}}<br>
+Ohho! A traveller, but still something more. I can see it now. Of course! That focus!<br>
+Did those veiled bugs realise who they snared? Perhaps it is they who should be worried, eh?
+| Title1_Event4 = Third conversation after initial encounter if [[Bell Beast]] has been defeated, or first if Bell Beast has been defeated and several conditions<ref group="Note" name="dialogueConditions"/> are met
+| Title1_Dialogue4 = {{HTalk|What duty binds you to this old chapel, madam? The structure barely stands, and I see no signs of congregation.}}<br>
+Aye! Gone! The lot'o them, fled and hidden. But I'm not leaving till I've set this place right...<br>
+...It's that Citadel above, you see. Even now, in Pharloom's long decline, the simple bugs, they're witless before it. Too grand. Too majestic. Too powerful.<br>
+This building's state is a sad example of those who'd dare suggest another path...
+| Title1_Event5 = Exhausted Dialogue
+| Title1_Dialogue5 = Few are as foreign as you, hunter dear. Visit me when you care.<br>
+I'll look forward to hearing how your steps might shake our world. Oho. Yes!
+| Title1_Event6 = After finding that Hornet has defeated [[Moss Mother]]
+| Title1_Dialogue6 = Hunter! I'm thinking it was you that cleared my basement?<br>
+{{HTalk|On first arrival here, the nesting creatures didn't take kindly to my passing.}}<br>
+Ohho. They're cranky bugs, alright. And they made an awful mess down here with their hatching and breeding.<br>
+You've my many thanks for seeing them off!
+<hr />
+<b>Talking Again:</b><br> May your travels bring you fortune, hunter. And may the Citadel come to fear your freedom in our land.
+| Title1_Event7 = After opening the Bone Gate to [[Bonegrave]]
+| Title1_Dialogue7 = I see you've gone and opened up the great bone gate back there. And without even asking my permission! Feeling curious, were you? <br>
+{{HTalk|There is a vast grave beyond. I'd assumed most bugs died climbing the path, but it seems many fell before their trek had barely commenced.}}<br>
+Aye! Lost their lives to beasts, or to luck turned rotten. Others were simply formed too frail.<br>
+At least those poor souls can rest together. Death and death and death, the eternal promise of our eternal kingdom. Eventually, it claims us all.
+| Title1_Event8 = While [[Cursed Crest|Cursed]]
+| Title1_Dialogue8 = 
+Oh! Hunter, aren't you in a sorry state? You're all bound up, looking worse than when we first met!<br>
+{{HTalk|My shell has become host to a cruel parasite. Though my natural strength keeps it from consuming me entirely, I'm much weakened by its presence.}} <br>
+Well, this just won't do! Pharloom's already in the snare of one fell curse, we can't have another vying to leech what life remains. <br>
+Best you head quick over to that town of bells, at the core of our kingdom. I've an uncle hidden about there, an old hermit, and a horrid curmudgeon.<br>
+That hermit's a hard one to befriend, but he holds some knowledge about this kingdom's maladies. If anyone's able to point you to a cure, it'll be him.<br>
+| Title1_Event9 = Exhausted dialogue while Cursed
+| Title1_Dialogue9 = Head quick for that vein of bells, and find my uncle hidden there. If anyone's able to point you to a cure for that thing twisting within your shell, it'll be him.
+| Title1_Event10 = Playing the [[Needolin]]
+| Title1_Dialogue10 = [n]So many souls...<br>
+A kingdom lost...<br>
+Only a simple bug...<br>
+Strength in despair...<br>
+Our power...<br>
+Hide and wait...<br>
+Hide and watch...<br>
+O soulful ones...<br>
+Spiralling outward...<br>
+Glimmering trails...<br>
+| Title2 = Silk and Soul
+| Title2_Event1 = First talk
+| Title2_Dialogue1 = {{HTalk|Madam, I return seeking power to aid the construction of a trap, at request of your sibling residing atop the Citadel.}}<br>
+Aye, hunter. So you managed to rouse the old fool. I've known it coming, felt it, and glad I am!<br>
+Rest'a my family spent far too long huddled and glum... or dead! Not me! I'd always been thinkin' it a waste to just take what's coming, when her up top wakes.<br>
+Better to fight for freedom or go out in a blaze, oh ho!
+| Title2_Event2 = Exhausted dialogue
+| Title2_Dialogue2 = S'not a surprise it's you rallying us to action, hunter. You had the sense about you, a bug bringing change'n all.<br>
+Course you're more than just a bug, aint'cha! More than Weaver. Guess it'd take someone like you for my family to dare hope at success.<br>
+Go and prove our trust now, won't you? We've spent our lifetimes wishing for another path. With a bit of luck, you might grant it.
+}}
+
+==Location==
+The Chapel Maid is first found above the Ruined Chapel east of [[Bone Bottom]]. She later moves to [[Moss Mother]]'s arena in [[Moss Grotto]]. During [[Act 3]], she and the other [[Snail Shamans (Silksong)|Snail Shamans]] move inside the [[Ruined Chapel]].
+{{Gallery
+|Image1 = Mapshot SS Chapel Maid 01.png!First location in<br>Bone Bottom
+|Image2 = Mapshot SS Moss Mother 01.png!First location in<br>Moss Grotto
+|Image3 = Mapshot SS Red Memory.png!Second location in<br>Moss Grotto
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Chapel Maid 04.png!Hornet encountering the Chapel Maid while weak
+|Image2 = Screenshot SS Chapel Maid 01.png!Waking Hornet
+|Image3 = Screenshot SS Chapel Maid 02.png!Idle
+|Image4 = Screenshot SS Chapel Maid 03.png!Singing
+|Image5 = Screenshot SS Chapel Maid 05.png!Near the opened gate to Bonegrave
+|Image6 = Screenshot SS Chapel Maid 06.png!In the Moss Mother arena
+|Image7 = Chapel Maid Credits.png!Credits art
+|Image8 = Chapel Maid.png! Promotional art
+|Image9 = Silksong Early 027.png!<i>Silksong</i> reveal trailer
+}}
+
+== Trivia==
+*The Chapel Maid was originally named the Church Keeper.<ref>[https://youtu.be/Y8lvHT_IQbM?t=418 Hollow Knight: Silksong Gameplay - Nintendo Treehouse: Live | E3 2019]</ref>
+{{Localisation
+|DEname=Kapellenjungfer
+|DEmeaning = Chapel Maiden
+|ESname = Doncella de la Capilla
+|ESmeaning = Maid of the Chapel
+|FRname = Servante De La Chapelle
+|FRmeaning = Servant of the Chapel
+|ITname = Fanciulla della Cappella
+|ITmeaning = Maiden of the Chapel
+|JAname= チャペルの従者
+|JAromanised= Chaperu no jūsha
+|JAmeaning = Chapel's Servant
+|KOname = 예배당 하녀 
+|KOromanised = Yebaedang hanyeo 
+|KOmeaning = Chapel Maid
+|PTname =  Dama da Capela
+|PTmeaning = Lady of the Chapel
+|RUname = Прислужница Капеллы
+|RUromanised = Prislužnica Kapelly
+|RUmeaning = Chapel Maid
+|ZHname = 教堂侍女
+|ZHromanised = Jiàotáng shìnǚ
+|ZHmeaning = Church Maid
+|CODEname=CHURCHKEEPER</code> <br> <code>BB_CARETAKER</code> <br> <code>CHAPEL_SHAMAN
+|CODEmeaning=Chapel Maid was originally known as the Church Keeper
+}}
+{{Refs|hr=ss}}
+
+== Notes ==
+<references group="Note"/>
+
+[[es:Guardián de la Iglesia]]
+[[fr:Gardien de l'Église]]
+{{SS Nav NPCs}}

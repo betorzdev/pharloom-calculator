@@ -1,0 +1,75 @@
+{{SS Infobox Wish
+| header1 = Hunt
+| description = Hunt Crawbugs in [[Greymoor]] and collect their [[Ragpelt]].
+| npc = [[Creige]]
+| location =
+[[Bellhart]] Wishwall
+[[Halfway Home]]
+| prerequisite = Defeat [[Widow]]
+| reward = [[Crafting Kit]]
+}}
+
+{{Quote
+| Those blasted crawbugs are fouling up my roof! I've come up with a clever solution to keep them away, but I'll need some help. Enquire at the Halfway Home if you're fit for the task.
+| [[Creige]]
+| Hr = SS
+}}
+
+<b>Crawbug Clearing</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i> that becomes available after defeating [[Widow]]. It can be accepted from the Wishwall in [[Bellhart]] or directly from [[Creige]] at the [[Halfway Home]]. Accepting it from the Wishwall still requires talking to him.
+
+== Wish ==
+[[File:Ragpelt.png|link=Ragpelt|left|thumb|100x100px]]
+
+Creige is frustrated by the Craws soiling the roof of the Halfway Home and annoying his customers with their squawks. He asks [[Hornet (Silksong)|Hornet]] to kill some Crawbugs, so he can use their [[Ragpelt]] to construct a scarecraw and solve the problem for good.
+
+Ragpelt is dropped in various amounts by [[Craw]]s (1 Ragpelt), [[Tallcraw]]s (2 to 5 Ragpelt), and [[Squatcraw]]s (2 to 5 Ragpelt) in eastern [[Greymoor]]. Creige recommends killing the larger Crawbugs,<ref>"If you're collecting Ragpelt from the crawbugs, those young'ns above here'll be slim pickings. It's the mature craws you want, over by the watermound."</ref> but it can be easier (while more time-consuming) to kill the Craws on his roof, rest at the bench inside the building, then kill the Craws again.
+
+{{Gallery
+| Image1 = Mapshot SS Bellhart Wishwall.png!Location of the Wishwall in Bellhart
+| Image2 = Mapshot SS Creige 01.png!Location of Creige in Greymoor
+| Image3 = Mapshot SS Craw Greymoor 01.png!Location of Craws in Greymoor
+| Image4 = Mapshot SS Tallcraw Greymoor 01.png!Location of Tallcraws in Greymoor
+| Image5 = Mapshot SS Squatcraw Greymoor 01.png!Location of Squatcraws in Greymoor
+}}
+
+== Reward ==
+[[File:Crafting Kit.png|link=Crafting Kit|left|thumb|100x100px]]
+
+After bringing 25 Ragpelt to Creige, he rewards Hornet with a [[Crafting Kit]] upgrade. Creige immediately installs a large scarecraw on top of the tavern, which permanently removes all [[Craw]]s from the rooftop. The scarecraw can be hit, though it cannot be damaged.
+
+{{Clear}}
+
+==Trivia==
+*The existence of [[Cut Content (Silksong)/Text#Creige|cut Creige dialogue]] that had clearing this wish while also not freeing Bellhart as prerequisites implies that originally, this wish could be granted before defeating Widow.
+{{Localisation
+|DEname = Krähfer-Keulung
+|DEmeaning = Craw Culling
+|ESname = Limpieza de cuervones
+|ESmeaning = Cleaning of Craws
+|FRname = Nettoyage de corbotères
+|FRmeaning = Cleaning of Craws
+|ITname = Sgombero di Corvidi
+|ITmeaning = Clearing of Craws or Eviction of Craws
+|JAname = ボロガワの一掃
+|JAromanised = Borogawa no issō
+|JAmeaning = Elimination of Craws
+|KOname = 까마귀벌레 청소
+|KOromanised = Kkamagwibeolle cheongso
+|KOmeaning = Crow Bug Cleaning 
+|PTname = Remoção de Corbiscos
+|PTmeaning = Removal of Crawbugs (see [[Craw]])
+|RUname = Облава на кар-жуков
+|RUromanised = Oblava na kar-žukov
+|RUmeaning = Hunting on the Crawbugs
+|TWname = 清剿鴉蟲
+|TWromanised = Qīngjiǎo yā chóng
+|TWmeaning = same
+|ZHname = 清剿鸦虫
+|ZHromanised = Qīngjiǎo yā chóng
+|ZHmeaning = Eradicate Crow Bugs
+|CODEname = QUEST_CROW
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

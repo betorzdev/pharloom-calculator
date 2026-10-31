@@ -1,0 +1,111 @@
+{{SS Infobox Wish
+| header1 = Gather
+| description = Collect rare delicacies of Pharloom.
+| npc = [[Loyal Mergwin]]
+| location = [[Choral Chambers]] NPC
+| prerequisite = Enter [[Act 2]]
+| reward = [[Pale Oil]]
+| achievement = [[Achievements (Silksong)|Glutton]]
+}}
+
+{{Quote
+| If your idle claws need work, put them to service for our exalted Great Gourmand. I must remain by my master, so you will need to leave the Citadel and gather the ingredients for their meal in my stead!
+| [[Loyal Mergwin]]
+| Hr = SS
+}}
+
+<b>Great Taste of Pharloom</b> is a [[Gather Wishes|Gather Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It can be acquired by talking to [[Loyal Mergwin]] within the [[Choral Chambers]].
+
+== Wish ==
+Loyal Mergwin asks [[Hornet (Silksong)|Hornet]] to collect 5 rare delicacies across [[Pharloom]] for the [[Great Gourmand]] to feast on, which are the <b>Mossberry Stew</b>, <b>Vintage Nectar</b>, <b>Courier's Rasher</b>, <b>Crustnut</b> and the <b>Pickled Muckmaggot</b>. Speaking to Loyal Mergwin without any items to give him will prompt him to provide a hint for the location of one of the items she has not yet collected.
+<br><br>
+
+=== [[Mossberry Stew]] ===
+[[File:Mossberry Stew.png|link=Mossberry Stew|left|thumb|75x75px]]
+
+The Mossberry Stew is freely given by the [[Moss Druid]] in [[Mosshome]] during the wish.
+{{Clear}}
+
+=== [[Vintage Nectar]] ===
+[[File:Vintage Nectar.png|link=Vintage Nectar|left|thumb|75x75px]]
+
+The Vintage Nectar can be bought from [[Creige]] in [[Greymoor#Sub-area: Halfway Home|Halfway Home]] for {{R|480}}. After payment, Creige allows Hornet to enter his basement where, after defending against a Skarr ambush, she can acquire the nectar. This step cannot be completed while Hornet is [[Cursed Crest|cursed]] as [[Creige]] will not offer to sell the Vintage Nectar to Hornet.
+
+{{Clear}}
+
+=== [[Courier's Rasher]] ===
+[[File:Courier's Rasher.png|link=Courier's Rasher|left|thumb|75x75px]]
+
+The Courier's Rasher is given as a delivery item by [[Couriers Tipp & Pill]] in [[Bellhart]] after having completed the <i>[[My Missing Brother]]</i> wish, and operates under the same rules as a [[Delivery Wishes|Delivery Wish]]. It has a total of 8 hit points that slowly drain at a rate of 1 hit point every 47 seconds. As long as the hit point has not fully drained, it is still considered a full hit point when the item takes damage.
+
+{{Clear}}
+
+=== [[Crustnut]] ===
+[[File:Crustnut.png|link=Crustnut|left|thumb|80x80px]]
+
+The [[Crustnut]] can be found hidden within the [[Sands of Karak]], behind various breakable walls and floors.
+
+{{Clear}}
+
+=== [[Pickled Muckmaggot]] ===
+[[File:Pickled Muckmaggot.png|link=Pickled Muckmaggot|left|thumb|75x75px]]
+
+The Pickled Muckmaggot can be obtained after defeating [[Disgraced Chef Lugoli]] in [[Sinner's Road]]. The [[Faydown Cloak]] is required to enter their arena.
+
+{{Clear}}
+
+{{Gallery
+| Image1 = Mapshot SS Loyal Mergwin 01.png!Loyal Mergwin's location in the Choral Chambers
+| Image2 = Mapshot SS Moss Druid.png!The Moss Druid location in Moss Grotto
+| Image3 = Mapshot SS Creige 01.png!Creige location in Greymoor
+| Image4 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill location in Bellhart
+| Image5 = Mapshot SS Crustnut.png!Crustnut location in Sands of Karak
+| Image6 = Mapshot SS Disgraced Chef Lugoli 01.png!Disgraced Chef Lugoli location in Sinner's Road
+}}
+
+== Reward ==
+[[File:Pale Oil.png|link=Pale Oil|left|thumb|100x100px]]
+After bringing all 5 items to Loyal Mergwin and having the Great Gourmand feast, Loyal Mergwin allows Hornet to take the [[Pale Oil]] behind him.
+
+{{clear}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Choral Chambers 23.png!Loyal Mergwin with the prepared meal
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Glutton}}
+
+{{Localisation
+|DEname = Pharlooms feinster Geschmack
+|DEmeaning = Pharloom's Finest Taste
+|ESname = Gran sabor de Telalejana
+|ESmeaning = Great Taste of Pharloom
+|FRname = Papilles délicates de Pharloom
+|FRmeaning = Delicate Tastebuds of Pharloom
+|ITname = Sapori di Lungitela
+|ITmeaning = Flavours of Pharloom
+|JAname = 至高の味
+|JAromanised = Shikō no aji
+|JAmeaning = Supreme Taste
+|KOname = 팔룸의 일미
+|KOromanised = Pallumui ilmi
+|KOmeaning = Pharloom's Great Taste
+|PTname = Grande Sabor de Fiarlongo
+|PTmeaning = Great Taste of Pharloom
+|RUname = Прекрасные вкусы Фарлума
+|RUromanised = Prekrasnye vkusy Farluma
+|RUmeaning = Wonderful Tastes of Pharloom
+|ZHname = 纺络珍馐
+|ZHromanised = Fǎngluò zhēnxiū
+|ZHmeaning = Pharloom Delicacies 
+|TWname = 紡絡珍饈
+|TWromanised = Fǎngluò zhēnxiū
+|TWmeaning = same
+|CODEname = QUEST_GOURMAND
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

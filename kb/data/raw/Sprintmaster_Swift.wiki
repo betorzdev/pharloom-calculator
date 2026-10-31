@@ -1,0 +1,221 @@
+{{For|the [[Charms|Charm]] in <i>[[Hollow Knight]]</i>|Sprintmaster}}
+{{SS Infobox NPC
+|label1 = Swift
+|image1 = <gallery>
+Sprintmaster Swift.png|Idle
+Sprintmaster Swift Readying.png|Preparing 
+Sprintmaster Swift Flying.png|Flying
+Sprintmaster Swift Tired.png|Tired
+</gallery>
+|area = [[Far Fields]]
+|quest = [[Fastest in Pharloom]]
+|role = Quest
+|aka = Sprintmaster
+|singnum = 2
+
+|label2 = Companion
+|title2 = Swift's Companion
+|image2 = <gallery>
+Sprintmaster Companion.png|Idle
+Sprintmaster Companion Flying.png|Flying
+</gallery>
+|area2 = [[Far Fields]]
+|quest2 = [[Fastest in Pharloom]]
+|role2 = Quest
+|g2 = Sprintmaster Companion
+|sing2 = Sprintmaster Companion
+}}
+
+{{Quote
+|Simply step to the challenge. Let us soar swift together again! 
+|Sprintmaster Swift
+|Hr=SS}}
+
+<b>Sprintmaster Swift</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a bug seeking to test his speed against a challenger.<ref name=race/> He gives the <i>[[Fastest in Pharloom]]</i> [[wish]].
+
+== Background ==
+Sprintmaster Swift is a bug seeking the fastest bug in [[Pharloom]]. In the past, he had his own speed teacher who gave him a [[Sprintmaster Memento|memento]].<ref>Sprintmaster Swift: <i>"As reward for such an impressive feat of endurance, I have only this small trophy, a memento given by my own speed teacher, now fairly passed to you."</i></ref> He is looking for a nimble opponent to challenge him, testing their speed and breaking through their limits.<ref name=race>Sprintmaster Swift: <i>"A nimble opponent appears. At last! At last! (...) Let us break through our limits and see what waits beyond!"</i></ref> In [[Far Fields]], he discovered a distant cavern with a giant, boney body of a bug inside it. Sprintmaster Swift set up his race there to await a challenger.<ref>Hornet and Sprintmaster Swift dialogue: <br><i>Hornet: "If you are seeking challengers, sir, you should choose a location less far afield. It is rare chance I, or any bug, would come upon this distant cavern."<br>Sprintmaster Swift: "True! Though once discovered, could there be a more perfect spot? This giant, boney body, so distant from Pharloom's ails. Here, freely, we can test our speed and our sleek shells. Here we may race!"</i></ref>
+== In-Game Events ==
+: <i>For more information, see [[Fastest in Pharloom]].</i>
+
+Upon meeting him, Sprintmaster Swift offers the Wish <i>[[Fastest in Pharloom]]</i> to [[Hornet (Silksong)|Hornet]], if she has yet to accept it from the Wishwall in [[Bellhart]]. This consists of a race on three tracks, each increasing in difficulty and offering different rewards for winning them. 
+
+After Hornet completes the first three challenges, upon obtaining the [[Everbloom]] and returning from benching elsewhere, Sprintmaster Swift offers the fourth and final challenge. This takes place on the same track as the third challenge, but is longer, made up of six laps instead of three as before. Beating him on this fourth race rewards Hornet with the [[Sprintmaster Memento]].
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Fastest in Pharloom
+| title = [[File:Sprint Quest Icon.png|100px]]<br>[[Fastest in Pharloom|SPRINT:<br>Fastest in Pharloom]]
+| description = Be you nimble? Be you quick? If you would prove yourself Pharloom's fastest bug, meet me at the furthest border of the Far Fields! With all haste!
+| objective = Race Sprintmaster Swift to discover Pharloom's fastest bug.
+| location = <b><i>[[Bellhart]] Wishwall / [[Far Fields]] NPC</i></b>
+Sprintmaster Swift
+| reward = First Race: [[Rosary Necklace]]<br>Second Race: [[Beast Shard]]<br>Third Race: [[Mask Shard (Silksong)|Mask Shard]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Getting offered the first race
+| Title1_Dialogue1 = <b>If Hornet has not accepted the <i>[[Fastest in Pharloom]]</i> [[wish]] from [[Bellhart]]'s wishwall:</b><br>
+Hoi hoi! A nimble opponent appears. At last! At last!<br>
+{{HTalk|If you are seeking challengers, sir, you should choose a location less far afield. It is rare chance I, or any bug, would come upon this distant cavern.}}<br>
+True! Though once discovered, could there be a more perfect spot? This giant, boney body, so distant from Pharloom's ails.<br>
+Here, freely, we can test our speed and our sleek shells. Here we may race!<br>
+You must be eager to step to the task, challenger? Fulfil my wish! Let us discover our limits together!
+<hr/>
+<b>If Hornet has accepted the wish from the wishwall:</b><br>
+Hoi hoi! A nimble opponent appears. At last! At last!<br>
+{{HTalk|I was intrigued by the challenge you issued on the bell settlement's wishwall, sir, though having reached this place I wonder at your choice of location.}}<br>
+{{HTalk|If you seek challengers you should choose somewhere less far afield. It is rare chance any bug would journey to a cavern so distant.}}<br>
+True, perhaps. Though once discovered, could there be a more perfect spot? This giant, boney body, so distant from Pharloom's ails.<br>
+Here, freely, we can test our speed and our sleek shells. Here we may race!<br>
+You must be eager to step to the task, challenger? Fulfil my wish! Let us discover our limits together!
+| Title1_Event2 = Getting offered subsequent races
+| Title1_Dialogue2 = <b>The second race:</b><br>
+Nimble bug! We both know our previous run was only warm-up, yes? Only a tiny test to prepare for the real match, Hoi hoi!<br>
+Well that match is now! A new track worthy of your skill, and mine. No longer merely a test!<br>
+Meet the challenge and my speed full. Let us break through our limits and see what waits beyond!
+<hr/>
+<b>The third race:</b><br>
+Our last race was grand, yes? But I see now I set too mild a challenge for one as spritely as yourself!<br>
+I prepared only to race, but you arrived bringing destiny! In you my wish may finally be granted, the barriers of speed broken wide!<br>
+Are you prepared nimble bug? The time is upon us. The final test for the swift and spry!
+<hr/>
+<b>The final race for the [[Sprintmaster Memento]]:</b><br>
+Nimble bug, you return refreshed! And so perfectly timed, for I have a new challenge prepared.<br>
+The course shall remain the same as last, but length, the laps, will greatly extend.<br>
+{{HTalk|You propose a test of endurance? I have undertaken many in my time.}}<br>
+Excellent! Excellent! Though know, for this race, I can only provide slight reward for victory.<br>
+What say you, nimble bug? Let us stride fast forth!
+| Title1_Event3 = Declining to race
+| Title1_Dialogue3 = {{HTalk|Another time perhaps, sir. My own tasks cannot be easily ignored.}}<br>
+Then I shall continue to train in anticipation of that future moment!<br>
+Having met, it is inevitable. Fate calls us to compete!
+| Title1_Event4 = Getting reoffered to race
+| Title1_Dialogue4 = <b>After declining any of the first 3 races:</b><br>
+Hoi! Nimble bug! Surely you have reconsidered? Let us discover our limits together!
+<hr/>
+<b>After losing:</b><br>
+Don't let defeat weigh on you, nimble bug! Simply step to the challenge. Let us soar swift together again!
+<hr/>
+<b>After leaving the room during a race:</b><br>
+Nimble bug! You abandoned the race? Surely it was only an error?<br>
+In the pursuit of speed all reason can ofttimes be lost, left in the wind as it were.<br>
+At least you seem recovered of your lapse. And surely you are eager now?<br>
+We must sprint on! Let us soar swift together!
+<hr/>
+<b>After cancelling the race:</b><br>
+Nimble bug! You forfeited the race? It is true that sometimes a reset is needed, for the health of mind and shell.<br>
+But what say you now? Surely you are eager to return to the track. Let us soar swift together again!
+<hr/>
+<b>After declining the final race:</b><br>
+What say you, nimble bug? The test of endurance remains at your ready! Let us stride fast forth!
+<hr/>
+<b>After winning the final race:</b><br>
+What say you, nimble bug? Though no reward remains to give, I would delight to soar together with you again!
+| Title1_Event5 = Accepting to race
+| Title1_Dialogue5 = <b>The first time:</b><br>
+Hoi! Magnificent! May our mighty contest of shells commence.<br>
+But a final note, nimble bug! If ever you run off course or desire a quick convene, simply play what music you're able and my companion shall whisk you back to our starting line.<br>
+Now! The track calls us. Allow me a moment to assemble a course worthy to test our skill.
+<hr/>
+<b>On subsequent races:</b><br>
+Hoi! Let our mighty contest of shells commence again!
+| Title1_Event6 = If Hornet goes through the wrong checkpoint
+| Title1_Dialogue6 = Nimble bug! You seem to have lost your way upon the course. Surely it was only an error? You already seem recovered of your lapse.<br>
+You are eager to run again, yes, yes? Let us soar swift together!
+| Title1_Event7 = When Hornet wins a race
+| Title1_Dialogue7 = <b>Winning the first race:</b><br>
+So this is... defeat? Can it be? Huu... A shell so fast! Wonder of Pharloom! A bug whose pace could match my own.<br>
+Though I set a simple course, you have proven its match and more. Take this small reward, nimble bug, and remember well our grand contest!<br>
+The challenge! The course! It shall be improved. Yes! Yes! The truest test is still to come. We shall fly fast together once more!
+<hr/>
+<b>Winning the second race:</b><br>
+Again... Huu... Huu. Truly incredible!<br>
+Was it the course? Did I lose focus? Or are you simply the bug I have waited so long for? Her of such skill that my wish could, at last, be granted?<br>
+Another reward must be given for your speed, nimble bug. One deserved in full!<br>
+The challenge! The course! It shall be improved. Yes! Yes! The truest test is still to come. We shall fly fast together once more!
+<hr/>
+<b>Winning the third race:</b><br>
+Huu... You have done it... Huu. Huu... Hoof.<br>
+Never would I have believed, a shell so fast in all of Pharloom! Wonder of wonders!<br>
+You have proven it, nimble bug, fulfilled my wish, seen my pace matched and beaten, my limits broken wide.<br>
+But wait! Before you depart. Your exceptional skill requires an equally fine reward!<br>
+This shining shard of ancient mask is yours! Take it. Cherish it. And know, you shall forever have my thanks.
+<hr/>
+<b>Winning the final race:</b><br>
+Again and again you prove your mastery, nimble bug, yet still I never tire of the challenge!<br>
+As reward for such an impressive feat of endurance, I have only this small trophy, a memento given by my own speed teacher, now fairly passed to you.<br>
+Now I shall remain, and train. And know! Though I have no more rewards to give, you are welcome to grace my track, as many times as you wish.
+<hr/>
+<b>Running again after the last race:</b><br>
+Hoof... Always you impress... nimble bug...<br>
+As many times as you may, let us speed forth! Gladly will I strive to match your spritely grace.
+| Title1_Event8 = Exhausted dialogue, after completing the third race and before the last race is ready
+| Title1_Dialogue8 = Now I must train, and strive, further and faster by your example. Your skill upon these tracks has roused my spirit, nimble bug. You shall forever have my thanks.
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 = [n]Movement is life!<br>
+Faster now, faster now!<br>
+Speed is strength!<br>
+Even fate can be outpaced!
+| Title2 = Written
+| Title2_Event1 = <i>[[Fastest in Pharloom]]</i> wish
+| Title2_Dialogue1 = Be you nimble? Be you quick? If you would prove yourself Pharloom's fastest bug, meet me at the furthest border of the Far Fields! With all haste!
+}}
+
+== Location ==
+Sprintmaster Swift is found at the eastern frontier of [[Far Fields]], reached through [[Hunter's March]] after unlocking the [[Silk Soar]] ability.
+{{Gallery
+|Image1 = Mapshot SS Sprintmaster Swift 01.png!Location in Far Fields
+}}
+
+==Gallery==
+{{Gallery
+|Image1 = Screenshot SS Sprintmaster Swift 01.png!Practicing next to the bench
+|Image2 = Screenshot SS Sprintmaster Swift 03.png!Stretching next to the bench with assistant
+|Image3 = Screenshot SS Sprintmaster Swift 07.png!Starting the race with Hornet
+|Image4 = Screenshot SS Sprintmaster Swift 04.png!Sprinting during the race
+|Image5 = Screenshot SS Sprintmaster Swift 05.png!Flying during the race
+|Image6 = Screenshot SS Sprintmaster Swift 08.png!Tired after race
+|Image7 = Screenshot SS Sprintmaster Swift 06.png!Singing with his companion
+|Image8 = Screenshot SS Sprintmaster Swift 02.png!Flying companion bug
+|Image9 = Ari SS Sketch 07.jpg!Concept sketches
+}}
+
+== Trivia ==
+* It is possible to hit Sprintmaster Swift during the race to slow him down briefly.
+* Holding down the [[Controls (Silksong)|SPRINT]] button at the second bell before the race starts gives Hornet a head start.
+* Due to a bug, Sprintmaster Swift's races used to be able to be beaten by not moving until he finishes the race, then completing it. This has since been fixed.
+
+{{Localisation
+|DEname = Sprintmeister Flott
+|DEmeaning = Sprintmaster Swift
+|ESname = Maestro de Sprints Veloz
+|ESmeaning = Master of Sprint Swift
+|FRname = Maître De La Vitesse Vif
+|FRmeaning = Master of Speed Swift
+|ITname = Maestro della Corsa Aspo
+|ITmeaning = Race Master Swift or Run Master Swift<br><small>In English, the word swift means to be fast but also a certain [[wikipedia:Swift (textiles)|textile tool]], this is perserved in the Italian word <i>aspo</i> as it also means to be fast as well as a textile tool known as a [[wikipedia:Niddy-noddy|niddy-noddy]] in English.</small>
+|JAname = 健脚の師スウィフト
+|JAromanised = Kenkyaku no shi suwifuto
+|JAmeaning = Running Master Swift
+|KOname = 질주마스터 스위프트
+|KOromanised = Jiljumaseuteo suwipteu
+|KOmeaning = Sprintmaster Swift
+|PTname = Mestre da Corrida Veloz
+|PTmeaning = Master of the Race Swift
+|RUname = Ловкач Быстроног
+|RUromanised = Lovkach Bystronog
+|RUmeaning = Acrobat Swiftlegs
+|TWname = 飛毛腿史威夫特
+|TWromanised = Fēi máo tuǐ shǐwēifūtè
+|TWmeaning = same
+|ZHname = 飞毛腿斯威夫特
+|ZHromanised = Fēi máo tuǐ sīwēifūtè
+|ZHmeaning = Speedster Swift<br><small>The idiomatic phrase {{lang|zh-Hans|飞毛腿}}/{{lang|zh-Hant|飛毛腿}} <i>fēi máo tuǐ</i> (speedster) contains the character {{lang|zh-Hans|飞}}/{{lang|zh-Hant|飛}} <i>fēi</i> (fly), perhaps alluding to Swift's wingedness.</small>
+|CODEname = SPEEDMASTER</code><br><code>SPRINTMASTER
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

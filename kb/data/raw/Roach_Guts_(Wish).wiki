@@ -1,0 +1,71 @@
+{{For|the [[Items (Silksong)#Deliverables|deliverable item]]|Roach Guts}}
+
+{{SS Infobox Wish
+| header1 = Hunt
+| title1 = Roach Guts
+| description = Collect 10 [[Roach Guts]] from defeated [[Muckroach]]es.
+| npc = [[Crull and Benjin]]
+| location = [[Sinner's Road]] NPCs
+| prerequisite = None
+| reward = [[Tacks]]
+}}
+
+{{Quote
+| How 'bout you put that poker to good use then, missy? Go poach some of them roaches and get us some tasty guts? There'd be fair trade waitin' for yer!
+| [[Crull and Benjin|Crull]]
+| Hr = SS
+}}
+
+<b>Roach Guts</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by talking to [[Crull and Benjin]] of [[Sinner's Road]]. As Crull and Benjin are found dead in Act 3, this Wish is removed from the Objectives menu if uncompleted.
+
+== Wish ==
+[[File:Roach Guts.png|link=Roach Guts|left|thumb|100x100px]]
+
+Crull and Benjin are low on food, and ask Hornet to obtain 10 [[Roach Guts]], supposedly the best part of a dead [[Muckroach|Muckroach's]] meat. They can be obtained from the corpses of said Muckroaches.
+
+{{Gallery
+| Image1 = Mapshot SS Crull and Benjin 01.png!Location of Crull and Benjin in Sinner's Road
+| Image2 = Mapshot SS Muckroach 01.png!Locations of Muckroaches in Sinner's Road
+}}
+
+== Reward ==
+[[File:Tacks.png|link=Tacks|left|thumb|100x100px]]
+
+After completing the Wish, Crull rewards Hornet with the [[Tacks]].
+
+{{Clear}}
+
+== Act 3 ==
+In [[Act 3]], Crull and Benjin are found dead. If this Wish has not been completed, the Tacks can freely be claimed from their corpses.
+
+{{Localisation
+|DEname = Schabenkaldaunen
+|DEmeaning = Cockroach Guts
+|ESname = Vísceras de cucaracha
+|ESmeaning = Cockroach's Entrails
+|FRname = Entrailles de férochard
+|FRmeaning = Muckroach's Entrails
+|ITname = Viscere di blatta
+|ITmeaning = Roach Bowels
+|JAname = はらわた収集
+|JAromanised = Harawata shūshū
+|JAmeaning = Intestine Collecting
+|KOname = 바퀴 내장
+|KOromanised = Bakwi naejang 
+|KOmeaning = Cockroach Innard
+|PTname = Vísceras de Barata
+|PTmeaning = Roach Guts
+|RUname = Тараканьи потроха
+|RUromanised = Tarakan'i potroxa
+|RUmeaning = Roach's Guts
+|ZHname = 蟑螂内脏
+|ZHromanised = Zhāngláng nèizàng
+|ZHmeaning = Roach Guts
+|TWname = 蟑螂內臟
+|TWromanised = Zhāngláng nèizàng
+|TWmeaning = same
+|CODEname = QUEST_ROACH_KILL
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

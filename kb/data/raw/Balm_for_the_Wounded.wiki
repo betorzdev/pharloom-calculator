@@ -1,0 +1,77 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for traces of the pilgrim, Sherma, and track his location.<br>Sherma was travelling to the Citadel's Whiteward.
+| npc = [[Sherma]]
+| location = [[Songclave]] wishwall
+| prerequisite =
+* Meet Sherma within Songclave, which requires completing the <i>[[Building Up Songclave]]</i> wish and at least one other Songclave wish.
+* Visit the [[Whiteward]]
+| reward = [[Spool Fragment]]<br>Prerequisite for <i>[[Silk and Soul]]</i>
+}}
+
+{{Quote
+| For the sake of our ailing brothers and sisters, I will descend into the holy Whiteward and search for healing supplies. If you are able, please join me! Company will make the work much merrier.
+| [[Sherma]]
+| Hr = SS
+}}
+
+<b>Balm for the Wounded</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The wish can be acquired from [[Songclave]]'s [[wishwall]] after meeting [[Sherma]] in Songclave and visiting the [[Whiteward]].
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Wishwall's location in the Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Songclave
+}}
+
+== Wish ==
+To complete the wish, [[Hornet (Silksong)|Hornet]] must locate Sherma, who has gone to the Whiteward in search of medical supplies. Upon promising the wish, a small doorway opens in the eastern part of the Whiteward, granting access to a room where Sherma can be found.
+
+Upon talking to Sherma, Hornet is ambushed by the [[Enemy Gauntlets (Silksong)/Whiteward 1|enemy gauntlet]]. Defeating the enemies and talking to Sherma once more completes the wish.
+
+{{Gallery
+|Image1 = Mapshot SS Sherma 08.png!Sherma's location in the Whiteward
+|Image2 = Screenshot SS Sherma 05.png!Sherma in the Whiteward
+}}
+
+== Reward ==
+[[File:Spool Fragment.png|link=Spool Fragment|left|thumb|100x100px]]
+
+After completing the wish, Sherma gifts Hornet a [[Spool Fragment]] that he found within the Whiteward. He then returns to Songclave.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Balsam für die Verwundeten
+|DEmeaning = Balm for the Wounded
+|ESname = Bálsamo para los heridos
+|ESmeaning = Balm for the wounded
+|FRname = Remède pour les blessés
+|FRmeaning = Remedy for the Wounded
+|ITname = Balsamo per i feriti
+|ITmeaning = Balm for the wounded
+|JAname = 負傷者の治療
+|JAromanised = Fushosha no chiryo
+|JAmeaning = Treatment for the Injured
+|KOname = 부상자들을 위한 연고
+|KOromanised = Busangjadeureul wihan yeongo
+|KOmeaning = Medicine for the Wounded
+|PTname = Alívio para os Feridos
+|PTmeaning = Relief for the Wounded
+|RUname = Бальзам для раненых
+|RUromanised = Balʹzam dlja ranenyx
+|RUmeaning = Balm for the Wounded
+|ZHname = 愈伤良方
+|ZHromanised = Yù shāng liángfāng
+|ZHmeaning = Effective Healing Remedy
+|TWname = 癒傷良方
+|TWromanised = Yù shāng liángfāng
+|TWmeaning = same
+|CODEname = QUEST_SAVE_SHERMA
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

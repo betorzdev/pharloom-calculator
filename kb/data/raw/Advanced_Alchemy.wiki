@@ -1,0 +1,72 @@
+{{Navbar
+| page1 = Alchemist's Assistant
+| page2 = Advanced Alchemy
+}}
+
+{{SS Infobox Wish
+| header1 = Gather
+| description = Collect Plasmified Blood from infected creatures in the Wormways.<br>
+Plasmified Blood can be extracted with a fully charged stab from the Needle Phial tool.
+| npc = [[Alchemist Zylotol]]
+| location = [[Wormways]]
+| prerequisite = * Complete <i>[[Alchemist's Assistant]]</i> wish
+* Enter [[Act 3]]
+| reward = [[Plasmium Gland]]
+}}
+
+{{Quote
+| Assistant... to learn more of Plasmium's wonders... I know what we must do... 
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Advanced Alchemy</b> is a [[Gather Wishes|Gather Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It can be started by talking to [[Alchemist Zylotol]] in the [[Wormways]] after it becomes overrun with Plasmium in [[Act 3]], and after <i>[[Alchemist's Assistant]]</i> wish is completed.
+
+== Wish ==
+[[File:Plasmified Blood.png|link=Plasmified Blood|left|thumb|100x100px]]
+
+Alchemist Zylotol asks [[Hornet (Silksong)|Hornet]] to extract 10 samples of [[Plasmified Blood]] and deliver them to him. He gives her the [[Needle Phial]] once more, which Hornet must charge and stab into [[Lifeblood#Mutation|plasmified]] enemies, such as [[Plasmid]]s, [[Plasmidas]]es, or [[Plasmified Zango]], to extract their blood.
+
+{{Gallery
+| Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+}}
+
+== Reward ==
+[[File:Plasmium Gland.png|link=Plasmium Gland|left|thumb|100x100px]]
+
+After delivering the Plasmified Blood to Alchemist Zylotol, he rewards Hornet with the [[Plasmium Gland]], allowing her to limitlessly recharge the [[Plasmium Phial]] at a bench.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Fortgeschrittene Alchemie
+|DEmeaning = Advanced Alchemy
+|ESname = Alquimia avanzada
+|ESmeaning = Advanced Alchemy
+|FRname = Alchimie avancée
+|FRmeaning = Advanced Alchemy
+|ITname = Alchimia avanzata
+|ITmeaning = Advanced Alchemy
+|JAname = 上級錬金術
+|JAromanised = Jōkyū renkinjutsu
+|JAmeaning = Advanced Alchemy
+|KOname = 고급 연금술
+|KOromanised = Gogeup yeongeumsul
+|KOmeaning = Advanced Alchemy
+|PTname = Alquimia Avançada
+|PTmeaning = Advanced Alchemy
+|RUname = Искусная алхимия
+|RUromanised = Iskusnaja alximija
+|RUmeaning = Skillful Alchemy
+|ZHname = 高阶炼金
+|ZHromanised = Gāojiē liànjīn
+|ZHmeaning = Advanced Alchemy
+|TWname = 高階煉金
+|TWromanised = Gāojiē liànjīn
+|TWmeaning = same
+|CODEname = QUEST_EXTRACTOR_B2
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

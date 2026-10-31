@@ -1681,10 +1681,16 @@ for (const [scene] of PLACES['tools:flea-brew'].at) put2('tools:flea-brew:' + lo
    first of their spots). The Map lists the wishes on that mark instead of drawing another. */
 const TRADER = { COURIERS_SHOP: 'couriers', MOSSCREEP: 'druid', HH_BARTENDER: 'creige' };
 const sameRoom = (a, b) => !!(a && b) && lower((R.roomOf(a) || {}).scene || a) === lower((R.roomOf(b) || {}).scene || b);
+/* Whose name a giver's mark carries, when it isn't their people.json key's: Songclave's «Enclave
+   Caretaker» object is filed under CHURCHKEEPER (the Chapel Maid's title), but the wish it offers
+   says who asks (Silk and Soul's line, Q_SOUL_SNARE_LOC: «Caretaker of Songclave») and the wiki's
+   Caretaker page gives him Silk and Soul (31-Oct-2026: the mark was named «Chapel Maid»). */
+const GIVER_NAME = { Song_Enclave: 'CARETAKER' };
 const GIVERS = {};
 for (const [scene, key] of Object.entries(GIVER)) {
   if (!key) { GIVERS[scene] = null; continue; }
-  const ks = [key + '_SUPER', key + '_MAIN', key + '_SUB'].filter((k) => k in N.EN || k in N.ES);
+  const named = GIVER_NAME[scene] || key;
+  const ks = [named + '_SUPER', named + '_MAIN', named + '_SUB'].filter((k) => k in N.EN || k in N.ES);
   const id = Object.keys(WHO).find((x) => WHO[x] === key);
   const shop = id && (VENDORS[id] || []).findIndex((sc) => sameRoom(sc, scene));
   const mark = id && sameRoom(PEOPLE[id], scene) ? 'person:' + id : id && shop >= 0 ? (id === 'shakra' ? 'shakra:' : 'shop:' + id + ':') + shop

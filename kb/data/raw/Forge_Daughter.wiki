@@ -1,0 +1,240 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Forge Daughter Idle.png|Idle
+Forge Daughter Laughing.png|Laughing
+</gallery>
+| area = [[Deep Docks]]
+| sing = Grishkin
+| role = Merchant
+|singnum = 2
+|affiliation = [[Ballow]] (assistant)<ref>Forge Daughter: <i>"We hope Ballow serves you well, pointy bug. In our long time serving these docks, he's the finest assistant we've found."</i></ref>
+}}
+
+{{Quote
+|A smith? Hardly so crude! We are Forge Daughter! How can a pointy bug not tell? Ours is the ancient line and honoured role.
+|Forge Daughter
+|Hr=SS}}
+
+<b>Forge Daughter</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She is one of the [[Dock Workers]] and sells wares at her shop in the [[Deep Docks]] in exchange for [[Rosaries]] and [[Craftmetal]].
+
+== Background ==
+Forge Daughter is a member of the [[Dock Workers]] and resides in the [[Deep Docks]], where she was sent on order from [[the Citadel]] to provide her services to the area.<ref name=forgehome>Forge Daughter: <i>"Sent from our Forgehome we were, at request of those holy bugs above."</i></ref> She and [[Ballow]] are the only inhabitants of the Deep Docks to be unaffected by the [[Haunting]].<ref>Forge Daughter: <i>"You've met the workers? They're all wound up! They still work at their tasks, in a simple way, but they're useless for conversation. It's only ourselves and young Ballow with any sense left."</i></ref>
+
+== In-game Events ==
+Forge Daughter can be found within the central Deep Docks, and aids [[Hornet (Silksong)|Hornet]] in her journey by providing a smithing service to craft Hornet new [[Tools]] in exchange for [[Rosaries]] and [[Craftmetal]].<ref>Hornet and Forge Daughter dialogue:<br><i>Hornet: "If you are as talented as you suggest, would you lend me your aid? I've lacked for my usual tools, and I suspect you could craft fine replacements."<br>Forge Daughter: "Blades and traps, no doubt? We know your type!"</i></ref>
+
+During [[Act 3]], she directs Hornet to Ballow for assistance in going to [[the Abyss (Silksong)|the Abyss]].
+
+If the [[Ruined Tool]] from [[Weavenest Murglin]] is brought to Forge Daughter, she can convert it into the [[Silkshot]].
+
+== Goods ==
+
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Forge Daughter's Description
+|-
+! [[File:Sting Shard.png|center|link=Sting Shard|72x72px]]
+[[Sting Shard]]
+| align="center" | {{R|140}}<br>{{C|1}}
+| <i>A vicious stabbing trap? We can build it. Just know, it disturbs us, these devious implements you conceive to kill.</i>
+|-
+! [[File:Magma Bell.png|center|link=Magma Bell|72x72px]]
+[[Magma Bell]]
+| align="center" | {{R|110}}<br>{{C|1}}
+| <i>This trinket is our own invention. It wards against the deadly lava and heat around these docks. The workers used to request them of us. Now they've lost the mind to care.</i>
+|-
+! rowspan=2 | [[File:Crafting Kit.png|center|link=Tool Pouch & Crafting Kit|Crafting Kit|72x72px]]
+[[Tool Pouch & Crafting Kit|Crafting Kit]]
+| align="center" rowspan=2 | {{R|180}}
+| <b>While having no Crafting Kit upgrades:</b><br>
+<i>Crafting by claw alone produces inferior results. With this kit, you can craft finer, sharper, and deadlier tools... if that is your wish.</i>
+|-
+| <b>While having Crafting Kit upgrades:</b><br>
+<i>If you add the implements from this set to your own, the quality of your crafting will increase. You will produce finer, sharper, and deadlier tools... if that is your wish.</i>
+|-
+! [[File:Shard Bundle.png|center|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| align="center" | {{R|50}}
+| <i>To maintain one's tools is a constant task. These shards should be kept close when you travel, that you can repair and replenish as the need arises.</i>
+|-
+! [[File:Forge_Daughter_Silkshot.png|center|link=Silkshot|72x72px]]
+[[Silkshot]]
+| align="center" | {{R|240}}<br>{{C|1}}<br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| <i>A weapon from a long distant past. We can combine the Weaver components with our own mouldings to repair the tool.</i>
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Oh! Small pointy bug, why do you bother us at our work?<br>
+{{HTalk|The sound of your craft called me to investigate. What is your duty here? Are you a smith of some kind?}}<br>
+A smith? Hardly so crude! We are Forge Daughter! How can a pointy bug not tell?<br>
+Ours is the ancient line and honoured role. These docks and lands around are fortunate to have our skills.<br>
+{{HTalk|If you are as talented as you suggest, would you lend me your aid? I've lacked for my usual tools, and I suspect you could craft fine replacements.}}<br>
+Blades and traps, no doubt? We know your type!<br>
+{{HTalk|Of sorts, but maybe strange to this land? Some would likely prove fine challenge for your craft.}}<br>
+Hmph! Then we'll construct them. But! You'll provide the materials, and compensation for our time.
+| Title1_Event2 = After the first purchase
+| Title1_Dialogue2 = A fair exchange made, pointy bug. Now our work calls. Return again if you find need of our trade and talent.
+| Title1_Event3 = Leaving without purchasing
+| Title1_Dialogue3 = <b>While having no [[Craftmetal]]:</b>
+The deposits around here, those long-burning rocks. They're useful to the Citadel, in whatever their shadowy business, but useless if you require tools of us!<br>
+We need finer material. Rare metal. Pharloom would provide a bounty to the able explorer. Find us some, and we'll build your violent aids.
+<hr/>
+<b>While having Craftmetal:</b><br>
+Farewell, then. If you require our craft, this forge is always hot.
+| Title1_Event4 = Speaking after acquiring the [[Silkshot|Ruined Tool]]
+| Title1_Dialogue4 = {{HTalk|Forge Daughter, within an old Weaver nest I discovered a weapon. Though much damaged by age, I believe your skills could see it restored.}}<br>
+Ho. An impressive tool that, and a fine challenge. We can reforge the weapon, if the price fits.
+| Title1_Event5 = Speaking directly to Forge Daughter (not through the shop)
+| Title1_Dialogue5 = {{HTalk|I'd expected this workshop too would contain only combative types, but you seem composed, Forge Daughter.}}<br>
+You've met the workers? They're all wound up! They still work at their tasks, in a simple way, but they're useless for conversation. It's only ourselves and young Ballow with any sense left.
+| Title1_Event6 = Speaking directly again
+| Title1_Dialogue6 = {{HTalk|The behaviour of your fellow workers, I've seen similar... agitation upon the roads. These docks are not alone in the strangeness of their occupants.}}<br>
+'Tis odd behaviour to be sure, but not for Ballow and us to know. Ours is busy work, and we keep to ourselves.<br>
+Whatever the goings on of the world outside, no bother to us, as long as our craft can continue.
+| Title1_Event7 = Speaking directly again, if [[Widow]] is defeated
+| Title1_Dialogue7 = {{HTalk|How did you come to serve these docks, Forge Daughter?}}<br>
+Sent from our Forgehome we were, at request of those holy bugs above.<br>
+{{HTalk|The Citadel dwellers? The veiled bugs? They ordered you here?}}<br>
+Yes! An age ago that. Such is duty! We Forge Daughters live to hone the craft, and aid the line.<br>
+By the Citadel's patronage, and our long duty upon these docks, our Forgehome would swell in holy esteem.
+| Title1_Event8 = Exhausted dialogue
+| Title1_Dialogue8 = {{HTalk|Keep well, Forge Daughter. I shall return if I require your aid.}}<br>
+Yes! Or no. Either is fine by us, as long as the craft continues.
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 = [n]
+Heat it... Shape it...<br>
+The work endures...<br>
+Forged by holy duty...<br>
+Tempered... moulded...<br>
+For Pharloom everlasting...<br>
+We continue the task...
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = <b>If not previously met before Act 3, and the <i>[[SEEK: The Dark Below]]</i> [[Acts|objective]] is not active:</b><br>
+Oh! Pointy bug, why do you bother us at our work? The world cracks and quakes to some grave new calamity, surely you should seek somewhere safer?<br>
+{{HTalk|As far as I might flee, I suspect no such place exists, and in any case, I would not see this land's bugs abandoned to their end.}}<br>
+{{HTalk|What of you? Why do you choose to remain so diligent at your task, given the fell state of your lands?}}<br>
+There is no choice! Not for us. We cannot leave, not ever. We are a Forge Daughter, fixed to this forge and its service. Ours is a duty lifetime bound.
+<hr/>
+<b>If previously met before Act 3, and the <i>SEEK: The Dark Below</i> objective is not active:</b><br>
+Oh! Pointy bug, you return? Our world cracks and cries from some grave new calamity.<br>
+Nevertheless, we must remain, fixed to this forge and its service. Ours is a duty lifetime bound.
+| Title2_Event2 = First conversation if <i>[[SEEK: The Dark Below]]</i> is active
+| Title2_Dialogue2 = <b>If not previously met before Act 3:</b><br>
+Oh! Small pointy bug, why do you bother this Forge Daughter at their work?<br>
+{{HTalk|These black quakes that wrack your lands, I am seeking to see them quelled at their source, below the lakes of flame.}}<br>
+You would wish to descend so deep?... It is true these docks possess the means. Alas, we ourselves cannot help. Whether Pharoom's{{sic}} health or fall, our charge ties us to this forge, always.<br>
+Ballow there's the bug to ask, and if our fate is as dire as your action suggests, we are sure he is only needing of some quick convincing.
+<hr/>
+<b>If previously met before Act 3:</b><br>
+{{HTalk|Forge Daughter, these black quakes that now wrack your lands, I am seeking to see them quelled at their source, below the lakes of flame.}}<br>
+You wish to descend so deep, pointy bug?... It is true these docks possess a craft capable.<br>
+Alas, we ourselves cannot help. Whether Pharloom's health or fall, our charge ties us to this forge, always.<br>
+Ballow there's the bug to ask, and if our fate is as dire as your action suggests, we are sure he is only needing of some quick convincing.
+| Title2_Event3 = Opening the shop, if not done before Act 3
+| Title2_Dialogue3 = {{HTalk|Though tied by charge, would you provide me your service, Forge Daughter? I have need of tools that your skills could likely provide.}}<br>
+Blades and traps, no doubt? We know your type!<br>
+{{HTalk|Of sorts, but maybe strange to this land? Some would likely prove fine challenge for your craft.}}<br>
+Hmph! Then we'll construct them. But! You'll provide the materials, and compensation for our time.
+| Title2_Event4 = Leaving without purchasing
+| Title2_Dialogue4 = <b>If the <i>SEEK: The Dark Below</i> objective is active, and [[Ballow]] has not moved to the [[Diving Bell|diving bell]]:</b><br>
+If you're planning passage below, Ballow's the one to assist you. We must remain by the forge, always.
+<hr/>
+<b>If the <i>SEEK: The Dark Below</i> objective is active, and Ballow has moved to the diving bell:</b><br>
+{{HTalk|Stay safe, Forge Daughter. If I require your aid, I shall return.}}<br>
+Our wishes go with you, pointy bug. Calm the raging of our world, that our task can continue.
+| Title2_Event5 = Speaking directly to Forge Daughter (not through the shop)
+| Title2_Dialogue5 = <b>If the <i>SEEK: The Dark Below</i> objective is active, and Ballow has not moved to the diving bell:</b><br>
+If you're planning passage below, Ballow's the one to assist you. We must remain by the forge, always.
+<hr/>
+<b>If the <i>SEEK: The Dark Below</i> objective is active, and Ballow has moved to the diving bell:</b><br>
+We hope Ballow serves you well, pointy bug. In our long time serving these docks, he's the finest assistant we've found.
+| Title2_Event6 = After returning from [[The Abyss (Silksong)|the Abyss]] and not having acquired the [[Everbloom]]
+| Title2_Dialogue6 = Well. Well. Still alive! You have proved yourself made of the hardiest stuff, pointy bug.<br>
+Ballow did tell, shamefully, of complications with your diving bell, and of your absence upon its retrieval.<br>
+He had feared you lost to the flame, but we ourself had slight guessed otherwise.<br>
+{{HTalk|To return from below proved as difficult a climb as ever I have faced, and yet, in time near, I will need to descend again.}}<br>
+Then twice mad you are, bug! Or brave beyond measure. We shall wish on your continued survival, even if you seem intent on ending it.
+| Title2_Event7 = After acquiring the Everbloom
+| Title2_Dialogue7 = <b>If Hornet has not had the conversation above:</b><br>
+Well. Well. Still about, pointy bug! You have proved yourself made of the hardiest stuff.<br>
+Ballow did tell, shamefully, of complications with your diving bell, and of your absence upon its first retrieval.<br>
+He had feared you lost to the flame, but we ourself had slight guessed otherwise.<br>
+{{HTalk|To return from below proved as difficult a climb as ever I have faced, and yet I now need to descend again.}}<br>
+Then twice mad you are, bug! Or brave beyond measure.<br>
+Know we have heard from Ballow, who told of his repair efforts upon the diving bell below. By now that task is likely completed.<br>
+If you are hoping to put his work to the test, then we shall wish again on your survival. And if our own service can aid your critical task, know we will continue to provide it gladly.
+<hr/>
+<b>If Hornet has had the conversation above:</b><br>
+{{HTalk|Forge Daughter, I have acquired a power that will enable me to end this black madness. Soon I will act to stop the quakes and save this land.}}<br>
+Excellent, pointy bug. Your drive, and your vigour, both have proven surprisingly large for one so small.<br>
+Know we have heard from Ballow, who told of his repair efforts upon the diving bell below. By now, that task is likely completed.<br>
+If you are hoping to put his work to the test, then we shall wish again on your survival. And if our own service can aid your critical task, know we will continue to provide it gladly.
+<hr/>
+<b>If Hornet has seen the repaired diving bell (regardless of whether she has had the conversation above or not):</b><br>
+{{HTalk|Forge Daughter, I have acquired a power that will enable me to end this black madness. Soon I will act to stop the quakes and save this land.}}<br>
+Excellent, pointy bug. Your drive, and your vigour, both have proven surprisingly large for one so small.<br>
+We shall remain here, still. If our service can aid your critical task, know we will continue to provide it gladly.
+| Title2_Event8 = Exhausted dialogue
+| Title2_Dialogue8 = This world may not have long, but we shall face its end still delivering our duty.
+}}
+
+== Location ==
+Forge Daughter can be found in the central [[Deep Docks]] along with [[Ballow]]. The way to her is initially locked until the [[Enemy Gauntlets (Silksong)/Deep Docks 1|enemy gauntlet]] has been completed.
+{{Gallery
+| Image1 = Mapshot SS Forge Daughter 01.png!Location in the Deep Docks
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Forge Daughter 01.png!Working in the Deep Docks
+| Image2 = Screenshot SS Forge Daughter 02.png!Pausing her work briefly to pant
+| Image3 = Screenshot SS Forge Daughter 03.png!Laughing
+| Image4 = Screenshot SS Forge Daughter 04.png!Singing
+| Image5 = Screenshot SS Deep Docks 03.png!Working with Ballow
+| Image6 = Forge Daughter.png!Promotional art
+| Image7 = Silksong Early 011.png!<i>Silksong</i> reveal trailer
+}}
+
+== Trivia ==
+* Hitting [[Ballow]] or making him sing by playing the [[Needolin]] makes Forge Daughter laugh.
+* Forge Daughter can be [[Needle-bounce]]d on. 
+* Forge Daughter refers to herself using the [[wikipedia:royal we|royal we]]<ref>Forge Daughter: <i>"A smith? Hardly so crude! We are Forge Daughter! How can a pointy bug not tell?"</i></ref><ref name=forgehome />, plural pronouns usually used by royalty symbolising a connection to divinity, though the reason for this is unknown.
+* Forge Daughter has [[Cut Content (Silksong)/Text#Forge Daughter|unused dialogue]], with one line revealing that she would have sold [[Tacks]].
+* Forge Daughter and [[Grishkin]] share the same singing voice.
+
+{{Localisation
+|DEname = Schmiedetochter
+|DEmeaning = Forge-Daughter
+|ESname = Hija de la Forja
+|ESmeaning = Daughter of the Forge
+|FRname = Fille De La Forge
+|FRmeaning = Daughter of the Forge
+|ITname = Figlia della Forgia
+|ITmeaning = Daughter of the Forge
+|JAname = 炉の娘 
+|JAromanised = Ro no musume
+|JAmeaning = Daughter of the Furnace
+|KOname = 화로의 여식
+|KOromanised = Hwaloui yeosik
+|KOmeaning = Daughter of the Brazier
+|PTname = Filha da Forja
+|PTmeaning = Daughter of the Forge
+|RUname = Дочь Кузни 
+|RUromanised = Doč' Kuzni
+|RUmeaning = Daughter of the Forge
+|TWname = 熔爐之女
+|TWromanised = Rónglú zhī nǚ
+|TWmeaning = same
+|ZHname = 熔炉之女
+|ZHromanised = Rónglú zhī nǚ
+|ZHmeaning = Daughter of the Furnace
+|CODEname=FORGEDAUGHTER
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[fr:Fille de la Forge]]

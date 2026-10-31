@@ -1,0 +1,65 @@
+__NOTOC__
+{{Navbar
+| page1 = Bone Bottom Repairs
+| page2 = A Lifesaving Bridge
+| page3 = An Icon of Hope
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate shell shards to aid repairs around [[Bone Bottom]]. 
+| npc = [[Flick the Fixer|Flick]] of Bone Bottom
+| location = [[Bone Bottom]] Wishwall
+| prerequisite = Defeat the [[Bell Beast]]
+| reward = None
+}}
+
+{{Quote
+| A lotta repairs to be done around here, but I need more materials! All I wish for is some shell shards so I can get to work. Not asking too much, am I?
+| [[Flick the Fixer]]
+| Hr = SS
+}}
+
+<b>Bone Bottom Repairs</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on the Wishwall in [[Bone Bottom]].
+
+== Wish ==
+To complete the Wish, donate {{S|200}} to the Bone Bottom Wishwall. <i>Bone Bottom Repairs</i> is a prerequisite Wish required to unlock the <i>[[A Lifesaving Bridge]]</i> and <i>[[Silk and Soul]]</i> Wishes.
+
+{{Gallery
+| Image1 = File:Mapshot SS Bone Bottom Wishwall.png!Location of wishwall in Bone Bottom
+}}
+
+{{Localisation
+|DEname = Knochengrund-Reparaturen
+|DEmeaning = Bone Bottom Repairs
+|ESname = Reparaciones del Valle Óseo
+|ESmeaning = Repairs of Bone Bottom
+|FRname = Réparations de Gouffre d'os
+|FRmeaning = Repairs of the Chasm of Bone
+|ITname = Riparazioni a Bossopiano
+|ITmeaning = Repairs at Bone Bottom
+|JAname = 野営地の修繕
+|JAromanised = Yaeichi no shūzen
+|JAmeaning = Campsite's Repair
+|KOname = 뼈의 바닥 보수 작업
+|KOromanised = Ppyeoui badak bosu jageop
+|KOmeaning = Bottom of Bone Repair Work
+|PTname = Reparos no Vale dos Ossos
+|PTmeaning = Repairs in Valley of Bone
+|RUname = Ремонт в Костяной Низине
+|RUromanised = Remont v Kostjanoj Nizine
+|RUmeaning = Repairs in Bony Bottom
+|ZHname = 骸底修缮
+|ZHromanised = Hái dǐ xiūshàn
+|ZHmeaning = Bone Bottom Repairs
+|TWname = 骸底鎮修繕
+|TWromanised = Hái dǐ zhèn xiūshàn
+|TWmeaning = Bone Bottom Town Repairs
+|CODEname = QUEST_FIXER1
+|CODEmeaning = 2 is <i>[[An Icon of Hope]]</i>; 3 is <i>[[A Lifesaving Bridge]]</i>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Réparations de Gouffre d'os]]

@@ -1,0 +1,69 @@
+{{SS Infobox Wish
+| header1 = Grand Hunt
+| description = Hunt a [[Skull Tyrant]] of the [[The Marrow|Marrow]].
+| location = [[Bone Bottom]] Wishwall
+| prerequisite = Obtain [[Cling Grip]]
+| reward = [[Heavy Rosary Necklace]]
+}}
+
+{{Quote
+| A Skull Tyrant, largest of the Marrow's loathsome bony predators, prowls the caves above the great path. Slay the beast and keep us all safe!
+| Residents of [[Bone Bottom]]
+| Hr = SS
+}}
+
+<b>The Terrible Tyrant</b> is a [[Grand Hunt Wishes|Grand Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, which is available on the Wishwall in [[Bone Bottom]] after obtaining the [[Cling Grip]] ability. As Bone Bottom is destroyed in Act 3, this Wish is removed from the Objectives menu if uncompleted; in Act 3, the Skull Tyrant will spawn without the Wish, but will not respawn if he was already defeated.
+
+== Wish ==
+[[File:Crown Fragment.png|link=Crown Fragment|left|thumb|100x100px]]
+
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must locate and defeat a [[Skull Tyrant]] within [[the Marrow]]. Once defeated, a [[Crown Fragment]] can be broken off its corpse with an audible crunch.
+
+{{Gallery
+| Image1 = File:Mapshot SS Bone Bottom Wishwall.png!Location of Wishwall in Bone Bottom
+| Image2 = File:Mapshot SS Skull Tyrant 01.png!Location of a Skull Tyrant in the Marrow
+}}
+
+== Reward ==
+[[File:Heavy Rosary Necklace.png|link=Heavy Rosary Necklace|left|thumb|100x100px]]
+
+After defeating the Skull Tyrant and turning in the [[Crown Fragment]] to Bone Bottom's Wishwall, Hornet is rewarded with a [[Heavy Rosary Necklace]], which can be broken into {{R|220}}.
+
+Once Hornet has killed the Skull Tyrant for the Wish, if she has reached either [[Blasted Steps]], [[The Citadel]] or [[Sinner's Road]], there is a 30% chance when resting at the Bone Bottom [[Bench (Silksong)|Bench]] for a second Skull Tyrant to rampage through Bone Bottom, destroying parts of the town.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Der furchtbare Tyrann
+|DEmeaning = The Terrible Tyrant
+|ESname = El terrible tirano
+|ESmeaning = The Terrible Tyrant
+|FRname = Châtiment du Tyran
+|FRmeaning = Punishment of the Tyrant
+|ITname = Il terribile tiranno
+|ITmeaning = The Terrible Tyrant
+|JAname = 恐ろしき猛獣
+|JAromanised = Osoroshiki mōjū
+|JAmeaning = Terrible Wild Beast
+|KOname = 끔찍한 폭군
+|KOromanised = Kkeumjjikan pokgun
+|KOmeaning = Terrible Tyrant
+|PTname = O Tirano Terrível
+|PTmeaning = The Terrible Tyrant
+|RUname = Жуткий Тиран
+|RUromanised = Žutkij Tiran
+|RUmeaning = Terrible Tyrant
+|ZHname = 暴君讨伐
+|ZHromanised = Bàojūn tǎofá
+|ZHmeaning = Tyrant Subdual
+|TWname = 暴君討伐
+|TWromanised = Bàojūn tǎofá
+|TWmeaning = same
+|CODEname = QUEST_SKULL_KING
+|CODEmeaning = <code>SKULL_KING</code> is the internal (and original) name for the [[Skull Tyrant]]
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Châtiment du Tyran]]

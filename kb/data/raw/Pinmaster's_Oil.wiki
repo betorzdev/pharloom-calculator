@@ -1,0 +1,88 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Retrieve [[Pale Oil]] from the [[Citadel]].
+| npc = [[Pinmaster Plinney]]
+| location = [[Bellhart]]
+| prerequisite = First Needle Upgrade
+| reward = [[Needle#Upgrades|Needle Upgrade]]
+}}
+
+{{Quote
+| Lost within that fortress above, the fabled oil of my profession... Such sharpness one could achieve...
+| [[Pinmaster Plinney]]
+| Hr = SS
+}}
+
+<b>Pinmaster's Oil</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired by talking to [[Pinmaster Plinney]] after obtaining the first [[Needle#Upgrades|Needle Upgrade]] from him.
+
+This Wish is missable if Pale Oil is brought to Pinmaster Plinney before accepting the Wish. However, acquiring the second Needle Upgrade will still grant the Wish's Quest Point for ''[[Silk and Soul]]'' even if the Wish itself was missed.<!--verification needed-->
+
+{{Gallery
+|Image1 = Mapshot SS Pinmaster Plinney 01.png!Pinmaster Plinney's location in Bellhart
+|Image2 = Screenshot SS Bellhart 10.png!Pinmaster Plinney in Bellhart
+}}
+
+== Wish ==
+[[File:Pale Oil.png|link=Pale Oil|left|thumb|100x100px]]
+
+To complete the Wish, one of three [[Pale Oil]] glands must be obtained:
+* Located in northeast [[Choral Chambers]], accessed through the adjoining room in [[Whispering Vaults]]
+* Awarded by [[Loyal Mergwin]] upon completing <i>[[Great Taste of Pharloom]]</i>
+* Awarded by the [[Flea Caravan]] in [[Putrified Ducts]] upon completing <i>[[Ecstasy of the End]]</i>
+
+{{Gallery
+|Image1 = Mapshot SS Pale Oil 01.png!Pale Oil location in Choral Chambers
+|Image2 = Screenshot SS Pale Oil 01.png!Pale Oil in Choral Chambers
+|Image3 = Mapshot SS Pale Oil 02.png!Loyal Mergwin's Pale Oil location in Choral Chambers
+|Image4 = Screenshot SS Loyal Mergwin 02.png!Loyal Mergwin's Pale Oil in Choral Chambers
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Pale Oil 03.png!Flea Caravan's location in Putrified Ducts
+|Image2 = Screenshot SS Festival of the Flea 03.png!Flea Caravan's Pale Oil location in Putrified Ducts
+}}
+
+== Reward ==
+[[File:Needle 3 Shining Needle.png|link=Needle|left|thumb|150x150px]]
+
+Pale Oil must be brought to Pinmaster Plinney to complete the quest. In return, Plinney upgrades [[Hornet (Silksong)|Hornet]]'s Sharpened [[Needle]] to Shining Needle. Additionally, if the other Pale Oil glands are subsequently brought, he further upgrades the Needle in exchange for {{R|Rosaries}}.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Öl des Nadelmeisters
+|DEmeaning = Oil of the Pinmaster
+|ESname = Aceite de maestro alfilero
+|ESmeaning = Master of Pin's Oil
+|FRname = Huile du maître aiguiseur
+|FRmeaning = Oil of the Master Sharpener
+|ITname = L'olio del Mastro Spillaio
+|ITmeaning = The Pin Master's oil
+|JAname = ピン鍛冶の油
+|JAromanised = Pin kaji no abura
+|JAmeaning = Pin Smith's Oil
+|KOname = 핀 장인의 기름
+|KOromanised = Pin janginui gireum
+|KOmeaning = Pin Master's Oil or Pin Craftsman's Oil
+|PTname = Óleo do Mestre Alfineteiro
+|PTmeaning = Pinmaker Master's Oil
+|RUname = Масло булавника
+|RUromanised = Maslo bulavnika
+|RUmeaning = Pinmaster's Oil
+|TWname = 針匠祕油
+|TWromanised = Zhēn jiàng mì yóu
+|TWmeaning = same
+|ZHname = 针匠秘油
+|ZHromanised = Zhēn jiàng mì yóu
+|ZHmeaning = Pin Smith's Trade Secret Oil
+|CODEname = QUEST_PINSMITHTOOLS
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Huile du maître aiguiseur]]

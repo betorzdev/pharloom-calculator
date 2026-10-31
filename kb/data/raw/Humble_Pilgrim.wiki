@@ -1,0 +1,85 @@
+{{SS Infobox NPC
+|area = [[Songclave]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|sing = Lumble the Lucky
+|singnum = 2
+}}
+
+{{Quote
+|Hr=SS
+|As I ascended the Citadel's chambers to reach this place, I swear I heard the laughter of a child! Wasn't much more than an echo, and I confess me fear's been playing awful tricks on me... and yet that voice still keeps ringing in my head.
+|Humble Pilgrim
+}}
+
+<b>Humble Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of the few hardy pilgrims to have reached [[the Citadel]], found in [[Songclave]].
+
+== In-game Events ==
+The Humble Pilgrim appears in Songclave if at least two [[Choral_Chambers#Songclave_Wishes|Songclave Wishes]] are completed, including the <i>[[Building Up Songclave]]</i> wish, and if at least one part of the [[Threefold Melody]] is learnt. They confide in Hornet that on their journey to Songclave, they heard a child's laughter ringing through the [[Choral Chambers|Citadel's chambers]], though they express disbelief.
+
+Once [[Lace]] is defeated in [[The Cradle|the Cradle]], they leave their spot and are absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Sister, sister! Let me confide in you! As I ascended the Citadel's chambers to reach this place, I swear I heard the laughter of a child!<br>
+Wasn't much more than an echo, and I confess me fear's been playing awful tricks on me... and yet that voice still keeps ringing in my head.<br>
+Surely though, no bug so young and lively could survive within those heartless halls?
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = I swear I heard it, sister... That laugh! It almost sounded like they were enjoying themself...
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Where is your glory?<br>
+Where is your light?<br>
+Was it our sin?<br>
+Dear Pharloom...<br>
+All haunted, even here...<br>
+Our pilgrimage...<br>
+Are we the last?<br>
+Are we the chosen?
+
+}}
+
+== Location ==
+Humble Pilgrim can be found near the western exit of Songclave if at least two Songclave Wishes are completed, including the <i>Building Up Songclave</i> wish, and if at least one part of the Threefold Melody is learnt.
+{{Gallery
+|Image1 = Mapshot SS Humble Pilgrim.png!Location in Songclave
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Humble Pilgrim 01.png!Humble Pilgrim in Songclave
+|Image2 = Screenshot SS Humble Pilgrim 02.png!Singing in Songclave
+}}
+
+{{Localisation
+|DEname = Demütiger Pilger
+|DEmeaning = Humble Pilgrim
+|ESname = Peregrino Humilde
+|ESmeaning = Humble Pilgrim
+|FRname = Pèlerin Humble
+|FRmeaning = Humble Pilgrim
+|ITname = Pellegrino Umile
+|ITmeaning = Humble Pilgrim
+|JAname = 謙虚な巡礼者
+|JAromanised = Kenko na junreisha 
+|JAmeaning = Humble Pilgrim
+|KOname = 초라한 순례자
+|KOromanised = Chorahan sullyeja 
+|KOmeaning = Humble Pilgrim
+|PTname = Peregrino Humilde
+|PTmeaning = Humble Pilgrim
+|RUname = Робкий пилигрим
+|RUromanised = Robkij piligrim
+|RUmeaning = Timid Pilgrim
+|TWname = 虔誠的朝聖者
+|TWromanised = Qiánchéng de cháoshèng zhě
+|TWmeaning = same
+|ZHname = 虔诚的朝圣者
+|ZHromanised = Qiánchéng de cháoshèng zhě
+|ZHmeaning = Pious Pilgrim
+|CODEname = ENCLAVE_PILGRIM_ACT2
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

@@ -1,0 +1,70 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Seek out the distressed bug near the Blasted Steps Bellway.
+| npc = Residents of Bellhart
+| location = [[Bellhart]] Wishwall
+| prerequisite = Either encounter [[Garmond and Zaza]] at least 3 times after entering Act 3 or obtain the [[Everbloom]]
+| reward = [[Hero's Memento]]
+| achievement = [[Achievements (Silksong)|Hero's Call]]
+}}
+
+{{Quote
+| A distressed bug was heard calling for help near the Bellway atop the great sandy steps. Will no one come to the sad wretch's aid?
+| Residents of [[Bellhart]]
+| Hr = SS
+}}
+
+<b>Hero's Call</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It can be acquired from [[Bellhart|Bellhart's]] Wishwall after either encountering [[Garmond and Zaza]] at least 3 times after entering [[Act 3]] or obtaining the [[Everbloom]].
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must follow [[Zaza]], who is calling for her in the [[Bellway]] of the [[Blasted Steps]]. He leads Hornet to a location west of the Bellway.
+
+{{Gallery
+| Image1 = Mapshot SS Lost Garmond 01.png!Lost Garmond's location in the Blasted Steps
+}}
+
+There, she finds [[Lost Garmond]], who has become possessed by the [[Void]] and must be defeated to free him and complete the Wish.
+
+== Reward ==
+[[File:Hero's Memento.png|link=Hero's Memento|left|thumb|100x100px]]
+
+After defeating Lost Garmond, he drops the [[Hero's Memento]]. This also unlocks the [[Achievements (Silksong)|Hero's Call]] Achievement.
+
+{{Clear}}
+
+== Achievements ==
+{{Achievement|game=silksong|Hero's Call}}
+
+{{Localisation
+|DEname = Heldenruf
+|DEmeaning = Hero's Call
+|ESname = Se buscan héroes
+|ESmeaning = Heroes Wanted
+|FRname = L'appel du héros
+|FRmeaning = The Call of the Hero
+|ITname = Richiamo dell'eroe
+|ITmeaning = Recall of the Hero
+|JAname = 英雄の呼び声
+|JAromanised = Eiyū no yobigoe
+|JAmeaning = Hero's Call
+|KOname = 영웅의 부름
+|KOromanised = Yeongungui bureum
+|KOmeaning = Hero's Call
+|PTname = O Chamado do Herói
+|PTmeaning = The Hero's Call
+|RUname = Зов героя
+|RUromanised = Zov geroja
+|RUmeaning = Hero's Call
+|ZHname = 英雄的呼唤
+|ZHromanised = Yīngxióng de hūhuàn
+|ZHmeaning = Hero's Call
+|TWname = 英雄的呼喚
+|TWromanised = Yīngxióng de hūhuàn
+|TWmeaning = same
+|CODEname = GARMOND_BLACK_THREADED
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

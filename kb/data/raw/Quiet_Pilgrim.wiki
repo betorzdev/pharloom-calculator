@@ -1,0 +1,96 @@
+{{SS Infobox NPC
+| area = [[Bone Bottom]]
+| role = Pilgrim
+| affiliation = Pilgrims
+| sing = Dejected Pilgrim
+| singnum = 2
+}}
+
+{{Quote
+|Hr=SS
+|I must listen carefully... and pray with uninterrupted devotion. Only then will my faith be strong enough... to carry me upward...
+|Quiet Pilgrim
+}}
+
+<b>Quiet Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is a pilgrim who arrived in [[Bone Bottom]] to start her journey to [[the Citadel]], found meditating before setting out.
+
+== In-game Events ==
+Quiet Pilgrim appears after [[Act 2]] starts and [[Hornet (Silksong)|Hornet]] visits the place where [[Pilby]] used to sit, provided the game is subsequently [[Save Data (Silksong)/Save Points|saved]] outside Bone Bottom, the [[Moss Grotto]], and [[the Marrow]].
+
+In their first encounter, meditating Quiet Pilgrim asks Hornet to remain quiet.<ref>Quiet Pilgrim: <i>"You, in the cloak... pray tread softly. I am meditating, gathering my faith... before my pilgrimage begins."</i></ref> When Hornet replies that her steps are soft enough, the pilgrim complains that her voice is too loud and asks to be left alone.<ref>Hornet and Quiet Pilgrim dialogue:<br>Hornet: <i>"My steps are soft enough, madam. If I have disturbed you, it was not my intent."</i><br>Quiet Pilgrim: <i>"Ahh... even your speech... far too loud. I can scarcely hear my thoughts. Please, be away..."</i></ref>
+
+Quiet Pilgrim is absent if resting at the [[Bench (Silksong)|bench]] will trigger the [[Skull Tyrant]] invasion. She returns if the attack is cancelled by saving the game and rerolling the check, or, if the attack was triggered, after Hornet defeats the Skull Tyrant and [[Flick the Fixer]] repairs the bench.
+
+Seeing Quiet Pilgrim for the first time triggers a countdown of twenty game saves. Once it expires, the pilgrim leaves the settlement and remains absent for the rest of the game.<ref group=Source name=code><code>GameManager.TimePassesElsewhere()</code> decrements <code>bonetownPilgrimRoundCount</code>.</ref> A save only counts if it occurs in a different area from the previous one.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = You, in the cloak... pray tread softly. I am meditating, gathering my faith... before my pilgrimage begins.<br>
+{{HTalk|My steps are soft enough, madam. If I have disturbed you, it was not my intent.}}<br>
+Ahh... even your speech... far too loud. I can scarcely hear my thoughts. Please, be away...
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = I must listen carefully... and pray with uninterrupted devotion. Only then will my faith be strong enough... to carry me upward...
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...
+
+}}
+
+== Location ==
+Quiet Pilgrim can be found in [[Bone Bottom]] during [[Act 2]], sitting where [[Pilby]] once was.
+{{Gallery
+|Image1 = Mapshot SS Pilby.png!Location in Bone Bottom
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Quiet Pilgrim 01.png!Idle
+|Image2 = Screenshot SS Quiet Pilgrim 02.png!Alert
+|Image3 = Screenshot SS Quiet Pilgrim 04.png!Looking back
+|Image4 = Screenshot SS Quiet Pilgrim 03.png!Singing
+}}
+
+== Trivia ==
+* Quiet Pilgrim shares her [[Needolin]] dialogue with [[Horned Pilgrim]], [[Fearful Pilgrim]], [[Pilby]], [[Pebb]], [[Flick]], and some background pilgrims of the settlement.
+
+{{Localisation
+|DEname = Stille Pilgerin
+|DEmeaning = Quiet Pilgrim
+|ESname = Peregrina Silenciosa
+|ESmeaning = Quiet Pilgrim
+|FRname = Pèlerine Silencieuse
+|FRmeaning = Quiet Pilgrim
+|ITname = Pellegrina Silenziosa
+|ITmeaning = Quiet Pilgrim
+|JAname = 静かな巡礼者
+|JAromanised = Shizuka na junreisha
+|JAmeaning = Quiet Pilgrim
+|KOname = 조용한 순례자
+|KOromanised = Joyonghan sullyeja 
+|KOmeaning = Quiet Pilgrim
+|PTname = Peregrina Silenciosa
+|PTmeaning = Quiet Pilgrim
+|RUname = Тихая пилигримка
+|RUromanised = Tihaya piligrimka
+|RUmeaning = Quiet Pilgrim (feminine)
+|ZHname = 沉默的朝圣者
+|ZHromanised = Chénmò de cháoshèng zhě
+|ZHmeaning = Wordless Pilgrim
+|CODEname = BB_PILGRIM_ROUND
+|CODEmeaning = <code>BB</code> stands for Bone Bottom.
+}}
+
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+{{SS Nav NPCs}}

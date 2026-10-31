@@ -1,0 +1,104 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for Shakra and her master in [[Bilewater]].<br>
+Shakra can be tracked by her trail of rings.
+| npc = [[Shakra]]
+| location = [[Bellhart]] Wishwall
+| prerequisite =
+* Purchase all of Shakra's maps 
+* Obtain the [[Faydown Cloak]]
+* Either learn at least 2 parts of the [[Threefold Melody]] or defeat [[Groal the Great]]
+| reward = [[Throwing Ring]]<br>Prerequisite for [[Silk and Soul]]
+| achievement = [[Achievements (Silksong)|Trail's End]]
+}}
+
+{{Quote
+| Child Wielding Needle, I have caught fresh scent of my master in those stricken swamps beside the Citadel. I ask you now to follow, to meet together at trail's end.
+| [[Shakra]]
+| Hr = SS
+}}
+
+<b>Trail's End</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired from [[Bellhart|Bellhart's]] [[Wishwall]] after purchasing all of [[Shakra|Shakra's]] [[Shakra#Maps|maps]], obtaining the [[Faydown Cloak]], and either learning at least 2 parts of the [[Threefold Melody]] or defeating [[Groal the Great]].
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Wishwall's location in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Wishwall in Bellhart
+}}
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must locate Shakra's location within [[Bilewater]], where an entrance to a small cave within the upper eastern part of the area has opened, to meet her and her master. Shakra's throwing rings are scattered across the area leading to her location, which can be interacted with to track her pathway.
+
+At this location, Shakra has discovered her master, who has died due to old age. Shakra asks Hornet to participate in the song-sending of her master, which requires Hornet to play the [[Needolin]].
+
+{{Gallery
+|Image1 = Mapshot SS Shakra Trail's End.png!Shakra's location in Bilewater
+|Image2 = Screenshot_SS_Hornet_12.png!Hornet and Shakra singing at Trail's End
+}}
+
+{| align="center" style="text-align:center"
+| [[File:Shakra sing rite 01.ogg|center]]
+Shakra's master song-sending
+|-
+| [[File:Shakra sing rite 02.ogg|center]]
+Shakra's master song-sending with Needolin
+|}
+
+== Reward ==
+[[File:Throwing Ring.png|link=Throwing Ring|left|thumb|100x100px]]
+
+After completing the wish, Shakra gifts Hornet [[Throwing Ring]]s, and the designs to make more.
+
+Completing the wish also allows Shakra to appear within the entrance to the [[The Forum|Forum]] fight in the [[High Halls]], offering Hornet her assistance if the fight has not yet been done. This overrides [[Garmond and Zaza]] appearing if their duel has also been completed.
+
+Completing the wish is a prerequisite to unlocking the wish <i>[[Silk and Soul]]</i>.
+
+{{Gallery
+|Image1 = Mapshot SS Garmond and Zaza 05.png!Shakra's location in High Halls
+|Image2 = Screenshot SS High Halls 15.png!Shakra in High Halls
+}}
+
+After the wish, Shakra can be called to the entrance to Bellhart within [[Greymoor]] by ringing her post, where she challenges Hornet to a friendly duel. There is no reward for winning the duel, other than a [[Hunter's Journal (Silksong)|Hunter's Journal]] entry that is not required for the [[Hunter's Memento]]. Her post disappears after [[Act 3]] begins, making the entry unobtainable, as she is too busy defending [[Bellhart]].
+
+{{Gallery
+|Image1 = Mapshot SS Shakra Greymoor Duel.png!Shakra's location in Greymoor
+|Image2 = Screenshot SS Shakra 02.png!Shakra in Greymoor
+}}
+== Trivia ==
+* After completing the wish and returning to the area of Shakra's master's corpse, a group of [[Silk Flies]] can be seen hovering around it, flying away when Hornet approaches.
+
+{{Localisation
+|DEname = Ende des Weges
+|DEmeaning = End of the Trail
+|ESname = Final del camino
+|ESmeaning = End of the Path
+|FRname = Fin de la piste
+|FRmeaning = End of the Trail
+|ITname = Fine del cammino
+|ITmeaning = End of the Path
+|JAname = 足跡の果て
+|JAromanised = Ashiato no hate
+|JAmeaning = Footprint's End
+|KOname = 흔적의 끝
+|KOromanised = Heunjeogui kkeut
+|KOmeaning = Trace's End
+|PTname = Fim da Trilha
+|PTmeaning = End of the Trail
+|RUname = Конец пути
+|RUromanised = Konec puti
+|RUmeaning = Trail's End
+|ZHname = 终迹
+|ZHromanised = Zhōng jì
+|ZHmeaning = Final Trace
+|TWname = 蹤跡的盡頭
+|TWromanised = Zōngjī de jìntóu
+|TWmeaning = Trace's End
+|CODEname = QUEST_SHAKRA_FINAL
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

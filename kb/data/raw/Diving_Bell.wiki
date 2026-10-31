@@ -1,0 +1,76 @@
+__NOTOC__
+[[File:Diving Bell sprite.png|thumb|150px]]
+{{Quote|Hr=SS
+|Them's who used to dive're all long dead, or cursed ta half life. An' there ain't no bug left alive's been brave or stupid enough to try... 'til now, at least.
+|[[Ballow]]
+}}
+
+The <b>diving bell</b> is a crucial part of the <i>[[SEEK: The Dark Below]]</i> and <i>[[DESCEND: Last Dive]]</i> [[Objectives|objectives]] in <i>[[Hollow Knight: Silksong]]</i>. It can only be accessed in [[Act 3]].
+
+<h2>Use</h2>
+The diving bell is the only way to access [[the Abyss (Silksong)|the Abyss]] below the magma layer of [[Deep Docks]]. After using it for the first time during <i>SEEK: The Dark Below</i>, the diving bell's shield breaks and it cannot be used to ascend back up to Deep Docks. 
+
+When the [[Everbloom]] has been obtained, the diving bell is repaired and improved by [[Ballow]] and is used to descend to the Abyss once more for the <i>DESCEND: Last Dive</i> objective. After this, the Diving Bell can be used to move to and from the Abyss at any time.
+
+<h2>Location</h2>
+The diving bell is located in an area in Deep Docks that can only be accessed after defeating the [[Bosses (Silksong)|bosses]] [[Forebrothers Signis & Gron]]. However, it cannot be opened until Act 3.<ref>Ballow: <i>Hmmm... Well if you head down below to the very base of the docks, there's an old diving bell built for just what you're askin'. Thing is, you can ride it, but it takes an operator stood dockside to send it. I might be capable, but I ain't got time for naught else while the shovelling still needs doing.</i></ref> Inspecting the diving bell's door shows the text: <i>"An old diving bell. Its door is shut tight by an ornate clamp."</i>
+
+{{Gallery
+|Image1=Mapshot SS SignisGron.png!Forebrothers Signis & Gron location
+}}
+
+Upon completing the <i>[[SEEK: Awaiting the End]]</i> objective, [[Hornet (Silksong)|Hornet]] is directed to seek out aid in Deep Docks. After speaking to [[Ballow]] there, he moves to the control room above the diving bell<ref>Ballow: <i>Grfff... So it's gotten that bad, aye? I guess... If that's how it is, I'll be your bug. Meet me below, at the diving bell. We'll see if I can get you ready for the drop.</i></ref> and gives the [[Diving Bell Key]] to Hornet. This can be used to open the door to the diving bell.<ref>Ballow: <i>I'll work it best's I can. Can't do much more, I'm afraid. At least the forgings of these docks were built to last. Now we's only gotta pray they hold for you. Here's the key that'll see you inside its metal belly. Pop in there once you're feelin' good and ready. In the meantime, I'll get to seeing things set up here.</i></ref>
+
+{{Gallery
+|Image1= Mapshot SS Diving Bell 01.png!Location in Deep Docks
+|Image2= Mapshot SS Diving Bell 02.png!Location in the Abyss
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Deep Docks 14.png!Initial appearance in Deep Docks
+|Image2=Screenshot SS Ballow 01.png!The control panel
+|Image3=Screenshot SS Deep Docks 15.png!Interior
+|Image4=Screenshot SS Diving Bell 01.png!Ruined interior
+|Image5=Screenshot SS Diving Bell 02.png!Broken diving bell in the Abyss
+|Image6=Screenshot SS Diving Bell 03.png!Diving bell being repaired
+|Image7=Screenshot SS Deep Docks 13.png!Repaired diving bell
+|Image8=Screenshot SS The Abyss 01.png!Repaired diving bell in the Abyss
+}}
+
+<h2>Trivia</h2>
+* Within the intact diving bell, [[Ballow]] can be heard singing through the speaker if the [[Needolin]] is played. However, his needolin dialogue does not appear.
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Removed a mouse cursor that could briefly be seen at the top of the screen during the cinematic for using the diving bell for the first time.
+}}
+{{Localisation
+|DEname = Taucherglocke
+|DEmeaning = Diver bell
+|ESname = Campana de buceo
+|ESmeaning = Diving bell
+|FRname = Cloche de plongée
+|FRmeaning = Diving bell
+|ITname = Campana mobile
+|ITmeaning = Moving bell
+|JAname = 潜水鐘
+|JAromanised = Sensuishō 
+|JAmeaning = Diving bell
+|KOname = 잠수종
+|KOromanised = Jamsujong 
+|KOmeaning = Diving bell
+|PTname = Sino de mergulho<br>Campânula de mergulho
+|PTmeaning = Diving bell <small>(Used in dialogue and in name of the Diving Bell Key)</small><br>Diving bellflower <small>(Used in objective descriptions)</small><br><small><i>Campânula</i> is also the name of Bellhart in Portuguese.</small>
+|RUname = Водолазный колокол
+|RUromanised = Vodolaznyj kolokol
+|RUmeaning = Diving bell
+|TWname = 潛鐘
+|TWromanised = Qián zhōng
+|TWmeaning = same
+|ZHname = 潜钟
+|ZHromanised = Qián zhōng
+|ZHmeaning = Diving bell
+}}
+{{Refs|hr=ss}}
+[[Category:Points of Interest (Silksong)]]
+[[fr:Cloche de plongée]]

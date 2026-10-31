@@ -1,0 +1,82 @@
+{{SS Infobox NPC
+|area = [[Songclave]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|singnum = 2
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Pilgrim Preacher's audio files.</ref>
+}}
+
+{{Quote
+|Them halls beside are crawling with haunted husks. Wandering will only bring death, pointed and painful!
+|Pilgrim Preacher
+|Hr=SS
+}}
+
+<b>Pilgrim Preacher</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of the few hardy pilgrims to have reached [[the Citadel]], found resting in [[Songclave]].
+
+== In-game Events ==
+Pilgrim Preacher can be found in Songclave during [[Act 2]] in the place where [[Scared Pilgrim]] previously could be seen resting, if the latter has left and [[Lace]] is defeated in [[the Cradle]]. They warn Hornet of the "haunted husks" elsewhere in the Citadel and ask her not to go too far.
+
+After their dialogue has been exhausted, they have a 25% chance of being gone the next time Hornet reenters Songclave after resting elsewhere. Once they have left, they remain absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = You stay close, sister. Them halls beside are crawling with haunted husks.<br>
+Wandering will only bring death, pointed and painful!
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = Please don't go too far, sister. Right here's the only safety you'll find within this whole cursed place.
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Where is your glory?<br>
+Where is your light?<br>
+Was it our sin?<br>
+Dear Pharloom...<br>
+All haunted, even here...<br>
+Our pilgrimage...<br>
+Are we the last?<br>
+Are we the chosen?
+
+}}
+
+== Location ==
+Pilgrim Preacher can be found near the [[Bench (Silksong)|Bench]] in Songclave in Act 2 if Scared Pilgrim has left and Lace is defeated in the Cradle.
+{{Gallery
+|Image1 = Mapshot SS Pilgrim Preacher.png! Location in Songclave
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Pilgrim Preacher 01.png!Pilgrim Preacher resting
+|Image2 = Screenshot SS Pilgrim Preacher 02.png!Pilgrim Preacher alert
+|Image3 = Screenshot SS Pilgrim Preacher 03.png!Pilgrim Preacher singing
+}}
+
+{{Localisation
+|DEname = Predigende Pilgerin
+|DEmeaning = Preaching Pilgrim
+|ESname = Peregrina Predicadora
+|ESmeaning = Pilgrim Preacher
+|FRname = Pèlerine Prêcheuse
+|FRmeaning = Pilgrim Preacher (feminine)
+|ITname = Pellegrina Predicatrice
+|ITmeaning = Pilgrim Preacher
+|JAname = 巡礼の説法師
+|JAromanised = Junrei no seppoushi
+|JAmeaning = Pilgrim Preacher
+|KOname = 전도사 순례자
+|KOromanised = Jeondosa sullyeja 
+|KOmeaning = Pilgrim Preacher
+|PTname = Peregrina Pregadora
+|PTmeaning = Pilgrim Preacher
+|RUname = Пилигримка-проповедница
+|RUromanised = Piligrimka-propovednica
+|RUmeaning = Pilgrim Preacher
+|ZHname = 布道的朝圣者
+|ZHromanised = Bùdào de cháoshèng zhě
+|ZHmeaning = Pilgrim Preacher
+|CODEname = ENCLAVE_PILGRIM_ACT2_LARGE
+|CODEmeaning = <code>ENCLAVE</code> is the internal name for [[Songclave]].
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

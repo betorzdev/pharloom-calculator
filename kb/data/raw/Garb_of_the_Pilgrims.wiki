@@ -1,0 +1,155 @@
+{{SS Infobox Wish
+| header1 = Hunt
+| description = Hunt haunted pilgrims of Pharloom and collect [[Pilgrim Shawl]]s from their bodies.
+| npc = Residents of Bone Bottom
+| location = [[Bone Bottom]] Wishwall
+| prerequisite = Defeat the [[Bell Beast]]
+| reward = [[Rosary Necklace]]
+}}
+
+{{Quote
+| Those mad, violent pilgrims who haunt the great path... we could make use of their shawls here in Bone Bottom. And felling them would surely be a mercy!
+| Residents of [[Bone Bottom]]
+| Hr = SS
+}}
+
+<b>Garb of the Pilgrims</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by accepting from the Wishwall in [[Bone Bottom]], which becomes available after the [[Bell Beast]] is defeated. As Bone Bottom is destroyed in Act 3, this Wish is removed from the [[Tasks]] menu if uncompleted.
+
+== Wish ==
+[[File:Pilgrim Shawl.png|link=Pilgrim Shawl|left|thumb|100x100px]]
+
+The residents of Bone Bottom request 12 [[Pilgrim Shawl]]s from [[Haunting|Haunted]] Pilgrims throughout [[Pharloom]].
+
+They can be obtained from any enemy with "Pilgrim" in their name, but they are most plentiful in [[Mosshome]] due to its large groups of pilgrim enemies. Shawls do <b>not</b> drop during enemy gauntlets.
+
+{{Clear}}
+
+{| class="article-table"
+|-
+| width="48px" | Pilgrim
+| width="150em" | Name
+| width="500em" | Locations
+|-
+! [[File:B Pilgrim Groveller.png|48x48px]]
+| [[Pilgrim Groveller]]
+| [[Mosshome]], [[the Marrow]], [[Far Fields]], [[Greymoor]], [[Blasted Steps]]
+|-
+! [[File:Pilgrim Pouncer Idle.png|48x48px]]
+| [[Pilgrim Pouncer]]
+| Mosshome, the Marrow, Far Fields, Greymoor, Blasted Steps
+|-
+! [[File:Overgrown Pilgrim Idle.png|48x48px]]
+| [[Overgrown Pilgrim]]
+| Mosshome, [[Wormways]], [[Bonegrave]]
+|}
+
+Shawls can also be acquired from pilgrims in other areas:
+
+{| class="article-table"
+|-
+! width="48px" | [[File:Pilgrim Flyer Idle.png|48x48px]]
+| width="150em" | [[Winged Pilgrim]]
+| width="500em" | The Marrow, Far Fields, Bonegrave, [[Shellwood]], Wormways
+|-
+! width="48px" | [[File:Covetous Pilgrim Idle.png|48x48px]]
+| width="150em" | [[Covetous Pilgrim]]
+| width="500em" | Shellwood, [[Bilewater]]
+|-
+! [[File:B Pilgrim Hulk.png|48x48px]]
+| [[Pilgrim Hulk]]
+| Far Fields
+|-
+! [[File:Pilgrim Hornfly Idle.png|48x48px]]
+| [[Pilgrim Hornfly]]
+| Far Fields, Wormways
+|-
+! [[File:Pilgrim Bellbearer Idle.png|48x48px]]
+| [[Pilgrim Bellbearer]]
+| Greymoor, Shellwood, Blasted Steps
+|-
+! [[File:B Winged Pilgrim Bellbearer.png|48x48px]]
+| [[Winged Pilgrim Bellbearer]]
+| Shellwood, Wormways, Blasted Steps
+|-
+! [[File:Elder Pilgrim Idle.png|48x48px]]
+| [[Elder Pilgrim]]
+| The Marrow, Bonegrave
+|-
+! [[File:Pilgrim Hiker Idle.png|48x48px]]
+| [[Pilgrim Hiker]]
+| Blasted Steps
+|-
+! [[File:Pilgrim Guide Idle.png|48x48px]]
+| [[Pilgrim Guide]]
+| The Marrow, Greymoor, Shellwood, Bonegrave
+|}
+
+Additionally, upon breaking bags containing Pilgrim corpses in the east [[Bench]] room in [[Bilewater]], corpses drop that have collectable shawls.
+
+A shawl can also be collected from the corpse of a [[Pilgrim Groveller]] within a glass display at the exhibits section of the [[Memorium]]. This shawl can be repeatedly taken if [[Hornet (Silksong)|Hornet]] renters the room and breaks the glass display again.
+
+<center>{{MissingImage}}</center>
+{{Gallery
+| Image1 = Mapshot SS Bone Bottom Wishwall.png!Location of the Wishwall in Bone Bottom
+| Image2 = Mapshot SS Garb of the Pilgrims 01.png!Locations of the Pilgrim Shawls in Mosshome
+| Image3 = Mapshot SS Garb of the Pilgrims 02.png!Location of the bags with pilgrim corpses in Bilewater
+| Image4 =Screenshot Garb of the Pilgrims 02.png!Bags with corpses in Bilewater
+| Image5 =Screenshot Garb of the Pilgrims 03.png!Dropped corpses
+}}
+
+== Reward ==
+[[File:Rosary Necklace.png|link=Rosary Necklace|left|thumb|100x100px]]
+
+After completing the quest, a [[Rosary Necklace]] is rewarded, worth {{R|120}}. A clothesline draped with Pilgrim Shawls is added to the background in Bone Bottom.
+{{Gallery
+|Image1=Screenshot SS Garb of the Pilgrims 01.png!The clothesline in Bone Bottom
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Pilgrim Groveller Without Shawl.png!Naked Pilgrim Groveller
+| Image2 = Pilgrim Pouncer Without Shawl.png!Naked Pilgrim Pouncer
+| Image3 = Pilgrim Hornfly Without Shawl.png!Naked Pilgrim Hornfly
+| Image4 = Pilgrim Hulk Without Shawl.png!Naked Pilgrim Hulk
+| Image5 = Pilgrim Bellbearer Without Shawl.png!Naked Pilgrim Bellbearer
+| Image6 = Winged Pilgrim Without Shawl.png!Naked Winged Pilgrim
+| Image7 = Elder Pilgrim Without Shawl.png!Naked Elder Pilgrim
+| Image8 = Winged Pilgrim Bellbearer Without Shawl.png!Naked Winged Pilgrim Bellbearer
+| Image9 = Pilgrim Hiker Without Shawl.png!Naked Pilgrim Hiker
+| Image10 = Pilgrim Guide Without Shawl.png!Naked Pilgrim Guide
+| Image11 = Overgrown Pilgrim Without Shawl.png!Naked Overgrown Pilgrim
+| Image12 = Covetous Pilgrim Without Shawl.png!Naked Covetous Pilgrim
+}}
+
+{{Localisation
+|DEname = Gewand der Pilger
+|DEmeaning = Garb of the Pilgrims
+|ESname = Prendas peregrinas
+|ESmeaning = Pilgrim Garments
+|FRname = Vêtements de pèlerin
+|FRmeaning = Garments of the Pilgrim
+|ITname = Indumenti dei pellegrini
+|ITmeaning = Clothing of the Pilgrims
+|JAname = 巡礼者の衣
+|JAromanised = Junreisha no koromo
+|JAmeaning = Pilgrim's Clothing
+|KOname = 순례자의 의복
+|KOromanised = Sullyejaui uibok
+|KOmeaning = Pilgrim's Clothing
+|PTname = Traje dos Peregrinos
+|PTmeaning = Garb of the Pilgrims
+|RUname = Одеяние пилигримов
+|RUromanised = Odejanie piligrimov
+|RUmeaning = Garb of the pilgrims
+|ZHname = 朝圣者的衣装
+|ZHromanised = Cháoshèngzhě de yīzhuāng
+|ZHmeaning = Pilgrim's Garb
+|TWname = 朝聖者的衣裝
+|TWromanised = Cháoshèngzhě de yīzhuāng
+|TWmeaning = same
+|CODEname = QUEST_PILGRIM_RAGS
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

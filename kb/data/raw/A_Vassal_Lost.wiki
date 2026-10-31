@@ -1,0 +1,110 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox Wish
+| header1 = Steel
+| description = Investigate the resting sites marked by Steel Seer Zi to uncover the location of [[Sula|her vassal]].
+| npc = [[Steel Seer Zi]]
+| location = [[Blasted Steps]] NPC
+| prerequisite = Obtain any [[Map and Quill (Silksong)|Map]]
+| reward = [[Growstone]]
+}}
+
+{{Quote
+| Creature, higher... It has been sent... by Masters served... to retrieve Zi's vassal lost?
+| [[Steel Seer Zi]]
+| Hr = SS
+}}
+
+<b>A Vassal Lost</b> is a [[Unique Wishes|Unique Wish]] in <i>[[Hollow Knight: Silksong]]</i>, given by [[Steel Seer Zi]]. Zi asks [[Hornet (Silksong)|Hornet]] to track down her missing vassal and retrieve them, alive or dead.
+
+== Starting Location ==
+The Wish can be accepted from Steel Seer Zi in the [[Blasted Steps]], who only appears while in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]. Note that Zi will not ask this Wish until [[Hornet (Silksong)|Hornet]] has acquired a [[Map and Quill (Silksong)|Map]].
+
+{{Gallery
+| Image1 = Mapshot SS Steel Seer Zi.png!Steel Seer Zi's location in the Blasted Steps
+}}
+
+== Resting Sites ==
+To locate the vassal, Steel Seer Zi marks 3 of their "places of rest" for Hornet to visit. The first is picked randomly from the Shellwood, Bone Bottom, and Far Fields locations, which are accessible from Act 1; the second is picked randomly from the Putrified Ducts, High Halls, and Sands of Karak locations, which are only accessible from Act 2; and the third is picked randomly from all six available locations.<ref group=Source name=code>Set by <code>PlayerData.SetupExistingPlayerData()</code> on file creation.</ref>
+
+{{Gallery
+| Image1 = Mapshot SS Resting Spot Shellwood.png!Possible location in Shellwood
+| Image2 = Mapshot SS Resting Spot Moss Grotto.png!Possible location in Bone Bottom
+| Image3 = Mapshot SS Resting Spot Far Fields.png!Possible location in the Far Fields
+| Image4 = Mapshot SS Resting Spot Putrified Ducts.png!Possible location in the Putrified Ducts
+| Image5 = Mapshot SS Resting Spot High Halls.png!Possible location in the High Halls
+| Image6 = Mapshot SS Resting Spot Sands of Karak.png!Possible location in Sands of Karak
+| Image7 = Screenshot SS Resting Spot Shellwood.png!Resting site in Shellwood
+| Image8 = Screenshot SS Resting Spot Moss Grotto.png!Resting site in Bone Bottom
+| Image9 = Screenshot SS Resting Spot Far Fields.png!Resting site in the Far Fields
+| Image10 = Screenshot SS Resting Spot Putrified Ducts.png!Resting site in the Putrified Ducts
+| Image11 = Screenshot SS Resting Spot High Halls.png!Resting site in the High Halls
+| Image12 = Screenshot SS Resting Spot Sands of Karak.png!Resting site in Sands of Karak
+}}
+
+At each resting spot, Hornet comments on its state and the vassal's actions.
+
+{{TabbedDialogue
+| Title1 = Resting Spots
+| Title1_Event1 = First location
+| Title1_Dialogue1 = {{HTalk|This location was marked by the steel child. This camp is old, but still shows clear evidence of an attempt at a rite.}} <br>
+{{HTalk|Whatever the vassal hoped to achieve here seems to have failed. The other marked locations may provide more clues to its intent.}}
+| Title1_Event2 = Second location
+| Title1_Dialogue2 = {{HTalk|The second spot marked by the child of steel. This camp too was used by their vassal, and another rite was conducted here, this one incomplete.}}<br>
+{{HTalk|The action was clearly taken in haste. Did they believe themself pursued? The etchings here are crude, but the words are disturbing... and desperate.}}
+| Title1_Event3 = Final location
+| Title1_Dialogue3 = {{HTalk|I understand now... The steel child's servant grew bold...}}<br>
+{{HTalk|I know what the fleeing bug seeks to call, and their etchings here suggest clear clues to where.}}<br>
+{{HTalk|What they attempt is dangerous, stupid. It can only end badly. I must hurry if I'm to stop this.}}
+}}
+
+== [[Summoned Saviour]] Fight ==
+After visiting all three resting sites, [[Sula]]'s location is marked on the map.
+
+{{Gallery
+| Image1 = Mapshot SS Summoned Saviour 01.png!Sula's location in [[Bonegrave]]
+}}
+
+Once Hornet reaches this location, Sula is just finishing their summoning of the [[Summoned Saviour]] as Hornet tries to yell out to stop them. After this, Hornet must defeat Summoned Saviour.
+
+== Reward ==
+[[File:Growstone 4.png|link=Growstone|left|thumb|100x100px]]
+
+After defeating Summoned Saviour, Sula despairs at the death of their "champion". Sula expects Hornet to lead them back by needle point to Steel Seer Zi. However, Hornet lets Sula run away. Upon reporting this back to Zi, Zi says that Sula's summoning of the void has marked them to the Masters regardless. Zi then gives Hornet the [[Growstone]].
+{{Clear}}
+
+{{Localisation
+|DEname = Ein verlorener Vasall
+|DEmeaning = A Lost Vassal
+|ESname = Vasallo perdido
+|ESmeaning = Lost Vassal (masculine)
+|FRname = Le serviteur disparu
+|FRmeaning = The Missing Servant
+|ITname = Vassallo perduto
+|ITmeaning = Lost Vassal
+|JAname = 行方不明の配下
+|JAromanised = Yukuefumei no haika
+|JAmeaning = Missing Subordinate
+|KOname = 사라진 신하
+|KOromanised = Sarajin sinha
+|KOmeaning = Vanished Subject
+|PTname = Um Vassalo Perdido
+|PTmeaning = A Lost Vassal
+|RUname = Пропавший вассал
+|RUromanised = Propavšij vassal
+|RUmeaning = Missing Vassal
+|TWname = 失蹤僕從
+|TWromanised = Shīzōng pú cóng
+|TWmeaning = same
+|ZHname = 失踪侍从
+|ZHromanised = Shīzōng shìcóng
+|ZHmeaning = Missing Servant
+|CODEname = QUEST_STEELSENTINEL
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+== Code References ==
+<references group="Source"/>
+
+{{SS Nav Wishes}}
+[[Category:Steel Soul Mode (Silksong)]]

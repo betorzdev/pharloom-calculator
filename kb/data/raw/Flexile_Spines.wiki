@@ -1,0 +1,66 @@
+{{SS Infobox Wish
+| header1 = Hunt
+| description = Collect 25 [[Spine Core]]s from the attacks of [[Hoker]]s.
+| npc = [[Seamstress]]
+| location = [[Far Fields]]
+| prerequisite = None
+| reward = [[Drifter's Cloak]]
+}}
+
+{{Quote
+| If you're planning to ascend from these low fields, you'll be needing some lift, and I'm just the bug to help.
+| [[Seamstress]]
+| Hr = SS
+}}
+
+<b>Flexile Spines</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by talking to the [[Seamstress]] in [[Far Fields]].
+
+== Wish ==
+[[File:Spine Core.png|link=Spine Core|left|thumb|100x100px]]
+
+The Seamstress wants to help [[Hornet (Silksong)|Hornet]] continue on her journey, and asks her to retrieve 25 [[Spine Core]]s from the [[Hoker]]s east of her home. They are obtained by striking the spines shot out by the Hokers.
+{{Gallery
+| Image1 = Mapshot SS Seamstress 01.png!The Seamstress's home
+| Image2 = Mapshot SS Hoker 01.png!Locations of Hokers in Far Fields
+}}
+
+== Reward ==
+[[File:Drifter's Cloak.png|link=Drifter's Cloak|left|thumb|100x100px]]
+
+After completing the quest, the Seamstress grants the [[Drifter's Cloak]], allowing escape from the Far Fields.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Biegsame Stacheln
+|DEmeaning = Flexible Spikes
+|ESname = Púas maleables
+|ESmeaning = Malleable Thorns
+|FRname = Épines flexibles
+|FRmeaning = Flexible Spines
+|ITname = Spine versatili
+|ITmeaning = Versatile Spines
+|JAname = 柔軟なトゲ
+|JAromanised = Jūnanna toge
+|JAmeaning = Flexible Thorn
+|KOname = 유연한 가시
+|KOromanised = Yuyeonhan gasi
+|KOmeaning = Flexible Thorn
+|PTname = Espinhas Versáteis
+|PTmeaning = Versatile Spines
+|RUname = Податливые шипы
+|RUromanised = Podatlivye šipy
+|RUmeaning = Flexible Spines
+|ZHname = 柔韧棘芯
+|ZHromanised = Róurèn jí xīn
+|ZHmeaning = Flexile Spine Cores
+|TWname = 柔韌棘刺芯
+|TWromanised = Róurèn jícì xīn
+|TWmeaning = same
+|CODEname = QUEST_BROLLY_GET
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

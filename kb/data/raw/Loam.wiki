@@ -1,0 +1,124 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+LoamFull.png|Alive
+Loam Corpse.png|Dead
+</gallery>
+| area = [[Underworks]]
+|role = Lore
+|affiliation = [[Underworkers]] (Member)
+|singnum = 2
+}}
+{{Quote|Hr=SS
+|Me can not rest. Us works, and Citadel breathes, and thems above do sing, and all is right. And when us works enough, thems see it... Hrrr... thems see it, and us gets us holy reward...
+|Loam
+}}
+<b>Loam</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a [[Underworkers|worker]] in the [[Underworks]] who provides information on [[the Citadel]] and its relation to the Underworks.
+
+== Background ==
+Loam runs on a treadmill in the [[Underworks]] that helps fuel [[the Citadel]] and keep the area operational.<ref>Loam: <i>"Me can not rest. Us works, and Citadel breathes, and thems above do sing, and all is right."</i></ref> He considers the Citadel a miraculous place and works ceaselessly in the hope of eventually being allowed to ascend there as a reward for his hard labour.<ref>Loam: <i>"Hrrrrrrrr! The Citadel! Most miracle of a place, bright and holy! Fresh water for all, much as can drink! Air so clean, can see the great rooves above! When me thinks of Citadel above, me works hardest of all! Hrrrrrrrrr!"</i></ref><ref>Loam: <i>"Hrrrrrrr. The harder me work, the sooner it come. Thems above, them watch us, always. Work hard, work hard, and us will go up. Hrrrr."</i></ref><ref>Loam [[Needolin]] dialogue: <i>"See me work... Harder... Longer... More... More... More... This shell, still strong... For your light..."</i></ref> Loam believes that the bugs of the Citadel are always watching the workers, so he refuses to let his work falter, shunning even the comfort of past memories.<ref>Loam: <i>"Hrrrrrr. Me can not say much more, friend. Thems is watching. Us must keep working."</i></ref><ref>Loam: <i>"Hrrr. Hrrrrrrr. Them sounds you make. Of holy sort. When me hear such sounds, me remember of home. Me remember of be little. It make it painful hard to work, such remembers. Me must keep working. Please, friend. Do not make them sounds no more."</i></ref>
+
+== In-game Events ==
+During their first encounter, Loam mistakes [[Hornet (Silksong)|Hornet]] for a resident of the Citadel who has come to bring him up. Realising his mistake, he apologises to the masters above for this unworthy hope and returns to his work with redoubled effort.<ref>Hornet and Loam dialogue: <br><i>Loam: "Hrrrrr? Hrrrr! Me see you now! So clean, so lively... Surely you did come from above! Me time has come at last! Me work is done. You come to bring me up! Up, up! Hrrr!"<br>Hornet: "You mistake me. I am no resident of the Citadel. I am a stranger here, though no foe to you."<br>Loam: "Hrrr. Hrrrrrrrrr. S-stranger? Me grave mistaken. Forgive me, thems above, for me unworthy hope! Of course, me work is not done! Harder, harder! Me must work harder!"</i></ref>
+
+To the right of Loam is another treadmill that Hornet can run on. As she runs, a gauge in the background slowly fills up clockwise. Once the gauge is full, a single [[Rosary]] may drop from the treadmill before the gauge resets. Sometimes, only a cloud of dust is emitted.
+
+The treadmill operates based on a set of hidden rules and limitations that reset upon re-entering the room:
+* A Rosary is guaranteed to drop the first time the gauge is filled.
+* Afterwards, there is a 5/6 probability of a Rosary dropping and a 1/6 probability of dust. For each Rosary that drops, the chance of dust doubles, but it resets as soon as dust is actually emitted.
+* A Rosary can only drop during the first 50 times the gauge is filled. After this point, only dust is emitted.
+
+When spoken to after filling the gauge for the first time, Loam expresses joy that Hornet has joined the work and urges her to keep going so that those above might see how worthy they are.<ref>Loam: <i>"Hrr. Hrrrrr! Good, me friend, good! When us works together, is more holy! Is more work done! Together, lets us work raw hard 'til thems above see how worthy us is!"</i></ref>
+
+In [[Act 3]], Loam can be found crushed under debris. His [[Needolin]] dialogue reveals that he is relieved to finally be free from his toil.<ref>Loam Needolin dialogue: <i>"...Toil... ...Run... ...Free... ...No... more..."</i></ref>
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Hrr. Hrrrrr. Who is there? Me can not... can not clear see....<br>
+{{HTalk|At ease, large one. I am no danger to you.}}<br>
+Hrrrrr? Hrrrr! Me see you now! So clean, so lively... Surely you did come from above! Me time has come at last! Me work is done. You come to bring me up! Up, up! Hrrr!<br>
+{{HTalk|You mistake me. I am no resident of the Citadel. I am a stranger here, though no foe to you.}}<br>
+Hrrr. Hrrrrrrrrr. S-stranger? Me grave mistaken. Forgive me, thems above, for me unworthy hope! Of course, me work is not done! Harder, harder! Me must work harder!<br>
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = Hrrrrrrr. The harder me work, the sooner it come. Thems above, them watch us, always. Work hard, work hard, and us will go up. Hrrrr.<br>
+{{HTalk|Sir, I fear you are long forgotten by your masters. Should you not rest? The burden this toil is placing on your shell is plain to see.}}<br>
+Hrrrrr? Hrrrrrr. You speaks strange. Me can not rest. Us works, and Citadel breathes, and thems above do sing, and all is right.<br>
+And when us works enough, thems see it... Hrrr... thems see it, and us gets us holy reward...<br>
+| Title1_Event3 = Speaking again
+| Title1_Dialogue3 = {{HTalk|May I ask what you know of the Citadel above you, sir? You go to much effort to reach it.}}<br>
+Hrrrrrrrr! The Citadel! Most miracle of a place, bright and holy! Fresh water for all, much as can drink! Air so clean, can see the great rooves above!<br>
+When me thinks of Citadel above, me works hardest of all! Hrrrrrrrrr!<br>
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = Hrrrrrr. Me can not say much more, friend. Thems is watching. Us must keep working.
+| Title1_Event5 = After running on the other treadmill in the room to full
+| Title1_Dialogue5 = Hrr. Hrrrrr! Good, me friend, good! When us works together, is more holy! Is more work done!<br>
+Together, lets us work raw hard 'til thems above see how worthy us is!<br>
+| Title1_Event6 = Playing the [[Needolin]]
+| Title1_Dialogue6 = [n]See me work...<br>
+Harder... Longer...<br>
+More... More... More...<br>
+This shell, still strong...<br>
+For your light...<br>
+| Title1_Event7 = Speaking right after playing the Needolin
+| Title1_Dialogue7 = Hrrr. Hrrrrrrr. Them sounds you make. Of holy sort. When me hear such sounds, me remember of home. Me remember of be little.<br>
+It make it painful hard to work, such remembers. Me must keep working. Please, friend. Do not make them sounds no more.<br>
+| Title1_Event8 = Playing the Needolin near his corpse
+| Title1_Dialogue8 = [n]...Toil...<br>
+...Run...<br>
+...Free...<br>
+...No... more...<br>
+}}
+
+== Location ==
+Loam can be found in the middle section of the [[Underworks]], in a room that can be accessed through a passage hidden behind the breakable ceiling of the preceding room.
+
+{{Gallery
+|Image1 = Mapshot SS Loam 01.png!Location in the Underworks
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Loam 01.png!Idle
+|Image2=Screenshot SS Underworks 10.png!Working
+|Image3=Screenshot SS Loam 02.png!Singing
+|Image4=Screenshot SS Loam 03.png!Hornet running with Loam
+|Image5=Screenshot SS Needolinunderworks 4.png!Dead in Act 3
+}}
+
+== Trivia ==
+* Rosaries dropped from the treadmill are not drawn to Hornet when the [[Magnetite Brooch]] is equipped.
+* Using the [[Challenge]] ability while Loam is working simply causes him to stop. He is startled only if the ability is used during his idle state.
+* While in the English version of the dialogue Loam only once asks Hornet not to play the Needolin again, in most translations he repeats the request a second time, in a more pleading manner.<ref>Loam dialogue in French translation: <i>"Ces souvenirs rendent ma tâche douloureuse. Je dois continuer. Mon amie, je t’en prie, ne fais plus ce bruit. Je t’en prie... plus jamais."</i> (These memories make my task painful. I must continue. My friend, please, never make that noise anymore. Please... no more.)</ref><ref>Loam dialogue in Korean translation: <i>"그런 기억을 떠올리면 일하기 고통스러워지네. 난 계속 일을 해야 하는데 말이야. 부탁이네, 친구. 그 소리는 이제 그만 내주게나. 부탁하네... 제발."</i> (Thinking of that kind of memories makes my work painful. I am saying I must continue my work. I beg of you, my friend. Now, please stop that sound. I beg of you... Please.)</ref> This line was removed from the Chinese and German translations after they were updated, suggesting it is a remnant of an earlier version of the game's text.
+
+{{Localisation
+|DEname = Loam
+|DEmeaning = —
+|ESname = Loam
+|ESmeaning = —
+|FRname = Loam
+|FRmeaning = —
+|ITname = Loam
+|ITmeaning = —
+|JAname = ローム
+|JAromanised = Rōmu
+|JAkatakana = foreign
+|JAmeaning = Loam
+|KOname = 로암
+|KOromanised = Loam
+|KOmeaning = Loam
+|PTname = Loam
+|PTmeaning = —
+|RUname = Лоум
+|RUromanised = Loum
+|RUmeaning = Loam
+|TWname = 洛姆
+|TWromanised = Luòmǔ
+|TWmeaning = same
+|ZHname = 洛姆
+|ZHromanised = Luòmǔ
+|ZHmeaning = Loam
+|CODEname = LARGE_COG_WORK</code><br><code>UNDERWORKER_LOAM
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

@@ -1,0 +1,85 @@
+{{For|the [[Items (Silksong)#Deliverables|deliverable item]]|Liquid Lacquer}}
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver Liquid Lacquer to the Mask Maker upon Mount Fay. 
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]] NPCs
+| prerequisite = 
+* Complete <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> or be in
+{{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]] and complete any [[Delivery Wishes|Delivery Wish]]
+* Obtain the [[Faydown Cloak]]
+* Play the [[Threefold Melody]]
+| reward = {{R|560}} ([[Act 2]])<br>
+{{R|650}} ([[Act 3]])
+}}
+
+{{Quote
+| A delivery deadly, dangerous, fiercably cold, for old bug up there that does need it much-much! Serves us all he does, so we serve back.
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Liquid Lacquer</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]] after completing the Delivery Wish <i>[[Queen's Egg (Wish)|Queen's Egg]]</i> or by being in {{Steel Soul Icon Mini|SS}} [[Steel Soul Mode (Silksong)|Steel Soul Mode]], and also after obtaining the [[Faydown Cloak]], completing at least one delivery and playing the [[Threefold Melody]]. 
+__NOTOC__
+
+== Delivery Item ==
+[[File:Liquid_Lacquer.png|link=Liquid Lacquer|left|thumb|100x100px]]
+The [[Liquid Lacquer]] has a total of 3 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Liquid Lacquer by Tipp & Pill to carefully deliver to [[Mask Maker (Silksong)|Mask Maker]] in [[Mount Fay]]. Once the wish is completed, it cannot be accepted again.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill's location in Bellhart
+| Image2 = Mapshot SS Mask Maker 01.png!Mask Maker's location in Mount Fay
+}}
+
+== Route ==
+The most optimal route goes through [[Blasted Steps]] and the [[Choral Chambers]] to reach [[the Slab]]. From there it goes through the east part of Mount Fay to end up at Mask Maker.
+{{Gallery
+|Image1 = Mapshot SS Liquid Lacquer (Wish) 01.png!Route through Blasted Steps
+}}
+
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the Liquid Lacquer to Mask Maker, he rewards Hornet with {{R|560}} in [[Act 2]], and {{R|650}} in [[Act 3]].
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 360 rosaries to 560 in Act 2 and 650 in Act 3.
+|1.0.28650 (Patch 2): Fixed <i>Liquid Lacquer</i> courier delivery not being accessible in [[Steel Soul Mode (Silksong)|Steel Soul mode]].
+}}
+{{Localisation
+|DEname = Flüssiglack
+|DEmeaning = Liquid Lacquer
+|ESname = Laca líquida
+|ESmeaning = Liquid Lacquer
+|FRname = Laque de protection liquide
+|FRmeaning = Lacquer of Liquid Protection
+|ITname = Lacca liquida
+|ITmeaning = Liquid Lacquer
+|JAname = 液状塗料
+|JAromanised = Ekijō toryō
+|JAmeaning = Liquid-form Paint
+|KOname = 칠용 액체
+|KOromanised = Chillyong aekche
+|KOmeaning = Liquid for Painting 
+|PTname = Laca Líquida
+|PTmeaning = Liquid Lacquer
+|RUname = Жидкий лак
+|RUromanised = Židkij lak
+|RUmeaning = Liquid Varnish
+|ZHname = 液状漆
+|ZHromanised = Yèzhuàng qī
+|ZHmeaning = Liquid Lacquer
+|TWname = 漆罐
+|TWromanised = Qī guàn
+|TWmeaning = Lacquer Can
+|CODEname = QUEST_COURIER_MASKMAKER
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
