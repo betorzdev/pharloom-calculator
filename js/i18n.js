@@ -331,15 +331,14 @@
     mapMovedWish:   { es: 'En el Acto 3 está aquí, si no se ha concedido el deseo «{wish}»', en: 'In Act 3 it lies here, if the wish "{wish}" isn\'t granted' },
     /* What a vendor sells only in Act 3 (js/spots.js ALSO, a shop's), once who had it before is gone
        (Grindle's: Pebb's, Mort's, Lumble's wares): its mark there, with no save and in an Act 3 game. */
-    mapAlsoSoldIf:  { es: 'En el Acto 3, cuando {from} ya no está, en la tienda de {npc}: {price} rosarios', en: 'In Act 3, once {from} is gone, in {npc}\'s shop: {price} rosaries' },
-    mapAlsoSoldNow: { es: '{from} ya no está: en la tienda de {npc}, {price} rosarios', en: '{from} is gone: in {npc}\'s shop, {price} rosaries' },
+    mapAlsoSoldIf:  { es: 'Cuando {from} ya no está', en: 'Once {from} is gone' },
+    mapAlsoSoldNow: { es: '{from} ya no está', en: '{from} is gone' },
     /* Silkshot's three repairs (js/spots.js VARIANTS): each place's card, the Ruined Tool's, and why
        a place is closed in a save. {item} the Ruined Tool (INV_NAME_BROKEN_SILKSHOT), {tool} the
        Silkshot (SILKSHOT_NAME), {npc} the Twelfth Architect (ARCHITECT_SHOP_TITLE). */
-    mapShotNeeds:   { es: 'Repara la {item}: la primera reparación cierra las otras dos', en: 'Repairs the {item}: the first repair closes the other two' },
     mapShotRune:    { es: 'la runa de {area}', en: 'the rune in {area}' },
-    mapShotRuined:  { es: 'Repárala para obtener la {tool}, en uno de tres sitios: {list}', en: 'Repair it for the {tool}, at one of three places: {list}' },
-    mapShotSee:     { es: 'Ver los tres', en: 'See the three' },
+    mapShotRuined:  { es: 'Repárala para obtener la {tool} en uno de estos tres sitios', en: 'Repair it for the {tool} at one of these three places' },
+    mapShotFirst:   { es: 'La primera reparación cierra las otras dos', en: 'The first repair closes the other two' },
     mapShotLeft:    { es: '{npc} se ha marchado.', en: '{npc} has left.' },
     mapGroupShow:   { es: 'Mostrar todo el grupo', en: 'Show the whole group' },
     mapGroupHide:   { es: 'Esconder todo el grupo', en: 'Hide the whole group' },
@@ -450,10 +449,6 @@
     mapNotRung:     { es: 'Aún sin tocar', en: 'Not rung yet' },
     mapShakraNote:  { es: 'Vende {n} mapas de zona', en: 'Sells {n} area maps' },
     mapShakraLeft:  { es: 'Te faltan los mapas de: {list}', en: 'Maps you don\'t have: {list}' },
-    mapSells:       { es: 'Del 100 %: {list}', en: 'For 100%: {list}' },
-    mapSellsLeft:   { es: 'Te falta de aquí: {list}', en: 'Still here for you: {list}' },
-    mapWishes:      { es: 'Deseos: {list}', en: 'Wishes: {list}' },
-    mapWishesLeft:  { es: 'Deseos sin cumplir: {list}', en: 'Wishes still open: {list}' },
     mapBeastHere:   { es: '{n} en esta sala', en: '{n} in this room' },
     // A card's counts in its state row (design/118, 3 A: «Derrotados 9/25»), and a place with nothing
     // left for you (6 A), the site's words; the game's own prompt on a card, quoted as its (4 A).
@@ -465,14 +460,23 @@
     mapBeastWavesAny: { es: 'Solo en las oleadas de un combate', en: 'Only in a fight\'s waves' },
     // Hornet's cocoon: the rosaries it holds (HeroCorpseMoneyPool; the game's word: INV_NAME_COIN).
     mapCocoonRosaries: { es: 'Guarda {n} rosarios.', en: 'Holds {n} rosaries.' },
-    // What the game waits for before it puts a fight there (js/spots.js OPENS), and whether this game has it.
-    mapOpensWish:   { es: 'Aparece con el deseo «{wish}»', en: 'Appears with the wish "{wish}"' },
-    mapOpensAfter:  { es: 'Aparece tras conceder el deseo «{wish}»', en: 'Appears once the wish "{wish}" is granted' },
-    mapOpensFreed:  { es: 'Aparece cuando quedan libres: {foe}', en: 'Appears once these are freed: {foe}' },
-    // A thing in a room whose only way in the game shuts until a wish is taken (js/spots.js OPENS room).
-    mapOpensRoom:   { es: 'Su sala se abre al aceptar el deseo «{wish}»', en: 'Its room opens once the wish "{wish}" is taken' },
-    mapOpenYes:     { es: 'ya está', en: 'done' },
-    mapOpenNo:      { es: 'aún no', en: 'not yet' },
+    /* A Map card's Needs (design/119, 5 A): its label and an «or» between two ways (no game text for
+       either), the words round a requirement's name (a wish "taken" / «tomado» as Hornet says it,
+       COURIER_SHORT_QUEST_ACCEPTED; what to bring; the enemies to free), written for the context. */
+    mapNeeds:       { es: 'Hace falta', en: 'Needs' },
+    mapOr:          { es: 'o', en: 'or' },
+    mapNeedTake:    { es: 'tomar {name}', en: 'take {name}' },
+    mapNeedBring:   { es: 'llevar {name}', en: 'bring {name}' },
+    mapNeedFree:    { es: 'liberar: {name}', en: 'free: {name}' },
+    // A picture on a card that leads to its mark: its tooltip.
+    mapOnMapOf:     { es: '{name}: ver en el mapa', en: '{name}: see on the map' },
+    // A card's actions (design/119, 4 A): one word under the picture, the full words its name (mapFight, mapHuntGo, mapToJournal).
+    mapFightShort:  { es: 'Luchar', en: 'Fight' },
+    mapHuntShort:   { es: 'Cazar', en: 'Hunt' },
+    mapSetInInv:    { es: 'Se fija en el Inventario', en: 'Set in the Inventory' },   // the Inventory: PANE_INVENTORY
+    // A vendor's wares as pictures: the group's name for a screen reader.
+    mapSellsL:      { es: 'Del 100 %', en: 'For 100%' },
+    mapSellsLeftL:  { es: 'Te falta de aquí', en: 'Still here for you' },
     // What Frey's furnishings wait for (js/shop.js needs), and the names in them.
     mapNeedVisited: { es: 'haber entrado en el {place}', en: 'having been in the {place}' },
     mapNeedRelic:   { es: 'una reliquia vendida a {npc}', en: 'a relic sold to {npc}' },
@@ -485,7 +489,6 @@
     // An objective's steps the game pins on one point (js/spots.js STEPS).
     mapSteps:       { es: 'Pasos: {list}', en: 'Steps: {list}' },
     mapStepNow:     { es: 'en curso', en: 'current' },
-    mapTaskFor:     { es: 'Lo pide el deseo «{wish}».', en: 'The wish "{wish}" asks for it.' },
     // A hunt's grounds (design/103): the Wishwall's way there, the focus, and what each room gives.
     // Written for the context; a wish is "taken" / «tomado» as Hornet says it (COURIER_SHORT_QUEST_ACCEPTED),
     // to hunt / «cazar» as the wishes' own lines (QUEST_FINEPINS_DESC_INV, «Da caza a…»).
@@ -504,17 +507,6 @@
     mapLostArena:   { es: 'Solo se lucha en una de las dos arenas, y luchaste en {name}.', en: 'Only one of the two arenas is fought, and you fought {name}.' },
     // Grindle's cell door, gone with him (design/89-map-leftovers, 3 A): {npc} GRINDLE_MAIN, {a} SHELLWOOD_MAIN, {b} WILDS, {boss} NAME_SPINNER_BOSS.
     mapLostCell:    { es: 'La celda de {npc} se va cuando llegas a {a} o {b}, o vences a {boss}: él sale por su cuenta.', en: '{npc}\'s cell goes once you reach {a} or {b}, or beat {boss}: he gets out on his own.' },
-    // A pickup an arena drops once won (design/89-map-leftovers, 2 A): {fight} the gauntlet's name (App.gauntletName).
-    mapRewardOf:    { es: 'Lo suelta {fight} al ganarlo.', en: 'Dropped by {fight} once won.' },
-    mapToWall:      { es: 'Ver el muro de deseos', en: 'See the Wishwall' },
-    mapToGiver:     { es: 'Ver quién lo pide', en: 'See who asks for it' },
-    mapToFirst:     { es: 'Ver quién pide «{wish}»', en: 'See who asks for "{wish}"' },
-    // A wish's first step on the Map (js/people.js STEP): {npc} the game's name (SONG_KNIGHT_SUPER+_MAIN), written for the context.
-    mapToWake:      { es: 'Ver dónde despertar al {npc}', en: 'See where to wake the {npc}' },
-    // The Sacred Cylinder and the melody it leads to, each card pointing at the other: {npc} Cardinius, {melody} SQ_MELODY_LIBRARIAN_NAME.
-    mapCylinderFor: { es: 'Llévaselo a {npc} para aprender la {melody}.', en: 'Bring it to {npc} to learn the {melody}.' },
-    mapToMelody:    { es: 'Ver la melodía', en: 'See the melody' },
-    mapToCylinder:  { es: 'Ver el cilindro', en: 'See the cylinder' },
 
     /* Combat: your build against one enemy (js/app-fight.js) */
     ftToWin:        { es: 'tajos para ganar', en: 'slashes to win' },

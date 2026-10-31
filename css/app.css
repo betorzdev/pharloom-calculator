@@ -2784,30 +2784,108 @@ html:has(.mp.is-full) { overflow: hidden; }
 .mp-inside .mp-art { --a: 22px; }
 /* The area names, on the map in the game's capitals, lit only enough to read. */
 /* A mark is tappable: a finger's cursor, and the one whose card is open ringed in the accent. */
-/* The card over the map, the sibling's: above its mark (below when there's no room), inside the box. */
+/* The card over the map, the sibling's: above its mark (below when there's no room), inside the box;
+   taller than the room left, it scrolls inside (js/app-map.js paintCard sets --card-max).
+   Its parts (design/03-redesign.md, step 6, the card: design/119, all A): the head, the mark's
+   picture at 48 px with a light of its area's tint behind it (a place's colour lights, it never
+   fills a figure or text) and the name over one line of where; how it's had as pictures and
+   names; «Needs» as chips under a hairline; the foot, its states and its actions. */
 .mp-card-wrap { position: absolute; z-index: 5; transform: translate(-50%, calc(-100% - var(--sp-3))); }
 .mp-card-wrap.is-below { transform: translate(-50%, calc(var(--sp-8) + var(--sp-1))); }
 .mp-card {
-  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: var(--sp-1) var(--sp-3);
-  width: max-content; max-width: min(24rem, 80vw); padding: var(--sp-3) var(--sp-2) var(--sp-3) var(--sp-4);
+  position: relative; display: flex; flex-direction: column; gap: var(--sp-2);
+  width: max-content; max-width: min(24rem, var(--card-w, 80vw)); max-height: var(--card-max, none); overflow-y: auto; overscroll-behavior: contain;
+  padding: var(--sp-3) var(--sp-3) var(--sp-3) var(--sp-4);
   background: color-mix(in oklab, var(--scene-bg) 94%, transparent); border: 1px solid var(--line-ctl); box-shadow: var(--shadow-md);
 }
-.mp-card-art { grid-row: span 2; display: grid; place-items: center; }
-.mp-card-art :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: 36px; }
-.mp-card-t { display: flex; flex-direction: column; gap: var(--sp-half); min-width: 0; font-size: var(--fs-xs); color: var(--muted); }
-.mp-card-t b { font-size: var(--fs-md); font-weight: 600; color: var(--ink-strong); }
-.mp-card-note { color: var(--ink-2); text-wrap: pretty; }
+.mp-card-x { position: absolute; top: var(--sp-1); right: var(--sp-1); }
+.mp-card-head { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: var(--sp-3); padding-right: var(--sp-6); }
+.mp-card-pic {
+  position: relative; display: grid; place-items: center; width: calc(var(--sp-12) + var(--sp-2)); height: calc(var(--sp-12) + var(--sp-2));
+  background: radial-gradient(closest-side, color-mix(in oklab, var(--glow) 30%, transparent), transparent);
+}
+.mp-card-pic :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: var(--sp-12); }
+.mp-card-pic img.mp-pin:not(.is-badge) { width: var(--mp-s); height: var(--mp-s); }
+/* Had, with a save (3 A): the game's white tick on the picture, no hue. */
+.mp-card-seal {
+  position: absolute; right: calc(var(--sp-half) * -1); bottom: calc(var(--sp-half) * -1); display: grid; place-items: center;
+  width: calc(var(--sp-4) + var(--sp-1)); height: calc(var(--sp-4) + var(--sp-1)); border-radius: 50%;
+  background: var(--scene-bg); border: 1px solid var(--ink-strong); color: var(--ink-strong);
+}
+.mp-card-seal svg { width: var(--icon-sm); height: var(--icon-sm); }
+.mp-card-t { display: grid; gap: var(--sp-half); min-width: 0; }
+.mp-card-name { margin: 0; font-family: var(--font-body); font-size: var(--fs-md); font-weight: 600; line-height: 1.25; color: var(--ink-strong); }
+.mp-card-where { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
+/* The area's map tint as a small diamond, the Act and the waves in the labels' capitals. */
+.mp-card-sw { display: inline-block; width: var(--sp-2); height: var(--sp-2); margin-right: var(--sp-1); background: var(--sw-fill); border: 1px solid var(--sw-line); transform: rotate(45deg); }
+.mp-card-tag { font-family: var(--font-num); font-size: var(--fs-2xs); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--label); }
+/* The body lines up with the name; on a phone it takes the card's width. */
+.mp-card-body { display: grid; gap: var(--sp-2); min-width: 0; margin-left: calc(var(--sp-12) + var(--sp-2) + var(--sp-3)); }
+/* How it's had (2 A): who, the wish, the boss, each a way to its mark; the price as the rosary and the figure. */
+.mp-card-how { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); color: var(--ink-2); }
+.mp-hi { display: inline-flex; align-items: center; gap: var(--sp-1); padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; }
+button.mp-hi { cursor: pointer; color: var(--ink); }
+button.mp-hi > span { text-decoration: underline; text-decoration-color: var(--line-ctl); text-underline-offset: 3px; }
+button.mp-hi:is(:hover, :focus-visible) > span { text-decoration-color: currentColor; color: var(--ink-strong); }
+.mp-hi img { width: calc(var(--sp-4) + var(--sp-2)); height: calc(var(--sp-4) + var(--sp-2)); object-fit: contain; flex: none; }
+.mp-hi-more { font-size: var(--fs-xs); color: var(--muted); }
+.mp-price { display: inline-flex; align-items: center; gap: var(--sp-half); font-family: var(--font-num); font-variant-numeric: tabular-nums; font-size: var(--fs-sm); color: var(--ink-strong); }
+.mp-price img { width: var(--sp-4); height: var(--sp-4); object-fit: contain; }
+/* A vendor's wares, each its picture and a way to its mark. */
+.mp-wares { display: flex; flex-wrap: wrap; gap: var(--sp-1); }
+.mp-ware { display: grid; place-items: center; width: var(--ctl-sm); height: var(--ctl-sm); padding: 0; border: 1px solid var(--line-ctl); background: var(--card); cursor: pointer; }
+.mp-ware:is(:hover, :focus-visible) { border-color: var(--accent-line); background: var(--picked); }
+.mp-ware img { width: calc(var(--sp-6) - var(--sp-half)); height: calc(var(--sp-6) - var(--sp-half)); object-fit: contain; }
+.mp-ware img.is-needle { transform: rotate(35deg) scale(1.2); }
+.mp-card-note { margin: 0; font-size: var(--fs-xs); color: var(--ink-2); text-wrap: pretty; }
 /* A Wishwall's wishes not on it yet, a line each with its next step (design/118, 2 A), drawn as the
    Tasks tab's (.pg-step); the count's figure at the line's size, not the card's name's. */
-.mp-card-steps { display: grid; gap: var(--sp-half); color: var(--ink-2); }
+.mp-card-steps { display: grid; gap: var(--sp-half); font-size: var(--fs-xs); color: var(--ink-2); }
 .mp-card-steps > span { display: block; }
 .mp-card-steps .pg-step { vertical-align: bottom; }
-.mp-card-t .pg-step-n b { font-size: inherit; }
-.mp-card > .text-btn, .mp-card-state { grid-column: 2; justify-self: start; font-size: var(--fs-sm); }
+.mp-card-steps .pg-step-n b { font-size: inherit; }
+/* Needs (5 A, 6 A, 7 B): under how it's had, a hairline above; a chip each, the ways of an «or»
+   bracketed together; a chip with no mark dashed and still. */
+.mp-card-needs { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: start; gap: var(--sp-1) var(--sp-2); min-width: 0; padding-top: var(--sp-2); border-top: 1px solid var(--line); }
+.mp-needs-l { font-family: var(--font-num); font-size: var(--fs-2xs); font-weight: 600; letter-spacing: var(--track-label); text-transform: uppercase; line-height: calc(var(--sp-6) + var(--sp-1)); color: var(--label); }
+.mp-needs-c { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1); min-width: 0; }
+.mp-chip {
+  display: inline-flex; align-items: center; gap: var(--sp-1); min-height: calc(var(--sp-6) + var(--sp-1)); padding: var(--sp-half) var(--sp-2) var(--sp-half) var(--sp-1);
+  border: 1px solid var(--line-ctl); background: color-mix(in oklab, var(--card) 85%, transparent); font: inherit; font-size: var(--fs-xs); color: var(--ink); text-align: left;
+}
+button.mp-chip { cursor: pointer; transition: border-color var(--dur) var(--ease), background-color var(--dur) var(--ease); }
+button.mp-chip:is(:hover, :focus-visible) { border-color: var(--accent-line); background: var(--picked); color: var(--ink-strong); }
+.mp-chip.is-plain { border-style: dashed; color: var(--ink-2); }
+.mp-chip img, .mp-chip .mp-dia { width: calc(var(--sp-4) + var(--sp-1)); height: calc(var(--sp-4) + var(--sp-1)); object-fit: contain; flex: none; }
+.mp-chip-v, .mp-chip-n { color: var(--muted); }
+.mp-dia { display: inline-grid; place-items: center; }
+.mp-dia::before { content: ''; width: var(--sp-2); height: var(--sp-2); border: 1px solid currentColor; transform: rotate(45deg); }
+.mp-or { display: inline-flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1); padding: var(--sp-half) 0 var(--sp-half) var(--sp-2); border-left: 1px solid var(--bracket); }
+.mp-alt { display: inline-flex; align-items: center; gap: var(--sp-1); }
+.mp-alt > i { font-style: normal; font-size: var(--fs-xs); color: var(--muted); }
+/* The foot: the states (counts, what's taken away) and the actions, a picture and one word each (4 A). */
+.mp-card-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-3); }
+.mp-card-states { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-3); font-size: var(--fs-sm); }
 .mp-card-state { color: var(--muted); }
-.mp-card-x { grid-column: 3; grid-row: 1; align-self: start; }
-.mp-card-acts { grid-column: 2; display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); }
-.mp-card-acts .mp-card-state { grid-column: auto; }
+.mp-card-acts { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-1) var(--sp-2); margin-left: auto; }
+.mp-ab {
+  display: inline-flex; align-items: center; gap: var(--sp-1); min-height: var(--ctl-sm); padding: 0 var(--sp-2) 0 var(--sp-1);
+  border: 1px solid var(--line-ctl); background: none; font: inherit; font-family: var(--font-num); font-size: var(--fs-2xs);
+  letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-2); text-decoration: none; cursor: pointer;
+}
+.mp-ab:is(:hover, :focus-visible) { border-color: var(--accent-line); background: var(--picked); color: var(--ink-strong); }
+.mp-ab img { width: calc(var(--sp-6) - var(--sp-half)); height: calc(var(--sp-6) - var(--sp-half)); object-fit: contain; }
+/* The Needle laid across, as the Map's disc lays it (.mp-dot.is-needle). */
+.mp-ab img.is-needle { transform: rotate(35deg) scale(1.2); }
+.mp-ab-box { width: var(--sp-3); height: var(--sp-3); margin: 0 var(--sp-1); border: 1px solid currentColor; transform: rotate(45deg); }
+.mp-ab[aria-pressed="true"] .mp-ab-box { background: currentColor; }
+@media (pointer: coarse) { .mp-ab, .mp-ware { min-height: var(--ctl); } .mp-ware { width: var(--ctl); } }
+/* On a phone, along the map's foot, its width (js/app-map.js paintCard, keepClear). */
+@media (max-width: 599px) {
+  .mp-card-wrap.is-sheet { left: var(--sp-2); right: var(--sp-2); transform: none; }
+  .mp-card-wrap.is-sheet .mp-card { width: auto; max-width: none; }
+  .mp-card-body { margin-left: 0; }
+}
 /* Another screen's way onto the Map. */
 .pg-onmap { justify-self: start; font-size: var(--fs-xs); }
 
@@ -2990,7 +3068,7 @@ span.mp-pin { border-radius: 50%; background: var(--scene-bg); border: 1px solid
 .mp-pin.is-gauntlet img { width: 80%; height: 80%; object-fit: contain; }
 .mp-pin.is-badge img { width: calc(var(--mp-s, 22px) * 0.8); height: calc(var(--mp-s, 22px) * 0.8); object-fit: contain; }
 /* The same in a list or a card: the tick's place mirrored (js/app-map.js GIVER_HERALD). */
-:is(.mp-card-art, .hm-art.is-mark, .mp-adm, .mp-near-list) .mp-pin.is-person { position: relative; }
+:is(.mp-card-pic, .hm-art.is-mark, .mp-adm, .mp-near-list) .mp-pin.is-person { position: relative; }
 .mp-pin .mp-giver { position: absolute; left: 64%; top: 64%; width: 44%; height: 44%; display: grid; place-items: center;
   border-radius: 50%; background: var(--scene-bg); border: 1px solid var(--line-ctl); }
 .mp-pin.is-badge .mp-giver img { width: 72%; height: 72%; }
