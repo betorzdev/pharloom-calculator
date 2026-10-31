@@ -16,7 +16,7 @@ const { markKeys } = require('../tools/mark-keys.js');
 
 const MARKS = markKeys();
 const lists = () => [...Object.entries(RQ.AREAS).map(([k, l]) => ['AREAS.' + k, l]), ...Object.entries(RQ.MARKS).map(([k, l]) => ['MARKS.' + k, l]),
-  ...Object.entries(RQ.WISHES).map(([k, l]) => ['WISHES.' + k, l])];
+  ...Object.entries(RQ.WISHES).map(([k, l]) => ['WISHES.' + k, l]), ...Object.entries(RQ.ASKS).map(([k, l]) => ['ASKS.' + k, l])];
 const FORMS = new Set(['flag', 'min', 'is', 'quest', 'accepted', 'bool', 'visited', 'journal', 'kills', 'relic', 'memento', 'held', 'crest', 'tool', 'steel', 'int', 'geo', 'any', 'all', 'not', 'count']);
 
 test('every requirement points at a Map mark, a check and the game\'s name', () => {
@@ -76,6 +76,15 @@ test('the Witch Crest: Infestation Operation at Yarnaby, after Rite of Rebirth (
   // Greyroot's card is her two wishes' (WISHES), not hers: Rite of the Pollip asks nothing.
   assert.ok(!RQ.MARKS['giver:room_witch'], 'Greyroot herself asks nothing');
   assert.ok(!RQ.WISHES['Shell Flowers'], 'Rite of the Pollip asks nothing');
+});
+
+test('what a wish asks to be brought, where it lies: Infestation Operation\'s Steel Spines, the Gourmand\'s dishes', () => {
+  const spines = (RQ.ASKS['Doctor Curse Cure'] || []).find((r) => r.kind === 'item' && r.name.key === 'ITEM_EXTRACTOR_PINS_NAME');
+  assert.ok(spines && spines.to === 'task:5' && JSON.stringify(RQ.CHECKS[spines.check]).includes('"Extractor Machine Pins"'), 'Infestation Operation asks the Steel Spines, at their mark');
+  assert.strictEqual((RQ.ASKS['Great Gourmand'] || []).length, 5, 'the Great Gourmand asks five dishes');
+  // Only a thing with a mark of its own: a count dropped by enemies (Crawbug Clearing's Ragpelts) has none.
+  assert.ok(!RQ.ASKS['Crow Feathers'], 'Crawbug Clearing\'s Ragpelts lie nowhere');
+  for (const [q, list] of Object.entries(RQ.ASKS)) for (const r of list) assert.ok(r.kind === 'item' && /^task:\d+$/.test(r.to || ''), `ASKS.${q}: ${r.name.en} lies at a wish item's mark`);
 });
 
 test('the save keeps the checks met (needs), and a slot kept before shows them all', () => {

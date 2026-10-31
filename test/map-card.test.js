@@ -31,9 +31,9 @@ test('needsOf gathers every source the site has, and reads js/requires.js only w
   for (const src of ['SS.completion.wayOf', 'HW.NEEDS', 'SP.OPENS', 'SP.VARIANTS', 'more.after', 'more.needs', 'm.lockKey', 'App.wishWaits', 'm.alsoWay']) {
     assert.ok(NEEDS.includes(src), `needsOf reads ${src}`);
   }
-  // js/requires.js is another branch's: absent today, so guarded, and its three tables read as the spec says.
+  // js/requires.js is another branch's: absent today, so guarded, and its four tables read as the spec says.
   assert.match(NEEDS, /const RQ = SS\.requires;\s*\n\s*if \(RQ\)/);
-  for (const t of ['RQ.AREAS', 'RQ.MARKS', 'RQ.WISHES']) assert.ok(NEEDS.includes(t), `needsOf reads ${t}`);
+  for (const t of ['RQ.AREAS', 'RQ.MARKS', 'RQ.WISHES', 'RQ.ASKS']) assert.ok(NEEDS.includes(t), `needsOf reads ${t}`);
   assert.match(NEEDS, /own\.needsRead && r\.check != null && \(own\.needs \|\| \[\]\)\.includes\(r\.check\)/);
   // Each once, and nothing for a thing had or taken away.
   assert.match(NEEDS, /if \(seen\.has\(id\)\) return;/);
