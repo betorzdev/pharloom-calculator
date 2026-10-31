@@ -1,0 +1,82 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for traces of the merchant, [[Jubilana]], and track her location.<br>
+Jubilana was last seen near the Citadel's [[Memorium]].
+| npc = Residents of [[Songclave]]
+| location = Songclave Wishwall
+| prerequisite = 
+* Complete 5 wishes from the Wishwall in Songclave, including [[The Wandering Merchant]] and [[Strengthening Songclave]]
+* Speak to Jubilana in Songclave
+* Obtain the [[Faydown Cloak]]
+| reward = Opens additional inventory to purchase from Jubilana
+}}
+
+{{Quote
+| Our dear merchant left to scavenge treasures from the Citadel's Memorium. She's been gone far too long. Please make sure she's safe!
+| Residents of [[Songclave]]
+| Hr = SS
+}}
+
+<b>The Lost Merchant</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired from [[Songclave|Songclave's]] [[Wishwall]] after completing 5 Wishes from it, including <i>[[The Wandering Merchant]]</i> and <i>[[Strengthening Songclave]]</i>. [[Jubilana]] must also have been spoken to before, and the [[Faydown Cloak]] needs to have been obtained.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Wishwall's location in Songclave
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Songclave
+}}
+
+== Wish ==
+To complete the wish, [[Hornet (Silksong)|Hornet]] must find Jubilana's location within the southeast part of the [[Memorium]]. Jubilana's wares are scattered around the Memorium, which can be interacted with to track her pathway.
+
+At this location, Jubilana is hiding from two [[Drapefly|Drapeflies]] and one [[Drapelord]]. After defeating this group, another group consisting of two Drapelords and two Drapeflies spawns, which has to be defeated to save her and return her to Songclave.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana The Lost Merchant.png!Jubilana's location in the Memorium
+|Image2 = Screenshot SS Jubilana 03.png!Jubilana in the Memorium
+}}
+
+== Reward ==
+After completing the Wish, Jubilana expands her shop inventory with the [[Spider Strings]], a [[Spool Fragment]], [[Craftmetal]], and a [[Choral Commandment]].
+
+{{Gallery
+| Image1 = Spider Strings.png!link=Spider Strings!Spider Strings
+| Image2 = Spool Fragment.png!link=Spool Fragment!Spool Fragment
+| Image3 = Craftmetal.png!link=Craftmetal!Craftmetal
+| Image4 = Choral Commandment.png!link=Choral Commandment!Choral Commandment
+}}
+
+{{Localisation
+|DEname = Die verlorene Händlerin
+|DEmeaning = The Lost Merchant (feminine)
+|ESname = La comerciante perdida
+|ESmeaning = The Lost Merchant
+|FRname = La marchande perdue
+|FRmeaning = The Lost Merchant
+|ITname = La mercantessa perduta
+|ITmeaning = The Lost Merchant (feminine)
+|JAname = よろず屋捜索
+|JAromanised = Yorozu ya sōsaku
+|JAmeaning = Merchant Search
+|KOname = 길 잃은 장사꾼
+|KOromanised = Gil ileun jangsakkun
+|KOmeaning = Lost Merchant
+|PTname = A Mercadora Perdida
+|PTmeaning = The Lost Merchant 
+|RUname = Потерявшаяся торговка
+|RUromanised = Poterjavšajasja torgovka
+|RUmeaning = Lost Merchant (feminine)
+|ZHname = 再寻商人
+|ZHromanised = Zài xún shāngrén
+|ZHmeaning = Find Merchant Again
+|TWname = 再尋商販
+|TWromanised = Zài xún shāngrén
+|TWmeaning = same
+|CODEname = QUEST_SAVE_CITYMERCHANT_BRIDGE
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

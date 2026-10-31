@@ -36,3 +36,22 @@ Hollow Knight: Silksong
 # Redirects the damage page links to (saved under the linked title)
 Garmond & Zaza
 Great Conchfly
+# The Map's requirements (tools/gen-requires.js, 31 October 2026): each wish's prerequisites, the
+# people's and places' "In-game Events" and how to reach them
+Category:Wishes
+Category:NPCs (Silksong)
+Bellhome
+Bellshrine
+Bellway
+Delivery Wishes
+Diving Bell
+Flea Caravan
+Fleatopia
+Halfway Home
+Haunted Bellhart
+Pilgrim's Rest
+Songclave
+Ventrica
+Vesticrest
+Wishwall
+Beast in the Bells

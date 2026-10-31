@@ -1,0 +1,69 @@
+{{Navbar
+| page1 = Restoration of Bellhart
+| page2 = Bellhart's Glory 
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate rosaries to aid the rebuilding of [[Bellhart]].
+| npc = [[Pavo]] of Bellhart
+| location = Bellhart Wishwall
+| prerequisite = 
+* Complete [[Restoration of Bellhart]]
+* Complete one of the following:
+** Defeat the [[Cogwork Dancers]]
+** Obtain [[Clawline]]
+** Enter [[Songclave]]
+
+| reward = 
+}}
+
+{{Quote
+| The work of restoring our sacred home is almost complete! May those blessed with rosaries share them with us for this holy purpose!
+| [[Pavo]]
+| Hr = SS
+}}
+
+<b>Bellhart's Glory</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on the Wishwall of [[Bellhart]].
+
+== Wish ==
+To complete the Wish, donate {{R|400}} to the Bellhart Wishwall. <i>Bellhart's Glory</i> is a prerequisite Wish required to unlock the <i>[[Silk and Soul]]</i> Wish and to obtain the [[Bellhome Key]].
+
+{{Gallery
+| Image1 = File:Mapshot SS Bellhart Wishwall.png!Location of Wishwall in Bellhart
+}}
+
+{{Localisation
+|DEname = Glockenherz' Glanz
+|DEmeaning = Bell Heart's Glory
+|ESname = La gloria de Campanilla
+|ESmeaning = The Glory of Bellhart
+|FRname = La gloire de Clochelle
+|FRmeaning = The Glory of Bellhart
+|ITname = Gloria di Cuorcampana
+|ITmeaning = Glory of Bell Heart
+|JAname = 町の栄光
+|JAromanised = Machi no eikō
+|JAmeaning = Glory of the Town
+|KOname = 종의 심장부의 명예
+|KOromanised = Jongui simjangbuui myeongye
+|KOmeaning = Bell Heart's Glory
+|PTname = Glória da Campânula
+|PTmeaning = Glory of Bell or Glory of Bellflower
+|RUname = Слава Звонвилля
+|RUromanised = Slava Zvonvillja
+|RUmeaning = Glory of Bellhart
+|ZHname = 钟心荣光
+|ZHromanised = Zhōng xīn róngguāng
+|ZHmeaning = Bell Heart's Glory
+|TWname = 鐘心榮光
+|TWromanised = Zhōng xīn róngguāng
+|TWmeaning = same
+|CODEname = QUEST_BELL_HOUSE_CONT
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:La gloire de Clochelle]]

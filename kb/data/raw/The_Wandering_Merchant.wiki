@@ -1,0 +1,85 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for traces of the merchant, [[Jubilana]], and track her location.<br>
+Jubilana was last seen in the lower Choral Chambers.
+| npc = Residents of [[Songclave]]
+| location = Songclave Wishwall
+| prerequisite = Discover Songclave
+| reward = Jubilana sets up shop in Songclave.
+}}
+
+{{Quote
+| The old merchant pilgrim, Jubilana, was seen wandering down in the Choral Chambers, but she never made it up here. Has some foul fortune befallen her?
+| Residents of [[Songclave]]
+| Hr = SS
+}}
+
+<b>The Wandering Merchant</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired from [[Songclave|Songclave's]] [[Wishwall]] after discovering the area.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Wishwall's location in Songclave
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Songclave
+}}
+
+== Wish ==
+To complete the wish, [[Hornet (Silksong)|Hornet]] must find [[Jubilana]]'s location within the west part of [[Choral Chambers]]. Jubilana's wares are scattered around Choral Chambers, which can be interacted with to track her pathway.
+
+At this location, Jubilana is hiding from an [[Envoy]] and a [[Choristor]], who have to be defeated to save her and return her to Songclave.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana The Wandering Merchant.png!Jubilana's location in Choral Chambers
+|Image2 = Screenshot SS Jubilana 02.png!Jubilana hiding in Choral Chambers
+}}
+
+== Reward ==
+After completing the Wish, Jubilana becomes a merchant in Songclave with various wares for sale.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Location of Jubilana in Songclave
+|Image2 = Screenshot SS Jubilana 01.png!Jubilana in Songclave
+}}
+
+{{Gallery
+|Image1 = Ascendant's Grip.png!link=Ascendant's Grip!Ascendant's Grip
+|Image2 = Mask Shard (Silksong).png!link=Mask Shard (Silksong)!Mask Shard
+|Image3 = Simple Key (Silksong).png!link=Simple Key (Silksong)!Simple Key
+|Image4 = Spool Extender.png!link=Spool Extender!Spool Extender
+|Image5 = Rosary String.png!link=Rosary String!Rosary String
+}}
+
+{{Localisation
+|DEname = Die umherziehende Händlerin
+|DEmeaning = The Wandering Merchant (feminine)
+|ESname = La comerciante ambulante
+|ESmeaning = The Wandering Merchant
+|FRname = La marchande vagabonde
+|FRmeaning = The Vagabond Merchant
+|ITname = La mercantessa errante
+|ITmeaning = The Wandering Merchant (feminine)
+|JAname = 放浪のよろず屋
+|JAromanised = Hōrō no yorozu ya
+|JAmeaning = Wandering Merchant
+|KOname = 방랑하는 장사꾼
+|KOromanised = Bangnanghaneun jangsakkun
+|KOmeaning = Wandering Merchant
+|PTname = A Mercadora Errante
+|PTmeaning = The Wandering Merchant
+|RUname = Странствующая торговка
+|RUromanised = Stranstvujuščaja torgovka
+|RUmeaning = Wandering Merchant (feminine)
+|ZHname = 失踪商人
+|ZHromanised = Shīzōng shāngrén
+|ZHmeaning = Missing Merchant
+|TWname = 迷途商販
+|TWromanised = Mítú shāngfàn
+|TWmeaning = Lost Merchant
+|CODEname = QUEST_SAVE_CITYMERCHANT
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

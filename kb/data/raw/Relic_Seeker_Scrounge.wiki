@@ -1,0 +1,240 @@
+{{SS Infobox NPC
+| area = [[Bellhart]]
+| role = [[NPCs (Silksong)#Merchants|Merchant]]
+| affiliation = [[Bellhart]] (Resident)
+| aka = Relic Seeker
+| singnum=2
+}}
+
+{{Quote|Hr=SS
+|It's my calling it is, to gather the relics of the past. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it.
+|Relic Seeker Scrounge
+}}
+
+<b>Relic Seeker Scrounge</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She buys [[Items_(Silksong)#Tradables|relics]] in her shop in [[Bellhart]] in exchange for [[Rosaries]].
+
+== Background ==
+Relic Seeker Scrounge is a resident of [[Bellhart]] with a passion for gathering relics and a dream of keeping the entire history of the world safe inside her bellhome.<ref>Scrounge: <i>"More, then! Bring me more relics of the past! Records, seals, idols! Let's gather up the history of the world and hoard it all here, nice and safe!"</i></ref><ref>Scrounge [[Needolin]] dialogue: <i>"The past's long shadow! Whispers of the dead... Keep them safe! Keep them close... Stained by history... Relics... precious and fragile!"</i></ref> Through these artefacts, Scrounge hears the voices of bygone ages, and she has no interest in any relic that fails to speak to her.<ref>Scrounge: <i>"What occupies me, you ask? The past! The voices of ages gone by, they speak to me through what is left behind."</i></ref><ref>[[Hornet (Silksong)|Hornet]] and Scrounge dialogue: <br><i>Scrounge: "Ah! That relic you possess! A cylinder of the Citadel's sacred vault! That there is a mighty find. You will give it, yes?"<br>Hornet: "I will not, seeker. To extract what knowledge it holds, this cylinder requires a listening device, one you do not possess. If it were passed, whatever secrets it contains would remain forever hidden from us both."<br>Scrounge: "Pah... If it will not speak to me, I do not want it! Don't trouble me until you have something worth my taking!"</i></ref> Devoted entirely to her collection, she cares little for other bugs or even fellow Bellharters, considering them dullards who lack any keen sense or respect for the past.<ref>Scrounge: <i>"Those outside, those dreary pilgrims and bell-adorned dullards... none of them have my keen sense, my respect for the past!"</i></ref><ref>Hornet and Scrounge dialogue: <br><i>Scrounge: "What? What now? What's all that great racket? What is it?"<br>Hornet: "Greetings, ma'am. If you are disturbed by the rending of these lands, I fear some blame is mine to bear."<br>Scrounge: "Pah. I care not for the miseries and struggles of them outside! None of them have my keen sense, my respect for the past!"</i></ref> 
+
+When [[Widow]] guided the [[Haunting|haunted]] thread upon the town, Scrounge remained safely indoors and was not ensnared.<ref>Hornet and Scrounge dialogue: <br><i>Scrounge: "What? What, what? Who is it? What've you got? What do you want?"<br>Hornet: "I am just a traveller, one hoping you were not too badly affected by the cursed snare set upon this town."<br>Scrounge: "Pah! What binds them outside means nothing to me. None of them have my keen sense, my respect for the past! You seem able, though. Sneaky, too. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it."</i></ref>
+
+== In-game Events ==
+Relic Seeker Scrounge is one of the residents of [[Bellhart]]. When [[Hornet (Silksong)|Hornet]] first arrives in Bellhart, Scrounge's bellhome is found closed. After [[Widow]] is defeated and the residents are freed from the [[silk]] threads, Scrounge returns to her work.
+
+Hornet can sell different types of [[Items_(Silksong)#Tradables|relics]] to Scrounge, who translates them. After selling the relics, their translations can be viewed by speaking to Scrounge, or in the [[Bellhome]] after purchasing the [[Bellhome#Bellhome Furniture|Desk]].
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 4rem;" | Sell Price
+! Description
+|-
+! rowspan=4 | [[File:Bone Scroll.png|72x72px|center|link=Bone Scroll|Bone Scroll]] [[Bone Scroll]]
+| rowspan=4 align="center" | {{R|90}}
+| 
+<i>Singed parchment containing a pilgrim's scrawl.<br><br>
+"My dear companions, all are gone now, devoured, scorched, fallen to exhaustion, or worse, seduced by the Haunting."</i>
+|-
+| 
+<i>Faded parchment containing the last words of a lost pilgrim.<br><br>
+"-ter I die here in the damp dark than join those poor sods, trapped to stumble, aimless and empty, until their limbs fall to dust."</i>
+|-
+| 
+<i>Filthy rag, marked with the scrawl of an Underworker.<br><br>
+"So much suffering. Are we truly chosen, or have we sinned unknowing, and now are punished for it?"</i>
+|-
+| 
+<i>Crumpled parchment containing the prayer of a Burning Bug.<br><br>
+"Hail to your heat! O glorious flame. You who builds and breaks us. Sear our shells. Char them black. That we may rise to join you, wreathed in bright and blazing joy."</i>
+|-
+! rowspan=3 | [[File:Weaver Effigy.png|72x72px|center|link=Weaver Effigy|Weaver Effigy]] [[Weaver Effigy]]
+| rowspan=3 align="center" | {{R|150}}
+| 
+<i>Carving of Camora, Weaver of healing. A prayer is etched upon it.<br><br>
+"Weaver, heal my sons, their fearful hearts, their limbs that shake at the climb to come. We pray, gift but a glimmer of your strength, that when we stand before your divinity, you see bugs shed free of fear."</i>
+|-
+| 
+<i>Carving of Keelal, Weaver of the path. A prayer is etched upon it.<br><br>
+"Blessed Weaver, lady of grace, you who see our sin, our frail shells, our voices weak, and still offer your protection. How great your mind to care so much for ones so lowly."</i>
+|-
+| 
+<i>Carving of Atla, Weaver of time. A prayer is etched upon it.<br><br>
+"By grace of your example, and our history held full in mind, our song is yours, as your name is sacred. Weaver Atla, may you be praised eternal."</i>
+|-
+! rowspan=4 | [[File:Choral Commandment.png|72x72px|center|link=Choral Commandment|Choral Commandment]] [[Choral Commandment]]
+| rowspan=4 align="center" | {{R|180}}
+| 
+<i>Decree of the Citadel, dirty and worn.<br><br>
+"Full Chamber to the kingdom of the White Wyrm. Claim the Weaver, in half part. Last of their line. Sensed strong with Silk.<br><br>
+Resistance anticipated. Quell with rune cage."</i>
+|-
+| 
+<i>Surgeon's orders.<br><br>
+"Devout has succumbed during Silk suture. Refuses to revive. Sin committed. Permit no rites.<br><br>
+Husk marked for cremation. Retrieve dregs."</i>
+|-
+| 
+<i>Last edict of the Conductors.<br><br>
+"And lo, is eternity sustained. By Architect's claw, we welcome that final form, of dial and rotor, and soul gladly given.<br><br>
+The perfect, unfaltering voice."</i>
+|-
+| 
+<i>Tattered decree of the Citadel.<br><br>
+"Bug of voice grown hoarse or shell fallen frail, you have been selected for duty most sacred.<br><br>
+Become our light, our guide in darkness, that others worthy may climb to join the holy song."</i>
+|-
+! rowspan=3 | [[File:Rune Harp.png|72x72px|center|link=Rune Harp|Rune Harp]] [[Rune Harp]]
+| rowspan=3 align="center" | {{R|210}}
+| 
+<i>Words of a Weaver from the nest beneath Bone Bottom.<br><br>
+"Hide her deep, the despised child, our shame shown in shell of iron. She is a wish cast vain, divinity mimicked in form too frail."</i>
+|-
+| 
+<i>Plea of a Weaver from the furthest edge of Pharloom.<br><br>
+"Flee, sisters. Flee until your strength exhausts, so far you may escape at last her silken sight.<br><br>
+To start anew, to sustain, free of web and service eternal."</i>
+|-
+| 
+<i>Last words of the Weavers.<br><br>
+"Sisters, spiders, the burden is passed. These simple bugs shall bear it full. Never to cease. Never to silence.<br><br>
+We shall die, and wait, and pray, that one may come of silken strength enough to weave us free."</i>
+|-
+! [[File:Arcane Egg Silksong.png|72x72px|center|link=Arcane Egg (Silksong)|Arcane Egg]] [[Arcane Egg (Silksong)|Arcane Egg]]
+| align="center" | {{R|600}}
+| 
+<i>An artefact almost impossibly old, marked inside with many fine etchings. Most are indecipherable.<br><br>
+"...No will... No self... Shade..."</i>
+|}
+
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If [[Widow]] is defeated before Hornet has ever visited Bellhart, or if Hornet has talked to [[Lace]] in the [[Choral Chambers]]:</b><br>
+What? What, what? Who is it? What've you got? What do you want?<br>
+{{HTalk| I am just a traveller. May I ask, though, what work occupies you here?}}<br>
+What occupies me, you ask? The past! The voices of ages gone by, they speak to me through what is left behind.<br>
+Those outside, those dreary pilgrims and bell-adorned dullards... none of them have my keen sense, my respect for the past!<br>
+You seem able, though. Sneaky, too. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it.<br>
+<hr/>
+<b>If Widow is defeated after Hornet has visited Bellhart, and Hornet hasn't talked to Lace in the Choral Chambers:</b><br>
+What? What, what? Who is it? What've you got? What do you want?<br>
+{{HTalk| I am just a traveller, one hoping you were not too badly affected by the cursed snare set upon this town.}}<br>
+Pah! What binds them outside means nothing to me. None of them have my keen sense, my respect for the past!<br>
+You seem able, though. Sneaky, too. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it.<br>
+| Title1_Event2 = Speaking while having a relic
+| Title1_Dialogue2 = <b>During first encounter:</b><br>
+But what's this?! I smell something on you right now! You have a relic for me!
+<hr/>
+<b>In subsequent conversations:</b><br>
+Ahh... I smell something on you. Heavy with the past, you are. You have a relic for me, don't you?
+| Title1_Event3 = Refusing to hand over the relic
+| Title1_Dialogue3 = What? You refuse to pass it on? What good do you think it'll do you?!
+| Title1_Event4 = Agreeing to hand over the relic
+| Title1_Dialogue4 = Yes... This fits my collection well. Look, then! Look at what I have!
+| Title1_Event5 = After giving a relic for the first time
+| Title1_Dialogue5 = More, then! Bring me more relics of the past! Records, seals, idols! Let's gather up the history of the world and hoard it all here, nice and safe!<br>
+{{HTalk| If I happen upon more curiosities of this kingdom's past, I may visit again. Until that time, keep yourself safe.}}
+| Title1_Event6 = Speaking while having no relics
+| Title1_Dialogue6 = <b>If Scrounge has not been given a relic before:</b><br>
+It's my calling it is, to gather the relics of the past. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it.
+<hr/>
+<b>If Scrounge has been given a relic before:</b><br>
+It's my calling it is, to gather the relics of the past. Look at my collection, if you fancy! Look, look!
+| Title1_Event7 = Speaking while having a [[Psalm Cylinder]] or Sacred Cylinder and no other relics
+| Title1_Dialogue7 = Ah! That relic you possess! A cylinder of the Citadel's sacred vault! That there is a mighty find. You will give it, yes?<br>
+{{HTalk| I will not, seeker. To extract what knowledge it holds, this cylinder requires a listening device, one you do not possess.}}<br>
+{{HTalk| If it were passed, whatever secrets it contains would remain forever hidden from us both.}}<br>
+Pah... If it will not speak to me, I do not want it! Don't trouble me until you have something worth my taking!
+| Title1_Event8 = Completing the collection
+| Title1_Dialogue8 = Yes... yes. This is a mighty collection indeed!<br>
+So many relics safely piled up in here, nice and safe! I've done so well to gather it all up!<br>
+{{HTalk| If your collection pleases you, some acknowledgement of my own contribution to its growth is not undue.}}<br>
+Pah! Is it gratitude you seek?<br>
+I will allow you to keep viewing my collection. That is gratitude enough for what little you've given me!
+| Title1_Event9 = After seeing Scrounge's collection
+| Title1_Dialogue9 = <b>If the collection is incomplete:</b><br>
+More, then! Bring me more relics of the past! Records, seals, idols! Let's gather up the history of the world and hoard it all here, nice and safe!
+<hr/>
+<b>If the collection is complete:</b><br>
+A mighty collection of the past, is it not? If only I could hoard all of history here with me!
+| Title1_Event10 = Playing the [[Needolin]]
+| Title1_Dialogue10 = [n]
+The past's long shadow!<br>
+Whispers of the dead...<br>
+Keep them safe!<br>
+Keep them close...<br>
+Stained by history...<br>
+Relics... precious and fragile!
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = <b>If not met before Act 3:</b><br>
+What? What now? What's all that great racket? What is it?<br>
+{{HTalk| Greetings, ma'am. If you are disturbed by the rending of these lands, I fear some blame is mine to bear.}}<br>
+Pah. I care not for the miseries and struggles of them outside! None of them have my keen sense, my respect for the past!<br>
+You seem able, though. Sneaky, too. If you find any fine old stuff, anything with a history to it, bring it here. I'll take it.
+<hr/>
+<b>If met before Act 3:</b><br>
+What? What now? What's all that great racket, what is it?<br>
+{{HTalk| Greetings, ma'am. It is only I. If you are disturbed by the rending of these lands, I fear some blame is mine to bear.}}<br>
+Blame, is it? Pah. Those who come after us can apportion blame as they see fit.<br>
+For now, my collection is the only thing that matters! I must protect it!
+}}
+
+
+== Location ==
+After [[Widow]] is defeated, Relic Seeker Scrounge can be found in her bell in the middle of the [[Bellhart]] area.
+
+{{Gallery
+|Image1 = Mapshot_SS_Relic_Seeker_Scrounge_01.png!Location in Bellhart
+}}
+
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Relic Seeker Scrounge 02.png!Scrounge's house in Haunted Bellhart
+|Image2 = Screenshot SS Relic Seeker Scrounge 03.png!Scrounge's house in restored Bellhart
+|Image3 = Screenshot SS Relic Seeker Scrounge 05.png!Burrowing into the relics
+|Image4 = Screenshot SS Relic Seeker Scrounge 01.png!Rummaging through the relics
+|Image5 = Screenshot SS Bellhart 11.png!Idle
+|Image6 = Screenshot SS Relic Seeker Scrounge 06.png!Looming over Hornet
+|Image7 = Screenshot SS Relic Seeker Scrounge 07.png!Taking a relic from Hornet
+|Image8 = Screenshot SS Relic Seeker Scrounge 04.png!Singing
+}}
+
+== Trivia ==
+* Body segments of Relic Seeker Scrounge that can be seen around the room share sprites with those of [[Vaultkeeper Cardinius]].
+* The combined sell price of all Relics in the game is {{R|2790}}.
+
+{{Localisation
+|DEname = Reliktsucherin Schrapp
+|DEmeaning = Relic Seeker Schrapp<br><small><i>Schrapp</i> is from <i>schrappen</i> (to accumulate wealth).</small>
+|ESname = Buscadora de reliquias Scrounge
+|ESmeaning = Seeker of Relics Scrounge (feminine)
+|FRname = Chercheuse de Reliques Scrounge
+|FRmeaning = Searcher of Relics Scrounge (feminine)
+|ITname = Cercareperti Arraffia
+|ITmeaning = Artifact Searcher Arraffia<br><small><i>Arraffia</i> is from <i>arraffare</i> (to snatch).</small>
+|JAname = 遺物の収集者スクラウンジ
+|JAromanised = Ibutsu no shūshūsha sukuraunji
+|JAmeaning = Relic Collector Scrounge
+|KOname = 유물 추적자 스크라운지
+|KOromanised = Yumul chujeokja seukeuraunji
+|KOmeaning = Relic Purser Scrounge
+|PTname = Caça-relíquias Scrounge
+|PTmeaning = Relic Hunter Scrounge
+|RUname = Старьевщик Канюк
+|RUromanised = Star'evščik Kanjuk
+|RUmeaning = Junkman Buzzard
+|TWname = 文物搜尋者拾荒奇
+|TWromanised = Wénwù sōuxún zhě shíhuāngqí
+|TWmeaning = Relic Seeker Scrounge<br><small>{{lang|zh-Hant|拾荒奇}} <i>shíhuāngqí</i> consists of {{lang|zh-Hant|拾荒}} <i>shíhuāng</i> (to scavenge) and a phonetic filler which means strange or curious.</small>
+|ZHname = 寻宝者拾荒奇
+|ZHromanised = Xúnbǎo zhě shíhuāngqí
+|ZHmeaning = Treasure Seeker Scrounge<br><small>{{lang|zh-Hans|拾荒奇}} <i>shíhuāngqí</i> consists of {{lang|zh-Hans|拾荒}} <i>shíhuāng</i> (to scavenge) and a phonetic filler which means strange or curious.</small>
+|CODEname = RELICDEALER
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

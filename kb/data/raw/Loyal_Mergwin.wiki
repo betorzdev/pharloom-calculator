@@ -1,0 +1,182 @@
+{{SS Infobox NPC
+| area = [[Choral Chambers]]
+| image1 = <gallery>Loyal Mergwin.png|Idle
+Mergwin Sleeping.png|Sleeping
+</gallery>
+| role = Quest
+| affiliation = [[Great Gourmand]] (Master)
+| quest = [[Great Taste of Pharloom]]
+| singnum = 2
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Loyal Mergwin's audio files.</ref>
+}}
+{{Quote|Blasphemy! My master shall have the holy indulgence they deserve, even if I must douse my shell in oil and climb onto a dish myself!|Loyal Mergwin|Hr=SS}}
+
+<b>Loyal Mergwin</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He holds one of the three [[Pale Oil|Pale Oils]] of [[Pharloom]], only handing it over once his [[wish]], <i>[[Great Taste of Pharloom]]</i> is completed.
+
+== Background ==
+Loyal Mergwin is a servant of [[the Citadel]] who resides in the dining chamber of the [[Choral Chambers]]. He is skilled in cooking and possesses extensive knowledge of Pharloom's ingredients,<ref>Loyal Mergwin: <i>"Now! Permit me to work my skill, and you'll stand to see a meal of scent and taste that would dazzle Pharloom in her prime!"</i></ref><ref>Loyal Mergwin: <i>"You dally, still? If you wish to earn your reward, you should be hunting down those ingredients! Or do you need directions from a serving-bug with some experience?"</i></ref> using both to serve his master, the [[Great Gourmand]], whom he reveres and considers the finest connoisseur to have ever lived.<ref>Loyal Mergwin [[Needolin]] dialogue: <i>"O glorious master! Your taste, so refined! So majestic! So mighty! Your holy, shining gaze! You are the best of us!"</i></ref><ref>Loyal Mergwin: <i>"The Great Gourmand! The finest connoisseur who has ever lived, the one whose tastes transcend the ages! None are left now who venerate them as they deserve, save for the loyal, lonely bug who stands before you."</i></ref>
+
+Loyal Mergwin appears to be unaware of the Citadel's fall, lamenting that "those above" keep sending him the worst servants and have forsaken his master due to their indolence.<ref>Loyal Mergwin: <i>"And why are you adorned in such an awful, livid red? By my oath, those above must make a sport of sending me the most wretched servants they can find! (...) But alas, those above seem to have forsaken my poor master! And I have grown so old. Now I can never hope to gather the necessary ingredients. Blast their indolence!"</i></ref> This is likely because he never leaves the dining chamber, owing to his old age and unwillingness to leave the Great Gourmand unattended.<ref name=wishoffer>Loyal Mergwin: <i>"Still you tarry here, bug who calls herself a guest? If your idle claws need work, put them to service for our exalted Great Gourmand! I must remain by my master, so you will need to leave the Citadel and gather the ingredients for their meal in my stead!"</i></ref> For the same reasons, he is unable to gather the ingredients for a spectacular dish he has been planning for a long time.
+
+== In-game Events ==
+Loyal Mergwin can be found in the dining chamber of the [[Choral Chambers]]. Noticing that Hornet tarries here, he suggests she gather the necessary ingredients for his meal.<ref name=wishoffer></ref> She agrees to help in exchange for [[Pale Oil]], originally intended as a savoury for the [[Great Gourmand]].<ref> Hornet and Loyal Mergwin dialogue: <i>"I could track down any ingredient you desire, for a price. The oil you keep here may be of some use to me. Promise it as reward, and your master shall have his meal."</i></ref><ref>Loyal Mergwin: <i>"That oil is merely a small savoury to whet their appetite for the grand meal to come."</i></ref> Though Loyal Mergwin remarks that such a squalid bargain ill befits a holy servant, he accepts the deal, starting the <i>[[Great Taste of Pharloom]]</i> [[wish]].<ref>Loyal Mergwin: <i>"Hrmph! Such a squalid bargain ill befits a holy servant... but so be it. Fetch me the ingredients and you shall have that pale condiment for yourself!"</i></ref>
+
+He can provide hints regarding the location of ingredients and offers brief comments on each one as Hornet delivers them. Once all ingredients have been collected and the meal prepared, Loyal Mergwin invites the Great Gourmand to dine.<ref>Loyal Mergwin: <i>"Taste, smell, texture... It is done! A meal to rival Pharloom's finest. Mighty master, how long you have waited to set your jaw upon so perfect a dish! Join us, and dine!"</i></ref> After his master finishes feasting, Mergwin gives Hornet Pale Oil and asks her to leave.<ref>Loyal Mergwin: <i>"The pale trifle is yours. Take it and leave! My master needs time to reflect, and I must ponder on flavours anew!"</i></ref>
+
+In [[Act 3]], he expresses concern over the rumbling and shaking, awaiting some word from "those above," whom he believes have failed in their holy duties.<ref>Loyal Mergwin: <i>"Hrm? Oh, 'tis merely the livid red bug. I was expecting some word from those above to explain the meaning of all this rumbling and shaking.
+They fail in their holy duties! My master must be shielded from such inconveniences, else their digestion be disrupted."</i></ref> When Hornet remarks that he and his master are fortunate to have gone unharmed, Loyal Mergwin replies that he is simply of a hardier breed than the insipid young servants.<ref> Hornet and Loyal Mergwin dialogue:<br> Hornet: <i>"There are worse fates than indigestion, sir. You are fortunate to be unharmed."</i><br>Loyal Mergwin: <i>"Fortune has nothing to do with it. I am simply of a hardier breed than the insipid young servants of these recent, wretched times!"</i></ref> He fears for the Great Gourmand's safety and has no intention of leaving his side.<ref>Loyal Mergwin: <i>"The master has a mighty endurance, yet all of this rumbling and breaking makes me fearful for their safety. Fear not. I will stay by their side until my old shell crumbles away."</i></ref>
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| header = <b><i>Accessible in [[Act 2]]</i></b>
+| id = Great Taste of Pharloom
+| title = [[Great Taste of Pharloom]]
+| description = "If your idle claws need work, put them to service for our exalted Great Gourmand! I must remain by my master, so you will need to leave the Citadel and gather the ingredients for their meal in my stead!"
+| objective = Collect rare delicacies of Pharloom.
+* Mossberry Stew
+* Vintage Nectar
+* Courier's Rasher
+* Crustnut
+* Pickled Muckmaggot
+| location = <b><i>[[Choral Chambers]] NPC</i></b>
+Loyal Mergwin
+| reward = [[Pale Oil]]<br><i>[[Achievements (Silksong)|Glutton]]</i>
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter 
+| Title1_Dialogue1 = What an awful clattering! Would you kindly conduct yourself a little more carefully?<br>
+And why are you adorned in such an awful, livid red? By my oath, those above must make a sport of sending me the most wretched servants they can find!<br>
+{{HTalk|I am no servant, sir, rather a guest of sorts, invited by the Citadel. Tell me, is this vial of oil on display your own?}}<br>
+Nothing here is my own, you impertinent young mite! This sacred hall, and all the food contained within, belong to my most exalted master.<br>
+The Great Gourmand! The finest connoisseur who has ever lived, the one whose tastes transcend the ages!<br>
+None are left now who venerate them as they deserve, save for the loyal, lonely bug who stands before you.<br>
+That oil is merely a small savoury to whet their appetite for the grand meal to come. A spectacular, Pharloom spanning dish that I have been planning for an age.<br>
+But alas, those above seem to have forsaken my poor master! And I have grown so old. Now I can never hope to gather the necessary ingredients. Blast their indolence!<br>
+| Title1_Event2 = After the wish is fulfilled
+| Title1_Dialogue2 = {{HTalk|Your master seems satisfied, sir. It is time you gave what was promised.}}<br>
+Yes. Yes! It has been done! Made and served. A dish to match my master's refined desires.<br>
+The pale trifle is yours. Take it and leave! My master needs time to reflect, and I must ponder on flavours anew!<br>
+| Title1_Event3 = Exhausted dialogue if the wish was fulfilled
+| Title1_Dialogue3 = Leave us! My great master needs time to reflect, and I must ponder on flavours anew!<br>
+| Title1_Event4 = Playing the [[Needolin]]
+| Title1_Dialogue4 = [n]O glorious master!<br>
+Your taste, so refined!<br>
+So majestic! So mighty!<br>
+Your holy, shining gaze!<br>
+You are the best of us!<br>
+| Title2 = Great Taste of Pharloom
+| Title2_Event1 = Getting offered the wish
+| Title2_Dialogue1 = Still you tarry here, bug who calls herself a guest? If your idle claws need work, put them to service for our exalted Great Gourmand!<br>
+I must remain by my master, so you will need to leave the Citadel and gather the ingredients for their meal in my stead!<br>
+| Title2_Event2 = Refusing the wish
+| Title2_Dialogue2 = {{HTalk|I have more pressing tasks, sir. Perhaps your master should content themself with a humbler meal?}}<br>
+Blasphemy! My master shall have the holy indulgence they deserve, even if I must douse my shell in oil and climb onto a dish myself!<br>
+| Title2_Event3 = Accepting the wish
+| Title2_Dialogue3 = {{HTalk|I could track down any ingredient you desire, for a price. The oil you keep here may be of some use to me.}}<br>
+{{HTalk|Promise it as reward, and your master shall have his meal.<br>}}
+Hrmph! Such a squalid bargain ill befits a holy servant... but so be it. Fetch me the ingredients and you shall have that pale condiment for yourself!<br>
+| Title2_Event4 = Exhausted dialogue with the wish active
+| Title2_Dialogue4 = You dally, still? If you wish to earn your reward, you should be hunting down those ingredients! Or do you need directions from a serving-bug with some experience?<br>
+| Title2_Event5 = Hint for the location of the [[Mossberry Stew]] 
+| Title2_Dialogue5 = For our base, we require the gelatinous Mossberry Stew. Its concoction is a druidic art, a jealously guarded secret of the moss-painted caverns deep below us.<br>
+| Title2_Event6 = Hint for the location of the [[Vintage Nectar]] 
+| Title2_Dialogue6 = For a sweet simmer, find me some Vintage Nectar. A rare brew, treasured by bugs with a keen scent for excellence.<br>
+There's slim chance such an old yield might still exist. Alas! Its depth of flavour is a necessity for the holy dish!<br>
+| Title2_Event7 = Hint for the location of the [[Courier's Rasher]]
+| Title2_Dialogue7 = For the core of the meal, find that marvellous meat... The rasher of a courier, those spritely bugs who once arrived at the toll of every second bell.<br>
+I saw many a courier gorge upon this fatty snack. Where are they all? Have they abandoned their holy toil?<br>
+| Title2_Event8 = Hint for the location of the [[Crustnut]]
+| Title2_Dialogue8 = To season a meal such as this... only a Crustnut will do. Once, scores of them could be gathered, high atop those coral crusted caves beyond the Grand Gate.<br>
+Surely some must still grow within that sand-ravaged land?<br>
+| Title2_Event9 = Hint for the location of the [[Pickled Muckmaggot]]
+| Title2_Dialogue9 = Seek out a Pickled Muckmaggot, the sacred treat revered and reviled for its intensity. It was a specialty of the chef Lugoli, long ago banished for culinary sacrilege.<br>
+Rumours sing that the great chef retreated to their home-caves in the dank midlands below...<br>
+| Title2_Event10 = Handing over an ingredient
+| Title2_Dialogue10 = {{HTalk|Sir, I bring ingredients for the dish.}}<br>
+At last! My master is withering away from hunger! Let us see what gifts you bring.<br>
+| Title2_Event11 = Handing over [[Mossberry Stew]]  
+| Title2_Dialogue11 = This stew, of Mossberries stirred thick. Good. Good! It shall form the base once set in mould.<br>
+| Title2_Event12 = Handing over [[Vintage Nectar]]  
+| Title2_Dialogue12 = The nectar! To think, such an aged extract still exists! What an exquisite tragedy that I cannot taste it myself. My master must have every drop!<br>
+| Title2_Event13 = Handing over [[Courier's Rasher]]
+| Title2_Dialogue13 = Aaaahh. What's this? The rasher of a courier, tied up tight! I can see its fat still dripping fresh!<br>
+| Title2_Event14 = Handing over [[Crustnut]]
+| Title2_Dialogue14 = A Crustnut! Stale and dull, you'll be thinking, yes? But ground to finest powder, that's when its tart taste blooms!<br>
+| Title2_Event15 = Handing over [[Pickled Muckmaggot]] 
+| Title2_Dialogue15 = Pickled Muckmaggot! So that banished chef's recipes outlived them after all!<br>
+{{HTalk|Not so, sir. I claimed the maggot from the chef themself. Their brutish work continued, even with their shell claimed by cursed thread.}}<br>
+Incredible! A bug so devout, they could cook with mind expunged. This Citadel was far too hasty to expel such brilliance.<br>
+| Title2_Event16 = After handing over all of the required ingredients 
+| Title2_Dialogue16 = {{HTalk|With this I have fulfilled my promise, sir. The ingredients have all been delivered. I trust now the meal can be made, and the oil awarded for my efforts?}}<br>
+You'll have your oil, whelp! Firstly learn some patience! The dish must be prepared perfectly, enough to rouse my master and see them sated.<br>
+Now! Permit me to work my skill, and you'll stand to see a meal of scent and taste that would dazzle Pharloom in her prime!<br>
+| Title2_Event17 = After Loyal Mergwin creates the dish
+| Title2_Dialogue17 = Taste, smell, texture... It is done! A meal to rival Pharloom's finest.<br>
+Mighty master, how long you have waited to set your jaw upon so perfect a dish! Join us, and dine!<br>
+| Title3 = Act 3
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Hrm? Oh, 'tis merely the livid red bug. I was expecting some word from those above to explain the meaning of all this rumbling and shaking.<br>
+They fail in their holy duties! My master must be shielded from such inconveniences, else their digestion be disrupted.<br>
+{{HTalk|There are worse fates than indigestion, sir. You are fortunate to be unharmed.}}<br>
+Fortune has nothing to do with it. I am simply of a hardier breed than the insipid young servants of these recent, wretched times!<br>
+| Title3_Event2 = Exhausted dialogue during [[Act 3]] if the wish was fulfilled
+| Title3_Dialogue2 = The master has a mighty endurance, yet all of this rumbling and breaking makes me fearful for their safety.<br>
+Fear not. I will stay by their side until my old shell crumbles away.<br>
+}}
+
+== Location ==
+Loyal Mergwin is found in the dining room of the [[Choral Chambers]].
+{{Gallery
+|Image1=Mapshot SS Loyal Mergwin 01.png!Location in the Choral Chambers
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Choral Chambers 15.png!Sleeping
+|Image2=Screenshot SS Loyal Mergwin 03.png!Waking up
+|Image3=Screenshot SS Loyal Mergwin 02.png!Idle
+|Image4=Screenshot SS Loyal Mergwin 01.png!Singing
+|Image5=Screenshot SS Choral Chambers 23.png!With the prepared meal
+|Image6=Screenshot SS Choral Chambers 16.png!With the Great Gourmand
+|Image7=Screenshot SS Loyal Mergwin 04.png!With the Great Gourmand in Act 3
+}}
+
+== Trivia ==
+* Loyal Mergwin shares the same voice with [[Tall Pilgrim]].
+
+{{Localisation
+|DEname = Treuer Mergwin
+|DEmeaning = Loyal Mergwin
+|ESname = Leal Mergwin
+|ESmeaning = Loyal Mergwin
+|FRname =  Mergwin Le Fidèle
+|FRmeaning = Mergwin the Faithful
+|ITname =  Mergwin il Fedele
+|ITmeaning = Mergwin the Faithful
+|JAname= 忠実なるマーグウィン
+|JAromanised = Chūjitsunaru māguwin
+|JAmeaning = Loyal Mergwin
+|KOname = 충성스러운 머그윈
+|KOromanised = Chungseongseureoun meogeuwin
+|KOmeaning = Loyal Mergwin
+|PTname = Mergwin O Leal
+|PTmeaning = Mergwin the Loyal
+|RUname = Верный Мергвин
+|RUromanised = Vernyj Mergvin
+|RUmeaning = Loyal Mergwin
+|TWname = 忠心的僕從梅爾格溫
+|TWromanised = Zhōngxīn de pú cóng méiěrgéwēn
+|TWmeaning = Loyal Servant Mergwin
+|ZHname = 忠诚的梅尔格温
+|ZHromanised = Zhōngchéng de méiěrgéwēn
+|ZHmeaning = Loyal Mergwin
+|CODEname = GOURMAND_SERVANT
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[fr:Mergwin le Loyal]]

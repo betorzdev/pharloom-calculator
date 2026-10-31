@@ -1,0 +1,185 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Gilly.png|Revealed
+Gilly Hidden.png|Disguised
+</gallery>
+| area = [[Deep Docks]]<br>[[Hunter's March]]<br>[[Far Fields]]
+| va = Lauren Koopowitz<ref>https://www.imdb.com/title/tt10323784/characters/nm6664826/</ref>
+| role = Wanderer
+| quest = [[The Hidden Hunter]]
+| singnum = 2
+}}
+
+{{Quote
+| Disguise and subterfuge are skills I've honed keenly, all in aid of my most important work!
+| Gilly
+|Hr=SS
+}}
+
+<b>Gilly</b> is a [[NPCs (Silksong)#Wanderers|wandering NPC]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== Background ==
+Gilly travelled to [[Hunter's March]] in order to study the area upon her father's last wish.<ref>Gilly: <i>"Upon the last wish of my father, I've taken up the study of these wild caves."</i></ref> She hopes to discover why these fields display life and growth even as the surrounding lands erode to dust, and believes her findings may help save her dying homeland.<ref>Gilly: <i>"These fields still display life and growth, even as the lands around erode to dust. There is a hot harmony here that eludes the grey wastes above and the dry Marrow beside. With time and study, I shall uncover why."</i></ref><ref>Gilly: <i>"Compared to the caves below, this lush growth feels even greater. Have we crawled close to the source of their sustenance? I must discover its secret! I will! By my father's wish, and for hope that our dying lands might find means to endure."</i></ref><ref>Gilly [[Needolin]] dialogue: <i>"Secrets of a living land! I'll sniff it out! Hidden... searching... I'll solve it! Me!"</i></ref>
+
+Aware of the dangers her quest poses, she honed her skills in disguise and subterfuge to aid her along the way, and is confident in her abilities.<ref>Hornet and Gilly dialogue: <br><i>Hornet: "These are dangerous fields, young one, not for casual wandering. What task sees you brave them?"<br>Gilly: "A treacherous quest! But a crucial one!"</i></ref><ref>Gilly: <i>"Disguise and subterfuge are skills I've honed keenly, all in aid of my most important work!"</i></ref><ref>Gilly: <i>"Goodness! This is just too embarrassing! Detected even through my perfect cover! What tell? What error? Surely something gave me away!"</i></ref>
+
+== In-game Events ==
+Gilly disguises herself as a bush and can only be spoken to after her hiding place is discovered. While in disguise, she sometimes sneezes or makes other sounds that may give away her position.
+
+Gilly can first be encountered near a tattered teepee guarded by a [[Skarr Scout]] and a [[Spear Skarr]] in the [[Deep Docks]]. Gilly only shows up here if Hornet has never been to [[Hunter's March]]; also this area can only be accessed after acquiring the [[Cling Grip]] ability.
+
+After Hornet has entered Hunter's March, Gilly can be found near [[Skarrsinger Karmelita]]'s statue in [[Hunter's March]]. 
+
+After speaking with her and resting in an area outside Hunter's March, if Hornet has entered [[the Citadel]], Gilly can be found next to the only bench in Hunter's March, in the room across from the statue. After speaking with her at this location, she is gone for the rest of Act 1 and Act 2.
+
+In [[Act 3]], she can first be encountered in a new area east of [[Pilgrim's Rest]], in a small hidden tunnel at the top of the area.
+
+After speaking with her and resting in an area outside the [[Far Fields]], she moves to the area above her previous one, to the west of Skarrsinger Karmelita's room.
+
+If Hornet has talked to her in one of these locations in Act 3, and if Hornet has acquired the [[Hunter's Heart]], then after resting in an area outside the Far Fields, Gilly moves to Skarrsinger Karmelita's room and remains in this location for the rest of the game.
+
+If the <i>[[The Hidden Hunter]]</i> wish is active, Gilly disappears no matter where her current location is, and only returns after the wish is completed. 
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If Hornet meets Gilly at the teepee in the [[Deep Docks]]:</b><br>
+What a battle, brave warrior! You're the first I've seen who could match the red-shells and emerge victorious.<br>
+{{HTalk|They are deadly foes indeed, and seemingly keen hunters. You did well to keep yourself hidden from them, young bug.}}<br>
+I did, didn't I? Disguise and subterfuge are skills I've honed keenly, all in aid of my most important work!<br>
+<hr/>
+<b> If Hornet meets Gilly near the statue or at her first location in the [[Far Fields]]:</b><br>
+Goodness! This is just too embarrassing! Detected even through my perfect cover! What tell? What error? Surely something gave me away!<br>
+{{HTalk|It was no one thing, young bug. Your disguise is near faultless. I've merely spent a long life being watchful.}}<br>
+Gah! Then I'll just have to hope the beasts about don't share such keen sight. It'll be so much harder to accomplish my work if I'm detected, or eaten!
+| Title1_Event2 = First conversation in every encounter after the first, if Gilly hasn't moved to [[Skarrsinger Karmelita]]'s room
+| Title1_Dialogue2 = Oh, what a shock! Discovered again so easily! Like a hapless little hatchling!<br>
+If you're going to make a sport of tracking me, I'll have to redouble my efforts at camouflage!
+| Title1_Event3 = After first encounter (only available before Act 3)
+| Title1_Dialogue3 = {{HTalk|These are dangerous fields, young one, not for casual wandering. What task sees you brave them?}}<br>
+A treacherous quest! But a crucial one! Upon the last wish of my father, I've taken up the study of these wild caves.<br>
+These fields still display life and growth, even as the lands around erode to dust.<br>
+There is a hot harmony here that eludes the grey wastes above and the dry Marrow beside. With time and study, I shall uncover why.
+| Title1_Event4 = Speaking with Gilly, either at the teepee in the Deep Docks, or at her second location in the Far Fields if Hornet hasn't had this conversation by then
+| Title1_Dialogue4 = The red-shells, hiding through the fields, stalking the boney beasts. They are part of it, somehow, the life that flourishes here.<br>
+Even haunted, they seem to lose less of themselves... What anchor allows them to retain such strength?
+| Title1_Event5 = If Hornet has triggered the trapped [[Bench (Silksong)|bench]] in [[Hunter's March]] (only available before Act 3)
+| Title1_Dialogue5 = <b>If Hornet was damaged by the trap:</b>
+Ho, what clever traps the red-shells lay out in defence of their lands!<br>
+Impressive that you managed to survive such a brutal blow. Your shell must be mighty thick!<br>
+{{HTalk|Thick enough, though I'd rather have avoided the trap altogether.}}<br>
+{{HTalk|I'll let it be a reminder to remain wary, even when no foes are nearby.}}
+<hr/>
+<b>If Hornet was not damaged by the trap:</b><br>
+Ho, what clever traps the red-shells lay in defence of their lands!<br>
+I've narrowly avoided a few nasty ends myself. It certainly adds a thrill to my investigations...
+| Title1_Event6 = Speaking at Skarrsinger Karmelita's statue
+| Title1_Dialogue6 = See here, this old statue. I've been thinking long on it, what clues it might hold.<br>
+The claw-work seems beyond the other structures throughout these caves. Who was she I wonder, to deserve such refined remembrance?<br>
+{{HTalk|Hers is the form of a dancer, and the craft is indeed exquisite. There must once have been more to these ants, before the Haunting snared their shells and minds.}}
+| Title1_Event7 = Exhausted dialogue
+| Title1_Dialogue7 = Conversing is a pleasure, but I must return to my observance. Try not to leave too much of a trail when you leave, please.
+| Title1_Event8 = Playing the [[Needolin]]
+| Title1_Dialogue8 = [n]
+Father's wish...<br>
+Daughter's promise!<br>
+Secrets of a living land!<br>
+I'll sniff it out!<br>
+Hidden... searching...<br>
+I'll solve it! Me!
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation after Hornet has had the first encounter
+| Title2_Dialogue1 = Ho! Are you observing them too, hunter? The red-shells are plentiful here, stalking these vast grassy plains and the last of its bony beasts.<br>
+Compared to the caves below, this lush growth feels even greater. Have we crawled close to the source of their sustenance?<br>
+I must discover its secret! I will! By my father's wish, and for hope that our dying lands might find means to endure.<br>
+{{HTalk|Just be careful, young one. I urge you. Here you've reached the ants' heart-domain.}}<br>
+{{HTalk|There may be discoveries worth making, but a single mistake will see your shell's sharp end.}}
+| Title2_Event2 = First conversation in [[Skarrsinger Karmelita]]'s room
+| Title2_Dialogue2 = <b>If Hornet defeated Skarrsinger Karmelita before completing the <i>[[SEEK: The Old Hearts]]</i> objective:</b>
+This giant, old ant... Her death seems recent, but her presence here...<br>
+Was it her? Could it be? The strength that sustained these caves? If so, what will happen now?<br>
+{{HTalk|They will wither and fade... And you may sadly know it was my needle that brought her end.}}<br>
+You, miss? But why? Why destroy something so vital?<br>
+{{HTalk|It is a difficult thing to explain simply... Her strength was needed, what was left, to cut Pharloom free of its black thread threat. It was a savage act, no doubt, but the reason was just.}}<br>
+{{HTalk|Know, in time, these caves may see opportunity to regrow, flourish even, though that rebirth is itself a task enormous... longer than a lifetime, many lifetimes.}}<br>
+{{HTalk|For that task to succeed, it will fall to bugs like you to sow the first seeds.}}<br>
+<hr/>
+<b> If Hornet defeated Skarrsinger Karmelita after completing the <i>SEEK: The Old Hearts</i> objective:</b><br>
+This giant, old ant... Her death seems recent, but her presence here...<br>
+Was it her? Could it be? The strength that sustained these caves? If so, what will happen now?<br>
+{{HTalk|They will wither and fade... And you may sadly know it was my needle that brought her end.}}<br>
+You, miss? But why? Why destroy something so vital?<br>
+{{HTalk|It is a difficult thing to explain simply... A test was needed, to ensure my strength before a greater challenge soon to come.}}<br>
+{{HTalk|Know, in time, these caves may see opportunity to regrow, flourish even, though that rebirth is itself a task enormous... longer than a lifetime, many lifetimes.}}<br>
+{{HTalk|For that task to succeed, it will fall to bugs like you to sow the first seeds.}}<br>
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = I'll wish you success in your grand task, miss, but forgive me my sadness for knowing the cruel cost...
+
+| Title3 = Written
+| Title3_Event1 = <i>[[The Hidden Hunter]]</i> wish
+| Title3_Dialogue1 = A huge red-shell stole my precious keepsake and disappeared into the fields! Please chase down the thief and recover my treasure!
+}}
+
+== Location ==
+Gilly can be found in the [[Deep Docks]] and [[Hunter's March]]. In [[Act 3]], she can be found in several areas in the northeastern part of the [[Far Fields]], including [[Skarrsinger Karmelita]]'s room.
+
+{{Gallery
+|Image1 = Mapshot SS Gilly 01.png!Location in the Deep Docks
+|Image2 = Mapshot SS Gilly 02.png!First location in Hunter's March
+|Image3 = Mapshot SS Gilly 03.png!Second location in Hunter's March
+|Image4 = Mapshot SS Gilly 04.png!First location in the Far Fields in Act 3
+|Image5 = Mapshot SS Gilly 05.png!Second location in the Far Fields in Act 3
+|Image6 = Mapshot SS Skarrsinger Karmelita 01.png!Final location in the Far Fields in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Gilly 08.png!Disguised in the Deep Docks
+|Image2 = Screenshot SS Gilly 01.png!Idle
+|Image3 = Screenshot SS Gilly 02.png!Next to Karmelita's statue
+|Image4 = Screenshot SS Gilly 03.png!Next at the Hunter's March bench
+|Image5 = Screenshot SS Gilly 04.png!First location in the Far Fields in Act 3
+|Image6 = Screenshot SS Gilly 05.png!Second location in the Far Fields in Act 3
+|Image7 = Screenshot SS Gilly 06.png!Final location in Act 3 next to Karmelita's corpse
+|Image8 = Screenshot SS Gilly 07.png!Singing
+}}
+
+== Trivia ==
+* Gilly's name is likely based on <i>ghillie</i> suits, a type of camouflage clothing. Both names are phonetically similar and her bush disguise serves the same purpose as a ghillie suit.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Added new dialogue with Gilly if she was spoken to after killing Karmelita as the fourth Old Heart.
+|1.0.29909 (Patch 5): Fixed Gilly staying in her first or second Act 3 location and not moving into Karmelita's room, if the Hunter's Heart is put into the [[Bellhome]] or if it is used for the Objective <i>[[SEEK: The Old Hearts]]</i> before Gilly has ever been interacted with in Act 3.
+}}
+{{Localisation
+|DEname = Gilly
+|DEmeaning = —
+|ESname = Gilly
+|ESmeaning = —
+|FRname = Gilly
+|FRmeaning = —
+|ITname = Gilly
+|ITmeaning = —
+|JAname= ジリー
+|JAromanised= Jiri
+|JAkatakana = foreign
+|JAmeaning = Gilly
+|KOname = 길리
+|KOromanised = Gilli
+|KOmeaning = Gilly
+|PTname =  Gilly
+|PTmeaning = —
+|RUname = Гилли
+|RUromanised = Gilli
+|RUmeaning = Gilly
+|TWname = 吉莉
+|TWromanised = Jílì
+|TWmeaning = same
+|ZHname = 吉莉
+|ZHromanised = Jílì
+|ZHmeaning = Gilly
+|CODEname = GILLY
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

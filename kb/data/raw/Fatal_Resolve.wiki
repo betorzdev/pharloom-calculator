@@ -1,0 +1,71 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Find Pinstress on the stormward side of Mount Fay and defeat her in battle.
+| npc = [[Pinstress]]
+| location = [[Bellhart]] Wishwall or [[Blasted Steps]] [[Lore Tablets (Silksong)#Blasted Steps|Lore Tablet]]
+| prerequisite =
+* Obtain the [[Needle Strike]] ability
+* Enter [[Act 3]]
+| reward = [[Pin Badge]]
+| achievement = [[Achievements (Silksong)|Fatal Resolve]]
+}}
+
+{{Quote
+| If the world is truly ending, I would test my pin in combat one last time. Come to my home at border's edge and accept my challenge!
+| [[Pinstress]]
+| Hr = SS
+}}
+
+<b>Fatal Resolve</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It becomes available after obtaining the [[Needle Strike]] ability and entering [[Act 3]]. It can be acquired from [[Bellhart|Bellhart's]] Wishwall after additionally completing the <i>[[ASCEND: Return to Pharloom]]</i> objective and obtaining the [[Silk Soar]] ability, or directly from a [[Lore Tablets (Silksong)#Blasted Steps|note]] left by Pinstress in her hut in the [[Blasted Steps]].
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must find [[Pinstress|Pinstress']] location within [[Mount Fay]]. If the Wish is accepted from the Wishwall, the note in her hut must be read first, to tell Hornet that the Pinstress has gone to Mount Fay. Dead enemies with Pinstress' pins in them are scattered across the area leading to her location, which can be interacted with to track her pathway.
+
+{{Gallery
+| Image1 = Mapshot SS Pinstress Fatal Resolve.png!Pinstress' location in Mount Fay
+}}
+
+At this location, Pinstress is sleeping and needs to be hit repeatedly with the [[Needle]] to awaken her. After speaking to her, she challenges Hornet to a duel. Defeating her completes the Wish.
+
+== Reward ==
+[[File:Pin Badge.png|link=Pin Badge|left|thumb|100x100px]]
+
+After completing the Wish, Pinstress gifts Hornet the [[Pin Badge]] Tool. It also unlocks the <i>[[Achievements (Silksong)|Fatal Resolve]]</i> Achievement.
+
+{{Clear}}
+
+== Achievements ==
+{{Achievement|game=silksong|Fatal Resolve}}
+
+{{Localisation
+|DEname = Tödliche Entschlossenheit
+|DEmeaning = Deadly Determination
+|ESname = Determinación fatal
+|ESmeaning = Fatal Determination
+|FRname = Duel mortel
+|FRmeaning = Deadly Duel
+|ITname = Determinazione fatale
+|ITmeaning = Fatal determination
+|JAname = 命を賭した決着
+|JAromanised = Inochi o toshita ketchaku
+|JAmeaning = Life-wagered Conclusion
+|KOname = 마지막 결의
+|KOromanised = Majimak gyeorui
+|KOmeaning = Final Resolution
+|PTname = Resolução Fatal
+|PTmeaning = Fatal Resolution
+|RUname = Фатальное упорство
+|RUromanised = Fatal'noe uporstvo
+|RUmeaning = Fatal Perseverance
+|ZHname = 针锋对决
+|ZHromanised = Zhēn fēng duìjué
+|ZHmeaning = Pin Point Showdown<br><small>The name evokes {{lang|zh-hans|针锋相对}} <i>zhēn fēng xiāng duì</i> (to be sharply opposed at an equal level).</small>
+|TWname = 針鋒對決
+|TWromanised = Zhēn fēng duìjué
+|TWmeaning = same
+|CODEname = PINSTRESS_WISH
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

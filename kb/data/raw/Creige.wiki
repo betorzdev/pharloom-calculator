@@ -1,0 +1,217 @@
+{{SS Infobox NPC
+| area = [[Halfway Home]]
+| role = Merchant
+| singnum = 2
+| quest = [[Crawbug Clearing]]<br>[[Great Taste of Pharloom]]
+| affiliation = [[Halfway Home]] (bartender)
+| va = Ned Rogers<ref>Email by [https://x.com/nedrogersart Ned Rogers]: <i>"I voice the bartender in Halfway Home..."</i> ([[:File:Reference Ned Rogers.png|Archive]])</ref>
+}}
+
+{{Quote
+| Care for a drink, traveller? My nectar's got a kick that'll warm your shell in these sodden climes.
+| Creige
+| Hr = SS
+}}
+
+<b>Creige</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He is a [[Moorbugs|moorbug]] who sells a nectar drink at the [[Halfway Home]] in exchange for [[Rosaries]].
+
+== Background ==
+Creige is the owner and bartender of the Halfway Home, offering drinks and a place to rest for pilgrims.<ref>Creige: <i>"Lookin' for a drink, or a rest, or both? (...) Used to be just pilgrims trekkin' my way, but odd times these are, and you ain't even the strangest shell wandering about."</i></ref> Ever since the [[Haunting]] started affecting [[Pharloom]], only the stronger pilgrims are able to reach his home.<ref>Creige: <i>"S'only those few stronger pilgrims that survive to reach my home now... Pharloom's curse claims the rest. Poor sods, left to wander."</i></ref> He knows about the history of [[Sinner's Road]] and [[Bellhart]], and laments about their current state.<ref>Creige: <i>"Bellhart, over the moors, a great town I've heard it once was, heart of the path'n all, right smack in the middle of these midlands. Now it's all a'crumble... And that brittle vein of bells is crawling with nasties. Ain't no place left in Pharloom that can fairly claim to offer safety."</i></ref><ref>Creige: <i>"You visited them pens up above here, miss? Horrid place, once all about growing meat or some such. Meant to keep us moorbugs livin', and working, it's told... That damned place's long gone to the Haunting. Now the meat's running feral and free."</i></ref>
+
+== In-game Events ==
+As a bartender, Creige serves a unique nectar drink for {{R|10}}, which can be purchased to heal [[Hornet (Silksong)|Hornet]] for {{Damage|3}} and restore 6 [[Silk]].
+
+After defeating [[Widow]] and releasing the residents of Bellhart, Creige's <i>[[Crawbug Clearing]]</i> wish appears on the [[wishwall]] in Bellhart. Alternatively, the wish can be taken by speaking directly with Creige. Speaking with Creige reveals that the Halfway Home is constantly troubled by the [[Craw]]s flying above, and that he wishes to build a scarecraw to scare them away. Creige then tasks Hornet with collecting 25 [[Ragpelt]] by killing the Crawbugs (dropped by Craws, [[Tallcraw]]s and [[Squatcraw]]s), and gives her a [[Crafting Kit]] as a reward for completing the wish. After returning to the Halfway Home some time later, a giant scarecrow is placed on top of the Halfway Home and the Craws that used to fly around are gone.
+
+Creige offers the [[Vintage Nectar]] for {{R|480}} for the <i>[[Great Taste of Pharloom]]</i> wish. Upon payment, Hornet must retrieve it from Creige's basement, where she is ambushed by various [[Skarr]] enemies in the [[Enemy Gauntlets (Silksong)/Greymoor 4|enemy gauntlet]].
+
+If Hornet is [[Cursed Crest|cursed]], Creige does not offer Hornet a drink, and instead insists she go to [[Yarnaby]] to get the cure. This also prevents Creige from offering the [[Vintage Nectar]].<ref>Creige: <i>"Well, don't be bringing such dangerous things in here! Head to the top of the moors. There's an old doctor up there hiding in her bell. Her remedies are said to often hurt more'n they help, but given your state, I'd say it's worth the risk."</i></ref>
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Crawbug Clearing
+| title = [[Crawbug Clearing]]
+| description = Those blasted crawbugs are fouling up my roof! I've come up with a clever solution to keep them away, but I'll need some help. Enquire at the Halfway Home if you're fit for the task.
+| objective = Hunt Crawbugs in Greymoor and collect their Ragpelt.
+| location = <b><i>[[Bellhart]] Wishwall / [[Halfway Home]] NPC</i></b>
+Creige of the Halfway Home
+| reward = [[Crafting Kit]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Harh! Well met, traveller. Lookin' for a drink, or a rest, or both?<br>
+{{HTalk|Fair greetings, good bug. The warmth of your hearth is welcome upon these wet plains.}}<br>
+Aye. It's a damp climb through these parts. Used to be just pilgrims trekkin' my way, but odd times these are, and you ain't even the strangest shell wandering about.<br>
+A rowdy old warrior stopped through not long back, caused quite a scene, and now a young lass's taken up lodging in my top room.<br>
+The lass mentioned she's on the lookout for sharp types like yourself. Maybe pay her a visit, if you haven't already?
+| Title1_Event2 = Offered a drink
+| Title1_Dialogue2 = Care for a drink, traveller? My nectar's got a kick that'll warm your shell in these sodden climes.
+| Title1_Event3 = Declining a drink
+| Title1_Dialogue3 = {{HTalk|Another time, perhaps. Among the few gifts of my birth, I find rare need for sustenance.}}<br>
+S'at so? Well the nectar's always on tap if you find yourself feelin' different.
+| Title1_Event4 = Buying a drink
+| Title1_Dialogue4 = <b>The first time:</b><br>
+S'only those few stronger pilgrims that survive to reach my home now... Pharloom's curse claims the rest. Poor sods, left to wander.<br>
+I do sometimes get to wondering... Is it the dregs of their own mind in there keepin'em walking, or something else entirely...?
+<hr/>
+<b>The second time:</b><br>
+Bellhart, over the moors, a great town I've heard it once was, heart of the path'n all, right smack in the middle of these midlands.<br>
+Now it's all a'crumble... And that brittle vein of bells is crawling with nasties. Ain't no place left in Pharloom that can fairly claim to offer safety.
+<hr/>
+<b>The third time:</b><br>
+You visited them pens up above here, miss? Horrid place, once all about growing meat or some such. Meant to keep us moorbugs livin', and working, it's told...<br>
+That damned place's long gone to the Haunting. Now the meat's running feral and free.
+| Title1_Event5 = While [[Cursed Crest|cursed]]
+| Title1_Dialogue5 = Phew. You're lookin' a bit raw there, miss. I'm thinkin' it'll take more than my nectar to fix you up.<br>
+{{HTalk|A parasite of your land has twisted itself into my shell. Its writhing is causing some discomfort.}}<br>
+{{HTalk|If not for my unique constitution, I suspect it would have already consumed me entirely.}}<br>
+Well, don't be bringing such dangerous things in here! Head to the top of the moors. There's an old doctor up there hiding in her bell.<br>
+Her remedies are said to often hurt more'n they help, but given your state, I'd say it's worth the risk.
+| Title1_Event6 = Exhausted dialogue while cursed
+| Title1_Dialogue6 = Best be visiting that doctor right quick, miss! She's up there, at the top of the moors, over toward the bellvein.<br>
+Her methods might be suspect, but you're lookin' sorely in need of service.
+| Title1_Event7 = Playing the [[Needolin]]
+| Title1_Dialogue7 = [n]
+A hearth stoked hot...<br>
+Nectar from the teat...<br>
+To sit, to rest... to stop...<br>
+Pharloom's warmth...
+
+| Title2 = Crawbug Clearing
+| Title2_Event1 = First conversation after unlocking the <i>[[Crawbug Clearing]]</i> wish
+| Title2_Dialogue1 = <b>If the wish has already been accepted from [[Bellhart]]'s [[wishwall]]:</b><br>
+{{HTalk|Barkeep, I have seen your request on the bell town's wishwall. What assistance are you seeking?}}<br>
+Ah! Perfect! You're the able sort that'll make short work of the task.<br>
+The problem is those blasted craws atop here. My roof is fast becoming their cosy nest! Now they've grown so bold they're starting to attack pilgrims as they pass.<br>
+{{HTalk|Would you simply have me slay them? Your sturdy shell seems more than up to that task.}}<br>
+If only it were so simple. Kill the ones above and more just keep coming. It's the warmth of this home you see. Draws 'em right in.<br>
+I'm looking for a long-term solution. A scarecraw! I'll build the biggest there's ever been, so fearsome it'll keep those craws away for good!<br>
+All I need is some Ragpelt from the crawbugs themselves. Hunt 'em down, collect their pelts, and bring me back a heap of the stuff. I'll do the rest!
+<hr/>
+<b>If the wish hasn't been accepted from Bellhart's wishwall:</b><br>
+Traveller, I'm not wanting to impose, but I've a wish that one of your able sort could likely grant.<br>
+{{HTalk|I've my own task to attend, good sir, but I'll hear you out.}}<br>
+It's those blasted craws atop here. My roof is fast becoming their cosy nest! Now they've grown so bold they're starting to attack pilgrims as they pass.<br>
+{{HTalk|Would you simply have them slain? If so, your sturdy shell seems more than up to that task?}}<br>
+If only it were so simple. Kill the ones above, and more just keep coming. It's the warmth of this home you see. Draws 'em right in.<br>
+I'm looking for a long-term solution. A scarecraw! I'll build the biggest there's ever been, so fearsome it'll keep those craws away for good!
+| Title2_Event2 = Declining the wish
+| Title2_Dialogue2 = Ahh. Fair enough, traveller. You've clearly got your own tasks to be on with. I'll manage, no doubt.
+| Title2_Event3 = Speaking after declining
+| Title2_Dialogue3 = Any chance you'd reconsider dealing with my blasted craw problem? I'd offer fair reward for your efforts.
+| Title2_Event4 = Accepting the wish
+| Title2_Dialogue4 = Excellent, excellent! Let's give those mangy craws the fright of their lives! Hah!<br>
+All I need is some Ragpelt from the crawbugs themselves. Hunt 'em down, collect their pelts, and bring me back a heap of the stuff. I'll do the rest!
+| Title2_Event5 = Speaking before collecting enough [[Ragpelt]]
+| Title2_Dialogue5 = If you're collecting Ragpelt from the crawbugs, those young'ns above here'll be slim pickings. It's the mature craws you want, over by the watermound. They'll drop the stuff a-plenty.<br>
+Course, you'll need to do some pointed persuading if you're planning to separate rag from bug...
+| Title2_Event6 = Exhausted dialogue before collecting enough Ragpelt
+| Title2_Dialogue6 = The sooner you've collected that Ragpelt, the better. I can't have those pests killing more potential guests.<br>
+Business is slow enough already, and clearing corpses ain't no fun at all.
+| Title2_Event7 = After collecting enough Ragpelt
+| Title2_Dialogue7 = Welcome back, traveller. How'd you get along with collecting the Ragpelt from those mangy crawbugs? Their squawking and crooing up there is starting to wear mightily on my patrons!
+| Title2_Event8 = Declining to hand over the Ragpelt
+| Title2_Dialogue8 = Hmm, holding on to them, eh? I won't ask why, but I'd sure appreciate it if you reconsider.
+| Title2_Event9 = Accepting to hand over the Ragpelt
+| Title2_Dialogue9 = {{HTalk|Here is the Ragpelt, sir. I hope the amount is sufficient for your work.}}<br>
+Aye. This should be enough. Once I find a quiet moment, I'll get straight to building that mighty scarecraw.<br>
+With a little luck, my roof should be clear of those pests when next you pass by. Thank you kindly, traveller!<br>
+As payment goes, I've got something I think you'd make good use of. A spare crafting kit.<br>
+I'd been holding onto it for someone else, but they've been gone long enough now, I know they won't be returning.<br>
+{{HTalk|Thank you sir. This is a worthy trade for my work. My tools shall attain an even sharper edge.}}
+
+| Title3 = The Great Taste of Pharloom
+| Title3_Event1 = First conversation after accepting the <i>[[Great Taste of Pharloom]]</i> wish
+| Title3_Dialogue1 = {{HTalk|Bartender, I've been tasked to acquire a nectar of significant age. Would you retain any such drink?}}<br>
+After the finer stuff, eh? Sure, I might have a few vessels left, but I can't be selling 'em cheap.<br>
+The shells in my cellar are the last left in Pharloom. Once they're gone, no bug'll ever taste such sweetness again.<br>
+| Title3_Event2 = Declining to purchase the Vintage Nectar
+| Title3_Dialogue2 = {{HTalk|For now, bartender, I cannot spare so many rosaries.}}<br>
+Suit yourself. Maybe you'd rather a pour of the cheap stuff? Give your shell a kick before you head out into our blighted lands.<br>
+| Title3_Event3 = Speaking after declining
+| Title3_Dialogue3 = Thinkin' again on the Vintage Nectar?<br>
+My price might seem steep, but I assure you, the few finer bugs who passed used to pay a lot more.<br>
+| Title3_Event4 = Accepting to purchase the Vintage Nectar
+| Title3_Dialogue4 = Aye. A fair trade. The aged stuff's down at the bottom of the cellar.<br>
+I'll trust you to collect only the vessel you're owed. I'd be grabbing it myself, but it's become a hard climb for my stiffened shell.<br>
+| Title3_Event5 = Speaking before collecting the Vintage Nectar
+| Title3_Dialogue5 = Planning to grab that Vintage Nectar? You passed a fair bundle of rosaries for the bottle, so I figured you'll be eager to see it yours.<br>
+The old stuff's down there, at the bottom of the cellar. I'll keep the trap open for you, just be swift.<br>
+| Title3_Event6 = After collecting the Vintage Nectar
+| Title3_Dialogue6 = You're back, miss! Heard a little commotion below. I trust everything went... erm, smoothly?<br>
+{{HTalk|Sir, your cellar seems to have an ant problem. I assume, in sending me down, it merely slipped your mind to mention?}}<br>
+Ah... Oh yes! Well, with your weapon, and talent, and what... I'm sure they didn't pose a problem? Ahem.<br>
+And why! I see you've collected your prize, so we've both come out well from the trade!<br>
+Enjoy your nectar, miss. No simple pilgrim will ever taste a drop so fine.
+
+| Title4 = Act 3
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = Ho, traveller! With the lands outside fresh struck by fell events, it's good to see someone still survivin'.<br>
+{{HTalk|This new curse proves a threat even to my strengthened shell. For your own safety, barkeep, I strongly suggest you remain within your walls.}}<br>
+Aye, well, you're welcome to do the same. Stay and wash the troubles away with a few bells of nectar... though, given the scale to them shakes, I'm thinkin' it might take more'n just a few.
+| Title4_Event2 = Exhausted dialogue
+| Title4_Dialogue2 = Wantin' for a drink, traveller? Might soon be the end for all'o us, so no need to go easy on the nectar.
+| Title4_Event3 = Playing the [[Needolin]]
+| Title4_Dialogue3 = [n]
+The last...nectar...<br>
+Safety...still...<br>
+Cold...<br>
+The last...warmth...<br>
+| Title5 = Written
+| Title5_Event1 = <i>[[Crawbug Clearing]]</i> wish
+| Title5_Dialogue1 = Those blasted crawbugs are fouling up my roof! I've come up with a clever solution to keep them away, but I'll need some help. Enquire at the Halfway Home if you're fit for the task.
+}}
+
+== Location ==
+Creige can be found at the [[Halfway Home]] in the central area of [[Greymoor]]. His eastern door is initially locked, requiring Hornet to climb over the roof to reach the western door and unlock it from the inside.
+
+{{Gallery
+| Image1 = Mapshot SS Creige 01.png!Location in Greymoor
+}}
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS Creige 01.png!In the Halfway Home
+| Image2 = Screenshot SS Creige 02.png!Singing
+| Image3 = Screenshot SS EDGE 07.png!Pre-release screenshot
+}}
+
+==Trivia==
+* Creige has [[Cut Content (Silksong)/Text#Creige|unused dialogue]], featuring him commenting on Haunted Bellhart.
+
+{{Localisation
+|DEname = Creige
+|DEmeaning = —
+|ESname = Creige
+|ESmeaning = —
+|FRname = Creige
+|FRmeaning = —
+|ITname = Creige
+|ITmeaning = —
+|JAname = クレイジ
+|JAromanised = Kureiji
+|JAkatakana = foreign
+|JAmeaning = Creige
+|KOname = 크레지
+|KOromanised = keureji
+|KOmeaning = Creige
+|PTname = Creige
+|PTmeaning = —
+|RUname = Крейг
+|RUromanised = Krejg
+|RUmeaning = Creige
+|TWname = 克雷吉
+|TWromanised = Kèléijí
+|TWmeaning = same
+|ZHname = 克雷吉
+|ZHromanised = Kèléijí
+|ZHmeaning = Creige
+|CODEname = HH_BARTENDER
+|CODEmeaning = <code>HH</code> stands for Halfway Home.
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

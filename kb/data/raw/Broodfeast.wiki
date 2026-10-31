@@ -1,0 +1,101 @@
+{{Navbar|page1=Broodfeast|page2=Runtfeast}}
+
+{{SS Infobox Wish
+| header1 = Hunt
+| description =
+Use tools to acquire organs of various types so Huntress may feed her brood.
+* [[Seared Organ]]
+* [[Shredded Organ]]
+* [[Skewered Organ]]
+| npc = [[Huntress]]
+| location = [[Putrified Ducts]]
+| prerequisite = Only available before [[Act 3]]
+| reward = [[Longclaw]]
+}}
+
+{{Quote
+| Would you gift organs for my brood, sssppiidderr? Upon first waking my children will be consumed with craving.
+| [[Huntress]]
+| Hr = SS
+}}
+
+<b>Broodfeast</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by speaking to [[Huntress]] at her den in [[Putrified Ducts]].
+
+== Wish ==
+Huntress needs to stockpile meat to feed her brood of eggs before they hatch and devour her out of hunger instead. She asks [[Hornet (Silksong)|Hornet]] to collect 3 types of organs for her by killing organic enemies in various ways. Almost every non-mechanical enemy in the game is compatible with this Wish.
+
+If Hornet fails to complete <i>Broodfeast</i> before [[Act 3]], Huntress is devoured by her own offspring, and the Wish is replaced by the functionally identical <i>[[Runtfeast]]</i> after speaking to [[Runt]].
+
+{{Gallery
+| Image1 = Mapshot SS Huntress 01.png!Location of Huntress in Putrified Ducts
+}}
+{{Gallery
+| Image1 = Seared Organ.png!link=Seared Organ!15 Seared Organs
+| Image2 = Shredded Organ.png!link=Shredded Organ!35 Shredded Organs
+| Image3 = Skewered Organ.png!link=Skewered Organ!10 Skewered Organs
+}}
+
+15 [[Seared Organ]]s can be obtained by roasting enemies using fiery or electrical attacks:
+
+* [[Needle]] after using [[Flintslate]]
+* [[Pimpillo]]
+* [[Wispfire Lantern]]
+* [[Voltvessels]]
+* Other sources of heat (e.g. a [[Memoria]] blown up by another Memoria's electrified explosive)
+
+35 [[Shredded Organ]]s can be harvested by tearing up enemies using jagged weapons:
+
+* [[Sawtooth Circlet]]
+* [[Cogwork Wheel]]
+* [[Delver's Drill]]
+* [[Conchcutter]]
+* [[Beast Crest]]'s downwards attack
+* [[Architect Crest]]'s downwards and [[Needle Strike]] attacks
+
+10 [[Skewered Organ]]s can be gathered by stabbing or impaling enemies with:
+
+* [[Sting Shard]] 
+* [[Longpin]]
+* [[Needle Phial]]
+
+== Reward ==
+[[File:Longclaw.png|link=Longclaw|left|frameless|50px]]
+Upon bringing all 60 organs to [[Huntress]], she rewards Hornet with the [[Longclaw]].
+
+{{Clear}}
+
+== Trivia ==
+* Despite not dying or appearing seriously wounded, defeating [[Garmond & Zaza]] with the appropriate damage will also drop the respective Organ if the Wish is active.
+
+{{Localisation
+|DEname = Brutmahl
+|DEmeaning = Brood Meal
+|ESname = Festín para la prole
+|ESmeaning = Feast for the Brood
+|FRname = Festin de la couvée
+|FRmeaning = Feast for the Brood
+|ITname = Banchetto per i Larvidi
+|ITmeaning = Feast for the Larvas
+|JAname = おぞましきエサ
+|JAromanised = Ozomashiki esa
+|JAmeaning = Disgusting Feed
+|KOname = 무리의 잔치
+|KOromanised = Muriui janchi
+|KOmeaning = Swarm's Feast 
+|PTname = Banquete da Prole
+|PTmeaning = Offspring's Feast 
+|RUname = Пир для выводка
+|RUromanised = Pir dlja vyvodka
+|RUmeaning = Feast for the Brood
+|ZHname = 育巢盛宴
+|ZHromanised = Yù cháo shèngyàn
+|ZHmeaning = Brood-nursing Feast
+|TWname = 育巢盛宴
+|TWromanised = Yù cháo shèngyàn
+|TWmeaning = same
+|CODEname = QUEST_HUNTRESS
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

@@ -1,0 +1,191 @@
+{{SS Infobox NPC
+| area = [[Mosshome]]
+| va = Lauren Koopowitz<ref>[https://www.imdb.com/title/tt10323784/characters/nm6664826/ <i>Hollow Knight: Silksong</i>] on IMDB</ref>
+| role = Quest
+| quest = [[Berry Picking]]<br>
+[[Great Taste of Pharloom]]
+|singnum=2
+}}
+
+{{Quote
+|Mmm. You can hear it, yes? Listen close. Weak, but precious. A pulse, a beat! Faint... Our very own... 
+|Moss Druid
+|Hr=SS}}
+
+The <b>Moss Druid</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are a crazed druid living in the recesses of the [[Mosshome]] above [[Bone Bottom]]. They offer the <i>[[Berry Picking]]</i> [[Wish]] and provide the [[Mossberry Stew]] for the <i>[[Great Taste of Pharloom]]</i> Wish.
+
+== Background ==
+Moss Druid hints that they might be the only one of their kind.<ref>Moss Druid: <i>"An amulet of we druids. Or me druid? No others, I think."</i></ref> They seek [[Mossberry|Mossberries]] to use in their stew. They try to listen to the rhythm of [[Pharloom]].<ref>Moss Druid: <i>"Mmmm! Is it time? Our lands shake their sorrow! For the new beat, yes? Demanding! For a new rhythm..."</i></ref> The stew's fumes give them visions, particularly about [[Skarrsinger Karmelita]], [[Nyleth]] and [[Crust King Khann]].<ref>Moss Druid: <i>"Mmm! Mmm! This is them, the precious, promised fruits!
+Drop them in, there they go, and now at last we can begin!
+Ahhh! Ahhh-ohhhh! The smell is right! Like the others! But very young! Oh, voice of the woods! Oh, dance of the queen! Oh... oh! Beat harder, let us hear it! Oh! Ohhhhhhhh!
+Mmm. Mmm! The pain... my mind aches. Why? The berries, the nasty fruits. Oh the visions!"</i></ref><ref>Moss Druid: <i>"Beating, beating... In coral, in shell... Beat beat beat! The world's rhythms... In branches, in fields! And why not here?!"</i></ref> [[Hornet (Silksong)|Hornet]] is their only friend.<ref>Moss Druid: <i>"Enough berries. We need no more. For you though, my one and only friend. My beloved. A reward!"</i></ref>
+
+== In-game Events ==
+Upon their first encounter, Moss Druid asks [[Hornet (Silksong)|Hornet]] to bring them 3 [[Mossberry|Mossberries]] for the potion they're brewing. Alternatively, the Wish can be accepted at [[Bone Bottom]]'s [[Wishwall]]. Bringing at least 3 Mossberries back to Moss Druid prompts them to reward Hornet with the [[Druid's Eye]]. Moss Druid then mentions that they will reward in [[Rosaries]] for any extra Mossberries that Hornet brings back. For each extra Mossberry delivered, the number of rosaries gained is either {{R|131}}, {{R|157}}, or {{R|173}}, with an order chosen randomly at the beginning of the game.
+
+There are 4 extra Mossberries total, and once all 4 have been delivered, Moss Druid upgrades the Druid's Eye into the [[Druid's Eyes]].
+
+During the <i>[[Great Taste of Pharloom]]</i> wish, Moss Druid gives the [[Mossberry Stew]].
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| header = <b><i>Accessible in [[Act 1]]</i></b>
+| id = Berry Picking
+| title = [[Berry Picking]]
+| description = Sweetness! Sourness! Bitterness! I need it all with hastiness! If you have the precious fruits, come to me in Mosshome and share all you have!
+| objective = Collect Mossberries from the moss-covered areas of Pharloom's lowlands.
+| location = <b><i>[[Bone Bottom]] Wishwall / [[Mosshome]] NPC</i></b>
+Druid of Mosshome
+| reward = [[Druid's Eye]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If [[Widow]] is not defeated:</b><br>
+Mm. Mmm! Who is it? An intruder! Terrible! To interrupt a humble druid as they work!<br>
+{{HTalk|I meant no intrusion, druid. The sound of your laughter drew me to investigate.}}<br>
+{{HTalk|This settlement is built around an old structure of the Weavers. Do you know of them? Do they inhabit this land still?}}<br>
+Mm? What settlement? What Weavers?! You speak nonsense!
+<hr/>
+<b>If Widow is defeated:</b><br>
+Mm. Mmm! Who is it? An intruder! Terrible! To interrupt a humble druid as they work!<br>
+{{HTalk|I meant no intrusion, druid. The sound of your laughter drew me to investigate.}}<br>
+What? Laughter? No idea what you mean. Nonsense!
+| Title1_Event2 = First encounter (Cont.)
+| Title1_Dialogue2 = <b>If Hornet has not accepted the Wish <i>[[Berry Picking]]</i> from the [[Bone Bottom]]'s [[Wishwall]]:</b><br>
+You're here, in here, so why did you send you? Hm? Did you hear my wish? Granter of wishes? You?<br>
+{{HTalk|Granter of wishes?}}<br>
+Wishes, yes! My wish! I need fruits of the world, three little darlings. I need them, so I wish! Does the kingdom not send you, little you, to grant my desire?
+<hr/>
+<b>If Hornet has accepted the Wish <i>Berry Picking</i> from the Wishwall:</b><br>
+You are my wish granter, yes? My wish! I need fruits of the world, three little darlings. I need them, so I wish!<br>
+You made the promise. A binding stronger than sin. Bring me the three Mossberries. Precious fruit! Grant my wish, and then the work begins!
+| Title1_Event3 = After completing <i>Berry Picking</i>
+| Title1_Dialogue3 = The Mossberries. Do you still hunt them, little you? My wish was granted, but clear now that more are needed! More!<br>
+Bring more Mossberries here. Mmm. Yes, we will trade. Precious rosaries for fresh berries!
+| Title1_Event4 = Refusing to give more [[Mossberry|Mossberries]]
+| Title1_Dialogue4 = You keep the fruit for yourself? For greed? Strange choice! It will only weigh you down...
+| Title1_Event5 = Agreeing to give more Mossberries
+| Title1_Dialogue5 = Mmm! Mmm! You carry a sweet, precious smell with you. A fruit! Will you trade it for rosaries?<br>
+<hr/>
+<b>When trading for {{R|173}}:</b><br>
+Mmm, the precious fruit! And... oh! Such fruit! Perfectly ripe! Perfectly fragrant! Perfectly round! Take what you have earned, much of much rosaries!<br>
+<hr/>
+<b>When trading for {{R|157}}:</b><br>
+Mmm, the precious fruit! Yes, fragrant and round. So round! For you, you who finds berries, a nice reward of rosaries!<br>
+<hr/>
+<b>When tranding for {{R|131}}:</b><br>
+Mmm, the precious fruit! Ah... but! This one is not so fresh. Rotten! Stench of death! A meagre amount of rosaries for you. As much as you deserve!<br>
+| Title1_Event6 = Having no Mossberries to give
+| Title1_Dialogue6 = Bring more Mossberries here. Mmm. Yes, we will trade. Precious rosaries for fresh berries! Seek them wherever you see the green moss grow!
+| Title1_Event7 = After trading all Mossberries
+| Title1_Dialogue7 = Mmm, the precious fruit! So precious! And perhaps now, we have enough. Enough, enough! For our work often begins, but never ends!<br>
+Ahhh! Ahhh-ohhhh! The smell again! Stronger, stronger now! But still young yet! Listen to your sisters, little one, and grow! Oh, grow!<br>
+Oh... mmm. Do they hurt you also, the visions? The stink? Nasty, horrible fruits. The pain!<br>
+Enough berries. We need no more. For you though, my one and only friend. My beloved. A reward!<br>
+Your amulet. Let me... transfuse. Yes. Your amulet's tears will flow stronger still!
+| Title1_Event8 = Exhausted dialogue, after finding all Mossberries
+| Title1_Dialogue8 = Mmm. You can hear it, yes? Listen close. Weak, but precious. A pulse, a beat! Faint... Our very own...
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 =
+[n]Beating, beating...<br>
+In coral, in shell...<br>
+Beat beat beat!<br>
+The world's rhythms...<br>
+In branches, in fields!<br>
+And why not here?!<br>
+
+| Title2 = Berry Picking
+| Title2_Event1 = Refusing the Wish
+| Title2_Dialogue1 = Granter refuses! I understand. Granter is petty, evil. Misguided! When your mind clears, return here. Return here and grant my wish!
+| Title2_Event2 = Speaking again after refusing
+| Title2_Dialogue2 = My wish. Oh my wish! I need fruits of the world, three little darlings. I need them! Does the kingdom not send you, little you, to grant my desire?
+| Title2_Event3 = Agreeing to the Wish
+| Title2_Dialogue3 = Promised, then. A binding stronger than sin. Bring me the three Mossberries. Precious fruit! Grant my wish, and then the work begins!
+| Title2_Event4 = Speaking before collecting 3 [[Mossberry|Mossberries]]
+| Title2_Dialogue4 = Mmm! Mmm. Who are you, little you? Not a wish granter. For you haven't enough fruits. Three we need, three I need! Find them, find them!
+| Title2_Event5 = After collecting 3 Mossberries
+| Title2_Dialogue5 = {{HTalk|As promised, druid, I have your berries. What is your need for such common fruits?}}<br>
+Common!? No. No... Special. Cherished. Only a druid knows it! The berries bright! For my wish. My wish so dear!
+| Title2_Event6 = Refusing to hand over the Mossberries
+| Title2_Dialogue6 = You keep the berries to yourself? All for you? Mmm. Promise breaker! Promise breaker!
+| Title2_Event7 = Agreeing to hand over the Mossberries
+| Title2_Dialogue7 = Mmm! Mmm! This is them, the precious, promised fruits!<br>
+Drop them in, there they go, and now at last we can begin!<br>
+Ahhh! Ahhh-ohhhh! The smell is right! Like the others! But very young! Oh, voice of the woods! Oh, dance of the queen! Oh... oh! Beat harder, let us hear it! Oh! Ohhhhhhhh!<br>
+Mmm. Mmm! The pain... my mind aches. Why? The berries, the nasty fruits. Oh the visions!<br>
+You, wish promiser. Wish granter. You brought me what I needed and stayed by my side. Companion through my ordeal. I could ask for nothing more.<br>
+And for the parting, a gift. An amulet of we druids. Or me druid? No others, I think.<br>
+May it ease your sorrows, wish granter. May it cry for you when no tears are left!
+
+| Title3 = The Great Taste of Pharloom
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = {{HTalk|Druid, I require a pitcher of your Mossberry Stew to satiate a gourmand of the Citadel. Will you pass some to me?}} <br>
+Mmmm! A bug who'll consume my berry brew? Strong they'd be to bear a taste so sharp! <br>
+Here is a flavour so ripe! Searing! Flavour of pleasure and pain! They too may see the visions if they taste it strong. The visions, could they see? <br>
+Grant the stew! For your bug, mmmm... to share the visions. Yes! We shall pass it!
+
+| Title4 = Act 3
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = Mmmm! Is it time? Our lands shake their sorrow! For the new beat, yes? Demanding! For a new rhythm...<br>
+{{HTalk|These quakes you feel, they are not your land's sadness, they are its collapse, one bound to happen if their source cannot be quelled.}}<br>
+What? No, no no... the beat... It is the beat our land wishes! Calls for it! Needs one new!
+| Title4_Event2 = Exhausted dialogue, after finding all [[Mossberry|Mossberries]]
+| Title4_Dialogue2 = Ohh, the world trembles! But we can hear it... beating steady... beating free...
+| Title5 = Written
+| Title5_Event1 = <i>[[Berry Picking]]</i> wish
+| Title5_Dialogue1 = Sweetness! Sourness! Bitterness! I need it all with hastiness! If you have the precious fruits, come to me in Mosshome and share all you have!
+}}
+
+== Location ==
+Moss Druid can be found in a cave in the northeast of [[Mosshome]] in [[Bone Bottom]]. The area can be accessed after binding the [[Silkspear]] skill to break through the Silk threads blocking the way.
+{{Gallery
+|Image1 = Mapshot SS Moss Druid.png!Location in Bone Bottom
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Moss Grotto 14.png!Moss Druid in their cave
+|Image2 = Screenshot SS Moss Druid 01.png!Moss Druid completing the potion
+|Image3 = Screenshot SS Moss Druid 02.png!Moss Druid reacting to Needolin
+|Image4 = File:Moss Temple Temp.png!<i>Silksong</i> reveal trailer
+}}
+
+== Trivia ==
+* Jumping into Moss Druid's cauldron will deal {{Damage|1}} to Hornet after a few seconds, and she will respawn beside it.
+* Before the release of <i>Hollow Knight: Silksong</i>, the bell on their staff noted to be of some significance.<ref name=edge>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition], p. 61.</ref>
+
+{{Localisation
+|DEname = Moosdruide
+|DEmeaning = Moss Druid
+|ESname = Druida Musgoso
+|ESmeaning = Moss Druid
+|FRname = Druide Forestier
+|FRmeaning = Forest Druid
+|ITname = Druido Muschioso
+|ITmeaning = Mossy Druid
+|JAname = 苔のドルイド
+|JAromanised = Koke no doruido
+|JAmeaning = Druid of Moss
+|KOname = 이끼 드루이드
+|KOromanised = Ikki deuruideu
+|KOmeaning = Moss Druid
+|PTname = Musgo Druida
+|PTmeaning = Moss Druid
+|RUname = Моховой друид
+|RUromanised = Moxovoj druid
+|RUmeaning = Moss Druid
+|ZHname = 苔藓德鲁伊
+|ZHromanised = Táixiǎn délǔyī
+|ZHmeaning = Moss Druid
+|CODEname = MOSSCREEP
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[es:Druida del Templo del Musgo]]

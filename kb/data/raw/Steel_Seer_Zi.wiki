@@ -1,0 +1,147 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox NPC
+| image1 = <gallery>
+Steel Seer Zi.png|Idle
+Steel Seer Zi Dormant.png|Dormant
+</gallery>
+| area = [[Blasted Steps]]
+| role = Quest
+| affiliation = [[Sula]] (vassal)<br>
+Unseen Masters<br>[[Steel Society]]
+|quest = [[A Vassal Lost]]
+|singnum=1
+}}
+
+{{Quote|Hr=SS
+| Hope!.. Pale It... For a vassal who defies the Masters?... You give Zi a thought, complex...
+| Steel Seer Zi
+}}
+
+<b>Steel Seer Zi</b> is an [[NPCs (Silksong)|NPC]] who appears in <i>[[Hollow Knight: Silksong]]</i>, exclusively in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]. A steel child of the [[Steel Society]], she is located at the far eastern edge of the [[Blasted Steps]] and gives the <i>[[A Vassal Lost]]</i> [[wish]].
+
+== Background ==
+Zi resides in a small hidden area in the [[Blasted Steps]] and has unseen Masters to whom she is obedient.<ref>Steel Seer Zi: <i>"Masters... Yes... For them, Zi observes... obedient... always..."</i></ref> She shares her Masters with [[Sula]], [[Steel Soul Jinn]] and [[Confessor Jiji]]. Her vassal, Sula, betrayed their superior and Masters and fled, and Zi requires them to be found, either dead or alive, to avoid her Masters' wrath.<ref>Steel Seer Zi: <i>"Seek the vassal... Retrieve them, or their corpse... either is appropriate... either will aid... to avoid the Masters' wrath."</i></ref>
+
+== In-game Events ==
+Zi can be found dormant and can be awoken by being struck with the [[Needle]]. Zi asks [[Hornet (Silksong)|Hornet]] to find her lost vassal by offering the <i>[[A Vassal Lost]]</i> wish. Upon completing the wish, she gifts Hornet [[Growstone]].
+{{Clear}}
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = A Vassal Lost
+| title = [[File:Steel Quest Icon.png|100px]]<br>[[A Vassal Lost|STEEL:<br>A Vassal Lost]]
+| description = "Creature, higher... It has been sent... by Masters served... to retrieve Zi's vassal lost?"
+| objective = Investigate the resting sites marked by Steel Seer Zi to uncover the location of her vassal.
+| location = <b><i>[[Blasted Steps]] NPC</i></b>
+Steel Seer Zi
+| reward = [[Growstone]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = ...Bug... Higher... It has come seeking... Zi is found... She is awoken.<br>
+{{HTalk|Greetings, child of steel. I have known your type, in past. From your presence, it is clear this land too has caught the long gaze of your Masters.}}<br>
+Masters... Yes... For them, Zi observes... obedient... always...<br>
+And you... a creature in half... Pale It... Bug It... old... stubborn... alone... You too are observed.
+| Title1_Event2 = Getting offered the wish
+| Title1_Dialogue2 = <b>If Hornet does not have a [[Map and Quill (Silksong)|map]]:</b><br>
+...Creature, higher... Its meeting, Zi's awakening... It is not chance... It has been sent, by Masters served?... To retrieve her vassal lost?<br>
+But no... pale It cannot.. First, a chart is needed. Pale It must acquire one. Only then can Zi provide the marks... Their vassal's location sensed strong.
+<hr/>
+<b>If Hornet has a map:</b><br>
+...Creature, higher... Its meeting. Zi's awakening... It is not chance... It has been sent to Zi, yes? By Masters served?... To retrieve her vassal lost?
+| Title1_Event3 = Declining the wish
+| Title1_Dialogue3 = Pale It... You would reject the role? Are you not tamed, bound, by Masters?... You would know... obedience is essential.<br>
+Recall, the fate of those who defy... Even you higher... Especially you higher...<br>
+...Compression... We have suffered it. We would never wish it upon another.
+| Title1_Event4 = Speaking again
+| Title1_Dialogue4 = <b>While having no map:</b><br>
+Creature, higher... return when a chart is acquired. A chart is needed, essential, to serve the Masters... to aid Zi.
+<hr/>
+<b>After declining:</b><br>
+Creature, higher... It has been sent... by Masters served... to retrieve Zi's vassal lost?<br>
+| Title1_Event5 = Accepting the wish
+| Title1_Dialogue5 = {{HTalk|Not for your Masters, but by my own will I may aid you, Zi, as long as the path permits.}}<br>
+{{HTalk|Of your vassal, I have met one before, a scurrilous, scheming sort, and well able to remain hidden.}}<br>
+{{HTalk|If your own servant shares similar disposition, they may prove hard to retrieve. Where would you advise I begin my search?}}<br>
+Zi has sensed their movement... She knows their places of rest. For pale It... Zi shall mark their chart.<br>
+Seek the vassal... Retrieve them, or their corpse... either is appropriate... either will aid... to avoid the Masters' wrath.
+| Title1_Event6 = Exhausted dialogue while quest is active
+| Title1_Dialogue6 = Find the vassal... pale It. Return them to us... Save us both from the Masters' wrath.<br>
+| Title1_Event7 = After defeating [[Summoned Saviour]] and talking to [[Sula]]
+| Title1_Dialogue7 = {{HTalk|Zi, your vassal is gone, alive, fled beyond these lands.}}<br>
+{{HTalk|I chose to allow their escape, even if your wish may not be granted.}}<br>
+The wish? No... pale It... Zi sensed clear your meeting... The rite... The vassal is tarnished. They have touched the dark. By the Masters, they will now be hunted... no matter the distance fled.<br>
+{{HTalk|Perhaps, for your vassal, that is preferable? Waste here in servitude or flee free. They made their choice, and proclaimed it clear by their black action.}}<br>
+{{HTalk|Their dark champion is slain, but luck or guile may yet see them survive.}}<br>
+Hope!.. Pale It... For a vassal who defies the Masters?... You give Zi a thought, complex...<br>
+The outcome is different... and Zi must now observe alone... but this may be the better way?<br>
+Zi shall accept the happening... shall pray the Masters still see her loyal... and Zi too will share the hope... that her vassal lives long unbound.<br>
+A small gift for you, pale It... for the thought, complex... rock of the home spear... and of Zi's birth. May it aid your further action in this land.
+| Title1_Event8 = Exhausted dialogue after completing the wish
+| Title1_Dialogue8 = Zi must watch, record... and wait... Always she is true to her function... Ore-bound... To duty.
+| Title1_Event9 = Playing the [[Needolin]]
+| Title1_Dialogue9 = [n]Watch long... Record clear... Remember...<br>
+Bound by purpose...<br>
+Bound by ore...<br>
+Forever... ...
+}}
+
+== Location ==
+Steel Seer Zi can be found at the far eastern edge of the [[Blasted Steps]]. A breakable wall hides a cave normally inhabited by a [[Silkeater]], but in [[Steel Soul Mode (Silksong)|Steel Soul Mode]], it instead contains a tunnel leading to Zi.
+
+{{Gallery
+| Image1 = Mapshot SS Steel Seer Zi.png!Location in the Blasted Steps
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Steel Seer Zi 02.png!Dormant
+| Image2 = Screenshot SS Steel Seer Zi 01.png!Idle
+| Image3 = Screenshot SS Steel Seer Zi 03.png!Singing
+}}
+
+== Trivia == 
+* Zi appears on the icon of the <i>Steel Soul</i> and <i>Steel Heart</i> [[Achievements (Silksong)#Challenges|achievements]].
+* While not accessible in-game, Zi's cavern is present in <abbr title="The default game mode.">Classic Mode</abbr>, but it resembles the rest of the Blasted Steps more than in Steel Soul Mode.
+{{Gallery
+| Image1 = Screenshot SS Steel Seer Zi 04.png ! Zi's cavern in Classic Mode
+}}
+* Zi is surrounded by a large rune which continuously pulsates inwards towards her. The rune's sprite is named <code>sentinel_rune</code> in the game files.
+** Its design somewhat resembles the [[Farsight]] rune, suggesting that Zi may be using a similar power to track down her vassal and sense events occurring in the world.<ref>Steel Seer Zi: <i>"Zi has sensed their movement... She knows their places of rest. For pale It... Zi shall mark their chart."</i></ref><ref>Steel Seer Zi: <i>"The wish? No... pale It... Zi sensed clear your meeting... The rite... The vassal is tarnished."</i></ref>
+** Internally, Steel Seer Zi's rune is called both "sonar" and "worldsense", supporting its similarity to Farsight.
+{{Gallery
+| Image1 = Steer Seer Zi Farsight.png ! Comparison
+}}
+
+{{Localisation
+|DEname = Stahlseherin Zi
+|DEmeaning = Steel Seer Zi
+|ESname = Vidente Acerina Zi
+|ESmeaning = Steel Seer Zi
+|FRname = Prophètesse d'Acier Zi
+|FRmeaning = Prophetess of Steel Zi
+|ITname = Veggente d'Acciaio Zi
+|ITmeaning = Seer of Steel Zi
+|JAname = 鋼鉄の知覚者ズィー
+|JAromanised = Kōtetsu no chikakusha zī
+|JAmeaning = Steel Perceiver Zi
+|KOname = 강철의 예언가 지
+|KOromanised = Gangcheolui yeeonga ji
+|KOmeaning = Steel Prophet Zi
+|PTname = Oráculo de Aço Zi
+|PTmeaning = Oracle of Steel Zi
+|RUname = Стальная провидица Цзы
+|RUromanised = Stal'naja providica Czy
+|RUmeaning = Steel Seer Zi
+|ZHname = 钢之先知梓
+|ZHromanised = Gāng zhī xiānzhī zǐ
+|ZHmeaning = Steel Seer Zi
+|CODEname = STEEL_SENTINEL
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}
+[[Category:Steel Soul Mode (Silksong)]]

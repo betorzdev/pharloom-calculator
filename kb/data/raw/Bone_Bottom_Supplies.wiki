@@ -1,0 +1,89 @@
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver supplies to the fixer Flick in Bone Bottom.
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]] NPCs
+| prerequisite = 
+* Complete <i>[[My Missing Brother]]</i>
+* Defeat the [[Bell Beast]]
+| reward = {{R|150}}
+}}
+
+{{Quote
+| Goods for the camp at base, where pilgrims' journey starts. We muchly hope this delivering goes well!
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Bone Bottom Supplies</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]]. It is unavailable in [[Act 3]].
+__NOTOC__
+
+== Delivery Item ==
+[[File:Courier's_Swag.png|link=Courier's Swag|left|thumb|100x100px]]
+The [[Courier's Swag]] has a total of 5 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Courier's Swag by Tipp & Pill to carefully deliver to [[Flick the Fixer]] in [[Bone Bottom]].
+
+This Delivery can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row. In addition, only the first completion of a Delivery contributes towards <i>[[Silk and Soul]]</i>.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png! Tipp & Pill location in Bellhart
+| Image2 = Mapshot SS Bone Bottom Wishwall.png!Flick the Fixer location in Bone Bottom
+}}
+
+== Possible routes ==
+===The Marrow route===
+This route goes through the hidden path in the [[Bellhart]] Bellway leading to [[the Marrow]] to reach Bone Bottom.
+{{Gallery
+|Image1 = Mapshot SS Bone Bottom Supplies 01.png!The Marrow route
+}}
+=== Shellwood route ===
+This route goes through [[Shellwood]] to drop down into Bone Bottom.
+{{Gallery
+|Image1 = Mapshot SS Bone Bottom Supplies 02.png!Shellwood route
+}}
+
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the supplies to Flick the Fixer, he rewards Hornet with {{R|150}}.
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 80 rosaries to 150.
+}}
+{{Localisation
+|DEname = Knochengrund-Vorräte
+|DEmeaning = Bone Bottom Supplies
+|ESname = Suministros del Valle Óseo
+|ESmeaning = Bone Valley Supplies
+|FRname = Matériaux pour Gouffre d'os
+|FRmeaning = Materials for the Chasm of Bones
+|ITname = Risorse di Bossopiano
+|ITmeaning = Bone Bottom Resources
+|JAname = 骨溜まりの物資
+|JAromanised = Hone tamari no busshi
+|JAmeaning = Bonepit Supplies
+|KOname = 뼈의 바닥 보급품
+|KOromanised = Ppyeoui badak bogeuppum
+|KOmeaning = Bottom of Bone Supply
+|PTname = Suprimentos do Vale dos Ossos
+|PTmeaning = Valley of Bone Supplies
+|RUname = Припасы для Костяной Низины
+|RUromanised = Pripasy dlja Kostjanoj Niziny
+|RUmeaning = Supplies for Bony Bottom
+|ZHname = 骸底镇补给
+|ZHromanised = Hái dǐ zhèn bǔjǐ
+|ZHmeaning = Bone Bottom Town Supplies
+|TWname = 骸底鎮補給
+|TWromanised = Hái dǐ zhèn bǔjǐ
+|TWmeaning = same
+|CODEname = QUEST_COURIER_BONEBOTTOM
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

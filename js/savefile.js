@@ -36,6 +36,8 @@
   const QU = SS.quests || require('./quests.js');
   // js/spots.js, the Map's extras and bosses; a page without it reads none.
   const SP = SS.spots || (() => { try { return require('./spots.js'); } catch (e) { return { EXTRAS: [], BOSSES: [] }; } })();
+  // js/requires.js, what the Map's marks still ask (its CHECKS, kept as needs); a page without it reads none.
+  const RQ = SS.requires || (() => { try { return require('./requires.js'); } catch (e) { return { CHECKS: [] }; } })();
   // The 'found' ways the save says (js/how.js HOW, a way's when): 'cat:id' → that check.
   const HW = SS.how || (() => { try { return require('./how.js'); } catch (e) { return { HOW: {} }; } })();
   const WHEN = [];
@@ -340,7 +342,14 @@
                           (defeatedCogworkDancers), clawline (hasHarpoonDash), enclave (visitedEnclave),
                           shakra (ShakraFinalQuestAppear), groal (DefeatedSwampShaman), sherma
                           (metShermaEnclave), ward (visitedWard), balm (shermaQuestActive), clave2
-                          (enclaveDonation2_Available) }; {} in a slot kept before the site read them */
+                          (enclaveDonation2_Available) }; {} in a slot kept before the site read them
+     and what the Map's cards read for what a mark still asks (js/requires.js):
+       needs              the indices of js/requires.js CHECKS that hold in this save: a requirement
+                          whose check is among them is met, and the card leaves it out; needsRead
+                          true (a slot kept before has none and needsRead false: the card then shows
+                          every requirement, as Free mode). The slot keeps each by its text, so a
+                          regenerated list still reads it; a check new since the slot was written
+                          isn't among them until the save is read again (shown, not hidden) */
   function game(pd, sd = null) {
     const tools = named(pd.Tools), crests = named(pd.ToolEquips), quests = named(pd.QuestCompletionData);
     // The rooms' state (sceneData), each list by room and id; the first of a repeated one.
@@ -381,6 +390,7 @@
         case 'geo': return rocks.get(c[1] + '\u0000' + c[2]) === 0;   // listed, with no hits left
         case 'any': return c.slice(1).some(has);
         case 'all': return c.slice(1).every(has);
+        case 'count': return c.slice(2).filter(has).length >= c[1];   // at least n of the checks after it (js/requires.js: n Lost Fleas)
         case 'not': return !has(c[1]);
         default: return false;
       }
@@ -504,6 +514,9 @@
       // The fights whose opening the game waits for (js/spots.js OPENS) that this game has opened.
       opens: Object.entries(SP.OPENS || {}).filter(([, o]) => has(o.check)).map(([k]) => k),
       opensRead: true,
+      // What the Map's marks ask that this game has (js/requires.js CHECKS, by index).
+      needs: (RQ.CHECKS || []).map((c, i) => (has(c) ? i : -1)).filter((i) => i >= 0),
+      needsRead: true,
       // The Map's people: the fields their rules read (js/people.js VARS), as the save has them.
       peopleVars: Object.fromEntries(PE.VARS.filter((f) => mapValue(pd[f], undefined) !== undefined).map((f) => [f, pd[f]])),
       // Whether each spot that goes by the save (js/people.js PEOPLE here, HERE: Shakra's, Jubilana's) has them
@@ -577,6 +590,7 @@
   const foundKey = (k) => { const [cat, i] = k.split(':'); const x = cat === 'piece' ? CO.PIECES[i] : cat === 'extra' ? SP.EXTRAS[i] : null; return x ? cat + ' ' + pieceKey(x) : k; };
   const FOUND_AT = new Map(WHEN.map(([k]) => [foundKey(k), k]));
   const WISH_AT = new Map(CO.WISHES.map((w, i) => [pieceKey(w), i]));
+  const NEED_AT = new Map((RQ.CHECKS || []).map((c, i) => [JSON.stringify(c), i]));
   // An extra by its key → its places in the list: a map had in two rooms is a mark in each, one check.
   const EXTRA_AT = new Map();
   SP.EXTRAS.forEach((x, i) => { const k = pieceKey(x); EXTRA_AT.set(k, [...(EXTRA_AT.get(k) || []), i]); });
@@ -602,7 +616,7 @@
     const g = game(pd, sd);
     const progress = { ...g, pieces: g.pieces.map((i) => pieceKey(CO.PIECES[i])), wishes: g.wishes.map((i) => pieceKey(CO.WISHES[i])),
       extras: [...new Set(g.extras.map((i) => pieceKey(SP.EXTRAS[i])))], lostExtras: [...new Set(g.lostExtras.map((i) => pieceKey(SP.EXTRAS[i])))], tasks: [...new Set(g.tasks.map((i) => taskKey(SP.TASKS[i])))], elsewhere: [...new Set(g.elsewhere.map((i) => taskKey(SP.TASKS[i])))],
-      foundNow: g.foundNow.map(foundKey) };
+      foundNow: g.foundNow.map(foundKey), needs: g.needs.map((i) => JSON.stringify(RQ.CHECKS[i])) };
     for (const k of [...OWNED, 'journal']) delete progress[k];
     const m = meta(pd);
     return {
@@ -617,7 +631,7 @@
     quests: [], taken: [], carried: {}, bellshrines: [], bells: [], lastJudge: false, phantom: false, caravan: 0, caravanFlags: [], caravanRead: false, doubleJump: false, laceTower: false,
     bellhomeKey: false, snareOffered: false, snarePieces: [], snareReady: false, endings: [], sentinel: {}, posting: {},
     visited: [], mapped: [], mappedRead: false, quill: true, mapAll: false, maps: [], cocoon: '', cocoonAt: [], extras: [], foundNow: [], foundRead: false, placesNow: [], placesRead: false, left: [], leftRead: false, lostExtras: [], bosses: [], coming: [], comingRead: false,
-    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false });
+    tasks: [], elsewhere: [], steelSpots: [], peopleVars: {}, peopleHere: {}, evaSlots: 0, silkshot: '', cocoonRosaries: 0, opens: [], opensRead: false, needs: [], needsRead: false });
   const parse = (v) => { try { const x = JSON.parse(v); return x && typeof x === 'object' && !Array.isArray(x) ? x : {}; } catch (e) { return {}; } };
   /* The last games read, by their keys' text: the screens ask for the game many times a render
      (Free mode's Progress, two hundred), and reading it each time took a good part of one
@@ -674,6 +688,8 @@
     out.cocoonRosaries = out.cocoon && Number.isInteger(out.cocoonRosaries) ? Math.max(0, out.cocoonRosaries) : 0;
     // A fight's opening by its key; a slot kept before says nothing (opensRead false: the card then says what opens it only).
     out.opens = out.opens.filter((k) => typeof k === 'string' && SP.OPENS && SP.OPENS[k]);
+    // The checks met by their text → today's places in js/requires.js CHECKS; one the list no longer has is dropped.
+    out.needs = [...new Set(out.needs.map((k) => NEED_AT.get(k)).filter((i) => i !== undefined))].sort((a, b) => a - b);
     out.bosses = out.bosses.filter((id) => SP.BOSSES.some((b) => b[0] === id));
     out.coming = out.coming.filter((id) => SP.BOSSES.some((b) => b[0] === id && b[4] && b[4].coming));
     // The gauntlets go by their ids, the wiki's subpages: one the list no longer has is dropped.

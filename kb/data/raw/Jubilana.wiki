@@ -1,0 +1,234 @@
+{{SS Infobox NPC
+|area = [[Choral Chambers]]<br>[[Songclave]]<br>[[Memorium]]<br>[[High Halls]]
+|role = Merchant
+|image1 = <gallery>
+Jubilana.png|Idle
+Jubilana Sitting.png|Sitting
+Jubilana Cowering.png|Cowering
+</gallery>
+|affiliation = Pilgrims<br>
+Songclave
+|singnum=2
+|quest = [[The Wandering Merchant]]<br>
+[[The Lost Merchant]]
+}}
+
+{{Quote 
+|Stop and share some of your rosaries before you go scurrying off again, dear one. I'm sure to have something that's to your liking!
+|Jubilana
+|Hr=SS
+}}
+
+<b>Jubilana</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She is a pilgrim who sells wares in various parts of [[the Citadel]] in exchange for [[Rosaries]].
+
+== Background ==
+Jubilana is an old merchant pilgrim who has completed her pilgrimage to [[the Citadel]]. She has lived here for the majority of her life, making her well acquainted with the Citadel and its castes.<ref>Jubilana: <i>"The memories of my pilgrimage have all faded now, but a life spent in the Citadel's golden halls was all I ever wished for."</i></ref><ref>Jubilana: <i>"You'd do well to avoid the dark vaults near here. They say the keepers inside were jealous hoarders even before the silken curse came down."</i></ref><ref name = jubilanatheforum>Jubilana: <i>"What a bounty's been laid out by our benefactors, those generous Conductors! Giants amongst bugs they are, all-seeing and kind!"</i></ref> A life spent in the Citadel's golden halls was all she ever wished for, so even though the place is past its prime, she regards it as holy and speaks highly of the [[Conductors]].<ref>Jubilana: <i>"S'not such a bad lot, all told. The memories of my pilgrimage have all faded now, but a life spent in the Citadel's golden halls was all I ever wished for. And lo and behold, my humble wish was granted! Certainly, the place might be a bit past its prime, but it'd be churlish of me to complain now, wouldn't it?"</i></ref><ref>Jubilana: <i>"What a calamity has befallen our holy Citadel!"</i></ref><ref name=jubilanatheforum/> She scavenges for goods to exchange for [[Rosaries]], believing that they help one survive hard times, and seeks to collect as many beads as she can before her strength fails her.<ref>[[Caretaker]]: <i>"Heard you did the savin' for our dear merchant there? I've seen her about, sneaking and scrounging, even a'fore you was ringing that bell. She's a useful sort, but don't let her age be foolin', she's still the sharpest mind for a deal. Won't be long till there's nary a rosary about this shrine that ain't found its way into her pockets."</i></ref><ref>Jubilana: <i>"Dig deep, dear one, I'll be needing a lot of rosaries to survive what's comin'!"</i></ref><ref>Jubilana: <i>"After all, I want to take lots and lots of rosaries with me when my strength finally fails!"</i></ref>
+
+== In-game Events ==
+After <i>[[The Wandering Merchant]]</i> [[wish]] is promised, Jubilana can be found in the [[Choral Chambers]], in a room northwest of the [[Whiteward]] entrance. [[Hornet (Silksong)|Hornet]] rescues her from a group of [[Haunting|haunted]] [[Choir]]bugs and suggests she head to [[Songclave]].<ref>Hornet and Jubilana dialogue: <i>"I urge you to head their way now, beside the old bell, up and over. A small settlement has formed there, and the bell, reawakened, seems to ward away the worst of the Citadel's many dangers."</i></ref> Jubilana reacts with scepticism, as she never imagined a settlement could have formed within the long-haunted Citadel halls.<ref>Jubilana: <i>"A settlement? In these long-haunted halls? Are you telling naughty little lies, dear one? Well, I suppose there's not too much danger in going and seeing the truth for meself."</i></ref> <ref>Jubilana: <i>"A settlement like this in the Citadel, nice and safe, cloistering so many bugs with minds intact! Never seen anything like it, nor even imagined such."</i></ref>
+
+In Songclave, she offers to sell goods to Hornet in exchange for [[Rosaries]]. After completing <i>[[Cloaks of the Choir]]</i> [[wish]], Jubilana commends Hornet for building such a reputation among "these simple sorts."<ref>Jubilana: <i>"Lots of stories being sung about you, dear one. Gathering supplies, saving lost bugs... all sorts of good deeds! Very clever to craft such a reputation for yourself. If you keep it up, you'll fast become a legend among these simple sorts."</i></ref> When Hornet says she has no intention of becoming a legend, Jubilana expresses surprise at her humility, but warns that her sight remains keenly trained on her.<ref>Jubilana: <i>"Is that so, dear? How humble you are! You should know though, this old pilgrim has her sight keenly trained on you! Nothing gets by old Jubilana!"</i></ref> 
+
+During <i>[[The Lost Merchant]]</i> [[wish]], Jubilana can be found in the outside section of the [[Memorium]], where she is being harassed by a flock of [[Drapefly|Drapeflies]]. After being rescued, she at first wrongfully accuses Hornet of trying to steal her goods.<ref>Jubilana: <i>"Well, well, if it isn't my very own shadow, the clever little red-cloak! You still following me around, trying to pinch away some of the goodies I sniff out?"</i></ref> Upon hearing that the residents of Songclave were worried about her due to her prolonged absence, she insists it is none of their business and that she is capable of fend for herself, but then softens, admitting that it is nice to be remembered and that she likely would not have made it without Hornet's help.<ref>Jubilana: <i>"Is that so? What a worrying bunch of busybodies they are! I'm still able to fend for meself! Hmph... and yet, perhaps 'tis a warm thing that I remain in their thoughts so. I hadn't expected that. And I can't deny that you too have done me a good turn once more. That awful flock almost had me, truth be told, and I still have to wonder at your intentions, dear one... but bless you, all the same!"</i></ref> Back in Songclave, she brings up what happened on the bridge and remarks that it has been a long time since anyone did her such a good deed.<ref>Jubilana: <i>"T'was a good deed you did up above, dear one, saving me from them screeching flocks. Not seen the like of it in a long, long time."</i></ref> Her stock is also replenished with new items.
+
+Before [[Act 3]], she can sometimes be found scavenging outside the settlement in several locations, but once Act 3 begins, she retreats to the eastern corner of Songclave and no longer ventures out.
+
+== Goods ==
+{| class="article-table formatted-table" width="100%"
+|-
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Jubilana's Description
+! style="width: 12rem;" | Requires
+|-
+! [[File:Ascendant's Grip.png|center|link=Ascendant's Grip|72x72px]]
+[[Ascendant's Grip]]
+| align="center" | {{R|350}}
+| <i>A gleaming find for you climbing types. With this in your claw, you'll be able to stick to walls for as long as you like!</i>
+|
+|-
+! [[File:Spider Strings.png|center|link=Spider Strings|72x72px]]
+[[Spider Strings]]
+| align="center" | {{R|320}}
+| <i>Hold this while makin' music and you'll soon hear its function. Amplifies song, it does! Sends it out full and bright. Ideal if you're ever planning on performing for a crowd.</i>
+| Complete <i>[[The Lost Merchant]]</i> [[wish]]
+|-
+! [[File:Mask Shard (Silksong).png|center|link=Mask Shard (Silksong)|72x72px]]
+[[Mask Shard (Silksong)|Mask Shard]]
+| align="center" | {{R|750}}
+| <i>Part of an ancient mask, or a fractured shard of someone's visage? With the full thing, you'd be better able to protect your shell.</i>
+|
+|-
+! [[File:White Key.png|center|link=White Key|72x72px]]
+[[White Key]]
+| align="center" | {{R|220}}
+| <i>Real fine key this. No doubt it'll open the way to somewhere special. Somewhere full of goodies, I'll bet. Find the lock, and it'll practically pay for itself!</i>
+| Not already obtained
+|-
+! [[File:Simple Key (Silksong).png|center|link=Simple Key (Silksong)|72x72px]]
+[[Simple Key (Silksong)|Simple Key]]
+| align="center" | {{R|650}}
+| <i>Simply forged, and simply styled. Designed to open all sorts of different locks, if they be basic enough.</i>
+|
+|-
+! [[File:Spool Extender.png|center|link=Spool Extender|72x72px]]
+[[Spool Extender]]
+| align="center" | {{R|720}}
+| <i>Stretch a spool out nice and long with this fine-wrought tool. The perfect purchase if you're planning to hoard a lot of Silk for yourself!</i>
+|
+|-
+! [[File:Spool Fragment.png|center|link=Spool Fragment|72x72px]]
+[[Spool Fragment]]
+| align="center" | {{R|500}}
+| <i>Half a spider's spool. You'd just have to find its match. Them ol' Weavers built some fine things alright. They're all long dead, but their craftwork still gleams bright.</i>
+| Complete <i>[[The Lost Merchant]]</i> [[wish]]
+|-
+! [[File:Craftmetal.png|center|link=Craftmetal|72x72px]]
+[[Craftmetal]]
+| align="center" | {{R|180}}
+| <i>Crafty types used to go all a'clamour for this metal. S'not much to look at, but I still remember its value.</i>
+| Complete <i>[[The Lost Merchant]]</i> [[wish]]
+|-
+! [[File:Choral Commandment.png|center|link=Choral Commandment|72x72px]]
+[[Choral Commandment]]
+| align="center" | {{R|180}}
+| <i>A precious order passed down by the holy conductors. Rare now to find these old texts, and rarer still to find a bug able to read 'em.</i>
+| Complete <i>[[The Lost Merchant]]</i> [[wish]]
+|-
+! [[File:Rosary String.png|center|link=Rosary String|72x72px]]
+[[Rosary String]]
+| align="center" | {{R|80}}
+| <i>How about we get your loose beads all strung up safe? I'll pinch a few for their braiding, but that's surely worth it for the peace of mind.</i>
+|
+|-
+|}
+
+{{TabbedDialogue
+
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]Long and lonely halls...<br>
+Darker now than ever before...<br>
+Gather what you can! Sweet gifts!<br>
+Hide away... holy sight...
+
+| Title2 = Songclave
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Hello again, dear one. Looks like we both made it up here, safe as told. And what a shock to find you were speaking the truth about this place!<br>
+A settlement like this in the Citadel, nice and safe, cloistering so many bugs with minds intact! Never seen anything like it, nor even imagined such.<br>
+Makes trading away all of my nice bits and baubles much easier. After all, I want to take lots and lots of rosaries with me when my strength finally fails!
+| Title2_Event2 = After completing <i>[[Cloaks of the Choir]]</i> and before <i>[[The Lost Merchant]]</i> starts
+| Title2_Dialogue2 = Lots of stories being sung about you, dear one. Gathering supplies, saving lost bugs... all sorts of good deeds!<br>
+Very clever to craft such a reputation for yourself. If you keep it up, you'll fast become a legend among these simple sorts.<br>
+{{HTalk|I've no interest in becoming one, madam. In my long life, I've known enough legends, watched them rise and fall and fade away, many times.}}<br>
+Is that so, dear? How humble you are! You should know though, this old pilgrim has her sight keenly trained on you! Nothing gets by old Jubilana!
+| Title2_Event3 = After completing <i>[[The Lost Merchant]]</i>
+| Title2_Dialogue3 = T'was a good deed you did up above, dear one, saving me from them screeching flocks. Not seen the like of it in a long, long time.<br>
+I've returned with all sorts of new goodies, too. Let's see if anything I've scavenged will fit your fancy.
+| Title2_Event4 = Exhausted dialogue
+| Title2_Dialogue4 = Stop and share some of your rosaries before you go scurrying off again, dear one. I'm sure to have something that's to your liking!
+
+| Title3 = The Wandering Merchant
+| Title3_Event1 = First encounter
+| Title3_Dialogue1 = Ooh, what a turn-up! I'd feared t'was naught but meself left sane about these halls. Seems this old bug's luck has not yet worn thin!<br>
+{{HTalk|It was more than luck that saw me to you, madam. I promised the wish of bugs concerned for your safety.}}<br>
+{{HTalk|I urge you to head their way now, beside the old bell, up and over.}}<br>
+{{HTalk|A small settlement has formed there, and the bell, reawakened, seems to ward away the worst of the Citadel's many dangers.}}<br>
+A settlement? In these long-haunted halls? Are you telling naughty little lies, dear one? Well, I suppose there's not too much danger in going and seeing the truth for meself.<br>
+Be away then, dear one, and leave me to gather up my trinkets and baubles.<br>
+If this settlement of yours truly has bugs settled safe, I'll be able to make some lucrative trades. Blessings and farewell!
+| Title3_Event2 = Exhausted dialogue
+| Title3_Dialogue2 = Off you go now, dear one. If it's my trinkets you covet, you can trade me your rosaries up at the shrine. Blessings and farewell!
+
+|Title4 = The Lost Merchant
+|Title4_Event1 = First conversation
+|Title4_Dialogue1 = Well, well, if it isn't my very own shadow, the clever little red-cloak! You still following me around, trying to pinch away some of the goodies I sniff out?<br>
+{{HTalk|You mistake my intent, ma'am, somewhat ungenerously. The pilgrims of the settlement below were worried by your long absence. It was on their behalf that I tracked you, again.}}<br>
+Is that so? What a worrying bunch of busybodies they are! I'm still able to fend for meself!<br>
+Hmph... and yet, perhaps 'tis a warm thing that I remain in their thoughts so. I hadn't expected that. And I can't deny that you too have done me a good turn once more.<br>
+That awful flock almost had me, truth be told, and I still have to wonder at your intentions, dear one... but bless you, all the same!<br>
+Now, why don't you hurry back to the shrine and let them all know what a good job you've done?<br>
+There might be a few more goodies to gather up on my way back, and I don't need you lingering around in the meantime. Blessings and farewell!
+|Title4_Event2 = Exhausted dialogue
+|Title4_Dialogue2 = There must be a few more goodies to gather up here, and I don't need you lingering around in the meantime. Blessings, and farewell!
+
+| Title5 = While scavenging
+| Title5_Event1 = In a room of the [[Choral Chambers]], adjacent to the [[Whispering Vaults]]
+| Title5_Dialogue1 = Looking for goodies of your own, dear one? You'd do well to avoid the dark vaults near here. They say the keepers inside were jealous hoarders even before the silken curse came down.<br>
+{{HTalk|You have more familiarity with the Citadel than most, madam. How long have you spent here, surviving amongst the haunted corridors?}}<br>
+Oh, long enough. S'not such a bad lot, all told. The memories of my pilgrimage have all faded now, but a life spent in the Citadel's golden halls was all I ever wished for.<br>
+And lo and behold, my humble wish was granted! Certainly, the place might be a bit past its prime, but it'd be churlish of me to complain now, wouldn't it?
+| Title5_Event2 = In [[the Forum]]
+| Title5_Dialogue2 = Ooh, I'm glad I wriggled my way over here! What a bounty's been laid out by our benefactors, those generous Conductors! Giants amongst bugs they are, all-seeing and kind!<br>
+It's beautiful here, and goodies are everywhere. Only enough for one though, deary, so don't be greedy! You know I got here first. Blessings, and farewell!
+| Title5_Event3 = Exhausted dialogue
+| Title5_Dialogue3 = If you're going to keep skulkin' around here while I work, you may as well buy something. Take a look dear one, don't be shy!
+
+| Title6 = Act 3 (Songclave)
+| Title6_Event1 = First conversation
+| Title6_Dialogue1 = What a calamity has befallen our holy Citadel! I ain't never seen anything like it in my long life.<br>
+Times like this, we must be sure to help each other. Dig deep, dear one, I'll be needing a lot of rosaries to survive what's comin'!
+| Title6_Event2 = Exhausted dialogue
+| Title6_Dialogue2 = Everything is falling apart, my dear one. Be sure to share your rosaries with me before it's too late!
+}}
+
+== Location ==
+Jubilana first appears in the [[Choral Chambers]] in a room northwest of the [[Whiteward]] entrance after the <i>[[The Wandering Merchant]]</i> [[wish]] has been promised. After being rescued, she can be found in [[Songclave]].
+
+During the <i>[[The Lost Merchant]]</i> [[wish]], Jubilana can be found in the outside section of the [[Memorium]].
+
+Jubilana may also be encountered at different locations throughout [[the Citadel]], where she sells her usual stock:
+* [[Choral Chambers]], in the room where the [[Pale Oil]] is obtained, next to the large room with many moving blocks in the [[Whispering Vaults]].
+* [[The Forum]], after completing the enemy gauntlet.
+
+{{Gallery
+|Image1=Mapshot SS Jubilana The Wandering Merchant.png!Initital location in the Choral Chambers during <i>The Wandering Merchant</i>
+|Image2=Mapshot SS Jubilana 01.png!Location of Jubilana within Songclave
+|Image3=Mapshot SS Jubilana 02.png!Location of Jubilana in the Memorium during <i>The Lost Merchant</i>
+|Image4=Mapshot SS Jubilana 03.png!Location of Jubilana scavenging in the Choral Chambers
+|Image5=Mapshot SS Jubilana 04.png!Location of Jubilana scavenging in the Forum
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Jubilana 02.png!During <i>The Wandering Merchant</i>
+|Image2=Screenshot SS Jubilana 01.png!Jubilana in Songclave
+|Image3=Screenshot SS Jubilana 03.png!During <i>The Lost Merchant</i>
+|Image4=Screenshot SS Jubilana 05.png!Scavenging in the Choral Chambers
+|Image5=Screenshot SS Jubilana 04.png!Scavenging in the High Halls Forum
+|Image6=Screenshot SS Jubilana 06.png!In Songclave during Act 3
+|Image7=Screenshot SS Jubilana 07.png!Singing in Songclave during Act 2
+}}
+
+{{Localisation
+|DEname = Jubilana
+|DEmeaning = —
+|ESname = Jubilana
+|ESmeaning = —
+|FRname = Jubilana
+|FRmeaning = —
+|ITname = Jubilana
+|ITmeaning = —
+|JAname = ジュビラナ
+|JAromanised = Jubirana
+|JAmeaning = Jubilana
+|KOname = 주빌라나
+|KOromanised = Jubillana
+|KOmeaning = Jubilana
+|PTname = Jubilana
+|PTmeaning = —
+|RUname = Юбилана
+|RUromanised = Jubilana
+|RUmeaning = Jubilana
+|TWname = 朱比拉娜
+|TWromanised = Zhūbǐlānà
+|TWmeaning = same
+|ZHname = 朱比拉娜
+|ZHromanised = Zhūbǐlānà
+|ZHmeaning = Jubilana
+|CODEname = CITY_MERCHANT
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]

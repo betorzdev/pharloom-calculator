@@ -1,0 +1,215 @@
+{{SS Infobox NPC
+| area = [[Whispering Vaults]]
+| role = Merchant
+| affiliation = [[Weavers]] (former superiors)<ref name=weavers/><br>
+[[Keepers]] (member)
+| aka= Vaultkeeper
+|quest = [[LEARN: Vaultkeeper's Melody]]
+| singnum=3
+}}
+
+{{Quote
+|No fool this Keeper. It has lived long, watched its fellows wither, but it shall not die, not yet, not while knowledge needs be sought.
+|Vaultkeeper Cardinius
+|Hr=SS
+}}
+
+<b>Vaultkeeper Cardinius</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. It<ref name=it group=Note>Cardinius almost exclusively uses "it" pronouns for itself.</ref> is a member of the [[Keepers]] and buys [[Psalm Cylinder]]s in its shop in the [[Whispering Vaults]] in exchange for [[Rosaries]].
+
+== Background ==
+Vaultkeeper Cardinius is a [[Keepers|Keeper]] of the [[Whispering Vaults]] within [[the Citadel]]. The group was tasked with collecting and storing knowledge and history of the Citadel.<ref>[[Cogwork Statues]]: <i>"We would hear the voice of the Keepers, within their grand vaults. They who guard our history, our prayers and our secrets, across the ages."</i></ref> The Vaultkeepers' authority in [[Pharloom]] was second only to the [[Weavers]].<ref name=weavers>Vaultkeeper Cardinius: <i>"Only to a first child must a Vaultkeeper defer."</i></ref>
+
+Vaultkeeper Cardinius is the only Keeper who still retains its faculties.<ref>Vaultkeeper Cardinius: <i>"Bring more for this Keeper and only this Keeper, for in this Citadel none are left possessed of such sound, sharp mind as it."</i><br>Vaultkeeper Cardinius: <i>"Jealous its fellows would be... If still their minds remained."</i></ref>
+
+== In-game Events ==
+Upon first entering Cardinius' room, parts of its body are visible and sounds of it shuffling around can be heard. It does not appear to Hornet unless a [[Psalm Cylinder]] is in the inventory. Upon entering the listening room, Cardinius confronts Hornet and demands she hand over the [[Psalm Cylinder]]. After Hornet hands it over, Cardinius realises that she is a Weaver-spawn, a kind it claims should be dead, but begrudgingly repays her for the cylinder.
+
+After this, Cardinius pays {{R|200}} for Psalm Cylinders, or {{R|320}} for the [[Sacred Cylinder]], and Hornet can play its recordings by highlighting the corresponding cylinder and pressing ATTACK in the menu.
+
+Once all cylinders are given to Cardinius, it celebrates the complete collection and concludes its agreement with Hornet. Cardinius still permits Hornet to peruse the collection and listen to the cylinders' recordings.
+
+Later, it sends a [[Gramophone]] to Bellhart, which is sold by [[Frey]]. Using this, Hornet can listen to the full collection in her [[Bellhome]].
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Sell Price
+! Description
+! width="40%" | Audio
+|-
+! rowspan=5 | [[File:Psalm Cylinder.png|72x72px|center|link=Psalm Cylinder]]
+[[Psalm Cylinder]]
+| rowspan=5 | {{R|200}}
+| <i>Voices of the Choir, raised in sacred song.</i>
+| [[File:cylinder singing.ogg|center|loop]]
+|-
+| <i>Last surgery of Conductor Mizello, performed in Whiteward's operating theatre.</i>
+| [[File:cylinder surgery.ogg|center|loop]]
+|-
+| <i>Guide track for the Choir, with a theme of ascendence.</i>
+| [[File:cylinder music box hang.ogg|center|loop]]
+|-
+| <i>Guide track for the Choir, with a theme of salvation.</i>
+| [[File:cylinder music box citadel halls.ogg|center|loop]]
+|-
+| <i>Sermon of service, delivered by an ordained Vaultkeeper to acolytes in training.</i>
+| [[File:cylinder hearing.ogg|center|loop]]
+|-
+! [[File:Sacred Cylinder.png|72x72px|center|link=Psalm Cylinder|Sacred Cylinder]]
+[[Psalm Cylinder|Sacred Cylinder]]
+| {{R|320}}
+| <i>Sacred melody of the Vaultkeepers, coveted and claimed by the pontiff below the Whispering Vaults.</i>
+| [[File:melody b musicbox gramaphone.ogg|center|loop]]
+|}
+
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = She carries a precious cylinder! She must give it! Share it! Claw to claw!<br>
+Pass it! And this Vaultkeeper shall grant their wisdom. Just a small taste! A trickle! A glimmer! Of our Citadel's sacred understandings.
+|Title1_Event2 = Refusing to give a [[Psalm Cylinder]] or the [[Sacred Cylinder]]
+|Title1_Dialogue2 = Hold them, will she? Covet them? Can she not part with such a small prize?<br>
+Remain blind fool she. This Keeper's understanding stays with itself.
+|Title1_Event3 = Speaking again after refusing to give the first cylinder
+|Title1_Dialogue3 = Rkkt! I know she has it. Keeps it. Carried coveted in her cloth. This one searched for it. Give it! Give it to us!
+|Title1_Event4 = Agreeing to give the cylinder
+|Title1_Dialogue4 = <b>The first time:</b><br>
+Yes! Yes! She gives... It is ours!<br>
+{{HTalk|I have passed the relic, Vaultkeeper. Now uphold your promise and aid me with your insight.}}<br>
+Fool! Demanding of a Vaultkeeper. Hers is impudence enough to bring death... If she did not carry the scent of Weaver-spawn.<br>
+{{HTalk|So you know something of my ancestry, learned bug. If it gains me favour here, then I'll expect your service in full.}}<br>
+Bleg! Dead! Dead, your vicious kind are meant to be. Better methinks to stay as such...<br>
+Gkkkt. But this one was taught. It shall fold its claws. It shall pass its knowledge, as much as is gleaned.<br>
+Only to a first child must a Vaultkeeper defer.<br>
+{{HTalk|Keep safe, Vaultkeeper. I may expect your service in future, and I'd not have you pass before that task is complete.}}<br>
+Gyak... No fool this Keeper. It has lived long, watched its fellows wither, but it shall not die, not yet, not while knowledge needs be sought.<br>
+This pact is made, Weaver-spawn, insight for us, both she and it.<br>
+This holy Citadel, in glory and fall, there are holes in its history, even to a Keeper's knowledge, even to the vaults.<br>
+Seek the cylinders, she must, those objects of intricate insight. Bring more for this Keeper and only this Keeper, for in this Citadel none are left possessed of such sound, sharp mind as it.
+<hr/>
+<b>After the first time:</b><br>
+Yes! A fair gift, Weaver-spawn. This Vaultkeeper shall glean what knowledge a great mind can.
+|Title1_Event5 = Speaking while having a cylinder
+|Title1_Dialogue5 = Grkkt. What has she brought it? More treasures waiting on a Keeper's insight, yes? The sacred cylinders of our holy Citadel? Pass them. Give them. Now! She must!
+|Title1_Event6 = Speaking while having no cylinders
+|Title1_Dialogue6 = {{HTalk|Show me your collection, Vaultkeeper.}}<br>
+Grkt, Weaver-spawn! She is a bother! Nuisance! Bring more gifts. The collection still has gaps!
+|Title1_Event7 = Speaking after hitting Vaultkeeper Cardinius
+|Title1_Dialogue7 = Horrid she! What fool dares strike a holy Vaultkeeper! It has knowledge! Insight! As much as any could possibly retain in our fallen age.<br>
+Would she cast it all aside just to create more death? If so, she is Weaver to the core!
+|Title1_Event8 = After all cylinders have been given
+|Title1_Dialogue8 = Yessss! See them all! Its collection gleams complete. Such sacred understanding, stored safe. <br>
+You have performed your part, Weaver-spawn... The agreement is concluded. Knowledge and rosaries, all were passed fair. No more between us. <br>
+Leave this Keeper to its treasures and their insights. It has given its service. Now this Keeper wants its time alone! 
+|Title1_Event9 = Exhausted dialogue after all cylinders have been given
+|Title1_Dialogue9 = {{HTalk|I would view your collection, Vaultkeeper.}} <br>
+She may see it. A perfect set. This Vaultkeeper is rich with insights. Jealous its fellows would be... If still their minds remained.
+|Title1_Event10 = Playing the [[Needolin]]
+|Title1_Dialogue10 = [n]Transcend this mind so limited...<br>
+Escape this shell constricting...<br>
+Through knowledge... release...<br>
+Through understanding... power...<br>
+Pharloom! Reveal your secrets...
+
+| Title2 = Vaultkeeper's Melody
+|Title2_Event1 = After the <i>[[ASCEND: Pharloom's Crown]]</i> objective is active with the [[Threefold Melody]] required
+|Title2_Dialogue1 = {{HTalk|Vaultkeeper, I am seeking a melody held by your vaults, part of a set to open a path above. Tell me what you know of it.}}<br>
+The Weaver-thing would claim our sacred melody?! How grim the age we survive to see... Vile sacrilege for it to pass to an outsider...<br>
+Only our pontiff, lived long and low within our vault, they held the melody, jealously, covetously... A learning for the highest Vaultkeeper, and them alone.<br>
+A truth they were told to have found... There in the dark. Something within the melody, or the words. Something to set them silent...<br>
+{{HTalk|I am not afraid of what I'll hear, Vaultkeeper. If your pontiff and their melody wait below, I shall find them both.}}
+| Title2_Event2 = Speaking after acquiring the [[Sacred Cylinder]]
+| Title2_Dialogue2 = {{HTalk|Vaultkeeper, I recovered a psalm cylinder in the dark chambers below here. I believe it contains the melody unique to these vaults. I would have you play it for me now.}}<br>
+Kakrt! She has visited the pontiff's depths and stolen the sacred song! Where is your respect, Weaver-spawn?! Our venerable dead deserve better than to have their chambers transgressed by your filthy foraging!<br>
+{{HTalk|In this moment, Vaultkeeper, I've slim patience for your impudence. Either prepare the cylinder and stay silent, or ready yourself to learn regret.}}
+| Title2_Event3 = Speaking after declining to give the Sacred Cylinder
+| Title2_Dialogue3 = {{HTalk|Vaultkeeper, I bring the psalm cylinder recovered from the dark chambers below here. I would learn its melody.}}<br>
+Kak! Then pass it, filthy Weaver-spawn! A cylinder so sacred should not remain a moment longer in your grubby claws!
+| Title2_Event4 = Leaving after giving the Sacred Cylinder without playing it
+| Title2_Dialogue4 = You refuse to play our sacred melody! Why pause, Weaver-thing? Do you cower at the truths it may illuminate? Surely you are not the lesser sort that bows to fear?<br>
+{{HTalk|When the moment calls, Vaultkeeper, I shall listen. For now, your task remains to keep the cylinder safe. And know, you shall answer to my blade if you fail.}}
+| Title2_Event5 = Playing the Sacred Cylinder
+| Title2_Dialogue5 = The Weaver-spawn, she has found it! Our pontiff's sacred cylinder, stolen from the dark below...<br>
+Never! States our law. Never must our melody pass to a bug not Keeper! But you, fool Weaver, would shatter those tenets with reckless ease.<br>
+{{HTalk|Your pontiff is gone, Vaultkeeper. Your fellows have fallen to husk or thread. What laws once bound these vaults died with them.}}<br>
+Ackk! Fine, cursed she. Claim the sacred song, and pain to you if we both are damned forever for it!<br>
+Divine music... The soul of Pharloom eternal laid bare... That our cursed age could still receive such blessing...<br>
+So, Weaver-spawn, our melody is yours now, held in mind to carry beyond our walls. Was the learning worth its thieving?<br>
+{{HTalk|It was, Vaultkeeper. And know to me your service continues. Keep the cylinder safe, along with any others I may bring.}}
+
+|Title3 = Act 3
+|Title3_Event1 = First conversation
+|Title3_Dialogue1 = Pain! Pain! Do you hear her cries, cursed spider-spawn!? Pharloom suffers for our pathetic, mortal ignorance! We fail it and it falls!<br>
+Knowledge is needed. More and more! It must be hoarded, sought! Strength to understand, to calm and quell.<br>
+{{HTalk|It is action now that needs taking, Vaultkeeper, by myself and those left alive who would aid me.}}<br>
+{{HTalk|Seek solutions in your texts and psalms as you may, but they alone will not be enough to heal a pain so great.}}
+
+|Title4 = Other
+|Title4_Event1 = In the north-east corner of their room
+|Title4_Dialogue1 = One must not wander idle between these sacred shelves! This is a holy place. Reverence! It is demanded.<br>
+If the fool she wishes to view this Keeper's collection, head to the listening room below.
+|Title4_Event2 = To the right of the bench in their room
+|Title4_Dialogue2 = Weaver-thing! Does she hope to spy upon our treasured records?<br>Within our vast store, always more there is to know, the old methods of prayer, to this land, to its rulers, and to the strength at its heart.
+|Title4_Event3 = Away from the listening room while the Sacred Cylinder is held
+|Title4_Dialogue3 = Interloper! On you, our pontiff's sacred melody! You have found it, hold it, and now you dally, lost like a mite in our shelves!<br>
+Return to the listening room below! The sacred cylinder can be played, and the melody of our vaults heard at last in this damned age stretched long.
+}}
+
+
+== Location ==
+Vaultkeeper Cardinius can be found in one of the eastern rooms leading off the tall central room in the [[Whispering Vaults]], south-east of [[Songclave]]. Its chamber has a sign bearing a symbol of its conical hat hanging above it.
+{{Gallery
+|Image1 = Mapshot SS Vaultkeeper Cardinius.png! Location in the Whispering Vaults
+}}
+
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Vaultkeeper Cardinius 05.png!Entrance to Cardinius's room
+|Image2 = Screenshot SS Vaultkeeper Cardinius 06.png!Appearing for the first time
+|Image3 = Screenshot SS Vaultkeeper Cardinius 01.png!Idle
+|Image4 = Screenshot SS Vaultkeeper Cardinius 07.png!Taking a cylinder from Hornet
+|Image5 = Screenshot SS Vaultkeeper Cardinius 02.png!In the eastern section of its room
+|Image6 = Screenshot SS Vaultkeeper Cardinius 04.png!In the upper section of its room
+|Image7 = Screenshot SS Vaultkeeper Cardinius 03.png!Singing
+}}
+
+== Trivia ==
+* If the gramophone within Cardinius's room is struck, the audio it plays will be distorted briefly.
+* Vaultkeeper Cardinius can be hit with the [[Needle]], doing so makes it retreat into the walls, and it does not return until Hornet re-enters the room (excluding next to the gramophone).
+* Body segments of Vaultkeeper Cardinius that can be seen around the room share sprites with those of [[Relic Seeker Scrounge]].
+
+{{Localisation
+|DEname = Glaubenshüter Cardinius
+|DEmeaning = Faith Guardian Cardinius
+|ESname = Guardián de las Bóvedas Cardinius
+|ESmeaning = Vault Guardian Cardinius (masculine)
+|FRname = Archiviste Cardinius
+|FRmeaning = Archivist Cardinius
+|ITname = Archivista Cardinius
+|ITmeaning = Archivist Cardinius
+|JAname = 貯蔵庫の管理者カーディナス
+|JAromanised = Chozōko no kanrisha kādinasu
+|JAmeaning = Repository Administrator Cardinius
+|KOname = 금고지기 카르디니우스
+|KOromanised = Geumgojigi kareudiniuseu
+|KOmeaning = Vaultkeeper Cardinius
+|PTname =  Sentinela das Câmaras Cardinius
+|PTmeaning = Chamber Sentinel Cardinius
+|RUname = Смотритель Катакомб Кардиниус
+|RUromanised = Smotritel' Katakomb Kardinius
+|RUmeaning = Catacomb Keeper Cardinius
+|TWname = 書庫管理員卡迪尼烏斯
+|TWromanised = Shūkù guǎnlǐyuán kǎdíníwūsī
+|TWmeaning = same
+|ZHname = 书库管理员卡迪尼乌斯
+|ZHromanised = Shūkù guǎnlǐyuán kǎdíníwūsī
+|ZHmeaning = Librarian Cardinius
+|CODEname = LIBRARIAN_RELIC
+}}
+
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav NPCs}}

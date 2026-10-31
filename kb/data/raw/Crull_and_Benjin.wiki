@@ -1,0 +1,186 @@
+{{SS Infobox NPC
+| label1 = Together
+| area = [[Sinner's Road]]
+| role = [[NPCs (Silksong)#Quest NPCs|Quest NPCs]]
+| quest = [[Roach Guts (Wish)|Roach Guts]]<br>[[Infestation Operation]]
+| aka = Benjin and Crull<ref name = switch>The one whose name appears on top is determined by whichever of them started the current "block of dialogue", that being lines of dialogue without Hornet speaking in between.</ref>
+| affiliation = Yarnaby (Client)<ref name="shared">[[Yarnaby]] dialogue: <i>"Two bugs hide away there, Benjin and Crull. Simple types, woefully ignorant... yet they have been useful in procuring me materials."</i></ref><br>
+|singnum = 1
+
+| label2 = Crull
+| title2 = Crull
+| image2 = <gallery>
+Crull.png|Alive
+Crull Corpse.png|Dead
+</gallery>
+| area2 = [[Sinner's Road]]
+| role2 = [[NPCs (Silksong)#Quest NPCs|Quest NPCs]]
+| quest2 = [[Roach Guts (Wish)|Roach Guts]]<br>[[Infestation Operation]]
+| affiliation2 = Yarnaby (Client)<ref name="shared"/>
+| g2 = Crull
+|singnum2 = 1
+
+| label3 = Benjin
+| image3 = Benjin.png
+| title3 = Benjin
+| area3 = [[Sinner's Road]]
+| role3 = [[NPCs (Silksong)#Quest NPCs|Quest NPCs]]
+| quest3 = [[Roach Guts (Wish)|Roach Guts]]<br>[[Infestation Operation]]
+| affiliation3 = Yarnaby (Client)<ref name="shared"/>
+| g3 = Benjin
+|singnum3 = 1
+}}
+
+{{Quote
+|Har har, life is tough all right! Benj'n here's wasting away before us, poor wretch!
+|Crull
+|Hr=SS}}
+
+<b>Crull and Benjin</b> are [[NPCs (Silksong)|NPCs]] in <i>[[Hollow Knight: Silksong]]</i>. They are a pair of retired [[Roach Tenders]] found within [[Sinner's Road]]. Crull is the larger bug and Benjin is the smaller bug.
+
+== Background ==
+Crull and Benjin are implied to have lived in Sinner's Road for some time, living off of breeding [[Muckroach|Muckroaches]].<ref>Crull and Benjin dialogue: <i>"Har har! Yer like a hatchling, Benj'n! So given to fancies! Now breedin' roaches is what keeps us from starvin'. Dangerous work, and not the finest diet, but we ain't complainin'."</i></ref> While the Roach Guts Wish is active, Benjin recalls a time where the area grew fresher food, with Crull interjecting that they now survive off of roaches for food. Crull gives Hornet the [[Tacks]], mentioning that he used them when he previously wrangled roaches.<ref name=food>Crull and Benjin dialogue: <i>"It's said the moors used to grow a bounty of fresh food, way back befores that Citadel set us about catchin' their fallin' thread."</i></ref><ref>Crull and Benjin dialogue: <i>"Still, maybe this tool is enough for you to 'member us by? A pointed weapon of me own makin', from when I used to wrangle the Muckroaches meself."</i></ref>
+
+At some point, Crull and Benjin have started procuring materials to [[Yarnaby]].<ref name=shared/>
+
+== In-Game Events ==
+Crull and Benjin can be found in [[Sinner's Road]]. After speaking to them, they offer the <i>[[Roach Guts (Wish)|Roach Guts]]</i> wish. Upon granting the wish, they give the [[Tacks]] [[tool]].
+
+While the <i>[[Infestation Operation]]</i> wish is active, Crull and Benjin sell Hornet the [[Steel Spines]] for {{R|160}}. 
+
+In [[Act 3]] their bodies can be found crushed under debris, letting Hornet take the Tacks and Steel Spines for free if she hasn't acquired them already.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Roach Guts
+| title = [[Roach Guts (Wish)|Roach Guts]]
+| description = "How 'bout you put that poker to good use then, missy? Go poach some of them roaches and get us some tasty guts? There'd be fair trade waitin' for yer!"
+| objective = Hunt the Muckroaches of Sinner's Road and collect Roach Guts from their bodies.
+| location = <b><i>[[Sinner's Road]] NPCs</i></b>
+Crull and Benjin
+| reward = [[Tacks]]
+}}
+
+{{TabbedDialogue
+| Title1 = Sinner's Road
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 = <b>Crull:</b> Oi, why you come in here, all treadin' muck? With that nasty-lookin' poker by yer side? Eh?<br>
+<b>Benjin:</b> Yeah, why you comin' in here? We ain't done nothin' wrong. We ain't all twisted like them roachkeepers!<br>
+<b>Crull:</b> She's come to kill us, Benj'n! S'the blimmin' end for us, old mate! Har har!<br>
+{{HTalk|I mean you no harm, good bugs. I cut down only those who bar my path.}}<br>
+<b>Crull:</b> That so? Well, them keepers outside ain't inclined to let strangers pass by, so you'll be makin' good use of yer poker there, missy.<br>
+| Title1_Event2 = Offered the <i>[[Roach Guts (Wish)|Roach Guts]]</i> wish 
+| Title1_Dialogue2 = {{HTalk|The roaches outside, why are they kept in pens? They seem a dangerous creature to cage or tame.}}<br>
+<b>Benjin:</b> Us moorbugs gotta eat, don't we? They're wild fast breeders, them Muckroaches. Hard shells and tough meat, if you can even crack 'em open, but options ain't plentiful so we ain't choosy. Ain't so bad to eat, once you're used to it. The guts is the best bit, but them's a choice cut and we ain't had it for ages now.<br>
+<b>Crull:</b> Har har, life is tough all right! Benj'n here's wasting away before us, poor wretch!<br>
+<b>Crull:</b> Tugs at your emotions, eh missy? How 'bout you put that poker to good use? Go poach some of them roaches and get us some tasty guts. There'd be fair trade waitin' for you.
+| Title1_Event3 = Refusing their [[Wish]]
+| Title1_Dialogue3 = <b>Crull:</b> Refuse us, do you, missy? No matter then. We'll just get back to slowly starving, har har!<br>
+| Title1_Event4 = Speaking after refusing the <i>[[Roach Guts (Wish)|Roach Guts]]</i> wish
+| Title1_Dialogue4 = <b>Crull:</b> How 'bout you put that poker to good use then, missy? Go poach some of them roaches and get us some tasty guts? There'd be fair trade waitin' for yer!<br>
+| Title1_Event5 = After accepting their Wish
+| Title1_Dialogue5 = <b>Crull:</b> Har. I reckon you don't know how much trouble you've promised yourself just now, missy. Ah well, best you get to it. Muckroaches are everywhere along these old roads. Just find a few and pluck their guts out. Easy as sin!<br>
+| Title1_Event6 = Speaking while the wish is active
+| Title1_Dialogue6 = <b>Benjin:</b> It's said the moors used to grow a bounty of fresh food, way back befores that Citadel set us about catchin' their fallin' thread. Sounds right lovely, eh missy? Always eatin', never troubled by no grumblin' belly?<br>
+<b>Crull:</b> Har har! Yer like a hatchling, Benj'n! So given to fancies! Now breedin' roaches is what keeps us from starvin'. Dangerous work, and not the finest diet, but we ain't complainin'.<br>
+<b>Crull:</b> Specially as more and more of them keepers are succumbing to the strange sickness. Only means more meat for us. Har!
+| Title1_Event7 = Speaking again
+| Title1_Dialogue7 = {{HTalk|The beasts outside and their masters alike are all ensnared by this land's silken affliction. You are lucky bugs to have not succumbed.}}<br>
+<b>Crull:</b> The Haunting? Oh, we's got that all worked out. Benj'n and me are a right pair of philosophers when we bend our minds to it. It's faith that gets you. It's all caused by being too devout!<br>
+<b>Benjin:</b> Yeah! Or maybe not bein' devout enough!<br>
+<b>Crull:</b> Or maybe it's safest not to think about it at all. Har har!
+| Title1_Event8 = Exhausted dialogue while Wish is active
+| Title1_Dialogue8 = <b>Crull:</b> We're still waitin' on them roach guts you promised us, missy. Patiently, but not too patiently, you get me?<br>
+<b>Benjin:</b> You can find the Muckroaches all 'round these roads. Cut one down and reach inside its shell to pull out the tasty guts! Mmmmm!
+| Title1_Event9 = Speaking after collecting the required [[Roach Guts]]
+| Title1_Dialogue9 = <b>Crull:</b> Ooh, someone's carrying a delectable scent! Come to deliver us what you promised, missy?
+|Title1_Event10 = Refusing to hand over the required roach guts
+|Title1_Dialogue10 = <b>Benjin:</b> Wh... why the delay? You keepin' them guts for yourself? Here, Crull, she's goin' back on her promise!<br>
+<b>Crull:</b> Har. Promises is easily broken. But then, so's a lot of other things. How 'bout you reconsider yer greed there, missy? 
+| Title1_Event11 = Handing over the required roach guts
+| Title1_Dialogue11 = <b>Benjin:</b> That smell! S'overwhelming! I ain't never seen so many roach guts at once!<br>
+<b>Crull:</b> Benj'n, me old mate, get a grip on yerself. These guts still need cuttin', and cleanin', and stewin'. You got a lotta work ahead of you.<br>
+<b>Benjin:</b> Fine by me, Crull, if it means such a feast! We'll be eatin' like they do up in the Citadel soon enough!<br>
+<b>Crull:</b> And what about you, missy? You be joinin' us for this exquisite meal?<br>
+{{HTalk|I'm afraid not, sirs. I must keep moving, and I fear the taste of such a delicacy is wasted on me.}}<br>
+<b>Crull:</b> I was hopin' as much. Two can sing, but three's too many, eh? Har har! Still, maybe this tool is enough for you to 'member us by? A pointed weapon of me own makin', from when I used to wrangle the Muckroaches meself. I bet you'll get some good use from it.
+| Title1_Event12 = Exhausted dialogue
+| Title1_Dialogue12 = <b>Crull:</b> We're all fine here, miss. Content, like. P'raps it were time you made your way, eh?<br>
+<b>Benjin:</b> Yeah, be on your way! And, erm, thanks for yer help there.
+| Title1_Event13 = Playing the Needolin
+| Title1_Dialogue13 =
+[n] Grey guts, ragged shell... <br>
+Knock me on the head, old girl! <br>
+Nothing left but dust to sell... <br>
+Sat amidst the putrid smell!
+
+| Title2 = Infestation Operation
+| Title2_Event1 = Speaking while the wish <i>[[Infestation Operation]]</i> is active
+| Title2_Dialogue1 = 
+{{HTalk| Good bugs, I am here on request of the doctor Yarnaby. She requires spines forged of steel for a crucial operation.}} <br>
+<b>Crull:</b> Argh! Look at 'er, Benj'n. She's all sick like! Coiled up tight with somethin' weird. I reckon that operation's for her herself! <br>
+<b>Benjin:</b> She's a sad sight for sure Crull, but sick or not our scrap's hard-found. If she's wantin', we's gotta be gettin' paid! <br>
+<b>Crull:</b> Ah! 'Fraid the little one speaks true, missy. You might be ailin', but we can't be offerin' charity. <br>
+<b>Crull:</b> We're stockin' the spines you need. You just gotta be ready to part with some beads!
+| Title2_Event2 = Refusing the buy the Steel Spines
+| Title2_Dialogue2 = 
+<b>Benjin:</b> Oi! You ain't got the beads? Or you just not wantin' to part with 'em? <br>
+<b>Crull:</b> Hardly the time to be a miser, missy. You're gonna be livin' sick till you buy these spines from us.
+| Title2_Event3 = Speaking after refusing the Steel Spines
+| Title2_Dialogue3 = <b>Benjin:</b> Thinkin' serious about the spines, missy? Surely your good health's worth more than a few beads!
+| Title2_Event4 = Agreeing to purchase the Steel Spines
+| Title2_Dialogue4 = 
+<b>Crull:</b> S'a pleasure doin' business, ma'am. It's only the finest scrap we're sellin'. Promise! <br>
+<b>Crull:</b> For your shell's sake, we'll be hopin' all them spines can get the job done! <br>
+| Title2_Event5 = Exhausted dialogue after buying the Steel Spines while <i>[[Infestation Operation]]</i> is active
+| Title2_Dialogue5 = <b>Crull:</b> Another trade fairly conducted, har. Those spines are sharp, and they's hardly begun to rust. Better be gettin' back to your doc to get yerself sorted out, eh?
+}}
+
+== Location ==
+Crull and Benjin can be found in a hut in [[Sinner's Road]].
+{{Gallery
+|Image1= Mapshot_SS_Crull_and_Benjin_01.png! Location in Sinner's Road
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1 = Screenshot SS Sinner's Road 06.png!Crull and Benjin's Hut
+|Image2 = Screenshot SS Sinner's Road 05.png!Crull and Benjin in their hut, Act 1-2
+|Image3 = Screenshot SS Sinner's Road 07.png!Crull and Benjin's hut in Act 3
+|Image4 = Screenshot SS Crull and Benjin 01.png!Crull and Benjin reacting to Needolin
+}}
+
+{{Localisation
+|DEname = Crull Und Benjin
+|DEmeaning = Crull and Benjin
+|ESname = Crull y Benjin
+|ESmeaning = Crull and Benjin
+|FRname = Crull Et Benjin
+|FRmeaning = Crull and Benjin
+|ITname = Crull e Benjin
+|ITmeaning = Crull and Benjin
+|JAname= クルル&ベンジン
+|JAromanised= Kururu & Benjin
+|JAkatakana = foreign
+|JAmeaning = Crull & Benjin
+|KOname = 크룰 그리고 벤진
+|KOromanised = Keulul geuligo benjin
+|KOmeaning = Crull and Benjin
+|PTname =  Crull e Benjin
+|PTmeaning = Crull and Benjin
+|RUname = Крулл и Бенджин
+|RUromanised = Krull i Bendžin
+|RUmeaning = Crull and Benjin
+|TWname = 克魯爾 & 班金
+|TWromanised = Kèlǔěr & bānjīn
+|TWmeaning = same
+|ZHname = 克鲁尔 & 班金
+|ZHromanised = Kèlǔěr & bānjīn
+|ZHmeaning = Crull & Benjin
+|CODEname = DUST_TRADERS</code> <br> <code>TRADERS
+|CODEmeaning = Refers to [[Cut Content (Silksong)/Areas#Dustroach Pens|Dustroach Pens]], an eariler version of [[Sinner's Road]].
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

@@ -93,6 +93,7 @@ function audit(dump) {
   const G = optional('gauntlets.js');
   const QU = optional('quests.js');
   const H = optional('how.js');
+  const RQ = optional('requires.js');
   if (J) (J.BOOK || []).forEach((r) => r.name && add('BOOK.' + r.id, r.name));
 
   let bad = 0, none = 0;
@@ -115,7 +116,7 @@ function audit(dump) {
     }
     for (const [k, x] of Object.entries(v)) walk(x, where + '.' + k);
   };
-  for (const [f, M] of [['data.js', D], ['enemies.js', F], ['journal.js', J], ['collectibles.js', CO], ['gauntlets.js', G], ['quests.js', QU], ['how.js', H]]) if (M) walk(M, f);
+  for (const [f, M] of [['data.js', D], ['enemies.js', F], ['journal.js', J], ['collectibles.js', CO], ['gauntlets.js', G], ['quests.js', QU], ['how.js', H], ['requires.js', RQ]]) if (M) walk(M, f);
 
   for (const p of pairs) {
     const es = map.get(low(p.en));

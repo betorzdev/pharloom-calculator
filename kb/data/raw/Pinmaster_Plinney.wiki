@@ -1,0 +1,239 @@
+{{SS Infobox NPC
+| area = [[Bellhart]]<br>[[Shellwood]]
+| role = Merchant
+| image1 = <gallery>
+Pinmaster Plinney Shop.png|At Shop
+Pinmaster Plinney.png|Outside
+Pinmaster Plinney Cowering.png|Cowering
+</gallery>
+| affiliation = [[Bellhart]] (Resident)<br>Melatolla (Romantic)<ref name=Melatolla>Plinney at the grave in Shellwood: "I had to come and say one last farewell to my sweet Melatolla"</ref>
+| quest = [[Pinmaster's Oil]]<br>[[Restoration of Bellhart]]
+| aka = Pinmaster
+| singnum=2
+}}
+{{Quote
+|Welly, ho! It is certain! Yours is a blade of finer make than most, one of few that could bear even more sharpening.
+|Pinmaster Plinney
+|Hr=SS}}
+
+<b>Pinmaster Plinney</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He provides [[Needle]] upgrades in exchange for [[Pale Oil]] and [[Rosaries]].
+
+== Background ==
+Pinmaster Plinney is a pinmaster, a profession that sharpens the weapons of Pharloom. Despite the fact that Hornet wields a Needle rather than a Pin, he is able to sharpen the Needle, increasing its damage. Plinney mentions that the pinmasters of the Citadel have long passed, and that they used Pale Oil for their work. Plinney previously had a romantic relationship with a citizen named Melatolla, whose grave is in Shellwood.<ref name=Melatolla/>
+
+== In-game Events ==
+Pinmaster Plinney is one of the residents of [[Bellhart]]. When [[Hornet (Silksong)|Hornet]] first arrives in Bellhart, Plinney's bellhome is found closed. After [[Widow]] is defeated and the residents are freed from the [[silk]] threads, Plinney returns to his work.
+
+Hornet can bring her [[Needle]] to Pinmaster Plinney to upgrade it. On the first meeting, Pinmaster Plinney upgrades her Needle to [[Needle#Upgrades|Sharpened Needle]] for free. Talking to Pinmaster Plinney again begins the [[Pinmaster's Oil]] wish. 
+
+Pinmaster Plinney can upgrade the Needle a further three times if he is provided with [[Pale Oil]] and [[Rosaries]].
+
+During [[Act 3]], Pinmaster Plinney leaves [[Bellhart]] to visit the grave of his late partner, Melatolla, in [[Shellwood]].<ref>Plinney: "T'was not Plinney's wish to abandon his dear bellfriends, but with the world now ending, I had to come and say one last farewell to my sweet Melatolla."</ref><ref>Plinney: "Ahh... how welly romantic t'would've been, had the lost pilgrims struck me down beside her grave, to lie together forever as the world crumbles all 'round..."</ref> In order to upgrade her Needle further, Hornet must find him there and rescue him from attacking enemies.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Pinmaster's Oil
+| title = [[Pinmaster's Oil]]
+| description = "Lost within that fortress above, the fabled oil of my profession... Such sharpness one could achieve..."
+| objective = Retrieve Pale Oil from the Citadel.
+| location = <b><i>[[Bellhart]] NPC</i></b>
+Pinmaster Plinney
+| reward = [[Needle#Upgrades|Needle Upgrade]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter (if [[Widow]] is defeated before Hornet has ever visited Bellhart, or if Hornet has talked to [[Lace]] in the [[Choral Chambers]])
+| Title1_Dialogue1 = By claw! Who is this bold warrior, standing so calm and cool on entrance to Plinney's bellhome!<br>
+{{HTalk|Merely a traveller, sir, though one whose blade could benefit from your service.}}<br>
+Your blade! Of course, fierce warrior! Any fine pinmaster would detect the sign of deadly work upon that needle's edge.<br>
+If your weapon sharpened would see our lands that much safer, then honour decrees it receives my care this very moment! What's say I take a look?
+| Title1_Event2 = First Encounter (if Widow is defeated after Hornet has visited Bellhart, and Hornet hasn't talked to Lace in the Choral Chambers)
+| Title1_Dialogue2 = By claw! Are you then our saviour in the shell? Standing so calm and cool on entrance to Plinney's bellhome!<br>
+{{HTalk|What clue, sir, tells of my part in your town's liberation?}}<br>
+Why your blade, fierce warrior! Any fine pinmaster would detect the sign of deadly work upon that needle's edge.<br>
+T'was a vile curse that struck here. No simple bug, nor basic pin could have granted our release. No!<br>
+That blade though, so expertly clutched in claw. That could welly have met the task. It was you who cut us free, yes?<br>
+{{HTalk|I'll grant you've sharp sight, pinmaster, and your saving is fortuitous. This blade that restored your town would now benefit from your service.}}<br>
+Welly, yes! I've a busy backlog of pins to tend, but your gracious heroism decrees that unique weapon receives my care this very moment! What's say I take a look?
+| Title1_Event3 = Refusing to sharpen Needle
+| Title1_Dialogue3 = Ahh. 'Tis your choice, warrior. If you're choosing different in times ahead, Plinney shall be here to provide eager aid.
+| Title1_Event4 = Speaking after refusing to sharpen Needle
+| Title1_Dialogue4 = Welly, yay? Reconsider my offer? Your blade would gleam at my fine skill!
+| Title1_Event5 = Accepting to sharpen Needle
+| Title1_Dialogue5 = Bonva! It is done, brave warrior. By my expert claw, your strange blade has received some fast-sharp shine. It shall cut cleaner than ever before.<br>
+{{HTalk|Your efforts provide great aid, pinmaster. You have my thanks.}}
+| Title1_Event6 = After completing all Needle upgrades
+| Title1_Dialogue6 = That blade! By claw! My finest work by far. Pharloom may ail, but across its morbid dim, your needle will shine bright.
+| Title1_Event7 = Playing the [[Needolin]]
+| Title1_Dialogue7 =[n]
+Sharper, sharper, can't you see...<br>
+All blades honed perfect as can be!<br>
+We'll work and serve until we fall...<br>
+May Pharloom's pins gleam bright for all!
+
+| Title2 = Upgrade 2
+| Title2_Event1 = Speaking after sharpening Needle the first time
+| Title2_Dialogue1 = {{HTalk|Your skills are impressive. My needle sings from your care. But I must ask, can the blade be honed further?}}<br>
+You seek further sharpening? Further than Plinney does provide? Impertinence! But... Maybe? But... No...<br>
+{{HTalk|You hesitate? Then it is possible? Are you incapable? Should I seek others within the kingdom?}}<br>
+Wait! Yes. Seek not others, but an oil, fabled and fine. With it the Citadel once brought gleaming edge and point to its pins.<br>
+Though the Citadel's pinmasters are long past, some small store of that miraculous elixir may remain within its halls.<br>
+Were even a meagre drop pilfered, and gifted upon Plinney, your blade could shine brighter still...<br>
+Just know, dear friend, the veiled bugs would be oh so unkind to the thief who'd claim that fine prize for themself.
+| Title2_Event2 = Declining wish
+| Title2_Dialogue2 = Welly, nay? Certainly you make the safer choice. Better to keep one's shell intact.
+| Title2_Event3 = Speaking after declining wish
+| Title2_Dialogue3 = Lost within that fortress above, the fabled oil of my profession... Such sharpness one could achieve...<br>
+But, oh! 'Tis an awful thing. Too cruel, the many stabbing pins you'd face in its seeking.
+| Title2_Event4 = Accepting wish
+| Title2_Dialogue4 = {{HTalk|I will find the oil, pinmaster. My needle has seen much use in this cruel kingdom, and I suspect many more battles are due. I will value your further skills upon my blade.}}<br>
+It is a dangerous wish you accept of this poor pinmaster. I welly hope this one's professional desire does not cost you your life.
+| Title2_Event5 = Exhausted dialogue after accepting wish
+| Title2_Dialogue5 = Up there, in that Citadel, the fabled oil is waiting. Bestow it upon this fine pinmaster, and your blade shall sing louder yet.<br>
+{{HTalk|I will find the oil, pinmaster. Keep your skills sharp.}}
+| Title2_Event6 = Speaking before Plinney mentions the Wish, while already having a [[Pale Oil]]
+| Title2_Dialogue6 = Welly, ho! That oil! You have it! That rare substance, hoarded close by the Citadel. Few are the pinmasters of our age that ever chanced to work its wonders.<br>
+Would you see it, traveller? The finest work of this fair pinmaster and your blade sharper still! Pass me the oil, and we can commence!
+| Title2_Event7 = Speaking after acquiring a Pale Oil
+| Title2_Dialogue7 = {{HTalk|Pinmaster, I have acquired oil with which my needle may see further sharpening.}}<br>
+Bonva! What wonder? What wish? To steal a gift so fine. Few are the pinmasters of our age who ever worked with such a substance.
+| Title2_Event8 = Refusing to give Oil
+| Title2_Dialogue8 = Welly, nay? You hold the precious oil for yourself? For what purpose do you deny a pinmaster their work? There is only I alive to work with such a wondrous substance!
+| Title2_Event9 = Speaking after refusing
+| Title2_Dialogue9 = Bonva, traveller! You have the oil! Will you allow me to work wonder upon your blade?
+| Title2_Event10 = Accepting to give Oil
+| Title2_Dialogue10 = Tarano! We shall work, now as never. What joy you grant this humble artisan, traveller. Let us seek that shine thought lost within these lands...<br>
+And now! This pinmaster must work! Let the sharpening begin!<br>
+Done, it is! Marvel of Pharloom! See how it gleams, your long, fine blade. Havast! That the pins of our land all once held such shine. So much we have lost...<br>
+{{HTalk|This is fine service, pinmaster. It has been a long age since I have seen my needle such. I had not remembered the finesse of its forging.}}<br>
+Welly, ho! It is certain! Yours is a blade of finer make than most, one of few that could bear even more sharpening.<br>
+If ever upon your long road more oil is acquired, seek my service with haste! Who knows what form we could find deeper within your weapon's sharpened steel!
+| Title2_Event11 = Exhausted dialogue
+| Title2_Dialogue11 = If ever upon your long road more oil is acquired, seek my service with haste! Who knows what form we could find deeper within your blade's sharpened steel!
+
+| Title3 = Upgrade 3
+| Title3_Event1 = Bringing more Pale Oil
+| Title3_Dialogue1 = {{HTalk|I have more oil, pinmaster. Its acquisition was no small task, but if it aids my blade, those challenges will be well rewarded.}}<br>
+Even more oil? What preposterous luck! That unseen gift, in quantity unheard, discovered by a single bug!<br>
+Would you pass the oil, traveller, and perhaps a few rosaries for the ongoing effort? Allow this pinmaster to again work wonder upon your blade?
+| Title3_Event2 = Refusing to give Oil
+| Title3_Dialogue2 = Welly, nay? You hold the precious oil for yourself? For what purpose do you deny a pinmaster their work? There is only I alive to work with such a wondrous substance!
+| Title3_Event3 = Speaking after refusing
+| Title3_Dialogue3 = Would you pass the oil, traveller, and perhaps a few rosaries for their ongoing effort? Allow this pinmaster to again work wonder upon your blade?
+| Title3_Event4 = Accepting to give Oil
+| Title3_Dialogue4 = Welly, done! What miracle to work again upon steel so fine. Few pins left in Pharloom could attain such a sheen!<br>
+You must tell me, traveller, wherever did you come upon so splendid a weapon?<br>
+{{HTalk|The blade was a gift, given by a noble tribe of my homeland. They forged the strongest steel, though it was rarely seen beyond their hive.}}<br>
+{{HTalk|That tribe has now long passed, and with them the secrets to their craft.}}<br>
+Ahhh. If they are gone, it's a rarer piece than would be guessed! But what grand luck for this humble pinmaster to have worked with such a weapon!
+| Title3_Event5 = Exhausted dialogue
+| Title3_Dialogue5 = If ever upon your long road more oil is acquired, seek my service with haste! Who knows what form we could find deeper within your blade's sharpened steel!
+
+| Title4 = Upgrade 4
+| Title4_Event1 = Bringing more Pale Oil
+| Title4_Dialogue1 = {{HTalk|Again, pinmaster, I must ask your skilled service. I bring another gland of oil.}}<br>
+Oil, so much! This bug is past surprise! It is time methinks, to see your blade's work finished! To bring about a shine bright as none before!<br>
+Welly now! Why wait? Would you have me begin, traveller?
+| Title4_Event2 = Refusing to give Oil
+| Title4_Dialogue2 = Welly, nay? You hold the precious oil for yourself? For what purpose do you deny a pinmaster their work? There is only I alive to work with such a wondrous substance!
+| Title4_Event3 = Speaking after refusing
+| Title4_Dialogue3 = Welly now! You have the oil, traveller! Allow me to bring about a shine bright as none before!
+| Title4_Event4 = Accepting to give Oil
+| Title4_Dialogue4 = That blade! By claw! It is done. Sharper than this pinmaster would have believed achievable. Shining pale and clear.<br>
+Bonva! Stranger, you have granted my wish, and more. Your blade is accomplishment to match those of great pinmasters past.<br>
+Pharloom may ail, but throughout its morbid dim, your needle will shine bright.
+
+| Title5 = Act 3
+| Title5_Event1 = After rescuing in [[Shellwood]]
+| Title5_Dialogue1 = Welly'o! What a fearful fright you've saved poor Plinney from! Such a delight, at longest last, to see that fine needle dance and sing!<br>
+{{HTalk|These are deadly roads to wander, pinmaster, especially with the black soaked threads tearing the lands apart.}}<br>
+{{HTalk|Your greatest chance for safety lies in Bellhart, with your fellows. You can protect one another, and perhaps in time rebuild.}}<br>
+Oh yes, of course! T'was not Plinney's wish to abandon his dear bellfriends, but with the world now ending, I had to come and say one last farewell to my sweet Melatolla.<br>
+I should be returning though, quite rightly. Our town will be needing a pinmaster's fine work now more than ever!
+| Title5_Event2 = Speaking again
+| Title5_Dialogue2 = Ahh... how welly romantic t'would've been, had the lost pilgrims struck me down beside her grave, to lie together forever as the world crumbles all 'round...<br>
+But fortune has claimed otherwise! And perhaps 'tis best for this humble pinmaster to continue his trade a little longer. These uncertain times will bring much new work, I should think!
+| Title5_Event3 = Exhausted dialogue
+| Title5_Dialogue3 = {{HTalk|Stay alert on your journey home, pinmaster. If you encounter other bugs upon the road, I advise you avoid them as you are able.}}
+| Title5_Event4 = Speaking after Plinney returns to [[Bellhart]]
+| Title5_Dialogue4 = {{HTalk|It is fortune to see you returned, pinmaster. The roads between here and that deep woods' grave crawl with violent foes. I had concerns for your safety.}}<br>
+Brave warrior, my hero! T'was indeed a fearful scramble home, but safe I now am! And a warmly pleasure to see you too, for the world has darkened indeed!<br>
+In such times, the task for a pinmaster is clear, to polish and sharpen and refine, suchly that the glimmer of your blade may pierce through the encroaching murk!
+| Title5_Event5 = Playing the [[Needolin]] in Shellwood
+| Title5_Dialogue5 = [n]At world's dim end, we met...<br>
+Shining moments, brief, eternal...<br>
+Claw's touch... warm whisper...<br>
+That memory... my treasure...
+| Title6 = Written
+| Title6_Event1 = [[Lore Tablets (Silksong)#Bellhart|Bellhart Lore Tablet]]
+| Title6_Dialogue1 = I have departed to pay my respects at the graves within the great wood.<br>
+- Pinmaster Plinney
+}}
+
+== Location ==
+After [[Widow]] is defeated, Pinmaster Plinney can be found in his bellhome near the top of [[Bellhart]].
+
+Upon entering [[Act 3]], he can be found missing in his bell with a note attached. He can be be found again in west part of [[Shellwood]] visiting a grave and being attacked by enemies. Upon saving him, he thanks Hornet and then appears back at his bell in Bellhart.
+
+{{Gallery
+|Image1 = Mapshot SS Pinmaster Plinney 01.png!Location in Bellhart
+|Image2 = Mapshot SS Pinmaster Plinney 02.png!Location in Shellwood in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Pinmaster Plinney 05.png!Plinney's bellhome in Haunted Bellhart
+|Image2 = Screenshot Pinmaster Plinney 02.png!Plinney's bellhome in restored Bellhart
+|Image3 = Screenshot Pinmaster Plinney 03.png!Plinney's bellhome in Act 3
+|Image4 = Screenshot SS Bellhart 10.png!Working in his bellhome
+|Image5 = Screenshot SS Pinmaster Plinney 06.png!Speaking with Hornet
+|Image6 = Screenshot SS Pinmaster Plinney 04.png!Singing
+|Image7 = Screenshot Pinmaster Plinney 01.png!Attacked in Shellwood
+|Image8 = Screenshot Pinmaster Plinney 07.png!Rescued
+|Image9 = Screenshot Pinmaster Plinney 08.png!Applauding
+|Image10 = Screenshot Pinmaster Plinney 09.png!Singing
+|Image11 = Plinney Sharpen Cinematic.mp4!First Needle sharpening
+|Image12 = Plinney Sharpen Cinematic (Oil).mp4!Needle sharpening with [[Pale Oil]]
+}}
+
+== Trivia ==
+* There is a call bell on Plinney's desk that can be rung with the Needle.
+
+{{History
+|game = SS
+|1.0.29242 (Patch 4): The cinematic of Pinmaster Plinney sharpening Hornet's needle was changed to be skippable.
+}}
+
+{{Localisation
+|DEname = Nadelmeister Plinney
+|DEmeaning = Pinmaster Plinney
+|ESname = Maestro Alfilero Plinney
+|ESmeaning = Pin Master Plinney
+|FRname = Maître Aiguiseur Plinney
+|FRmeaning = Master Sharpener Plinney
+|ITname = Mastro Spillaio Plinney
+|ITmeaning = Master Pinmaker Plinney
+|JAname = ピン鍛冶プリンネイ
+|JAromanised = Pin kaji purinnei
+|JAmeaning = Pin Smith Plinney
+|KOname = 핀 장인 플리니
+|KOromanised = Pin jangin peullini
+|KOmeaning = Pin Master Plinney or Pin Craftsman Plinney
+|PTname = Mestre Alfineteiro Plinney
+|PTmeaning = Master Pinmaker Plinney
+|RUname = Булавник Плинни
+|RUromanised = Bulavnik Plinni
+|RUmeaning = Combination of {{lang|ru|булавка}} <i>bulavka</i> (pin) and {{lang|ru|-ник}} <i>-nik</i> (suffix for professions) with {{lang|ru|Плинни}} <i>Plinni</i> (Plinney).
+|TWname = 針匠普林尼
+|TWromanised = Zhēn jiàng pǔlínní
+|TWmeaning = same
+|ZHname = 针匠普林尼
+|ZHromanised = Zhēn jiàng pǔlínní
+|ZHmeaning = Pin Smith Plinney
+|CODEname = PINSMITH
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

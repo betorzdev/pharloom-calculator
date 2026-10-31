@@ -1,0 +1,219 @@
+{{SS Infobox NPC
+| label1 = Loddie
+| area = [[The Marrow]]
+| va = [[Matthew Griffin]]<ref>[https://youtu.be/ZZUx9OOWnH0?t=24380 SILKSONG DAY 3 | A Hollow Knight Speedrunner's first Playthrough!] (6:45:44), Live Chat, Leth: <i>"I had fun with Loddie [...]"</i></ref>
+| role = Merchant
+| label2 = Assistant
+| title2 = Loddie's Assistant
+| image2= <gallery>
+Loddie's Assistant Shell.png|Shelled
+Loddie's Assistant.png|Flying
+Loddie's Assistant Game.png|During Game
+</gallery>
+| area2 = [[The Marrow]]
+| g2 = Loddie's Assistant
+| sing2 = Pilgrim Hornfly
+| singnum2 = 2
+}}
+
+{{Quote
+|Fond of frolics are you? Keen to test your aim? We'd be right honoured to play a little game with you. A little test of skill we've set up.
+|Loddie
+|Hr=SS}}
+
+<b>Loddie</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He offers a pin-throwing game in [[the Marrow]] in exchange for several rewards.
+
+== Background ==
+Loddie is a bug who hosts a [[Straight Pin]] throwing game where participants pay [[Rosaries]] for a chance to win a prize. He hosts this game to bring levity during the bad times in [[Pharloom]].<ref>Loddie: "Hopefully you enjoyed yourself! A little levity is a balm in these troubled times, don't you think?"</ref> He has a very optimistic attitude and loves playing games to bring others fun. His [[Needolin]] dialogue hints that the tribe he and his assistant are from is now gone.<ref>Loddie [[Needolin]] dialogue: "Take your aim... Life's for playing! Old tribe's gone... Let's win! Let's lose! Count your spots... Spread your wings!"</ref>
+== In-game Events ==
+
+After defeating [[Widow]], Loddie and his assistant takes up residence in the prison in [[the Marrow]]. Once Loddie moves in, the area is decorated with hanging pink-purple lights. The signs pointing to the [[Bench (Silksong)|Bench]] are covered with a purple cloth with 3 white pins, and the prison door glows with light from within.
+
+Speaking with Loddie prompts him to invite [[Hornet (Silksong)|Hornet]] to play a pin-throwing game for a prize. The rules are as follows:
+* The Setup: Hornet must stand behind (on the left of) a purple line on the ground and throw pins at a target painted on Loddie's assistant on the right.
+* The Pin: Loddie provides the pins, which function identically to the [[Straight Pin]]. Use the [[Controls (Silksong)|SKILL]] button to throw. An unlimited number of pins are provided.
+* The Rounds: Each round costs {{R|25}}. For the first 2 challenges, each round Hornet is allowed only two misses; a third miss results in an automatic failure. For the third challenge, any miss results in the game being stopped.
+
+There are three levels of challenges, and Hornet receives a reward after successfully completing each challenge:
+* First Challenge: Hit the target 15 times to win a [[Tool Pouch]] upgrade.
+* Second Challenge: Hit the target 25 times to win a [[Heavy Rosary Necklace]].
+* Third Challenge: Hit the target as many times as possible without missing. The reward is [[Rosaries]] depending on the amount of hits.
+
+The rewards for the third challenge is as follows:<ref group=code>FSM <code>Lady Bug Tiny - Gong Control</code> in <code>bone_12.bundle</code>.</ref>
+{| class="article-table"
+|-
+!Hits (H)
+!Rosaries (R)
+|-
+|From 1 to 6
+|1 rosary per hit
+|-
+|From 7 to 12
+|2 rosaries per hit
+|-
+|From 13 and up
+|3 rosaries per hit
+|}
+
+Loddie does not explain the rules about stepping over the line or the three-strike failure condition until after Hornet breaks them. After Hornet successfully completes the second challenge, Loddie states he must prepare a more difficult challenge. Revisit Loddie after Hornet has seen the [[Choral Chambers]],<ref group=code><code>GameManager.TimePasses()</code> checks <code>pinGalleriesCompleted</code> and <code>visitedCitadel</code>.</ref> and he presents Hornet with the third and final challenge. Loddie initially has {{R|380}} in his inventory,<ref group=code><code>PlayerData.PinGalleryWallet</code>.</ref> which is increased by {{R|25}} whenever Hornet pays to play the game, including the rounds for the first and second challenges. After each played round of the third challenge, Hornet is given rosaries from this inventory. If Loddie's inventory is depleted after handing over the reward, then Loddie concludes the third challenge and mentions that he is honoured to have had Hornet playing his challenges.
+
+If the prison is returned to in [[Acts|Act 3]], the ceiling is caved in and Loddie is nowhere to be found. If Hornet has not acquired the [[Tool Pouch]] upgrade from Loddie's game, it can be obtained by interacting with the desk.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 =
+Ola, ola! Welcome, my lady, so glad you found us here! I can see you're blessed with strong limbs and keen sight.<br>
+Fond of frolics are you? Keen to test your aim? We'd be right honoured to play a little game with you. A little test of skill we've set up.<br>
+{{HTalk|I've no need to test my skills, sir, nor do I have time for frivolities.}}<br>
+Oh, but we'd make it worth your while! A prize awaits you, if you can meet our challenge!<br>
+{{HTalk|If you offer a prize, that changes matters. I can meet any challenge if the reward is sufficient. What are the rules of your game?}}<br>
+Exceedingly simple, my lady! I'll provide the pins for throwing, and my associate will provide a target. Hit the target fifteen times and you'll earn yourself a worthy prize!<br>
+| Title1_Event2 = Refusing to play the challenges
+| Title1_Dialogue2 = My lady, I pray you reconsider! T'would be an honour to see those strong limbs of yours in action, truly!
+| Title1_Event3 = Speaking when the 1st challenge is not completed yet
+| Title1_Dialogue3 =
+Interested in our little game, my lady?<br>
+If you can hit the target fifteen times you'll earn yourself a worthy prize!<br>
+| Title1_Event4 = Accepting the 1st challenge
+| Title1_Dialogue4 =
+Ola, ola, time to play! Take these straight pins and strike the target when you see it!<br>
+If you can strike the target fifteen times, the prize is yours!<br>
+| Title1_Event5 = If Hornet oversteps the line
+| Title1_Dialogue5 =
+Ola, ola, ola! Perhaps I neglected to tell you not to cross past those markers? It's a law of the game, and we all abide by laws here, don't we?<br>
+Your actions have disqualified you, my lady, but we harbour no ill will! Step over here and we can begin a new round at once!<br>
+| Title1_Event6 = If Hornet misses 3 times
+| Title1_Dialogue6 =
+Ola, ola! Have to stop you there. That's three times now you've missed your mark! I'm afraid that makes you the loser of our little game, with all due respect.<br>
+Fret not though, for we never tire of playing! Step over here, and we can start another game.<br>
+| Title1_Event7 = Speaking after leaving the room in the middle of the challenge
+| Title1_Dialogue7 =
+My lady, you left our game in such a hurry! No doubt some task of great import pulled you away.<br>
+That's an instant disqualification, of course. You understand. But we don't hold it against you, not at all! Care to play again?
+| Title1_Event8 = Speaking with Loddie in the middle of the challenge
+| Title1_Dialogue8 = Hesitate not, my lady! Take aim and throw true!
+| Title1_Event9 = On winning the 1st challenge
+| Title1_Dialogue9 =
+Ola, ola! That's it then. Our lady has struck the target fifteen times! A beautiful victory!<br>
+Hopefully you enjoyed yourself! A little levity is a balm in these troubled times, don't you think?<br>
+{{HTalk|I'd have thought such games best saved for times of peace, but perhaps there is truth in what you say.}}<br>
+{{HTalk|And now that I have bested your challenge, you will produce the prize I have earned?}}<br>
+Oh... o-of course! I see you have a tool pouch of your own there. Full to bursting with baubles and trinkets, no doubt!<br>
+I'll fit another pocket onto it, so you can carry even more tools and shards with you. A fair prize, wouldn't you say?<br>
+| Title1_Event10 = Speaking after winning the 1st challenge
+| Title1_Dialogue10 =
+The frolics haven't ended, my lady! If you'd like to really test yourself, we should play again!<br>
+Hit the target twenty-five times and you'll earn yourself a beautiful necklace of rosaries! What say you?<br>
+| Title1_Event11 = Accepting the 2nd challenge
+| Title1_Dialogue11 =
+Ola, ola, time to play! Take these straight pins and strike the target when you see it!<br>
+If you can strike the target twenty-five times, the prize is yours!<br>
+| Title1_Event12 = On winning the 2nd challenge
+| Title1_Dialogue12 =
+Ola! That's... that's twenty-five times the target has been struck!<br>
+My lady... I thought perhaps you'd have a little more trouble with this round, but you've emerged victorious again.<br>
+I'll have to speak to my associate. I don't think he provided you with enough of a challenge, truth be told.<br>
+{{HTalk|It was challenge enough. My prize, sir?}}<br>
+Urk! A prize, of course! My lady must have a prize!<br>
+Here then... a lovely necklace full with rosaries. I'd been hanging onto this for a while, but you've earned it fairly.<br>
+I just hope you think of me when you wear it, my lady!<br>
+| Title1_Event13 = Speaking after winning the 2nd challenge
+| Title1_Dialogue13 =
+Well, perhaps that's enough games for now, eh?<br>
+We'll need to come up with a much trickier challenge to best you, my lady!<br>
+| Title1_Event14 = Revisiting after winning the 2nd challenge
+| Title1_Dialogue14 =
+Ola, ola! We've devised a final challenge for you, my lady, if you're interested.<br>
+Hit the target as many times as you can without missing. The more targets you hit, the more rosaries you'll win from us! Care to try?
+| Title1_Event15 = Accepting the 3rd challenge
+| Title1_Dialogue15 = Ola, ola, time to play! Take these straight pins and strike the target when you see it!
+| Title1_Event16 = Finishing 3rd challenge with 0 hits
+| Title1_Dialogue16 = And not a single target was struck... a right shame, that! We can't reward you with any rosaries, my lady, but we'd love to see you test your aim once more!
+| Title1_Event17 = Finishing 3rd challenge with at least 1 hit
+| Title1_Dialogue17 = A respectable enough effort, truly. You didn't earn enough rosaries to make a profit off us, but that should only spur you on to try again!
+| Title1_Event18 = Finishing 3rd challenge with at least 15 hits
+| Title1_Dialogue18 = Quite a lot of targets struck, and quite a lot of rosaries earned! Our lady never fails to impress us!
+| Title1_Event19 = Finishing 3rd challenge and Loddie has no rosaries left after rewarding
+| Title1_Dialogue19 =
+Erm, you may notice your prize there is a little light, my lady...<br>
+Awful truth is, you've cleaned us out. We've not a single measly rosary left between us. Turns out we were just no match for you!<br>
+{{HTalk|It was a game fairly played, sir, though I've no wish to see you destitute. Would you like to make another kind of wager, perhaps?}}<br>
+Oh no... no, not at all. Wouldn't do us any good, would it? No, it seems like this little frolic of ours is well and truly finished.<br>
+Oh, but what an honour it was to play with you, my lady! I hope you'll think of us whenever you feel those rosaries rattling around in your pockets.
+| Title1_Event20 = Speaking after the 3rd challenge is concluded
+| Title1_Dialogue20 = What an honour it was to play with you, my lady! I hope you'll think of us whenever you feel those rosaries rattling around in your pockets.
+| Title1_Event21 = Playing the [[Needolin]]
+| Title1_Dialogue21 =
+[n]
+Take your aim...<br>
+Life's for playing!<br>
+Old tribe's gone...<br>
+Let's win! Let's lose!<br>
+Count your spots...<br>
+Spread your wings!
+
+}}
+
+== Location ==
+Loddie can be found in the prison in [[the Marrow]], in the same area where [[Grindle]] used to be locked in. The prison is on the right side and near the bottom of a long vertical area to the east of the Marrow.
+
+{{Gallery
+| Image1 = Mapshot SS Marrow Prison.png
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Loddie 01.png!Sign leading to the former prison
+| Image2 = Screenshot SS Loddie 02.png!The entrance to the former prison during Act 1-2
+| Image3 = Screenshot SS Loddie's Camp Entrance 02.png!The entrance to the former prison during Act 3
+| Image4 = Screenshot SS Loddie 04.png!Loddie sitting
+| Image5 = Screenshot SS The Marrow 11.png!Loddie standing
+| Image6 = Screenshot SS Loddie 9.png!Reacting to Needolin
+| Image7 = Screenshot SS Loddie 03.png!Assistant before starting the minigame
+| Image8 = Screenshot SS Loddie 07.png!Assistant after being hit or if playing the Needolin
+| Image9 = Screenshot SS Loddie 05.png!Assistant flying during the minigame
+| Image10 = Screenshot SS Loddie 06.png!Assistant acting as a target during the minigame
+| Image11 = Screenshot SS Loddie's Camp 01.png!The former prison in Act 3
+| Image12 = Screenshot SS Loddie's Camp 02.png!The former prison in Act 3 if Loddie was cleared of rosaries in Acts 1/2
+| Image13 = Ari_SS_Sketch_30.jpg!Concept sketches
+}}
+
+==Trivia==
+* Loddie ducks down during the game if a pin is thrown at him or if the [[Needle]] is swung at him.
+
+{{Gallery
+|Image1=Screenshot SS Loddie 08.png!Swinging the Needle at Loddie during the game
+}}
+{{Localisation
+|DEname = Loddie
+|DEmeaning = —
+|ESname = Loddie
+|ESmeaning = —
+|FRname = Loddie
+|FRmeaning = —
+|ITname = Nellie
+|ITmeaning = From <i>coccinella</i> (ladybug).
+|JAname = ロディー
+|JAromanised = Rodī
+|JAkatakana = foreign
+|JAmeaning = Loddie
+|KOname = 로디
+|KOromanised = Rodi
+|KOmeaning = Loddie
+|PTname = Loddie
+|PTmeaning = —
+|RUname = Лодди
+|RUromanised = Loddi
+|RUmeaning = Loddie
+|ZHname = 洛迪
+|ZHromanised = Luòdí
+|ZHmeaning = Loddie
+|CODEname=LADY_BUG
+}}
+
+{{Refs|hr=ss}}
+== Code References ==
+<references group="code" />
+
+{{SS Nav NPCs}}

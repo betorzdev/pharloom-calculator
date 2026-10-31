@@ -1,0 +1,89 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Seek [[flea]]s across the lands of Pharloom and guide them to the [[Flea Caravan]].
+| npc = [[Fleamaster Mooshka|Mooshka]] of the Flea Caravan
+| location = [[Bone Bottom]] Wishwall<br>
+[[The Marrow]] NPC
+| prerequisite = None
+| reward = [[Flea Brew]]
+}}
+
+{{Quote
+| I am Mooshka, humble stranger to this land and master of the Flea Caravan! I wish for aid, that all fleas may travel safely together!
+| [[Fleamaster Mooshka]]
+| Hr = SS
+}}
+
+<b>The Lost Fleas</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired either from [[Bone Bottom]]'s [[Wishwall]], or by talking directly to [[Fleamaster Mooshka]] in [[the Marrow]].
+
+{{Gallery
+|Image1 = Mapshot SS Bone Bottom Wishwall.png!Location in Bone Bottom
+|Image2 = Screenshot SS Flick the Fixer 02.png!Wishwall in Bone Bottom
+}}
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Fleamaster Mooshka's location in the Marrow
+|Image2 = Screenshot SS Flea Caravan 01.png!Fleamaster Mooshka in the Marrow
+}}
+
+== Wish ==
+To complete the Wish, 5 [[Flea]]s must be rescued from across Pharloom. The special [[Huge Flea]] and NPC fleas [[Kratt]] and [[Vog]] count if they are rescued. After rescuing them, Hornet must talk to Fleamaster Mooshka, who is found at that time in [[the Marrow]].
+
+{{For|a full list of Fleas|Flea#Locations}}
+
+== Reward ==
+[[File:Flea Brew.png|link=Flea Brew|left|thumb|100x100px]]
+
+After completing the quest, Fleamaster Mooshka invites [[Hornet (Silksong)|Hornet]] to travel with the Caravan to their next destination, that being [[Greymoor]]. If Hornet does not accept, they simply depart for that destination. If Hornet accepts, she is transported there with them. If they are travelling before [[Moorwing]] has been defeated, travelling with them allows temporarily skipping this boss.
+
+Upon arriving in Greymoor, or after Hornet travels there on her own, Fleamaster Mooshka suggests talking to [[Grishkin]], who rewards her with the [[Flea Brew]].
+
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 02.png!Flear Caravan's location in Greymoor
+|Image2 = Screenshot SS Flea Caravan 03.png!Flea Caravan in Greymoor
+}}
+
+== Trivia ==
+* If the [[Huge Flea]], [[Kratt]], or [[Vog]] are among the first 5 Fleas rescued, they have unique icons in the [[Tasks]] menu screen.
+
+{{Gallery
+|Image1 = Screenshot SS Flea 01.webp ! The icon for the Huge Flea, Vog, and Kratt, alongside 2 regular Fleas
+}}
+
+{{Localisation
+|DEname = Die verirrten Flöhe
+|DEmeaning = The Lost Fleas
+|ESname = Las pulgas perdidas
+|ESmeaning = The Lost Fleas
+|FRname = Les puces perdues
+|FRmeaning = The Lost Fleas
+|ITname = Le pulci perdute
+|ITmeaning = The Lost Fleas
+|JAname = 迷子のノミたち
+|JAromanised = Maigo no nomitachi
+|JAmeaning = Lost Fleas
+|KOname = 길 잃은 벼룩들
+|KOromanised = Gil ileun byeorukdeul
+|KOmeaning = Lost Fleas or Stray Fleas
+|PTname = As Pulgas Perdidas
+|PTmeaning = The Lost Fleas
+|RUname = Потерявшиеся блохи
+|RUromanised = Poterjavšiesja bloxi
+|RUmeaning = Lost Fleas
+|TWname = 迷途跳蚤
+|TWromanised = Mítú tiàozǎo
+|TWmeaning = same
+|ZHname = 迷途跳蚤
+|ZHromanised = Mítú tiàozǎo
+|ZHmeaning = Lost Fleas
+|CODEname = QUEST_FLEAS
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Les puces perdues]]

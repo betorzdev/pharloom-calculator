@@ -1,0 +1,114 @@
+{{SS Infobox NPC
+|area = [[Bone Bottom]]
+|image1 = <gallery>
+Fearful Pilgrim.png|Alive
+Fearful Pilgrim Dead.png|Dead
+</gallery>
+|affiliation = Pilgrims
+|role=Pilgrim
+|singnum=2
+}}
+
+{{Quote
+|Hr=SS
+|Oh... you've come to hide down here too, then? 'Tis a fearful world out there. If you can keep quiet, I don't mind you joining me.
+|Fearful Pilgrim
+}}
+
+<b>Fearful Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She is found meditating in [[Bone Bottom]] [[Bellway]] station before starting her own pilgrimage.<ref>Fearful Pilgrim: <i>"I'll stay and meditate a little longer, before I start my own pilgrimage..."</i></ref>
+
+== In-game Events ==
+In their first encounter, Fearful Pilgrim assumes that [[Hornet (Silksong)|Hornet]] has also come to hide and welcomes her company, asking only that she keep quiet.<ref>Fearful Pilgrim: <i>"Oh... you've come to hide down here too, then? 'Tis a fearful world out there. If you can keep quiet, I don't mind you joining me."</i></ref> When Hornet remarks that the place resembles an abandoned transit station, the pilgrim recounts rumours about the bellveins that were once used for travel, but notes that for pilgrims such fancy transport would surely be a sin.<ref>Hornet and Fearful Pilgrim dialogue:<br>Hornet: <i>"You've chosen a curious place to rest, ma'am. This pit of bells and the structure around it... they suggest a station for travel, though one long abandoned."</i><br>Fearful Pilgrim: <i>"Aye. Rumours in the camp say these bells run throughout the lands, great veins of them, forged by our ancient kin. And some even say bugs used to travel through them, in gilded carriages no less! Surely such fanciful travel would be a sin for us pilgrims. We must walk and climb and crawl using only our own meagre claws... Only thus can we prove our devotion."</i></ref>
+
+At the next meeting, Fearful Pilgrim asks Hornet not to speak of bells and travel any more, mentioning that she is not yet ready to follow the example of other pilgrims and set off on her journey.<ref>Hornet and Fearful Pilgrim dialogue:<br>Fearful Pilgrim: <i>"Hrm? Oh, it's you again. Please, no more talk of bells or travel. I'm trying to stay hidden."</i><br>Hornet: <i>"I mean no intrusion, ma'am. Are you composing yourself here before you leave on your own journey?"</i><br>Fearful Pilgrim: <i>"Like all the others, my brothers and sisters who trudged off to die? No, I think I'll linger here a little longer with my thoughts..."</i></ref> If the game has been [[Save Data (Silksong)/Save Points|saved]] since the first encounter, and Hornet has neither defeated the [[Bell Beast]] nor visited [[the Marrow]], Fearful Pilgrim talks about the dangers of that area and marvels at the bravery of the ancient bugs that once lived there.<ref>Fearful Pilgrim: <i>"Have you heard the talk of what waits just beyond this camp? Brittle caverns of bone, the very base of Pharloom, filled with all manner of deadly creatures and jagged dangers. It's said ancient bugs once made their homes amidst it. Who could believe! In such a hostile, unstable place! In all my time, I've never met a bug so brave."</i></ref> If Hornet rides the Bell Beast to the station or summons it there, Fearful Pilgrim panics and drops to the floor to cower.<ref>Fearful Pilgrim: <i>"Beast! B-b-beast! Horrible beast!"</i></ref> Afterward, she leaves [[Bone Bottom]] the next time the game is saved, or once Hornet travels on the Bell Beast or moves two scene transitions away from the station. However, unless the game is saved while Hornet is outside the settlement, Fearful Pilgrim's camp at the [[Bellway]] station remains and disappears only after Hornet re-enters the station. There are several other triggers that also cause Fearful Pilgrim to leave:
+* Defeating [[Widow]], which takes effect after the game is saved.
+* Entering [[Bellhart]], which takes effect after the game is saved outside the room where the Bone Bottom settlement is located.
+* Visiting the Bellway station while the [[Skull Tyrant]] rampages through the settlement. As with the Bell Beast, Fearful Pilgrim's camp does not disappear at the same time as its owner, but only after Hornet re-enters the station.
+
+After Fearful Pilgrim leaves Bone Bottom, she can be found dead in the Marrow with two [[Rosaries]] lying beside her.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Oh... you've come to hide down here too, then? 'Tis a fearful world out there. If you can keep quiet, I don't mind you joining me.<br>
+{{HTalk|You've chosen a curious place to rest, ma'am. This pit of bells and the structure around it... they suggest a station for travel, though one long abandoned.}}<br>
+Aye. Rumours in the camp say these bells run throughout the lands, great veins of them, forged by our ancient kin.<br>
+And some even say bugs used to travel through them, in gilded carriages no less!<br>
+Surely such fanciful travel would be a sin for us pilgrims. We must walk and climb and crawl using only our own meagre claws... Only thus can we prove our devotion.
+| Title1_Event2 = Revisiting
+| Title1_Dialogue2 = Hrm? Oh, it's you again. Please, no more talk of bells or travel. I'm trying to stay hidden.<br>
+{{HTalk|I mean no intrusion, ma'am. Are you composing yourself here before you leave on your own journey?}}<br>
+Like all the others, my brothers and sisters who trudged off to die? No, I think I'll linger here a little longer with my thoughts...
+| Title1_Event3 = Speaking, if Hornet has already had the revisit conversation and has neither defeated Bell Beast nor entered the area beneath its arena or the section of the Marrow immediately to the right of the paid bench.
+| Title1_Dialogue3 = Have you heard the talk of what waits just beyond this camp?<br>
+Brittle caverns of bone, the very base of Pharloom, filled with all manner of deadly creatures and jagged dangers.<br>
+It's said ancient bugs once made their homes amidst it.<br>
+Who could believe! In such a hostile, unstable place! In all my time, I've never met a bug so brave.
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = Down here, you can't hear the cries of the pilgrims above, only the faintly ringing bells. I'll stay and meditate a little longer, before I start my own pilgrimage...
+| Title1_Event5 = After arriving with the Bell Beast, or calling them to the station, or if the [[Skull Tyrant]] attacks [[Bone Bottom]]
+| Title1_Dialogue5 = Beast! B-b-beast! Horrible beast!
+|Title1_Event6 = Playing the [[Needolin]]
+|Title1_Dialogue6 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...
+
+}}
+
+== Location ==
+Fearful Pilgrim is found meditating in Bone Bottom Bellway station. Her corpse can later be found in the Marrow alongside a couple of Rosaries.
+{{Gallery
+|Image1 = Mapshot SS Fearful Pilgrim.png!Location in Bone Bottom
+|Image2 = Mapshot SS Fearful Pilgrim 02.png!Corpse location in the Marrow
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Fearful Pilgrim 01.png!Idle
+|Image2 = Screenshot SS Fearful Pilgrim 05.png!Speaking with Hornet
+|Image3 = Screenshot SS Fearful Pilgrim 04.png!Singing
+|Image4 = Screenshot SS Fearful Pilgrim 06.png!Looking back
+|Image5 = Screenshot SS Fearful Pilgrim 02.png!Terrified by the Bell Beast
+|Image6 = Screenshot SS Fearful Pilgrim 07.png!Departed
+|Image7 = Screenshot SS Fearful Pilgrim 03.png!Dead in the Marrow
+}}
+
+== Trivia ==
+* It is only possible to see the Fearful Pilgrim's [[Needolin]] dialogue if none of her leave conditions are fulfilled. This means the Needolin has to be obtained by entering [[Shellwood]] from the [[Wormways]] and then defeating [[Widow]], since Bellhart cannot be entered. 
+
+{{Localisation
+|DEname = Furchtsame Pilgerin
+|DEmeaning = Fearful Pilgrim
+|ESname = Peregrina Cobarde
+|ESmeaning = Cowardly Pilgrim
+|FRname = Pèlerin Craintif
+|FRmeaning = Fearful Pilgrim
+|ITname = Pellegrina Timorosa
+|ITmeaning = Fearful Pilgrim
+|JAname = 怯えた巡礼者
+|JAromanised = Obieta junreisha
+|JAmeaning = Fearful Pilgrim<br><small>This name is identical to the Japanese name of [[Scared Pilgrim]].</small>
+|KOname = 두려운 순례자
+|KOromanised = Duryeoun sullyeja
+|KOmeaning = Fearful Pilgrim
+|PTname = Peregrina Temerosa
+|PTmeaning = Fearful Pilgrim
+|RUname = Напуганная пилигримка
+|RUromanised =  Napugannaja piligrimka
+|RUmeaning = Fearful Pilgrim
+|ZHname = 怯懦的朝圣者
+|ZHromanised = Qiènuò de cháoshèng zhě
+|ZHmeaning = Fearful Pilgrim
+|CODEname = BELLWAY_PILGRIM
+}}
+
+{{Refs|hr=ss}}
+[[pt:Peregrina Temerosa]]
+{{SS Nav NPCs}}

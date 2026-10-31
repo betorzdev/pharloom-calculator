@@ -1,0 +1,71 @@
+{{SS Infobox Wish
+| header1 = Gather
+| description = Collect Silver Bells in the bellvein tunnels above and below Bellhart.
+| npc = Residents of Bellhart
+| location = [[Bellhart]]
+| prerequisite = Defeat [[Widow]]
+| reward = [[Rosary Necklace]]
+}}
+
+{{Quote
+| When searching the bellveins carefully, you can sometimes find rare, silver bells. If we can salvage some, the material would be of great use!
+| Residents of [[Bellhart]]
+| Hr = SS
+}}
+
+<b>Silver Bells</b> is a [[Gather Wishes|Gather Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started from the wishwall in [[Bellhart]] once it becomes available.
+
+== Wish ==
+[[File:Silver Bell.png|link=Silver Bell|left|thumb|100x100px]]
+{{For|more information about the spawn mechanic|Silver Bell}}
+
+Eight [[Silver Bell]]s must be collected inside the bellvein tunnels above and below the town. Speckled throughout the tunnels are invisible spawn locations, with each having a 25% chance of dropping a Silver Bell. Equipping the [[Magnetite Dice]] increases this spawn chance to 30%.
+
+The best way to complete the wish is to move around the area in loops, picking up any Silver Bells in sight. The tunnels beneath the Bellhart [[Bellway]] are an ideal gathering spot.
+
+{{Gallery
+| Image1 = Mapshot SS Bellhart Wishwall.png!Location of the wishwall in Bellhart
+| Image2 = Screenshot SS Silver Bell 01.png!Spawn locations of Silver Bells in the upper bellveins (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+| Image3 = Screenshot SS Silver Bell 02.png!Spawn locations of Silver Bells in the lower bellveins (Composite map by [https://scripterswar.com/silksong/map RainingChain])
+}}
+
+== Reward ==
+[[File:Rosary Necklace.png|link=Rosary Necklace|left|thumb|100x100px]]
+
+After collecting eight Silver Bells and turning them in to Bellhart's wishwall, Hornet is rewarded with a [[Rosary Necklace]], which can be broken into {{R|120}}.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Silberglocken
+|DEmeaning = Silver Bells
+|ESname = Campanas de plata
+|ESmeaning = Bell of Silver
+|FRname = Cloches argentées
+|FRmeaning = Silver Bells
+|ITname = Campane d'argento
+|ITmeaning = Silver Bells
+|JAname=銀の鐘
+|JAromanised= Gin no kane
+|JAmeaning = Silver Bell
+|KOname = 은색 종
+|KOromanised = Eunsaek jong
+|KOmeaning = Silver Bell
+|PTname = Sinos de Prata
+|PTmeaning = Silver Bells
+|RUname = Серебряные колокольчики
+|RUromanised = Serebrjanye kolokol'čiki
+|RUmeaning = Silver Bells or Silver Handbells
+|ZHname = 银光铃铛
+|ZHromanised = Yínguāng língdāng
+|ZHmeaning = Silver Shine Bells
+|TWname = 銀色鈴鐺
+|TWromanised = Yínsè língdāng
+|TWmeaning = Silver Bells
+|CODEname = QUEST_SHINY_BELL_GOOMBAS
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

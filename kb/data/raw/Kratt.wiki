@@ -1,0 +1,261 @@
+{{SS Infobox NPC
+|image1=<gallery>
+Kratt.png|Idle
+Kratt Smack.png|Hurt
+Kratt Festival.png|Festival
+</gallery>
+| area = [[The Marrow]]<br>
+[[Greymoor]]<br>
+[[Blasted Steps]]<br>
+[[Fleatopia]]
+| role = Merchant
+| quest = [[The Lost Fleas]]<br>
+[[Ecstasy of the End]]
+| affiliation = [[Flea]]s<br>
+[[Flea Caravan]]
+| aka = 
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Kratt's audio files.</ref>
+| singnum = 4
+| s1 = Default
+| s2 = Default alt
+| s3 = After being slapped
+| s4 = After being slapped alt
+}}
+
+{{Quote|Hr=SS
+| Dodeshna, dear one, dodeshna! Heh heh! Have you returned to use Kratt's luxurious spa-carriage? I've kept it roastily warm for you...
+| Kratt}}
+
+<b>Kratt</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He offers a hot spa service at the [[Flea Caravan]] in exchange for [[Rosaries]].
+
+== Background ==
+Kratt previously travelled alone with his special carriage, which is later revealed to function as a spa. He sought out to join the Flea Caravan.
+
+== In-game Events ==
+Inside a cave behind a breakable wall in [[Greymoor]], Kratt is found trapped in silk beside his carriage. After Hornet breaks the silk and frees him, he mentions wanting to reward Hornet with something inside his carriage, and leaves to join the [[Flea Caravan]]. 
+
+Kratt is considered a [[Flea]], counting for the Wish <i>[[The Lost Fleas]]</i> if five Fleas have not already been freed. As such, his rescue is also necessary for <i>[[Ecstasy of the End]]</i>. 
+
+After resting on any bench not in Flea Caravan,<ref>Flag <code>CaravanLechReturnedToCaravan</code> set in <code>GameManager.TimePasses()</code>.</ref> the next time Hornet sees the Caravan, Kratt is there with his metal carriage. Upon speaking, he offers his hot spa service to Hornet for {{R|10}}. Should Hornet accept, the carriage next to Kratt opens its door for Hornet to enter. 
+
+Inside the carriage is a pool of hot water; standing in the water gradually regenerates Hornet's health and Silk to full. After being in the spa for a few seconds, Kratt makes noises and slowly rises up to peek through a window at the top of the carriage, spying on Hornet in the bath, at which point Hornet can jump up and hit him. If Hornet does not hit him fast enough, Kratt will duck away for a few seconds before peeping again.
+
+After exiting the carriage, if Hornet hit Kratt, he apologises and claims he was only doing "repairs" and not spying on her, in this state Kratt can be hit again to bounce him to a different location , before offering to let her use the spa free of charge. Visiting him again, Kratt mentions that Hornet is now a "treasured guest". 
+
+If Hornet does not punish Kratt for peeping, she has to pay the {{R|10}} fee again to unlock the spa's door.
+
+After joining the Flea Caravan, Kratt travels with them wherever [[Fleamaster Mooshka]] leads them next.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Speaking about the spa service
+| Title1_Dialogue1 = Dodeshna, dear one, dodeshna! Heh heh! Have you returned to use Kratt's luxurious spa-carriage? I've kept it roastily warm for you...
+| Title1_Event2 = Accepting the spa service the first time
+| Title1_Dialogue2 = Thank you. Thank you! I'll treasure these sweet-smelling rosaries dearly! Now, don't be shy. Step inside!
+| Title1_Event3 = Accepting the spa service again
+| Title1_Dialogue3 = Please, my dear, step inside! I will stand guard here while you bathe... Right on this very spot!
+| Title1_Event4 = Refusing the spa service
+| Title1_Dialogue4 = Oh... what a shame. Heh heh! I think you'd find the waters inside delectably soothing, if you'd only reconsider!
+| Title1_Event5 = After hitting Kratt while peeping
+| Title1_Dialogue5 =
+Auugghhh... the pain! Such fury, over a mistake! Poor little Kratt did not mean to steal a look!<br>
+This old carriage needs constant care. I was only doing repairs! I had no intent to intrude! And I barely saw a thing!<br>
+{{HTalk|Lie no more to me, flea, and be grateful you still live. Know that if you peer again, you will die.}}<br>
+Of course! Kratt would never! Let's consider the matter forgotten, and you shall forever be my treasured guest!<br>
+| Title1_Event6 = Talking to Kratt again after hitting him
+| Title1_Dialogue6 =
+A mistake, treasured guest! Never again! Ohhh. Never again! <br>
+| Title1_Event7 = Reloading area or revisiting Kratt again after catching him peeping
+| Title1_Dialogue7 =
+Welcome back, my fierce one. Dodeshna! Heh heh! I'm sure your travels have wearied you.<br>
+Oh no, I wouldn't dare take rosaries from such a treasured guest! Please, use my spa-carriage, free of charge! Dear Kratt is only too happy to provide!
+| Title1_Event8 = Playing the [[Needolin]]
+| Title1_Dialogue8 =
+[n]The fleas' guiding light...<br>
+Sweet, brave Kratt...<br>
+What waits at journey's end?<br>
+The flea of fleas, oh yes!
+
+| Title2 = In The Marrow
+| Title2_Event1 = First conversation if Kratt joins the Flea Caravan here
+| Title2_Dialogue1 = 
+{{HTalk|Greetings again, sir flea. I see you were able to unite safely with this caravan.}}<br>
+Oh yes! Heh heh. All thanks to you! Dear, sweet you! Pray tell, what does one call such a delicate beauty? Surely yours is a name most sweet and soothing. Are you Fairgrace? Or Nectarsweet?<br>
+{{HTalk|I am Hornet, sir. Address me by that name or not at all.}}<br>
+Gradak! Of course. Of course. My dear, Hornet! I shall let you in on my little secret. My carriage doubles as a soothing spa, you see. It's most ingenious.<br>
+The water inside is piping hot, and purer than a psalm! Heh heh! I'd gladly let you soak inside, for a modest fee!
+
+| Title3 = In Greymoor
+| Title3_Event1 = After finding Kratt and freeing him from the threads
+| Title3_Dialogue1 =
+Ooh, heh heh heh! What a turn, for dear Kratt to be strung up in such a dank little cave!<br>
+{{HTalk|Cursed threads stretch throughout this land, set to ensnare the unwary. You seem no worse for it now, at least.}}<br>
+{{HTalk|That metal carriage... It is yours, I assume?}}<br>
+Ooh, yes, yes! I'm setting out to join the nearest flea caravan, aren't I? Safety in numbers, yes? I've had more than enough of venturing alone.<br>
+And you... I trust I will see you there? My carriage hides a special secret I'd gladly share with you when next we meet! Heh heh!<br>
+| Title3_Event2 = Speaking again
+| Title3_Dialogue2 = 
+With luck, my dear, we will meet again when I have joined the flea caravan.<br>
+My carriage hides a special secret I'd gladly to share with you when next we meet!
+| Title3_Event3 = First conversation if Kratt joins the Flea Caravan here
+| Title3_Dialogue3 = {{HTalk|Greetings again, sir flea. I see you were able to unite safely with this caravan.}}<br>
+Oh yes! All thanks to you! Dear, sweet you! Heh heh!<br>
+The Fleamaster, that old bore, tells me to call you Miss Hornet. But such a prickly name ill befits such a delicate beauty! Shall I call you something prettier, like 'Nectarsweet', my dear?<br>
+{{HTalk|You shall not. Address me by my name or not at all.}}<br>
+Gradak! Of course. Of course! Heh heh. And now, I shall let you in on my little secret. My carriage doubles as a soothing spa, you see. It's most ingenious.<br>
+The water inside is piping hot, and purer than a psalm! Heh heh! I'd gladly let you soak inside, for a modest fee!
+| Title3_Event4 = Playing the [[Needolin]] right after rescuing Kratt
+| Title3_Dialogue4 =
+[n]Are you hiding from Kratt?<br>
+Where are you all...<br>
+Are you lonely without Kratt?<br>
+O fleas, o fleas!
+
+| Title4 = Pale Lake/Fleatopia
+| Title4_Event1 = Playing the [[Needolin]]
+| Title4_Dialogue1 =
+[n]Safe together, home at last...<br>
+The road behind us, all dangers passed...<br>
+Swim and sing, ease stiffened shells...<br>
+We fleas together... Till final bells...<br>
+Rejoice! Remember! Those long gone...<br>
+Soon... the ritual, bold, loud, strong!
+
+| Title5 = Act 3
+| Title5_Event1 = After finding Kratt, if not done before Act 3
+| Title5_Dialogue1 =
+My, what a sweet face now emerges from the darkness! Poor Kratt has been hiding here from those blackened beasts for too long, all alone!<br>
+{{HTalk|The beasts and bugs ensnared by the black thread are dangerous indeed. You have done right to hide yourself from them, sir.}}<br>
+{{HTalk|That metal carriage... It is yours, I assume?}}<br>
+Ooh, yes, yes! I'm setting out to join the nearest flea caravan, aren't I? Safety in numbers, yes? I've had more than enough of venturing alone.<br>
+And you... I trust I will see you there? My carriage hides a special secret I'd gladly share with you when next we meet! Heh heh!
+| Title5_Event2 = First conversation in [[Fleatopia]] if Kratt is rescued before Act 3
+| Title5_Dialogue2 = 
+Sweet one! What a delight to see you emerge from the horrible darkness now enveloping the world!<br>
+Poor Kratt feared he would have only his mangy fellow fleas for company at the end of everything. How kind of you to spend your last moments here with me!
+| Title5_Event3 = Using the spa service
+| Title5_Dialogue3 = Dear one, my lone light amongst the darkness! Will you bathe in Kratt's spa-carriage and let the warm waters wash away your worries?
+| Title5_Event4 = Using the spa service after catching Kratt peeping
+| Title5_Dialogue4 = My treasured guest... what need have I of rosaries, now that all is ending? Please, use my spa-carriage, free of charge! Dear Kratt is only too happy to provide!
+
+| Title6 = Ecstasy of the End
+| Title6_Event1 = First conversation
+| Title6_Dialogue1 = Dear one, how shameful for the world to end while poor Kratt still has so much living left in him!<br>
+But how sweet of you to join me here! Will you play the Flea Bounce game, that I may appreciate the beauty of your agile form while I await my doom?<br>
+To play is simple. Leap up and keep bouncing on the fleas who fly past for as long as you are able!
+| Title6_Event2 = Denying Flea Bounce
+| Title6_Dialogue2 = As you wish, sweet one. Shall we just rest here together on the shore of eternity instead?
+| Title6_Event3 = Beginning Flea Bounce
+| Title6_Dialogue3 = Mamashka! Let our beautiful game begin! Flea Bounce!
+| Title6_Event4 = Completing Flea Bounce
+| Title6_Dialogue4 = <b>If High Score has not been beaten:</b><br>
+Vikna! Our little game has ended. But I trust, after a short rest, you will play with us again?<br>
+<hr/>
+<b>If Hornet becomes Champion:</b><br>
+Vikna! My dear one, my dancer, the game has ended and you have proven yourself the champion!<br>
+None can best your score. You have shamed us all with your fearsome grace! But you will keep playing for me, yes?<br>
+The end of the world need not be a lonely thing... eheh heh...<br>
+<hr/>
+<b>If High Score has been beaten:</b><br>
+Vikna! Dear one, you outdo yourself! To beat your previous high score is a marvel indeed!
+| Title6_Event5 = Repeat attempts
+| Title6_Dialogue5 = <b>If Hornet is not the Champion:</b><br>
+My dear, will you play Flea Bounce for me once more? Leap up and bounce on the fleas who fly past for as long as you are able!
+<hr/>
+<b>If Hornet is the Champion:</b><br>
+My dear Flea Bounce champion, will you play with us again? Let us dance and fly above the waters until the world itself falls away!<br>
+<hr/>
+<b>If Hornet is the Grand Champion:</b><br>
+Fierce one, my dear Grand Champion! Will you dance and fly with us above the water?
+| Title6_Event6 = Playing the [[Needolin]]
+| Title6_Dialogue6 = [n]Face the darkness, sing dear friends...<br>
+Joy and merry till it all ends...<br>
+Our ritual, needed more than ever...<br>
+This time of fleas spent warm, together...<br>
+Dance and play, as all fleas past...<br>
+This world may fall, but we stand till the last...
+}}
+
+== Location ==
+Kratt can first be found inside a cave behind a breakable wall in [[Greymoor]]. The breakable wall is in the same area as the [[Halfway Home]], on the right and at the top of area, and can only be reached after learning the [[Cling Grip]] ability.
+
+{{Gallery
+|Image1 = Mapshot SS Kratt 01.png!Kratt's location in Greymoor
+|Image2 = Screenshot SS Kratt 10.png!The breakable wall leading to Kratt
+|Image3 = Screenshot SS Kratt 11.png!Opened passage leading to Kratt
+}}
+
+After being rescued, Kratt joins the [[Flea Caravan]] and travels with them. He can be seen standing in front of his metal carriage.
+
+The [[Flea Caravan]] can be found at either [[the Marrow]], [[Greymoor]], [[Blasted Steps]] or [[Fleatopia]], depending on the amount of Fleas found.
+{{Gallery
+|Image1 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image2 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image3 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+|Image4 = Mapshot SS Flea Caravan 04.png!Location in the Putrified Ducts
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Kratt 01.png!Kratt's carriage in Greymoor
+|Image2 = Screenshot SS Kratt 07.png!Kratt stuck in Greymoor
+|Image3 = Screenshot SS Kratt 02.png!In the Marrow
+|Image4 = Screenshot SS Kratt 03.png!In Greymoor with the Caravan
+|Image5 = Screenshot SS Kratt 04.png!At the Blasted Steps
+|Image6 = Screenshot SS Kratt 05.png!At the Putrified Ducts
+|Image7 = Screenshot SS Kratt 06.png!At the Festival of the Flea
+|Image8 = Screenshot SS Flea Bounce 03.png!Appearing during Flea Bounce
+|Image9 = Screenshot SS Festival of the Flea 03.png!Celebrating at the Festival of the Flea
+|Image10 = Screenshot SS Kratt 08.png!Peeking in the carriage
+|Image11 = Screenshot SS Kratt 09.png!After being hit by Hornet
+|Image12 = Screenshot SS Kratt 12.png!Reacting to Needolin
+}}
+
+== Trivia ==
+* Kratt will not react to the [[Needolin]] while trapped in silk, and no dialogue will appear when playing.
+* While all the other members of the [[Flea Caravan]] share the same lines of dialogue when Hornet plays the Needolin, Kratt alters those lines to also include himself and put him above the others.
+* After punishing Kratt for peeping on her in the spa, Hornet can continue to hit him with her needle, which flings him upwards into the air. The ability to hit Kratt is removed upon leaving the room the Flea Caravan is in.
+** If Hornet travels with the Flea Caravan before leaving the room, Kratt will still be able to be hit around in the next location.
+** If Kratt is hit into spikes, he bounces off them and cries out in a manner identical to when he is hit by Hornet.
+** Hornet is able to hit Kratt into the [[muckmaggot]]-infested waters to the west of Fleatopia, and when hit out of them again Kratt does appear to be infested. This effect is cleared when leaving the room or by hitting Kratt into the pale lake
+** None of the members of the Flea Caravan react if Hornet hits Kratt near them.
+* If Kratt is among the first 5 Fleas rescued during <i>[[The Lost Fleas]]</i> [[wish]], he has a unique icon in the [[Tasks]] menu screen.
+
+{{Gallery
+| Image1 = Icon SS Flea Kratt.png ! Kratt's icon during <i>The Lost Fleas</i>
+| Image2 = Screenshot SS Flea 01.webp ! The icons for the [[Huge Flea]], [[Vog]], and Kratt, alongside two regular Fleas
+}}
+
+{{Localisation
+|DEname = Kratt
+|DEmeaning = —
+|ESname = Kratt
+|ESmeaning = —
+|FRname = Kratt
+|FRmeaning = —
+|ITname = Kratt
+|ITmeaning = —
+|JAname = クラット
+|JAromanised = Kuratto
+|JAkatakana = foreign
+|JAmeaning = Kratt
+|KOname = 크라트
+|KOromanised = Keurateu
+|KOmeaning = Kratt
+|PTname = Kratt
+|PTmeaning = —
+|RUname = Кратт
+|RUromanised = Kratt
+|RUmeaning = Kratt
+|TWname = 克拉特
+|ZHname = 克拉特
+|TWromanised = Kèlātè
+|TWmeaning = same
+|ZHromanised = Kèlātè
+|ZHmeaning = Kratt
+|CODEname = FLEA_LECH</code><br><code>CARAVAN_LECH</code><br><code>KRATT
+|CODEmeaning = A [[wiktionary:lech|lech]] is someone that has or shows excessive or offensive sexual desire.
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

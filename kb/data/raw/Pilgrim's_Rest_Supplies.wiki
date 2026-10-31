@@ -1,0 +1,81 @@
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver supplies to Mort in Pilgrim's Rest
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]] NPCs
+| prerequisite = Complete <i>[[My Missing Brother]]</i>
+| reward = {{R|180}}
+}}
+
+{{Quote
+| Supplies for the rest-stop in the fields. We is used to like this delivering, when we was young and muchly brave.
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Pilgrim's Rest Supplies</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]]. It is unavailable in [[Act 3]].
+__NOTOC__
+
+== Delivery Item ==
+[[File:Courier's_Swag.png|link=Courier's Swag|left|thumb|100x100px]]
+The [[Courier's Swag]] has a total of 5 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Courier's Swag by Tipp & Pill to carefully deliver to [[Mort]] in [[Pilgrim's Rest]].
+
+This Delivery can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row. In addition, only the first completion of a Delivery contributes towards <i>[[Silk and Soul]]</i>.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill's location in Bellhart
+| Image2 = Mapshot SS Pilgrim's Rest.png!Mort's location in Pilgrim's Rest
+}}
+
+== Route ==
+The most optimal route goes through the lower part of [[Greymoor]] to drop down into [[Far Fields]] and end up at Pilgrim's Rest.
+{{Gallery
+|Image1 = Mapshot SS Pilgrim's Rest Supplies 01.png!Route through Greymoor
+}}
+
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the supplies to Mort, he rewards Hornet with {{R|180}}.
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 125 rosaries to 180.
+}}
+{{Localisation
+|DEname = Pilgerruh-Vorräte
+|DEmeaning = Pilgrim's Rest Supplies
+|ESname = Suministros de Descanso del Peregrino
+|ESmeaning = Pilgrim's Rest Supplies
+|FRname = Matériaux pour le Repos du Pèlerin
+|FRmeaning = Materials for the Pilgrim's Rest
+|ITname = Risorse della Stazione di Posta
+|ITmeaning = Post Station Resources
+|JAname = 休息地の物資
+|JAromanised = Kyūsokuchi no busshi
+|JAmeaning = Resting Place Supplies
+|KOname = 순례자의 휴식처 보급품
+|KOromanised = Sullyejaui hyusikcheo bogeuppum
+|KOmeaning = Pilgrim's Rest Supply
+|PTname = Suprimentos da Estação de Descanso
+|PTmeaning = Rest Station Supplies 
+|RUname = Припасы для Приюта у дороги
+|RUromanised = Pripasy dlja Prijuta u dorogi
+|RUmeaning = Supplies for a Shelter by a Road
+|ZHname = 朝圣者憩所补给
+|ZHromanised = Cháoshèngzhě qì suǒ bǔjǐ
+|ZHmeaning = Pilgrim's Resting Area Supplies
+|TWname = 朝聖者憩所補給
+|TWromanised = Cháoshèngzhě qì suǒ bǔjǐ
+|TWmeaning = same
+|CODEname = QUEST_COURIER_PILGRIMSREST
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

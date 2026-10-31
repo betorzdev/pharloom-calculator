@@ -1,0 +1,78 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Track the Second Sentinel by their markers left near Songclave.
+| npc = [[Second Sentinel]]
+| location = [[Songclave]] wishwall
+| prerequisite =
+* Assemble [[Cogheart]] and activate the Second Sentinel 
+* Meet the Second Sentinel at least twice within [[the Citadel]] (once if the [[Everbloom]] has been acquired)
+* Obtain the [[Conductor's Melody]]
+* Complete at least two of Songclave's wishes, including <i>[[Building Up Songclave]]</i>
+| reward = [[Reserve Bind]]
+}}
+
+{{Quote
+| Attend this Sentinel's request, Hunter in Red. Meet in halls high, the chamber of its fellows. The way shall be marked.
+| [[Second Sentinel]]
+| Hr = SS
+}}
+
+<b>Final Audience</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The wish can be acquired from [[Songclave]]'s [[wishwall]] after activating the [[Second Sentinel]] by assembling [[Cogheart]], meeting them (whether they are fighting enemies or resting) at least twice within [[the Citadel]] (or once if the [[Everbloom]] has been acquired), obtaining the [[Conductor's Melody]], and completing at least two of Songclave's wishes, including <i>[[Building Up Songclave]]</i>.
+
+{{Gallery
+|Image1 = Mapshot SS Jubilana 01.png!Wishwall's location in the Choral Chambers
+|Image2 = Screenshot SS Jubilana 01.png!Wishwall in Songclave
+}}
+
+== Wish ==
+To complete the wish, [[Hornet (Silksong)|Hornet]] must locate the Second Sentinel within the [[High Halls]], where a small room has opened up. Pins left by the Second Sentinel are scattered across the [[Choral Chambers]] leading to their location, which can be interacted with to track them.
+
+At this location, the Second Sentinel, unsure whether Hornet is affected by the [[Haunting]], asks her to test the strength of her will through a battle. Defeating them completes the wish.
+
+{{Gallery
+|Image1 = Mapshot SS Second Sentinel 03.png!Second Sentinel's location in the High Halls
+|Image2 = Screenshot SS Silk Fly 01.png!Second Sentinel in the High Halls
+}}
+
+== Reward ==
+[[File:Reserve Bind.png|link=Reserve Bind|left|thumb|100x100px]]
+
+After completing the wish, the Second Sentinel gives Hornet the [[Reserve Bind]] tool.
+
+{{Clear}}
+
+{{Localisation
+|DEname = Letzte Audienz
+|DEmeaning = Last Audience
+|ESname = Audiencia final
+|ESmeaning = Final Audience
+|FRname = L'ultime Audience
+|FRmeaning = The Final Audience
+|ITname = Incontro finale
+|ITmeaning = Final Encounter
+|JAname = 最後の対面
+|JAromanised = Saigo no taimen
+|JAmeaning = Last Confrontation
+|KOname = 최후의 관객
+|KOromanised = Choehuui gwangaek
+|KOmeaning = Last Audience
+|PTname = Audiência Final
+|PTmeaning = Final Audience
+|RUname = Последняя аудиенция
+|RUromanised = Poslednjaja audiencija
+|RUmeaning = Final Audience
+|ZHname = 最终会面
+|ZHromanised = Zuìzhōng huìmiàn
+|ZHmeaning = Final Meeting
+|TWname = 最終會面
+|TWromanised = Zuìzhōng huìmiàn
+|TWmeaning = same
+|CODEname = QUEST_SONG_KNIGHT
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

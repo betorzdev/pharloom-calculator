@@ -1,0 +1,80 @@
+{{SS Infobox NPC
+|area = [[Songclave]]
+|role = Pilgrim
+|affiliation = Pilgrims<br>
+|singnum = 3
+|va = Beau Fitzgerald<ref>Beau Fitzgerald is credited in Scared Pilgrim's audio files.</ref>
+}}
+{{Quote
+|Hr=SS
+|The Citadel chose us, granted us a little more living. For what purpose though, who could say?
+|Scared Pilgrim
+}}
+
+<b>Scared Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of the few hardy pilgrims to have reached [[the Citadel]], found resting in [[Songclave]].
+
+== In-game Events ==
+Scared Pilgrim can be found in Songclave during [[Act 2]]. They lament the state of the rest of the Citadel, but are grateful for the sanctuary that [[Bellshrine|First Shrine]] provides.
+
+Once their dialogue has been exhausted, they have a 25% chance of being gone the next time Hornet reenters Songclave after resting elsewhere. If they leave, they remain absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = So you found this place too, sister? This Citadel's grand promise has been strangled away by cursed thread, but at least the great bell here grants us some sanctuary.<br>
+We're amongst the blessed few... granted just a little more living.
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = The Citadel chose us, granted us a little more living. For what purpose though, who could say?
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Where is your glory?
+Where is your light?<br>
+Was it our sin?<br>
+Dear Pharloom...<br>
+All haunted, even here...<br>
+Our pilgrimage...<br>
+Are we the last?<br>
+Are we the chosen?<br>
+}}
+
+== Location ==
+Scared Pilgrim can be found near the [[Bench (Silksong)|Bench]] in Songclave in Act 2.
+{{Gallery
+|Image1 = Mapshot SS Scared Pilgrim.png!Location in Songclave
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Scared Pilgrim 01.png!Scared Pilgrim resting
+|Image2 = Screenshot SS Scared Pilgrim 02.png!Scared Pilgrim alert
+|Image3 = Screenshot SS Scared Pilgrim 03.png!Scared Pilgrim singing
+}}
+
+{{Localisation
+|DEname = Verängstigte Pilgerin
+|DEmeaning = Scared Pilgrim
+|ESname = Peregrina Temerosa
+|ESmeaning = Scared Pilgrim
+|FRname = Pèlerine Apeurée
+|FRmeaning = Scared Pilgrim
+|ITname = Pellegrina Spaventata
+|ITmeaning = Scared Pilgrim
+|JAname = 怯えた巡礼者
+|JAromanised = Obieta junreisha
+|JAmeaning = Scared Pilgrim<br><small>This name is identical to the Japanese name of [[Fearful Pilgrim]].</small>
+|KOname = 겁먹은 순례자
+|KOromanised = Geopmeokeun sullyeja 
+|KOmeaning = Scared Pilgrim
+|PTname = Peregrina Assustada
+|PTmeaning = Scared Pilgrim
+|RUname = Испуганная пилигримка
+|RUromanised = Ispugannaya piligrimka
+|RUmeaning = Scared Pilgrim
+|ZHname = 惊惶的朝圣者
+|ZHromanised = Jīnghuáng de cháoshèng zhě
+|ZHmeaning = Scared Pilgrim
+|CODEname = ENCLAVE_PILGRIM
+|CODEmeaning = <code>ENCLAVE</code> is the internal name for Songclave.
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

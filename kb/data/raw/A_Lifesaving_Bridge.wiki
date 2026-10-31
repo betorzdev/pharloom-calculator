@@ -1,0 +1,86 @@
+__NOTOC__
+{{Navbar
+| page1 = Bone Bottom Repairs
+| page2 = A Lifesaving Bridge
+| page3 = An Icon of Hope
+}}
+
+{{SS Infobox Wish
+| header1 = Donate
+| description = Donate shell shards to aid the building of a bridge.
+| npc = [[Flick]] of Bone Bottom
+| location = [[Bone Bottom]]
+| prerequisite = * Complete the <i>[[Bone Bottom Repairs]]</i> wish
+* Either defeat [[Widow]] or enter [[Greymoor]]
+| reward = A destructible bridge is constructed over the hole that leads to the [[Moss Grotto]].
+}}
+
+{{Quote
+| I've heard tell pilgrims sometimes fall down that big hole beside the settlement. Nasty way to end your journey, before it even begins. I could build a bridge, if I only had the materials!
+| [[Flick the Fixer]]
+| Hr = SS
+}}
+
+<b>A Lifesaving Bridge</b> is a [[Donate Wishes|Donate Wish]] in <i>[[Hollow Knight: Silksong]]</i>, found on [[Bone Bottom]]'s [[wishwall]] after [[Hornet (Silksong)|Hornet]] completes the <i>[[Bone Bottom Repairs]]</i> wish and either defeats [[Widow]] or enters [[Greymoor]].
+
+== Wish ==
+To complete the wish, donate {{S|300}} to Bone Bottom's wishwall.
+
+{{Gallery
+| Image1 = Mapshot SS Bone Bottom Wishwall.png!Location of Bone Bottom's wishwall
+}}
+
+== Reward ==
+Once the wish is completed and the game is [[Save Data (Silksong)/Save Points|saved]] outside the room where the settlement is located (with the [[Bellway]] station considered as part of the settlement), a bridge is constructed over the hole leading to the [[Moss Grotto]].
+
+The bridge is safe to cross but takes damage if attacked, jumped on, or headbutted from below. It withstands up to four impacts, with each hit causing a cracking sound and making the structure sag down, but is instantly destroyed if Hornet falls on it from a great height or down-dashes into it. If the bridge is only partially damaged, it returns to full strength when Hornet moves to a different room or the game reloads.
+
+The bridge is destroyed with the rest of the settlement at the start of [[Act 3]]. 
+
+== Gallery ==
+{{Gallery
+| Image1 = Screenshot SS A Lifesaving Bridge 01.png!Before construction in Bone Bottom
+| Image2 = Screenshot SS A Lifesaving Bridge 02.png!Intact bridge
+| Image3 = Screenshot SS A Lifesaving Bridge 03.png!Destroyed
+| Image4 = Screenshot SS A Lifesaving Bridge 04.png!Destroyed in Act 3
+| Image5 = Screenshot SS A Lifesaving Bridge 05.png!Before construction in the Moss Grotto
+| Image6 = Screenshot SS A Lifesaving Bridge 06.png!Intact bridge
+| Image7 = Screenshot SS A Lifesaving Bridge 07.png!Destroyed
+| Image8 = Screenshot SS Moss Grotto 01.png!Starting area before the bridge is destroyed
+| Image9 = Screenshot SS A Lifesaving Bridge 08.png!Starting area with fallen debris
+}}
+
+{{Localisation
+|DEname = Eine lebensrettende Brücke
+|DEmeaning = A Lifesaving Bridge
+|ESname = Un puente para salvar vidas
+|ESmeaning = A Bridge to Save Lives
+|FRname = Un pont salvateur
+|FRmeaning = A Saving Bridge
+|ITname = Un ponte salvifico
+|ITmeaning = A Saving Bridge
+|JAname = 命を救う橋
+|JAromanised = Inochi o sukū hashi
+|JAmeaning = Lifesaving Bridge
+|KOname = 목숨을 구하는 다리
+|KOromanised = Moksumeul guhaneun dari
+|KOmeaning = Lifesaving Bridge
+|PTname = Uma Ponte Salvadora
+|PTmeaning = A Saving Bridge
+|RUname = Спасительный мост
+|RUromanised = Spasitelʹnyj most 
+|RUmeaning = Saving Bridge
+|ZHname = 救命桥
+|ZHromanised = Jiùmìng qiáo
+|ZHmeaning = Lifesaving Bridge
+|TWname = 救命大橋
+|TWromanised = Jiùmìng dàqiáo
+|TWmeaning = same
+|CODEname= QUEST_FIXER3
+|CODEmeaning= 1 is <i>[[Bone Bottom Repairs]]</i>; 2 is <i>[[An Icon of Hope]]</i>
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Un pont salvateur]]

@@ -1,0 +1,168 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Greyroot.png|Idle
+Greyroot Sleeping.png|Sleeping
+Greyroot Attacking.png|Attacking
+Greyroot Petrified.png|Petrified
+</gallery>
+|area = [[Shellwood]]
+|va=Lauren Koopowitz<ref name="va">[https://www.youtube.com/watch?v=pA7Id7lff6E Interview with Lauren Koopowitz]</ref>
+|role = Quest
+|quest = [[Rite of the Pollip]]<br>
+[[Rite of Rebirth]]
+|singnum=2
+}}
+
+{{Quote
+|The time will come... Soon. The time of birth approaches. 
+|Greyroot
+|Hr=SS}}
+
+<b>Greyroot</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are a root-like being residing within [[Shellwood]]. They offer the <i>[[Rite of the Pollip]]</i> and <i>[[Rite of Rebirth]]</i> [[wishes]].
+
+== Background ==
+Greyroot is a root-like being that resides in the core of [[Shellwood]]. In the past, many travelers have visited Greyroot, bringing them the [[Twisted Bud]] as an offering, but none were ever seen again afterwards,<ref>[[Pavo]]: <i>"Aye, yes! Not your own specimen, surely, but way back, other travellers did sometimes carry similar. Odd types they all were. Offerings they'd call the crying things, and towards the core of Shellwood they would trek.
+Never I did see one again, not the buds nor the bugs that brought the gift..."</i></ref><ref name="Many">Greyroot: <i>"None... none come now. Once times, many bugs. Many. Now none."</i></ref> after being kidnapped and taken to the [[Shellwood#Sub-area:_Chapel_of_the_Witch|Chapel of the Witch]] - before being subsequently petrified. Greyroot no longer has any visitors.<ref name=Many/>
+
+==In-Game Events==
+After speaking to Greyroot in Shellwood, they offer the Wish <i>[[Rite of the Pollip]]</i>. Upon completing the wish, they give the [[Pollip Pouch]].
+
+The [[Twisted Bud]] can be given to Greyroot to begin the Wish <i>[[Rite of Rebirth]]</i>. Completing this wish causes Hornet to become infected with a [[Witch_Crest#Cursed_Crest|parasite]]. Removing the parasite by completing the <i>[[Infestation Operation]]</i> wish replaces it with the [[Witch Crest]].
+
+After <i>Rite of Rebirth</i> is completed, returning to Greyroot's home reveals that they have entered a petrified state and can no longer be spoken to. Their body can be destroyed by attacking it with the Needle. Their body remains destroyed after leaving the room.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| id = Rite of the Pollip
+| title = [[Rite of the Pollip]]
+| description = "The time of birth approaches. Pollip Hearts are needed. Bring them, bug, and power will be shared."
+| objective = Collect Pollip Hearts from the purple flowers of Shellwood.
+| location = <b><i>[[Shellwood]] NPC</i></b>
+Greyroot
+| reward = [[Pollip Pouch]]
+}}
+{{TaskEntry
+| bottom = true
+| id = Rite of Rebirth
+| title = [[Rite of Rebirth]]
+| description = "White shell. Red cloak. Bug strong and old. The time of birth is near. Aid now the final rite."
+| objective = Bind the Twisted Bud.
+| location = <b><i>[[Shellwood]] NPC</i></b>
+Greyroot
+| reward = [[Cursed Crest]]
+}}
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Shhhh... shell. White mask, red cloak.<br>
+Bug. A living bug.<br>
+{{HTalk|A bug I am, at least in part, but you are something quite different. I apologise if I have roused you from some deep slumber.}}<br>
+Slumber. Long sleep. But now is the waking.<br>
+Growth. Time of birth. The time of birth approaches.<br>
+Heed, bug. The time of birth approaches.
+
+| Title2 = Rite of the Pollip
+| Title2_Event1 = Speaking after encounter
+| Title2_Dialogue1 = The... the time of birth approaches. Now, the rite of the pollip.<br>
+Bug. Only you are left. None more tread here. None.<br>
+For the rite. The Pollip Hearts. They are needed. Bring them here, for the rite.
+
+| Title2_Event2 = Refusing the Wish
+| Title2_Dialogue2 = {{HTalk|I hear your request, but I must decline. My travels will take me far beyond this wood.}}<br>
+Decline. No. Decline, not. The time of birth approaches. The first rite must begin.
+| Title2_Event3 = Speaking again after refusing
+| Title2_Dialogue3 = Bug. Only you are left. None more tread here. None.<br>
+For the rite. The Pollip Hearts. They are needed. Bring them here, for the rite.
+| Title2_Event4 = Accepting the Wish
+| Title2_Dialogue4 = {{HTalk|If you have knowledge or power to grant, I will aid you. These Pollip Hearts you desire... they can be found about the wood?}}<br>
+P... Pollip Hearts. Found in the wood. Yes, bug.<br>
+Seek out the purple blooms. Inside... the hearts.<br>
+The time of birth approaches. Pollip Hearts are needed. Bring them, bug, and power will be shared.
+| Title2_Event5 = Exhausted dialogue if Hornet hasn't found all the [[Pollip Heart]]s
+| Title2_Dialogue5 = Seek out the purple blooms. Inside... the precious hearts.<br> The time of birth approaches. Pollip Hearts are needed. Bring them, bug, and power will be shared.
+| Title2_Event6 = Speaking after acquiring all Pollip Hearts
+| Title2_Dialogue6 = The precious hearts... Give them. For the time of birth, for the rite, they must bleed...
+| Title2_Event7 = Refusing to give the Pollip Hearts
+| Title2_Dialogue7 = Rrrr... rite. The first rite must begin. Pollip Hearts are needed.
+| Title2_Event8 = Accepting to give the Pollip Hearts
+| Title2_Dialogue8 = P... Pollip Hearts. Gathered. Gathered all. All that is needed, is given.<br>
+The first rite. Rite of the pollip. The first rite can begin.
+| Title2_Event9 = Speaking again
+| Title2_Dialogue9 = Bug. Cloaked by red. The time of rebirth approaches.<br>
+First rite is completed. Prepared. For the time of birth.<br>
+Take... take. The refuse of the rite.
+| Title2_Event10 = Exhausted dialogue after ritual
+| Title2_Dialogue10 = The time will come... Soon. The time of birth approaches.
+
+| Title3 = Rite of Rebirth
+| Title3_Event1 = Speaking after acquiring the [[Twisted Bud]]
+| Title3_Dialogue1 = Bug. Red cloak. Far-travelled. Bring it here... the bud.<br>
+It calls. It cries for the rite. Offer it.
+| Title3_Event2 = Refusing to give the Twisted Bud
+| Title3_Dialogue2 = Th... the bud. It must be offered. It calls for it... for the rite.
+| Title3_Event3 = Accepting to give the Twisted Bud
+| Title3_Dialogue3 = The bud... weak. New. It must be nourished.<br>
+Nnn... nourished. It will be nourished.
+| Title3_Event4 = Speaking again
+| Title3_Dialogue4 = The time... the time of birth approaches. The bud cries. Yearning. The final rite may begin. <br>
+White shell. Red cloak. Bug strong and old. The time of birth is near. Aid now the final rite.
+| Title3_Event5 = Refusing the Rite of Rebirth
+ |Title3_Dialogue5 = {{HTalk|I am unable to help you. Not now. Perhaps another traveller will offer aid.}} <br> 
+None... none come now. Once times, many bugs. Many. Now none. The final rite... the time of birth approaches...
+| Title3_Event6 = Accepting the Rite of Rebirth
+| Title3_Dialogue6 = {{HTalk|Very well. This final rite... what would you have me do?}} <br>
+The time... of birth is close. Now give... its shell. Host... the final rite. <br>
+The time of birth... is near.
+}}
+
+==Location==
+{{Gallery
+| Image1 = Mapshot SS Greyroot.png!Location of Greyroot in Shellwood
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Greyroot 03.png!Asleep inside hut
+|Image2 = Screenshot SS Greyroot 02.png!Awake inside hut
+|Image3 = Screenshot SS Greyroot 01.png!Attacking Hornet
+|Image4 = Screenshot SS Shellwood 08.png!Petrified inside hut
+|Image5 = Screenshot SS Greyroot 04.png!Reacting to Needolin
+|Image6 = Screenshot SS Shellwood 06.png!Exterior of Greyroot's Hut
+|Image7 = Ari SS Sketch 14.png!Concept Sketches
+}}
+
+== Trivia ==
+* Using [[Challenge]] or making attacks close by causes Greyroot to hide away for a few seconds.
+
+{{Localisation
+|DEname = Grauwurz
+|DEmeaning = Portmanteau of <i>grau</i> (grey) and <i>wurzel</i> (root). 
+|ESname = Raíz Gris
+|ESmeaning = Grey Root
+|FRname = Griseracine 
+|FRmeaning = Greyroot
+|ITname = Ceneradice
+|ITmeaning = Portmanteau of <i>cenere</i> (ash) and <i>radice</i> (root).
+|JAname = ハイネ
+|JAromanised = Haine
+|JAmeaning = Greyroot or Ash Root<br><small>Combination of {{lang|ja|灰}} <i>hai</i> (grey or ash) and {{lang|ja|根}} <i>ne</i> (root).</small>
+|KOname = 회색 뿌리
+|KOromanised = Hoesaek ppuri
+|KOmeaning = Grey Root
+|PTname = Grisradix
+|PTmeaning = Portmanteau of <i>grisalho</i> (grey) and <i>radix</i> (Latin for root).
+|RUname = Сизокорень
+|RUromanised = Sizokoren'
+|RUmeaning = Portmanteau of {{lang|ru|сизый}} <i>sizyj</i> (grey or dove-coloured) and {{lang|ru|корень}} <i>koren'</i> (root).
+|TWname = 灰根
+|TWromanised = Huī gēn
+|TWmeaning = same
+|ZHname = 灰根
+|ZHromanised = Huī gēn
+|ZHmeaning = Greyroot
+|CODEname = SHELLWOOD_WITCH
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

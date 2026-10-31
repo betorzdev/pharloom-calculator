@@ -1,0 +1,151 @@
+{{SS Infobox NPC
+| area = [[Bone Bottom]]
+| va = Lauren Koopowitz<ref>[https://www.imdb.com/title/tt10323784/characters/nm6664826/ Hollow Knight: Silksong on IDMb]</ref>
+| role = [[NPCs (Silksong)#Merchants|Merchant]]
+| affiliation = Pilgrims<br>
+Bone Bottom (Shopkeeper)
+|sing = Scared Pilgrim
+|singnum = 3
+}}
+
+{{Quote|Hr=SS
+| Rosaries! Those finely carved beads of prayer! If you will only share some with me, I will trade you something fair.
+| Pebb
+}}
+
+<b>Pebb</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She is an old pilgrim who sells wares at her shop in [[Bone Bottom]] in exchange for [[Rosaries]].<ref>Pebb: <i>"O-oh! Traveller! Destined for the Citadel, yes? Well, before you embark, won't you stop and make trade with an old pilgrim?"</i></ref>
+
+== Background ==
+Pebb is one of the many pilgrims who arrived in Bone Bottom to start her pilgrimage to [[the Citadel]]. She sells off her wares for Rosaries, as she believes they will aid her on the journey ahead.<ref>Pebb: <i>"I'll soon be making my way up to the great Citadel. As holy as I am with rosaries, I'm sure my path will not be an arduous one..."</i></ref><ref>Haunted Pebb [[Needolin]] dialogue: <i>"O shining beads! Blessed am I... Guide my ascent... O holy gleam!"</i></ref>
+
+== In-Game Events ==
+Pebb is the first merchant encountered in [[Pharloom]]. She offers to trade with [[Hornet (Silksong)|Hornet]], and if the latter has not yet met [[Shakra]], explains the currency of this kingdom, [[Rosaries]].<ref>Hornet and Pebb dialogue: <br><i>Pebb: "O-oh! Traveller! Destined for the Citadel, yes? Well, before you embark, won't you stop and make trade with an old pilgrim?"<br>Hornet: "I'd see your wares, madam, though I fear I may have nothing worthy to offer in return."<br>Pebb: "Oh, worry not! If you lack fine goods to trade, we can barter still. In this devout land, we deal in the currency of faith! Rosaries! Those finely carved beads of prayer! If you will only share some with me, I will trade you something fair."</i></ref>
+
+After the [[Skull Tyrant]] attack, she wonders how such beasts can infest the path to their paradise, and asks Hornet to trade, as she needs more Rosaries to brave such a world.<ref>Pebb: <i>"Oh, oh dear... what fearful events are sent to test we poor pilgrims! How could it be that our path to paradise is infested with such beasts? To brave such a world... oh my. I'll need more rosaries, that's for certain. Please traveller, won't you trade with me?"</i></ref>
+
+Once Hornet buys all of her stock (excluding the renewable [[Rosary String]]), Pebb decides to close the shop and begin her pilgrimage, as she has no more excuses to linger in Bone Bottom.<ref>Pebb: <i>"Well now! Seems I've traded you the last of my supplies, so I've got no more excuses to linger down here."</i></ref> Her tent disappears once Hornet visits town again after resting on a [[Bench (Silksong)|bench]] elsewhere.
+
+She can later be found as an enemy [[Haunting|haunted]] by Silk in the easternmost room of [[the Marrow]] that connects it to the [[Deep Docks]]. As an enemy, she is nearly indistinguishable from a [[Pilgrim Pouncer]], but can be identified by her unique [[Needolin]] dialogue, her merchant bag lying nearby, and {{R|55}} she drops upon defeat.
+
+Pebb vanishes once Bone Bottom is destroyed after the start of [[Act 3]], and any unpurchased goods are taken and sold by [[Grindle]].
+
+== Goods ==
+{| class="article-table" width="100%"
+|-
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Pebb's Description
+|-
+! [[File:Magnetite Brooch.png|center|link=Magnetite Brooch|72x72px]]
+[[Magnetite Brooch]]
+| align="center" | {{R|120}}
+| <i>This stone's a beauty, isn't it? They say it'll help you gather up rosaries on the road ahead. You'll come back and share some with me, won't you?</i>
+|-
+! [[File:Mask Shard (Silksong).png|center|link=Mask Shard (Silksong)|72x72px]]
+[[Mask Shard (Silksong)|Mask Shard]]
+| align="center" | {{R|300}}
+| <i>Just a piece of something greater, but finely crafted. You should take it with you, traveller, for luck.</i>
+|-
+! [[File:Craftmetal.png|center|link=Craftmetal|72x72px]]
+[[Craftmetal]]
+| align="center" | {{R|60}}
+| <i>A rare find, this. Shinier than faith and harder than a Craggler's hide. A skilled craftsbug could fashion something nice out of it, if they've got the knowledge.</i>
+|-
+! [[File:Simple Key (Silksong).png|center|link=Simple Key (Silksong)|72x72px]]
+[[Simple Key (Silksong)|Simple Key]]
+| align="center" | {{R|500}}
+| <i>Seems like just a key, but who knows what it'll unlock? I reckon it's come from the Citadel, so it must open the way to something holy!</i>
+|-
+! [[File:Rosary String.png|center|link=Rosary String|72x72px]]
+[[Rosary String]]
+| align="center" | {{R|80}}
+| <i>Loose rosaries filling your pockets? I can string 'em up safe, so you won't go losing them. Might seem a simple art, but it takes some talent to keep 'em properly secure.</i>
+|}
+
+
+{{TabbedDialogue
+| Title1 = Bone Bottom
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b> If Hornet has not met [[Shakra]]:</b><br>
+O-oh! Traveller! Destined for the Citadel, yes? Well, before you embark, won't you stop and make trade with an old pilgrim?<br>
+{{HTalk|I'd see your wares, madam, though I fear I may have nothing worthy to offer in return.}}<br>
+Oh, worry not! If you lack fine goods to trade, we can barter still. In this devout land, we deal in the currency of faith!<br>
+Rosaries! Those finely carved beads of prayer! If you will only share some with me, I will trade you something fair.
+<hr/>
+<b>If Hornet has met Shakra:</b><br>
+O-oh! Traveller! Won't you stop and make trade with an old pilgrim? Surely something here will aid you in your great journey!
+| Title1_Event2 = After the [[Skull Tyrant]] attack
+| Title1_Dialogue2 = Oh, oh dear... what fearful events are sent to test we poor pilgrims! How could it be that our path to paradise is infested with such beasts?<br>
+To brave such a world... oh my. I'll need more rosaries, that's for certain. Please traveller, won't you trade with me?
+| Title1_Event3 = After purchasing all goods
+| Title1_Dialogue3 = Well now! Seems I've traded you the last of my supplies, so I've got no more excuses to linger down here.<br>
+I'll soon be making my way up to the great Citadel. As holy as I am with rosaries, I'm sure my path will not be an arduous one...
+| Title1_Event4 = Exhausted dialogue after purchasing all goods
+| Title1_Dialogue4 = I'll soon be making my way up to the great Citadel. As holy as I am with rosaries, I'm sure my path will not be an arduous one...
+| Title1_Event5 = Playing the [[Needolin]]
+| Title1_Dialogue5 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...
+| Title2 = The Marrow
+| Title2_Event1 = Playing the [[Needolin]]
+| Title2_Dialogue1 = [n]O shining beads!<br>
+Blessed am I...<br>
+Guide my ascent...<br>
+O holy gleam!
+}}
+
+
+== Location ==
+Pebb can first be found in [[Bone Bottom]], to the left of the [[wishwall]]. After leaving Bone Bottom, she appears as an enemy in [[the Marrow]].
+
+{{Gallery
+|Image1 = Mapshot SS Pebb 01.png! Location in Bone Bottom
+|Image2 = Mapshot SS Pebb 02.png! Location of haunted Pebb in the Marrow
+}}
+
+== Gallery ==
+{{Gallery
+|Image1= Screenshot SS Pebb 01.png!In Bone Bottom
+|Image2= Screenshot SS Pebb 03.png!Singing
+|Image3= Screenshot SS Pebb 02.png!In the Marrow
+}}
+
+==Trivia==
+*Pebb's goods originally included the [[Shard Pendant]] tool and an item costing {{R|120}}, likely an early price for a [[Rosary Necklace]], which seemed to only hold {{R|100}} at that time.<ref name="edge59">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition], p. 59. ([[:File: Reference Shard Pendant.png|Archive]])</ref><ref name="edge55">[https://pocketmags.com/us/edge-magazine/february-2021 Edge Magazine February 2021 Edition], p. 55. ([[:File: Reference Rosaries.png|Archive]])</ref>
+{{Localisation
+|DEname=Pebb
+|DEmeaning = —
+|ESname = Pebb
+|ESmeaning = —
+|FRname = Pebb
+|FRmeaning = —
+|ITname = Pebb
+|ITmeaning = —
+|JAname= ペブ
+|JAromanised= Pebu
+|JAmeaning = Pebb
+|KOname = 펩
+|KOromanised = Pep
+|KOmeaning = Pebb
+|PTname = Pebb
+|PTmeaning = —
+|RUname = Пебб
+|RUromanised = Pebb
+|RUmeaning = Pebb
+|ZHname = 佩珀
+|ZHromanised = Pèipò
+|ZHmeaning = Pebb
+|CODEname = BB_SHOPKEEP
+|CODEmeaning = <code>BB</code> stands for [[Bone Bottom]].
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
