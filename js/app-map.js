@@ -1002,7 +1002,9 @@
   const pinSvg = (m, p, title, cls) => `<g class="mp-mk is-${m.layer}${cls}${m.off ? ' is-off' : ''}${m.fix ? ' is-fixed' : ''}${m.hidden ? ' is-hidden' : ''}${sel(m.key)}" style="--px:${n2(p.x)}px;--py:${n2(p.y)}px;--ox:${n2(p.ox || 0)}px;--oy:${n2(p.oy || 0)}px"
         data-mk="${esc(m.key)}" role="button" tabindex="0" aria-label="${esc(title)}"><title>${esc(title)}</title><circle r="0.5"/><circle class="mp-plate" r="0.47"/>${artOf(m)}${m.giver ? GIVER_DISC : ''}${cls.includes(' is-had') ? HAD_TICK : cls.includes(' is-lost') ? LOST_CROSS : ''}${ringOf(m.key)}</g>`;
   // A had mark's tick (design/77, 3 A): a small disc on its upper right, the site's tick in --good (css .mp-tick).
-  const HAD_TICK = '<g class="mp-tick" aria-hidden="true"><circle cx="0.36" cy="-0.36" r="0.22"/><path d="M0.25 -0.36 L0.33 -0.28 L0.48 -0.45"/></g>';
+  // One shape in the mark's units, centred; the card's seal draws the same (design/120, 1 A).
+  const TICK_SHAPE = '<circle r="0.22"/><path d="M-0.11 0 L-0.03 0.08 L0.12 -0.09"/>';
+  const HAD_TICK = `<g class="mp-tick" aria-hidden="true" transform="translate(0.36 -0.36)">${TICK_SHAPE}</g>`;
   /* A giver's herald (round 108, C): the tick's disc mirrored onto the lower right, so it never meets
      the tick, the cross or a cluster's count (all on the upper right), the herald inside. */
   const GIVER_DISC = `<g class="mp-giver" aria-hidden="true"><circle cx="0.36" cy="0.36" r="0.22"/><image href="${HERALD}" x="0.2" y="0.2" width="0.32" height="0.32"/></g>`;
@@ -1743,7 +1745,8 @@
   const markSrc = (m) => { const s = m && /src="([^"]+)"/.exec(m.draw('', '', '', '')); return s ? s[1] : null; };
   // An area's light: its map line (css/tokens.css --area-*), the spotlight's bone where none was measured.
   const areaVar = (a, part) => `var(--area-${String(a).toLowerCase().replace(/_/g, '-')}-${part}, var(${part === 'line' ? '--spotlight' : '--scene-glow'}))`;
-  const TICK = '<svg viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 6.3 L5 8.6 L9.5 3.4"/></svg>';
+  // The card's seal: the map's tick (TICK_SHAPE), scaled to its picture as a mark (design/120, 1 A).
+  const SEAL = `<svg class="mp-card-seal" viewBox="-0.25 -0.25 0.5 0.5" aria-hidden="true">${TICK_SHAPE}</svg>`;
   // A wish's emblem, as the pane «Tareas» draws it (js/app-progress.js App.wishIcon).
   const wishIcon = (i) => (App.wishIcon && i >= 0 ? App.wishIcon(i) : 'assets/icons/wishes/board.webp');
   // Where a way leads: one mark shown, several as a focus (the first one's name).
@@ -2272,7 +2275,7 @@
   const cardShell = (c) => {
     const where = [c.area && areaName(c.area) ? `<span class="mp-card-area"${NT}><i class="mp-card-sw" style="--sw-fill:${areaVar(c.area, 'fill')};--sw-line:${areaVar(c.area, 'line')}" aria-hidden="true"></i>${esc(areaName(c.area))}</span>` : '',
       ...c.tags.filter(Boolean).map((x) => `<span class="mp-card-tag">${esc(x)}</span>`), ...c.subs.filter(Boolean).map((x) => `<span class="mp-card-sub">${esc(x)}</span>`)].join('');
-    const seal = c.had ? `<span class="mp-card-seal" aria-hidden="true">${TICK}</span>` : '';
+    const seal = c.had ? SEAL : '';
     const foot = c.states || c.acts ? `<div class="mp-card-foot">${c.states ? `<span class="mp-card-states">${c.states}</span>` : ''}${c.acts ? `<span class="mp-card-acts">${c.acts}</span>` : ''}</div>` : '';
     const body = (c.how ? `<div class="mp-card-how">${c.how}</div>` : '') + (c.note ? `<p class="mp-card-note">${esc(c.note)}</p>` : '') + c.steps + c.needs + foot;
     return `<div class="mp-card" role="dialog" aria-label="${esc(c.name)}">

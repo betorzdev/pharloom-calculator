@@ -415,9 +415,9 @@ on a phone the area names show only zoomed in.
 
 A mark's **card** opens over the map, above its mark (below it when there's no room), and as the
 game shows a thing it says it with pictures more than words. At the top, the mark's own picture,
-large, with a soft light of its area's colour behind it, and with a save a white tick on it once you
-have it (nothing when you don't: the rest of the card says what's left); beside it the name, and
-one line of where: a small diamond in the area's map colour, the area, the Act, a gauntlet's waves.
+large, with a soft light of its area's colour behind it, and with a save the map's green tick on its
+corner once you have it (nothing when you don't: the rest of the card says what's left); beside it
+the name, and one line of where: a small diamond in the area's map colour, the area, the Act, a gauntlet's waves.
 Under it, how it's had, as pictures and names, each a way to its mark: who sells it (their figure;
 Grindle, with none found yet, the shop's pin) and the price as the rosary and the figure (and the
 Craftmetal or Pale Oil it takes), the wish's emblem, the boss that drops it, a gauntlet's reward,
