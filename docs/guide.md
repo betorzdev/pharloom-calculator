@@ -415,16 +415,18 @@ on a phone the area names show only zoomed in.
 
 A mark's **card** opens over the map, above its mark (below it when there's no room), and as the
 game shows a thing it says it with pictures more than words. At the top, the mark's own picture,
-large, with a soft light of its area's colour behind it, and with a save a white tick on it once you
-have it (nothing when you don't: the rest of the card says what's left); beside it the name, and
-one line of where: a small diamond in the area's map colour, the area, the Act, a gauntlet's waves.
+large, with a soft light of its area's colour behind it, and with a save the map's green tick on its
+corner once you have it (nothing when you don't: the rest of the card says what's left); beside it
+the name, and one line of where: a small diamond in the area's map colour, the area, the Act, a gauntlet's waves.
 Under it, how it's had, as pictures and names, each a way to its mark: who sells it (their figure;
 Grindle, with none found yet, the shop's pin) and the price as the rosary and the figure (and the
 Craftmetal or Pale Oil it takes), the wish's emblem, the boss that drops it, a gauntlet's reward,
 a vendor's wares still for you (each its picture). Then **Needs**, under a hairline: a chip per
 thing it waits for, its picture and name, a way to where that's had: a wish to do first, a wish to
 take (the one that brings a fight), the keys it lies behind (several marks: a focus on them), an
-ability, a thing to bring, what a shop waits for, the Act it's sold from. A chip with nothing to
+ability, a thing to bring, what a shop waits for, the Act it's sold from. On the card of whoever
+offers a wish (and a Wishwall's), each open wish's things to bring that lie somewhere on the Map
+(«bring Steel Spines» at Yarnaby for Infestation Operation, the Gourmand's five dishes) are chips too. A chip with nothing to
 lead to (an Act, the Vaultkeepers freed, a main objective) is dashed. Two ways to the same thing
 sit side by side, «or» before the second, a bracket on their left (the Flintslate: a Simple Key or
 the Clawline). With a save the block lists only what you still lack (an «or» one of whose ways you

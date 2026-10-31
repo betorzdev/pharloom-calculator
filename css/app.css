@@ -2806,13 +2806,17 @@ html:has(.mp.is-full) { overflow: hidden; }
 }
 .mp-card-pic :is(.mp-dot, .mp-pin) { position: static; margin: 0; --mp-s: var(--sp-12); }
 .mp-card-pic img.mp-pin:not(.is-badge) { width: var(--mp-s); height: var(--mp-s); }
-/* Had, with a save (3 A): the game's white tick on the picture, no hue. */
+/* Had, with a save (3 A; its look, design/120, 1 A and 2 A): the map's tick, the same shape scaled to
+   the 48 px picture as to a mark, and in the same place, the picture's upper right (0.36 of the mark
+   off its centre). Its box is half the mark, centred on the disc; the strokes stay about as fine.
+   Over the picture: a grid item, the disc keeps its z-index 2 even static. */
 .mp-card-seal {
-  position: absolute; right: calc(var(--sp-half) * -1); bottom: calc(var(--sp-half) * -1); display: grid; place-items: center;
-  width: calc(var(--sp-4) + var(--sp-1)); height: calc(var(--sp-4) + var(--sp-1)); border-radius: 50%;
-  background: var(--scene-bg); border: 1px solid var(--ink-strong); color: var(--ink-strong);
+  position: absolute; z-index: 3; overflow: visible; pointer-events: none;
+  width: calc(var(--sp-12) / 2); height: calc(var(--sp-12) / 2);
+  left: calc(50% + var(--sp-12) * 0.36 - var(--sp-12) / 4); top: calc(50% - var(--sp-12) * 0.36 - var(--sp-12) / 4);
 }
-.mp-card-seal svg { width: var(--icon-sm); height: var(--icon-sm); }
+.mp-card-seal circle { fill: var(--scene-bg); stroke: var(--good); stroke-width: 0.026; }
+.mp-card-seal path { fill: none; stroke: var(--good); stroke-width: 0.042; stroke-linecap: round; stroke-linejoin: round; }
 .mp-card-t { display: grid; gap: var(--sp-half); min-width: 0; }
 .mp-card-name { margin: 0; font-family: var(--font-body); font-size: var(--fs-md); font-weight: 600; line-height: 1.25; color: var(--ink-strong); }
 .mp-card-where { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-half) var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }

@@ -31,9 +31,9 @@ test('needsOf gathers every source the site has, and reads js/requires.js only w
   for (const src of ['SS.completion.wayOf', 'HW.NEEDS', 'SP.OPENS', 'SP.VARIANTS', 'more.after', 'more.needs', 'm.lockKey', 'App.wishWaits', 'm.alsoWay']) {
     assert.ok(NEEDS.includes(src), `needsOf reads ${src}`);
   }
-  // js/requires.js is another branch's: absent today, so guarded, and its three tables read as the spec says.
+  // js/requires.js is another branch's: absent today, so guarded, and its four tables read as the spec says.
   assert.match(NEEDS, /const RQ = SS\.requires;\s*\n\s*if \(RQ\)/);
-  for (const t of ['RQ.AREAS', 'RQ.MARKS', 'RQ.WISHES']) assert.ok(NEEDS.includes(t), `needsOf reads ${t}`);
+  for (const t of ['RQ.AREAS', 'RQ.MARKS', 'RQ.WISHES', 'RQ.ASKS']) assert.ok(NEEDS.includes(t), `needsOf reads ${t}`);
   assert.match(NEEDS, /own\.needsRead && r\.check != null && \(own\.needs \|\| \[\]\)\.includes\(r\.check\)/);
   // Each once, and nothing for a thing had or taken away.
   assert.match(NEEDS, /if \(seen\.has\(id\)\) return;/);
@@ -62,11 +62,16 @@ test('the actions are a picture and one word, the full words their accessible na
   for (const k of ['mapFightShort', 'mapHuntShort', 'mapSetInInv']) assert.ok(STR[k], k);
 });
 
-test('had is a white tick on the picture, the state in words for a screen reader', () => {
-  assert.match(MAP, /const seal = c\.had \? `<span class="mp-card-seal" aria-hidden="true">/);
+test('had is the map\'s tick on the picture, the state in words for a screen reader', () => {
+  // One shape for the map's marks and the card (design/120, 1 A), in --good on both.
+  assert.match(MAP, /const HAD_TICK = `<g class="mp-tick"[^`]*\$\{TICK_SHAPE\}<\/g>`;/);
+  assert.match(MAP, /const SEAL = `<svg class="mp-card-seal"[^`]*\$\{TICK_SHAPE\}<\/svg>`;/);
+  assert.match(MAP, /const seal = c\.had \? SEAL : '';/);
   assert.match(MAP, /<span class="sr-only">, \$\{esc\(c\.sr\)\}<\/span>/);
-  // No selection hue: the tick is the ink's.
-  assert.match(CSS, /\.mp-card-seal \{[^}]*border: 1px solid var\(--ink-strong\); color: var\(--ink-strong\);/);
+  assert.match(CSS, /\.mp-card-seal circle \{ fill: var\(--scene-bg\); stroke: var\(--good\);/);
+  assert.match(CSS, /\.mp-tick circle \{ fill: var\(--scene-bg\); stroke: var\(--good\);/);
+  // Where the map has it (2 A): the picture's upper right, 0.36 of the mark off its centre.
+  assert.match(CSS, /\.mp-card-seal \{[^}]*left: calc\(50% \+ var\(--sp-12\) \* 0\.36 - var\(--sp-12\) \/ 4\); top: calc\(50% - var\(--sp-12\) \* 0\.36/);
 });
 
 test('on a phone the card lies along the map, scrolling inside, never past its box', () => {
