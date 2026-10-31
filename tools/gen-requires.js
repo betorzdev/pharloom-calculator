@@ -38,6 +38,9 @@
      MARKS   { Map mark key (tools/mark-keys.js): [req] }: the thing's own (its room, its route)
      WISHES  { quest save name (js/quests.js CHAIN): [req] }: before the game offers that wish (a
              board's Pre and the stage after it share one wish: the stage has the Pre's too)
+     ASKS    { quest save name: [req] }: the things the wish asks to be brought (CHAIN asks) that
+             lie at a Map mark of their own (js/spots.js TASKS qitem: Infestation Operation's
+             Steel Spines, the Gourmand's five dishes); a count dropped by enemies has no mark
      CHECKS  [save check]: every distinct check, by index, in js/savefile.js has()'s forms (plus
              ['count', n, check…]: at least n of those hold)
      req = { kind, name: { es, en, key }, to, check, alt, n? }
@@ -470,6 +473,17 @@ function deriveWishes() {
   return out;
 }
 
+// What a wish asks to be brought, where it lies on the Map (a wish item's mark); the rest has no mark to point to.
+function deriveAsks() {
+  const out = {};
+  for (const [q, e] of Object.entries(QU.CHAIN)) {
+    const refs = (e.asks || []).filter((a) => a.kind === 'item' && a.save && SP.TASKS.some((x, i) => x[0] === 'qitem' && heldIn(x[2], a.save) && MARKS_ALL.has('task:' + i)))
+      .map((a) => ({ ref: 'item:' + a.save + (a.n > 1 ? '*' + a.n : ''), why: 'js/quests.js CHAIN asks' }));
+    if (refs.length) out[q] = refs;
+  }
+  return out;
+}
+
 function deriveMarks() {
   const out = {};
   const add = (key, refs, why) => { for (const r of refs) (out[key] = out[key] || []).push({ ref: r, why }); };
@@ -597,6 +611,11 @@ function areaReqs(area) {
     dropped += list.length - out.length;
     if (out.length) MARKS[key] = strip(out);
   }
+  const ASKS = {};
+  for (const [q, list] of Object.entries(deriveAsks())) {
+    const out = build(list, 'ASKS.' + q);
+    if (out.length) ASKS[q] = strip(out);
+  }
 
   const header = `js/requires.js: what each Map mark still asks before its thing can be had (or its
    person met, its boss fought), what it takes to enter each area, and what each wish waits for, as
@@ -611,6 +630,8 @@ function areaReqs(area) {
      MARKS   Map mark key → [req]: the thing's own (its room, its route); a card adds its area's
      WISHES  quest save name (js/quests.js CHAIN) → [req]: before the game offers that wish (a
              giver's or a Wishwall's card shows it for each wish still open there)
+     ASKS    quest save name → [req]: the things the wish asks to be brought that lie at a Map
+             mark (its wish items); the card of who offers it shows them while it's open
      CHECKS  [save check]: every distinct check, by index; js/savefile.js game() keeps those met
              (needs, needsRead)
      req = { kind, name: { es, en, key }, to, check, alt, n? }
@@ -624,10 +645,10 @@ function areaReqs(area) {
        alt    null: needed; 'a' / 'b': either all the 'a' of that list or all the 'b'
        n      how many (Lost Fleas, Pale Oil)`;
   const size = write(path.join(__dirname, '..', 'js', 'requires.js'), header, 'requires',
-    [['AREAS', AREAS], ['MARKS', MARKS], ['WISHES', WISHES], ['CHECKS', CHECKS]]);
+    [['AREAS', AREAS], ['MARKS', MARKS], ['WISHES', WISHES], ['ASKS', ASKS], ['CHECKS', CHECKS]]);
   const n = (o) => Object.values(o).reduce((s, l) => s + l.length, 0);
   console.log(`js/requires.js: ${Object.keys(AREAS).length} areas (${n(AREAS)}), ${Object.keys(MARKS).length} marks (${n(MARKS)}), `
-    + `${Object.keys(WISHES).length} wishes (${n(WISHES)}), ${CHECKS.length} checks; ${dropped} repeated or their area's, dropped; ${(size / 1024).toFixed(0)} KB`);
+    + `${Object.keys(WISHES).length} wishes (${n(WISHES)}), ${Object.keys(ASKS).length} asking things (${n(ASKS)}), ${CHECKS.length} checks; ${dropped} repeated or their area's, dropped; ${(size / 1024).toFixed(0)} KB`);
 })().catch((e) => fail(e.stack || e.message));
 
 /* HAND: each mark's own requirements no structured source gives (its room past an ability, a fight

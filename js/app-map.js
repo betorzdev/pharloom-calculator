@@ -1921,16 +1921,21 @@
     if (App.wishWaits && m.layer !== 'wishwall') {
       for (const q of quests) for (const j of App.wishWaits(wishOf(q), g)) wishNeedAt(j);
     }
-    // js/requires.js, when the build carries it: its requirements of the area, of this mark and of the card's open wishes.
+    /* js/requires.js, when the build carries it: its requirements of the area, of this mark and of
+       the card's open wishes; on the card of who offers them (not a wish's own item or place, nor a
+       boss's fight), the things each asks to be brought, each a way to where it lies (ASKS). */
     const RQ = SS.requires;
     if (RQ) {
       const area = R.areaOf(m.scene) || m.area, base = key.split(':').slice(0, 2).join(':');
-      const lists = [(RQ.AREAS || {})[area], (RQ.MARKS || {})[key] || (RQ.MARKS || {})[base] || (m.chk && (RQ.MARKS || {})[m.chk]), ...quests.map((q) => (RQ.WISHES || {})[q])];
+      const offers = cat !== 'task' && cat !== 'boss' ? quests : [];
+      const lists = [(RQ.AREAS || {})[area], (RQ.MARKS || {})[key] || (RQ.MARKS || {})[base] || (m.chk && (RQ.MARKS || {})[m.chk]), ...quests.map((q) => (RQ.WISHES || {})[q]),
+        ...offers.map((q) => ((RQ.ASKS || {})[q] || []).map((r) => ({ ...r, tpl: 'mapNeedBring' })))];
       lists.forEach((l, li) => (l || []).forEach((r) => {
         const name = r.name && typeof r.name === 'object' ? pick(r.name) : String(r.name || '');
         if (!name) return;
         const tos = String(r.to || '').split(',').filter(has);
-        add({ kind: r.kind || 'other', name, icon: reqIcon(r, tos[0] && list.find((x) => x.key === tos[0])), to: tos.length ? tos.join(',') : null, n: r.n,
+        if (r.tpl && tos.includes(key)) return;
+        add({ kind: r.kind || 'other', name, icon: reqIcon(r, tos[0] && list.find((x) => x.key === tos[0])), to: tos.length ? tos.join(',') : null, n: r.n, tpl: r.tpl,
           alt: r.alt || null, grp: r.alt ? 'rq' + li : null, met: !!own && !!own.needsRead && r.check != null && (own.needs || []).includes(r.check) });
       }));
     }

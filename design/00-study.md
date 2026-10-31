@@ -583,8 +583,10 @@ What each Map mark asks before its thing can be had (or its person met, its boss
 `js/requires.js`: `AREAS` (to enter an area, only what every way in asks: Sands of Karak the
 Clawline, the Citadel's areas Act 2), `MARKS` (the thing's own: its room, its route; a card adds its
 area's), `WISHES` (before the game offers a wish: a giver's or a Wishwall's card shows them for each
-wish still open there, so Greyroot's two wishes keep theirs apart) and `CHECKS` (the save checks, by
-index). Each requirement is `{ kind, name, to, check, alt, n? }`: kind wish, item, key, ability,
+wish still open there, so Greyroot's two wishes keep theirs apart), `ASKS` (what a wish asks to be
+brought that lies at a Map mark of its own, a wish item: Infestation Operation's Steel Spines, the
+Gourmand's dishes; the card of whoever offers it shows «bring …» while it's open, a count dropped by
+enemies has no mark and stays out) and `CHECKS` (the save checks, by index). Each requirement is `{ kind, name, to, check, alt, n? }`: kind wish, item, key, ability,
 boss, event or act; the game's name with its key; the mark where it's had; either all its `'a'` or
 all its `'b'`. The marks' keys are worked out in Node by `tools/mark-keys.js`, as `js/app-map.js`
 builds them, and checked against the live list (every `to` is on the Map).
