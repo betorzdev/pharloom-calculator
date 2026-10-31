@@ -1,0 +1,86 @@
+__NOTOC__
+{{SS Infobox Wish
+| header1 = Gather
+| description = Collect Mossberries from the moss-covered areas of Pharloom's lowlands.
+| npc = [[Druid of the Moss Temple]]
+| location =
+[[Bone Bottom]] Wishwall
+[[Mosshome]] NPC
+| prerequisite = None
+| reward = [[Druid's Eye]]
+}}
+
+{{Quote
+| Sweetness! Sourness! Bitterness! I need it all with hastiness! Cruel world, will you not provide me with the fruits I desire?
+| [[Moss Druid]]
+| Hr = SS
+}}
+
+<b>Berry Picking</b> is a [[Gather Wishes|Gather Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by talking to the [[Moss Druid]] in [[Mosshome]] or by accepting the Wish from the [[Bone Bottom]] Wishwall, which becomes active after defeating the [[Bell Beast]].
+
+== Wish ==
+[[File:Mossberry.png|link=Mossberry|left|thumb|100x100px]]
+
+The Moss Druid asks [[Hornet (Silksong)|Hornet]] to retrieve 3 [[Mossberry|Mossberries]] from various locations across [[Pharloom]], and return them to the Moss Druid's cave in Mosshome. Most of the berries are located in and around Bone Bottom, with the final berry in the [[Memorium]] only accessible later in the game.
+
+{{Clear|left}}
+
+{{Gallery
+| Image1 = Mapshot SS Moss Druid.png!Location of Moss Druid in Mosshome
+| Image2 = Mapshot SS Mossberry 01.png!Mossberry #1 in Moss Grotto
+| Image3 = Mapshot SS Mossberry 02.png!Mossberry #2 in Moss Grotto
+| Image4 = Mapshot SS Mossberry 03.png!Mossberry #3 in Mosshome
+| Image5 = Mapshot SS Mossberry 04.png!Mossberry #4 ([[Acts|Act 1/2]]) in Bone Bottom
+| Image6 = Mapshot SS Mossberry 05.png!Mossberry #4 ([[Act 3]]) in Bone Bottom
+| Image7 = Mapshot SS Mossberry 06.png!Mossberry #5 in Bonegrave
+| Image8 = Mapshot SS Mossberry 07.png!Mossberry #6 in Weavenest Atla
+| Image9 = Mapshot SS Mossberry 08.png!Mossberry #7 in the Memorium
+}}
+
+== Reward ==
+[[File:Druid's Eye.png|link=Druid's Eye|left|thumb|100x100px]]
+
+After delivering three berries to Moss Druid, they reward Hornet with the [[Druid's Eye]]. After completing the wish, they continue to accept additional Mossberries in exchange for [[Rosaries]], and reward Hornet with the upgraded [[Druid's Eye]]s once all berries have been delivered.
+{{Clear}}
+== Trivia ==
+* The Wish was originally named Mossberry Brew. 
+{{Gallery
+|Image1 = Hollow knight 2 quest scene.png!Mossberry Brew on a wishwall in the <i>Silksong</i> reveal trailer
+}}
+
+{{Clear}}
+
+{{Localisation
+|DEname = Beerenernte
+|DEmeaning = Berry Harvest
+|ESname = Recolección de bayas
+|ESmeaning = Berry Picking
+|FRname = Cueillette de baies verdissantes
+|FRmeaning = Picking of Greening Berries
+|ITname = Raccolta di bacche
+|ITmeaning = Berry Picking
+|JAname = 果実の採集
+|JAromanised = Kajitsu no saishū
+|JAmeaning = Fruit Collect
+|KOname = 베리 따기
+|KOromanised = Beri ttagi
+|KOmeaning = Berry Picking
+|PTname = Coleta de Frutinhas
+|PTmeaning = Little Fruit Collecting
+|RUname = Сбор ягод
+|RUromanised = Sbor jagod
+|RUmeaning = Berry Collection
+|ZHname = 莓果采集
+|ZHromanised = Méi guǒ cǎijí
+|ZHmeaning = Berry Picking
+|TWname = 苔蘚漿果採集
+|TWromanised = Táixiǎn jiāngguǒ cǎijí
+|TWmeaning = Mossberry Picking
+|CODEname = QUEST_MOSSBERRY1
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Cueillette de baies verdissantes]]

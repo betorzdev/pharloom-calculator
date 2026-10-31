@@ -1,0 +1,341 @@
+<i>[[Hollow Knight: Silksong]]</i> is broken into three <b>Acts</b>, each denoted by an introductory title card. Each Act has its own set of story <b>objectives</b> that Hornet must complete to progress to the next Act (except in the case of the <i>[[#The Threadspun Town|SAVE: The Threadspun Town]]</i>, <i>[[#Grand Gate|OPEN: Grand Gate]]</i> and <i>[[SEARCH: Silent Halls]]</i> objectives). Ongoing objectives appear on the [[Tasks]] menu in the [[Controls (Silksong)|INVENTORY]].
+
+== Act 1: Pharloom ==
+The first Act of the game begins directly after the opening cutscene, and focuses on [[Hornet (Silksong)|Hornet]]'s journey to [[the Citadel]]. Hornet acquires her first objective after speaking to the [[Chapel Maid]].
+
+<div class="mw-collapsible" data-expandtext="Show Act 1 Objectives" data-collapsetext="Hide Act 1 Objectives">
+{| class="article-table" width="100%"
+! colspan="2" style="width: 15%;"| Objective
+! style="width: 30%;"| Description
+! style="width: 25%;"| Task
+! style="width: 30%;"| Location
+|- id="The Great Citadel"
+! [[File:Seek Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>The Great Citadel}}
+| Ascend through the lands of Pharloom and reach the Citadel at the kingdom's peak.
+| Reach [[the Citadel]].
+| [[File:Mapshot SS Acts 01.png |center|100px]]
+|-id="The Threadspun Town"
+! [[File:Save Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SAVE:<br>The Threadspun Town}}
+| Break the silken curse ensnaring the town of Bellhart.
+| Defeat [[Widow]] to free the town of [[Bellhart]].
+| [[File:Mapshot SS Acts 02.png|center|100px]]
+|- id="Grand Gate"
+! [[File:Gate Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=OPEN:<br>Grand Gate}}
+| Awaken the old bells throughout the lands.
+* [[The Marrow]]
+* [[Far Fields]]
+* [[Greymoor]]
+* [[Bellhart]]
+* [[Shellwood]]
+<hr>
+<i>After activating five Bellshrines:</i> Return to the Grand Gate and open the way to the Citadel.
+| Journey to the five [[Bellshrine]]s throughout lower Pharloom and ring them to unlock the [[Grand Gate]].
+| [[File:Mapshot SS Acts 03.png|center|100px]]<br>[[File:Mapshot SS Acts 23.png|center|100px|thumb|Bellshrines]]
+|-
+|}
+</div>
+
+== Act 2: Citadel of Song ==
+The second Act begins upon entering the Citadel after defeating the [[Last Judge]] or [[Phantom]]. Hornet must explore the Citadel and learn the [[Threefold Melody]] to reach the very top of the kingdom, known as [[the Cradle]]. When achieving the <i>[[Endings (Silksong)#Ending 1: Weaver Queen|Weaver Queen]]</i> or <i>[[Endings (Silksong)#Ending 3: Twisted Child|Twisted Child]]</i> endings, Act 2 is the final act of the game.
+
+<div class="mw-collapsible" data-expandtext="Show Act 2 Objectives" data-collapsetext="Hide Act 2 Objectives">
+{| class="article-table" width="100%"
+! colspan="2" style="width: 15%;"| Objective
+! style="width: 30%;"| Description
+! style="width: 25%;"| Task
+! style="width: 30%;"| Location
+|- id="Silent Halls"
+! [[File:Seek Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEARCH:<br>Silent Halls}}
+| Venture inside the Citadel and confront the veiled bugs.
+| Confront [[Lace]] within the [[Choral Chambers]].
+| [[File:Mapshot SS Acts 04.png |center|100px]]
+|- id="Pharloom's Crown"
+! [[File:Seek Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=ASCEND:<br>Pharloom's Crown}}
+| Scale the Citadel and confront the one who haunts the lands of Pharloom.
+<hr>
+<i>After defeating the [[Cogwork Dancers]]:</i> Learn the Threefold Melody and open the path to the Citadel's crest.
+<hr>
+<i>After learning the [[Threefold Melody]]:</i> Play the Threefold Melody before the statues at the Citadel's heart.
+<hr>
+<i>After playing the Threefold Melody:</i> Rise above the Citadel and confront the one who haunts the lands of Pharloom.
+| Explore [[the Citadel]] and open the way to [[the Cradle]].
+| [[File:Mapshot SS Acts 05.png|center|100px]]<br>[[File:Mapshot SS Acts 22.png|center|100px]]
+|- id="Conductor's Melody"
+! [[File:Conductor Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=LEARN:<br>Conductor's Melody}}
+| Search the gilded heights of the Citadel for the melody of the Conductors.
+<hr>
+<i>After learning the Conductor's Melody:</i> The Conductor's Melody has been learned.
+<hr>
+<i>Required for ASCEND: Pharloom's Crown</i>
+| Learn the [[Conductor's Melody]] within the [[High Halls]].
+| [[File:Mapshot SS Acts 06.png|center|100px]]
+|- id="Architect's Melody"
+! [[File:Architect Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=LEARN:<br>Architect's Melody}}
+| Search the mechanised core of the Citadel for the melody of the Architects.
+<hr>
+<i>After learning the Architect's Melody:</i> The Architect's Melody has been learned.
+<hr>
+<i>Required for ASCEND: Pharloom's Crown</i>
+| Learn the [[Architect's Melody]] within the [[Cogwork Core]].
+| [[File:Mapshot SS Acts 07.png|center|100px]]
+|- id="Vaultkeeper's Melody"
+! [[File:Vaultkeeper Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=LEARN:<br>Vaultkeeper's Melody}}
+| Search the cloistered wing of the Citadel for the melody of the Vaultkeepers.
+<hr>
+<i>After finding the [[Sacred Cylinder]]:</i> Find a means to play the Sacred Cylinder within the Whispering Vaults.
+<hr>
+<i>After learning the Vaultkeeper's Melody:</i> The Vaultkeeper's Melody has been learned.
+<hr>
+<i>Required for ASCEND: Pharloom's Crown</i>
+| Learn the [[Vaultkeeper's Melody]] within the [[Whispering Vaults]].
+| [[File:Mapshot SS Acts 08.png|center|100px]]<br>[[File:Mapshot SS Acts 09.png|center|100px]]
+|- id="Pale Monarch"
+! [[File:Seek Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=DEFEAT:<br>Pale Monarch}}
+| Confront the one who haunts the lands of Pharloom.
+| Defeat [[Grand Mother Silk]].
+| [[File:Mapshot SS Acts 10.png|center|100px]]
+|-
+| colspan="5" align="center" | <b><i>Accessible after completing [[Silk and Soul]]</i></b>
+|- id="Soul Snare"
+! [[File:Snare Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=DESTROY:<br>Soul Snare}}
+| Scale the Citadel and ensnare its monarch in a deadly trap.
+| Defeat [[Grand Mother Silk]] with the [[Needolin]].
+| [[File:Mapshot SS Acts 11.png|center|100px]]
+|-
+|}
+</div>
+
+== Act 3: Abyss ==
+Entering the third Act requires completing the <i>[[Silk and Soul]]</i> [[Wishes|wish]] and subsequently defeating [[Grand Mother Silk]] with the [[Needolin]]. After the  <i>[[Endings (Silksong)#Ending 2: Snared Silk|Snared Silk]]</i> ending and credits, the [[Save Data (Silksong)|save profile]] gets covered with black threads, and after a few presses on it, the profile can be reopened to begin Act 3.
+
+[[Pharloom]] has been infected with the [[Void]], and Hornet must journey into Pharloom's [[The Abyss (Silksong)|Abyss]] to confront Grand Mother Silk alongside [[Lace]]. Completing Act 3's main questline and defeating its final boss, [[Lost Lace]], concludes the final ending of <i>Hollow Knight: Silksong</i>.
+
+=== Notable Changes ===
+Several major changes occur when entering Act 3:
+* Various passageways are blocked off and new ones become accessible.
+* Various enemies and bosses can become [[Black-Threading|afflicted by the Void]], enhancing their movesets, health, and attacks.
+* [[Void Mass|Void Masses]] spawn.
+* [[Bone Bottom]] is almost completely destroyed, with only the [[Bellway]] remaining. A [[Survivor's Camp]] is erected in [[the Marrow]] where the Flea Caravan used to be.
+* The [[Wormways]] become overrun with [[Lifeblood|Plasmium]].
+* Haunted enemies no longer have a visible "puppet string" effect when they react to the [[Needolin]]. (The sound cue still plays.)
+
+<div class="mw-collapsible" data-expandtext="Show Act 3 Objectives" data-collapsetext="Hide Act 3 Objectives">
+{| class="article-table" width="100%"
+! colspan="2" style="width: 15%;"| Objective
+! style="width: 30%;"| Description
+! style="width: 25%;"| Task
+! style="width: 30%;"| Location
+|- id="After the Fall"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>After the Fall}}
+| Discover the fate of Pharloom.
+| Escape [[the Cradle]].
+| align="center" | —
+|- id="Awaiting the End"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>Awaiting the End}}
+| Confront the Caretaker and his family in the Ruined Chapel beside Bone Bottom.
+| Make it to the [[Ruined Chapel]] in [[Moss Grotto]].
+| [[File:Mapshot SS Acts 12.png|center|100px]]
+|- id="Beast in the Bells"
+! [[File:Beast Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=DEFEAT:<br>Beast in the Bells}}
+| Descend into the bellway and defeat the hostile creature within.
+| Defeat the [[Bell Eater]] and save the [[Bell Beast]].
+| [[File:Mapshot SS Acts 13.png|center|100px]]
+|- id="The Dark Below"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>The Dark Below}}
+| In Deep Docks, find a way to descend beneath Pharloom.
+<hr>
+<i>After finding the [[Diving Bell|diving bell]]:</i> Find aid in Deep Docks to access its diving bell and descend beneath Pharloom.
+<hr>
+<i>After speaking to [[Ballow]]:</i> Use the diving bell in Deep Docks to descend beneath Pharloom.
+<hr>
+<i>After using the diving bell to enter [[The Abyss (Silksong)|the Abyss]]:</i> Reach the source of the black threads within the Abyss.
+| Find a way to enter [[The Abyss (Silksong)|the Abyss]].
+| [[File:Mapshot SS Acts 14.png|center|100px]]<br>[[File:Mapshot SS Acts 15.png|center|100px]]<br>[[File:Mapshot SS Acts 16.png|center|100px]]
+|- id="Return to Pharloom"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=ASCEND:<br>Return to Pharloom}}
+| Escape the Abyss.
+| Find a way to leave [[The Abyss (Silksong)|the Abyss]].
+| [[File:Mapshot SS Acts 17.png|center|100px]]
+|- id="Spell Seeker"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>Spell Seeker}}
+| Return to the Snail Shamans in the Ruined Chapel beside Bone Bottom.
+| Speak to the [[Snail Shamans (Silksong)|Snail Shamans]] within the [[Ruined Chapel]].
+| [[File:Mapshot SS Acts 12.png|center|100px]]
+|- id="The Old Hearts"
+! [[File:Fall Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=SEEK:<br>The Old Hearts}}
+| Enliven and acquire the old hearts of Pharloom.
+<hr>
+<i>After acquiring three [[Old Hearts]]:</i> Bring the old hearts to the Snail Shamans in the Ruined Chapel beside Bone Bottom.
+
+| Collect 3 of the following items:
+* [[Encrusted Heart]]
+* [[Pollen Heart]]
+* [[Hunter's Heart]]
+* [[Conjoined Heart]]
+| [[File:Mapshot SS Acts 12.png|center|100px]]
+|- id="Heart of Might"
+! [[File:Might Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=CLAIM:<br>Heart of Might}}
+| Claim the Encrusted Heart.
+<hr>
+<i>After claiming the Encrusted Heart:</i> The Encrusted Heart has been claimed from Crust King Khann.
+<hr>
+<i>Required for SEEK: The Old Hearts</i>
+| Defeat [[Crust King Khann]] and collect the [[Encrusted Heart]].
+| [[File:Mapshot SS Acts 19.png|center|100px]]
+|- id="Heart of the Woods"
+! [[File:Woods Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=CLAIM:<br>Heart of the Woods}}
+| Claim the Pollen Heart.
+<hr>
+<i>After claiming the Pollen Heart:</i> The Pollen Heart has been claimed from Nyleth.
+<hr>
+<i>Required for SEEK: The Old Hearts</i>
+| Defeat [[Nyleth]] and collect the [[Pollen Heart]].
+| [[File:Mapshot SS Acts 18.png|center|100px]]
+|- id="Heart of the Wild"
+! [[File:Wild Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=CLAIM:<br>Heart of the Wild}}
+| Claim the Hunter's Heart.
+<hr>
+<i>After claiming the Hunter's Heart:</i> The Hunter's Heart has been claimed from Skarrsinger Karmelita.
+<hr>
+<i>Required for SEEK: The Old Hearts</i>
+| Defeat [[Skarrsinger Karmelita]] and collect the [[Hunter's Heart]].
+| [[File:Mapshot SS Acts 20.png|center|100px]]
+|- id="Last Dive"
+! [[File:Finale Quest Icon.png|120x120px]]
+! {{Typography|type=h4|text=DESCEND:<br>Last Dive}}
+| Dive into the void and cut Pharloom free.
+| Return to [[The Abyss (Silksong)|the Abyss]] and defeat [[Lost Lace]].
+| [[File:Mapshot SS Acts 21.png|center|100px]]
+|}
+</div>
+
+==Creation and Development==
+According to the ''Bloomberg News'' journalist Jason Schreier, who met and interviewed [[Team Cherry]] in August and November 2025, Team Cherry "''always knew [Silksong] was going to be this upward journey from Pharloom to the Citadel and then to the Abyss where the world is destroyed. They knew it was going to have these three acts.''" Schreier also said that they "''worked on each act successively''", and that doing so "''helped them kind of have this structure in their minds and make it feel more fun''".<ref>[https://www.youtube.com/watch?v=Vh81qNGpHnc Why Hollow Knight: Silksong Took Seven Years To Make] on YouTube</ref> This is supported by Gibson being quoted in the November interview as saying "''Act 3 stuff we worked on at the very end. But all of those areas we knew were going to exist, or were slated to exist.''"<ref name="interview" /> The Abyss and other Act 3-exclusive content first started appearing in maps dated to 2022.<ref>[https://hollowknight.wiki/w/Cut_Content_(Silksong)#Gallery Early <i>Hollow Knight: Silksong</i> Maps]</ref> However, [[William Pellen]] is quoted in the interview as saying that the Abyss postgame was conceptualized before Acts were formally named, possibly implying they initially only internally existed.<ref name="interview">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet]</ref> Additionally, Act 3 was much harder prior to release, getting its difficulty later reduced for balancing reasons.<ref>[https://www.youtube.com/watch?v=DBvt0maVetE&t=19330s Live stream VOD discussing conversation with Matthew Griffin] (5:22:10)</ref>
+
+== Trivia ==
+* The <i>[[#Silent Halls|SEARCH: Silent Halls]]</i> map marker is placed in the Cogwork Core, but the objective will only progress if Lace is encountered in the Choral Chambers.
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed <i>Beast in the Bells</i> not being completable when [[Bell Beast]] is summoned at the [[Bilewater]] Bellway during the late game.
+}}
+
+==Names in other languages==
+===Act 1: Pharloom===
+{{Localisation
+|hr=false
+|DEname = AKT 1: PHARLOOM
+|DEmeaning = ACT 1: PHARLOOM
+|ESname = ACTO 1: TELALEJANA
+|ESmeaning = ACT 1: FARWEB
+|FRname = ACTE 1: PHARLOOM
+|FRmeaning = ACT 1: PHARLOOM
+|ITname = ATTO 1: LUNGITELA
+|ITmeaning = ACT 1: FARWEB
+|JAname = 第１章: ファールーム
+|JAromanised = Dai 1 shō: fārūmu
+|JAkatakana = foreign
+|JAmeaning = Chapter 1: Pharloom
+|KOname = 1장: 팔룸
+|KOromanised = 1jang: pallum
+|KOmeaning = Chapter 1: Pharloom
+|PTname = ATO 1: FIARLONGO
+|PTmeaning = ACT 1: FIARLONGO<br><small><i>Fiarlongo</i> is the name of [[Pharloom]] in Portuguese, a combination of <i>fiar</i> (to spin thread) and <i>longo</i> (long).</small>
+|RUname = АКТ 1: ФАРЛУМ
+|RUromanised = AKT 1: FARLUM
+|RUmeaning = ACT 1: PHARLOOM
+|TWname = 第一幕: 紡絡
+|TWromanised = Dì yī mù: Fǎngluò
+|TWmeaning = same
+|ZHname = 第一幕: 纺络
+|ZHromanised = Dì yī mù: Fǎngluò
+|ZHmeaning = Act 1: Pharloom
+|CODEname= ACT_1
+}}
+
+=== Act 2: Citadel of Song ===
+{{Localisation
+|hr=false
+|DEname = AKT 2: SANGESZITADELLE
+|DEmeaning = ACT 2: CITADEL OF SONG
+|ESname = ACTO 2: CIUDADELA MELODIOSA
+|ESmeaning = ACT 2: MELODIOUS CITADEL
+|FRname = ACTE 2: CITADELLE MÉLODIEUSE
+|FRmeaning = ACT 2: MELODIOUS CITADEL
+|ITname = ATTO 2: CITTADELLA DEL CANTO
+|ITmeaning = ACT 2: CITADEL OF SONG
+|JAname = 第２章: 唱歌のシタデル
+|JAromanised = Dai 2-shō: shōka no shitaderu
+|JAmeaning = Chapter 2: Citadel of Song
+|KOname = 2장: 성채의 노래
+|KOromanised = 2jang: seongchaeui norae
+|KOmeaning = Chapter 2: Citadel's Song
+|PTname = ATO 2: CIDADELA DA CANÇÃO
+|PTmeaning = ACT 2: CITADEL OF SONG
+|RUname = АКТ 2: ЦИТАДЕЛЬ ПЕСНИ
+|RUromanised = AKT 2: CITADEL' PESNI
+|RUmeaning = ACT 2: CITADEL OF SONG
+|TWname = 第二幕: 聖歌城堡
+|TWromanised = Dì èr mù: Shènggē chéngbǎo
+|TWmeaning = same
+|ZHname = 第二幕: 圣歌城堡
+|ZHromanised = Dì èr mù: Shènggē chéngbǎo
+|ZHmeaning = Act 2: Castle of Hymn
+|CODEname = ACT_2
+}}
+
+=== Act 3: Abyss ===
+{{Localisation
+|hr=false
+|DEname = AKT 3: ABGRUND
+|DEmeaning = ACT 3: ABYSS
+|ESname = ACTO 3: ABISMO
+|ESmeaning = ACT 3: ABYSS
+|FRname = ACTE 3: LES ABYSSES
+|FRmeaning = ACT 3: THE ABYSS
+|ITname = ATTO 3: ABISSO
+|ITmeaning = ACT 3: ABYSS
+|JAname = 第３章: アビス
+|JAromanised = Dai 3-shō: abisu
+|JAmeaning = Chapter 3: Abyss
+|KOname = 3장: 심연
+|KOromanised = 3jang: simyeon
+|KOmeaning = Chapter 3: Abyss
+|PTname = ATO 3: ABISMO
+|PTmeaning = ACT 3: ABYSS
+|RUname = АКТ 3: БЕЗДНА
+|RUromanised = AKT 3: BEZDNA
+|RUmeaning = ACT 3: ABYSS
+|TWname = 第三幕: 深淵
+|TWromanised = Dì sān mù: Shēnyuān
+|TWmeaning = same
+|ZHname = 第三幕: 深渊
+|ZHromanised = Dì sān mù: Shēnyuān
+|ZHmeaning = Act 3: Abyss
+|CODEname = ACT_3
+}}
+
+{{Refs|hr=SS}}
+
+[[Category: Hollow Knight: Silksong]]
+
+[[pt:Atos]]

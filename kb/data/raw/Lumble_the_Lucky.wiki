@@ -1,0 +1,120 @@
+{{SS Infobox NPC
+| area = [[Blasted Steps]]
+| va = [[Matthew Griffin]]<ref>[https://youtu.be/ZZUx9OOWnH0?t=24380 SILKSONG DAY 3 | A Hollow Knight Speedrunner's first Playthrough!] (6:46:32), Live Chat, Leth: <i>"I'm the gambler yrs."</i>{{sic}}</ref>
+| affiliation = Pilgrims
+| aka = The Lucky
+| role = [[NPCs (Silksong)#Merchants|Merchant]]
+| singnum = 2
+}}
+
+{{Quote 
+|It takes a lot of luck and a lot of faith to make it this far, though I'm sure I don't need to tell you that.
+|Lumble the Lucky
+|Hr=SS
+}}
+
+<b>Lumble the Lucky</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He offers to play a dice-throwing game with [[Hornet (Silksong)|Hornet]].
+
+== Background ==
+Lumble is a traveller on his way to [[the Citadel]], found resting alone in the [[Blasted Steps]].
+
+== In-game Events ==
+The dice minigame can be initiated by talking to Lumble the Lucky after exhausting his initial encounter dialogue.
+
+Lumble owns {{R|16}} when he is first encountered.<ref><code>PlayerData.dicePilgrimBank</code> in <code>Assembly-CSharp.dll</code>.</ref> He gains {{R|4}} from Hornet every time he wins the dice minigame, and loses {{R|4}} to Hornet every time he loses. In order to exhaust Lumble's Rosaries, Hornet must win all of the Rosaries he originally owned, in addition to any Rosaries he gains from winning the game. If Hornet wins again after exhausting Lumble's Rosaries, he gives her the Magnetite Dice. Once this happens, the title "the Lucky" is removed from his name.
+
+If the Magnetite Dice were not won from him, Lumble is found dead once the [[Cogwork Dancers]] are defeated or the [[Clawline]] is acquired, and the dice can be obtained from his body. If the dice were won from him, his body can instead be found in the room before the [[Last Judge]] arena. However, if the dice are not picked up by the time [[Act 3]] begins, they are looted and sold at [[Grindle]]'s shop in the Blasted Steps for {{R|300}}.
+
+=== How to Play ===
+Hold the [[Controls (Silksong)|BIND]] button to shake the dice. Releasing the button causes Hornet to roll the dice. Afterwards, Lumble rolls his dice, and a winner is decided based on the number rolled (which cannot be seen on screen). The winner gains {{R|4}}, and the loser loses {{R|4}}. If there is a tie, no Rosaries are gained or lost.
+
+It is possible to guarantee a win in the dice minigame. In order to do so, let go of the button as Hornet turns her wrist to face a different direction. This can be timed by letting go on the 14th shake of the dice. The dice shine white on the 15th shake, but releasing at that point is probably too late. Successfully executing this causes Hornet to grunt as she lets go of the dice, and she wins the round. Alternatively, using a timer and releasing on the 5th second (if the timer starts as soon as the game begins) guarantees a win.
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Ahh, a fellow pilgrim. I've been praying alone here too long, with only the wind's voice to join mine.<br>
+We're so close. Our pilgrimage is almost over. Just one final, brutal climb, hm?<br>
+{{HTalk|The Citadel is near, pilgrim. You must have had some strength in you. Few of your fellows seem to reach these heights.}}<br>
+Aye, the roads become lonelier the longer they're travelled and the higher we climb.<br>
+It takes a lot of luck and a lot of faith to make it this far, though I'm sure I don't need to tell you that.
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = While we rest for the journey ahead, care to test your luck with a game of dice? You know how to play, I trust?<br>
+{{HTalk|I'm sure I can grasp the rules quickly enough, sir. What is the wager?}}<br>
+A beat of rosaries on each roll. What say you? Sound fair? Let our worries roll away with the dice!
+| Title1_Event3 = Revisiting, and Hornet has not won the [[Magnetite Dice]] yet
+| Title1_Dialogue3 = Well, what a pleasure. The road has carried you back to me.<br>
+Care for a few games of dice, while we're here? For the same wager, a beat of rosaries? Just sit here beside me and we'll begin.
+| Title1_Event4 = Running out of [[Rosaries]] during game
+| Title1_Dialogue4 = Well well! Seems I won the last of your rosaries. Luck is granted to the faithful, it is sung, so I must be very faithful indeed.<br>
+If you happen on any more rosaries though, I'd be well happy to play you again.
+| Title1_Event5 = Speaking without enough Rosaries
+| Title1_Dialogue5 = A beat of rosaries is our wager. Once you find enough, I'd be happy to play.
+| Title1_Event6 = Upon defeat
+| Title1_Dialogue6 = You win again! Never have I met a luckier pilgrim...<br>
+{{HTalk|You mistake, sir. It was skill that won me this game. One must be careful not to rely merely on luck.}}<br>
+Hmph. Fairly said, sister.<br>
+I must confess something though. Truth is, I already lost the last of my rosaries. I can't pay our last wager.<br>
+I do have something small for you, at least. These dice. They certainly seem to have taken a liking to you. Take them, in memory of our meeting.
+| Title1_Event7 = Exhausted dialogue after defeat
+| Title1_Dialogue7 = I pray my dice bring you luck on your final climb, sister. And I pray that by parting with them, my own ascent shall be made lighter.
+| Title1_Event8 = Playing the [[Needolin]]
+| Title1_Dialogue8 = [n]Worn and winding ways...<br>
+Luck and faith, intertwined...<br>
+Faces of the fallen...<br>
+Let holy chance decide!
+}}
+
+== Location ==
+Lumble the Lucky can be found in the [[Blasted Steps]], west of the [[Bellway]] station.
+
+If the [[Magnetite Dice]] were won from him, Lumble's corpse can be found in the room before the [[Last Judge]] arena.
+
+{{Gallery
+|Image1 = Mapshot SS Lumble the Lucky 01.png!Location in the Blasted Steps
+|Image2 = Mapshot SS Lumble the Lucky 02.png!Corpse location in the<br>Blasted Steps
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Lumble 01.png!Resting
+|Image2 = Screenshot SS Lumble 02.png!Playing dice game with Hornet
+|Image3 = Screenshot SS Lumble 03.png!After his dice were won
+|Image4 = Screenshot SS Lumble 06.png!Singing
+|Image5 = Screenshot SS Lumble 04.png!Corpse if the dice were won
+|Image6 = Screenshot SS Lumble 05.png!Corpse if the dice were not won
+}}
+
+== Trivia ==
+* Lumble uses the word beat as a unit of measure equal to four.<ref>Lumble: <i>"A beat of rosaries on each roll."</i></ref> The same word appears in the [[Lore Tablets (Silksong)|Lore Tablets]] in reference to the size of shipments that [[Dreg Workers]] and [[Dock Workers]] are required to make.<ref>Greymoor [[Lore Tablets (Silksong)#Greymoor|Lore Tablet]]: <i>"On the eighth harvest, send: Fifty measures, nine beats dregthread, spooled, Fourteen measures dregthread, twined, Oath of fealty, all workers. On the twelfth harvest, send: Forty measures dregthread, spooled, Two beats fine thread, twined, Oath of fealty, all workers."</i></ref><ref>Deep Docks [[Lore Tablets (Silksong)#Deep Docks|Lore Tablet]]: <i>"At the seventh bell toll, send: Thirty measures, four beats Smokerock, Eight beats Sweetsmelt, Mark of fealty, all workers. At the ninth bell toll, send: Twenty measures, two beats Smokerock, Seven beats Sweetsmelt, Mark of fealty, all workers."</i></ref>
+* Originally, most translations of the game referred to Lumble as male, but many were later changed to female in [[Updates (Silksong)#1.0.29242 (Patch 4)|1.0.29242 (Patch 4)]] under "Various localisation fixes implemented across all languages."
+* Early in development, Lumble the Lucky was planned to appear in the first room of the later-cut [[Cut Content (Silksong)/Areas#Red Coral Gorge|Red Coral Gorge]] area.
+
+{{Localisation
+|DEname = Lumble Der Glückskäfer
+|DEmeaning = Lumble the Lucky-bug
+|ESname = Lumble La Afortunada
+|ESmeaning = Lumble the Fortunate (feminine)
+|FRname = Lumble La Chanceuse 
+|FRmeaning = Lumble the Lucky (feminine)
+|ITname = Lumble La Fortunata
+|ITmeaning = Lumble the Fortunate (feminine)
+|JAname = ツキに恵まれしランブル
+|JAromanised = Tsuki ni megumareshi ranburu
+|JAmeaning = Fortune Blessed Lumble
+|KOname = 운 좋은 럼블
+|KOromanised = Un joeun reombeul
+|KOmeaning = Good Luck Lumble
+|PTname = Lumble A Sortuda
+|PTmeaning = Lumble the Lucky (feminine)
+|RUname = Счастливица Ламбл
+|RUmeaning = Lucky Lumble (feminine)
+|RUromanised = Sčastlivica Lambl
+|ZHname = 幸运儿 兰布尔
+|ZHromanised = Xìngyùnér lánbùěr
+|ZHmeaning = Lucky One, Lumble
+|CODEname= DICE_PILGRIM
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

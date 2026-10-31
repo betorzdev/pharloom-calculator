@@ -1,0 +1,83 @@
+{{SS Infobox Wish
+| header1 = Sprint
+| description = Race Sprintmaster Swift to discover Pharloom's fastest bug.
+| npc = [[Sprintmaster Swift]]
+| location = [[Far Fields]]
+| prerequisite = * Obtain [[Silk Soar]]
+* Hit the lever in [[Hunter's March]] and open the bridge to [[Far Fields]]
+| reward = [[Rosary Necklace]]<br>[[Beast Shard]]<br>[[Mask Shard (Silksong)|Mask Shard]]
+}}
+
+{{Quote
+| Be you nimble? Be you quick? If you would prove yourself Pharloom's fastest bug, meet me at the furthest border of the Far Fields! With all haste!
+| [[Sprintmaster Swift]]
+| Hr = SS
+}}
+
+<b>Fastest in Pharloom</b> is a [[Unique Wishes|Unique Wish]] in <i>[[Hollow Knight: Silksong]]</i>, which is available after obtaining the [[Silk Soar]] ability, as well as hitting the lever in [[Hunter's March]] to open the bridge to [[Far Fields]]. The Wish can be accepted from the Wishwall in [[Bellhart]] or directly from [[Sprintmaster Swift]].  
+
+== Wish ==
+Sprintmaster Swift asks [[Hornet (Silksong)|Hornet]] to beat him in 3 separate courses in a race, the tracks being more complex with each subsequent race.
+
+{{Gallery
+| Image1 = Mapshot SS Sprintmaster Swift 01.png!Sprintmaster Swift's location in the Far Fields
+}}
+
+Each race requires Hornet to complete 3 laps before Sprintmaster Swift. The course is lined with small glowing bugs that indicate the proper path. Hornet must get through the checkpoints that line the racetrack in the order they're placed in. Going through a checkpoint out of order or exiting the room immediately ends in her loss. Playing the [[Needolin]] causes the flying bug administrating the race to blow a whistle, cancelling the race and taking Hornet to the start of the track. Hornet is able to use either her [[Needle]] or the [[Clawline]] on Sprintmaster Swift to temporarily stun him.
+By timing a SPRINT press on the second chime of the starting bell, Hornet is also able to gain a head start on Sprintmaster Swift at the beginning of a race, akin to the starting boost commonly seen in racing games.
+
+{{Gallery
+| Image1 = Screenshot SS Racetrack 01.png!First course
+| Image2 = Screenshot SS Racetrack 02.png!Second course
+| Image3 = Screenshot SS Racetrack 03.png!Third course
+}}
+[[File:Video_SS_Sprintmaster_Swift_Race_Start.mp4|center]]
+
+== Reward ==
+Each time Hornet completes a race before Sprintmaster Swift, he gives a reward:
+
+* The first race awards Hornet with a [[Rosary Necklace]].
+: [[File:Rosary Necklace.png|100x100px|link=Rosary Necklace]]
+
+* The second race awards Hornet with a [[Beast Shard]].
+: [[File:Beast Shard.png|100x100px|link=Beast Shard]]
+
+* The third and final race awards Hornet with a [[Mask Shard (Silksong)|Mask Shard]].
+: [[File:Mask Shard (Silksong).png|100x100px|link=Mask Shard (Silksong)|Mask Shard]]
+
+== Trivia ==
+* After completing the wish and receiving the [[Everbloom]], [[Sprintmaster Swift]] will challenge [[Hornet (Silksong)|Hornet]] to an additional race, with the same course as the third race but 6 laps long, after completing this challenge Sprintmaster will gift Hornet the [[Sprintmaster Memento]].
+* The icon for the Wish resembles the [[Dashmaster]] and [[Sprintmaster]] charm from <i>[[Hollow Knight]]</i>.
+
+{{Localisation
+|DEname = Schnellster in Pharloom
+|DEmeaning = Fastest in Pharloom
+|ESname = La más veloz de Telalejana
+|ESmeaning = The Fastest in Pharloom (feminine)
+|FRname = Le plus rapide de Pharloom
+|FRmeaning = The Fastest in Pharloom 
+|ITname = Primato a Lungitela
+|ITmeaning = Record of Pharloom
+|JAname = 最速のムシ
+|JAromanised = Saisoku no mushi
+|JAmeaning = Fastest Bug
+|KOname = 팔룸에서 제일 빠른 자
+|KOromanised = Pallumeseo jeil ppareun ja
+|KOmeaning = The Most Fastest in Pharloom
+|PTname = Mais Rápido de Fiarlongo
+|PTmeaning = Fastest in Pharloom
+|RUname = Быстрее всех в Фарлуме
+|RUromanised = Bystree vsex v Farlume
+|RUmeaning = Faster than Everyone in Pharloom
+|ZHname = 纺络竞速冠军
+|ZHromanised = Fǎngluò jìngsù guànjūn
+|ZHmeaning = Pharloom's Racing Champion
+|TWname = 紡絡競速冠軍
+|TWromanised = Fǎngluò jìngsù guànjūn
+|TWmeaning = same
+|CODEname = QUEST_SPRINT</code><br><code>QUEST_SPRINT_KILL</code>
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

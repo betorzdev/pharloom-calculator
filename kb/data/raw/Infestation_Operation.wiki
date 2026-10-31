@@ -1,0 +1,92 @@
+{{Navbar
+| page1 = Rite of Rebirth
+| page2 = Infestation Operation
+}}
+
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Acquire [[Steel Spines]] from [[Crull and Benjin]] in [[Sinner's Road]] so Yarnaby can remove the parasite.
+| npc = [[Yarnaby]]
+| location = [[Greymoor]] NPC
+| prerequisite = Complete <i>[[Rite of Rebirth]]</i>
+| reward = [[Witch Crest]]
+}}
+
+{{Quote
+| The great Yarnaby can rid you of those nasty "roots", but to crack your stiff shell my mighty Extricator needs an upgrade!
+| [[Yarnaby]]
+| Hr = SS
+}}
+
+<b>Infestation Operation</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish only becomes available by first completing the <i>[[Rite of Rebirth]]</i> wish and acquiring the [[Cursed Crest]].
+
+After [[Hornet (Silksong)|Hornet]] frees herself from the [[Chapel of the Witch]], various [[NPCs (Silksong)|NPCs]] advise talking to the [[Bell Hermit]] in [[Bellhart]], who tells Hornet the location of the home of the exiled physician [[Yarnaby]]. Yarnaby only opens her door while Hornet is Cursed. Once inside, she inspects Hornet and subsequently offers the services of her Extricator, which needs an upgrade before it can be used. Yarnaby then offers the wish to Hornet.
+
+{{Gallery
+|Image1 = Mapshot SS Yarnaby.png!Location in Greymoor
+|Image2 = Screenshot SS Yarnaby 03.png!Yarnaby in Greymoor
+}}
+
+== Wish ==
+[[File:Steel Spines.png|link=Steel Spines|left|thumb|100x100px]]
+
+Hornet is tasked with acquiring the [[Steel Spines]] for Yarnaby's Extricator from the NPCs [[Crull and Benjin]] in [[Sinner's Road]], which can be purchased from them for {{R|160}}.
+
+If the wish is started in [[Act 3]] (as Hornet is unable to progress to Act 3 while Cursed due to the <i>[[Twisted Child]]</i> ending), then Crull and Benjin are dead when Hornet reaches their home, allowing her to acquire the Steel Spines for free.
+
+{{Gallery
+|Image1 = Mapshot SS Crull and Benjin 01.png!Location in Sinner's Road
+|Image2 = Screenshot SS Sinner's Road 05.png!Crull and Benjin in Sinner's Road
+}}
+
+== Reward ==
+{{Disclaimer|Completing this final stage of the wish makes the <i>[[Twisted Child]]</i> ending subsequently unobtainable on that [[Save Data (Silksong)|save profile]].}}
+[[File:Witch Crest File.png|link=Witch Crest|left|thumb|100x100px]]
+
+After returning to Yarnaby and giving her the Steel Spines, the wish completes. Following a short cutscene afterwards, Hornet is then rewarded with the Cursed Crest transforming into the [[Witch Crest]].
+
+{{Clear}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Infestation Operation 01.png!Cutscene at the end of the wish, in which Hornet is strapped to Yarnaby's operating table as the Steel Spines approach. 
+}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): Fixed wish <i>Infestation Operation</i> often not being completable during the late game.
+}}
+{{Localisation
+|DEname = Odiöse Operation
+|DEmeaning = Odious Operation
+|ESname = Extirpación de infestación
+|ESmeaning = Infestation Extirpation<br><small>Extirpation means to uproot, but it may also reference [[wikipedia:surgical extirpation|surgical extirpation]], a type surgery which aims to completely remove an organ or tissue.</small>
+|FRname = Chirurgie parasitaire
+|FRmeaning = Parasitic Surgery
+|ITname = Operazione di rimozione
+|ITmeaning = Operation of Removal
+|JAname = 手術の準備
+|JAromanised = Shujutsu no junbi
+|JAmeaning = Surgery Preperation
+|KOname = 기생충 제거 수술
+|KOromanised = Gisaengchung jegeo susul
+|KOmeaning = Parasite Removal Surgery
+|PTname = Operação Infestação
+|PTmeaning = Infestation Operation
+|RUname = Инвазивная операция
+|RUromanised = Invazivnaja operacija
+|RUmeaning = Invasive Operation
+|ZHname = 寄生手术
+|ZHromanised = Jìshēng shǒushù
+|ZHmeaning = Parasite Operation
+|TWname = 寄生手術
+|TWromanised = Jìshēng shǒushù
+|TWmeaning = same
+|CODEname = QUEST_DOCTOR_CURSE_CURE
+}}
+
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

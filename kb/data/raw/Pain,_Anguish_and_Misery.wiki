@@ -1,0 +1,67 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Return to the Citadel's Stage, beside the Whispering Vaults.
+| npc = [[The Tormented One]]
+| location = [[Songclave]] wishwall
+| prerequisite =
+* Obtain the [[Claw Mirror]]
+* Obtain the [[Silk Soar]]
+| reward = [[Dark Mirror]]
+}}
+
+{{Quote
+| In the darkest of shadows, all is made clear. Pharloom draws its final breath, and we few remaining must bear its dying pain. Come to the Citadel's Stage and let us suffer together.
+| [[The Tormented One]]
+| Hr = SS
+}}
+
+<b>Pain, Anguish and Misery</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It can be acquired from [[Songclave]]'s wishwall after obtaining the [[Claw Mirror]] from [[Trobbio]] and the [[Silk Soar]].
+
+== Wish ==
+To complete the wish, [[Hornet (Silksong)|Hornet]] must return to [[the Stage]] within the [[Whispering Vaults]] and find [[the Tormented One]].
+
+{{Gallery
+| Image1 = Mapshot SS Trobbio 01.png!Tormented Trobbio's location in the Whispering Vaults
+}}
+
+There, she finds [[Tormented Trobbio]], who, tormented by the coming of [[Pharloom]]'s end, is ready to submit to the pain. Defeating him completes the wish.
+
+== Reward ==
+[[File:Dark Mirror.png|link=Dark Mirror|left|thumb|100x100px]]
+[[File:Claw Mirrors.png|link=Claw Mirrors|right|thumb|100x100px]]
+
+After Hornet defeats Tormented Trobbio, the [[Dark Mirror]] is flung out of a trapdoor. When picked up, it automatically combines with the Claw Mirror to become the [[Claw Mirrors]].
+
+{{Clear}}
+
+{{Localisation
+|DEname = Schmerz, Pein und Elend
+|DEmeaning = Pain, Torment and Misery
+|ESname = Dolor, angustia y miseria
+|ESmeaning = Pain, Anguish and Misery
+|FRname = Douleur, angoisse et misère
+|FRmeaning = Pain, Anguish and Misery
+|ITname = Dolore, angoscia e miseria
+|ITmeaning = Pain, Anguish and Misery
+|JAname = 苦痛と悲嘆
+|JAromanised = Kutsū to hitan
+|JAmeaning = Pain and Grief
+|KOname = 고통, 비통 그리고 애통
+|KOromanised = Gotong, bitong geurigo aetong
+|KOmeaning = Pain, Grief and Mourning
+|PTname = Dor, Angústia e Miséria
+|PTmeaning = Pain, Anguish and Misery
+|RUname = Боль, муки и невзгоды
+|RUromanised = Bol', muki i nevzgody
+|RUmeaning = Pain, Anguish and Misfortune
+|ZHname = 苦痛巡礼
+|ZHromanised = Kǔtòng xúnlǐ
+|ZHmeaning = Pain Pilgrimage
+|TWname = 苦痛巡禮
+|TWromanised = Kǔtòng xúnlǐ
+|TWmeaning = same
+|CODEname = QUEST_TROBBIO_2
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

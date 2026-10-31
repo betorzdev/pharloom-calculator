@@ -1,0 +1,281 @@
+{{SS Infobox NPC
+|area = [[Halfway Home]]<br>[[The Marrow]]<br>[[Shellwood]]<br>[[Blasted Steps]]<br>[[Voltnest]]
+|va = Lauren Koopowitz<ref>[https://www.imdb.com/title/tt10323784/characters/nm6664826/ Hollow Knight: Silksong on IMDb]</ref>
+|image1 = <gallery>
+Nuu Halfway Home.png|Idle
+Nuu Idle.png|Traveling
+</gallery>
+|quest = [[Bugs of Pharloom]]
+|role = Quest
+|affiliation = [[Halfway Home]] (Resident)
+|singnum = 3
+}}
+
+{{Quote
+|Cut them with your blade! Cut them with your mature spirit! Cut them with your savage adult heart!
+|Nuu
+|Hr=SS
+}}
+
+<b>Nuu</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>.
+She gives Hornet the [[Hunter's Journal (Silksong)|Hunter's Journal]], along with the <i>[[Bugs of Pharloom]]</i> [[wish]], to fill out one hundred entries in the journal.
+
+== Background ==
+Nuu is a young child fixated on learning about the various creatures of the world.<ref>Hornet and Nuu dialogue:<br>Nuu: <i>"Oooh ma! Sweet surprise for Nuu! You are adult, yes? Fully grown? Ready to hunt?"</i><br>Hornet: <i>"Certainly I am no child, young one."</i></ref><ref>Nuu: <i>"Is hard work, learning so much from creatures, but for Nuu is very fulfilling. Now go and hunt, and prey, miss grown-up!"</i></ref> She has already travelled throughout the lands of [[Pharloom]] and documented her findings on various scrolls, including visiting [[Wisp Thicket]] and [[Watcher at the Edge]].<ref>Nuu: <i>"Hidden in the dark thickets are strange bugs who call up dancing flames. So pretty! So warm! But when Nuu tried to crawl near, the flames became angry and swooped all around! Poor Nuu was half roasted!"</i></ref><ref>Nuu: <i>"Near the edge of those lands swept by wind and sand, Nuu has seen it, a single bug, watching, waiting."</i></ref>
+
+==In-game Events==
+<b>Nuu</b> can be found at the top floor of [[Greymoor#Sub-area: Halfway Home|Halfway Home]]. She asks Hornet to slay and document the creatures of [[Pharloom]], beginning the Wish <i>[[Bugs of Pharloom]]</i>.
+
+Nuu occasionally leaves Halfway Home and travels throughout Pharloom. Before Act 3, if Hornet has met Nuu, then Nuu can be found observing the remains of certain bosses that Hornet has defeated: the [[Skull Tyrant]] in [[the Marrow]], one of the [[Great Conchflies]] in [[Blasted Steps]], [[Sister Splinter]] in [[Shellwood]], and [[Voltvyrm]] in [[Sands of Karak#Sub-area: Voltnest|Voltnest]]. Regardless of whether these enemies have been defeated or not, there is a 50% chance that Nuu is away when Hornet arrives in Halfway Home.<ref group=Source><code>GameManager.TimePasses()</code> sets flag <code>nuuIsHome</code>.</ref> She is always present when Hornet has at least 100 entries and is ready to complete the wish.
+
+After completing the Wish, Nuu attempts to taste the defeated enemies by kissing [[Hornet (Silksong)|Hornet]], who responds by slapping her. Nuu then rewards Hornet with a [[Tool Pouch]] upgrade.
+
+In Act 3, Nuu always stays in Halfway Home. She hints towards the location of certain enemies if Hornet has at least 120<ref group=Note>Enemies not required for the [[Hunter's Memento]] are not counted</ref> completed entries in the journal and these special enemies have not been recorded yet.<ref group=Source>FSM <code>Nuu - Dialogue</code> in <code>halfway_01.bundle</code> checks <code>JournalCompletedCount</code>.</ref>
+
+If the Hunter's Journal is fully completed, Nuu comments on Hornet's achievement and grants her the [[Hunter's Memento]], before leaving Halfway Home forever to travel the world.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Bugs of Pharloom
+| title = [[File:Learn Quest Icon.png|100px]]<br>[[Bugs of Pharloom|LEARN:<br>Bugs of Pharloom]]
+| description = "Would you help Nuu? Could you take her scroll, and fill its pages with the learnings of your cuts?"
+| objective = Defeat the many creatures of Pharloom and fill out the Hunter's Journal.
+| location = <b><i>[[Halfway Home]] NPC</i></b>
+Nuu
+| reward = [[Tool Pouch|Tool Pouch Expansion]]<br><i>[[Achievements (Silksong)|Keen Hunter]]</i>
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]Every beast, great and small...<br>
+Clever Nuu must know them all!<br>
+Wings that beat, legs that crawl...<br>
+In waters deep and caverns tall...
+
+| Title2 = Halfway Home
+| Title2_Event1 = First encounter
+| Title2_Dialogue1 = Oooh ma! Sweet surprise for Nuu! You are adult, yes? Fully grown? Ready to hunt?<br>
+{{HTalk|Certainly I am no child, young one.}}<br>
+Perfect then! Nuu must ask a wish! For her, you would seek Pharloom's many fabulous bugs and cut them.<br>
+Cut them with your blade! Cut them with your mature spirit! Cut them with your savage adult heart!<br>
+Would you help Nuu? Could you take her scroll, and fill its pages with the learnings of your cuts?
+| Title2_Event2 = Exhausted dialogue, after completing <i>[[Bugs of Pharloom]]</i>
+| Title2_Dialogue2 = Miss grown-up has hunted much, so soon is time for Nuu to venture out, she thinks. Keep your sights keen, for to meet in the wilds would be a delight!
+
+| Title3 = Bugs of Pharloom
+| Title3_Event1 = Declining the wish
+| Title3_Dialogue1 = <b>Before Act 3:</b><br>
+Oooh, ma. Miss grown-up, you deny poor Nuu? So sour!<br>
+Think of all the delectable learnings can we dig out of the creatures living here!
+<hr/>
+<b>In Act 3:</b><br>
+Oooh, ma. Miss grown-up, you deny poor Nuu? So sour!<br>
+{{HTalk|I am sorry, Nuu. Though I recognise the value in your wish, my own task is too pressing.}}
+| Title3_Event2 = Speaking after declining
+| Title3_Dialogue2 = {{HTalk|Child, if your wish is to gain learning of this land's creatures, why not hunt them yourself?}}<br>
+Ma? Nuu, herself to hunt? No, no! Is not Nuu's nature to hunt, is hers to come later and learn. Such is the way of things!<br>
+But you... a predator! Know it from your smells can clever Nuu! So Nuu asks you to cut and record, so we both may learn!
+| Title3_Event3 = Accepting the wish
+| Title3_Dialogue3 = <b>Before Act 3:</b><br>
+Ooooh ma, you make Nuu so happy! Hunt down the creatures of this land, and record them in this scroll!<br>
+{{HTalk|Learning about a land's inhabitants is a worthwhile undertaking. Perhaps you are more grown than you realise, Nuu.}}<br>
+Ma! Such delicious praise will make Nuu shrivel! Go now! Hunt, and prey, and begin our learning!
+<hr/>
+<b>In Act 3:</b><br>
+Ooooh ma, you make Nuu so happy! Hunt down the creatures of this land, and record them in this scroll!<br>
+{{HTalk|Already, I have cut down many of this land's inhabitants, but I agree, documenting those creatures is a worthwhile undertaking.}}<br>
+{{HTalk|If time still permits, I shall do as you wish.}}<br>
+Ma! How wonderful for Nuu! Go now! Hunt, and prey, and begin our learning!
+| Title3_Event4 = Revisiting before unlocking 100 entries
+| Title3_Dialogue4 = Come to rest here, miss grown-up? Then let Nuu see our journal, for she is eager to see your cuts!
+<hr/>
+<b>If Hornet has fewer than 60 entries:</b><br>
+Ooooh ma, is well-begun. Many creatures have been recorded, but many many more still to be learned of!<br>
+Miss grown-up, you should rest quick and venture out to hunt again soon, thinks Nuu!
+<hr/>
+<b>If Hornet has at least 60 entries:</b><br>
+Ma, ma! Much hunting has you done, and so many sweet little creatures in our records!<br>
+Nuu is drooling from such excess of learnings! Please keep working, miss grown-up!
+| Title3_Event5 = Exhausted dialogue
+| Title3_Dialogue5 = <b>Before Act 3:</b><br>
+Is hard work, learning so much from creatures, but for Nuu is very fulfilling. Now go and hunt, and prey, miss grown-up!
+<hr/>
+<b>In Act 3:</b><br>
+The world has grown much dangerous, but still we must learn! Cut through the black threads, miss grown-up, and hunt down every beast of Pharloom!
+| Title3_Event6 = After unlocking 100 journal entries
+| Title3_Dialogue6 = {{HTalk|Nuu, I have completed your request, recording many creatures of Pharloom in the journal.}}<br>
+Oooh, ooh! Ma ma ma! Look here at the marvellous beasts and bugs, all listed so beautifully!<br>
+Miss grown-up, so many creatures now you have cut and beat and smashed! Their essences linger on you, their scents mixing with your own!<br>
+Oooh, ma... Nuu simply must sample it for herself!<br>
+Uahhhhh... The forbidden taste...<br>
+Nuu understands, ma. To sup on such a fierce predator's juices would be divine... but is not right to do. Such behaviour is unfriendly.<br>
+Nuu's wish to see many fine beasts, though... miss grown-up, you have surely granted it! All of Nuu's thanks goes to you!<br>
+Nuu's wish, it is granted. But miss grown-up will continue cutting creatures and adding them to our journal, of course?<br>
+{{HTalk|I will. Knowing a creature's form and habits is an advantage that can decide the outcome of a battle. Recording these details is worth the effort.}}<br>
+Oh yes! Is very much worth it! Nuu hopes you will share your new learnings with her often!<br>
+And take a gift to help with your huntings, miss grown-up! Nuu will add a pocket to your tool pouch, for the bringing of many tools on your hunts!
+
+| Title4 = While Exploring
+| Title4_Event1 = [[Sister Splinter]] Boss room
+| Title4_Dialogue1 = Ooh ma ma! Look here, miss grown-up! Very fascinating creature here, all dead in bits now, but still good!<br>
+She takes the shape of the woods for her body, and her hair like bitter leaves! Clever, thinks Nuu!<br>
+{{HTalk|This creature staked its territory here and attacked as I passed through.}}<br>
+{{HTalk|You should not linger long. Her tribe remains hidden amongst the branches, disguised and waiting to strike.}}<br>
+Oooh! So the cutting-up was done by you? Nuu gives her warm thanks! Now Nuu can inspect this creature well, all its gooey insides and crunchy shell!
+<hr/>
+<b>Exhausted dialogue:</b><br>
+Nuu takes time with her creatures, she must inspect closely. Thick arms, flakey hair, delicate eyes... Nuu will inspect it all!
+|Title4_Event2 = [[Skull Tyrant]] Boss room
+|Title4_Dialogue2 = {{HTalk|Greetings, Nuu. You have travelled far from your lodgings, I was not expecting to meet you in these lowlands.}}<br>
+Oh, hello again miss grown-up! Yes, Nuu is not the fastest, but she goes great distances to follow the scent of learnings.<br>
+And look what Nuu has found! A great big beast, cracked open and broken apart! There is much to learn from him, so Nuu will savour it all slowly.
+<hr/>
+<b>Exhausted dialogue:</b><br>
+The warmth of these caverns keeps many smells alive! Is good for Nuu, who is always searching carefully for learnings!
+|Title4_Event3 = [[Great Conchflies]] Boss room
+|Title4_Dialogue3 = Oh, welcome miss grown-up! Come to inspect the red-rocky creatures, like Nuu? We have found a very big one. Fresh, but not too fresh!<br>
+{{HTalk|A pair of beasts attacked me here, burrowing through the stone with their spiral shells. I cut this one down, and the other fled.}}<br>
+Ooooh ma! Really? Nuu wishes that she had the pair! She could have studied much. Unlucky, to miss such a big feast of learnings!
+<hr/>
+<b>Exhausted dialogue:</b><br>
+She and her like have red-rocky shells to protect their softnesses. Inside is very sweet! Very hard to crack them open though, so is best to wait. Is always best to wait!
+|Title4_Event4 = [[Voltvyrm]] Boss room
+|Title4_Dialogue4 = Ahh miss grown-up, Nuu hoped you would return here. For clever Nuu can track well where you have been, she sees your cut-marks and sniffs out your fragrant trail!<br>
+And look where the trail has led sweet Nuu! A thick wriggler lived in this nest, rumbling and crackling in the darkness.<br>
+Its sour juices still line these rocky insides, and patient Nuu will gather it all up!<br>
+{{HTalk|There is much to learn in these crusted highlands Nuu, but much danger as well. Indulge your curiosity if you must, but keep your senses trained on the darkness.}}
+<hr/>
+<b>Speaking Again:</b><br>
+Miss grown-up, you have hunted long with little rest, thinks Nuu.<br>
+Perhaps you are covered in too many juices, weighed down by beastly filth? Let sweet Nuu clean you, make you fresh!<br>
+Uahhhhh... So close... Nuu could almost taste it.<br>
+But Nuu is sensible, she understands. Miss grown-up has purpose, she must be away.<br>
+The cleaning can wait for another time. Nuu is patient... always patient.
+<hr/>
+<b>Exhausted Dialogue:</b><br>
+Nuu is a long way from her safe lodging... perhaps she will stay in this nice, dark little squeezy place a little longer.
+
+| Title5 = Act 3
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = <b>If not previously met before Act 3:</b><br>
+Miss grown-up! What sweet surprise for Nuu! The world rumbles and the black threads stretch. Not safe now to wander.<br>
+But you! You are adult yes? Fully grown? Ready to hunt, no matter the darkness?<br>
+{{HTalk|Certainly I am no child, young one.}}<br>
+Perfect then! Nuu must ask a wish! For her, you would seek Pharloom's many fabulous bugs and cut them.<br>
+Cut them with your blade! Cut them with your mature spirit! Cut them with your savage adult heart!<br>
+Would you help Nuu? Before it all ends? Could you take her scroll, and fill its pages with the learnings of your cuts?
+<hr/>
+<b>If previously met before Act 3:</b><br>
+Miss grown-up! Nuu had fear that the awful rumblings of the world or sticky black threads had snatched you away from her!<br>
+{{HTalk|I have survived, Nuu, and shall fight on while my strength remains.}}<br>
+{{HTalk|The kingdom has grown darkly dangerous, but this hearth-home seems to still provide some safety. I suggest you remain here for now.}}<br>
+Of course! Nuu shall stay inside. The sickening sense of those twisted threads has spoilt the joy of my venturings.<br>
+You though, miss grown-up... is now not the perfect time to fully complete our journal?<br>
+The world-rumblings will surely have scared up many creatures from their hiding places! So go and hunt, and show sweet Nuu what you learn!
+| Title5_Event2 = Revisiting after <i>[[Bugs of Pharloom]]</i> is completed
+| Title5_Dialogue2 = Come to rest here, miss grown-up? Then let Nuu see our journal, for she is eager to see your cuts!
+<hr/>
+<b>If Hornet has fewer than 120 completed entries:</b><br>
+Ooooh, ma ma! Even young Nuu never guessed that Pharloom held so many fascinating creatures! Soft ones, hard ones, small ones, big ones! Nuu is greedy to see what remains!
+<hr/>
+<b>If Hornet has at least 120 completed entries:</b><br>
+Oooh, but the scroll is so heavy with beautiful beasts! Could it be that the works is almost complete? Miss grown-up, you must keep your preyings up. No time for rest!
+| Title5_Event3 = Speaking again, if Hornet has at least 120 completed entries
+| Title5_Dialogue3 = <b>If Hornet hasn't entered [[Wisp Thicket]]:</b><br> 
+<!-- NOTE: while saying that "If Hornet hasn't defeated [[Father of the Flame]]" would make it more unified, the correct condition for the event is to enter Wisp Thicket, so it's better to stick to the in-game condition to avoid confusion/misunderstanding -->
+Miss grown-up, for your continued huntings you should climb up, up above here, above the tallest spinning towers!<br>
+Hidden in the dark thickets are strange bugs who call up dancing flames. So pretty! So warm!<br>
+But when Nuu tried to crawl near, the flames became angry and swooped all around! Poor Nuu was half roasted!<br>
+Nuu leaves it to you, miss grown-up, to climb up there and cut those flames apart. For our journal, such must be done.
+<hr/>
+<b>If Hornet hasn't defeated [[Plasmified Zango]]:</b><br>
+Have you heard, miss grown-up? Beyond the moss, in the crumbled caverns filled with worms, much change is happening, different to the horrid, stretching dark outside.<br>
+What brings such bright and bold transformation? Is it a beast? Or a bug unseen? How wondrous it would be to discover them, hidden away in some deep corner!<br>
+You must go searching, miss grown-up! You and that sharp, sharp blade. Think of the strange and succulent shell waiting to be added to your journal?
+<hr/>
+<b>If Hornet hasn't defeated [[Voltvyrm]]:</b><br>
+High up, above the caverns all of crust, Nuu has been told of a hole, filled with writhing things, all zipping and zapping.<br>
+But so sad! Nuu cannot herself see it. The lands quake and rattle. The savage threads stretch. The dangers are too much.<br>
+It must be you, miss grown-up, older, stiffer, a shell less precious. Seek the cave, and the things within. How else will the journal be complete?
+<hr/>
+<b>If Hornet hasn't defeated [[Watcher at the Edge]]:</b><br>
+Near the edge of those lands swept by wind and sand, Nuu has seen it, a single bug, watching, waiting.<br>
+Too scared was Nuu to crawl close, for fear it would wake, and its big blade might mark this perfect shell.<br>
+For the journal's sake, you should seek the bug, up on edge, through a tall tunnel hidden by crust.<br>
+A hard find, that one, but Nuu is not worried! She knows your adult cunning will see you there quick!
+| Title5_Event4 = Exhausted dialogue
+| Title5_Dialogue4 = The world has grown much dangerous, but still we must learn! Cut through the black threads, miss grown-up, and hunt down every beast of Pharloom!
+| Title5_Event5 = After completing the [[Hunter's Journal (Silksong)|Hunter's Journal]]
+| Title5_Dialogue5 = Uaahhhhh! Miss grown-up... your journal is bursting with every sort of creature! Overflowing! Surely, we can call this complete!<br>
+To think, that such a task could even be done! So clever is Nuu, to have set such a fierce predator onto the work!<br>
+{{HTalk|These vast lands hold so much life, and to catalogue it all has taught me greatly. It is an effort worth continuing even after I leave this kingdom.}}<br>
+Ooh ma, such a hunger is worthy indeed! You and I are of accord, miss grown-up, hunters both. Our methods are different but our appetites have become very similar!<br>
+Nuu has for you this token, a symbol of all your efforts, and a marker of your true nature. It carries with it her sweet, sweet smell!<br>
+And now, miss grown-up, the task is done! Nuu must be away.<br>
+But do not be sour! Just think! Pharloom is only one land. So many more must hide out there, filled full with beasts and scents and tastes, all waiting to be discovered.<br>
+For Nuu, her journey is only at its start. And for you, miss grown-up, Nuu wishes too your happy hunting, much and more!
+}}
+
+== Location ==
+Nuu can be found in the upper floor of the [[Halfway Home]] in [[Greymoor]]. She can later be found in [[the Marrow]], [[Blasted Steps]], [[Shellwood]], and [[Voltnest]], at the site of various bosses, provided that Hornet has met Nuu and these enemies have been slain.
+
+{{Gallery
+|Image1 = Mapshot SS Hunter's Journal.png!Location in Greymoor
+|Image2 = Mapshot SS Great Conchflies 01.png!Location in the Blasted Steps
+|Image3 = Mapshot SS Sister Splinter 01.png!Location in Shellwood
+|Image4 = Mapshot SS Skull Tyrant 01.png!Location in the Marrow
+|Image5 = Mapshot SS Voltnest.png!Location of Voltnest
+}}
+
+{{Gallery
+| Title = Gallery
+|Image1 = Screenshot SS Nuu 01.png!Nuu seen through the windows of Halfway Home
+|Image2 = Screenshot SS Greymoor 06.png!Nuu in her room 
+|Image3 = Nuu release trailer.png!Nuu after being slapped
+|Image4 = Screenshot SS BlastedSteps 16.png!Nuu in the Blasted Steps
+|Image5 = Screenshot SS Shellwood 22.png!Nuu in Shellwood
+|Image6 = Screenshot SS The Marrow 15.png!Nuu in the Marrow
+|Image7 = Screenshot SS Voltnest 02.png!Nuu in Voltnest
+|Image8 = Screenshot SS Nuu 02.png!Nuu reacting to Needolin
+|Image9 = Nuu.png!Promotional art
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Keen Hunter}}
+{{Achievement|game=silksong|True Hunter}}
+
+== Trivia ==
+* Even when seen through the [[Halfway Home]] window, Nuu will react to Hornet hard landing near her, or when Hornet uses [[Combat_(Silksong)#Challenge|Challenge]] or slashes with the [[Needle]].
+
+{{Localisation
+|DEname = Nuu
+|DEmeaning = —
+|ESname = Nuu
+|ESmeaning = —
+|FRname = Nuu
+|FRmeaning = —
+|ITname = Nuu
+|ITmeaning = —
+|JAname = ニュー
+|JAromanised = Nyū
+|JAmeaning = Nuu
+|KOname = 누
+|KOromanised = Nu
+|KOmeaning = Nuu
+|PTname = Nuu
+|PTmeaning = —
+|RUname = Нуу
+|RUromanised = Nuu
+|RUmeaning = Nuu
+|ZHname = 努努
+|ZHromanised = Nǔnǔ
+|ZHmeaning = Nunu<br><small>The syllable is doubled to seem more affectionate.</small>
+|CODEname=HUNTER_FAN
+}}
+{{Refs|hr=ss}}
+{{Refs|hr=small|type=code}}
+{{Refs|hr=small|type=note}}
+{{SS Nav NPCs}}

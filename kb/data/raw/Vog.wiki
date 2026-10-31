@@ -1,0 +1,277 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Vog.png|Idle
+Vog Stand.png|Standing
+Vog Flea Dodge.png|Throw
+Vog Parry.png|Parry
+</gallery>
+| area = [[Putrified Ducts]]<br>
+[[The Marrow]]<br>
+[[Greymoor]]<br>
+[[Blasted Steps]]<br>
+[[Fleatopia]]
+| role = Merchant
+| quest = [[The Lost Fleas]]<br>
+[[Ecstasy of the End]]
+| affiliation = [[Flea]]s<br>
+[[Flea Caravan]]
+| va = 
+| singnum = 2
+}}
+
+{{Quote|Hr=SS
+|A flea alone is good, but fleas together is best!
+|Vog}}
+
+<b>Vog</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. She sells map pins showing the location of lost [[Flea]]s at the [[Flea Caravan]] in exchange for [[Rosaries]].
+
+== Background ==
+<b>Vog</b> is a hunter of [[Flea]] tribe, a rare sort valued by the rest of the Fleas for the protection they provide, despite their gruff demeanour.<ref>[[Fleamaster Mooshka]]: <i>"Miss Hornet, I must tell, we've seen evidence nearby of a hunter of our tribe, a flea that seeks fleas! As pungent and gruff as their sort often are, they're still useful to have around a caravan. A flea of their rare skill, settled among us, could offer defence and more."</i></ref><ref>[[Fleamaster Mooshka]]: <i>"Her scent may be strong, and her taste for brew bottomless, but her skill is sharp. If predators draw close, her talents will provide much confidence to our caravan."</i></ref> For a long time, she tracked lost [[Flea]]s throughout [[Pharloom]], and after she sensed the location of all of them, she decided to find and join a caravan.<ref name = gender/><ref>Vog: <i>"You remain, bug not flea? Would you seek service of me, ehh? Mine is knowledge much, the places of the lost little ones, heard and smelt across the caves"</i></ref><ref>Vog: <i>"Task? Mine is a work most important, but not for talking of here, where danger waits close. Soon, I depart to seek fleas, my fellows, and join them."</i></ref>
+
+== In-Game Events ==
+Vog is first found in a camp located above the [[Putrified Ducts]]' [[Bellway]] station, which can be reached either by completing a platforming challenge involving [[Barnak|Barnaks]] or by using the [[Silk Soar]] ability, which is only available in [[Act 3]]. Vog is wary of [[Hornet (Silksong)|Hornet]] and states that this cave is hers, fair fought and earned.<ref>Vog: <i>"Grrr.. bug not flea. Why you must bother me? This spot is mine, fair fought and earned."</i></ref><ref>Vog: <i>"You still here, bug not flea? Is rest I need before I leave for caravan. Not chat. You feel trouble-type. Make my shell tense."</i></ref>
+
+After talking to her, she joins the [[Flea Caravan]]. Here Hornet learns Vog's task and suggests that she could send lost [[Flea]]s to the Caravan if she knew their locations.<ref>[[Hornet (Silksong)|Hornet]]: <i> "If you have sensed the locations of other lost fleas, share them with me. I may be able to send them safe to the caravan."</i></ref> However, Vog only reveals her knowledge in exchange for [[Rosaries]], believing that she has earned them through her work.<ref>Vog: <i> "My learnings? Not free for you, bug not flea. Rosaries! Give those and I shall say of what I have sensed. Work like mine... much long, and hard. For that, I deserve some riches held."</i></ref> After Hornet sends all lost Fleas to the Caravan, Vog changes her task to becoming their protector.<ref>Vog: <i> "You have brought them all, bug not flea. My work is done! No more searching needed. Ours is a caravan full! Now my duty must change. To watch. To protect. This new task I am looking much to liking."</i></ref>
+
+In [[Act 3]], Vog humbly awaits the end of the world and believes that [[Flea]]s should be together to face it.<ref>Vog: <i> "So bug not flea, you return. World is ruined. Final end comes soon, says Fleamaster."</i></ref><ref>Vog: <i> "Much better it is now for fleas to be together, ready to face whatever end will come."</i></ref> During the <i>[[Ecstasy of the End]]</i> [[wish]], Vog leads the [[Festival of the Flea#Flea Dodge|Flea Dodge]] game. She is impressed by Hornet's skill if the latter manages to beat Vog's own score.<ref>Vog: <i> "Bug not flea... impressive was your performance. Your score exceeds even my own. To see skill so much, moments before everything ends, gives me unexpected joy. Rishkiz... I congratulate you, champion."</i></ref> Once Hornet becomes the Grand Champion, Vog addresses her by name for the first time.<ref>Vog: <i> "Grand Champion... bug called Hornet. Will you once again challenge the Flea Dodge trial?"</i></ref>
+
+== Flea Findings ==
+Once at the [[Flea Caravan]], Vog sells map pins revealing the locations of the [[Flea]]s that [[Hornet (Silksong)|Hornet]] has not found yet.
+
+{| class="article-table"
+! Name
+! Cost
+! Areas
+|-
+! Bonelands
+| style="text-align:center" | {{R|150}}
+| [[Wormways]]<br>[[The Marrow]]<br>[[Hunter's March]]<br>[[Deep Docks]]<br>[[Far Fields]]
+|-
+! Midlands
+| style="text-align:center" | {{R|120}}
+| [[Shellwood]]<br>[[Bellhart]]<br>[[Greymoor]]
+|-
+! Blasted Steps
+| style="text-align:center" | {{R|80}}
+| [[Blasted Steps]]<br>[[Sands of Karak]]
+|-
+! The Citadel
+| style="text-align:center" | {{R|150}}
+| [[The Citadel]]<br>[[Underworks]]
+|-
+! Mount Fay
+| style="text-align:center" | {{R|80}}
+| [[Mount Fay]]<br>[[The Slab]]
+|-
+! Bilelands
+| style="text-align:center" | {{R|120}}
+| [[Sinner's Road]]<br>[[Bilewater]]
+|}
+
+{{TabbedDialogue
+| Title1 = Putrified Ducts
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 = <b>If Hornet has met the [[Flea Caravan]]:</b><br>
+Grrr.. bug not flea. Why you must bother me? This spot is mine, fair fought and earned.<br>
+{{HTalk|I won't stay long, madam. Nor would I contest your right to this cave.}}<br>
+{{HTalk|I have encountered several of your fellow fleas, united in a caravan. Perhaps you would consider joining with them?}}<br>
+{{HTalk|Yours seems a hardy hide, and I fear alone they lack the strength to survive long in this land.}}<br>
+Caravan? Grrr. Felt it in my fur... Time for change. If caravan is close, then my task, these lands, may near be complete.<br>
+Now... Grrr. Much talk I gave. You leave me! Meet again at caravan, amongst good fellows. There I share my learnings of fleas and Pharloom. Till then, rest I need! Off, bug!
+<hr/>
+<b>If Hornet has not met the Flea Caravan:</b><br>
+Grrr.. bug, not flea. Why you must bother me? This spot is mine, fair fought and earned.<br>
+{{HTalk|I won't stay long, madam. Nor would I contest your right to this cave. I only ask what task causes you to perch alone atop these dank ducts?}}<br>
+Task? Mine is a work most important, but not for talking of here, where danger waits close. Soon, I depart to seek fleas, my fellows, and join them.<br>
+Now... Grrr. You leave me! I go soon to seek other fleas. A flea alone is good, but fleas together is best! Till then, rest I need! Off, bug!
+
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = <b>If Hornet has met the Flea Caravan:</b><br>
+You still here, bug not flea? Is rest I need before I leave for caravan. Not chat. You feel trouble-type. Make my shell tense.<br>
+{{HTalk|I shall take my leave, madam. Stay strong on your own journey. May we meet again at the caravan, amongst your fellows.}}
+<hr/>
+<b>If Hornet has not met the Flea Caravan:</b><br>
+You still here, bug? Is rest I need before I travel. Not chat. You is trouble-type. Make my shell tense.<br>
+{{HTalk|I shall take my leave, madam. Stay strong on your own journey. May we meet again in more hospitable surrounds.}}
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 = [n]Sniffed... Sensed...<br>
+None can hide...<br>
+Lost lands...<br>
+Lost fleas...
+
+| Title2 = The caravan
+| Title2_Event1 = First meeting
+| Title2_Dialogue1 = <b>If Hornet has already found all Fleas:</b><br>
+{{HTalk|Fair greetings again, large flea. Of your many companions, I had little worry you would survive safe to find this caravan}}<br>
+{{HTalk|Would you tell me now of the task that saw you so apart from your fellows, and so fearsome in form?}}<br>
+Grrr....Mine was to track, by trail and smell and senses sharp. Find our friend fleas, our young most of most, to bring them together so strong they could grow.<br>
+A task once important, mine! But not now. All fleas are here, safe. A rare many! Time for toasts, and brew to fill our bellies!
+<hr/>
+<b>If Hornet does not have the [[Map and Quill (Silksong)|Map]]:</b><br>
+{{HTalk|Fair greetings again, large flea. Of your many companions, I had little worry you would survive to find this caravan.}}<br>
+{{HTalk|Would you tell me now of the task that saw you so apart from your fellows, and so fearsome in form?}}<br>
+Grrr....Mine is to track, by trail and smell and senses sharp. Find our friend fleas, our young most of most, to bring them together and grow them strong.<br>
+{{HTalk|If you have sensed the locations of other lost fleas, would you share them with me? I may be able to send them safe to the caravan.}}<br>
+The locations! For price they could be shared, but you hold no map to mark! If learnings are wanted, a map must be owned. Until then, we have no trade to make.
+<hr/>
+<b>If Hornet has the Map, and has not found all Fleas:</b><br>
+{{HTalk|Fair greetings again, large flea. Amongst all of your troupe, I had little doubt you would survive to reach this caravan.}}<br>
+{{HTalk|Would you tell me now of the task that saw you so apart from your fellows, and so fearsome in form?}}<br>
+Grrr....Bug not flea! Mine is to track, by trail and smell and senses sharp. Find our friend fleas, our young most of most, to bring them together and grow them strong.<br>
+{{HTalk|If you have sensed the locations of other lost fleas, share them with me. I may be able to send them safe to the caravan.}}<br>
+My learnings? Not free for you, bug not flea. Rosaries! Give those and I shall say of what I have sensed. Work like mine... much long, and hard. For that, I deserve some riches held.
+| Title2_Event2 = Not buying a Flea Finding
+| Title2_Dialogue2 = You not want my learnings, bug not flea? Rare it is we share such things with ones outside our own.
+| Title2_Event3 = Purchased a Flea Finding
+| Title2_Dialogue3 = I have marked your map, bug. See the learnings of fleas lost across the lands.<br>
+If you are as brave as told by fellow fleas, seek them. Save them. For a caravan whole.
+| Title2_Event4 = All Flea Findings purchased
+| Title2_Dialogue4 = Bug not flea, my learnings, all have been scratched to your maps. Can give no more.<br>Leave now! Seek and save lost fleas, for a caravan full and whole!
+| Title2_Event5 = Exhausted dialogue
+| Title2_Dialogue5 = <b>If all Fleas are rescued:</b><br>
+You have brought them all, bug not flea. My work is done! No more searching needed. Ours is a caravan full!<br>
+Now my duty must change. To watch. To protect. This new task I am looking much to liking.
+<hr/>
+<b>If Hornet does not have the [[Map and Quill (Silksong)|Map]]:</b><br>
+Grrr... bug not flea. Still wishing for knowings of my work? But you hold no map to mark! Until a map is owned, we have no trade to make.
+| Title2_Event6 = Playing the [[Needolin]]
+| Title2_Dialogue6 = [n]Hear our voices! Hear our plea!<br>
+Join our company, moving free!<br>
+All fleas must find us...<br>
+All fleas must come...<br>
+The ritual beckons... the road is long...<br>
+We live and die and roam as one!
+
+| Title3 = Pale Lake/Fleatopia
+| Title3_Event1 = Playing the [[Needolin]]
+| Title3_Dialogue1 =
+[n]Safe together, home at last...<br>
+The road behind us, all dangers passed...<br>
+Swim and sing, ease stiffened shells...<br>
+We fleas together... Till final bells...<br>
+Rejoice! Remember! Those long gone...<br>
+Soon... the ritual, bold, loud, strong!
+
+| Title4 = Act 3
+| Title4_Event1 = First conversation
+| Title4_Dialogue1 = So bug not flea, you return. World is ruined. Final end comes soon, says Fleamaster.<br>
+{{HTalk|This land is gravely wounded, but death need not follow. It is now my task to free this kingdom from its dark fall.}}<br>
+Grrr... such words are just fancy. Nothing left now, except to protect what little we have.
+| Title4_Event2 = Speaking again
+| Title4_Dialogue2 = <b>If all Fleas are found:</b><br>
+You remain, bug not flea? If service is you here seeking, none is left for me to provide. All fleas are here, collected close.<br>
+Much better it is now for fleas to be together, ready to face whatever end will come.
+<hr/>
+<b>If Hornet has not found all Fleas:</b><br>
+You remain, bug not flea? Would you seek service of me, ehh? Mine is knowledge much, the places of the lost little ones, heard and smelt across the caves.<br>
+You help find! And bring! Best we come together, we fleas all... now that times turn dark...
+| Title4_Event3 = Exhausted dialogue after all Fleas are found
+| Title4_Dialogue3 = All are here now, bug not flea. For your seeking, ours is a caravan full.<br>
+Much better it is now for fleas to be together, ready to face whatever end will come.
+| Title4_Event4 = Playing the [[Needolin]]
+| Title4_Dialogue4 =[n]Our home found safe, so briefly known...<br>
+These caves quake black, and shake, and groan...<br>
+The ritual calls, before the end...<br>
+All fleas must gather, now or never...<br>
+Our wish, this one last grand endeavour...<br>
+We live and die and roam as one!
+
+| Title5 = Ecstasy of the End
+| Title5_Event1 = First conversation
+| Title5_Dialogue1 = Bug. World is ending. Nothing left but to test ourselves.<br>
+This trial is Flea Dodge. Stay upon the platforms. Avoid attacks. Longer stay gives bigger score.
+<br>To score most is to become champion. This is only thing left to strive for.
+| Title5_Event2 = Denying Flea Dodge
+| Title5_Dialogue2 = Away then, bug. Await challenger, shall I.
+| Title5_Event3 = Beginning Flea Dodge
+| Title5_Dialogue3 = Mamashka. The trial begins. Flea Dodge!
+| Title5_Event4 = Completing Flea Dodge
+| Title5_Dialogue4 =<b>If High Score has not been beaten:</b><br>
+Vikna. The trial has ended. Your score can be seen on the board beside me.<br>
+<hr/>
+<b>If Hornet becomes Champion:</b><br>
+Vikna. The trial has ended.<br>
+Bug not flea... impressive was your performance. Your score exceeds even my own.<br>
+To see skill so much, moments before everything ends, gives me unexpected joy.<br>
+Rishkiz... I congratulate you, champion.
+<hr/>
+<b>If High Score has been beaten:</b><br>
+Vikna. The trial has ended, and you have bested your old score. Rishkiz, champion!<br>
+| Title5_Event5 = Repeat attempts
+| Title5_Dialogue5 = <b>If Hornet is not the Champion:</b><br>
+This trial is Flea Dodge. Stay upon platforms, avoid attacks. Longer stay gives bigger score.<br>
+<hr/>
+<b>If Hornet is the Champion:</b><br>
+Bug, you are champion of Flea Dodge, but trial is still open to you. Can you defeat your own score?<br>
+<hr/>
+<b>If Hornet is the Grand Champion:</b><br>
+Grand Champion... bug called Hornet. Will you once again challenge the Flea Dodge trial?
+| Title5_Event6 = Playing the [[Needolin]]
+| Title5_Dialogue6 = [n]Face the darkness, sing dear friends...<br>
+Joy and merry till it all ends...<br>
+Our ritual, needed more than ever...<br>
+This time of fleas spent warm, together...<br>
+Dance and play, as all fleas past...<br>
+This world may fall, but we stand till the last...
+}}
+
+== Location ==
+Vog is found in a hidden area directly above the [[Putrified Ducts]] [[Bellway]] station, accessed via the passage below the station. After talking to her, she makes her way to the [[Flea Caravan]]. The [[Flea Caravan]] can be found at either [[the Marrow]], [[Greymoor]], [[Blasted Steps]] or [[Fleatopia]], depending on the amount of Fleas found.
+{{Gallery
+|Image1 = Mapshot SS Vog 01.png!Location in the Putrified Ducts
+|Image2 = Mapshot SS Flea Caravan 01.png!Location in the Marrow
+|Image3 = Mapshot SS Flea Caravan 02.png!Location in Greymoor
+|Image4 = Mapshot SS Flea Caravan 03.png!Location in the Blasted Steps
+|Image5 = Mapshot SS Flea Caravan 04.png!Location in the Putrified Ducts
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Putrified Ducts 04.png!Camp in the Putrified Ducts
+|Image3 = Screenshot SS Vog 06.png!Reacting to Needolin
+|Image4 = Screenshot SS Vog 01.png!In the Marrow
+|Image5 = Screenshot SS Vog 02.png!In Greymoor
+|Image6 = Screenshot SS Vog 03.png!At the Blasted Steps
+|Image7 = Screenshot SS Vog 04.png!With the Flea Caravan at the Pale Lake
+|Image8 = Screenshot SS Vog 05.png!At the Festival of the Flea
+|Image9 = Screenshot SS Festival of the Flea 03.png!Celebrating at the Festival of the Flea
+}}
+
+== Trivia ==
+* If Vog is among the first 5 Fleas rescued during <i>[[The Lost Fleas]]</i> [[wish]], she has a unique icon in the [[Tasks]] menu screen.
+* Vog is the only [[Flea]] [[NPCs (Silksong)|NPC]] without visible antennae.
+{{Gallery
+| Image1 = Icon SS Flea Vog.png ! Vog's icon during <i>The Lost Fleas</i>
+| Image2 = Screenshot SS Flea 01.webp ! The icons for the [[Huge Flea]], Vog, and [[Kratt]], alongside two regular Fleas
+}}
+
+{{Localisation
+|DEname = Vog
+|DEmeaning = —
+|ESname = Vog
+|ESmeaning = —
+|FRname = Vog
+|FRmeaning = —
+|ITname = Vog
+|ITmeaning = —
+|JAname= ヴォグ
+|JAromanised = Vogu
+|JAkatakana = foreign 
+|JAmeaning = Vog
+|KOname = 보그
+|KOromanised = Bogeu
+|KOmeaning = Vog
+|PTname =  Vog
+|PTmeaning = —
+|RUname = Вог
+|RUromanised = Vog
+|RUmeaning = Vog
+|ZHname = 沃葛
+|ZHromanised = Wògě
+|ZHmeaning = Vog
+|CODEname = FLEA_TRACKER
+|CODEmeaning = 
+}}
+
+{{Refs|hr=SS}}
+{{SS Nav NPCs}}

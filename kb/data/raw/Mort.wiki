@@ -1,0 +1,156 @@
+{{SS Infobox NPC
+|image1 = <gallery>
+Mort.png|Alive
+Mort_Corpse.png|Dead
+</gallery>
+| area = [[Far Fields#Sub-area: Pilgrim's Rest|Pilgrim's Rest]]
+| role = Merchant
+| affiliation = Pilgrims<br>
+Pilgrim's Rest (Shopkeeper)
+|singnum = 2
+}}
+
+{{Quote|Hr=SS
+| Come to rest your weary body? The climb is agonising, and even the devout must mind their limits.
+| Mort
+}}
+
+<b>Mort</b> is a [[NPCs (Silksong)#Merchants|Merchant]] in <i>[[Hollow Knight: Silksong]]</i>. He sells wares at his shop in [[Far Fields#Sub-area: Pilgrim's Rest|Pilgrim's Rest]] in exchange for [[Rosaries]].
+== In-game Events ==
+[[File:Screenshot SS Mort's Door Mechanism.png|The exposed door mechanism|right|thumb|100px]] Mort resides in a bug-shaped building with a locked front door, featuring a toll machine which costs {{R|30}} for each entry. The entry fee also grants access to a [[Bench (Silksong)|Bench]] inside the shop. The door re-locks itself when [[Hornet (Silksong)|Hornet]] moves away from the building. A cogwheel on the inside of the door can be hit while the door is open, breaking the locking mechanism and skipping future tolls entirely.
+
+If the gate on the east side of [[Far Fields#Sub-area: Pilgrim's Rest|Pilgrim's Rest]] is unlocked, allowing the [[Rhinogrund]] to escape, the mechanism on the door of Mort's building has been broken, and Hornet has entered [[The Citadel]], a subsequent event occurs. Upon revisiting Pilgrim's Rest after travelling elsewhere, loud noises can be heard coming from inside Mort's building. Entering the building reveals the Rhinogrund is ramming a table that Mort is crouching behind for safety. After Hornet defeats the creature, Mort laments that pilgrims like himself are being tested and tormented for no reason.
+
+After entering [[Act 3]], the building can be found crushed with the door open, debris beside the bench, and Mort nowhere to be found inside the shop. If Mort's Tool Pouch and Memory Locket have not been purchased, they will be sold in [[Grindle]]'s shop. Mort's corpse can be found west of the Pilgrim's Rest, where the [[Weighted Belt]] can be acquired off his body if it was not purchased before. These events happen regardless if the door mechanism was broken before, or if the Rhinogrund was freed or not.
+{{Clear}}
+
+== Goods ==
+{| class="article-table" width="100%"
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Mort's Description
+!Requires
+|-
+! [[File:Weighted Belt.png|center|link=Weighted Belt|72x72px]]
+[[Weighted Belt]]
+| align="center" | {{R|160}}
+| <i>A holy burden to help maintain your poise. Whether striking others or being struck yourself, you'll remain firmly in place.</i>
+|
+|-
+! [[File:Tool Pouch Upgrade.png|center|link=Tool Pouch|72x72px]]
+[[Tool Pouch]]
+| align="center" | {{R|220}}
+| <i>That pouch of yours... With the scraps left here and a little work, I could add some pockets for you, let you carry more tools and shards while on the road. That'd be nice, wouldn't it?</i>
+|
+|-
+! [[File:Memory Locket.png|center|link=Memory Locket|72x72px]]
+[[Memory Locket]]
+| align="center" | {{R|150}}
+| <i>Memories only weigh us down, but some pilgrims still cling to them with unseemly devotion. This memory isn't yours, but perhaps you could find some use for it?</i>
+|
+|-
+! [[File:Rosary String.png|center|link=Rosary String|72x72px]]
+[[Rosary String]]
+| align="center" | {{R|80}}
+| <i>I'll string your rosaries tight, for a modest fee. It's the safest way to keep them close.</i>
+|
+|-
+! [[File:Shard Bundle.png|center|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| align="center" | {{R|50}}
+| <i>These humble shards can form together into something grand, if you possess the vision to shape them.</i>
+| Completing the <i>[[Pilgrim's Rest Supplies]]</i> Wish
+|}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Come to rest your weary body? The climb is agonising, and even the devout must mind their limits.<br>
+{{HTalk|I'm impressed to find any without firm claw upon a weapon that could ascend so far.}}<br>
+Indeed. We're lucky to have made it here. Luckier than many others. Or perhaps the difference between the lucky and unlucky is merely faith?<br>
+Now, while we rest, shall we make trade? If you have rosaries, I'll take them gladly.
+| Title1_Event2 = First conversation when shopping again
+| Title1_Dialogue2 = Back here again? It's a strange pilgrimage that bends and doubles back on itself. Still, you may as well take the opportunity to share your rosaries.
+| Title1_Event3 = After making a purchase
+| Title1_Dialogue3 = Yes, that's better. Sharing your devotion with me will surely bring you luck.
+| Title1_Event4 = Leaving without purchasing
+| Title1_Dialogue4 = Not interested in trade? I wonder, will your rosaries weigh you down during your ascent?
+| Title1_Event5 = Speaking directly with Mort
+| Title1_Dialogue5 = {{HTalk|Is this place your permanent home, sir, or do you only make camp?}}<br>
+We pilgrims have no home, there is only the path. We climb, and suffer, and are thusly judged.<br>
+I will linger here only a moment, for the sake of trade. Once I've gathered enough rosaries, I'll be holy enough to ascend without fear.<br>
+| Title1_Event6 = Speaking directly again
+| Title1_Dialogue6 = These fields are hot and harsh, a miserable place for we pilgrims, and just above are the dreary moors, a place once of abundance lost to falling silt and murky rain.<br>
+The lands in every direction punish us, but such is our test. Above it all, the Citadel shines, our destination and our reward...<br>
+I'll make it there, you'll see. I've easily earned my place in such a paradise.<br>
+| Title1_Event7 = After exhausting all direct dialogues
+| Title1_Dialogue7 = We pilgrims provide for each other, living or dead. Sharing is a sign of devotion, particularly for those who give.
+| Title1_Event8 = After completing <i>[[Pilgrim's Rest Supplies]]</i>
+| Title1_Dialogue8 = {{HTalk|Sir pilgrim, I bring supplies from Bellhart, for the aid of travellers who pass this waystation.}}
+Such service... It seems our prayers do not go completely unheard. Many a small wish will be granted by these supplies.<br>
+For your efforts, take these rosaries as payment. May they not lay too heavy upon your shell.
+| Title1_Event9 = After defeating the [[Rhinogrund]] in the shop
+| Title1_Dialogue9 = That beast! What wicked punishments are sent to test us! Why must we pilgrims, who have done no evil, be so tormented?<br>
+Tell me, where is it written? This law that says we must suffer every hardship just to earn the merest hope of happiness?<br>
+{{HTalk|Wild lands like these are ruled by instinct, not laws. You must rely on your own strength and skill to survive.}}<br>
+I have neither! If what you say is true, I may as well crawl outside and let myself be devoured right now. Save myself some worry!<br>
+{{HTalk|Do as you wish, but I think perhaps you underestimate yourself. To climb this far and survive here so long is a task beyond most of your fellow pilgrims.}}<br>
+Hmph. I'm no better than any of them. It's only luck that has gotten me this far, and it's on luck that I shall continue to rely.
+| Title1_Event10 = Playing the [[Needolin]]
+| Title1_Dialogue10 = [n]A shell still safe...<br>
+Pharloom's mercy...<br>
+Are we worthy?<br>
+I will survive!
+}}
+
+==Location==
+Mort can be found in [[Pilgrim's Rest]], which is in [[Far Fields]].
+
+{{Gallery
+|Image1 = Mapshot SS Pilgrim's Rest.png!Location in Pilgrim's Rest
+|Image2 = Mapshot SS Weighted Belt.png!Corpse location in Far Fields
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Far Fields 07.png ! Mort in Pilgrim's Rest
+|Image2 = Screenshot SS Mort 01.png ! Mort reacting to Needolin
+|Image3 = Screenshot SS Mort 02.png ! Mort hiding from a rampaging Rhinogrund
+|Image4 = Screenshot SS Mort Corpse.png! Mort's corpse in Act 3
+}}
+
+== Trivia ==
+*The 1.0.27535 and 1.0.27776 versions of <i>Silksong</i> playable on PlayStation 4 and Nintendo Switch respectively, which are older than the PC launch version (1.0.28324), feature a very different version of one of Mort's lines. Instead of saying "<i>We climb, and suffer, and are thusly judged</i>" as in the PC launch version, he said "<i>What awaits us beyond that, I couldn't say</i>".<ref>[https://docs.google.com/document/d/1GaNLkTTszFKFv55DZj3Iw1hTUi6gbstSR56WXizrMAI Silksong Switch full text] on Google Docs</ref>
+* Mort has a service bell on his counter which can be struck to elicit an exasperated groan from him. Destroying his furniture triggers the same reaction.
+
+{{Localisation
+|DEname = Mort
+|DEmeaning = —
+|ESname = Mort
+|ESmeaning = —
+|FRname = Mott
+|FRmeaning = Mott<br><small>Changed to avoid conflict with the word <i>mort</i> (death).</small>
+|ITname = Mort
+|ITmeaning = —
+|JAname = モート
+|JAromanised = Mōto
+|JAmeaning = Mort
+|KOname = 모트
+|KOromanised = Moteu
+|KOmeaning = Mort
+|PTname = Mort
+|PTmeaning = —
+|RUname =  Морт
+|RUromanised = Mort
+|RUmeaning = Mort
+|TWname = 莫特
+|TWromanised = Mòtè
+|TWmeaning = same
+|ZHname = 莫特
+|ZHromanised = Mòtè
+|ZHmeaning = Mort
+|CODEname = PILGRIM_REST_SHOP
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

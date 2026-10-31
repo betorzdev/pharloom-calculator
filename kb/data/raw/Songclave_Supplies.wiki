@@ -1,0 +1,97 @@
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver supplies to the Caretaker in Songclave. ([[Act 2]])<br>
+Deliver supplies to Sherma in Songclave. ([[Act 3]])
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]] NPCs
+| prerequisite = 
+* Complete <i>[[My Missing Brother]]</i><br>
+* Discover [[Songclave]]<ref group="Note">This quest is made unavailable once [[Silk and Soul]] has been completed, because this moves the Caretaker out of Songclave. It is made available again when [[Act 3]] starts.</ref>
+| reward = 
+{{Plainlist|1=
+{{R|360}} ([[Act 2]])
+{{R|410}} ([[Act 3]])
+}}
+}}
+
+{{Quote
+| Good-goods for the pilgrims up high! Thems brave ones, settled up on that big-big Citadel. These deliverings they will muchly need, miss courier. Carry them safe-safe, for us!
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Songclave Supplies</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]].
+__NOTOC__
+
+== Delivery Item ==
+[[File:Courier's_Swag.png|link=Courier's Swag|left|thumb|100x100px]]
+The [[Courier's Swag]] has a total of 5 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Courier's Swag by Tipp & Pill to carefully deliver to the [[Caretaker]] in [[Songclave]] in [[Act 2]], or to [[Sherma]] in the same place in [[Act 3]].
+
+This Delivery can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row. In addition, only the first completion of a Delivery contributes towards <i>[[Silk and Soul]]</i>.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png! Tipp & Pill location in Bellhart
+| Image2 = Mapshot SS Sherma 07.png!Caretaker/Sherma location in Songclave
+}}
+
+== Possible routes ==
+===Exhaust Organ route===
+This route goes through [[Greymoor]], [[Sinner's Road]] and the [[Exhaust Organ]] to arrive at the [[Grand Bellway]] in the [[Choral Chambers]]. From there it uses the switchable wheel to reach a hallway leading directly to Songclave.
+{{Gallery
+|Image1 = Mapshot SS Songclave Supplies 01.png!Exhaust Organ route
+}}
+=== Blasted Steps route ===
+This route goes through [[Shellwood]], [[Blasted Steps]] and up the [[Grand Gate]] to arrive to the [[Choral Chambers]]. From there it goes up to the [[Citadel Spa]] and the western vertical room to the upper hallways of the area leading directly to Songclave.
+{{Gallery
+|Image1 = Mapshot SS Songclave Supplies 02.png!Blasted Steps route
+}}
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the supplies to the Caretaker, he rewards Hornet with {{R|360}}. When turning in supplies to Sherma, he rewards Hornet with {{R|410}}.
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 160 rosaries to 360 in Act 2 and 410 in Act 3.
+}}
+{{Localisation
+|DEname = Sangesloge-Vorräte
+|DEmeaning = Song Lodge Supplies
+|ESname = Suministros de Enclave Cancioneril
+|ESmeaning = Songbook Enclave Supplies
+|FRname = Matériaux pour Chantsoir
+|FRmeaning = Materials for Evening Song
+|ITname = Risorse di Suonclave
+|ITmeaning = Songclave Resources
+|JAname = 歌の集落の物資
+|JAromanised = Uta no shūraku no busshi
+|JAmeaning = Song Village Supplies
+|KOname = 노래 부르는 자들 보급품
+|KOromanised = Norae bureuneun jadeul bogeuppum
+|KOmeaning = Song Singing People Supply
+|PTname = Suprimentos de Cantoclave
+|PTmeaning = Songclave Supplies
+|RUname = Припасы для Уголка Песни
+|RUromanised = Pripasy dlja Ugolka Pesni
+|RUmeaning = Supplies for Song Corner
+|ZHname = 圣歌盟地补给
+|ZHromanised = Shènggē méngdì bǔjǐ
+|ZHmeaning = Hymn Alliance Land Supplies
+|TWname = 聖歌飛地補給
+|TWromanised = Shènggē fēidì bǔjǐ
+|TWmeaning = Hymn Enclave Supplies
+|CODEname = QUEST_COURIER_SONGCLAVE
+|CODEmeaning = 
+}}
+{{Hr|SS}}
+
+== Notes ==
+<references group="Note"/>
+
+{{Refs|hr=false}}
+
+{{SS Nav Wishes}}

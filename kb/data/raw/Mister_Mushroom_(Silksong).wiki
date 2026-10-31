@@ -1,0 +1,227 @@
+{{Nav Games Header}}
+{{SS Infobox NPC
+| title1 = Mister Mushroom
+| image1 = <gallery>
+Mister Mushroom.png|Idle
+Mister_Mushroom_Fly.png|Flying
+</gallery>
+|aka = (Master / Sir) Herald
+|area = Various
+|va = [[William Pellen]]<ref>[https://www.reddit.com/r/gaming/comments/6rvds8/we_are_team_cherry_the_developers_of_hollow/dl86lbr/ Reddit AMA comment] by Team Cherry on voice actors [[:File:Reference_William_Voices.jpg|(Archive)]]</ref>
+|singnum = 2
+|role = Quest
+|quest = [[Passing of the Age (Wish)|Passing of the Age]]
+}}
+
+{{Quote
+|Caps and shells may fall to dust,<br/>
+But Mister Mushroom readjusts...
+| Mister Mushroom
+|Hr=SS
+}}
+
+<b>Mister Mushroom</b> is a [[Mister Mushroom (Hollow Knight)|returning]] [[NPCs (Silksong)|NPC]] found throughout [[Pharloom]] after [[Grand Mother Silk]] is [[Endings (Silksong)#Ending 2: Snared Silk|entrapped with the Soul Snare]]. 
+
+==In-game Events==
+Finding him in all seven locations in order and [[Endings (Silksong)|ending]] the game rewards the <i>Passing of the Age</i> [[Achievements (Silksong)|achievement]] and a secret cutscene after beating the game.
+
+At each location, he is found buried under the ground with mushrooms indicating his location. Playing the [[Needolin]] draws him out and allows Hornet to attempt to converse with him.
+{{Hr|small}}
+
+=== Riddle Tablet ===
+{{Main|Passing of the Age (Wish)}}
+A Riddle Tablet can be found in a secret room in the eastern cave of the [[Putrified Ducts]] that give hints to where Mister Mushroom is located throughout Pharloom, starting the <i>[[Passing of the Age (Wish)|Passing of the Age]]</i> [[wish]]. Entering the secret room requires the [[Silk Soar]] skill.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Passing of the Age
+| title = [[File:Witness Quest Icon.png|100px]]<br>[[Passing of the Age (Wish)|WITNESS:<br>Passing of the Age]]
+| description = "We speak the wish of the Master Herald, he who signs an Age's end."
+| objective = Under chapel fallen to the monarch's might,<br>Over camp collapsed to the black thread plight,<br>Scorched field on edge, shells black and burned,<br>Up towers spinning, near the surgeon spurned,<br>Cage of one who raged against the silken lie,<br>Fell heart of frost, who soars on high,<br>Past cradle's peak, last test of fitness,<br>That the age may pass, this shroom its witness.
+| location = <b><i>[[Putrified Ducts]] Riddle Tablet</i></b>
+The Herald
+| reward = <i>[[Achievements (Silksong)|Passing of the Age]]</i>
+}}
+
+{{TabbedDialogue
+|Title1 = General
+
+|Title1_Event1 = First encounter, Moss Grotto
+|Title1_Dialogue1 =
+...Crossed weapons, sleeping of course, but shaped unlike any you've seen before... <br>
+...To travel underneath is one thing, but travelling up above may require a different sort of sight... <br>
+{{HTalk| Sir Herald... It seems rare coincidence for us to meet in this distant land. Unless, perhaps, you followed me here?}} <br>
+...A path that meets itself is an ill portent indeed. Those who peer sideways know well enough... <br>
+...Oh. Excuse me.
+
+|Title1_Event2 = Second encounter, Bone Bottom
+|Title1_Dialogue2 =
+...Great strides move the world, but small steps shouldn't be overlooked... <br>
+...One mystery leads to another. Scrutinising the belly of the thing will prove useful... <br>
+{{HTalk| The meaning behind your musings is as opaque as ever. Would you converse with me directly, sir?}} <br>
+...Trust yourself. And each other. The solution is always within grasp... <br>
+...Oh. Excuse me.
+
+
+|Title1_Event3 = Third encounter, Far Fields
+|Title1_Dialogue3 = 
+...The elements do not conspire against you. They have their own desires...<br>
+...When one spies a great peak, the natural inclination is to begin climbing...<br>
+...The little left-behind... you've decided, then? A companion for the journey...<br>
+...Oh. Excuse me.
+
+|Title1_Event4 = Fourth encounter, Greymoor
+|Title1_Dialogue4 = 
+...Yes, communication is the heart of it. The grandest boasts and the tiniest murmurings all have their meanings... <br>
+...Your point is well made. Even the flowers have their stories to tell. Light can be cast anywhere... <br>
+{{HTalk| I've no desire to interrupt your meditations, Herald, but I am eager to speak with you, if you would listen...}} <br>
+...Take note of it all, render it in line, you'll be glad that you did. You can take the journey home with you... <br>
+...Oh. Excuse me.
+
+|Title1_Event5 = Fifth encounter, The Slab
+|Title1_Dialogue5 = 
+...At the bottom of a well, you can only look up. The past is hidden from those who look forward... <br>
+...Those echoes may guide you still. Yes, that's true. For the kind-hearted, a weapon can also be a friend... <br>
+...You're so eager to follow in her footsteps. But what are you leaving for those who come next? <br>
+...Oh. Excuse me.
+
+|Title1_Event6 = Sixth encounter, Mount Fay
+|Title1_Dialogue6 = 
+...One can visit the past, but then memories become contradictory... <br>
+...When the call rings out again, will you let your previous actions cloud your vision? <br>
+...By claw, by voice... History always rises to meet us... <br>
+...Oh. Excuse me.
+
+|Title1_Event7 = Seventh encounter, Nameless Town above The Cradle
+|Title1_Dialogue7 = 
+...Do they realise it would only be the beginning? If they cleave themselves free, they would need to find their way anew... <br>
+...Oh. Wyrm child. No surprise it's you who meets me here. <br>
+Following me are you? Or calling me? It is true I would not have sought the lands below if not for your grand actions within them. <br>
+But now, having journeyed their breadth, what singular sights I beheld... Flaming lakes, tangled woods, caves consumed by sand and frost... <br>
+Remarkable things all, though given their void claimed state it seems you and I may be the last to hold those memories. <br>
+{{HTalk| I cannot allow that outcome, Herald. I act now to save that place, both for myself and for those bugs still alive within.}} <br>
+{{HTalk| As one who has seen so much, tell me simply, do you believe my efforts in vain?}} <br>
+Me? Certainly you can ask, but I cannot provide good answer. I've no mind for outcomes. Always my vision is too clouded by the present. <br>
+Only the journey... the now. For myself, that is the purpose, and as far as my sight can see. <br>
+If any other could come to understand that state, Wyrm child, I suspect it may be you... <br>
+Though maybe not yet, not this present, hmmm? Maybe in a future far, when your actions might hail me so again? <br>
+Alas, from these quaking caves it is past time I made my swift exit. Ours each may be long and winding roads, but I hope you too come to know the many joys upon the path...
+
+|Title1_Event8 = Playing the [[Needolin]] in any location
+|Title1_Dialogue8 = 
+[n]Lies and truths must be discussed... <br>
+Stone will break and steel shall rust... <br>
+Caps and shells may fall to dust... <br>
+But Mister Mushroom readjusts...
+}}
+
+==Locations==
+{{Main|Passing of the Age (Wish)}}
+Mister Mushroom can only be found after the <i>Passing of the Age</i> wish has been accepted, and can only be found in this order of locations.
+
+{{Gallery
+| Image1 = Mapshot SS Moss Mother 01.png!Location in Moss Grotto
+| Image2 = Mapshot SS Shakra Bone Bottom.png!Location in Bone Bottom
+| Image3 = Mapshot SS Mister Mushroom 01.png!Location in Far Fields
+| Image4 = Mapshot SS Mister Mushroom 02.png!Location in Greymoor
+| Image5 = Mapshot SS First Sinner.png!Location in the Slab
+| Image6 = Mapshot SS Fayforn.png!Location in Mount Fay
+| Image7 = Mapshot SS Mister Mushroom 04.png!Location below Nameless Town (Unofficial map by esau)
+}}
+
+==Creation and Development==
+The <i>[[Endings (Hollow Knight)#Extra Ending: Passing of the Age|Passing of the Age]]</i> ending in <i>[[Hollow Knight]]</i> concluded with "''To be continued''". However, [[William Pellen]] revealed in an interview that "''initially [they] weren't sure if he was going to turn up''", but as the game expanded, "''it made more sense that you'd meet him again.''" [[Ari Gibson]] described him as "''representative of a more general journey''", stating that he became more than his original role of "''a character designed to fill a nook in a cave''".<ref name="bloomberg2">[https://www.bloomberg.com/news/newsletters/2025-11-28/the-makers-of-hollow-knight-silksong-aren-t-done-just-yet The Makers of 'Silksong' Aren't Done Just Yet]</ref>
+
+The files of the 1.0.27535 version of <i>Silksong</i> playable on PlayStation 4, which is older than the PC launch version (1.0.28324), have the following Mister Mushroom dialogue for his appearance in Mount Fay.<ref>[https://www.diffchecker.com/Nu85hOJA/ Comparison of 1.0.27535 (PlayStation 4) and 1.0.27776 (Early Nintendo Switch build)]</ref>
+*<i>...Ahhh. A ward that strong? Do you really think so? Through true indeed, the pale mother failed to pierce it...</i>
+*<i>...Not that... No. You know such things do not concern me. Only when the change comes do I arrive...</i>
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Mister Mushroom Lore Tablet.png!Lore Tablet
+| Image2 = Screenshot SS Mister Mushroom 03.png!Mister Mushroom in Moss Grotto
+| Image3 = Screenshot SS Mister Mushroom 02.png!Mister Mushroom in Bone Bottom
+| Image4 = Screenshot SS Mister Mushroom 04.png!Mister Mushroom in Far Fields
+| Image5 = Screenshot SS Mister Mushroom 05.png!Mister Mushroom in Greymoor
+| Image6 = Screenshot SS Mister Mushroom 06.png!Mister Mushroom in the Slab
+| Image7 = Screenshot SS Mister Mushroom 01.png!Mister Mushroom speaking to the Fayforn, before Hornet talks to him on Mount Fay
+| Image8 = Screenshot SS Mister Mushroom 07.png!Mister Mushroom in the Border Caves
+| Image9 = Screenshot SS Mister Mushroom 08.png!Mister Mushroom reacting to Needolin
+| Image10 = Ending Passing of the Age.png!Mister Mushroom in his ending cutscene
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Passing of the Age}}
+
+== Trivia ==
+* According to Ari Gibson, Mister Mushroom "''might be [[wikipedia:Omnipresence|omnipresent]]''".<ref name="bloomberg2 />
+* While [[the Knight]] could only understand Mister Mushroom's language while wearing the [[Spore Shroom]] charm, [[Hornet (Silksong)|Hornet]] does not need any additional equipment or abilities to understand him.
+* If Hornet stops playing the [[Needolin]] before Mister Mushroom is fully out of the ground, he will stop and then slowly rotate back in.
+* When encountered in Mount Fay, Mister Mushroom can be seen talking with the [[Fayforn]]. If Hornet plays the Needolin, Mister Mushroom starts singing along with the Fayforn, even if he is outside the Needolin's range. This is also the only encounter where Hornet does not need to use the Needolin to make him emerge from the ground.
+
+{{History
+|game = SS
+|1.0.28650 (Patch 2): Updated Herald's Wish achievement description to clarify that players must both complete the wish and finish the game.
+}}
+{{Localisation
+|DEname = Meister Pilz
+|DEmeaning = Mister Mushroom
+|ESname = Señor Seta
+|ESmeaning = Mister Mushroom
+|FRname = Monsieur Champignon
+|FRmeaning = Mister Mushroom or Sir Mushroom
+|ITname = Signor Fungo
+|ITmeaning = Mister Mushroom
+|JAname = ミスター・マッシュルーム
+|JAromanised = Misutā masshurūmu
+|JAmeaning = Mister Mushroom
+|KOname = 미스터 버섯
+|KOromanised = Miseuteo beoseot 
+|KOmeaning = Mister Mushroom
+|PTname = Senhor Cogumelo
+|PTmeaning = Mister Mushroom or Sir Mushroom
+|RUname = Господин Гриб
+|RUromanised = Gospodin Grib
+|RUmeaning = Mister Mushroom
+|TWname = 蘑菇先生
+|TWromanised = Mógū xiānshēng
+|TWmeaning = same
+|ZHname = 蘑菇先生
+|ZHromanised = Mógū xiānshēng
+|ZHmeaning = Mister Mushroom
+|CODEname=MR_MUSH</code><br><code>MR_MUSHROOM
+}}
+
+=== Master Herald ===
+{{Localisation
+|hr = false
+|DEname = Meister Herold
+|DEmeaning = Master Herald
+|ESname = Heraldo Maestro
+|ESmeaning = Master Herald
+|FRname = Noble Héraut
+|FRmeaning = Noble Herald
+|ITname = Grande Messaggero
+|ITmeaning = Great Messenger
+|JAname = 師ヘラルド
+|JAromanised = Shi herarudo
+|JAmeaning = Master Herald or Teacher Herald
+|KOname = 전령
+|KOromanised = Jeollyeong
+|KOmeaning = Messenger 
+|PTname = Mestre Arauto
+|PTmeaning = Master Herald
+|RUname = Главнейшего глашатая
+|RUromanised = Glavnejšego glašataja
+|RUmeaning = Master Herald or Chief Herald
+|TWname = 傳令官
+|TWromanised = Chuánlìng guān
+|TWmeaning = Herald
+|ZHname = 使者大人
+|ZHromanised = Shǐzhě dàrén
+|ZHmeaning = Great Messenger
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

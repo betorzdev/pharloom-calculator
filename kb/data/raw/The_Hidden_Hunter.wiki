@@ -1,0 +1,71 @@
+{{SS Infobox Wish
+| header1 = Grand Hunt
+| description = Track the one who stole Gilly's keepsake near the [[Bellshrine]] between [[Deep Docks]] and [[Far Fields]].
+| npc = [[Gilly]] of Far Fields
+| location = [[Bellhart]]
+| prerequisite = * Obtain [[Silk Soar]]
+* Meet [[Skarrsinger Karmelita]] in [[Far Fields]]
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+
+{{Quote
+| A huge red-shell stole my precious keepsake and disappeared into the fields! Please chase down the thief and recover my treasure!
+| [[Gilly]]
+| Hr = SS
+}}
+
+<b>The Hidden Hunter</b> is a [[Grand Hunt Wishes|Grand Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, which is available on the [[Bellhart]]'s Wishwall after obtaining the [[Silk Soar]] ability and meeting [[Skarrsinger Karmelita]] in [[Far Fields]].
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must locate and defeat [[Gurr the Outcast]], who lies hidden in the [[Far Fields]]. His location can be tracked by interacting with the objects he leaves behind. During the Wish, the Far Fields are laid out with several of Gurr's spiked traps. Upon interacting with the final tracking spot, Hornet is caged and falls into a hidden arena containing Gurr the Outcast.
+
+{{Gallery
+| Image1 = File:Mapshot SS Bellhart Wishwall.png!Location of Wishwall in Bellhart
+| Image2 = File:Mapshot SS Gurr the Outcast 01.png!Location of Gurr the Outcast in Far Fields
+}}
+
+[[File:Grass Doll.png|link=Grass Doll|left|thumb|100x100px]]
+
+Defeating Gurr unlocks a bone gate, leading to a room featuring five corpses tied onto bone stands, with one stand left empty for Hornet. The [[Grass Doll]] is attached to a rope at the back, behind a pressure plate that triggers another spiked trap.
+
+{{Clear|left}}
+
+== Reward ==
+[[File:Mask Shard (Silksong).png|link=Mask Shard (Silksong)|left|thumb|100x100px]]
+
+After defeating Gurr the Outcast and turning in the Grass Doll to Bellhart's Wishwall, Hornet is rewarded with a [[Mask Shard (Silksong)|Mask Shard]].
+
+{{Clear}}
+
+{{Localisation
+|DEname = Der verborgene Jäger
+|DEmeaning = The Concealed Hunter
+|ESname = El cazador oculto
+|ESmeaning = The Hidden Hunter
+|FRname = Chasseur de l'ombre
+|FRmeaning = Hunter of the Shadow
+|ITname = Il cacciatore nascosto
+|ITmeaning = The Hidden Hunter
+|JAname = 隠れた狩猟者
+|JAromanised = Kakureta shuryōsha
+|JAmeaning = Hidden Hunter
+|KOname = 비밀의 사냥꾼
+|KOromanised = Bimirui sanyangkkun
+|KOmeaning = Secret Hunter
+|PTname = O Caçador Oculto
+|PTmeaning = The Hidden Hunter
+|RUname = Невидимый охотник
+|RUromanised = Nevidimyj oxotnik
+|RUmeaning = Invisible hunter 
+|ZHname = 隐秘猎手
+|ZHromanised = Yǐnmì lièshǒu
+|ZHmeaning = Hidden Hunter
+|TWname = 隱祕獵手
+|TWromanised = Yǐnmì lièshǒu
+|TWmeaning = same
+|CODEname = QUEST_ANT_TRAPPER
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

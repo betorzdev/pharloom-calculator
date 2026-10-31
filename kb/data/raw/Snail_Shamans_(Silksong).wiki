@@ -1,0 +1,255 @@
+{{Navbar|page1=Chapel Maid|page2=Caretaker|page3=Bell Hermit|page4=Snail Shamans (Silksong)|title4=Snail Shamans}}
+{{SS Infobox NPC
+|label1 = Snail Shamans
+|title1 = Snail Shamans
+|area = [[Ruined Chapel]]
+|image1 = Snail_Shamans_Silksong.png
+|role = Quest
+|quest = [[Awaiting the End]]<br>[[The Dark Below]]<br>[[Spell Seeker]]<br>[[Acts#The Old Hearts|The Old Hearts]]
+|affiliation = [[Snail Shamans]]
+|singnum = 2
+|sing = Snails
+|sing5 = Snails
+
+|label2 = Chapel Maid
+|title2 = Snail Shamans
+|area2 = [[Ruined Chapel]]
+|image2 = <gallery> 
+Chapel_Maid_Snail_Shaman.png|Alive
+Chapel Maid Dead.png|Dead
+</gallery>
+|role2 = Quest
+|quest2 = [[Awaiting the End]]<br>[[The Dark Below]]<br>[[Spell Seeker]]<br>[[Acts#The Old Hearts|The Old Hearts]]
+|affiliation2 = [[Snail Shamans]]
+|singnum2 = 2
+|sing2 = Chapel Maid
+|g2 = Chapel Maid
+
+|label3 = Caretaker
+|title3 = Snail Shamans
+|area3 = [[Ruined Chapel]]
+|image3 = <gallery> 
+Caretaker_Snail_Shaman.png|Alive
+Caretaker Dead.png|Dead
+</gallery>
+|role3 = Quest
+|quest3 = [[Awaiting the End]]<br>[[The Dark Below]]<br>[[Spell Seeker]]<br>[[Acts#The Old Hearts|The Old Hearts]]
+|affiliation3 = [[Snail Shamans]]
+|singnum3 = 2
+|sing3 = Caretaker
+|g3 = Caretaker
+
+|label4 = Bell Hermit
+|title4 = Snail Shamans
+|area4 = [[Ruined Chapel]]
+|image4 = <gallery> 
+Bell_Hermit_Snail_Shaman.png|Alive
+Bell Hermit Dead.png|Dead
+</gallery>
+|role4 = Quest
+|quest4 = [[Awaiting the End]]<br>[[The Dark Below]]<br>[[Spell Seeker]]<br>[[Acts#The Old Hearts|The Old Hearts]]
+|affiliation4 = [[Snail Shamans]]
+|singnum4 = 2
+|sing4 = Bell Hermit
+|g4 = Bell Hermit
+}}
+{{Quote
+|You should well know our family's fixations. Surely you had a hunch? How else could we hope to trap one of your pale kin? Or see her consumed with such insatiable efficiency?
+|Snail Shamans
+|Hr=SS}}
+The <b>Snail Shamans</b> are three [[NPCs (Silksong)|NPCs]] in <i>[[Hollow Knight: Silksong]]</i>. They are the [[Chapel Maid]], [[Caretaker]], and [[Bell Hermit]] who came to the [[Ruined Chapel]] after the collapse of [[Pharloom]]. They are integral to the progression of [[Act 3]].
+
+== In-game Events ==
+Through the process of the <i>[[Silk and Soul]]</i> [[Wish]], the [[Caretaker]] directs Hornet to consult the [[Chapel Maid]] and [[Bell Hermit]] to assemble the trap that ensnares [[Grand Mother Silk]] at the end of [[Act 2]]. Unbeknownst to Hornet, this trap uses the power of [[The Abyss (Silksong)|The Abyss]], causing the Void to spread along Silk's strands to damage and corrupt the entirety of Pharloom. Hornet later finds and confronts the trio in the [[Ruined Chapel]], who are revealed to be Snail Shamans, holding them partially responsible for the destruction caused by the Void and obtains their assistance in freeing Pharloom.
+
+When Hornet seeks the [[Everbloom]] that would let her survive the depths of the Abyss, the Snail Shamans teach her the [[Elegy of the Deep]] and send her on a quest to claim the [[Old Hearts]] of Pharloom that empower a spell that lets Hornet dive into [[Red Memory|her own memories]] to claim the flower. When Hornet returns with the flower in hand, the Snail Shamans have disappeared, only leaving their [[Soul]]-filled shells behind.
+{{Clear}}
+== Dialogue ==
+{{TabbedDialogue
+| header = false
+| Title1 = Awaiting the End
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = {{HTalk|Cowards. Here you hide, even as you cause your own land's demise.}}<br>
+<b>Caretaker:</b> You seem displeased, Old One. We only did as you asked, yes? The snare is sprung, the creature consumed.<br>
+{{HTalk|You bound it to that void!}}<br>
+<b>Caretaker:</b> Don't play daft. You should well know our family's fixations. Surely you had a hunch?<br>
+<b>Bell Hermit:</b> How else could we hope to trap one of your pale kin? Or see her consumed with such insatiable efficiency?<br>
+{{HTalk|Then you have miscalculated, gravely. The white knight, she fell with the mother...}}<br>
+<b>Chapel Maid:</b> Oh ho... The quakes, yes? We have felt their force, even here. So the mother resists the dark... to save the child?<br>
+{{HTalk|That is my guess. I must descend to the void below, and see clear that truth for myself.}}<br>
+<b>Chapel Maid:</b> Ohhhh. How… unfortunate. All of Pharloom will fall to her flailing.<br>
+{{HTalk|So it may, but I will not watch idle while it crumbles.}}<br>
+<hr/>
+<b>If Hornet has not seen the Diving Bell:</b><br>
+<b>Chapel Maid:</b> Those docks, atop the lake of flame, they still possess the means to pass below, though you'd be the first in an age to dare the descent.<br>
+{{HTalk|Then my path is clear. Remain in your sanctuary and await my return. If this land can be saved, you may have a part to play yet.}}<br>
+<hr/>
+<b>If Hornet has seen the Diving Bell:</b><br>
+{{HTalk|The groaning docks, beyond the caverns of bone. There I have seen a vessel able to pass below, a heavy bell built for descent.}}<br>
+{{HTalk|I need only gain access, and an operator to assist. I will investigate the docks, and uncover the means.}}<br>
+<b>Chapel Maid:</b> You'd be the first in an age to dive so deep, Old One. That space below remains long unseen, even to our family.<br>
+{{HTalk|For those depths, I am more prepared than most. I will reach the base of this land, and know the truth of the new disaster we together have wrought.}}
+| Title1_Event2 = Playing the [[Needolin]]
+| Title1_Dialogue2 = [n]So many souls...<br>
+A kingdom lost...<br>
+Only a simple bug...<br>
+Strength in despair...<br>
+Our power...<br>
+Hide and wait...<br>
+Hide and watch...<br>
+O soulful ones...<br>
+Spiralling outward...<br>
+Glimmering trails...<br>
+
+| Title2 = The Dark Below
+| Title2_Event1 = Speaking after first encounter
+| Title2_Dialogue1 = <b>Chapel Maid:</b> The quakes... This collapse will take Pharloom all.<br>
+{{HTalk|If the void doesn't claim it first. Surely you've seen them, the black threads that wrack your lands? The dark leeches up, possessed upon the fallen monarch's Silk.}}<br>
+{{HTalk|Pharloom's roads were not safe before. Now they'll prove impassable. Those pilgrims still alive in your lands best huddle and hope.}}<br>
+{{HTalk|If there can be another end to this, it is up to us to discover it.}}
+| Title2_Event2 = Speaking again
+| Title2_Dialogue2 = <b>Chapel Maid:</b> Even knowing her motivation, it is a shock the monarch can resist so long. We'd thought none could survive that void.<br>
+{{HTalk|She will have retreated within her protective form, that cocoon of thread. Even as the dark eats its outer, she will spin its Silk anew.}}<br>
+{{HTalk|The effort would be immense and it will strain her soul thin, but what other choice remains?}}<br>
+{{HTalk|This is the desperate act of a dying god. A defiance that, left unchallenged, will bring your kingdom's ruin.}}
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = <b>Chapel Maid:</b> Enough chatting, Old One. Best you get heading below. Whatever action you're planning, time is against you.
+
+| Title3 = Shaman Crest
+| Title3_Event1 = After acquiring the Shaman Crest
+| Title3_Dialogue1 = {{HTalk|I found the well in the hidden chambers beyond. The power that remained at its base I have taken for myself.}}<br>
+<b>Caretaker:</b> Bound yourself a new nature, aye? And from the shells of our ancestors, no less, all those many who've called these lands their own.<br>
+<b>Caretaker:</b> You make it seem so simple-like. All o'that learning, all o'that strength... sucked up in a whirl of Silk.<br>
+<b>Chapel Maid:</b> We'd call you a thief, Old One, and cruel for the taking, but it's all coming down soon if you can't stop it.<br>
+<b>Chapel Maid:</b> If there's advantage in your act that might see these caves safe, then it's better you make your claim.
+
+| Title4 = Spell Seeker
+| Title4_Event1 = Speaking after escaping [[The Abyss (Silksong)|The Abyss]]
+| Title4_Dialogue1 = <b>Chapel Maid:</b> Oh ho! Back from the depths with nary a scratch! Is it as you feared?<br>
+{{HTalk|It is, and worse. Your snare has sunk the monarch deep, deeper than I can safely descend.}}<br>
+{{HTalk|To cut Pharloom free, I must plunge below the surface of that lake of liquid nothing.}}<br>
+<b>Bell Hermit:</b> No shell survives submersion in that void, Old One, not even yours.<br>
+{{HTalk|Not without aid, certainly. Though aid may exist. The flower that resists the dark. Do you know of it?}}<br>
+<b>Chapel Maid:</b> The Everbloom?... We've heard the tale, but had thought it a myth. If ever it sprouted in our lands we would surely have known?<br>
+{{HTalk|I would not seek it in these lands. I need its power full, and it is too fragile to sustain here long. I would seek it in my memory.}}<br>
+<b>Caretaker:</b> Oh ho ho! So you'd have us wrench open your soul, to retrieve the fabled bloom? Can such a thing be done?<br>
+{{HTalk|For another bug, no, but I am Weaver enough to attempt it.}}<br>
+{{HTalk|In the distant past, I knew the flower. My thread still holds its faint memory. If the Everbloom was grasped strongly enough within my Silk, it could be made to manifest.}}<br>
+<b>Chapel Maid:</b> Ah! So you're asking another spell of us? To reveal the flower clear?... But to illuminate one of your kind's old memories, so acutely... This is no easy thing, even for us...<br>
+<b>Chapel Maid:</b> Old One, you must give us a moment to confer...<br>
+<b>Chapel Maid:</b> We could do it. The spell can be cast, with enough power, enormous power, equal maybe to that monarch...<br>
+{{HTalk|I cannot grant you mine, if it even were enough. My strength is still needed to face her below. Where else do you propose we seek a source?}}<br>
+<b>Chapel Maid:</b> From Pharloom! Ho ho ho! Remember, ours is a kingdom of wishes granted.<br>
+<b>Bell Hermit:</b> Pharloom was not born of that monarch, Old One. Power existed in these lands even before she bound them beneath her.<br>
+<b>Bell Hermit:</b> Grnk. Seek the old hearts of our kingdom and the last successors to bear their strength.<br>
+<b>Chapel Maid:</b> They're still out there, hidden away, much faded by the pale one's long dominion. You must make them stir.<br>
+<b>Chapel Maid:</b> We will teach you how, in the way befitting a Weaver, a sombre song to reach down into their memories and enliven them a final time.<br>
+<b>Chapel Maid:</b> The hearts you seek, we can share their locations as best we know.<br>
+<b>Chapel Maid:</b> Three will be needed to construct our spell and draw clear memory of the flower from your Silk.<br>
+<b>Caretaker:</b> Bring us the hearts, Old One. Make'em beat, fierce and final. See for yourself the forgotten strength of this land of bugs before we burn those memories in its saving.
+
+| Title5 = The Old Hearts
+| Title5_Event1 = Speaking after learning [[Elegy of the Deep]]
+| Title5_Dialogue1 = <b>Chapel Maid:</b> This task before you... This is mortal power you would claim, the hearts of bugs. It will cost their last strength to save this land.<br>
+<b>Chapel Maid:</b> Even we have some hesitation in this. Despite our desire to touch their power, we'd never wished to see it expended so utterly.<br>
+{{HTalk|Better to leave your land weak in wonder, if it means your shells, and those of your fellows, stay intact.}}
+| Title5_Event2 = Speaking again
+| Title5_Dialogue2 = <b>Getting the first hint, for the [[Hunter's Heart]]:</b><br>
+<b>Chapel Maid:</b> Through their march, at the far border of these lowlands, seek the last queen of the ant hunters. We can sense her still... just.<br>
+<b>Bell Hermit:</b> In youth, her voice united the wild tribes. Gave them the strength to resist the pale monarch's will... longer than most at least.
+<hr/>
+<b>Getting the second hint, for the [[Pollen Heart]]:</b><br>
+<b>Chapel Maid:</b> In the heights of the great wood, nestled deep in its roots, vines and branches, find the one who sowed the first seed.<br>
+<b>Caretaker:</b> They're the very essence of the place, the nub of it all. Ain't really a bug, to be told, but a powerful presence nonetheless.<br>
+<b>Chapel Maid:</b> We'd heard the Citadel once made grudging accord with that creature, sent their servants in reverence, even built a shrine up there somewhere. Maybe it's worth you searching for it?
+<hr/>
+<b>Getting the third hint, for the [[Encrusted Heart]]:</b><br>
+<b>Chapel Maid:</b> Up top of those caves lost to wind and sand rests a crusted old ruler, a once great warrior king.<br>
+<b>Chapel Maid:</b> In their prime, they and their order held half of Pharloom under hardened claw. Some bugs relished that strength. Most lived in fear of it.
+| Title5_Event3 = Speaking after acquiring the [[Conjoined Heart]]
+| Title5_Dialogue3 = <b>Chapel Maid:</b> What's this? That's an unexpected heart you're holding, Old One...<br>
+<b>Chapel Maid:</b> We can guess to its source, though we'd believed it long gone from these lands. <br>
+{{HTalk|The heart of a graceful lord. In its taking I was able to witness his caves and kingdom as once they flourished.}}<br>
+{{HTalk|A stunning sight. Unique. All gone... Lost to the pale monarch... and the system to keep her caged.}}
+| Title5_Event4 = Exhausted dialogue before acquiring 3 Old Hearts
+| Title5_Dialogue4 = <b>Caretaker:</b> Bring us the hearts, Old One. Make'em beat, fierce and final. See for yourself the forgotten strength of this land of bugs before we burn those memories in its saving.
+
+| Title6 = Red Memory
+| Title6_Event1 = Speaking after acquiring 3 Old Hearts
+| Title6_Dialogue1 = {{HTalk|It is time, shamans. I have the hearts, enough as requested. Enough to build your spell, yes?}}<br>
+<b>Bell Hermit:</b> Aye. We're ready. Still, it's a sad set you're holding there, strength such as few shall ever know... and all about to burn for Pharloom's saving.<br>
+<b>Caretaker:</b> I'll warn ya, Old One, this first part might not be pleasant, but we'll get you in there, deep as needed.<br>
+<b>Chapel Maid:</b> Now you've only to ready yourself for what comes after. Lay up on the dais and we'll begin.
+| Title6_Event2 = Exhausted dialogue
+| Title6_Dialogue2 = <b>Chapel Maid:</b> Our spells're woven, our parts prepared. Whenever you're ready, lay up on the dais and we'll begin.<br>
+<b>Chapel Maid:</b> Best you don't dawdle now. Pharloom's time is short, and those hearts won't go on beating forever.
+| Title6_Event3 = If Hornet is [[Cursed Crest|Cursed]]
+| Title6_Dialogue3 = <b>Chapel Maid:</b> Hold it, Old One! That intruder writhing within your shell...<br>
+<b>Caretaker:</b> Our ritual ain't gonna work while that cruel creature's present. We'd be tugging at its memories as much as your own.<br>
+{{HTalk|Then free me of the affliction. Surely you have the skill?}}<br>
+<b>Caretaker:</b> Not for this! Our power's all of soul and that thing's all physical. You're gonna need more traditional tools of healing.<br>
+<b>Bell Hermit:</b> Seek the one exiled from Bellhart, little Yarnaby. She was chased out into those soaked moors, last I heard.<br>
+<b>Bell Hermit:</b> She'd have the tools for the task, and the cunning to have survived till now.
+| Title6_Event4 = Exhausted dialogue while Cursed
+| Title6_Dialogue4 = <b>Chapel Maid:</b> Hurry, Old One. The ritual can't commence while you remain host to that writhing root.<br>
+<b>Bell Hermit:</b> Seek the one exiled from Bellhart, little Yarnaby. She was chased out into those soaked moors, last I heard.<br>
+<b>Bell Hermit:</b> She'd have the tools for the task, and the cunning to have survived till now.
+}}
+
+== Locations ==
+The Snail Shamans are encountered as a group in the [[Ruined Chapel]] in [[Moss Grotto]]. 
+
+{{Gallery
+|Image1 = Mapshot SS Red Memory.png!Location in Moss Grotto
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Snail Shamans 04.png!Snail Shamans' silhouettes before revealing themselves 
+|Image2 = Screenshot SS Snail Shamans 01.png!Snail Shamans in the Ruined Chapel
+|Image3 = Screenshot SS Snail Shamans 05.png!Snail Shamans reacting to Needolin
+|Image4 = Screenshot SS Snail Shamans 02.png!Snail Shamans waiting beside the dais
+|Image5 = Screenshot SS Snail Shamans 03.png!Starting the Red Memory ritual
+|Image6 = Screenshot SS Moss Grotto 08.png!After the Red Memory
+}}
+
+== Achievements ==
+{{Achievement|game=silksong|Snared Silk}}
+{{Achievement|game=silksong|Remembrance}}
+
+== Trivia ==
+* There is a fourth Snail Shaman in [[Bilewater]]: the Caretaker's cousin, who the Caretaker sends Hornet to fetch the [[Seeker's Soul]] from. This Snail Shaman is already dead, and his body is found hung up in a Bilehaven hut before disintegrating after Hornet takes the Seeker's Soul.<ref>[[Caretaker]] dialogue: <i>"Find the husk of my cousin, claimed by the scorned bugs of the swamps. A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed."</i></ref>
+* The Snail Shamans can be hit with the Needle, which makes them react but take no damage.
+* While Caretaker abandons his robes to be passed onto [[Sherma]]. Chapel Maid's and Bell Hermit's robes and necklaces are found abandoned within the entrance to their chapel room; Chapel Maid's necklace can also be collected for {{R|8}}.
+
+{{Localisation
+|DEname = Schneckenschamanen
+|DEmeaning = Snail Shamans
+|ESname = Chamanes Caracol
+|ESmeaning = Snail Shamans
+|FRname = Chamans Escargot
+|FRmeaning = Snail Shamans
+|ITname = Sciamani Lumaca
+|ITmeaning = Snail Shamans
+|JAname = カタツムリの霊媒師
+|JAromanised = Katatsumuri no reibaishi 
+|JAmeaning = Snail Soul Mediator
+|KOname = 달팽이 주술사들
+|KOromanised = Dalpaengi jusulsadeul
+|KOmeaning = Snail Sorcerers
+|PTname =  Xamãs Caracóis
+|PTmeaning = Snails Shamans
+|RUname = Улиточные шаманы
+|RUromanised = Ulitočnye šamany
+|RUmeaning = Snail Shamans
+|TWname = 蝸牛薩滿
+|TWromanised = Wōniú sàmǎn
+|TWmeaning = same
+|ZHname = 蜗牛萨满
+|ZHromanised = Wōniú sàmǎn
+|ZHmeaning = Snail Shamans<br><small>{{lang|zh-Hans|萨满}} / {{lang|zh-Hant|薩滿}} <i>sàmǎn</i> are established English loanwords in Chinese
+|CODEname = SNAIL_SHAMANS
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]

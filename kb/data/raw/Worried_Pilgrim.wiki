@@ -1,0 +1,87 @@
+{{SS Infobox NPC
+|area = [[Songclave]]
+|role = Pilgrim
+|affiliation = Pilgrims
+|singnum = 3
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Worried Pilgrim's audio files.</ref>
+}}
+
+{{Quote
+|That golden knight's out there, sister, cutting down the lost, keeping us safe. Reckon this place would've already been overrun if not for them'n their noble blades.
+|Worried Pilgrim
+|Hr=SS
+}}
+
+<b>Worried Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of the few hardy pilgrims to have reached [[the Citadel]], found resting near the [[wishwall]] in [[Songclave]] in [[Act 3]].
+
+== In-game Events ==
+Hornet can meet the Worried Pilgrim in Songclave after obtaining [[Silk Soar]] during Act 3, if the [[Second Sentinel]] was awakened. They tell Hornet that their life was saved by the Second Sentinel, referring to them as a "golden knight", and express admiration for their bravery.
+
+Once their dialogue has been exhausted, they have a 25% chance of being gone the next time Hornet reenters the room after resting elsewhere. Once they have left, they remain absent for the rest of the game.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Sister, you seen 'em out there? Our new champion, that golden knight stalking the Citadel's crumbling halls?<br>
+Tall, righteous bug. Not much for conversing. Still! I'd be long dead if not for their appearance.<br>
+And I ain't the only one. Others have spoken of the knight's timely deeds and rare bravery.<br>
+We're desperate for any protection we can get, and that gleaming champion's been offering their aid almost as much as you yourself.
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = That golden knight's out there, sister, cutting down the lost, keeping us safe.<br>
+Reckon this place would've already been overrun if not for them'n their noble blades.
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]What new test?<br>
+Crushed... Consumed?<br>
+What new sin?<br>
+Why must we suffer?<br>
+Pharloom, we failed...<br>
+Our path...
+
+}}
+
+== Location ==
+Worried Pilgrim can be found east of the wishwall in [[Songclave]] in [[Act 3]], if the [[Second Sentinel]] was awakened.
+{{Gallery
+|Image1 = Mapshot SS Worried Pilgrim.png!Location in Songclave
+}}
+
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Worried Pilgrim 01.png!Resting
+|Image2 = Screenshot SS Worried Pilgrim 02.png!Alert
+|Image3 = Screenshot SS Worried Pilgrim 03.png!Singing
+}}
+
+{{Localisation
+|DEname = Besorgter Pilger
+|DEmeaning = Worried Pilgrim
+|ESname = Peregrino Preocupado
+|ESmeaning = Worried Pilgrim
+|FRname = Pèlerin Inquiet
+|FRmeaning = Worried Pilgrim
+|ITname = Pellegrino Preoccupato
+|ITmeaning = Worried Pilgrim
+|JAname = 心配する巡礼者
+|JAromanised = Shinpai suru junreisha
+|JAmeaning = Worried Pilgrim
+|KOname = 걱정하는 순례자
+|KOromanised = Geokjeonghaneun sullyeja
+|KOmeaning = Worrying Pilgrim
+|PTname = Peregrino Preocupado
+|PTmeaning = Worried Pilgrim
+|RUname = Взволнованный пилигрим
+|RUromanised = Vzvolnovannyj piligrim
+|RUmeaning = Worried Pilgrim
+|TWname = 擔憂的朝聖者
+|TWromanised = Dānyōu de cháoshèng zhě
+|TWmeaning = same
+|ZHname = 担忧的朝圣者
+|ZHromanised = Dānyōu de cháoshèng zhě
+|ZHmeaning = Worried Pilgrim
+|CODEname = ENCLAVE_PILGRIM_LARGE_ACT3
+|CODEmeaning = 
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

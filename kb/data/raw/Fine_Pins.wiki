@@ -1,0 +1,72 @@
+{{SS Infobox Wish
+| header1 = Hunt
+| description = Hunt pin-wielding choirbugs of the [[The Citadel|Citadel]] and collect [[Fine Pin]]s.
+| npc = Residents of Songclave
+| location = [[Songclave]]
+| prerequisite = Ring the bell inside the [[First Shrine]]
+| reward = [[Heavy Rosary Necklace]]
+}}
+
+{{Quote
+| Our settlement sits defenceless! No more! When the worst comes, we must stand ready. Bring us pins of the choirbugs, those blades still sharp and strong.
+| Residents of [[Songclave]]
+| Hr = SS
+}}
+
+<b>Fine Pins</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started from the Wishwall in [[Songclave]] once it becomes available.
+
+== Wish ==
+[[File:Fine Pin.png|link=Fine Pin|left|thumb|100x100px]]
+
+The required 12 [[Fine Pin]]s can be found in the [[Choral Chambers]] by slaying [[Choristor]]s or [[Reed]]s and picking up the pins dropped from their corpses. These enemies are found mostly in the western hallways and the eastern vertical shaft of the Chambers.
+
+The pin projectiles that Reeds throw at [[Hornet (Silksong)|Hornet]] cannot be picked up for this Wish.
+
+<center>{{MissingImage}}</center>
+{{Gallery
+| Image1 = Mapshot SS Bell Shrine 06.png!Location of the Wishwall in Songclave
+| Image2 = Mapshot SS Fine Pins 01.png!Locations of pin-wielding enemies in Choral Chambers
+}}
+
+== Reward ==
+[[File:Heavy Rosary Necklace.png|link=Heavy Rosary Necklace|left|thumb|100x100px]]
+
+After delivering 12 Fine Pins to the Wishwall in Songclave, Hornet is rewarded with a [[Heavy Rosary Necklace]] containing {{R|220}}. A rack of pins is added to the background of Songclave after completing the wish.
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28891 (Patch 3): Changed Fine Pins drop rate from 50% chance to 100%, but raised wish required quantity from 10 to 12.
+}}
+{{Localisation
+|DEname = Edle Nadeln
+|DEmeaning = Elegent Pins
+|ESname = Alfileres finos
+|ESmeaning = Fine pins
+|FRname = Piques de qualité
+|FRmeaning = Pins of Quality
+|ITname = Spilli di qualità
+|ITmeaning = Pins of Quality
+|JAname = 上質なピン
+|JAromanised = Jōshitsuna pin
+|JAmeaning = High-quality Pin
+|KOname = 가는 핀
+|KOromanised = Ganeun pin
+|KOmeaning = Fine Pin
+|PTname = Pinos Finos
+|PTmeaning = Fine Pins
+|RUname = Изящные булавки
+|RUromanised = Izjaščnye bulavki
+|RUmeaning = Fine Pins
+|ZHname = 精制刺针
+|ZHromanised = Jīngzhì cìzhēn
+|ZHmeaning = Refined Pierce-pin<br><small>{{lang|zh-Hant|刺針}} / {{lang|zh-Hans|刺针 <i>cìzhēn</i>}} refers to Pharloom's traditional pins in Chinese.</small>
+|TWname = 精製刺針
+|TWromanised = Jīngzhì cìzhēn
+|TWmeaning = same
+|CODEname = QUEST_FINEPINS
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

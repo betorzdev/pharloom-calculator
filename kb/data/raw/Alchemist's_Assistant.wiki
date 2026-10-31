@@ -1,0 +1,71 @@
+{{Navbar
+| page1 = Alchemist's Assistant
+| page2 = Advanced Alchemy
+}}
+
+{{SS Infobox Wish
+| header1 = Gather
+| description = Collect Plasmium from Plasmium buds in the lower Wormways.<br>
+Plasmium can be extracted from buds using a fully charged stab from the Needle Phial tool.
+| npc = [[Alchemist Zylotol]]
+| location = [[Wormways]]
+| prerequisite = None
+| reward = [[Plasmium Phial]]
+}}
+
+{{Quote
+| Perhaps, like myself, you have been bewitched by the Plasmium's beautiful glow? Then join me, you must! A new assistant is needed. Together we shall unlock the secrets of this wondrous substance! 
+| [[Alchemist Zylotol]]
+| Hr = SS
+}}
+
+<b>Alchemist's Assistant</b> is a [[Gather Wishes|Gather Wish]] in <i>[[Hollow Knight: Silksong]]</i>. It can be started by talking to [[Alchemist Zylotol]] in the [[Wormways]].
+
+== Wish ==
+[[File:Plasmium.png|link=Plasmium|left|thumb|100x100px]]
+
+Alchemist Zylotol asks [[Hornet (Silksong)|Hornet]] to extract the nectar from three ripe [[Plasmium Bud|Plasmium buds]] found throughout the Wormways. He gives her his [[Needle Phial]], which she must charge and stab into buds to extract the [[Plasmium]].
+
+{{Gallery
+| Image1 = Mapshot SS Alchemist Zylotol 01.png!Location of Alchemist Zylotol in the Wormways
+| Image2 = Mapshot SS Plasmium buds.png!Locations of all the Plasmium buds
+}}
+
+== Reward ==
+[[File:Plasmium Phial.png|link=Plasmium Phial|left|thumb|100x100px]]
+
+After delivering 3 Plasmium to Alchemist Zylotol, he rewards Hornet with the [[Plasmium Phial]] [[Tool]].
+
+{{Clear}}
+{{Localisation
+|DEname = Assistent des Alchemisten
+|DEmeaning = Assistant of the Alchemist
+|ESname = Asistente de alquimista
+|ESmeaning = Assistant of the Alchemist 
+|FRname = L'assistant de l'alchimiste
+|FRmeaning = The Assistant of the Alchemist
+|ITname = Assistente dell'Alchimista
+|ITmeaning = Assistant of the Alchemist 
+|JAname = 錬金術師の助手
+|JAromanised = Renkinjutsushi no joshu
+|JAmeaning = Alchemist's Assistant
+|KOname = 연금술사의 조수
+|KOromanised = Yeongeumsulsaui josu
+|KOmeaning = Alchemist's Assistant
+|PTname = Assistente do Alquimista
+|PTmeaning = Assistant of the Alchemist  
+|RUname = Помощница алхимика
+|RUromanised = Pomoščnica alximika
+|RUmeaning = Alchemist's Assistant (feminine)
+|ZHname = 炼金助手
+|ZHromanised = Liànjīn zhùshǒu
+|ZHmeaning = Alchemy Assistant
+|TWname = 煉金助手
+|TWromanised = Liànjīn zhùshǒu
+|TWmeaning = same
+|CODEname = QUEST_EXTRACTOR_B
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

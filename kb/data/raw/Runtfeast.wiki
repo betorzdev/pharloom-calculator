@@ -1,0 +1,100 @@
+{{Navbar|page1=Broodfeast|page2=Runtfeast}}
+{{SS Infobox Wish
+| header1 = Hunt
+| description =
+Use tools to acquire organs of various types so Runt may feed.
+* [[Seared Organ]]
+* [[Shredded Organ]]
+* [[Skewered Organ]]
+| npc = [[Runt]]
+| location = [[Putrified Ducts]]
+| prerequisite = Do not complete <i>[[Broodfeast]]</i> prior to [[Acts|Act 3]]
+| reward = [[Longclaw]]
+}}
+
+{{Quote
+| Us needssss meatsss... hunter... finds... bringsss... So us'sss small does grow like siblingssss...
+| [[Runt]]
+| Hr = SS
+}}
+
+<b>Runtfeast</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, an alternate version of <i>[[Broodfeast]]</i>, begun by talking to the [[Runt]] in the [[Putrified Ducts]] if <i>Broodfeast</i> was not completed by [[Act 3]].
+
+Due to their Wish requirements being identical, any progress made in <i>Broodfeast</i> carries forward into <i>Runtfeast</i>.
+
+== Wish ==
+Runt requires various types of meat so they may feed and grow strong like their siblings. They ask [[Hornet (Silksong)|Hornet]] to collect 3 types of organs for them by killing organic enemies in various ways. Almost every non-mechanical enemy in the game is compatible with this Wish.
+
+{{Gallery
+| Image1 = Mapshot SS Huntress 01.png!Location of Runt in Putrified Ducts
+}}
+{{Gallery
+| Image1 = Seared Organ.png!link=Seared Organ!15 Seared Organs
+| Image2 = Shredded Organ.png!link=Shredded Organ!35 Shredded Organs
+| Image3 = Skewered Organ.png!link=Skewered Organ!10 Skewered Organs
+}}
+
+15 [[Seared Organ]]s can be obtained by roasting enemies using fiery or electrical attacks:
+
+* [[Needle]] after using [[Flintslate]]
+* [[Pimpillo]]
+* [[Wispfire Lantern]]
+* [[Voltvessels]]
+* Other sources of heat (i.e. a [[Memoria]] blown up by another Memoria's electrified explosive)
+
+35 [[Shredded Organ]]s can be gathered by tearing up enemies using jagged weapons:
+
+* [[Sawtooth Circlet]]
+* [[Cogwork Wheel]]
+* [[Delver's Drill]]
+* [[Conchcutter]]
+* [[Beast Crest]]'s downwards attack
+* [[Architect Crest]]'s downwards and [[Needle Strike]] attacks
+
+10 [[Skewered Organ]]s can be gathered by stabbing or impaling enemies with:
+
+* [[Sting Shard]] 
+* [[Longpin]]
+* [[Needle Phial]]
+
+== Reward ==
+[[File:Longclaw.png|link=Longclaw|left|frameless|50px]]
+Upon bringing all 60 organs to [[Runt]], they reward Hornet with the [[Longclaw]].
+
+{{Clear}}
+
+== Trivia ==
+* Despite not dying or appearing seriously wounded, [[Pinstress]] with the appropriate damage will also drop the respective Organ if the Wish is active.
+
+{{Localisation
+|DEname = Winzlingsmahl
+|DEmeaning = Runt's Meal
+|ESname = Festín para Pequeñuela
+|ESmeaning = Feast for Runt
+|FRname = Festin de la chasserette
+|FRmeaning = Feast for Runt
+|ITname = Banchetto per Cucciola
+|ITmeaning = Feast for Puppy
+|JAname = ラントのごちそう
+|JAromanised = Ranto no gochisō
+|JAmeaning = Runt's Feast or Runt's Treat
+|KOname = 런트의 잔치
+|KOromanised = Reonteuui janchi
+|KOmeaning = Runt's Feast
+|PTname = Banquete da Nanica
+|PTmeaning = Runt's Feast
+|RUname = Пир для Коротышки
+|RUromanised = Pir dlja Korotyški
+|RUmeaning = Feast for Runt or Feast for Shorty
+|ZHname = 遗孤盛宴
+|ZHromanised = Yígū shèngyàn
+|ZHmeaning = Orphan Feast
+|TWname = 遺孤盛宴 
+|TWromanised = Yígū shèngyàn
+|TWmeaning = same
+|CODEname = QUEST_RUNTRESS
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

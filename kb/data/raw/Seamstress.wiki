@@ -1,0 +1,191 @@
+{{SS Infobox NPC
+| image1 = Seamstress.png
+| area = [[Far Fields]]
+| role = Quest
+| affiliation = [[Pinstress]] (pin-sister)<br>
+[[Order of the Pinstress]] (member)
+| quest = [[Flexile Spines]]
+| singnum = 2
+}}
+
+{{Quote|Hr=SS
+|I'll grant you my courtesy, stray one. I'll even offer aid where I'm able. Just don't be hanging around too long. I may not be a fan of that Citadel, but I'm smart enough to avoid its ire.
+| Seamstress
+}}
+
+The <b>Seamstress</b> is a [[NPCs (Silksong)#Quest NPCs|quest NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She upgrades [[Hornet (Silksong)|Hornet]]'s [[Hunter's Cloak]] into the [[Drifter's Cloak]] after the <i>[[Flexile Spines]]</i> [[wish]] is completed.
+
+== Background ==
+The Seamstress is a former warrior of the [[Order of the Pinstress]], a group of female warriors<ref>[[Pinstress]] [[Needolin]] dialogue: <i>"An order lost of maidens fair..."</i></ref> who were once renowned in [[Pharloom]].<ref>Pinstress [[Hunter's Journal (Silksong)|Hunter's Journal]] entry: <i>"Blade maiden of a once renowned warrior sect, survived long beyond the rest of her order."</i></ref> The Order of the Pinstress was once allied with [[the Citadel]], before the Citadel turned against them and stamped out their order.<ref>Pinstress: <i>"Our grand Citadel learnt well from the training of Pinstresses past. Then it went and turned those teachings upon us! Despite our superior skills, our numbers have always been few, and their strength overwhelmed."</i></ref>
+
+The Seamstress and [[Pinstress]] are the only surviving members of the Order of the Pinstress.<ref>Pinstress: <i>"Of my once revered order, only two of us remain, wormed away in Pharloom's forgotten corners, and my pin-sibling, she's lost herself to more peaceable pursuits."</i></ref> While Pinstress still holds true to the ways of the order, the Seamstress has turned her back on them.<ref>Seamstress: <i>"Last to hold true to the old ways of the pin, she was... I sure ain't sharing many of those violent values no more."</i></ref>
+
+At one point before settling with more peaceful values, the Seamstress encountered and fought [[Fourth Chorus]], one of the Citadel's gargantuan [[Cogwork Bugs|automaton]]s sent in pursuit of her, eventually immobilising the machine under a pile of rubble while leaving her pin impaled on its neck.
+
+== In-Game Events ==
+Talking to the Seamstress in her hut in the [[Far Fields]] begins the <i>[[Flexile Spines]]</i> wish. Once Hornet completes the wish, the Seamstress upgrades her [[Hunter's Cloak]] into the [[Drifter's Cloak]].
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Flexile Spines
+| title = [[Flexile Spines]]
+| description = "If you're planning to ascend from these low fields, you'll be needing some lift, and I'm just the bug to help."
+| objective = Hunt Hokers in the Far Fields and collect Spine Cores.
+| location = <b><i>[[Far Fields]] NPC</i></b>
+Seamstress
+| reward = [[Drifter's Cloak]]<br><i>Prerequisite for [[Silk and Soul]]</i>
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = <b>If Hornet has not met [[Lace]] in the [[Choral Chambers]]:</b><br>
+Well, aren't you a sight! No, don't tell me! You're as odd as they come.<br>
+Your poise! Your form! Are you hunted? Pursued? The Citadel would see a fine prize in you.<br>
+{{HTalk|It is as you say, madam. Veiled bugs brought me to your land. I seek them now, for answers.}}<br>
+Ha! Fierce too! These are bleak times, but a powerful stray like you could certainly cause some change.<br>
+Well then! I've no love for that holy caste, and I do worry for this kingdom's ailing state. If you're seeking to settle a score, perhaps I can lend some aid?
+<hr/>
+<b>If Hornet has met Lace in the Choral Chambers:</b><br>
+Well, aren't you a sight! No, don't tell me! You're as odd as they come.<br>
+Your poise! Your form! Are you hunted? Pursued? The Citadel would see a fine prize in you.<br>
+{{HTalk|It is as you say, madam. Veiled bugs of the Citadel brought me to your land. I now seek for one who would answer why, and will ask with force as needed.}}<br>
+Ha! Fierce too! These are bleak times, but a powerful stray like you could certainly cause some change.<br>
+Well then! I've no love for that holy caste, and I do worry for this kingdom's ailing state. If you're seeking to settle a score, perhaps I can lend some aid?
+| Title1_Event2 = Right when Hornet is leaving after receiving the [[Drifter's Cloak]]
+| Title1_Dialogue2 = <b>If Hornet has not met Lace in the Choral Chambers:</b><br>
+Just a moment, dear, before you scurry off!<br>
+I'm loath to spoil the surprise, but curiosity begs me to ask. Do you know why they pursue you? Those Citadel bugs?<br>
+{{HTalk|No certainty, but I've a strong suspicion...}}<br>
+{{HTalk|They hunt me for my nature. For the Silk produced within my shell.}}<br>
+Ahh ha! Truth, no doubt! In Pharloom, yours is a rare skill, prized beyond measure, to channel one's soul within a thread. Soul and Silk inseparably linked.<br>
+It is a skill almost lost from Pharloom. Those old Weavers shared it, but they're long dead now.<br>
+{{HTalk|There is another alive in this kingdom that shares my nature, or some part of it. I've seen Silk similar to my own. It snares the shells of those upon the roads.}}<br>
+{{HTalk|I've seen it wrap them, possess them whole. There is will within that thread, one that seems to come from somewhere above us. The Citadel...}}<br>
+Hmmmm... Good, sharp sight you've got. That Citadel... All roads towards and all answers waiting, and a long climb up there m'dear.<br>
+Now! It's time you get going! Your style and your Silk sure are fine, but stay too long and you'll only be trouble for me!
+<hr/>
+<b>If Hornet has met Lace in the Choral Chambers:</b><br>
+Just a moment, dear, before you scurry off!<br>
+I'm loath to spoil the surprise, but curiosity begs me to ask. Do you know why they pursued you? Those Citadel bugs?<br>
+{{HTalk|I have seen their Citadel and its state, and I have strong suspicion...}}<br>
+{{HTalk|They hunt me for my nature. For the Silk produced within my shell. Not for themselves but for the one atop it all.}}<br>
+Ahh ha! Truth. In Pharloom, yours is a rare skill, prized beyond measure, to channel one's soul within a thread. Soul and Silk inseparably linked.<br>
+It is a skill almost lost from Pharloom. Those old Weavers shared it, but they're long dead now.<br>
+{{HTalk|The one atop this kingdom... They share my nature, or some part of it. I've seen their Silk at work, in vast scale.}}<br>
+{{HTalk|It snares the shells of those upon the roads, and guides with false life the many hollowed husks left to lapse.}}<br>
+Hmm... You've looked far towards the truth of it. Closer even than I'd dare to dig. But then you're clearly of the countenance to be coping with such heady stuff...<br>
+Now! It's past time you were going! Your style and your Silk sure are fine, but stay too long and you'll only be trouble for me!
+| Title1_Event3 = If Hornet has met Lace in the Choral Chambers only after getting the Drifter's Cloak
+| Title1_Dialogue3 = Oooh! Stray one. Do tell, how goes the journey?<br>
+{{HTalk|I have ventured high, seen the Citadel and its state. That place is long lost... generations lost, a gilded tomb, drowned in Silk dregs.}}<br>
+{{HTalk|For its minions, so compelled in my capture, I now see clearly the source of their unity, and their strange strength... They are husks bound tight by the one who waits at its crest...}}<br>
+Agh! Look at you! Seeing right through to the truth of it! Closer even than I'd dare to dig. But then you're clearly of the countenance to be coping with such heady stuff...<br>
+Now! Best you be heading. You're clearly planning to stir up some serious trouble. I don't want to be close when it kicks off!
+| Title1_Event4 = After meeting [[Pinstress]]
+| Title1_Dialogue4 = {{HTalk|On the far side of Pharloom, I chanced upon a bug starkly similar to yourself.}}<br>
+{{HTalk|From her home, her dress, and her skill, I am guessing you share some relation?}}<br>
+Aye. Met my sister, you did, in order at least. Glad to hear she's still among the living.<br>
+Last to hold true to the old ways of the pin, she was... I sure ain't sharing many of those violent values no more.<br>
+I'll warn you, stray one, my sister might seem all cheer and charm, but buried beneath there's the soul of a killer.
+| Title1_Event5 = Exhausted dialogue
+| Title1_Dialogue5 = I'll grant you my courtesy, stray one. I'll even offer aid where I'm able. Just don't be hanging around too long.<br>
+I may not be a fan of that Citadel, but I'm smart enough to avoid its ire.
+| Title1_Event6 = Playing the [[Needolin]]
+| Title1_Dialogue6 = [n]Darn it. Stitch it. Make it whole...<br>
+Fix the fabric. Roll the hem...<br>
+Mend the tears and twine the thread...<br>
+Spin and spin. Forget the dead...
+
+| Title2 = Flexile Spines
+| Title2_Event1 = Getting offered the wish
+| Title2_Dialogue1 = If you're planning to ascend from these low fields, you'll be needing some lift, and I'm just the bug to help.<br>
+Head for the caves beyond my home. The bugs within produce a spine with a marvellous core, flexible yet strong.<br>
+Cut their spines and collect the cores. Return to me, and I'll soon have your old cloak transformed into something far more buoyant.
+| Title2_Event2 = Declining the wish
+| Title2_Dialogue2 = Suit yourself, stray one. Ascending above these fields will prove a tough task without my talent.
+| Title2_Event3 = Speaking after declining the wish
+| Title2_Dialogue3 = Ready to reconsider my offer? Good for you! You won't be going far without my help, dear.
+| Title2_Event4 = Accepting the wish
+| Title2_Dialogue4 = A smart choice. Get out there and gather those spine cores, and best you be quick about it.<br>
+As nice as it is to have the company, if you hang around too long, those Citadel bugs'll turn their gaze on me as well.
+| Title2_Event5 = Exhausted dialogue while not having enough [[Spine Core]]s
+| Title2_Dialogue5 = {{HTalk|I'll have the spine cores for you shortly, madam.}}<br>
+Good, good! The caves just beyond here are full of the creatures, floating carelessly in the warm air.<br>
+I'm sure your big needle there can coax them into sharing their spines. Then it's only a quick matter of cutting them open and grabbing the cores.
+| Title2_Event6 = Speaking after acquiring enough Spine Cores
+| Title2_Dialogue6 = Well, then! I can tell by the rattling from within your cloak, your hunt was a success! If you'll kindly pass over the cores, I can get to work.
+| Title2_Event7 = Refusing to hand over the Spine Cores
+| Title2_Dialogue7 = After all that hunting, you won't trust me with your spoils? You're a funny one. They won't do you any good just filling up your pockets!
+| Title2_Event8 = Handing over the required Spine Cores
+| Title2_Dialogue8 = Perfect! These should be more than enough. Wait there just a moment and we'll soon have you soaring up and away from these lowlands.<br>
+{{HTalk|This is fine work, Seamstress. Your modifications will aid me greatly.}}<br>
+You're quite welcome, dear. I've rare opportunity to practice such intricate sewing, and a warrior sort like you will be able to properly appreciate my additions.<br>
+Float away now, stray one, and do try not to die. I'd rather not have my hard work go to waste.
+
+| Title3 = Act 3
+| Title3_Event1 = First conversation
+| Title3_Dialogue1 = Stray one! Things were already falling grim when last you left. Now it's worse! The whole world quaking and wailing, and all stretched through with blackened strands!<br>
+This wouldn't be your doing, by chance?<br>
+{{HTalk| ...I am in part responsible, though know this outcome was not my intent, and that I shall work to calm it.}}<br>
+I knew it! Course it had to be you. Here I was, hoping you'd bring a shake up. Instead you've brought an ending!<br>
+Well, move it, I say! Get to your fixing. We're all now suffering for the scale of your conflict... Maybe this time you act towards calmer conclusions, aye?
+| Title3_Event2 = Speaking with the [[Pin Badge]] equipped
+| Title3_Dialogue2 = That's a fancy pin you're flaunting upon your cloak there. Here's hoping you didn't have to kill to claim it.<br>
+{{HTalk|The emblem was given freely, Seamstress, as reward for a fierce duel won fair.}}<br>
+Given freely!? My, my. So my sister's welcomed another to the order... Sounds like age might've softened even her stoic style.<br>
+Can't say I think too fondly on the old ways... but some rituals, and some memories... those are still worth preserving.
+| Title3_Event3 = Exhausted dialogue
+| Title3_Dialogue3 = Get a move on, stray one! We're all suffering for your conflict... Maybe next time you act towards calmer conclusions, aye?
+}}
+
+== Location ==
+The Seamstress can be found inside her hut in the central area of the [[Far Fields]].
+{{Gallery
+| Image1 = Mapshot SS Seamstress 01.png!Location in the Far Fields
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Far Fields 04.png!Seamstress' hut
+| Image2 = Screenshot SS Seamstress 01.png!Working
+| Image3 = Screenshot SS Seamstress 03.png!Singing
+| Image4 = Screenshot SS Seamstress 02.png!Drifter's Cloak cutscene
+}}
+
+== Trivia ==
+* Various assets used in Seamstress' room are modified assets from the [[Cut Content (Hollow Knight)|unused Hornet's room]] from <i>[[Hollow Knight]]</i>. 
+{{Gallery
+|Image1 = Unused Room Abyss 07-2.jpg!Unused Hornet's room
+|Image2 = Screenshot SS Seamstress 01.png!Seamstress' room
+}}
+{{Localisation
+|DEname = Näherin
+|DEmeaning = Seamstress
+|ESname = Costurera
+|ESmeaning = Seamstress
+|FRname = Couturière
+|FRmeaning = Seamstress
+|ITname = Sarta
+|ITmeaning = Seamstress
+|JAname = 裁縫師
+|JAromanised = Saihōshi
+|JAmeaning = Seamstress or Tailor
+|KOname = 재봉사
+|KOromanised = Jaebongsa
+|KOmeaning = Tailor
+|PTname = Costureira
+|PTmeaning = Seamstress or Dressmaker
+|RUname = Швея
+|RUromanised = Šveja
+|RUmeaning = Seamstress
+|ZHname = 织姬
+|ZHromanised = Zhī jī
+|ZHmeaning = Seamstress or Weave Lady
+|CODEname = SEAMSTRESS
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

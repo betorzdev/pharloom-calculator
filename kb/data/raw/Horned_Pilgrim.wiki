@@ -1,0 +1,95 @@
+{{SS Infobox NPC
+| area = [[Bone Bottom]]
+| role = Pilgrim
+| affiliation = Pilgrims
+| sing = Worried Pilgrim
+| singnum = 3
+| va = Matthew Fitzgerald<ref>Matthew Fitzgerald is credited in Horned Pilgrim's audio files.</ref>
+}}
+
+{{Quote
+|Hr=SS
+|We pilgrims arm ourselves with prayer, garb ourselves in faith, and hope they prove enough to reach the Citadel's glory. Such is our way...
+|Horned Pilgrim
+}}
+
+<b>Horned Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are a pilgrim who arrived in [[Bone Bottom]] to start their journey to [[the Citadel]], found resting before setting out.
+
+== In-game Events ==
+Horned Pilgrim appears after [[Pebb]] leaves [[Bone Bottom]] and [[Hornet (Silksong)|Hornet]] visits the place where her shop used to be, provided the game is subsequently [[Save Data (Silksong)/Save Points|saved]] outside Bone Bottom, the [[Moss Grotto]], and [[the Marrow]]. In their first encounter, Horned Pilgrim asks Hornet about her [[Needle]] and wonders if it is a weapon.<ref>Horned Pilgrim: <i>"Sister, sister! What is that long, gleaming tooth you carry with you? Is it a weapon?"</i></ref> When she confirms this and recommends they arm themself before starting their journey, the pilgrim sadly refuses her advice and calls it a sin.<ref>Hornet and Horned Pilgrim dialogue:<br>Hornet: <i>"It is indeed, though you need not fear. I will not raise it against you. Its edge is meant for predators and other foes. I strongly suggest you arm yourself similarly before your own journey begins."</i><br>Horned Pilgrim: <i>"Alas... for a pilgrim, that's sin you speak of, sister. We arm ourselves with prayer, garb ourselves in faith, and hope they prove enough to reach the Citadel's glory. Such is our way..."</i></ref>
+
+Horned Pilgrim disappears when the [[Skull Tyrant]] attacks the settlement, but returns once Hornet defeats the boss and re-enters the room.
+
+Seeing Horned Pilgrim for the first time triggers a countdown of ten game saves. Once it expires, the pilgrim leaves the settlement and remains absent for the rest of the game.<ref group=Source name=code><code>GameManager.TimePassesElsewhere()</code> decrements <code>bonetownPilgrimHornedCount</code>.</ref> A save only counts if it occurs in a different area from the previous one.
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Sister, sister! What is that long, gleaming tooth you carry with you? Is it a weapon?<br>
+{{HTalk|It is indeed, though you need not fear. I will not raise it against you. Its edge is meant for predators and other foes.}}<br>
+{{HTalk|I strongly suggest you arm yourself similarly before your own journey begins.}}<br>
+Alas... for a pilgrim, that's sin you speak of, sister.<br>
+We arm ourselves with prayer, garb ourselves in faith, and hope they prove enough to reach the Citadel's glory. Such is our way...
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = We pilgrims arm ourselves with prayer, garb ourselves in faith, and hope they prove enough to reach the Citadel's glory. Such is our way...
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]Our last rest...<br>
+To reach your light...<br>
+Always up...<br>
+Stay together...<br>
+Save your strength...<br>
+Defeat your fear...<br>
+Why so few?...<br>
+For you, dear Pharloom...<br>
+Climb to glory!<br>
+Climb to death...
+}}
+
+== Location ==
+Horned Pilgrim can be found in [[Bone Bottom]], between the [[wishwall]] and the [[Bellway]] station. They appear only after [[Pebb]] leaves on her pilgrimage.
+
+{{Gallery
+|Image1 = Mapshot SS Pebb 01.png! Location in Bone Bottom
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Horned Pilgrim 01.png!Idle
+|Image2 = Screenshot SS Horned Pilgrim 02.png!Singing
+}}
+
+== Trivia ==
+* Horned Pilgrim shares their [[Needolin]] dialogue with [[Quiet Pilgrim]], [[Fearful Pilgrim]], [[Pilby]], [[Pebb]], [[Flick]], and some background pilgrims of the settlement.
+
+{{Localisation
+|DEname = Gehörnter Pilger
+|DEmeaning = Horned Pilgrim
+|ESname = Peregrino con Cuernos
+|ESmeaning = Horned Pilgrim
+|FRname = Pèlerin Cornu
+|FRmeaning = 
+|ITname = Pellegrino Cornuto
+|ITmeaning = Horned Pilgrim
+|JAname = 角の生えた巡礼者
+|JAromanised = Tsuno no haeta junrei-sha
+|JAmeaning = Horn-sprouted Pilgrim
+|KOname = 뿔 달린 순례자
+|KOromanised = Ppul dalrin sullyeja 
+|KOmeaning = Horned Pilgrim
+|PTname = Peregrino de Chifres
+|PTmeaning = Horned Pilgrim
+|RUname = Рогатый пилигрим 
+|RUromanised = Rogatyj piligrim
+|RUmeaning = Horned Pilgirm (masculine)
+|ZHname = 长角的朝圣者
+|ZHromanised = Chángjiǎo de cháoshèng zhě
+|ZHmeaning = Long Horned Pilgrim
+|CODEname = BB_PILGIRM_HORNED
+|CODEmeaning = <code>BB</code> stands for Bone Bottom.
+}}
+
+{{Refs|hr=ss}}
+
+== Code References ==
+<references group="Source"/>
+{{SS Nav NPCs}}

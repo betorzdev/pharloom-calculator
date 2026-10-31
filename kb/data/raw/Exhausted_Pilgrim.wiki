@@ -1,0 +1,90 @@
+{{SS Infobox NPC
+| area = [[Halfway Home]]
+| role = Pilgrim
+| affiliation = Pilgrims
+|sing = Scared Pilgrim
+|singnum = 3
+|va=Lauren Koopowitz<ref name="va">[https://youtu.be/pA7Id7lff6E?t=2788 Interview with Lauren Koopowitz]</ref>
+}}
+{{Quote
+|Hr=SS
+|My sore shell will cease tormenting me once I reach the Citadel. It's sung that all ails are healed just as soon as we step beyond the Grand Gate...
+|Exhausted Pilgrim
+}}
+
+<b>Exhausted Pilgrim</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They are one of many pilgrims travelling to [[the Citadel]], and can be found resting at the [[Halfway Home]] in [[Greymoor]] before continuing their journey.
+
+== In-game Events ==
+[[Hornet (Silksong)|Hornet]] can meet Exhausted Pilgrim resting at a table in the Halfway Home. Bedraggled from their travels, the pilgrim marvels at how fresh Hornet looks and asks her for advice on how to fare better in such dangerous lands.<ref>Exhausted Pilgrim: <i>"Hoy... sister! I'm sat here all bent and bedraggled, but you look fresh as when you was hatched! How do you fare so well in these drenched and dangerous lands? Maybe you got a secret you could share?"</i></ref> Hornet replies that she has no secrets that would offer easy aid, but wishes them luck for the rest of their journey.<ref>Hornet dialogue with Exhausted Pilgrim: <i>"None that would offer easy aid, good bug. Whatever luck or savvy brought you this far, may it continue on your journey."</i></ref> Despite their sore shell, the traveller finds comfort in the belief that all their ailments will be healed as soon as they reach the Citadel and step beyond the [[Grand Gate]].<ref>Exhausted Pilgrim: <i>"My sore shell will cease tormenting me once I reach the Citadel. It's sung that all ails are healed just as soon as we step beyond the Grand Gate..."</i></ref>
+
+Once seen, Exhausted Pilgrim departs the Halfway Home after Hornet rests at a [[Bench (Silksong)|bench]] elsewhere. They also leave if Hornet meets [[Lace]] in the [[Choral Chambers]].
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Hoy... sister! I'm sat here all bent and bedraggled, but you look fresh as when you was hatched!<br> 
+How do you fare so well in these drenched and dangerous lands? Maybe you got a secret you could share?<br>
+{{HTalk|None that would offer easy aid, good bug. Whatever luck or savvy brought you this far, may it continue on your journey.}}
+|Title1_Event2 = Exhausted dialogue
+|Title1_Dialogue2 = My sore shell will cease tormenting me once I reach the Citadel. It's sung that all ails are healed just as soon as we step beyond the Grand Gate...
+|Title1_Event3 = Playing the [[Needolin]]
+|Title1_Dialogue3 = [n]A hearth stoked hot...<br>
+Nectar from the teat...<br>
+To sit, to rest... to stop...<br>
+Pharloom's warmth...
+}}
+
+== Location ==
+Exhausted Pilgrim can be found at the [[Halfway Home]] in [[Greymoor]], if Hornet speaks with [[Creige]] at least once and defeats [[Widow]], but has not met [[Lace]] in the [[Choral Chambers]].
+
+{{Gallery
+|Image1 = Mapshot SS Creige 01.png!Location in Greymoor
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Exhausted Pilgrim 01.png!Resting
+|Image2 = Screenshot SS Exhausted Pilgrim 02.png!Alert
+|Image3 = Screenshot SS Exhausted Pilgrim 03.png!Singing
+}}
+
+== Trivia ==
+* Exhausted Pilgrim was originally planned to sit alongside [[Aged Pilgrim]].<ref>[https://pocketmags.com/edge-magazine/february-2021 Edge Magazine February 2021 edition] p. 60.</ref> 
+
+{{Gallery
+|Image1 = Screenshot SS EDGE 07.png!Pre-release screenshot
+}}
+
+{{History
+|game = SS
+|1.0.29909 (Patch 5): Changed a phrase in their first encounter dialogue from <i>"fresh as the day you was hatched!"</i> to <i>"fresh as when you was hatched!"</i>.
+}}
+{{Localisation
+|DEname = Erschöpfte Pilgerin
+|DEmeaning = Exhausted Pilgrim
+|ESname = Peregrina Exhausta
+|ESmeaning = Exhausted Pilgrim
+|FRname = Pèlerine Épuisée
+|FRmeaning = Exhausted Pilgrim (feminine)
+|ITname = Pellegrina Esausta
+|ITmeaning = Exhausted Pilgrim
+|JAname = 疲れ果てた巡礼者
+|JAromanised = Tsukarehateta junrei-sha
+|JAmeaning = Exhausted Pilgrim
+|KOname = 탈진한 순례자
+|KOromanised = Taljinhan sullyeja 
+|KOmeaning = Exhausted Pilgrim
+|PTname = Peregrina Exausta
+|PTmeaning = Exhausted Pilgrim
+|RUname = Измождённая пилигримка
+|RUromanised = Izmoždënnaya piligrimka
+|RUmeaning = Exhausted Pilgrim (feminine)
+|ZHname = 力竭的朝圣者
+|ZHromanised = Lìjié de cháoshèng zhě
+|ZHmeaning = Exhausted Pilgrim
+|CODEname = HH_PATRON_RIGHT
+|CODEmeaning = <code>HH</code> stands for the Halfway Home.
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

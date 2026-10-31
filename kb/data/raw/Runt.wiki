@@ -1,0 +1,141 @@
+{{SS Infobox NPC
+| area = [[Putrified Ducts]]
+| affiliation = [[Huntress]] (Mother)
+| image1 = <gallery>
+Runt.png|Idle
+Runt Hanging.png|Hanging
+Runt Sitting.png|Crouching
+</gallery>
+| role = Quest
+| quest = [[Runtfeast]]
+| singnum = 1
+}}
+{{Quote
+|Gone... the mother, her meatsss... and lifesss... for siblingss strong... not for usss so small... Neverss for usss...
+|Runt
+|Hr=SS
+}}
+
+<b>Runt</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They appear in [[Act 3]] and give the <i>[[Runtfeast]]</i> [[wish]] if the <i>[[Broodfeast]]</i> wish was not completed by then.
+
+== Background == 
+Runt is one of the newborns from the recently hatched brood of the [[Huntress]], so named due to them being smaller and weaker than the rest of their siblings.<ref name = siblings>Runt: <i>"Me'sss born not like siblingsss, themsss large and hard... All themsss did feasted and flew."</i></ref> If <i>Broodfeast</i> was not completed before Act 3, Huntress gets eaten by her brood,<ref>Hornet dialogue with Runt: <i>"I see it clear, child. The tall mother's meat has fed the brood fresh hatched."</i></ref> who feasted on her flesh and flew away.<ref name = siblings></ref> Runt was left behind, hoping to grow strong and large like their siblings did.<ref>Runt: <i>"Usss's wantss grow sssstrong... much... Be like siblingsss, sharp, hard..."</i></ref>
+
+== In-game Events ==
+Upon entering the den Runt can be found hanging from the roof, but soon drops down to talk with Hornet. They lament about being left behind by their siblings and not having feasted like the rest of them.<br>
+They ask Hornet to provide them with meat to feed upon in order to grow large and strong like their siblings. This starts the <i>Runtfeast</i> wish. Upon completing the wish, Runt thanks Hornet and provides her with the [[Longclaw]] tool.
+
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Runtfeast
+| title = [[Runtfeast]]
+| description = "Us needssss meatsss... hunter... finds... bringsss... So us'sss small does grow like siblingssss..."
+| objective = Use tools to acquire organs of various types so Runt may feed.
+* Seared Organ
+* Shredded Organ
+* Skewered Organ
+| location = <b><i>[[Putrified Ducts]] NPC</i></b>
+Runt
+| reward = [[Longclaw]]
+}}
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = Hunter... Shining claw... Do not killsss... Mine is ssshell thin. Taste is poor...<br>
+Me'sss born not like siblingsss, themsss large and hard... All themsss did feasted and flew.<br>
+{{HTalk|I see it clear, child. The tall mother's meat has fed the brood fresh hatched.}}<br>
+{{HTalk|It was a common fate that found her. Too common, perhaps...}}<br>
+Gone... the mother, her meatsss... and lifesss... for siblingss strong... not for usss so small... Neverss for usss...
+<hr/>
+<b>If the <i>[[Broodfeast]]</i> wish is still active:</b><br>
+{{HTalk|I had promised organs for your mother, child. Though she has passed, I would provide them to you, if some small reward were traded?}}<br>
+The meatsss?... For ussss?... Yesss, hunter! We have giftssss... Clawsss long...<br>
+Bring meatssss... Givess meatsss... Usss's wantss grow sssstrong... much... Be like siblingsss, sharp, hard...
+|Title1_Event2 = Speaking again if the <i>Broodfeast</i> wish is not active
+|Title1_Dialogue2 = Hunter... stayss... Shining claw... still... Does themsss help... seek?<br>
+Usss need meatsss, much, too... Hunter... Usss wants many... Seared... Skewered... Shredded...<br>
+Usss's wantss grow sssstrong... much... Be like siblingsss, sharp, hard.
+|Title1_Event3 = Declining the <i>[[Runtfeast]]</i> wish
+|Title1_Dialogue3 = {{HTalk|Your land's fate has turned too dire, child. I cannot delay now to help you in your growth.}}<br>
+Sssss... So huntersss live... kill... only for selvesss... same as siblings...
+|Title1_Event4 = Speaking after declining
+|Title1_Dialogue4 = Us needssss meatsss... hunter... finds... bringsss... So us'sss small does grow like siblingssss...
+|Title1_Event5 = Accepting the wish
+|Title1_Dialogue5 = <b>If Hornet does not have the necessary tools:</b><br>
+{{HTalk|In time, child, I may provide the meats, though first I must acquire tools appropriate to the task. My current arsenal will not grant your wish in full.}}<br>
+Sssss... Time, yesss?... Then usss too will grow?... Sharpsss clawss... hard shell... like siblings goness...
+<hr/>
+<b>If Hornet has the necessary tools:</b><br>
+{{HTalk|Several of my tools can prepare the meats as you request, child. In time, I shall see your wish granted.}}<br>
+Sssss... Usss too will grow?... Sharps claws... hard shell... like siblings goness...
+|Title1_Event6 = Speaking before acquiring all the organs
+|Title1_Dialogue6 = Bringsss meatsss... Hunter... many...<br>
+Usss too be strong... large... one of brood...
+|Title1_Event7 = Speaking after acquiring all the organs
+|Title1_Dialogue7 = The meatssss... smellsss... You bring?... To grow usss like siblings, strong in ssshellsss?
+|Title1_Event8 = Declining to give the organs
+|Title1_Dialogue8 = She keepsss?.. We'sss wants meatsss, hunter... We'sss need strengthsss... As much as othersss... As much as mothersss...
+|Title1_Event9 = Agreeing to give the organs
+|Title1_Dialogue9 = Yesss... Now. We'sss too growsss... feastsss... Be like brood... gone... all... far gone...
+{{HTalk|Good luck to you, small one. If this land can be saved, I hope you come to find your place within it.}}
+|Title1_Event10 = Exhausted dialogue
+|Title1_Dialogue10 = Even us'sss... Now we'sss too grow... Fiercesss... Hard...<br>
+We'sss becomesss hunter too...
+|Title1_Event11 = Playing the [[Needolin]]
+|Title1_Dialogue11 = [n]Why so small?<br>
+Why so weak?<br>
+To grow... and be...<br>
+To feed...
+}}
+
+==Location==
+Runt can be found in a hut in the southwestern part of the [[Putrified Ducts]] during [[Act 3]] if the <i>[[Broodfeast]]</i> [[wish]] was not completed by then.
+
+{{Gallery
+|Image1 = Mapshot SS Huntress 01.png!Location in the Putrified Ducts in Act 3
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Runt 02.png!Sitting near Huntress' corpse
+|Image2 = Screenshot SS Runt 04.png!Looking at Hornet playing the Needolin
+|Image3 = Screenshot SS Runt 05.png!Singing
+|Image4 = Screenshot SS Runt 03.png!Talking to Hornet
+|Image5 = Screenshot SS Runt 01.png!Resting on the ceiling
+|Image6 = Screenshot SS Runt 06.png!Dropping down from the ceiling
+}}
+
+{{Localisation
+|DEname = Winzling
+|DEmeaning = From <i>winzig</i> (tiny) and <i>-ling</i> (diminutive suffix).
+|ESname = Pequeñuela
+|ESmeaning = Little One (feminine)
+|FRname = Chasserette
+|FRmeaning = From <i>chasseresse</i> (huntress) and <i>-ette</i> (diminutive suffix).
+|ITname = Cucciola
+|ITmeaning = Youngling or Puppy (feminine)
+|JAname= ラント
+|JAromanised= Ranto
+|JAkatakana = foreign
+|JAmeaning = Runt
+|KOname = 런트
+|KOromanised = Reonteu
+|KOmeaning = Runt
+|PTname =  Nanica
+|PTmeaning = Runt (feminine)
+|RUname = Коротышка
+|RUromanised = Korotyška
+|RUmeaning = Runt or Shorty
+|ZHname = 幼兽
+|ZHromanised = Yòushòu
+|ZHmeaning = Young Beast
+|CODEname = RUNT</code><br><code>H_RUNT</code><br><code>HUNTRESS_RUNT
+|CODEmeaning = 
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[fr:Chasserette]]

@@ -1,0 +1,72 @@
+{{SS Infobox Wish
+| header1 = Hunt
+| description = Destroy [[Void Mass]]es throughout Pharloom.
+| npc = Residents of Bellhart
+| location = [[Bellhart]] Wishwall
+| prerequisite = Complete [[SEEK: Awaiting the End]]
+| reward = [[Mask Shard (Silksong)|Mask Shard]]
+}}
+
+{{Quote
+| Such horror upon the roads! Those black mounds formed of husks and bugs, corrupting everything around. If only someone would cut them down and grant the poor souls their rest!
+| Residents of Bellhart
+| Hr = SS
+}}
+
+<b>Dark Hearts</b> is a [[Hunt Wishes|Hunt Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from the Wishwall in [[Bellhart]] after completing the objective [[SEEK: Awaiting the End]].
+
+== Wish ==
+To complete the Wish, Hornet must find and destroy 12 out of 47 [[Void Mass]]es (45 in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]) across [[Pharloom]]. Void Masses destroyed before accepting the quest still count for its progress once accepted.
+
+*1 can be found in [[Bone Bottom]], [[Weavenest Atla]], [[Bilewater]], [[Grand Gate]], and [[Cogwork Core]].
+*2 can be found in the [[Hunter's March]] and [[High Halls]].
+*3 can be found in the [[Far Fields]], [[Blasted Steps]], [[Underworks]], [[Deep Docks]], [[Sinner's Road]],<ref group="Note">The two near [[Styx]] do not appear in [[Steel Soul Mode (Silksong)|Steel Soul Mode]].</ref> and [[Whispering Vaults]].
+*4 can be found in [[the Marrow]].
+*5 can be found in [[Greymoor]] and [[Shellwood]].
+*6 can be found in the [[Choral Chambers]].
+
+{{Gallery
+| Image1 = Mapshot SS Void Mass 01.png!Locations across Pharloom
+}}
+
+== Reward ==
+[[File:Mask Shard (Silksong).png|link=Mask Shard (Silksong)|left|thumb|100x100px]]
+
+After slaying 12 Void Masses, simply interacting with Bellhart's Wishwall allows Hornet to receive a [[Mask Shard (Silksong)|Mask Shard]].
+
+{{Clear}}
+
+{{Localisation
+|DEname = Dunkle Herzen
+|DEmeaning = Dark Hearts
+|ESname = Corazones oscuros
+|ESmeaning = Dark Hearts
+|FRname = Cœurs noirs
+|FRmeaning = Dark Hearts or Black Hearts
+|ITname = Cuori oscuri
+|ITmeaning = Dark hearts
+|JAname = 黒塊
+|JAromanised = Kuro katamari
+|JAmeaning = Dark Mass or Black Mass
+|KOname = 어둠의 심장
+|KOromanised = Eodumui simjang
+|KOmeaning = Heart of Darkness
+|PTname = Corações Sombrios
+|PTmeaning = Dark Hearts
+|RUname = Тёмные сердца
+|RUromanised = Tëmnye serdca
+|RUmeaning = Dark Hearts
+|ZHname = 暗蚀之心
+|ZHromanised = Àn shí zhī xīn
+|ZHmeaning = Hearts of Dark Corrosion
+|TWname = 暗蝕之心
+|TWromanised = Àn shí zhī xīn
+|TWmeaning = same
+|CODEname = QUEST_THREADCORES
+|CODEmeaning = 
+}}
+{{Hr|SS}}
+== Notes ==
+<references group="Note"/>
+{{Refs|hr=false}}
+{{SS Nav Wishes}}

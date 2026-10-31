@@ -1,0 +1,70 @@
+{{Quote|Hr=SS
+|Once this wishwall is up, bugs'll be able to seek help from any able shell around. You could even try granting a couple of wishes yourself, missy!
+|[[Flick the Fixer]]
+}}
+
+[[File:Wishwall Bone Bottom.png|right|200x200px]]
+<b>Wishwalls</b> are quest boards in <i>[[Hollow Knight: Silksong]]</i> where [[Hornet (Silksong)|Hornet]] can accept [[Wishes]] posted on them by various [[NPCs (Silksong)|characters]].
+
+== Function ==
+Wishwalls display large coloured badges attached to the board anytime there are Wishes available.
+
+While some Wishes are active, such as [[Wishes#Gather Wishes|{{WishType|Gather}}]] or [[Wishes#Hunt Wishes|{{WishType|Hunt}}]], wishwalls will have a small recipient where Hornet can deliver the requested items. In order to complete [[Wishes#Donate Wishes|{{WishType|Donate}}]] Wishes, Hornet must go up to a wishwall and deposit the {{S|[[Shell Shards]]}} and {{R|[[Rosaries]]}} required.
+
+As Hornet keeps progressing with the story and meets certain conditions, new Wishes will be added to the wishwalls.
+
+== Location ==
+There are a total of three wishwalls in [[Pharloom]], one in each of the main settlements.
+
+{| class="article-table" width="100%"
+! style="width:6rem" | Location
+! Requirements
+! Map
+|-
+! [[Bone Bottom]]
+| Available when [[Flick the Fixer]] finishes its construction, after defeating the [[Bell Beast]] and returning to Bone Bottom.<ref>[[Flick the Fixer]]: <i>"Oh! Back again? The wishwall is up! Ready for all the poor souls who've been left behind down here."</i></ref>
+| [[File:Mapshot SS Bone Bottom Wishwall.png|center|150x150px]]
+|-
+! [[Bellhart]]
+| Available after completing the [[Acts|Objective]] <i>[[SAVE: The Threadspun Town]]</i>.<ref>[[Pavo]]: <i>"Yes, well, many ahh... err... most of our residents did not fare so well... Still, it's no good to dwell on dark things! We shall build, and grow, and welcome! As is any good bellbug's task."</i></ref>
+| [[File:Mapshot SS Bellhart Wishwall.png|center|150x150px]]
+|-
+! [[Choral Chambers#Sub-area: Songclave|Songclave]]
+| Available after ringing the [[Bellshrine]] in the [[First Shrine]] and returning after meeting the [[Caretaker]].<ref>[[Caretaker]]: <i>"Well, what's done is done, and what's rung is rung. Just make sure you come back here soon, you lout! You can help me deal with all the dirty little pilgrims and desperate scavengers who turn up."</i></ref>
+| [[File:Mapshot SS Songclave Wishwall.png|center|150x150px]]
+|}
+
+== Gallery ==
+=== Sprites ===
+{{Gallery
+|Image1 = Wishwall Bone Bottom.png ! Bone Bottom wishwall sprite
+|Image2 = Wishwall Bellhart Covered.png ! Bellhart covered wishwall sprite
+|Image3 = Wishwall Bellhart.png ! Bellhart uncovered wishwall sprite
+|Image4 = ! Songclave wishwall sprite
+}}
+=== Screenshots ===
+{{Gallery
+|Image1 = Screenshot SS Flick the Fixer 01.png ! [[Flick the Fixer]] in Bone Bottom
+|Image2 = Screenshot SS Pebb 01.png ! Flick and [[Pebb]] in Bone Bottom
+|Image3 = Screenshot SS Horned Pilgrim 01.png ! [[Horned Pilgrim]] in Bone Bottom
+|Image4 = Screenshot SS Worried Pilgrim 01.png ! [[Worried Pilgrim]] in Songclave
+|Image5 = Screenshot SS Jubilana 01.png ! [[Jubilana]] in Songclave
+|Image6 = Screenshot SS Caretaker 02.png ! [[Sherma]] and [[Caretaker]] in Songclave
+|Image7 = Screenshot SS Sherma 07.png ! Sherma in Songclave
+}}
+=== Pre-Release ===
+{{Gallery
+|Image1 = Silksong Early 017.png ! Early Bellhart wishwall in <i>Silksong's</i> reveal trailer
+|Image2 = Pre-Release Flick.png ! Flick in a pre-release screenshot
+|Image3 = Silksong Early 030.png ! Songclave's wishwall in <i>Silksong</i> reveal trailer
+|Image4 = Hollow knight 2 quest scene.png ! Wishwall menu screen in <i>Silksong's</i> reveal trailer
+}}
+
+== Trivia ==
+* In <i>Silksong</i>'s reveal trailer, Bellhart's wishwall and Songclave's wishwall were placed in different locations, closer to their respective [[Fast Travel (Silksong)|fast travel stations]].<ref>[https://www.youtube.com/watch?v=pFAknD_9U7c Hollow Knight: Silksong Reveal Trailer]</ref>
+
+
+{{Refs|hr=SS}}
+
+[[fr:Murs à souhaits]]
+[[Category:Points of Interest (Silksong)]]

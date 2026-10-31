@@ -1,0 +1,182 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+B_Pavo.png|Act 1/2
+Pavo Sad.png|Act 3
+</gallery>
+| area = [[Bellhart]]
+| role = Quest
+| affiliation = Bellhart (Resident)
+| quest = [[Restoration of Bellhart]]<br>[[Bellhart's Glory]]
+| singnum = 4
+|s1 = Act 1-2
+|s2 = Act 1-2
+|s3 = Act 3
+|s4 = Act 3
+}}
+{{Quote
+|Welcome, welcome, travellers all! Rest your weary shell and revive your flagging spirit!
+|Pavo
+|Hr=SS
+}}
+
+<b>Pavo</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is the greeter of [[Bellhart]], welcoming any pilgrims and travellers passing through.
+
+== Background ==
+Pavo is a resident of [[Bellhart]]. He acts as the greeter for any bugs passing through the area.<ref>Pavo: <i>"It is the task of I, fair Pavo, to extend the warmest of welcome to those passing devout, such as your good self!"</i></ref>
+
+== In-game Events ==
+When [[Hornet (Silksong)|Hornet]] first arrives in Bellhart, Pavo, along with other residents, is found suspended in the air with silk threads. After [[Widow]] is defeated, Pavo and the other residents are released, and they return to the their normal functions.
+
+After completing the <i>[[Bellhart's Glory]]</i> Wish, talking with Pavo results in him giving Hornet the [[Bellhome Key]], which can be used to access the bellhome at the top of [[Bellhart]]. The bell is a gift from Bellhart's residents to Hornet.<ref>Pavo: <i>"In recognition of your noble efforts, and as one small step to solving the problem, I have decreed a grand gift should be given! A bellhome of your very own!"</i></ref>
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 = <b>if [[Widow]] is defeated before Hornet has ever visited Bellhart, or if Hornet has talked to [[Lace]] in the [[Choral Chambers]]:</b><br>
+Welcome, welcome, weary pilgrim! Though glorious Bellhart may be past its finest shine, it still remains the last friendly stop before the Citadel.<br>
+It is the task of I, fair Pavo, to extend the warmest of welcome to those passing devout, such as your good self!<br>
+Now! I insist you enjoy our remaining hospitality, if only for a moment. We've wares to buy and services to enjoy!<br>
+Even in our reduced state, you'll find ours as cosy a stop as can be offered in these ailing lands.
+<hr/>
+<b>If Widow is defeated after Hornet has visited Bellhart, and Hornet hasn't talked to Lace in the Choral Chambers:</b><br>
+Welcome, welcome, weary pilgrim! Though glorious Bellhart may be past its finest shine, it still remains the last friendly stop before the Citadel.<br>
+It is the task of I, fair Pavo, to extend the warmest of welcome to those passing devout, such as your good self!<br>
+{{HTalk|Your town seems returned to healthy form, good bug. I had some concern that, upon cutting you free, I'd find only husks.}}<br>
+Yes, well, many ahh... err... most of our residents did not fare so well... Still, it's no good to dwell on dark things! We shall build, and grow, and welcome! As is any good bellbug's task.
+| Title1_Event2 = Speaking again, if Hornet has visited Haunted Bellhart
+| Title1_Dialogue2 = {{HTalk|What do you remember of your time caught upon the thread, Pavo?}}<br>
+Oh, ahh. It is difficult... Upsetting even to think. Strange, sad memories, not my own, and my own thoughts smothered amidst the tangle.<br>
+If one could choose to connect themself to something grander, that curse may seem a wonder. For myself, it now seems a horror.<br>
+| Title1_Event3 = Exhausted dialogue
+| Title1_Dialogue3 = Welcome, welcome, travellers all! Rest your weary shell and revive your flagging spirit!<br>
+Bellhart! Glorious, gleaming, and very very safe! Stay a while before you begin your final climb!
+| Title1_Event4 = After completing [[Restoration of Bellhart]]
+| Title1_Dialogue4 = Your continued help to Bellhart has not gone unnoticed, miss traveller.<br>
+In these terrible times, it's rare enough to see any wish granted. Now to see such care come from a stranger! Why, that's simply unheard of!<br>
+{{HTalk|I have seen the scale of suffering wrought across Pharloom, Pavo. And I will admit, fulfilling these requests may do little to affect the cause... Even still, I have found it a rewarding task.}}<br>
+{{HTalk|To aid another... The small warmth of it, I had almost forgotten.}}
+| Title1_Event5 = After completing [[Bellhart's Glory]]
+| Title1_Dialogue5 = Miss traveller! Thanks to your valiant contributions, our little town's starting to feel like its old self again. Homes have been hoisted, and the square shines!<br>
+{{HTalk|I have seen the changes myself, Pavo. It is pleasing to hear my contributions have not been in vain.}}<br>
+Indeed! Your generosity is a guide for others! We've only one thing now sorely missing...<br>
+Bugs! What is a town without its residents? Age, scarcity, deadly thread... Bellhart is beset by endless ills. Now there's just us remaining few as you've met.<br>
+In recognition of your noble efforts, and as one small step to solving the problem, I have decreed a grand gift should be given! A bellhome of your very own!<br>
+A place to reflect. A bed to lay in. It's hanging up there at the top, beside our good pinmaster.<br>
+{{HTalk|I have no plans to settle, Pavo, but for now my task in Pharloom remains, and while it does, a residence may prove useful.}}<br>
+Of course! Of course! Your fortitude inspires us all! And if trouble ever descends anew, it surely won't hurt to have a resident warrior close at claw!
+| Title1_Event6 = After entering Hornet's Bellhome in Bellhart
+| Title1_Dialogue6 = If you're ever finding that bellhome a little bare, make sure to speak with Frey. She's been known to gather all sorts of fancy furnishings.<br>
+That stock's useless for a passing pilgrim, but for a new resident it's just the stuff to turn a bell into home.
+| Title1_Event7 = Exhausted dialogue after completing [[Bellhart's Glory]]
+| Title1_Dialogue7 = We are lucky to have you, miss traveller. In Bellhart you are always welcome, you and your big, sharp blade!
+| Title1_Event8 = After acquiring the [[Twisted Bud]]
+| Title1_Dialogue8 = That cry upon you, sister! Those are the sour sobs of a grey and twisted thing.<br>
+{{HTalk|You speak of the bud? It is a mysterious thing indeed. In the dank swamps above the moor, I sought towards its plaintive wails, and found it resting there... Waiting, it almost seemed.}}<br>
+{{HTalk|But you speak of its form, without sighting it upon me. Is it a thing familiar to you?... Have you heard these cries before?}}<br>
+Aye, yes! Not your own specimen, surely, but way back, other travellers did sometimes carry similar. Odd types they all were. Offerings they'd call the crying things, and towards the core of Shellwood they would trek.<br>
+Never I did see one again, not the buds nor the bugs that brought the gift...<br>
+If you're planning to follow their path, I'll wish on your safety, but 'tis an ill omen to hear such sad sounds returned after so long.<br>
+| Title1_Event9 = Speaking while [[Cursed Crest|Cursed]]
+| Title1_Dialogue9 = My sickly friend! Pavo can sense that you are ailing, but fret not! For in Bellhart, pilgrims may rest and recuperate until they are fit to travel once more!<br>
+{{HTalk|Your hospitality is appreciated, Pavo, but I fear rest alone will not suffice for this illness. A parasite has taken root inside me, one I can not remove through strength alone.}}<br>
+{{HTalk|Tell me, are there any you know who might help me? A healer, or a physician?}}<br>
+A physician? Well... we did once have one... A frightening fiend! Callous and crude in her practice. For the health of glorious Bellhart we voted, unanimously, to expel her!<br>
+I know not where she buzzed away to, and I prefer to keep it that way! But if you really must seek her out, you might start by speaking to the old hermit skulking beneath the Bellway.<br>
+Yes... that hermit seems mad, but he has a way of accumulating knowledge. He might be able to tell you where that wretched physician is lurking.<br>
+| Title1_Event10 = Exhausted dialogue while [[Cursed Crest|Cursed]]
+| Title1_Dialogue10 = If you really must find that wretched physician, speak to the old hermit lurking beneath Bellhart. He knows much more than he admits of the world...<br>
+| Title1_Event11 = Playing the [[Needolin]]
+| Title1_Dialogue11 = [n]Gleaming rest...<br>
+Almost there...<br>
+Still alive...<br>
+For the pilgrims, many...<br>
+We serve, selfless...<br>
+We serve, safe...
+| Title2 = Act 3
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = Dear resident! To see you return alive is such a glimmer of light, even as the dark descends upon us all.<br>
+{{HTalk|All these pilgrims gathered here... I had not expected so many to survive. The destruction beyond these bells suggested worse.}}<br>
+Indeed! Things should be worse! Would be worse, but for your tall warrior friend, her of those shining rings, who so fortunately chose our town to camp.<br>
+That brave bug now acts alone to guard our town and those pilgrims who flee for it.<br>
+For her efforts, our shells have stayed safe, though how long she can remain at that task... I do not dare to consider.
+| Title2_Event2 = Speaking again
+| Title2_Dialogue2 = Resident! What a marvel you are, continuing to dare the wilds and darkness, and returning home to us unscathed.<br>
+{{HTalk|I return with hope worth sharing, Pavo. I have seen a way to calm this chaos, one I now work swiftly towards.}}<br>
+{{HTalk|The chance remains slim, but if this town can hold, and my efforts succeed, Pharloom may see a future yet.}}
+| Title2_Event3 = Exhausted dialogue
+| Title2_Dialogue3 = <b>If Hornet has not acquired the [[Elegy of the Deep]]:</b><br>
+{{HTalk|Stay safe, Pavo. Keep these poor bugs close and their spirits from sorrow.}}<br>
+None shall leave these walls, dear resident, and all still are welcome. Any that can be saved.<br>
+Better we bugs be together, here at the end of it all.
+<hr/>
+<b>If Hornet has acquired the Elegy of the Deep:</b><br>
+{{HTalk|Soon, Pavo, I shall calm the chaos. Please guard these bugs safe till then.}}<br>
+Of course, dear resident! Of course! Know all our faith, and our wishes go with you.
+| Title2_Event4 = Speaking while [[Cursed Crest|Cursed]]
+| Title2_Dialogue4 = My sickly friend! I can sense that you are ailing. Has the black curse struck even your sturdy shell?<br>
+{{HTalk|This illness stems from a different source, Pavo. A parasite has taken root inside me, one I can not remove through strength alone.}}<br>
+{{HTalk|Tell me, are there any you know who might help me? A healer, or a physician?}}<br>
+A physician? Well... we did once have one... A frightening fiend! Callous and crude in her practice. For the health of glorious Bellhart we voted, unanimously, to expel her!<br>
+I know not where she buzzed away to, but the world beyond the bells is full of danger. If you must seek her service, I expect she would not have travelled far...
+| Title2_Event5 = Exhausted dialogue while Cursed
+| Title2_Dialogue5 = Find that wretched physician fast, dear resident! I know not where she buzzed away to, but the world beyond the bells is full of danger.<br>
+If you must seek her service, I expect she would not have travelled far...
+
+| Title3 = Written
+| Title3_Event1 = <i>[[Restoration of Bellhart]]</i> wish
+| Title3_Dialogue1 = Harken, ye holy! Our home has been cleansed of evil, but now we are tasked with restoring its former glory! Share your rosaries with us, that the work may begin.
+| Title3_Event2 = <i>[[Bellhart's Glory]]</i> wish
+| Title3_Dialogue2 = The work of restoring our sacred home is almost complete! May those blessed with rosaries share them with us for this holy purpose!
+}}
+
+== Location ==
+After [[Widow]] is defeated, Pavo can be found next to the bench in [[Bellhart]], singing.
+
+{{Gallery
+|Image1 = Mapshot SS Pavo 01.png!Location in Bellhart
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Bellhart 01.png!Pavo in Haunted Bellhart
+|Image2 = Screenshot SS Bellhart 02.png!Pavo in restored Bellhart
+|Image3 = Screenshot SS Bellhart 05.png!Pavo during Act 3
+|Image4 = Screenshot SS Pavo 01.png!Pavo reacting to Needolin
+}}
+
+== Trivia ==
+* Pavo, [[Frey]] and [[Pondcatcher Reed]] share the same [[Needolin]] dialogue.
+
+{{Localisation
+|DEname = Pavo
+|DEmeaning = —
+|ESname = Pavo
+|ESmeaning = —
+|FRname = Pavo
+|FRmeaning = —
+|ITname = Pavo
+|ITmeaning = —
+|JAname = パヴォ
+|JAromanised = Pavo
+|JAmeaning = Pavo
+|KOname = 파보
+|KOromanised = Pabo
+|KOmeaning = Pavo
+|PTname = Pavo
+|PTmeaning = —
+|RUname = Паво
+|RUromanised = Pavo
+|RUmeaning =Pavo
+|TWname = 帕沃
+|TWromanised = Pàwò
+|TWmeaning = same
+|ZHname = 帕沃
+|ZHromanised = Pàwò
+|ZHmeaning = Pavo
+|CODEname = BELLHART_GREETER</code><br><code>GREETER
+}}
+
+{{Refs|Hr=SS}}
+
+[[Category:NPCs (Silksong)]]
+{{SS Nav NPCs}}

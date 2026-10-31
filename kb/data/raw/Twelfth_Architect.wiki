@@ -1,0 +1,202 @@
+{{SS Infobox NPC
+| image1 = <gallery>
+Twelfth Architect.png|Idle
+Twelfth Architect Idle.png|Working
+Twelfth Architect Dead.png|Dead
+</gallery>
+| area = [[Underworks]]
+| role = Merchant
+| aka = Master ([[Hornet (Silksong)|Hornet]])<br>Maker (self)
+| affiliation = [[Weavers]] (former superiors)<ref>Twelfth Architect: <i>"Then on your r-r-request, Bug-Red, as directive demands, for Pharloom's first children, a-a-a-and our kingdom-eternal, I shall serve. I shall c-c-craft."</i></ref><br>
+[[Architects]] (member)
+| singnum = 2
+}}
+
+{{Quote
+|I am an Architect. Only an Architect. To build-automate is not choice. It is our nature-directive-c-c-c-cage.
+|Twelfth Architect
+|Hr=SS
+}}
+
+<b>Twelfth Architect</b> is a [[NPCs (Silksong)#Merchants|merchant]] in <i>[[Hollow Knight: Silksong]]</i>. It sells wares at its shop in the [[Underworks]] in exchange for [[Rosaries]] and [[Craftmetal]].
+
+== Background ==
+Twelfth Architect is an [[Architects|Architect]] built by [[the Citadel]] to serve [[Pharloom]] by creating mechanical tools.<ref>Twelfth Architect: <i>"Bug-Red. Do you ask-need our service? We shall create, as is our d-d-directive. To serve, for Pharloom eternal."</i></ref> It is the only Architect still functional within the Citadel.<ref>Twelfth Architect: <i>"One cannot. The skill to construct an Architect... That was taken by t-t-time. I am the last-final. The core remains to sustain the song, but no more Architects to tend-toil or build anew."</i></ref> The Architects learned some of their skill from the [[Weavers]].<ref>Twelfth Architect: <i>"An Architect's work owes much to the art of the f-f-first children. They set expert standard for the tools and talents of Pharloom eternal."</i></ref>
+
+Twelfth Architect is old and beginning to shut down due to its advanced age.<ref>Twelfth Architect: <i>"T-t-t-too long I have worked. From my mind-vault, the imprint has f-f-faded. With many things it is like this... remembrance, dimmed..."</i><br>Twelfth Architect: <i>"Long now I have felt my rotors slow their s-s-spin. My limbs lift weak. An ending is felt, coming, sudden-certain...welcome."</i></ref> It appears to be overriding its original directive with some of its own feelings and opinions.<ref>Twelfth Architect: <i>"To build-automate is not choice. It is our nature-directive-c-c-c-cage."</i><br>Twelfth Architect: <i>"Long before the c-c-creation of the core, the sentinels ventured, even beyond these walls, to see all bugs brought-forced safe to serve the Citadel."</i></ref>
+
+== In-game Events ==
+Twelfth Architect sells goods to [[Hornet (Silksong)|Hornet]] in exchange for [[Rosaries]] and [[Craftmetal]]. After Hornet finds the [[Ruined Tool]] in [[Weavenest Murglin]], Twelfth Architect can convert it into the [[Silkshot]].
+
+After Hornet collects 25 [[Tools]], Twelfth Architect sells [[Architect's Key]], which unlocks [[Chapel of the Architect]].
+
+After all of Twelfth Architect's items have been bought (with the exception of the Silkshot, even if Hornet has acquired the [[Ruined Tool]]) and Hornet has acquired the [[Architect's Melody]], talking with Twelfth Architect reveals that its end is coming. Later, it can be found motionless at its desk, and a [[Pristine Core]] can be collected from the floor. A [[Silk Fly]], presumably the one that animated the Architect, will be resting on its head and will fly away once approached.
+
+{{Clear}}
+
+{{Typography|tag=h2|type=h3|text=Goods}}
+{| class="article-table" width="100%"
+|-
+! style="width: 8rem;" | Item
+! style="width: 5rem;" | Cost
+! Twelfth Architect's Description
+! style="width: 8rem;" | Requires
+|-
+! [[File:Twelfth Architect Silkshot.png|center|link=Silkshot|72x72px]]
+[[Silkshot]]
+| align="center" | {{R|130}}<br>{{C|1}}<br>[[File:Ruined Tool.png|20x20px|link=Ruined Tool|Ruined Tool]]
+| <i>An intricate implement of Pharloom's first children. I can restore-repair the w-w-weapon, though it will bear some trace of my identity-idiom.</i>
+|
+|-
+! [[File:Cogwork Wheel.png|center|link=Cogwork Wheel|72x72px]]
+[[Cogwork Wheel]]
+| align="center" | {{R|360}}<br>{{C|1}}
+| <i>You have affinity for such radial blades? I can b-b-build upon the idea-knowledge. Make them retract. Make them force-store.</i>
+|
+|-
+! [[File:Sawtooth Circlet.png|center|link=Sawtooth Circlet|72x72px]]
+[[Sawtooth Circlet]]
+| align="center" | {{R|230}}<br>{{C|1}}
+| <i>This band of metal teeth, sharp and light-fine. It could be woven within your red outer layer? A hidden weapon.</i>
+| [[Drifter's Cloak]]
+|-
+! [[File:Scuttlebrace.png|center|link=Scuttlebrace|72x72px]]
+[[Scuttlebrace]]
+| align="center" | {{R|140}}<br>{{C|1}}
+| <i>A flexible shell-prosthetic. It would enhance a weave-type's flexibility, allowing evasive options.</i>
+|
+|-
+! [[File:Crafting Kit.png|center|link=Crafting Kit|72x72px]]
+[[Crafting Kit]]
+| align="center" | {{R|450}}
+| <i>Tools of my craft. They could be used to improve your own. Make harder, sharper.</i>
+|
+|-
+! [[File:Architect's Key.png|center|link=Architect's Key|72x72px]]
+[[Architect's Key]]
+| align="center" | {{R|110}}
+
+|<b>Before having enough Tools:</b><br>
+<i>If Bug-Red could prove their aptitude with our implements, and others like, I would offer my key, to grant access to the chapel-store above.<br>
+Acquire X more tools to prove aptitude.</i>
+<hr/>
+<b>After having enough Tools:</b><br>
+<i>If Bug-Red could prove their aptitude with our implements, and others like, I would offer my key, to grant access to the chapel-store above.</i>
+| 25 [[Tools]]
+|-
+! [[File:Shard Bundle.png|center|link=Shard Bundle|72x72px]]
+[[Shard Bundle]]
+| align="center" | {{R|50}}
+| <i>Raw materials, for creation. Carry them with you always, that y-y-you may be prepared.</i>
+|
+|-
+|}
+
+{{TabbedDialogue
+|Title1 = General
+|Title1_Event1 = First encounter
+|Title1_Dialogue1 = {{HTalk|Master, you seem the lone maker left in this Citadel. Are you my enemy? The other constructs of this place object aggressively to my presence.}}<br>Bug-Red? I am a m-m-maker. Yes. Enemy. No. I am an Architect. Only an Architect. To build-automate is not choice. It is our nature-directive-c-c-c-cage.<br>You are weave-type, yes? A first child? Rare-e-e-extinct. Or not it does so seem.<br>{{HTalk|You see it true, Master. I bear the lineage of Weavers, along with other strands, equally strange.}}<br>Then on your r-r-request, Bug-Red, as directive demands, for Pharloom's first children, a-a-a-and our kingdom-eternal, I shall serve. I shall c-c-craft.
+|Title1_Event2 = Opening the shop
+|Title1_Dialogue2 = Bug-Red. Do you ask-need our service? We shall create, as is our d-d-directive. To serve, for Pharloom eternal.
+|Title1_Event3 = After acquiring the [[Ruined Tool]]
+|Title1_Dialogue3 = A fine artefact you carry there, Bug-Red. That broken tool, it is Weaver-make?<br>
+{{HTalk|I believe so, Master. A relic of their old workshop, lost in fetid caves beyond this Citadel.}}<br>
+{{HTalk|The parts suggest a weapon of thread, one I would attempt to repair myself, had I endless time.}}<br>
+An Architect's work owes much to the art of the f-f-first children. They set expert standard for the tools and talents of Pharloom eternal.<br>
+If you desire-demand, I can remake the tool, though my own mind-directives may produce u-u-u-nique result.
+|Title1_Event4 = After acquiring the [[Architect Crest]]
+|Title1_Dialogue4 = {{HTalk|Master, I have communed with the shrine above. Your learnings are unique, techniques born of cogwork hearts. Their mastery will require some commitment on my part.}}<br>
+Bug-Red, you are the first organic shell to fuse our memories. S-s-s-such behaviour, my line would have believed improbable-impossible.<br>
+Still, your broad arsenal did suggest strong affinity with the m-m-m-mechanical craft, enough to allow access to our thought-store.<br>
+{{HTalk|Yours is an impressive skill, Master. I am grateful for the insight.}}
+|Title1_Event5 = After acquiring [[Cogheart]] or [[Cogheart Pieces]]
+|Title1_Dialogue5 = Those pieces of a h-h-heart-core you carry upon you, how did you acquire-recover an artefact so rare?<br>
+{{HTalk|They were scattered about the Citadel, each seemingly laid with purpose. Someone wished the thing dismantled, but showed respect enough to see it stored safe.}}<br>
+That heart is an inspired form, conceived by the first of my line for a knight of cog and blade.<br>
+In it, I see my predecessor's talent, immense, now lost-forgotten. I could never create-copy a work s-s-so fine.<br>
+{{HTalk|And the knight that once bore the heart? Tell me of them.}}<br>
+A gleaming order, cogwork sentinels, so impressive-majestic in function they were charged-b-b-bound to the highest holy duty.<br>
+Long before the c-c-creation of the core, the sentinels ventured, even beyond these walls, to see all bugs brought-forced safe to serve the Citadel.<br>
+If the h-h-h-heart were restored within the sentinel's shell, would it give thanks for the awakening? Or would it grieve those lands now l-l-lost?<br>
+{{HTalk|In time, maker, I may find out...}}
+|Title1_Event6 = Asking about the [[Architect's Melody]]
+|Title1_Dialogue6 = {{HTalk|Master, I seek a melody held by your line, one part of a sequence, and key to ascending above the Citadel. Can you teach it to me?}}<br>
+Our melody? I r-r-recall! Yes! There was melody, once, but its sound... that I possess no longer...<br>
+T-t-t-too long I have worked. From my mind-vault, the imprint has f-f-faded. With many things it is like this... remembrance, dimmed...<br>
+But you m-m-may hear it, still. At the height of our core, there is means-s-s-system, near complete... Constructs old-built to sound our song. They need only be set to functional form.
+|Title1_Event7 = Returning before obtaining the Architect's Melody
+|Title1_Dialogue7 = Are you still to c-c-climb our grand core, Bug-Red? Within you may marvel at the work of Architects, my own, and all those passed b-b-before. <br>
+{{HTalk|My path takes me in many directions, Master, but in due course, I will ascend the core and claim the melody atop it.}}
+|Title1_Event8 = After acquiring the Architect's Melody
+|Title1_Dialogue8 = What's this, Bug-Red? Even down here, I d-d-did detect its working... Have you climbed our c-c-core, and woken the voices of my l-l-line?<br>
+{{HTalk|I have, maker. Clearly it was a climb never intended for regular bugs, and fair fortune that the skills gifted within your lands allowed my ascent.}}<br>{{HTalk|The melody, and the voices... both are fine things heard and witnessed. Even in this fading moment, their artistry shines through.}}<br>
+Impressive-industrious... eternal... You have seen a glimpse, Bug-Red, of us-s-s, how once we were. The minds of Architects inspired. What majesty we did create...
+|Title1_Event9 = After acquiring the Architect's Melody and purchasing all goods
+|Title1_Dialogue9 = My s-s-service to you, Bug-Red... As it concludes, I must speak-confess. Long now I have felt my rotors slow their s-s-spin. My limbs lift weak. An ending is felt, coming, sudden-certain...welcome. <br>{{HTalk|Whatever fading you feel has not shown in your craft, Master. You have provided tools of immaculate make.}} <br>{{HTalk|What will follow if you pass? Would another take your place?}}<br>One cannot. The skill to construct an Architect... That was taken by t-t-time. I am the last-final. The core remains to sustain the song, but no more Architects to tend-toil or build anew.<br>S-s-strange... 'For Pharloom eternal,' states the d-d-directive-cage. But how can eternity sustain without an Architect to serve? This seems e-e-error. An end? An error... welcome?
+|Title1_Event10 = Playing the [[Needolin]]
+|Title1_Dialogue10 = [n]...To mend...Unending...<br>
+...To serve...Eternal...<br>
+...Always an Architect...<br>
+...From these thoughts...Creation...<br>
+...From these memories...Skill...<br>
+...Designs...Divine...<br>
+
+| Title2 = Act 3
+| Title2_Event1 = First conversation, if not previously met before Act 3
+| Title2_Dialogue1 = {{HTalk|Master, you seem the lone maker left in this ruined Citadel. Are you my enemy? The other constructs of this place did object aggressively to my presence.}}<br>
+Bug-Red? I am a m-m-maker. Yes. Enemy. No. I am an Architect. Only an Architect. To build-automate, it is our nature-directive-c-c-c-cage.<br>
+Why are you here, Bug-Red? The time is late. Do you seek-need service of an Architect? You are weave-type, yes? A first child? Rare-e-e-extinct. Or not it does so seem.<br>
+{{HTalk|You see it true, Master. I bear the lineage of Weavers, along with other strands, equally strange.}}<br>
+Then on your r-r-request, Bug-Red, as directive demands, for Pharloom's first children, a-a-a-and our kingdom-eternal, I shall c-c-craft.
+| Title2_Event2 = Opening the shop
+| Title2_Dialogue2 = Bug-Red. Do you ask-need our services, even n-now? Our duty is l-l-long, but we shall create for you, if you require it...
+}}
+
+== Location ==
+Twelfth Architect can be found in the [[Underworks]]. It can be accessed using the [[Clawline]] or the [[Faydown Cloak]].
+{{Gallery
+|Image1 = File:Mapshot SS Twelfth Architect 01.png!Location in the Underworks
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Underworks 11.png!Working
+|Image2 = Screenshot SS Twelfth Architect 01.png!Talking
+|Image3 = Screenshot SS Twelfth Architect 02.png!Working on upper floor
+|Image4 = Screenshot SS Twelfth Architect 03.png!Singing
+|Image5 = File:Screenshot SS Silk Fly 05.png!Dead on the work table
+}}
+
+{{Localisation
+|DEname = Zwölfter Architekt
+|DEmeaning = Twelfth Architect (masculine)
+|ESname = Duodécimo Arquitecto
+|ESmeaning = Twelfth Architect (masculine)
+|FRname = Douzième Architecte
+|FRmeaning = Twelfth Architect 
+|ITname = Artefice-12
+|ITmeaning = Artificer-12 
+|JAname = 十二番目の設計者
+|JAromanised = Jū ni banme no sekkeisha
+|JAmeaning = Twelfth Designer
+|KOname = 열두 번째 설계자
+|KOromanised = Yeoldu beonjjae seolgyeja
+|KOmeaning = Twelfth Designer
+|PTname = Duodécimo Arquiteto
+|PTmeaning = Twelfth Architect (masculine)
+|RUname = Двенадцатый Архитектор
+|RUromanised = Dvenadcatyj Arxitektor
+|RUmeaning = Twelfth Architect
+|TWname = 第十二建築師
+|TWromanised = Dì shí'èr jiànzhú shī
+|TWmeaning = Twelfth Architect
+|ZHname = 第十二席建筑师
+|ZHromanised = Dì shí'èr xí jiànzhú shī
+|ZHmeaning = Twelfth Rank Architect
+|CODEname = ARCHITECT
+}}
+
+{{Refs|hr=ss|columns=2}}
+{{SS Nav NPCs}}
+
+[[fr:Douzième Architecte]]

@@ -1,0 +1,115 @@
+{{Steel Soul Header|SS}}
+{{SS Infobox NPC
+| area = [[Bonegrave]]
+| affiliation = [[Steel Seer Zi]] (superior)<br> Unseen masters<br>
+[[Steel Society]]
+| quest = [[A Vassal Lost]]
+| role = Lore
+| singnum = 2
+}}
+
+{{Quote|Hr=SS
+|But the seer knows nothing! Nothing of the pain. All small Sula's to bear... To watch, watch these lands dying, slow, the bugs suffering, falling, while our shell sustains...
+|Sula
+}}
+
+<b>Sula</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>, exclusively in [[Steel Soul Mode (Silksong)|Steel Soul Mode]]. A vassal of the [[Steel Society]], they are part of the <i>[[A Vassal Lost]]</i> [[wish]].
+
+== Background ==
+Sula is [[Steel Seer Zi]]'s vassal, with whom they share Masters.<ref>Steel Seer Zi: <i>"...Creature, higher... Its meeting. Zi's awakening... It is not chance... It has been sent to Zi, yes? By Masters served?... To retrieve her vassal lost?"</i></ref> Tired of watching the lands die and the bugs suffer while they serve their Masters, Sula decided to run away and call upon the [[Void]] to summon [[Summoned Saviour|a champion]] to protect themself from the Masters' wrath.<ref>Sula: <i>"But the seer knows nothing! Nothing of the pain. All small Sula's to bear... To watch, watch these lands dying, slow, the bugs suffering, falling, while our shell sustains..."</i></ref><ref>Sula: <i>"No. No. No... My champion slain! Why do you do this, cruel slasher? Why must I stay, and serve, so long, long, long?"</i></ref>
+
+== In-game Events ==
+Sula and their location only appear after accepting the <i>A Vassal Lost</i> wish and finding all three locations to advance to the final step. After slaying Sula's champion, Hornet decides not to take them back to Steel Seer Zi, and Sula promptly flees into the ground.
+
+{{TabbedDialogue
+| Title1 = Bonegrave
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = {{HTalk|Cease your summoning, fool bug!}}<br>
+{{HTalk|Though you may yearn for freedom, that saviour you hope to call will bring only death.}}
+| Title1_Event2 = After defeating [[Summoned Saviour]]
+| Title1_Dialogue2 = <b>If Summoned Saviour is defeated before [[Act 3]]:</b><br>
+No. No. No... My champion slain!<br>
+Why do you do this, cruel slasher? Why must I stay, and serve, so long, long, long?<br>
+{{HTalk|That void must not be called, bug. Not ever. None can control it, though many have tried.}}<br>
+{{HTalk|Any strength you hoped it offered would fast be proven false.}}<br>
+{{HTalk|Consider yourself fortunate I arrived in time. Your shell is saved, all by wish of your steel companion, and fear of her Masters' punishment.}}<br>
+But the seer knows nothing! Nothing of the pain. All small Sula's to bear... To watch, watch these lands dying, slow, the bugs suffering, falling, while our shell sustains...<br>
+The steelhearts feel so little... but we forced to serve, we endure it all. We alone. Why?<br>
+{{HTalk|...Others may know that pain, small bug... Or at least something similar.}}<br>
+So will you chain me again? Herd me by point of your blade, and knowingly return me to that pain?<br>
+{{HTalk|...I will not. I will inform the child of steel of what has transpired here, but I cannot force any bug to return to a task so cruel.}}<br>
+Then, then... Sula is free? At least to run? By your mercy, bug, these legs must move, quick, quick and far, far!
+<hr/>
+<b>If Summoned Saviour is defeated in Act 3:</b><br>
+No. No. No... My saviour slain!<br>
+Why do you do this, cruel slasher? Why must I stay, and serve, so long, long, long?<br>
+{{HTalk|That void must not be called, bug. Already it attacks these lands with enough force to end them. To summon it stronger will only hasten that fall.}}<br>
+{{HTalk|For this moment at least, your shell is saved. It was only by wish of your steel companion, and fear of her Masters' punishment, that I arrived in time.}}<br>
+But the seer knows nothing! Nothing of the pain. All small Sula's to bear... To watch, watch these lands dying, slow, the bugs suffering, falling, while our shell sustains...<br>
+The steelhearts feel so little... but we forced to serve, we endure it all. We alone. Why?<br>
+{{HTalk|...Others may know that pain, small bug... Or at least something similar.}}<br>
+So will you chain me again? Herd me by point of your blade, and knowingly return me to that pain?<br>
+{{HTalk|...I will not. I will inform the child of steel of what has transpired here, but I cannot force any bug to return to a task so cruel.}}<br>
+Then, then... Sula is free? At least to run? By your mercy, bug, these legs must move, quick, quick and far, far!
+| Title1_Event3 = Playing the [[Needolin]]
+| Title1_Dialogue3 = [n]Cruel as steel!<br>
+The masters' sight...<br>
+Escape! Escape!<br>
+The spires... and beneath...<br>
+Always to watch...<br>
+Bound... forever...
+}}
+
+== Location ==
+Sula can be found behind a passage in [[Bonegrave]], to the west of Chapel of the Wanderer. They only appear after finding the marked locations from the <i>A Vassal Lost</i> wish.
+
+{{Gallery
+|Image1 = Mapshot SS Summoned Saviour 01.png!Location in Bone Bottom
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Sula 01.png!Summoning the Saviour
+|Image2 = Screenshot SS Sula 04.png!Startled by Summoned Saviour
+|Image3 = Screenshot SS Summoned Saviour 01.png!Hiding during the fight
+|Image4 = Screenshot SS Sula 02.png!After the fight
+|Image5 = Screenshot SS Sula 03.png!Singing
+|Image6 = Screenshot SS Sula 05.png!Escaping
+}}
+
+{{Localisation
+|DEname = Sula
+|DEmeaning = —
+|ESname = Sula
+|ESmeaning = —
+|FRname = Sula
+|FRmeaning = — 
+|ITname = Sula
+|ITmeaning = —
+|JAname = スーラ
+|JAromanised = Sūra
+|JAkatakana = foreign
+|JAmeaning = Sula
+|KOname = 술라
+|KOromanised = Sulla 
+|KOmeaning = Sula
+|PTname = Sula
+|PTmeaning = —
+|RUname = Сула
+|RUromanised = Sula
+|RUmeaning = Sula
+|TWname = 蘇拉
+|TWromanised = Sūlā
+|TWmeaning = same
+|ZHname = 苏拉
+|ZHromanised = Sūlā
+|ZHmeaning = Sula
+|CODEname = STEEL_SERVANT
+}}
+
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:Steel Soul Mode (Silksong)]]
+
+[[fr:Sula]]

@@ -1,0 +1,194 @@
+{{SS Infobox NPC
+| image1 = Yarnaby.png
+| area = [[Greymoor]]
+| affiliation = [[Crull and Benjin]] (Suppliers)<ref>Yarnaby dialogue: <i>"Two bugs hide away there, Benjin and Crull. Simple types, woefully ignorant... yet they have been useful in procuring me materials."</i></ref><br>
+[[Bellhart]] (Former resident)
+| role = Quest
+| quest = <i>[[Infestation Operation]]</i>
+| singnum = 2
+}}
+
+{{Quote
+| Do you even know who I am? Why, 'tis the great Yarnaby, genius physician, unfairly outcast, who now towers before you!
+| Yarnaby
+| Hr = SS
+}}
+
+<b>Yarnaby</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. She aids [[Hornet (Silksong)|Hornet]] in the removal of the [[Cursed Crest]] with her [[Wishes|Wish]] <i>[[Infestation Operation]]</i>.
+
+== Background ==
+Yarnaby is the former physician of [[Bellhart]]. She had created a machine to extract parasites from bugs,<ref>Yarnaby: <i>"If there's something nasty inside a shell that must come out, we use great Yarnaby's Extricator!"</i></ref><ref>Yarnaby: <i>"A bug healed full by my marvellous machine!"</i></ref> but some bugs did not survive the surgeries.<ref>Yarnaby: <i>"A few weaklings expire, and they all raise their claws."</i></ref> She considers her time as very precious, and only assists the seriously afflicted.<ref>Yarnaby: <i>"Unless you've brought a worthy specimen, with something truly nasty inside them, bzzt! Otherwise, leave the great Yarnaby in peace!"</i></ref><ref>Yarnaby: <i>"My time is precious! Only for the seriously afflicted!"</i></ref><ref>Yarnaby: <i>"Finally, a specimen worthy of my mighty Extricator!"</i></ref> She was exiled from Bellhart due to her cruel and painful medical procedures,<ref>[[Pavo]]: <i>"A frightening fiend! Callous and crude in her practice. For the health of glorious Bellhart we voted, unanimously, to expel her!"</i></ref><ref>Creige: <i>"Head to the top of the moors. There's an old doctor up there hiding in her bell. Her remedies are said to often hurt more'n they help, but given your state, I'd say it's worth the risk."</i></ref> and she still bears a grudge from that fateful day.<ref>Yarnaby: <i>"Again the world lashes out at me!"</i></ref><ref>Yarnaby: <i>"Though the ungrateful world shuns me, still, by my own claws shall it be saved!"</i></ref> She believes that her exile is unjust,<ref>Yarnaby [[Needolin]] Dialogue: <i>"None else can see the truth... They hate, they lie!"</i></ref><ref>Yarnaby: <i>"Why, 'tis the great Yarnaby, genius physician, unfairly outcast, who now towers before you!"</i></ref> and she desires to prove her brilliance to the world, primarily Bellhart.<ref>Yarnaby: <i>"The simpletons hiding in that blasted bellvein would shudder into dust if they saw how much I achieve without them!"</i></ref><ref>Yarnaby: <i>"Great Yarnaby has healed you! Shout it through the caverns. Scream it from the great spinning towers! Just make sure they hear you in the so-called 'civilised' settlements of this ignorant land!"</i></ref>
+
+== In-Game Events ==
+Yarnaby resides in a locked Bellhome in [[Greymoor]]. Calling out to her from outside elicits a response.
+
+Most of the time, calling out to Yarnaby results in her telling [[Hornet (Silksong)|Hornet]] to leave her alone.
+
+If Hornet calls out to her while [[Cursed Crest|Cursed]], Yarnaby allows Hornet to enter her Bellhome. She then offers the <i>[[Infestation Operation]]</i> Wish. Upon completing this Wish, Hornet binds the [[Witch Crest]].
+
+After exiting her home once this Wish is completed, she refuses to let Hornet back into her home.
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Infestation Operation
+| title = [[Infestation Operation]]
+| description = "The great Yarnaby can rid you of those nasty "roots", but to crack your stiff shell my mighty Extricator needs an upgrade!"
+| objective = Acquire Steel Spines from Crull and Benjin in Sinner's Road so Yarnaby can remove the parasite.
+| location = <b><i>[[Greymoor]] NPC</i></b>
+Yarnaby
+| reward = [[Witch Crest]]
+}}
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First encounter at the door
+| Title1_Dialogue1 = Bzzt! Who's bothering me now?! Leave the great Yarnaby in peace! Shoo shoo!
+| Title1_Event2 = Exhausted dialogue
+| Title1_Dialogue2 = Shoo I say! Unless you've brought a worthy specimen, with something truly nasty inside them, bzzt! Otherwise, leave the great Yarnaby in peace!
+| Title1_Event3 = Speaking while being infested with [[Muckmaggot]]s
+| Title1_Dialogue3 = Shoo I say! Unless you've brought a worthy specimen, with something truly nasty inside them, bzzt! Otherwise, leave the great Yarnaby in peace!
+{{HTalk|Madam, I am sickly. Maggots of the fetid bogs beyond the moors writhe upon my shell. I would ask your aid in removing them.}}<br> 
+Maggots! That's all you bring the great Yarnaby?! My time is precious! Only for the seriously afflicted! The truly, hideously enfeebled. Bzzt!<br>
+Find a bench, or a bed, or a rock! It's only rest you need. Settle yourself somewhere, and those maggots will soon wriggle themselves out of your shell.
+| Title1_Event4 = Exhausted dialogue while being infested with Muckmaggots
+| Title1_Dialogue4 = Shoo I say! Unless you've brought a worthy specimen, with something truly nasty inside them, bzzt! Otherwise, leave the great Yarnaby in peace!<br>
+Go and rest! Bzzt! Free yourself of your trifling ailment and leave me in peace! The great Yarnaby has no time for petty maladies!<br>
+{{HTalk|Very well, madam. I did not mean to waste your time.}}
+| Title1_Event5 = Speaking while [[plasmified]]
+| Title1_Dialogue5 = {{HTalk|Madam, my shell has been overcome by a foreign force. Plasmium, it has been called in your land.}}<br>
+{{HTalk|Though the substance provides some regenerative aid, I feel my mind at dangerous risk of being overtaken.}}<br>
+Bzzt! Maybe overtaken is good? Better even? Why go thinking yours is a mind so precious?<br>
+The great Yarnaby treats the sick! Not those that benefit from their afflictions. Enjoy its advantage and leave me in peace!
+| Title1_Event6 = Exhausted dialogue while plasmified
+| Title1_Dialogue6 = Bzzt! Leave me in peace! The great Yarnaby treats the sick! Not those that benefit from their afflictions. Enjoy its advantage and leave me in peace!<br>
+{{HTalk|Very well, madam. I did not mean to waste your time.}}
+| Title1_Event7 = After becoming [[Cursed Crest|Cursed]]
+| Title1_Dialogue7 = 
+Shoo I say! Unless you've brought a worthy specimen, with something truly nasty inside them, bzzt! Otherwise, leave the great Yarnaby in peace!<br>
+{{HTalk|I am sick, madam, and badly in need of your service. I've become host to a vile infestation. It leeches my strength, and attempts to wrest control of my shell.}}
+| Title1_Event8 = Speaking after completing [[Infestation Operation]]
+| Title1_Dialogue8 = Halfwits, the lot of them! Such grand achievement, wrought by Yarnaby! A bug healed full by my marvellous machine!<br>
+A few weaklings expire, and they all raise their claws. Is there no place for progress in their tiny minds?!
+| Title1_Event9 = Speaking again
+| Title1_Dialogue9 = But, hold! There is something more about you... I've sliced the shells of countless filthy pilgrims! All those plain, greying innards! Yours are something else entirely!<br>
+It tickles at my mind, still! Bzzt! What is it of your shell that eludes even my perfect, precise perception?<br>
+Would you show me, specimen? Go on! Let the great Yarnaby peer at your deeper, darker secrets!<br>
+{{HTalk|I've no desire to see my shell pried into further, healer. Your service has succeeded, and taken its toll in pain. I hope only that I never again need to seek your aid.}}
+| Title1_Event10 = Speaking again
+| Title1_Dialogue10 = Don't act the fool, specimen! Bzzt! Share more of yourself, that I may gain greater understanding! Learning! What other hope is there to save our blighted, thankless world?!<br>
+{{HTalk|I have declined, bug. Whatever you seek, you shall not find it either upon or within my shell.}}<br>
+Specimen, we must! There are secrets to uncover, bzzt! Progress can not be denied!<br>
+Auugh! Bzzt! Again the world lashes out at me!<br>
+But the pain... it means nothing to Yarnaby!<br>
+Nothing can deter my great work! Not for long! I must not be stopped!
+| Title1_Event11 = Exhausted dialogue after completing [[Infestation Operation]]
+| Title1_Dialogue11 = If you refuse to share your secrets, then distract me no more, specimen! Bzzt!<br>
+There is still much work ahead for the great Yarnaby! Much thought, much learning!<br>
+Though the ungrateful world shuns me, still, by my own claws shall it be saved!
+| Title1_Event12 = Playing the [[Needolin]]	
+| Title1_Dialogue12 = 	
+[n]Yarnaby! The tortured one! <br>
+None else can see the truth... <br>
+Pry apart the jaws of fate! <br>	
+They hate, they lie! <br>
+Yet Yarnaby will save them... <br>
+Tear away their pain! <br>
+
+| Title2 = Infestation Operation
+| Title2_Event1 = Entering Yarnaby's Bellhome while [[Witch Crest|Cursed]]
+| Title2_Dialogue1 = Now now! What's all this? Infested are you, bzzt?<br>
+Do you even know who I am? Why, 'tis the great Yarnaby, genius physician, unfairly outcast, who now towers before you!<br>
+{{HTalk|I apologise for intruding upon your work, but if you are the skilled physician you claim, I ask your assistance.}}<br>
+{{HTalk|A parasite has wormed its way inside of me. Its roots twist and pull inside my shell, draining my strength. If you possess the skills and tools, I would see it removed.}}<br>
+Bzzt! Well, well! So you're a special, sickly specimen, are you?! That changes matters, yes. Turns them on their head!<br>
+Let me see. Hm. Not haunted, indeed. No Silk-sickness. But something strange has certainly clawed its way in!<br>
+These "roots" that torment you so... I'm not altogether familiar with them, but it matters not!<br>
+If there's something nasty inside a shell that must come out, we use great Yarnaby's Extricator! It's your only hope, bzzt!<br>
+...Hmmm, but to crack your stiff shell we'll first need some extra strength. The healing can be done, yes! But before that my mighty Extricator needs an upgrade!
+| Title2_Event2 = Denying the wish
+| Title2_Dialogue2 = You'd ask my aid, but won't assist yourself? Then leave! Remain suffering, and stop being a bother to me, bzzt!
+| Title2_Event3 = Speaking again after denying the wish
+| Title2_Dialogue3 = The great Yarnaby can rid you of those nasty "roots", but to crack your stiff shell my mighty Extricator needs an upgrade!
+|Title2_Event4 = Accepting the wish
+|Title2_Dialogue4 = Bzzt! Bravo! A specimen who sees my brilliance!<br>
+The task for you is simple. Head over into that tangled mess of cages, on the roads above the moors.<br>
+Two bugs hide away there, Benjin and Crull. Simple types, woefully ignorant... yet they have been useful in procuring me materials.<br>
+It's Steel Spines I need. A full bundle of them, forged hard and sharp. Tougher than I've ever had. Tough enough to crack stone! And to pierce your thick shell, bzzt!<br>
+{{HTalk|Then prepare your machine for my return, madam. I shall soon return with the spines, for I am eager to see myself freed.}}
+| Title2_Event5 = Exhausted dialogue after accepting the wish
+| Title2_Dialogue5 = Off with you! Head over to that tangled mess of cages, in those roads above the moors.<br>
+Those two bugs, Benjin and Crull, can surely scrounge up what I need. A full bundle of hard, sharp spines!
+| Title2_Event6 = Exhausted dialogue outside Yarnaby's Bellhome while infected
+| Title2_Dialogue6 = Come back with those spines, or not at all! The great Yarnaby's time is precious, bzzt! I will not be distracted from my work!
+| Title2_Event7 = Speaking outside Yarnaby's Bellhome after acquiring Steel Spines
+| Title2_Dialogue7 = Bzzt! What now?! Not another bother for the great Yarnaby?<br>
+{{HTalk|Madam, I have returned with the spines requested. Allow me to enter, that you may remove this parasite from my shell.}}
+| Title2_Event8 = Speaking with Yarnaby after acquiring Steel Spines
+| Title2_Dialogue8 = Aha! The spines! Specimen, you have them! Then it is time, indeed! Bzzt! To free you of your wriggling torment, and show my genius clear!
+| Title2_Event9 = Denying the operation
+| Title2_Dialogue9 = Bzz-zzt! You hesitate! But your fear of my Extricator is born from mere ignorance, and you can overcome it with effort. Take a moment. Reconsider!
+| Title2_Event10 = Speaking after denying the operation
+| Title2_Dialogue10 = These roots that torment you so... I'm not altogether familiar with them, but it matters not!<br>
+If there's something inside a body that must come out, we use great Yarnaby's Extricator! It's your only hope, bzzt!
+| Title2_Event11 = Accepting the operation
+| Title2_Dialogue11 = Yes... yes! Bzzt! Finally, a specimen worthy of my mighty Extricator! My beautiful, unfairly-maligned Extricator! Come this way, bzzt...<br>
+The operation... a success! The simpletons hiding in that blasted bellvein would shudder into dust if they saw how much I achieve without them!<br>
+{{HTalk|Madam... I shan't lie, that was an ordeal such as I have rarely suffered...}}<br>
+{{HTalk|And yet, the parasite does seem to have been... unbound somewhat. Whatever remnant still lingers in my shell feels calmed, enough for me to claim its power as my own.}}<br>
+{{HTalk|Perhaps this is a fortunate result after all.}}<br>
+Of course. Of course! Great Yarnaby has healed you! Shout it through the caverns. Scream it from the great spinning towers!<br>
+Just make sure they hear you in the so-called 'civilised' settlements of this ignorant land!
+
+| Title3 = Act 3
+| Title3_Event1 = First time speaking at the door
+| Title3_Dialogue1 = Gahh! Who keeps making all that racket out there?! Such horrid shaking and screaming. The crucial work is being spoiled! Bzzzt!
+}}
+
+== Location ==
+Yarnaby is located in the northwest of [[Greymoor]], inside her Bellhome.
+
+{{Gallery
+| Image1 = Mapshot SS Yarnaby.png!Location in Greymoor
+}}
+
+{{Gallery
+| Title = Gallery
+| Image1 = Screenshot SS Greymoor 11.png!Outside of Yarnaby's house
+| Image2 = Screenshot SS Yarnaby 01.png!Hornet calling to Yarnaby
+| Image3 = Screenshot SS Yarnaby 02.png!Yarnaby opening her house
+| Image4 = Screenshot SS Greymoor 15.png!Yarnaby's house interior
+| Image5 = Screenshot SS Yarnaby 03.png!Yarnaby in her house
+| Image6 = Screenshot SS Yarnaby 04.png!Yarnaby singing
+}}
+
+{{Localisation
+|DEname = Yarnaby
+|DEmeaning = —
+|ESname = Yarnaby
+|ESmeaning = —
+|FRname = Yarnaby
+|FRmeaning = —
+|ITname = Sutunia
+|ITmeaning = From <i>sutura</i> (suture) and <i>-nia</i> (feminine suffix).
+|JAname = ヤーナビィ
+|JAromanised = Yānabyi
+|JAmeaning = Yarnaby
+|KOname = 야르나비
+|KOromanised = Yareunabi
+|KOmeaning = Yarnaby
+|PTname = Yarnaby
+|PTmeaning = —
+|RUname = Ярнаби
+|RUromanised = Jarnabi
+|RUmeaning = Yarnaby
+|ZHname = 雅纳碧
+|ZHromanised = Yǎnàbì
+|ZHmeaning = Yarnaby
+|CODEname = DOCTOR
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+
+[[fr:Yarnaby]]

@@ -1,0 +1,88 @@
+{{SS Infobox Wish
+| header1 = Delivery
+| description = Deliver supplies to the Fleamaster Mooshka in Fleatopia.
+| npc = [[Couriers Tipp & Pill]]
+| location = [[Bellhart]] NPCs
+| prerequisite = Move the [[Flea Caravan]] to [[Fleatopia]]
+| reward = {{R|410}} ([[Act 2]])<br>
+{{R|480}} ([[Act 3]])
+}}
+
+{{Quote
+| Those good-goods, all packed fresh for the clever fleas. Take thems up for us, miss courier. Maybe new friends you might be making with your service? Yes-yes?
+| [[Couriers Tipp & Pill]]
+| Hr = SS
+}}
+
+<b>Fleatopia Supplies</b> is a [[Delivery Wishes|Delivery Wish]] in <i>[[Hollow Knight: Silksong]]</i>, acquired from [[Couriers Tipp & Pill]].
+__NOTOC__
+
+== Delivery Item ==
+[[File:Courier's_Swag.png|link=Courier's Swag|left|thumb|100x100px]]
+The [[Courier's Swag]] has a total of 5 hit points. It takes 1 damage for every Mask of damage Hornet takes, and also when Hornet makes a heavy landing, hits a ceiling while using [[Silk Soar]], or runs into a wall while using [[Swift Step]]. Travelling with the [[Bellways]], [[Ventrica]], [[Flea Caravan]] or using the [[Beastling Call]] immediately destroys it.
+{{Clear}}
+
+== Wish ==
+[[Hornet (Silksong)|Hornet]] is given a Courier's Swag by Tipp & Pill to carefully deliver to [[Fleamaster Mooshka]] in [[Fleatopia]].
+
+This Delivery can be repeated an infinite amount of times, allowing for a steady source of [[Rosaries]]. However, Tipp & Pill will only offer 2 Deliveries at a time. The most recently completed Delivery will never appear twice in a row. In addition, only the first completion of a Delivery contributes towards <i>[[Silk and Soul]]</i>.
+
+{{Gallery
+| Image1 = Mapshot SS Tipp & Pill 01.png!Tipp & Pill location in Bellhart
+| Image2 = Mapshot SS Flea Caravan 04.png!Fleamaster Mooshka location in Fleatopia
+}}
+
+== Possible routes ==
+===Memorium route===
+This route goes through the [[Blasted Steps]] and the [[Choral Chambers]] to arrive at the [[Memorium]]. From there it goes through the [[Putrified Ducts]] to end up at Fleatopia.
+{{Gallery
+|Image1 = Mapshot SS Fleatopia Supplies 01.png!Memorium route
+}}
+=== Bilewater route ===
+This route goes through [[Greymoor]], [[Sinner's Road]] and the [[Exhaust Organ]] to arrive at [[Bilewater]]. From there it goes up to the Putrified Ducts to end up at Fleatopia.
+{{Gallery
+|Image1 = Mapshot SS Fleatopia Supplies 02.png!Bilewater route
+}}
+
+== Reward ==
+[[File:Rosaries large.png|link=Rosaries|left|thumb|100x100px]]
+
+By turning in the supplies to Fleamaster Mooshka, he rewards Hornet with {{R|410}} in [[Act 2]], and {{R|480}} in [[Act 3]].
+
+{{Clear}}
+{{History
+|game = SS
+|1.0.28497 (Patch 1): The reward was increased from 190 rosaries to 410 in Act 2 and 480 in Act 3.
+}}
+{{Localisation
+|DEname = Flohtopia-Vorräte
+|DEmeaning = Fleatopia Supplies
+|ESname = Suministros de Pulgatopía
+|ESmeaning = Fleatopia Supplies
+|FRname = Matériaux pour Pucetopie
+|FRmeaning = Materials for Fleatopia
+|ITname = Risorse di Salteria
+|ITmeaning = Fleatopia Resources
+|JAname = ノミの楽園の物資
+|JAromanised = Nomi no rakuen no busshi
+|JAmeaning = Flea's Paradise Supply
+|KOname = 벼룩의 낙원 보급품
+|KOromanised = Byeorugui nagwon bogeuppum
+|KOmeaning = Flea's Paradise Supply
+|PTname = Suprimentos de Pulgatopia
+|PTmeaning = Fleatopia Supplies
+|RUname = Припасы для Блошетопии
+|RUromanised = Pripasy dlja Blošetopii
+|RUmeaning = Supplies for Fleatopia
+|ZHname = 蚤托邦补给
+|ZHromanised = Zǎo tuō bāng bǔjǐ
+|ZHmeaning = Flea Utopia Supplies
+|TWname = 蚤托邦補給
+|TWromanised = Zǎo tuō bāng bǔjǐ
+|TWmeaning = same
+|CODEname = QUEST_COURIER_FLEATOPIA
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

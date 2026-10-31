@@ -1,0 +1,272 @@
+{{Navbar|page1=Caretaker|page2=Snail Shamans (Silksong)|title2=Snail Shamans}}
+{{SS Infobox NPC
+|area = [[Songclave]]<br>[[The Cradle]] ([[Silk and Soul]])<br>[[Ruined Chapel]] ([[Awaiting the End]])
+|image1 = <gallery> 
+Caretaker.png|Act 2
+Caretaker Snail Shaman.png|Act 3
+Caretaker Dead.png|Dead
+</gallery>
+|role = Quest
+|quest = [[Building Up Songclave]]<br>[[Strengthening Songclave]]<br>[[Silk and Soul]]<br>[[Awaiting the End]]
+|affiliation = [[Chapel Maid]] (sister)<ref name="sister">Caretaker: <i>"Down in the mosslands, still clinging to her failed chapel, my sister'll part with her power, if asked kind enough."</i></ref><br>[[Bell Hermit]] (uncle)<ref name="uncle">Caretaker: <i>"Buried in the warren of bells, at Pharloom's core, seek my sullen uncle."</i></ref><br>[[Snail Shamans (Silksong)|Snail Shamans]]
+|va = Benjamin Zarb<ref>[[:File:Discord_Simo voice actors.png|Messages from Simo]] on Discord.</ref>
+|singnum = 2
+}}
+
+{{Quote
+| So what're you hopin' for, eh? Planning to usurp, to perch above us all as queen? Build up our hopes only to string us all in your own beastly web? Such is the way of Weavers and gods both...
+| Caretaker
+| Hr=SS
+}}
+
+The <b>Caretaker</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. 
+
+==Background==
+The Caretaker is a disguised [[Snail Shamans (Silksong)|Snail Shaman]], as well as the [[Chapel Maid]]'s brother and the [[Bell Hermit]]'s nephew. He also has an unnamed cousin who died at [[Bilewater]]. He went into hiding to avoid detection by [[Grand Mother Silk]], secretly plotting a way to possibly defeat her.{{MissingRef}}
+
+The Caretaker is a weathered bellringer of a fading family, pragmatic and wary.{{MissingRef}} Lately, he seems to know of a trap that could unseat the monarch and free [[Hornet (Silksong)|Hornet]] without forcing her to claim the crown. Though fearful of the consequences, he quietly longs for a kingdom unshackled and reluctantly guides any bold hunter towards the scattered relics and kin whose souls and artefacts make the plan possible.{{MissingRef}}
+He plays a crucial role in Act 2 with the <i>[[Silk and Soul]]</i> wish, opening a way to begin Act 3.
+
+==In-game Events==
+Initially, the Caretaker is hiding in a tent outside First Shrine at the [[Choral Chambers]]. Hornet can play the [[Needolin]] to cause the Caretaker's eyes to appear from the darkness of the tent. Inside First Shrine, Hornet discovers the bell within, threaded in [[Silk]]. After the Silk is destroyed, the lever to ring the bell and create a [[Bench (Silksong)|bench]] appears. Hornet rings the bell and leaves First Shrine, which causes the Caretaker to reveal himself and start talking with Hornet, addressing her as "bellringer". After resting at a bench in a different area, upon returning the area surrounding the bell is transformed into [[Songclave]].
+
+{{MissingInfo}}
+== Wishes ==
+{{TaskEntry
+| top = true
+| bottom = true
+| id = Silk and Soul
+| title = [[Silk and Soul]]
+| description = Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...
+| objective = Acquire the necessary components to build a powerful trap.
+* Maiden's Soul
+* Hermit's Soul
+* Seeker's Soul
+* Snare Setter
+| location = <b><i>[[Bellhart]] Wishwall / [[Songclave]] NPC</i></b>
+Caretaker of Songclave
+| reward = Unlocks the <i>[[DESTROY: Soul Snare]]</i> [[Objectives|objective]].
+}}
+
+{{TabbedDialogue
+| Title1 = Songclave
+| Title1_Event1 = First encounter
+| Title1_Dialogue1 = Oi! You there!<br>
+It was you, wasn't it? Ringin' that great clanging bell just now! Right when I'm tryin' to get some sleep!<br>
+Admit it! You done it! You shifty li'l bell-runger!<br>
+{{HTalk|You have chosen a curious place to rest, sir. Do you perhaps know something of this shrine and its companions in the lands below?}}<br>
+Oh, so you ask funny questions as well as cutting bells free, eh? You certainly ain't a pilgrim, but you're clearly not of the Choir either. No! I know exactly what you are...<br>
+A bell-ringing lout! A weirdo! Don't you realise what you've done, waking that shrine back up?<br>
+That bell has rung out far and wide! The wretched and the lost will have heard its call. They'll be making their way here now.<br>
+Well, what's done is done, and what's rung is rung. Just make sure you come back here soon, you lout! You can help me deal with all the dirty little pilgrims and desperate scavengers who turn up.
+| Title1_Event2 = Exhausted dialogue after ringing the bell
+| Title1_Dialogue2 = This shrine, awakened... it calls out to 'em, you see. "It's safe here. Come on over!" ringing in the ears of every lost pilgrim and grubby so-and-so unlucky enough to have made it to this blasted Citadel with their wits intact.<br>
+Well, what's done is done, and what's rung is rung. Just make sure you come back here soon, you lout! I ain't dealing with all the fresh intake myself!<br>
+{{HTalk|If time permits, sir bug, I shall visit again.}}
+| Title1_Event3 = First conversation after the area becomes [[Songclave]]
+| Title1_Dialogue3 = Well, well! See here what your brash behaviour has wrought, bellringer!<br>
+Just as I predicted, this once-peaceful sanctuary is now crawling with all sorts. We've the beginnings of a shabby little settlement, all huddled around this old shrine!<br>
+{{HTalk|These poor bugs, all are victims of the Citadel and its insidious attraction. This place draws them up, into its maw, only to consume them, utterly.}}<br>
+Aye, inside and out, s'nothing but a grand, gilded lie. Well, at least these few stragglers can enjoy a moment's safety. Poor fools...
+| Title1_Event4 = Speaking again
+| Title1_Dialogue4 = Hmph. Bellringer, you might think me a dullard, but I understand this place and have well-good senses.<br>
+Brought here, weren't you? From beyond the border of our lands?<br>
+{{HTalk|You are correct. The one who waits atop this Citadel... Through their hospitality, I arrived in this kingdom. I seek now to return that welcome in kind.}}<br>
+Hmph. Beastly words, them. Finely spoken, but beastly all the same.<br>
+I just pray you don't bring any more unneeded pain down on the heads of these gormless little pilgrims...
+| Title1_Event5 = Delivering a package from [[Tipp & Pill]]
+| Title1_Dialogue5 = {{HTalk|Caretaker, I bring supplies from the town of bells below the Citadel.}}<br>
+And badly needed they are, miss bellringer. Ain't much finding or foraging happening with this mob, what with them choir types all stalkin' about the chambers beside.<br>
+Take some beads for your effort, miss bellringer, and know this sad lot'll be survivin' a little longer thanks to you.
+| Title1_Event6 = After completing at least two wishes from Songclave's [[wishwall]], including <i>[[Building Up Songclave]]</i>
+| Title1_Dialogue6 = All your work, and look! They keep arrivin'. It's bugs aplenty up here now. Hapless, weak, but alive they are!<br>
+{{HTalk|More scared than weak, they seem to me. It is heartening knowing these few have survived safe for your care.}}<br>
+That's your work, bellringer! Not mine. Ringin' and helpin'! Hope they recognise your efforts, 'cause I ain't providing much, and I ain't one for fighting if that Choir and their pins ever come callin'.
+| Title1_Event7 = After completing at least five wishes from Songclave's Wishwall, including <i>Building Up Songclave</i> and <i>[[Strengthening Songclave]]</i>, but before having completed all the requirements to start <i>[[Silk and Soul]]</i>
+| Title1_Dialogue7 = You keep at all that helpin', you're gonna start inspiring it in others! Best you think serious about what effect you might be causin', bellringer!<br>
+Too much hope could prove a dangerous thing, 'specially for all these bugs starved so long of it.
+| Title1_Event8 = After <i>[[The Wandering Merchant]]</i> is completed and [[Jubilana]] is back in Songclave
+| Title1_Dialogue8 = Heard you did the savin' for our dear merchant there? I've seen her about, sneaking and scrounging, even a'fore you was ringing that bell.<br>
+She's a useful sort, but don't let her age be foolin', she's still the sharpest mind for a deal.<br>
+Won't be long till there's nary a rosary about this shrine that ain't found its way into her pockets.
+| Title1_Event9 = After visiting the [[Whiteward]]
+| Title1_Dialogue9 = Have you done it yet, bellringer? Wriggled deep? Discovered the depths of obsession that brought this place so low?<br>
+{{HTalk|If you speak of this Citadel and its Silk, Caretaker, then yes, I now know the start of it.}}<br>
+{{HTalk|In the ward down below, I saw it clear, the hollowed husks, and the many torturous implements... machines to instill a bug with thread, that would see their life extended.}}<br>
+Aye! That's it, in part! But there's more scale to it than all that. Just think of'em greedily shoving the Silk into their shells, the madness that overcame them, eternal life for mortal bugs! Then think on how long it's all gone on...<br>
+{{HTalk|...The children born of them, and all the pilgrims after... The Silk has seeded deep into this kingdom's shells, generations deep...}}<br>
+{{HTalk|No wonder Pharloom's bugs proved such easy prey for that haunted thread. It had only to seek for itself to reach them.}}<br>
+Ho ho! Now you're seein' it, bellringer! These poor pilgrims, all born bound to the cruel system of our world, now stricken in its new cursed web.<br>
+You at least are free from it. And free to shake it all up... if'n that's your choosing.
+| Title1_Event10 = After having completed more than 9 "Quest Points" of <i>[[Silk and Soul]]</i>
+| Title1_Dialogue10 = Don't think I ain't see'in it, bellringer! A whole lotta helpin' you've been up to, both here and down below!<br>
+S'a strange mantle you're takin' for yourself, seeing all them bugs saved and wishes promised.<br>
+{{HTalk|You find it strange, sir? I've found some solace in the service, and the rewards received have proved a boon on my journey.}}<br>
+Aye! But it ain't your place now, is it? I see well what you are, Weaver'n more! It's below your station! You ain't no common sort meant for carin' on us low folk.<br>
+{{HTalk|I could say the same for you, who still chooses to remain cowled. You continue to pose as only a simple pilgrim. Don't you think it's past time you ceased the performance?}}<br>
+Leave off, Old One! Permit a bug their small disguise! It's been a pleasant thing to play simple. And I weren't calling for change, even if you seem insistent on bringing it!<br>
+{{HTalk|Change was unavoidable, sir, whether I arrived or not. The monarch stirs. Its threads stretch far. My presence only accelerates the inevitable.}}<br>
+So what're you hopin' for, eh? Planning to usurp, to perch above us all as queen? Build up our hopes only to string us all in your own beastly web? Such is the way of Weavers and gods both...
+| Title1_Event11 = After defeating [[Lace]] at [[the Cradle]], and having had either the Whiteward conversation or the more-than-9-Quest-Point conversation
+| Title1_Dialogue11 = {{HTalk|Sir, I have opened the way above these halls, and bested the white knight that stood as guardian.}}<br>
+{{HTalk|Child of the monarch, she claimed herself at the end, and her shell suggested it true, a being born purely from Silk woven tight.}}<br>
+{{HTalk|That such a feat is possible... I have seen life woven from Silk before, but tiny, transient... Never like this...}}<br>
+Aye, bellringer! You've slain a marvel indeed... Well, flawed marvel, at least.<br>
+One to keep far from she was, least for us mortal sorts. Look of a child and a mind to match, but her's been up wanderin' this Citadel longer'n most. Even in its long silence, way 'fore you came and roused its ire.<br>
+Might'a seen herself this place's protector, keepin' it clean and quiet as she did. Course quiet meant most crossin' her path found a painful end from her pin.<br>
+I'd be sayin' thanks for the slaying, but with all the other husks now awoken and enraged, a bug's chances ain't grown by much.
+| Title1_Event12 = After obtaining the [[Seeker's Soul]], but before starting <i>[[Silk and Soul]]</i>
+| Title1_Dialogue12 = What's that you got there, bellringer? Stole someone else's soul for yourself?<br>
+{{HTalk|You speak of the remnant I found in the muck-choked caves beside the Citadel? This is soul siphoned from a once powerful bug.}}<br>
+{{HTalk|It's only a thin mix now, but there is still some strength left. At peak, their talents must have been impressive.}}<br>
+Aye, they was that. I knew the bug, in 'is prime, long time back. Braver'n most, and as little a fan of this Citadel as you yourself.<br>
+Went seekin' alliance with those basic bugs of the swamps. Thought they'd both gain from the union... Scheming defiance, or some such stupidity!<br>
+Now he's as dead as he was daft! Don't go tryin' ta make friends in Pharloom, bellringer. Nothin' good comes of it.
+| Title1_Event13 = Exhausted dialogue
+| Title1_Dialogue13 = Here they limply lay, the castaways and the disillusioned and the used-up.<br>
+It's a sorry settlement you've summoned, miss bellringer, and a blasted bother for me. Not sure we have anything to offer 'em... Not even hope.
+| Title1_Event14 = Playing the [[Needolin]]
+| Title1_Dialogue14 = [n]So many souls...<br>
+A kingdom lost...<br>
+Only a simple bug...<br>
+Strength in despair...<br>
+Our power...<br>
+Hide and wait...<br>
+Hide and watch...<br>
+O soulful ones...<br>
+Spiralling outward...<br>
+Glimmering trails...
+
+| Title2 = Silk and Soul
+| Title2_Event1 = First conversation
+| Title2_Dialogue1 = It's feelin' almost time, eh, bellringer? You and her who waits up there. That fated meeting won't hold forever... Ready to make your play, to oust one ruler and claim her place?<br>
+{{HTalk|I'll not deny some part of me desires that outcome... Dominance, it seems, is baked deep in my blood, as too, no doubt, for the one up top.}}<br>
+{{HTalk|And yet, another part resists... A part, over time, I find myself siding with more...}}<br>
+{{HTalk|That part wishes not to claim a monarch's mantle, rather it would see my freedom regained, and this kingdom's bugs unshackled from their pale chains.}}<br>
+...Remarkable idea you're speakin' there, bellringer, a world cut free. Not a wish I've had much cause to hope on, serious like... but I ain't so surprised to hear you speak it.<br>
+For all your helpin', I been seein' it clearer. You've still got the monarch in you, alright, and the glare of a Weaver, but the ambition... that's wild different from both.<br>
+{{HTalk|If you have already guessed to my desire, sir, and share some part of it, would you offer me aid in the conflict to come?}}<br>
+Aye... Maybe, yes. I can barely bear to tell it... But there's an idea, one rare discussed, for fear of her up there sensin' the score.<br>
+{{HTalk|You have conceived a method, I take it? A way to see a monarch... removed? And me left free from claiming her station?}}<br>
+...We have, me and what remains of my family. S'a trap, of a sort, beyond the skill of this Citadel, one to go further than just her binding. You'd be just the hunter to set it, if you're dare enough to try...
+| Title2_Event2 = Denying wish
+| Title2_Dialogue2 = Guess I shouldn't be surprised. It's a fool act to try such a thing... Maybe even to think on it. Your kind ain't designed to die.
+| Title2_Event3 = Speaking again after denying wish
+| Title2_Dialogue3 = Bellringer... Re-thinkin' on that trap, are ya? It's a mad method, for sure, but you'd be just the hunter to set it, if'n you're dare enough to try...
+| Title2_Event4 = Accepting wish 
+| Title2_Dialogue4 =
+<b>If the [[Seeker's Soul]] and the [[Soul Snare]] haven't been acquired:</b><br>
+{{HTalk|Grant me your aid, sir. If your trap provides a path to freedom, both for myself and your land's bugs, I may indeed choose to trigger it.}}<br>
+{{HTalk|What work do you require of me now to see your service made?}}<br>
+It's my family's strength you'll need be seeking, bellringer, us three ol' bugs still alive, spread 'cross this kingdom, and one poor cousin dead and drained in swamps choked rotten.<br>
+Each has power. Raw, savage stuff! For you, they'll give it, if for their fascination at the act, or the thrill of defiance... or because they have no choice at all.<br>
+And last, as the base, seek a weapon of Weavers past. Should still be one left, down there in their largest nest, a snare to set a rune'o searing Silk. Our own trap'll be woven tight about it.
+<hr/>
+<b>If the [[Seeker's Soul]] has been acquired but the [[Soul Snare]] hasn't:</b><br>
+{{HTalk|Grant me your aid, sir. If your trap provides a path to freedom, both for myself and your land's bugs, I may indeed choose to trigger it.}}<br>
+{{HTalk|What work do you require of me now to see your service made?}}<br>
+It's my family's strength you'll need be seeking, bellringer, us three ol' bugs still alive, spread 'cross this kingdom, and that sad soul you're already carryin' there, the last of my poor cousin, dead and drained in those rotten swamps.<br>
+Each of my family has power, raw, savage stuff. For you, they'll give it, if for their fascination at the act, or the thrill of defiance... or because they have no choice at all.<br>
+And last, as the base, seek a weapon of Weavers past. Should still be one left, down there in their largest nest, a snare to set a rune'o searing Silk. Our own trap'll be woven tight about it.
+<hr/>
+<b>If the [[Seeker's Soul]] hasn't been acquired but the [[Soul Snare]] has:</b><br>
+{{HTalk|Grant me your aid, sir. If your trap provides a path to freedom, both for myself and your land's bugs, I may indeed choose to trigger it.}}<br>
+{{HTalk|What work do you require of me now to see your service made?}}<br>
+It's my family's strength you'll need be seeking, bellringer, us three ol' bugs still alive, spread 'cross this kingdom, and one poor cousin dead and drained in swamps choked rotten.<br>
+Each has power. Raw, savage stuff! For you, they'll give it, if for their fascination at the act, or the thrill of defiance... or because they have no choice at all.<br>
+For the last part, I'll also be needin' that rune setter you're carryin'. Clever old Weaver tool, that thing, and the perfect base on which to stretch our power.<br>
+Once you've collected for yourself the other critical parts, I'll ask you pass it over as well.
+<hr/>
+<b>If both the [[Seeker's Soul]] and the [[Soul Snare]] have been acquired:</b><br>
+{{HTalk|Grant me your aid, sir. If your trap provides a path to freedom, both for myself and your land's bugs, I may indeed choose to trigger it.}}<br>
+{{HTalk|What work do you require of me now to see your service made?}}<br>
+It's my family's strength you'll need be seeking, bellringer, us three ol' bugs still alive, spread 'cross this kingdom, and that sad soul you're already carryin' there, the last of my poor cousin, dead and drained in those rotten swamps.<br>
+Each of my family has power, raw, savage stuff. For you, they'll give it, if for their fascination at the act, or the thrill of defiance... or because they have no choice at all.<br>
+For the last part, I'll also be needin' that rune setter you're carryin'. Clever old Weaver tool, that thing, and the perfect base on which to stretch our power.<br>
+Once you've collected for yourself the other critical parts, I'll ask you pass it over as well.
+| Title2_Event5 = Exhausted dialogue, before completing the snare
+| Title2_Dialogue5 = If'n you’re wantin' that trap made, you'd best get to collectin'. I'll point you toward what's needed, best as I can.<br>
+<hr/>
+<b>If [[Maiden's Soul]] has not been acquired</b>: Down in the mosslands, still clinging to her failed chapel, my sister'll part with her power, if asked kind enough.<br>
+<hr/>
+<b>If [[Hermit's Soul]] has not been acquired</b>: Buried in the warren of bells, at Pharloom's core, seek my sullen uncle. That one has power to spare.<br>
+<hr/>
+<b>If [[Seeker's Soul]] has not been acquired</b>: Find the husk of my cousin, claimed by the scorned bugs of the swamps. A careless fool to let himself be taken, and dead they might be, but some glimmer of his soul can still be sensed.<br>
+<hr/>
+<b>If the [[Soul Snare]] has not been acquired</b>: For the base, we'll be needin' a weapon of Weavers past. Search down low, aside the paths of bone, inside their largest nest. S'a snare device, one to set a rune'o searing Silk.
+| Title2_Event6 = After acquiring all items
+| Title2_Dialogue6 = {{HTalk|Sir, I have the items requested. Craft me your trap that we may see these lands free.}}
+| Title2_Event7 = Not handing over the items
+| Title2_Dialogue7 = Oi! What's this? Suddenly havin' second thoughts? For sure it's a frightful thing to attempt, but you've already put in all the leg work!<br>
+She up top'll already be sensin' your goal, vague-like maybe, but there ain't no worth to backin' out now.
+| Title2_Event8 = Handing over items
+| Title2_Dialogue8 = Found it all, did ya, bellringer? Then join me and let's get to preppin'! I'll be askin' both your Silk and your claws 'fore the construction.<br>
+
+| Title3 = DESTROY: Soul Snare
+| Title3_Event1 = After building the trap
+| Title3_Dialogue1 = S'done! The parts are prepared. I'm headin' up now to set the heavy thing.<br>
+Even with the trap laid, best be guessin' her on top won't go down so simple. She'll sense what's comin'.<br>
+That blade of yours is gonna have to do its work 'fore this thing can snap.<br>
+{{HTalk|I'd expected such, sir. And I am ready. Set your snare. I shall attend shortly.}}
+| Title3_Event2 = Meeting in [[the Cradle]]
+| Title3_Dialogue2 = Ain't you come a long way, bellringer! Granting wishes, saving bugs, even rousing my sullen family to act!<br>
+The snare is set above, our power bound along its thread. To your sight it may seem a crude thing, but there's fair strength to it... enough to quell a god.<br>
+{{HTalk|You and your family have done me well, sir. I shall prove your faith in the meeting ahead.}}<br>
+Aye. Bring your best, bellringer. Call forth our great pale god. Cut her weak, then drive the beast down atop the snare.<br>Contact made will stir the snare alight, but only your needle's song will awaken the spell in full. When that moment arrives, you'll see it clear.
+| Title3_Event3 = Speaking again
+| Title3_Dialogue3 = {{HTalk|I have known your kind before, sir. Yours is a tribe that works and trades in power, and I am about to extinguish its prime source.}}<br>
+{{HTalk|Once this is done, will you truly delight in a land so bereft?}}<br>
+Aye, well... My family's marks are all over that trap. And we've spent a hard age avoiding the gaze of our god.<br>
+If we earned it now, after such open opposition... that's a bleak conclusion none of us'd care for.<br>
+Now! My job's done. S'time your grand business began! We'll be wishin' victory to you, bellringer, for all our sakes!
+| Title4 = Written
+| Title4_Event3 = <i>[[Silk and Soul]]</i> wish
+| Title4_Dialogue3 = Oi! I'm wishin' for that bothersome bellringer! That you readin' this? Then head up top beside the shrine. Might be we two should have a little chat...
+| Title4_Event1 = <i>[[Building Up Songclave]]</i> wish
+| Title4_Dialogue1 = If this place must provide shelter for every ragged bug who wanders in, we'll need supplies and currency. So if you're reading this, empty your pockets!
+| Title4_Event2 = <i>[[Strengthening Songclave]]</i> wish
+| Title4_Dialogue2 = How do all of these wretched, lost bugs keep finding their way here?! Each hungry and squalling for shelter! We need more rosaries, so empty your pockets.
+}}
+
+==Locations==
+The Caretaker is first found in [[Songclave]] after Hornet rings the bell in First Shrine. During [[Act 3]], he and the other [[Snail Shamans (Silksong)|Snail Shamans]] move inside the [[Ruined Chapel]] below [[Bone Bottom]].
+{{Gallery
+|Image1 = Mapshot SS Sherma 07.png!Location in the Choral Chambers
+|Image2 = Mapshot SS Red Memory.png!Location in the Moss Grotto
+}}
+
+{{Gallery
+|Title = Gallery
+|Image1 = Screenshot SS Caretaker 04.png!Reacting to the Needolin before the bell is awakened
+|Image2 = Screenshot SS Caretaker 01.png!Idle
+|Image3 = Screenshot SS Caretaker 02.png!Carrying the Soul Snare
+|Image4 = Screenshot SS Caretaker 03.png!In the Cradle
+|Image5 = Screenshot SS Caretaker 05.png!Singing
+}}
+{{Localisation
+|DEname = Aufpasser
+|DEmeaning = Guardian
+|ESname = Cuidador
+|ESmeaning = Caretaker
+|FRname = Surintendant
+|FRmeaning = Superintendent
+|ITname = Guardiano
+|ITmeaning = Guardian
+|JAname= 世話役
+|JAromanised = Sewayaku
+|JAmeaning = Caretaker or Manager
+|KOname = 관리자
+|KOromanised = Gwallija
+|KOmeaning = Manager
+|PTname =  Guardião
+|PTmeaning = Guardian
+|RUname = Хранитель
+|RUromanised = Xranitel'
+|RUmeaning = Guardian
+|ZHname = 看守者
+|ZHromanised = Kānshǒu zhě
+|ZHmeaning = Guardian
+|CODEname=CARETAKER
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}

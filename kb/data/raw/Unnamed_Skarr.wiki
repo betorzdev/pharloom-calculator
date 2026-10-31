@@ -1,0 +1,53 @@
+{{Disclaimer|This NPC has no official name.}}
+{{SS Infobox NPC
+| image1 = Unnamed Skarr.png
+| area = [[Far Fields]]
+| aka = "Mottled Ant Child"<br>
+"Hunter Mottled Child" (game files)
+| role = Lore
+| affiliation = [[Skarr]]
+| sing = Mottled Skarr
+| singnum = 2
+}}
+{{Quote
+|Our mark is no curse...
+|Unnamed Skarr
+|Hr=SS}}
+<b>Unnamed Skarr</b> is an [[NPCs (Silksong)|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. They gift the [[Curvesickle]] to [[Hornet (Silksong)|Hornet]] in [[Far Fields]].
+
+== Background ==
+Unnamed Skarr's skin is mottled with grey spots, a trait that it shares with [[Mottled Skarr]] and [[Gurr the Outcast]]. Its Needolin dialogue implies that Skarr with mottled skin are persecuted by other [[Skarr]].<ref>Unnamed Skarr: <i>"Our mark is no curse..."</i></ref>
+
+== In-Game Events ==
+Unnamed Skarr can be found in Far Fields after [[Act 3]] begins. They initially hide underground upon being approached, but after hitting all four targets in the room with one throw of the [[Curveclaw]] they reappear. Giving them the Curveclaw causes them to burrow underground, and sitting on a Bench and reentering the room causes the Curvesickle to appear where they had been.
+
+{{TabbedDialogue
+| Title1_Event1 = Playing the [[Needolin]]
+| Title1_Dialogue1 = [n]For death... I give death... <br>
+Our mark is no curse... <br>
+We still hear it... <br>
+Strength... shall not fade... <br>
+}}
+
+== Location ==
+Unnamed Skarr can be found in a room above the [[Bellway]] in [[Far Fields]] during [[Act 3]].
+
+{{Gallery
+| Image1 = Mapshot SS Unnamed Skarr 01.png!Location in Far Fields
+}}
+
+== Gallery ==
+{{Gallery
+|Image1 = Screenshot SS Unnamed Skarr 02.png!Unnamed Skarr hiding when entering the room
+|Image2 = Screenshot SS Unnamed Skarr 03.png!The target room
+|Image3 = Screenshot SS Unnamed Skarr 01.png!Unnamed Skarr requesting the Curveclaw
+|Image4 = Screenshot SS Unnamed Skarr 04.png!Unnamed Skarr singing to the Needolin
+|Image5 = Screenshot SS Unnamed Skarr 05.png!Hornet giving the Curveclaw
+|Image6 = Screenshot SS Unnamed Skarr 06.png!The Curvesickle left behind
+}}
+
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
+[[Category:NPCs (Silksong)]]
+
+[[fr:Skarr sans nom]]

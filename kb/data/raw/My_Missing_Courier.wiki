@@ -1,0 +1,79 @@
+{{SS Infobox Wish
+| header1 = Wayfarer
+| description = Search for traces of the courier, Tipp, and track his location.<br>
+Tipp was last seen in lower Shellwood.
+| npc = [[Frey]]
+| location = [[Bellhart]] Wishwall
+| prerequisite = Defeat [[Widow]]
+| reward = Opens additional inventory to purchase from Frey<br>Prerequisite for [[My Missing Brother]]
+}}
+
+{{Quote
+| My dear little courier was last seen in Shellwood. Please someone, find Tipp and send him home, along with all of his precious stock!
+| [[Frey]]
+| Hr = SS
+}}
+
+<b>My Missing Courier</b> is a [[Wayfarer Wishes|Wayfarer Wish]] in <i>[[Hollow Knight: Silksong]]</i>.
+
+== How to Start ==
+The Wish can be acquired from [[Bellhart|Bellhart's]] [[Wishwall]] after defeating [[Widow]].
+
+{{Gallery
+|Image1 = Mapshot SS Frey 01.png!Wishwall location in Bellhart
+|Image2 = Screenshot SS Frey 01.png!Wishwall in Bellhart
+}}
+
+== Wish ==
+To complete the Wish, [[Hornet (Silksong)|Hornet]] must find [[Tipp]]'s location within the north part of [[Bone Bottom]]. Parts of Tipp's cargo are scattered around [[Shellwood]], which can be interacted with to track his pathway.
+
+At this location, Tipp is hiding from two [[Caranid]]s, who have to be defeated to save him and return him to Bellhart.
+
+{{Gallery
+|Image1 = Mapshot SS Tipp My Missing Courier.png!Tipp's location in Bone Bottom
+|Image2 = Screenshot SS Tipp & Pill 01.png!Tipp in Bone Bottom
+}}
+
+== Reward ==
+After completing the Wish, [[Frey]] expands her shop inventory with the [[Multibinder]], a [[Spool Fragment]], and [[Shard Bundle]]s. Completing this Wish is also a prerequisite to unlock the <i>[[My Missing Brother]]</i> Wish.
+
+{{Gallery
+| Image1 = Multibinder.png!link=Multibinder!Multibinder
+| Image2 = Spool Fragment.png!link=Spool Fragment!Spool Fragment
+| Image3 = Shard Bundle.png!link=Shard Bundle!Shard Bundles
+}}
+
+{{Localisation
+|DEname = Mein vermisster Kurier
+|DEmeaning = My Missing Courier
+|ESname = Mi mensajero desaparecido
+|ESmeaning = My Missing Courier
+|FRname = Mon coursier disparu
+|FRmeaning = My Missing Courier
+|ITname = Il mio corriere scomparso
+|ITmeaning = My Missing Courier
+|JAname = 運び屋の捜索
+|JAromanised = Hakobiya no sōsaku
+|JAmeaning = Courier Search
+|KOname = 나의 실종된 배달부
+|KOromanised = Naui siljongdoen baedalbu 
+|KOmeaning = My Disappeared Deliverer
+|PTname = Meu Entregador Desaparecido
+|PTmeaning = My Missing Courier
+|RUname = Мой пропавший курьер
+|RUromanised = Moj propavšij kur'er
+|RUmeaning = My Missing Courier
+|ZHname = 失踪送货员
+|ZHromanised = Shīzōng sònghuòyuán
+|ZHmeaning = Missing Courier
+|TWname = 失蹤送貨員
+|TWromanised = Shīzōng sònghuòyuán
+|TWmeaning = same
+|CODEname = QUEST_SAVE_COURIER_SHORT
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}
+
+[[fr:Mon coursier disparu]]

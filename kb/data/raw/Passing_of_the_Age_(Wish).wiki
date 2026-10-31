@@ -1,0 +1,102 @@
+{{SS Infobox Wish
+| header1 = Witness
+| title1 = Passing of the Age
+| description = <i>See [[#Riddle Tablet|Riddle Tablet]]</i>
+| location = [[Putrified Ducts]] Riddle Tablet
+| prerequisite =
+* Enter [[Act 3]]<br>
+* Acquire [[Silk Soar]]
+| reward = None
+| achievement = [[Achievements (Silksong)#Miscellaneous|Passing of the Age]]
+}}
+
+{{Quote
+| We speak the wish of the Master Herald, he who signs an Age's end.
+| Riddle Tablet
+| Hr = SS
+}}
+
+<b>Passing of the Age</b> is a [[Unique Wishes|Unique Wish]] in <i>[[Hollow Knight: Silksong]]</i>, started by examining a [[Lore Tablets (Silksong)#Putrified Ducts|Lore Tablet]] in the [[Putrified Ducts]]. This Lore Tablet reveals the 7 locations of [[Mister Mushroom (Silksong)|Mister Mushroom]], which [[Hornet (Silksong)|Hornet]] must visit in order.
+
+== Starting Location ==
+The Wish is given by a [[Lore Tablets (Silksong)#Putrified Ducts|Lore Tablet]] in the [[Putrified Ducts]], which is accessible using [[Silk Soar]]. It is above and to the right of the [[Pale Lake]]/[[Fleatopia]]. This Lore Tablet is disabled in [[Act 2]] and cannot be read until [[Act 3]].
+
+{{Gallery
+| Image1 = Mapshot SS Mister Mushroom Lore Tablet.png!The Lore Tablet's location in the Putrified Ducts.
+| Image2 = Screenshot SS Mister Mushroom Lore Tablet.png!The Lore Tablet.
+}}
+
+Upon reading the tablet, Hornet speaks: 
+
+{{HTalk|So, the Herald visits this land too...}} <br>
+{{HTalk|If he is here, now, then great change or a savage end is inevitable. He would care to see nothing else...}}
+
+== Riddle Tablet ==
+The seven locations of Mister Mushroom are hinted at on the Lore Tablet, although they are a bit cryptic.
+
+* <i>We speak the wish of the Master Herald, he who signs an Age's end.</i>
+* <i>Under chapel fallen to the monarch's might,</i> (Just below the [[Ruined Chapel]])
+* <i>Over camp collapsed to the black thread plight,</i> (Above the ruins of [[Bone Bottom]])
+* <i>Scorched field on edge, shells black and burned,</i> (The eastern edge of [[Far Fields]])
+* <i>Up towers spinning, near the surgeon spurned,</i> ([[Greymoor]], below [[Wisp Thicket]])
+* <i>Cage of one who raged against the silken lie,</i> ([[The Slab]], outside of the [[First Sinner]] arena)
+* <i>Fell heart of frost, who soars on high,</i> ([[Mount Fay]], where the [[Faydown Cloak]] was obtained)
+* <i>Past cradle's peak, last test of fitness,</i> (Right below [[Nameless Town]], in the [[Border Caves]] above [[The Cradle]])
+* <i>That the age may pass, this shroom its witness.</i>
+
+{{Gallery
+| Image1 = Mapshot SS Moss Mother 01.png!Location in Ruined Chapel
+| Image2 = Mapshot SS Shakra Bone Bottom.png!Location in Bone Bottom
+| Image3 = Mapshot SS Mister Mushroom 01.png!Location in Far Fields
+| Image4 = Mapshot SS Mister Mushroom 02.png!Location in Greymoor
+| Image5 = Mapshot SS First Sinner.png!Location in the Slab
+| Image6 = Mapshot SS Fayforn.png!Location in Mount Fay
+| Image7 = Mapshot SS Mister Mushroom 04.png!Location below Nameless Town (Unofficial map by esau)
+}}
+
+At each of the first six locations, playing the [[Needolin]] summons Mister Mushroom from the ground, except for the [[Mount Fay]] location, where he appears to be talking directly to the [[Fayforn]]. After attempting to talk to him and listening to his enigmatic dialogue, he goes back underground and can be found in the next location.
+
+== Final Location ==
+At the final location below the [[Nameless Town]], Mister Mushroom talks directly to Hornet after being summoned, and then ascends into the sky.
+
+After the game is subsequently completed, there is a [[Endings (Silksong)#Extra Ending: Passing of the Age|special cutscene]] following the normal ending cutscene.
+
+== Achievements ==
+{{Achievement|game=silksong|Passing of the Age}}
+
+== Trivia ==
+* The icon for the Wish resembles the [[Spore Shroom]] charm from <i>[[Hollow Knight]]</i>.
+* The Riddle Tablet's text is the only [[Lore Tablets (Silksong)|Lore Tablet]] in the game to take up the full screen.
+
+{{Localisation
+|DEname = Das Ende einer Ära
+|DEmeaning = The End of an Era
+|ESname = Cambio de era
+|ESmeaning = Change of the Era
+|FRname = Passage des âges
+|FRmeaning = Passge of the Age
+|ITname = Fine di un'era
+|ITmeaning = End of an Era
+|JAname = 時代の流れ
+|JAromanised = Jidai no nagare
+|JAmeaning = Passage of the Age or Flowing of the Age
+|KOname = 시대의 소멸
+|KOromanised = Sidaeui somyeol
+|KOmeaning = Passing of the Age or End of the Age
+|PTname = Passagem da Era
+|PTmeaning = Passing of the Age
+|RUname = Закат эпохи
+|RUromanised = Zakat èpoxi
+|RUmeaning = Sunset of the Age
+|TWname = 時代終結
+|TWromanised = Shídài zhōngjié
+|TWmeaning = same
+|ZHname = 时代的终结
+|ZHromanised = Shídài de zhōngjié
+|ZHmeaning = End of an Age
+|CODEname = QUEST_MRMUSHROOM
+|CODEmeaning = 
+}}
+{{Refs|hr=SS}}
+
+{{SS Nav Wishes}}

@@ -1,0 +1,148 @@
+{{Navbar|page1=Bell Hermit|page2=Snail Shamans (Silksong)|title2=Snail Shamans}}
+{{SS Infobox NPC
+|image1 = <gallery> 
+Bell_Hermit.png|Acts 1/2
+Bell_Hermit_Snail_Shaman.png|Act 3
+Bell_Hermit_Dead.png|Dead
+</gallery>
+| area = [[Bellhart]] (Bellway Station)
+| gender = Male
+|role = Quest
+|quest = [[Silk and Soul]]
+|affiliation = [[Caretaker]] (nephew)<ref name="uncle"/><br>[[Chapel Maid]] (niece)<ref name="uncle2"/><br>[[Snail Shamans (Silksong)|Snail Shamans]]
+|singnum = 2
+}}
+
+{{Quote|Hr=SS|Grnk! Begone. In Pharloom, only a fool believes themselves free.|Bell Hermit}}
+
+The <b>Bell Hermit</b> is an [[NPCs (Silksong)#Miscellaneous|NPC]] in <i>[[Hollow Knight: Silksong]]</i>. He is a disgruntled and unfriendly hermit living beneath the town of [[Bellhart]].
+
+== Background ==
+The Bell Hermit is a disguised [[Snail Shamans (Silksong)|Snail Shaman]], as well as the [[Caretaker]] and [[Chapel Maid]]'s uncle.<ref name="uncle">[[Caretaker]]: <i>Buried in the warren of bells ... my sullen uncle.</i></ref><ref name="uncle2">[[Chapel Maid]]: <i>Best you head quick over to that town of bells ... I've an uncle hidden about there, an old hermit</i></ref> He also has an unnamed son or nephew who had died at [[Bilewater]].
+
+== In-game Events ==
+The Bell Hermit is found by Hornet underneath Bellhart, hiding away in a large bell. He calls her a slave, claiming that she will be ensnared just like the rest of the residents of Bellhart.
+
+After defeating [[Widow]], he still shows disgust, implying that the residents of Bellhart are misguided in their attempts. He asks why Hornet saved them, and she admits that the end goal was to gain more strength, to which he shares an understanding.
+
+After the [[Caretaker]] tasks Hornet with the [[Silk and Soul]] [[Wish]], he claims he knew she was arriving and agrees to share his soul with her; not because he believes the plan will work, but because he wants to see the power he has stored used rather than going to waste. 
+
+{{TabbedDialogue
+| Title1 = General
+| Title1_Event1 = First Encounter
+| Title1_Dialogue1 = What do you want, slave?<br>
+{{HTalk|Slave? I am a traveller, stranger, not a slave.}}<br>
+Grnk. Exactly what a slave would say. Begone!<br>
+| Title1_Event2 = Speaking again
+| Title1_Dialogue2 = You bother me again? Begone, I said!<br>
+{{HTalk|I ask only if you know what has happened to the bugs above us. They hang trapped in a vast snare of thread.}}<br>
+Hff. Hardly surprising. That there's the final fate for all in Pharloom. Just come seeking a little sooner for them above.<br>
+Surely, oh surely, you don't imagine your own end will be different? All that hunger, and fear, and pride, filling your fragile heart. You too are bound to end ensnared!<br>
+Grnk! Begone. In Pharloom, only a fool believes themselves free.<br>
+| Title1_Event3 = Speaking again
+| Title1_Dialogue3 = You want to cut them down? Hff. Yes, you look cruel enough.<br>
+Once the strings are cut, pain will return to them. They will remember fear and longing.<br>
+What a choice you make for them! Such power you grant yourself!<br>
+| Title1_Event4 = Exhausted dialogue
+| Title1_Dialogue4 = I'll waste no more words on a slave. Begone.
+| Title1_Event5 = Speaking while [[Cursed Crest|Cursed]]
+| Title1_Dialogue5 = What's this... twitching inside of you? A slave within a slave! Given over your shell to grow something greater?<br>
+{{HTalk|A parasite has made its home within me. It saps my energy, and I can not purge it with strength alone...}}<br>
+Grnk. Lie down and die then, for all I care. Allow that wriggling thing its chance at life.<br>
+Or else... hff. Go seek the one exiled from Bellhart, little [[Yarnaby]]. She was chased out, high up into the moors, last I heard.<br>
+| Title1_Event6 = Exhausted dialogue while [[Cursed Crest|Cursed]]
+| Title1_Dialogue6 = If you insist on surviving your infestation, seek the one exiled from Bellhart, little Yarnaby. She was chased out, high up into the moors, last I heard.<br>
+
+| Title2 = After saving Bellhart
+| Title2_Event1 = First talk after defeating [[Widow]] without first visiting Bellhart
+| Title2_Dialogue1 = Hff. The noise from above has returned, that pitiful clamour. The threads have been cut.<br>
+You... It was you who cut them down. Do not deny it!<br>
+{{HTalk|Why should I deny it, sir? I severed the thread and defeated the creature guiding the curse upon the town. Are you displeased?}}<br>
+Displeased! If I breathe, if I live, I am displeased. Only the dead are satisfied.<br>
+You are a slave, and a nuisance... begone.<br>
+| Title2_Event2 = First talk after defeating [[Widow]] and having visited Bellhart prior
+| Title2_Dialogue2 = Hff. The noise from above has returned, that pitiful clamour. The threads have been cut.<br>
+You... It was you who cut them. Do not deny it!<br>
+{{HTalk|Why should I deny it, sir? I defeated the cruel creature above the town, and awoke the old bell stilled by Silk. Are you displeased?}}<br>
+Displeased! If I breathe, if I live, I am displeased. Only the dead are satisfied.<br>
+You are a slave, and a nuisance... begone.<br>
+| Title2_Event3 = Revisiting after some time
+| Title2_Dialogue3 =
+Those bugs, cowering in their gleaming bells. Grnk. They claim a common calling, to serve the pilgrims as they make their path upwards.<br>
+Such a crucial role they award themselves, surely worthy of praise!<br>
+A sweet lie, of course. They, like their predecessors, are simply too weak and fearful to venture any farther. A settlement born from indolence.<br>
+| Title2_Event4 = Revisiting a second time
+| Title2_Dialogue4 =
+What a persistent little worm you are. Amuse me then. Why did you cut those poor bugs from their comforting curse?<br>
+{{HTalk|There was old power in the creature that guided the thread, and a talent of Silk, now taken, that shall prove useful to me.}}<br>
+{{HTalk|That the town is freed and its service returned is a benefit too. I may ofttimes feel myself apart from these bugs, but even I recoil to see Silk strung in such sickening service.}}<br>
+Grnk. To free them was no favour. But the gathering of power... In that goal, we may understand each other some.<br>
+| Title2_Event5 =  Playing the [[Needolin]]
+| Title2_Dialogue5 = [n]So many souls...<br>
+A kingdom lost...<br>
+Only a simple bug...<br>
+Strength in despair...<br>
+Our power...<br>
+Hide and wait...<br>
+Hide and watch...<br>
+O soulful ones...<br>
+Spiralling outward...<br>
+Glimmering trails...<br>
+
+| Title3 = Silk and Soul
+| Title3_Event1 = First talk
+| Title3_Dialogue1 = Hnff... So the slave comes seeking?<br>
+I've heard it. Wishing on a world cut free, yes? Along with [[Caretaker|my nephew]] up there. Sounds he's sunk as simple as you.<br>
+{{HTalk|Will you not provide your aid, bug? This trap he plans requires power, and I suspect you're hoarding more than most.}}<br>
+Oh no. I'll give it. Not in the hope you'll succeed... Bah! In that, there's slim chance. I give just to see that restless energy unleashed.<br>
+So much soul, found and formed. Generations of it, all going to waste. Better it's given a chance to blaze.
+| Title3_Event2 = Exhausted dialogue after acquiring the [[Hermit's Soul]]
+| Title3_Dialogue2 = My part's been given, slave. We've no more need to speak.<br>
+Go and spin your spider's web. Allow our kingdom's restless soul its chance to blaze.
+}}
+
+== Location ==
+Bell Hermit can be found in the Bellhart [[Bellway]] station, by passing through a hidden wall to the right, and then descending to a lower area, where he awaits at the far left edge.
+{{Gallery
+|Image1 = File:Mapshot SS Bell Hermit 01.png!Location in Bellhart
+}}
+
+{{Gallery
+|Title=Gallery
+|Image1=Screenshot SS Bell Hermit 02.png!Bell Hermit inside his bell
+|Image2=Screenshot SS Bellhart 06.png!Bell Hermit below the Bellway station in Bellhart
+|Image3=Screenshot SS Bell Hermit 01.png!Bell Hermit reacting to Needolin
+}}
+
+== Trivia ==
+* Bell Hermit is the only NPC in the Bellhart Area that is not a resident of the town proper.
+{{Localisation
+|DEname = Glockeneinsiedler
+|DEmeaning = Bell Hermit
+|ESname = Ermitaño Campana
+|ESmeaning = Bell Hermit
+|FRname = Ermite Des Cloches
+|FRmeaning = Hermit of Bells
+|ITname = Eremita della Campana
+|ITmeaning = Bell Hermit
+|JAname= 鐘の隠者
+|JAromanised= Kane no inja
+|JAmeaning = Hermit of Bell
+|KOname = 종 은둔자
+|KOromanised = Jong eundunja
+|KOmeaning = Bell Hermit
+|PTname = Eremita do Sino
+|PTmeaning = Hermit of Bell
+|RUname = Колокольный отшельник
+|RUromanised = Kolokol'nyj otšelʹnik
+|RUmeaning = Bell Hermit
+|TWname = 鐘之隱者
+|TWromanised = Zhōng zhī yǐnzhě
+|TWmeaning = same
+|ZHname = 钟之隐者
+|ZHromanised = Zhōng zhī yǐnzhě
+|ZHmeaning = Hermit of Bell
+|CODEname = BELL_HERMIT</code><br><code>BELLHERMIT
+}}
+{{Refs|hr=ss}}
+{{SS Nav NPCs}}
